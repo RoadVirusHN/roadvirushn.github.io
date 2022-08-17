@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   이것이 디지털 동물의 숲이다!! 파멸편
   (This is the Digital Animal Crossing!! Bad Ending.01)
 baseurl: "" # the subpath of your site, e.g. /blog
-url: https://roadvirushn.github.io # the base hostname & protocol for your site, e.g. http://example.com
+url: https://roadvirushn.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nope
 github_username:  RoadVirusHN
 
