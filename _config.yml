@@ -29,7 +29,7 @@ twitter_username: nope
 github_username:  RoadVirusHN
 
 # Build settings
-theme: jekyll-theme-merlot
+theme: minimal
 plugins:
   - jekyll-feed
 
