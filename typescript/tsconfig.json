@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "noImplicitAny": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "esModuleInterop": true,
+      "outDir": "../jekyll/assets/js",
+      "baseUrl": "./",
+      "sourceMap": true
+    },
+    "include": ["src/assets/js/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+  }
+  
