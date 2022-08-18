@@ -1,0 +1,23 @@
+---
+layout: post
+---
+
+{% comment %}
+<!--replace obsidian, markdown img to html img tag-->
+{% endcomment %}
+{%
+assign media = page.date
+| slice: 0, 10
+| append: "-"
+| append: page.slug
+| prepend:"/"
+| prepend: site.img_folder
+| prepend: '<img src="/'
+%}
+    
+{% assign output = content
+| regex_replace: '!\[(.*)\]\(([^\)]+)\)(?:{:([^}]+)})*','{#@#obsidian_img#@#}/\1" ,alt="\2">'
+| regex_replace: '!\[\[(.[^\[\]\|]*\.[a-z]{3,4})(\|(.*))?\]\]', '{#@#obsidian_img#@#}/\1" ,alt="\3">'
+| replace: '{#@#obsidian_img#@#}', media
+%}
+{{output}}
