@@ -33,18 +33,19 @@ theme: minima
 plugins:
   - jekyll-feed
 
-img_folder: "assets/img"
+img_dir: "assets/img"
+js_dir: "assets/js"
+
 defaults:
-  - scope:
-      path: ""
-    values:
-      email: "roadvirushn@gmail.com"
   - scope:
       # static folder directory settings
       path: "assets/img"
     values:
       image: true # The files inside the defaults.scope.path folder have a variable {image: true}.
-
+  - scope:
+      path: "assets/js"
+    values:
+      script: true
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
