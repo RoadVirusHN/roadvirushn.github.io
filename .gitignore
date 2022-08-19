@@ -1,9 +1,12 @@
-# jekyll section
+### jekyll ###
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+### typescript ##
+.js.map
 
 # Created by https://www.toptal.com/developers/gitignore/api/jekyll,node,windows,visualstudiocode,linux,macos,vim,ruby,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=jekyll,node,windows,visualstudiocode,linux,macos,vim,ruby,git
