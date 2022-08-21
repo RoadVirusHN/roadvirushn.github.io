@@ -33,6 +33,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# custom variables
 img_dir: "assets/img"
 js_dir: "assets/js"
 
