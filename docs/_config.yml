@@ -33,9 +33,6 @@ theme: minima
 plugins:
   - jekyll-feed
 
-markdown: kramdown
-
-
 img_dir: "assets/img"
 js_dir: "assets/js"
 

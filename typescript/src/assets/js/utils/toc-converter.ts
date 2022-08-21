@@ -22,7 +22,12 @@ function convertTOCs(document: Document) {
   return document;
 }
 
-function buildTOC(document: Document, settings: SettingType) {}
+function buildTOC(document: Document, settings: SettingType) {
+
+
+  
+}
+
 
 function getTOCTagsFromView(document: Document) {
   document.getElementsByClassName("language-toc");
