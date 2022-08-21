@@ -1,6 +1,6 @@
-confirm('ghpage test')
+let TOCRaw : null | string = document.getElementsByClassName("language-toc")[0].textContent;
+if (!TOCRaw) return;
 
-let TOCRaw = document.getElementsByClassName("language-toc")[0].textContent;
 let ArrayOfTOCRaw = TOCRaw.split(/: |\n/);
 ArrayOfTOCRaw.pop();
 let TOCSettings: { [settingName: string]: string };
