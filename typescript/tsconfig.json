@@ -6,9 +6,10 @@
       "removeComments": true,
       "preserveConstEnums": true,
       "esModuleInterop": true,
-      "outDir": "../jekyll/assets/js",
-      "baseUrl": "./",
-      "sourceMap": true
+      "strict": true,
+      "outDir": "../docs/assets/js",
+      "sourceMap": true,
+      "sourceRoot": "../../../../typescript/src/assets/js",
     },
     "include": ["src/assets/js/**/*"],
     "exclude": ["node_modules", "**/*.spec.ts"]

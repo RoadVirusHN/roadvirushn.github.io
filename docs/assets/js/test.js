@@ -1,4 +1,3 @@
-confirm('ghpage test')
 
 document.search('[TOC]')
 
