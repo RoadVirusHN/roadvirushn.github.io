@@ -1,18 +1,12 @@
 {% comment %}
-<!--replace obsidian, markdown img to html img tag-->
-{% endcomment %} 
+Replace obsidian, markdown image to html img tag.
+{% endcomment %}
 {% assign media = page.date | slice: 0, 10 | append: "-" |
-append: page.slug | prepend:"/" | prepend: site.img_dir | prepend: '<img
-  src="/'
-%}    
+append: page.slug | prepend:"/" | prepend: site.img_dir | prepend: '<img src="/' %}    
 
 {% assign output = content
 | regex_replace: '!\[(.*)\]\(([^\)]+)\)(?:{:([^}]+)})*'
-  ,'{#@#obsidian_img#@#}/\1"
-  alt="\2"
-  style="display: block; width: 50%; margin: auto"/>' 
+  ,'{#@#obsidian_img#@#}/\1" alt="\2" style="display: block; width: 50%; margin: auto"/>' 
 | regex_replace: '!\[\[(.[^\[\]\|]*\.[a-z]{3,4})(\|(.*))?\]\]'
-  ,'{#@#obsidian_img#@#}/\1" 
-  alt="\3" 
-  style="display: block; width: 50%; margin:auto;">' 
+  ,'{#@#obsidian_img#@#}/\1" alt="\3" style="display: block; width: 50%; margin:auto;">' 
 | replace: '{#@#obsidian_img#@#}', media %} {{output}}
