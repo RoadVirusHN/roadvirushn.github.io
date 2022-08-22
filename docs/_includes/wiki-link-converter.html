@@ -1,0 +1,8 @@
+{% comment %}
+Replace obsidian, markdown link to html <a></a> tag.
+{% endcomment %}
+
+{% assign content = content
+| regex_replace_wikilink:    
+    site.posts ,page
+%} 
