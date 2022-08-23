@@ -34,8 +34,8 @@ plugins:
   - jekyll-feed
 
 # custom variables
-img_dir: "assets/img"
-js_dir: "assets/js"
+static_img_dir: "assets/img"
+static_js_dir: "assets/js"
 
 defaults:
   - scope:
