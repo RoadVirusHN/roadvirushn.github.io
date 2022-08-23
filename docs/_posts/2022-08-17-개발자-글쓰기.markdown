@@ -4,19 +4,22 @@ tags:
   - 편
   - Non_Computer_Science
 last_Reviewed: 2022-08-10 
-is_Finished: false
-layout: obsidianConverter
+is_Finished: true
+layout: obsidian
 title:  "개발자 글쓰기"
 date:   2022-08-17 17:32:16 +0900
 categories: book test
+use_mathjax: true
 ---
+
+1. TOC
 {:toc}
 
-$\sigma^{n}_{i=1}i$
+$$
+\sigma
+$$
 
-$$
-\sigma^{n}_{i=1}i
-$$
+$\sigma^{n}_{i=1}i$
 
 ```toc
 style: number
@@ -42,7 +45,6 @@ title: 원문 책
 - 간결하게 쓰면 정확하지 않음
 
 ∴ 상황에 맞게 이 관계를 잘 조율하자.
-
 
 ## 문장 구조화
 ### 문장을 구조화하는 법

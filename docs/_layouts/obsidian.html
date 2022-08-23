@@ -1,0 +1,12 @@
+---
+layout: post
+---
+
+{% include img-converter.html %}
+
+{% if page.use_mathjax %}
+{% include mathjax-converter.html %}
+{% endif %}
+
+{% include wiki-link-converter.html %}
+{{content}}
