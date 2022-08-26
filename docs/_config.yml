@@ -36,6 +36,8 @@ plugins:
 # custom variables
 static_img_dir: "assets/img"
 static_js_dir: "assets/js"
+static_css_dir: "assets/css"
+static_etc_dir: "asstes/etc"
 
 defaults:
   - scope:
@@ -44,9 +46,26 @@ defaults:
     values:
       image: true # The files inside the defaults.scope.path folder have a variable {image: true}.
   - scope:
+      path: "assets/css"
+    values:
+      css: true
+  - scope:
       path: "assets/js"
     values:
       script: true
+  - scope:
+      path: "assets/etc"
+    values:
+      etc: true
+  - scope:
+      type: "_posts"
+    values:
+      layout: "obsidian"
+
+kramdown:
+  header_offset: 1
+  toc_levels: 2..3
+      
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

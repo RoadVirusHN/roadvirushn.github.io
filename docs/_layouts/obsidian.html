@@ -4,9 +4,12 @@ layout: post
 
 {% include img-converter.html %}
 
-{% if page.use_mathjax %}
+{% if page.use_Mathjax %}
 {% include mathjax-converter.html %}
 {% endif %}
 
 {% include wiki-link-converter.html %}
+
+{% include toc-converter.html %}
+
 {{content}}
