@@ -8,9 +8,9 @@ module PreprocessWikiLink
             linkData = { 
                 altText: $1,
                 postName: $2&.gsub('%20', ' '),
-                externalURL: $3,
-                rawHeadings: $4,
-                targetHeading: $5
+                rawHeadings: $3,
+                targetHeading: $4
+                externalURL: $5,
             }
             matched = build_markdown_link(linkData, site, post)
         }
@@ -18,9 +18,9 @@ module PreprocessWikiLink
             matched = build_markdown_link({
                 altText: $5,
                 postName: $1,
-                externalURL: $2,
-                rawHeadings: $3,
-                targetHeading: $4
+                externalURL: $4,
+                rawHeadings: $2,
+                targetHeading: $3
             }, site, post)
         }
     end
