@@ -1,11 +1,6 @@
 {% comment %} Replace obsidian, markdown link to html a tag. {% endcomment %} 
 
 {% comment %} Build src property from assets/img/md-filename {% endcomment %} 
-{% assign static_dir = page.date | slice: 0, 10 | append: "-" | append: page.slug |
-prepend:"/" | prepend: site.static_img_dir | | prepend: "/" %} 
-
-{% assign content = content | convert_imagelink: static_dir %}
-
 <style type="text/css">
   img {
     display: block;
