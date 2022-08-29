@@ -13,7 +13,6 @@ add_Mathjax: true
 # Obsidian example pt-2
 
 ## Mathjax example
-[[symbols.pdf\|Latex cheat sheet]]
 ```
 block math notation
 
@@ -55,20 +54,28 @@ Inline math notation $\sum^{i}_{n=1}$ here
 #### External link
 ```
 [[2022-08-24-Obsidian-example-pt-1]]
+
 [[2022-08-24-Obsidian-example-pt-1#Tag with special characters w alt text]]
+
 [[2022-08-24-Obsidian-example-pt-1#Obsidian image tag w alt text|with alt text]]
+
 [[https://forum.obsidian.md/]]
+
 [[https://forum.obsidian.md/|web link with alt text]]
+
 [[./templates/TIL template#tp file title]]
+
 [[./templates/TIL template#tp file title|alt_text]]
 ```
 [[2022-08-24-Obsidian-example-pt-1]]
+
 [[2022-08-24-Obsidian-example-pt-1#Tag with special characters w alt text]]
+
 [[2022-08-24-Obsidian-example-pt-1#Obsidian image tag w alt text|with alt text]]
+
 [[https://forum.obsidian.md/]]
+
 [[https://forum.obsidian.md/|web link with alt text]]
-[[./templates/TIL template#tp file title]]
-[[./templates/TIL template#tp file title|alt_text]]
 
 ### Markdown link examples
 #### Internal link
@@ -93,14 +100,4 @@ Inline math notation $\sum^{i}_{n=1}$ here
 [other post](2022-08-24-Obsidian-example-pt-1)
 [https://forum.obsidian.md/](https://forum.obsidian.md/)
 [2022-08-24-Obsidian-example-pt-1](2022-08-24-Obsidian-example-pt-1.md)
-[TIL template](TIL%20template.md)
-[2022-08-24-Obsidian-example-pt-1](2022-08-24-Obsidian-example-pt-1.md)---
-title: Obsidian-example-pt-2
-date: 2022-08-24 15:03:32 +0900
-categories: []
-layout: obsidian
-is_Finished: false
-last_Reviewed: 2022-08-24 15:03:32 +0900
-add_Mathjax: true
----
 

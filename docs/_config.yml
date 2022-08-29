@@ -65,6 +65,7 @@ defaults:
 kramdown:
   header_offset: 1
   toc_levels: 2..3
+  auto_ids: false
       
 # Exclude from processing.
 # The following items will not be processed, by default.
