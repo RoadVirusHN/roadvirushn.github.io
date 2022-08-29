@@ -1,28 +1,22 @@
-# # Modify code from https://github.com/joshdavenport/jekyll-regex-replace (MIT license)
-# require 'liquid'
-# require_relative './obsidian/postprocesses/WikiLinkConverter'
-# require_relative './obsidian/postprocesses/ImageLinkConverter'
-# require_relative './obsidian/postprocesses/TOCConverter'
+require 'liquid'
+require_relative './obsidian/postprocesses/PostprocessTOC'
 
-# module Jekyll
-#   module ObosidianPostprocessor  
-#     include ImageLinkConverter 
-#     def convert_imagelink(str, static_dir)
-#       return imagelink_obsidian_to_kramdown(str, static_dir)
-#     end
+module Jekyll
+  module ObsidianPostprocessor 
+    include PostprocessTOC
+    def convert_noneng_custom_id(str)
+       return str.gsub(NO_ID_HEADINGS_REGEX)\
+       { |matched|
+            custom_id = text_to_id_format($title)
+            matched = "<h#{$headings} id='#{custom_id}'>#{$title}</h#{$headings}>" 
+        }
+    end
+    
+    def convert_toc(str)
+        return str
+    end
 
-#     include WikiLinkConverter
-#     def convert_wikilink(str, posts, page)
-#       return wikilink_obsidian_to_kramdown(str, posts, page)
-#       # return wikilink_md_to_kramdown(str, posts, page)
-#     end
+  end
+end
 
-#     include TOCConverter
-#     def convert_toc(str)
-#       return toc_obsidian_to_kramdown(str)
-#     end
-
-#   end
-# end
-
-# Liquid::Template.register_filter(Jekyll::ObosidianPostprocessor)
+Liquid::Template.register_filter(Jekyll::ObsidianPostprocessor)

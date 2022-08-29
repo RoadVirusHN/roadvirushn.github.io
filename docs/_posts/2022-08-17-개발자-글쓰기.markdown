@@ -11,21 +11,7 @@ date:   2022-08-17 17:32:16 +0900
 categories: book test
 use_Mathjax: true
 ---
-
-* TOC
-{:toc}
-
-$$
-\sigma
-$$
-
-$\sigma^{n}_{i=1}i$
-
-```toc
-style: number
-max_depth: 3
-varied_style: true
-```
+[TOC]
 # 개발자 글쓰기 정리
 ```ad-info
 title: 원문 책
@@ -33,6 +19,7 @@ title: 원문 책
 개발자의 글쓰기 (_김철수_ 위키북스)를 읽고 정리한 내용입니다.
 ```
 ## 개발자의 글이란?
+
 개발자의 글은 주석, 에러 메시지, 릴리스 문서, 개발 가이드, SI 제안서 등이 존재
 
 개발자 글에서 중요한 원칙 세가지
