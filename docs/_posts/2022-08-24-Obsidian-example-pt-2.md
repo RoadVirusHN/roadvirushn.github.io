@@ -5,7 +5,7 @@ categories: []
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2022-08-24 15:03:32 +0900
-add_Mathjax: true
+use_Mathjax: true
 ---
 
 {:toc}
@@ -101,3 +101,14 @@ Inline math notation $\sum^{i}_{n=1}$ here
 [https://forum.obsidian.md/](https://forum.obsidian.md/)
 [2022-08-24-Obsidian-example-pt-1](2022-08-24-Obsidian-example-pt-1.md)
 
+asdfasdf[asdfadf](http://naver.com)
+asdfasdf
+asdfasdfa
+
+asdfasdf[adfdddhh](http://naver.com)dfsfsd
+
+dfasdf
+
+asdfasdf
+
+asdfasd

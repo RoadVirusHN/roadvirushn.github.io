@@ -5,14 +5,13 @@ module PreprocessWikiLink
     def convert_wiki_link(site, post)
         return post.content
         .gsub(MARKDOWN_LINK_REGEX){ |matched|            
-            linkData = { 
+            matched = build_markdown_link({ 
                 altText: $1,
                 postName: $2&.gsub('%20', ' '),
                 rawHeadings: $3,
                 targetHeading: $4,
                 externalURL: $5
-            }
-            matched = build_markdown_link(linkData, site, post)
+            }, site, post)
         }
         .gsub(OBSIDIAN_LINK_REGEX){ |matched|  
             matched = build_markdown_link({
