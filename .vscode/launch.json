@@ -1,0 +1,11 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug Local",
+			"type": "Ruby",
+			"request": "launch",
+			"program": "C:/Users/roadv/Desktop/works/Subbrain/docs/_plugins/obsidian/postprocesses/ruby.rb"
+		}
+	]
+}
