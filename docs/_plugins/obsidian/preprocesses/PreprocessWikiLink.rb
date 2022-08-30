@@ -34,7 +34,7 @@ module PreprocessWikiLink
             || externalURL \
             || raw_headings_to_innertext((postName || '') + (rawHeadings || '')) \
             || 'Empty Link'
-        isInternalLink = postName ? post['title'] == postName : (targetHeading || externalURL&.match(post.url))
+        isInternalLink = postName ? post['title'] == postName : (targetHeading || externalURL&.include?(post.url))
 
         # Set href property of <a> tag. Check the outlink post name, then Link to desired headings.
         href = \
