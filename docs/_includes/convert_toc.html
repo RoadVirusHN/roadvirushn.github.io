@@ -2,4 +2,4 @@
 Add id of non-english headings, Kramdown can't understand nonenglishes and doesn't convert korean headings to ids.
 {% endcomment %}
  
-{% assign content = content | convert_noneng_custom_id %}
+{% assign content = content | convert_noneng_custom_id | postprocess_toc %}

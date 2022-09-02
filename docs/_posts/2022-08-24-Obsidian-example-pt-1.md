@@ -10,14 +10,6 @@ add_Mathjax: true
 
 # Obsidian-example-pt-1
 ## Additional TOC examples
-```
-{:toc}
-[TOC]
-\```toc
-\```
-```
-{:toc}
-[TOC]
 
 ```toc
 ```

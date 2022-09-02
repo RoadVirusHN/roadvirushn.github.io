@@ -20,7 +20,7 @@ module ObsidianPreprocessor
         def preprocess(site, post)
             post.content = convert_image_link(post)
             post.content = convert_wiki_link(site, post)
-            post.content = convert_TOC(post.content)
+            post.content = convert_toc_formats(post.content)
             return post
         end
     end

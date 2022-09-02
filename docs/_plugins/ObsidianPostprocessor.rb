@@ -1,19 +1,20 @@
 require 'liquid'
-require_relative './obsidian/postprocesses/PostprocessTOC'
+require_relative './obsidian/postprocesses/postprocess_toc'
 
 module Jekyll
-  module ObsidianPostprocessor 
-    include PostprocessTOC
+  module ObsidianPostprocessor
+    include PostprocessToc
     def convert_noneng_custom_id(str)
-       return str.gsub(NO_ID_HEADINGS_REGEX)\
-       { |matched|
-            custom_id = text_to_id_format($title)
-            matched = "<h#{$headings} id='#{custom_id}'>#{$title}</h#{$headings}>" 
+        return str.gsub(NO_ID_HEADINGS_REGEX){ |matched|
+          headings = $1
+          innerText = $2
+          custom_id = text_to_id_format(innerText)
+          "<h#{headings} id='#{custom_id}'>#{innerText}</h#{headings}>"
         }
     end
     
-    def convert_toc(str)
-        return str
+    def postprocess_toc(str)
+      return convert_toc(str)
     end
 
   end
