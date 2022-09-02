@@ -5,7 +5,14 @@
 			"name": "Debug Local",
 			"type": "Ruby",
 			"request": "launch",
-			"program": "C:/Users/roadv/Desktop/works/Subbrain/docs/_plugins/obsidian/postprocesses/ruby.rb"
+			"program": "C:/Users/roadv/Desktop/works/Subbrain/docs/_plugins/obsidian/postprocesses/test.rb"
+		},
+		{
+		"type": "chrome",
+		"request": "attach",
+		"name": "Attach",
+		"preLaunchTask": "jekyll"
 		}
+
 	]
 }
