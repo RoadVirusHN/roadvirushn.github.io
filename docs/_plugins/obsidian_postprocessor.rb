@@ -1,5 +1,6 @@
 require 'liquid'
 require_relative './obsidian/postprocesses/postprocess_toc'
+require_relative './obsidian/postprocesses/postprocess_admonition'
 
 module Jekyll
   module ObsidianPostprocessor
@@ -13,8 +14,11 @@ module Jekyll
         }
     end
     
+    include PostprocessAdmonition
     def postprocess_toc(str)
-      return convert_toc(str)
+      str = convert_toc(str)
+      # return str
+      return convert_admonition(str)
     end
 
   end
