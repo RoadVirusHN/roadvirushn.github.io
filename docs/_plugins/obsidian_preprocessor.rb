@@ -1,6 +1,6 @@
-require_relative "./obsidian/preprocesses/PreprocessImageLink"
-require_relative "./obsidian/preprocesses/PreprocessWikiLink"
-require_relative "./obsidian/preprocesses/PreprocessTOC"
+require_relative "./obsidian/preprocesses/preprocess_imagelink"
+require_relative "./obsidian/preprocesses/preprocess_wikilink"
+require_relative "./obsidian/preprocesses/preprocess_headings"
 
 module ObsidianPreprocessor
     class ObsidianConverter < Jekyll::Generator
@@ -16,7 +16,7 @@ module ObsidianPreprocessor
 
         include PreprocessImageLink
         include PreprocessWikiLink
-        include PreprocessTOC
+        include PreprocessHeadings
         def preprocess(site, post)
             post.content = convert_image_link(post)
             post.content = convert_wiki_link(site, post)

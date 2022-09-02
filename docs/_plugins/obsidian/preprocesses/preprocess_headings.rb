@@ -1,4 +1,4 @@
-module PreprocessTOC
+module PreprocessHeadings
     OBSIDIAN_TOC_REGEX = /(?:\[TOC\])|(?:\* TOC\n\{:toc\})(?=[^`]*(?:`[^`]*`[^`]*)*\Z)/i
     MARKDOWN_HEADINGS = /(?<headings>^#+[^#\n]+(?=[^`]*(?:`[^`]*`[^`]*)*\Z))/
 
