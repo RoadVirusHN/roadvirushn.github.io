@@ -10,14 +10,6 @@ add_Mathjax: true
 
 # Obsidian-example-pt-1
 ## Additional TOC examples
-```
-{:toc}
-[TOC]
-\```toc
-\```
-```
-{:toc}
-[TOC]
 
 ```toc
 ```
@@ -29,6 +21,7 @@ add_Mathjax: true
 ```
 ![[@image-20220824145023230_.png]]
 ![[@image-20220824145023230_.png|alt_text]]
+
 #### Tag with special characters(w/ alt text)
 ```
 ![[@Pasted image-20220824144539_$.png]]
@@ -36,15 +29,23 @@ add_Mathjax: true
 ```
 ![[@Pasted image-20220824144539_$.png]]
 ![[@Pasted image-20220824144539_$.png|alt text]]
+
 #### by weblink (w/ alt text)
 ```
 ![[https://forum.obsidian.md/uploads/default/original/1X/39438916879fc6e20fca16cbc962a44f272e102f.png]]
 ![[https://forum.obsidian.md/uploads/default/original/1X/39438916879fc6e20fca16cbc962a44f272e102f.png|alt text]]
 ```
-
 ![[https://forum.obsidian.md/uploads/default/original/1X/39438916879fc6e20fca16cbc962a44f272e102f.png]]
-
 ![[https://forum.obsidian.md/uploads/default/original/1X/39438916879fc6e20fca16cbc962a44f272e102f.png|alt text]]
+
+#### by directory(w/ alt text)
+```
+![[2022-08-24-Obsidian-example-pt-1/@/@Pasted%20image-20220824144539_$.png]]
+
+![[2022-08-24-Obsidian-example-pt-1/@/@Pasted%20image-20220824144539_$.png|alt text]]
+```
+![[./2022-08-24-Obsidian-example-pt-1/@Pasted%20image-20220824144539_$.png]]
+![[./2022-08-24-Obsidian-example-pt-1/@Pasted%20image-20220824144539_$.png|alt text]]
 
 ### Markdown image tag
 ## Tag with special characters(w/ alt text)
@@ -52,9 +53,9 @@ add_Mathjax: true
 ![](@image-20220824145023230_.png)
 ![alt text](@image-20220824145023230_.png)
 ```
-
 ![](@image-20220824145023230_.png)
 ![alt text](@image-20220824145023230_.png)
+
 #### by directory(w/ alt text)
 ```
 ![](2022-08-24-obsidian-example-pt-1/image-20220824145023230.png)	
@@ -62,6 +63,7 @@ add_Mathjax: true
 ```
 ![](@image-20220824145023230_.png)	
 ![alt_text](@image-20220824145023230_.png)
+
 #### by weblink(w/ alt text)
 ```
 ![](https://forum.obsidian.md/uploads/default/original/1X/39438916879fc6e20fca16cbc962a44f272e102f.png)
@@ -70,4 +72,12 @@ add_Mathjax: true
 ![](https://forum.obsidian.md/uploads/default/original/1X/39438916879fc6e20fca16cbc962a44f272e102f.png)
 ![alt text](https://forum.obsidian.md/uploads/default/original/1X/39438916879fc6e20fca16cbc962a44f272e102f.png)
 
-![](@Pasted%20image-20220824144539_$.png)
+#### by directory(w/ alt text)
+```
+
+![](./2022-08-24-Obsidian-example-pt-1/@Pasted%20image-20220824144539_$.png)
+
+![alt text](./2022-08-24-Obsidian-example-pt-1/@Pasted%20image-20220824144539_$.png)
+```
+![](./2022-08-24-Obsidian-example-pt-1/@Pasted%20image-20220824144539_$.png)
+![alt text](./2022-08-24-Obsidian-example-pt-1/@Pasted%20image-20220824144539_$.png)

@@ -5,7 +5,7 @@ categories: []
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2022-08-24 15:03:32 +0900
-add_Mathjax: true
+use_Mathjax: true
 ---
 
 {:toc}
@@ -13,7 +13,6 @@ add_Mathjax: true
 # Obsidian example pt-2
 
 ## Mathjax example
-[sd[symbols.pdf\|Latex cheat sheet]sd]
 ```
 block math notation
 
@@ -37,29 +36,45 @@ Inline math notation $\sum^{i}_{n=1}$ here
 ```
 [[#Mathjax example]]
 [[#Mathjax example|with alt text]]
-[[Obsidian-example-pt-2]]
-[[Obsidian-example-pt-2#Mathjax example|filename with alt text]]
-[[Obsidian-example-pt-2#Obsidian wikilink example#Internal link]]
+[[2022-08-24-Obsidian-example-pt-2]]
+[[2022-08-24-Obsidian-example-pt-2#Mathjax example|filename with alt text]]
+[[2022-08-24-Obsidian-example-pt-2#Obsidian wikilink example#Internal link]]
+[[./2022-08-24-Obsidian-example-pt-1#Obisidian wikilink examples|alt_text]]
+[[./2022-08-24-Obsidian-example-pt-1#Obisidian wikilink examples|alt_text]]
 ```
 [[#Mathjax example]]
 [[#Mathjax example|with alt text]]
-[[Obsidian-example-pt-2]]
-[[Obsidian-example-pt-2#Mathjax example|filename with alt text]]
-[[Obsidian-example-pt-2#Obsidian wikilink example#Internal link]]
+[[2022-08-24-Obsidian-example-pt-2]]
+[[2022-08-24-Obsidian-example-pt-2#Mathjax example|filename with alt text]]
+[[2022-08-24-Obsidian-example-pt-2#Obsidian wikilink example#Internal link]]
+[[./2022-08-24-Obsidian-example-pt-1#Obisidian wikilink examples|alt_text]]
+[[./2022-08-24-Obsidian-example-pt-1#Obisidian wikilink examples|alt_text]]
+
 
 #### External link
 ```
-[[Obsidian-example-pt-1]]
-[[Obsidian-example-pt-1#Tag with special characters w alt text]]
-[[Obsidian-example-pt-1#Obsidian image tag w alt text|with alt text]]
+[[2022-08-24-Obsidian-example-pt-1]]
+
+[[2022-08-24-Obsidian-example-pt-1#Tag with special characters w alt text]]
+
+[[2022-08-24-Obsidian-example-pt-1#Obsidian image tag w alt text|with alt text]]
+
 [[https://forum.obsidian.md/]]
+
 [[https://forum.obsidian.md/|web link with alt text]]
 
+[[./templates/TIL template#tp file title]]
+
+[[./templates/TIL template#tp file title|alt_text]]
 ```
-[[Obsidian-example-pt-1]]
-[[Obsidian-example-pt-1#Tag with special characters w alt text]]
-[[Obsidian-example-pt-1#Obsidian image tag w alt text|with alt text]]
+[[2022-08-24-Obsidian-example-pt-1]]
+
+[[2022-08-24-Obsidian-example-pt-1#Tag with special characters w alt text]]
+
+[[2022-08-24-Obsidian-example-pt-1#Obsidian image tag w alt text|with alt text]]
+
 [[https://forum.obsidian.md/]]
+
 [[https://forum.obsidian.md/|web link with alt text]]
 
 ### Markdown link examples
@@ -68,18 +83,32 @@ Inline math notation $\sum^{i}_{n=1}$ here
 [](#Mathjax example)
 [alt text](#Mathjax example)
 [multiple link](#Link example#obsidian wikilink examples#Internal link)
-[Link example](Obsidian-example-pt-2#Link example)
+[Link example](2022-08-24-Obsidian-example-pt-2#Link example)
 ```
 [](#Mathjax example)
 [alt text](#Mathjax example)
 [multiple link](#Link example#obsidian wikilink examples#Internal link)
-[Link example](Obsidian-example-pt-2#Link example)
+[Link example](2022-08-24-Obsidian-example-pt-2#Link example)
+[weblink](https://forum.obsidian.md/)
+[2022-08-24-Obsidian-example-pt-2](2022-08-24-Obsidian-example-pt-2.md)
 
 #### External link
 ```
-[other post](Obsidian-example-pt-1)
+[other post](2022-08-24-Obsidian-example-pt-1)
 [https://forum.obsidian.md/](https://forum.obsidian.md/)
 ```
-[other post](Obsidian-example-pt-1)
+[other post](2022-08-24-Obsidian-example-pt-1)
 [https://forum.obsidian.md/](https://forum.obsidian.md/)
-[2022-08-24-Obsidian-example-pt-1](Obsidian-example-pt-1)
+[2022-08-24-Obsidian-example-pt-1](2022-08-24-Obsidian-example-pt-1.md)
+
+asdfasdf[asdfadf](http://naver.com)
+asdfasdf
+asdfasdfa
+
+asdfasdf[adfdddhh](http://naver.com)dfsfsd
+
+dfasdf
+
+asdfasdf
+
+asdfasd

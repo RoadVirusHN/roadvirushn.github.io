@@ -27,6 +27,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: https://roadvirushn.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nope
 github_username:  RoadVirusHN
+lang: kr
+languages: ["kr", "en"]
+
 
 # Build settings
 theme: minima
@@ -63,8 +66,8 @@ defaults:
       layout: "obsidian"
 
 kramdown:
-  header_offset: 1
-  toc_levels: 2..3
+  auto_ids: false
+  hard_wrap: true
       
 # Exclude from processing.
 # The following items will not be processed, by default.
