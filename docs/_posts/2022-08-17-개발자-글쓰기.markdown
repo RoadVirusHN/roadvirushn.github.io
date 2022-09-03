@@ -21,6 +21,8 @@ varied_style: true
 # 개발자 글쓰기 정리
 ```ad-info
 title: 원문 책
+collapse: open
+copy: true
 
 개발자의 글쓰기 (_김철수_ 위키북스)를 읽고 정리한 내용입니다.
 ```
@@ -47,6 +49,8 @@ title: 예시 문장
 ```
 ```ad-example
 title: 구조화 과정
+collapse: true
+copy: true
 
 1.**중요 주어 앞으로**
 

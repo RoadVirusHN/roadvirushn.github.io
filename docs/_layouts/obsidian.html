@@ -2,14 +2,24 @@
 layout: post
 ---
 
-{% include img-converter.html %}
+{% include img-converter.html %} {% if page.use_Mathjax %} {% include
+mathjax-converter.html %} {% endif %} {% include wiki-link-converter.html %} {%
+include convert_toc.html %} {{content}}
 
-{% if page.use_Mathjax %}
-    {% include mathjax-converter.html %}
-{% endif %}
+<style>  
+  div.collapse {
+    text-align: right;
+    float: right;
+    background-color: grey;
+    border-radius: 100%;
+  }
 
-{% include wiki-link-converter.html %}
-
-{% include convert_toc.html %}
-
-{{content}}
+  div.copy {
+    background-color: grey;
+    float: right;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border-radius: 30%;
+  }
+</style>
