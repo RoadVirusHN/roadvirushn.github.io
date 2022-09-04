@@ -1,7 +1,6 @@
 # Get Headings data and Create TOC.
 module PostprocessToc
   NO_ID_HEADINGS_REGEX = %r{<h(?<level>[123456])>(?<innerText>.*)</h\k<level>>(?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
-  OBSIDIAN_TOC_REGEX = /```toc\n*(?:(?:style|min_depth|max_depth|title|allow_inconsistent_headings|delimiter|varied_style): (?:.*)\n*)*?\n*```\n/i.freeze
 
   HTML_TOC_REGEX = %r{<pre><code[^>]+class\s*=\s*['"]language-toc['"][^>]*>([\s\S]*?)</code></pre>}i.freeze
 
@@ -10,6 +9,14 @@ module PostprocessToc
   HEADINGS_REGEX = %r{<h(?<level>[123456])[^>]+id\s*=\s*['"](?<id>[^'"]+)['"][^>]*>(?<innerText>.*)</h\k<level>}.freeze
 
   CODE_BLOCK = %r{<code\b[^<>]*>([\s\S]*?)</code>}.freeze
+
+  def convert_noneng_custom_id(str)
+    str.gsub(NO_ID_HEADINGS_REGEX) do |_matched|
+      headings = Regexp.last_match(1)
+      inner_text = Regexp.last_match(2)
+      "<h#{headings} id='#{text_to_id_format(inner_text)}'>#{inner_text}</h#{headings}>"
+    end
+  end
 
   def convert_toc(str)
     code_masked_str = str.gsub(CODE_BLOCK) { |_matched| '' }
@@ -60,7 +67,7 @@ module PostprocessToc
     end
     config[:min_depth] = Integer(config[:min_depth])
     config[:max_depth] = Integer(config[:max_depth])
-    config[:varied_style] = config[:varied_style] == "true"
+    config[:varied_style] = config[:varied_style] == 'true'
     config
   end
 
@@ -101,6 +108,7 @@ module PostprocessToc
     headings_data.each do |heading|
       id, inner_text, lvl, childs = heading.values_at(:id, :innerText, :level, :childs)
       next if lvl > config[:max_depth]
+
       generation_gap = (lvl - upper_level)
       li_tag = "#{"<#{list_type}>" * (generation_gap - 1)}<li><a href='##{id}' id='markdown-toc-#{config[:toc_index]}-#{id}'>#{inner_text}</a>"
       li_tag += "<#{list_type}>#{build_toc_items(childs, config, lvl)}\n</#{list_type}>" unless childs.empty?
