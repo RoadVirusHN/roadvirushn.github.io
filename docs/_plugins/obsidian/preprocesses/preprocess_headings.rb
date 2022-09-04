@@ -1,4 +1,4 @@
-module PreprocessTOC
+module PreprocessHeadings
     OBSIDIAN_TOC_REGEX = /(?:\[TOC\])|(?:\* TOC\n\{:toc\})(?=[^`]*(?:`[^`]*`[^`]*)*\Z)/i
     MARKDOWN_HEADINGS = /(?<headings>^#+[^#\n]+(?=[^`]*(?:`[^`]*`[^`]*)*\Z))/
 
@@ -13,10 +13,10 @@ module PreprocessTOC
     end
 
     def generate_headings_id(str)
-        return str.gsub(MARKDOWN_HEADINGS) { |matched|
+        return str.gsub(MARKDOWN_HEADINGS) { |_matched|
             headings = $1
             custom_id = text_to_custom_id(headings)
-            matched = "#{headings}\n{: ##{custom_id}}"  
+            "#{headings}\n{: ##{custom_id}}"  
         }
     end
 end

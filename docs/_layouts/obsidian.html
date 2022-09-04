@@ -1,15 +1,16 @@
 ---
 layout: post
 ---
-
-{% include img-converter.html %}
-
+ 
 {% if page.use_Mathjax %}
-    {% include mathjax-converter.html %}
-{% endif %}
+    {% include mathjax-script.html %}
+{% endif %} 
 
-{% include wiki-link-converter.html %}
-
-{% include convert_toc.html %}
+{% assign content = content | postprocess_obsidian %}
 
 {{content}}
+
+<link rel="stylesheet" href="/{{ site.static_css_dir }}/callout.css">
+<script src="/{{site.static_js_dir}}/handle_callout.js"></script>
+
+<link rel="stylesheet" href="/{{ site.static_css_dir }}/image.css">

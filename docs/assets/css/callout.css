@@ -1,0 +1,102 @@
+div.callout {
+  border-radius: 4px 8px 8px 4px;
+  padding: 0px 5px 0px 5px;
+  box-shadow: 2px 2px 2px rgb(0 0 0 / 0.3);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div.callout > div.header {
+  border-radius: 0px 8px 0px 0px;
+  padding: 8px;
+  margin: -5px;
+}
+
+div.callout > div.card {
+  padding: 8px 8px 1px 8px;
+}
+
+div.callout button.collapse {
+  text-align: right;
+  float: right;
+  background-color: grey;
+  border-color: rgb(0 0 0 / 0);
+  border-radius: 30%;
+}
+
+div.callout button.collapse:hover {
+  cursor: pointer;
+}
+
+div.callout button.copy {
+  background-color: grey;
+  border-color: rgb(0 0 0 / 0);
+  float: right;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  border-radius: 30%;
+}
+
+div.ad-info {
+  background-color: floralwhite;
+  border-left: solid 8px skyblue;
+}
+
+div.ad-info > div.header {
+  background-color: turquoise;
+}
+
+div.example {
+  background-color: floralwhite;
+  border-left: solid 8px blueviolet;
+}
+
+div.ad-example > div.header {
+  background-color: lavender;
+}
+
+div.ad-note {
+  background-color: floralwhite;
+  border-left: solid 8px blue;
+}
+
+div.ad-note > div.header {
+  background-color: royalblue;
+}
+
+div.ad-warning {
+  background-color: floralwhite;
+  border-left: solid 8px orange;
+}
+
+div.ad-warning > div.header {
+  background-color: peachpuff;
+}
+
+div.ad-danger {
+  background-color: floralwhite;
+  border-left: solid 8px red;
+}
+
+div.ad-danger > div.header {
+  background-color: lightcoral;
+}
+
+div.ad-seealso {
+  background-color: floralwhite;
+  border-left: solid 8px forestgreen;
+}
+
+div.ad-seealso > div.header {
+  background-color: darkseagreen;
+}
+
+div.ad-tip {
+  background-color: floralwhite;
+  border-left: solid 8px aqua;
+}
+
+div.ad-tip > div.header {
+  background-color: cadetblue;
+}
