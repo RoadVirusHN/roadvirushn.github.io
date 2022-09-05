@@ -43,12 +43,13 @@ module PreprocessWikiLink
                 ? (raw_headings_to_href(rawHeadings) || "#") \
                 : link_to_other_post(site.posts, postName, targetHeading))
             
-        return '[%s](%s)' % [innerText || "🔗", href]    
+        return "[%s](%s)#{"{:target='_blank'}" unless isInternalLink}" % [innerText || "🔗", href]    
     end
 
     def raw_headings_to_innertext(string) return string&.sub(/^#/, '')&.gsub(/#+/, '> ') end
     
-    def raw_headings_to_href(string) 
+    def raw_headings_to_href(string)
+        puts string
         return string&.downcase&.gsub(/^#+ +/, '')&.gsub(/[!@$%^&*()_+\-=\[\]{};\':\"\\|,.<>\/? ]+$/, '')&.gsub(/^[!@$%^&*()_+\-=\[\]{};\':\"\\|,.<>\/? ]+/, '')&.gsub(/[!@$%^&*()_+\-=\[\]{};\':\"\\|,.<>\/? ]+/, '-')
     end
     
