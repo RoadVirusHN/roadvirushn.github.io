@@ -23,10 +23,13 @@ module PostprocessCallout
       <div class=\"header\">
         <span class=\"emoji\">#{emoji}</span>
         <span class=\"title\"><strong>#{title == '' ? type : title}</strong></span>
-        #{collapse.nil? ? '' : '<button class="collapse" onclick="hide_card(event)">🔼</button>'}
+        #{unless collapse.nil?
+            "<button class=\"collapse\" onclick=\"hide_card(event)\">#{collapse == '-' ? '🔼' : '🔽'}</button>"
+          end}
       </div>#{
         if content.match(/./)
-          "<div class=\"card\" name=\"card\">#{'<button class="copy" onclick="copy_content(event)">📋</button>' unless copy.nil?}
+          "<div class=\"card\" name=\"card\" style=#{collapse == '-' ? 'display:none;' : 'display:block;'}>
+          #{'<button class="copy" onclick="copy_content(event)">📋</button>' unless copy.nil?}
           <div class=\"content\" name=\"content\">#{content}</div>
           </div>"
         else
