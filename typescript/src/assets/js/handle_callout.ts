@@ -3,10 +3,10 @@ function hide_card(event: PointerEvent){
     var card = target.parentNode?.nextSibling as HTMLElement;
     if (card.style.display == "none"){
         card.style.display = "block";
-        target.innerText = "🔽";
+        target.innerText = "🔼";
     } else {
         card.style.display = "none";  
-        target.innerText = "🔼";
+        target.innerText = "🔽";
     }    
 }
 
@@ -16,7 +16,6 @@ function copy_content(event: PointerEvent){
 
     navigator.clipboard.writeText(content.innerText);
     target.innerText = "✅";
-
     setTimeout(()=>{target.innerText= "📋";}, 500)
 
 }
