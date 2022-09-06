@@ -1,5 +1,13 @@
 {
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/lunr": "^2.3.4"
   }
 }
