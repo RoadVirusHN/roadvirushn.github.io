@@ -31,9 +31,9 @@ lang: kr
 languages: ["kr", "en"]
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 # custom variables
 static_img_dir: "assets/img"

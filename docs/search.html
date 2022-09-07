@@ -14,6 +14,7 @@ permalink: /search.html
     {% for post in site.posts%}
       "{{post.url | slugify}}": {
         title: "{{post.title | xml_escape}}",
+        url: "{{post.url | xml_escape}}",
         content: {{post.content | strip_html | strip_newlines | jsonify}}
       }
       {% unless forloop.last %}, {% endunless %}
