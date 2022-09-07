@@ -24,7 +24,7 @@ module PostprocessCallout
         <span class=\"emoji\">#{emoji}</span>
         <span class=\"title\"><strong>#{title == '' ? type : title}</strong></span>
         #{unless collapse.nil?
-            "<button class=\"collapse\" onclick=\"hide_card(event)\">#{collapse == '-' ? '🔼' : '🔽'}</button>"
+            "<button class=\"collapse\" onclick=\"hide_card(event)\">#{collapse == '-' ?  '🔽':'🔼'}</button>"
           end}
       </div>#{
         if content.match(/./)
