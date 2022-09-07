@@ -1,7 +1,7 @@
 (function () {
   function displaySearchResults(results, store) {
     var searchResults = document.getElementById("search-results");
-
+    console.log(results);
     if (results.length) {
       // Are there any results?
       var appendString = "";
@@ -10,8 +10,16 @@
         // Iterate over the results
         var item = store[results[i].ref];
         appendString +=
-          '<li><a href="' + item.url + '"><h6>' + item.title + "</h6></a>";
-        appendString += "<p>" + item.content.substring(0, 150) + "...</p></li>";
+          `<li><a href="${item.url}"><h4>${item.title}</h4></a>`;
+        var match_pos = results[i].matchData.metadata[query].content.position
+        var query = Object.keys(results[i].matchData.metadata)[0]
+        var result_num = match_pos.length
+        var match_start = match_pos[0][0]
+        var match_end = match_pos[0][1]  
+        var start_pos =  Math.max(match_start - 50, 0)
+        var end_pos = Math.min(start_pos + 150, item.content.length)
+        appendString += `<p>${item.content.substring(start_pos, match_start)}<mark>${item.content.substring(match_start, match_end)}</mark>${item.content.substring(match_end, end_pos)}...</p></li>`;
+        if (result_num - 1 > 0) appendString += `<p>...그리고 ${result_num - 1}개의 추가 일치들</p>`; 
       }
 
       searchResults.innerHTML = appendString;
@@ -37,15 +45,13 @@
 
   if (searchTerm) {
     document.getElementById("search-box").setAttribute("value", searchTerm);
-
     // Initalize lunr with the fields it will be searching on. I've given title
     // a boost of 10 to indicate matches on this field are more important.
     var idx = lunr(function () {
-      this.pipeline.reset();
-      this.pipeline.add(lunr.stopWordFilter, lunr.stemmer);
       this.field("id");
       this.field("title", { boost: 10 });
       this.field("content");
+      this.metadataWhitelist = ['position']
 
       for (var key in window.store) {
         // Add the data to lunr
