@@ -11,11 +11,11 @@
         var item = store[results[i].ref];
         appendString +=
           `<li><a href="${item.url}"><h4>${item.title}</h4></a>`;
-        var match_pos = results[i].matchData.metadata[query].content.position
-        var query = Object.keys(results[i].matchData.metadata)[0]
+          var query = Object.keys(results[i].matchData.metadata)[0]
+          var match_pos = results[i].matchData.metadata[query].content.position
         var result_num = match_pos.length
         var match_start = match_pos[0][0]
-        var match_end = match_pos[0][1]  
+        var match_end = match_start + match_pos[0][1]  
         var start_pos =  Math.max(match_start - 50, 0)
         var end_pos = Math.min(start_pos + 150, item.content.length)
         appendString += `<p>${item.content.substring(start_pos, match_start)}<mark>${item.content.substring(match_start, match_end)}</mark>${item.content.substring(match_end, end_pos)}...</p></li>`;
