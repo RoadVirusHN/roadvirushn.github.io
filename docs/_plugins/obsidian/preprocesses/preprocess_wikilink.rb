@@ -1,51 +1,69 @@
 module PreprocessWikiLink
-  OBSIDIAN_LINK_REGEX = %r{(?<!!)\[\[((?:(?!https?://).*/)?(?:([^|/\^\#*?\]\[]+)))?((?:(?:\#[^#\]\[)|]*(?![|\]]))*(\#[^)\]|]*)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?(?:\|([^\#|\]\[]+))?\]\](?=[^`]*(?:`[^`]*`[^`]*)*\Z)}
-  MARKDOWN_LINK_REGEX = %r{(?<!!)\[([^\#|\]]+)?\]\((?:(?:(?!https?://).*/)?(?:(?:([^|/\^\#*?\]\[.]+)(?:.[a-z]{2,3})?))?((?:(?:\#[^#`)(]+?)+?(?!\)))?(\#[^#`)(]+)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?\)(?=[^`]*(?:`[^`]*`[^`]*)*\Z)}
+  OBSIDIAN_LINK_REGEX = %r{(?<!!)\[\[((?:(?!https?:\/\/).*\/)?(?:([^|/\^\#*?\]\[]+)))?((?:(?:\#[^#\]\[)|]*(?![|\]]))*(\#[^)\]|]*)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?(?:\|([^\#|\]\[]+))?\]\](?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
+  MARKDOWN_LINK_REGEX = %r{(?<!!)\[([^\#|\]]+)?\]\((?:(?:(?!https?:\/\/).*\/)?(?:(?:([^|\/\^\#*?\]\[.]+)(?:.[a-z]{2,3})?))?((?:(?:\#[^#`)(]+?)+?(?!\)))?(\#[^#`)(]+)?)?)?(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&\/=]*))?\)(?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
 
-  def convert_wiki_link(site, post)
+  # rubocop:disable Metrics/MethodLength(RuboCop)
+  def convert_wikilink(site, post)
     post.content
-        .gsub(MARKDOWN_LINK_REGEX) do 
+        .gsub(MARKDOWN_LINK_REGEX) do
       build_markdown_link({
-        altText: Regexp.last_match(1),
-        postName: Regexp.last_match(2)&.gsub('%20', ' '),
-        rawHeadings: Regexp.last_match(3),
-        targetHeading: Regexp.last_match(4),
-        externalURL: Regexp.last_match(5)
-      }, site, post)
+                            alt_text: Regexp.last_match(1),
+                            post_name: Regexp.last_match(2)&.gsub('%20', ' '),
+                            raw_headings: Regexp.last_match(3),
+                            target_heading: Regexp.last_match(4),
+                            external_url: Regexp.last_match(5)
+                          }, site, post)
     end
         .gsub(OBSIDIAN_LINK_REGEX) do
       build_markdown_link({
-        altText: Regexp.last_match(6),
-        postName: Regexp.last_match(2),
-        externalURL: Regexp.last_match(5),
-        rawHeadings: Regexp.last_match(3),
-        targetHeading: Regexp.last_match(4)
-      }, site, post)
+                            alt_text: Regexp.last_match(6),
+                            post_name: Regexp.last_match(2),
+                            external_url: Regexp.last_match(5),
+                            raw_headings: Regexp.last_match(3),
+                            target_heading: Regexp.last_match(4)
+                          }, site, post)
     end
   end
+  # rubocop:enable Metrics/MethodLength(RuboCop)
 
-  def build_markdown_link(linkData, site, post)
-    # Destructuring Hash to each variables.
-    altText, externalURL, postName, rawHeadings, targetHeading =
-      linkData.values_at(:altText, :externalURL, :postName, :rawHeadings, :targetHeading)
-    # Set innerText of <a> tag by priorities.
-    innerText = \
-      altText \
-        || externalURL \
-        || raw_headings_to_innertext((postName || '') + (rawHeadings || '')) \
-        || 'Empty Link'
-    isInternalLink = postName ? post['title'] == postName : (targetHeading || externalURL&.include?(post.url))
+  def build_markdown_link(link_data, site, post)
+    innertext = build_innertext(link_data)
 
-    # Set href property of <a> tag. Check the outlink post name, then Link to desired headings.
-    href = \
-      externalURL \
-        || (if isInternalLink
-              (raw_headings_to_href(rawHeadings) || '#')
-            else
-              link_to_other_post(site.posts, postName, targetHeading)
-            end)
+    is_link_in_this_post = link_in_this_post?(link_data, post)
 
-    format("[%s](%s)#{'{:target="_blank"}' unless isInternalLink}", innerText || '🔗', href)
+    href = build_href(site, link_data, is_link_in_this_post)
+
+    add_link_properties(link_data[:external_url], is_link_in_this_post, innertext, href)
+  end
+
+  def add_link_properties(external_url, is_link_in_this_post, innertext, href)
+    "[#{innertext || '🔗'}](#{href}){: .wikilink}#{'{:target="_blank"}' unless is_link_in_this_post}#{'{: .externallink}' if external_url}"
+  end
+
+  def link_in_this_post?(link_data, post)
+    external_url, post_name, target_heading =
+      link_data.values_at(:external_url, :post_name, :target_heading)
+    file_name = "#{post.date.strftime('%Y-%m-%d')}-#{post['slug']}"
+    post_name ? (post_name == post['title'] || post_name == file_name) : (target_heading || external_url&.include?(post.url))
+  end
+
+  def build_innertext(link_data)
+    alt_text, external_url, post_name, raw_headings =
+      link_data.values_at(:alt_text, :external_url, :post_name, :raw_headings)
+
+    alt_text || external_url || raw_headings_to_innertext((post_name || '') + (raw_headings || '')) || 'Empty Link'
+  end
+
+  def build_href(site, link_data, is_link_in_this_post)
+    external_url, post_name, target_heading =
+      link_data.values_at(:external_url, :post_name, :target_heading)
+
+    external_url || \
+      (if is_link_in_this_post
+         (raw_headings_to_href(target_heading) || '#')
+       else
+         link_to_other_post(site.posts, post_name, target_heading)
+       end)
   end
 
   def raw_headings_to_innertext(string)
@@ -56,16 +74,21 @@ module PreprocessWikiLink
     string&.downcase&.gsub(/^#+ +/, '')&.gsub(%r{[!@$%^&*()_+\-=\[\]{};':"\\|,.<>/? ]+$}, '')&.gsub(%r{^[!@$%^&*()_+\-=\[\]{};':"\\|,.<>/? ]+}, '')&.gsub(%r{[!@$%^&*()_+\-=\[\]{};':"\\|,.<>/? ]+}, '-')
   end
 
-  def link_to_other_post(posts, postName, targetHeading)
-    post = posts.docs.filter do |doc|
-      doc['title'] == postName || doc.basename.gsub(doc.extname, '') == postName
+  def link_to_other_post(posts, post_name, target_heading)
+    post = find_post_by_name(posts, post_name)
+
+    if post.length == 1
+      post[0].url + (raw_headings_to_href(target_heading) || '')
+    elsif post.length > 1
+      raise "ERROR post title: #{post_name} => Duplicated posts."
+    elsif post.empty?
+      raise "ERROR post title: #{post_name} => No such a post in your website."
     end
-    if post.length > 1
-      raise "ERROR post title: #{postName} => Duplicated posts."
-    elsif post.length == 1
-      post[0].url + (raw_headings_to_href(targetHeading) || '')
-    else
-      raise "ERROR post title: #{postName} => No such a post in your website."
+  end
+
+  def find_post_by_name(posts, post_name)
+    posts.docs.filter do |doc|
+      post_name == doc['title'] || post_name == doc.basename.gsub(doc.extname, '')
     end
   end
 end
