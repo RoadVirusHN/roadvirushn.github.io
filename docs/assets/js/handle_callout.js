@@ -1,8 +1,10 @@
 "use strict";
 function hide_card(event) {
-    var _a;
+    var _a, _b;
     var target = event.target;
-    var card = (_a = target.parentNode) === null || _a === void 0 ? void 0 : _a.nextSibling;
+    var card = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.nextElementSibling;
+    if (!card)
+        throw new Error(`No card in ${(_b = target.parentElement) === null || _b === void 0 ? void 0 : _b.innerText} here`);
     if (card.style.display == "none") {
         card.style.display = "block";
         target.innerText = "🔼";

@@ -1,6 +1,8 @@
 function hide_card(event: PointerEvent){
     var target = event.target! as HTMLElement;
-    var card = target.parentNode?.nextSibling as HTMLElement;
+    var card = target.parentElement?.nextElementSibling as HTMLElement;
+    if (!card) throw new Error(`No card in ${target.parentElement?.innerText} here`);
+    
     if (card.style.display == "none"){
         card.style.display = "block";
         target.innerText = "🔼";

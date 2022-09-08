@@ -40,7 +40,7 @@ div.callout button.copy {
 
 div.ad-info {
   background-color: floralwhite;
-  border-left: solid 8px skyblue;
+  border-left: solid 8px darkblue;
 }
 
 div.ad-info > div.header {
@@ -57,8 +57,9 @@ div.ad-example > div.header {
 }
 
 div.ad-note {
+  display: block;
   background-color: floralwhite;
-  border-left: solid 8px blue;
+  border-left: solid 8px firebrick;
 }
 
 div.ad-note > div.header {
