@@ -1,0 +1,30 @@
+/* Link-warning container */
+.link-warning {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want
+    dots under the hoverable text */
+    width: max-content;
+  }
+  
+  .link-warning button {
+    margin: 5px;
+  }
+
+  /* Link-warning text */
+  .link-warning .link-warning-text {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 6px;
+    width: max-content;
+    /* Position the link-warning text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform:translateX(-50%); 
+    line-height: 1.5;
+  }

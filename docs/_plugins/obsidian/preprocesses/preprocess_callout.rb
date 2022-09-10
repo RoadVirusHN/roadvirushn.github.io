@@ -12,7 +12,7 @@ module PreprocessCallout
       copy = Regexp.last_match(5).nil? ? '' : 'c'
       content = Regexp.last_match(6)
       collapse = collapse == 'open' ? '+' : '-' unless collapse.nil?
-      "\n<!-- #@#callout-#{type}#@##{title}#@##{collapse}#{copy} -->\n#{content}\n<!-- @#@-#{type}@#@#{title}@#@ -->\n\n"
+      "\n<!-- #@#callout-#{type}#@##{title}#@##{collapse}#{copy} -->\n#{"title: #{title}\n\n" if title}#{content}\n<!-- @#@-#{type}@#@#{title}@#@ -->\n\n"
     end
   end
 end

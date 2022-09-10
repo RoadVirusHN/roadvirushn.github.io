@@ -1,5 +1,21 @@
 {
-  "dependencies": {
-    "typescript": "^4.7.4"
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/lunr": "^2.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.3"
   }
 }
