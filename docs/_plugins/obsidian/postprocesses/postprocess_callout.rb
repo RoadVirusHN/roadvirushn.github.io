@@ -18,7 +18,7 @@ module PostprocessCallout
     type, index, emoji, title, collapse, content, copy = \
       data.values_at(:type, :index, :emoji, :title, :collapse, :content, :copy)
     converted_title, content = get_converted_title(title, content)
-    "<div class=\"callout ad-#{type}\" id=\"callout-#{index}\">
+    "<div class=\"callout callout-#{type}\" id=\"callout-#{index}\">
       <div class=\"header\">
         <span class=\"emoji\">#{emoji}</span>
         <span class=\"title\"><strong>#{title == '' ? type : converted_title}</strong></span>
@@ -29,21 +29,24 @@ module PostprocessCallout
   end
 
   def build_collapse(collapse)
-    "<button class=\"collapse\" onclick=\"hide_card(event); console.log('works');\">#{collapse == '-' ? '🔽' : '🔼'}</button>"
+    "<button class=\"collapse\" onclick=\"hideCard(event);\">#{collapse == '-' ? '🔽' : '🔼'}</button>"
   end
 
   def build_content(content, collapse, copy)
     return '' if content.gsub(/\s/, '').empty?
 
     "<div class=\"card\" name=\"card\" style=#{collapse == '-' ? 'display:none;' : 'display:block;'}>
-    #{'<button class="copy" onclick="copy_content(event)">📋</button>' unless copy.nil?}
+    #{'<button class="copy" onclick="copyContent(event)">📋</button><span class="copy-text"> copy success! </span>' unless copy.nil?}
     <div class=\"content\" name=\"content\">#{content}</div>
     </div>"
   end
 
   def get_converted_title(title, content)
-    converted_title = title
-    converted_title = content.lines.first.sub(%r{<p>title: ([\s\S]*?)</p>}) { Regexp.last_match(1) } if content && title
+    converted_title = if content && title
+                        content.lines.first.sub(%r{<p>title: ([\s\S]*?)</p>}) { Regexp.last_match(1) }
+                      else
+                        title
+                      end
     content = content.lines[1..].join if content && title != ''
     [converted_title, content]
   end

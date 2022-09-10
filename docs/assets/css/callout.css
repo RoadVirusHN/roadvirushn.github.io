@@ -35,69 +35,69 @@ div.callout button.copy {
   width: 32px;
   height: 32px;
   text-align: center;
-  border-radius: 30%;
+  border-radius: 30% 
 }
 
-div.ad-info {
+div.callout-info {
   background-color: floralwhite;
   border-left: solid 8px darkblue;
 }
 
-div.ad-info > div.header {
+div.callout-info > div.header {
   background-color: turquoise;
 }
 
-div.example {
+div.callout-example {
   background-color: floralwhite;
   border-left: solid 8px blueviolet;
 }
 
-div.ad-example > div.header {
+div.callout-example > div.header {
   background-color: lavender;
 }
 
-div.ad-note {
+div.callout-note {
   display: block;
   background-color: floralwhite;
   border-left: solid 8px firebrick;
 }
 
-div.ad-note > div.header {
+div.callout-note > div.header {
   background-color: royalblue;
 }
 
-div.ad-warning {
+div.callout-warning {
   background-color: floralwhite;
   border-left: solid 8px orange;
 }
 
-div.ad-warning > div.header {
+div.callout-warning > div.header {
   background-color: peachpuff;
 }
 
-div.ad-danger {
+div.callout-danger {
   background-color: floralwhite;
   border-left: solid 8px red;
 }
 
-div.ad-danger > div.header {
+div.callout-danger > div.header {
   background-color: lightcoral;
 }
 
-div.ad-seealso {
+div.callout-seealso {
   background-color: floralwhite;
   border-left: solid 8px forestgreen;
 }
 
-div.ad-seealso > div.header {
+div.callout-seealso > div.header {
   background-color: darkseagreen;
 }
 
-div.ad-tip {
+div.callout-tip {
   background-color: floralwhite;
   border-left: solid 8px aqua;
 }
 
-div.ad-tip > div.header {
+div.callout-tip > div.header {
   background-color: cadetblue;
 }
