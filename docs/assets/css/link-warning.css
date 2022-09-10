@@ -7,6 +7,10 @@
     width: max-content;
   }
   
+  .link-warning button {
+    margin: 5px;
+  }
+
   /* Link-warning text */
   .link-warning .link-warning-text {
     visibility: hidden;

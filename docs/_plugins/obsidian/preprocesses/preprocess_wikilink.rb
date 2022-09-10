@@ -4,7 +4,7 @@ module PreprocessWikiLink
 
   # rubocop:disable Metrics/MethodLength(RuboCop)
   def convert_wikilink(site, post)
-    post.content
+    content = post.content
         .gsub(MARKDOWN_LINK_REGEX) do
       build_markdown_link({
                             alt_text: Regexp.last_match(1),
@@ -14,7 +14,7 @@ module PreprocessWikiLink
                             external_url: Regexp.last_match(5)
                           }, site, post)
     end
-        .gsub(OBSIDIAN_LINK_REGEX) do
+    content.gsub(OBSIDIAN_LINK_REGEX) do
       build_markdown_link({
                             alt_text: Regexp.last_match(6),
                             post_name: Regexp.last_match(2),
