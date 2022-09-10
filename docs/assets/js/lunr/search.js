@@ -1,68 +1,61 @@
 (function () {
-  function displaySearchResults(results, store) {
-    var searchResults = document.getElementById("search-results");
-    console.log(results);
-    if (results.length) {
-      // Are there any results?
-      var appendString = "";
-
-      for (var i = 0; i < results.length; i++) {
-        // Iterate over the results
-        var item = store[results[i].ref];
-        appendString +=
-          `<li><a href="${item.url}"><h4>${item.title}</h4></a>`;
-          var query = Object.keys(results[i].matchData.metadata)[0]
-          var match_pos = results[i].matchData.metadata[query].content.position
-        var result_num = match_pos.length
-        var match_start = match_pos[0][0]
-        var match_end = match_start + match_pos[0][1]  
-        var start_pos =  Math.max(match_start - 50, 0)
-        var end_pos = Math.min(start_pos + 150, item.content.length)
-        appendString += `<p>${item.content.substring(start_pos, match_start)}<mark>${item.content.substring(match_start, match_end)}</mark>${item.content.substring(match_end, end_pos)}...</p></li>`;
-        if (result_num - 1 > 0) appendString += `<p>...그리고 ${result_num - 1}개의 추가 일치들</p>`; 
-      }
-
-      searchResults.innerHTML = appendString;
-    } else {
-      searchResults.innerHTML = "<li>검색 결과가 없습니다.</li>";
+    var _a;
+    function displaySearchResults(results, store) {
+        const searchResults = document.getElementById("search-results");
+        if (searchResults === null) {
+            throw Error("No search-results tag founded");
+        }
+        if (results.length !== 0) {
+            let appendString = "";
+            for (let i = 0; i < results.length; i++) {
+                const item = store[results[i].ref];
+                appendString += `<li><a href="${item.url}"><h4>${item.title}</h4></a>`;
+                const query = Object.keys(results[i].matchData.metadata)[0];
+                const matchPositions = results[i].matchData.metadata[query].content.position;
+                const resultNum = matchPositions.length;
+                const matchStart = matchPositions[0][0];
+                const matchEnd = matchStart + matchPositions[0][1];
+                const startPos = Math.max(matchStart - 50, 0);
+                const endPos = Math.min(startPos + 150, item.content.length);
+                appendString += `<p>${item.content.substring(startPos, matchStart)}<mark>${item.content.substring(matchStart, matchEnd)}</mark>${item.content.substring(matchEnd, endPos)}...</p></li>`;
+                if (resultNum - 1 > 0)
+                    appendString += `<p>...그리고 ${resultNum - 1}개의 추가 일치들</p>`;
+            }
+            searchResults.innerHTML = appendString;
+        }
+        else {
+            searchResults.innerHTML = "<li>검색 결과가 없습니다.</li>";
+        }
     }
-  }
-
-  function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-
-    for (var i = 0; i < vars.length; i++) {
-      var pair = vars[i].split("=");
-
-      if (pair[0] === variable) {
-        return decodeURIComponent(pair[1].replace(/\+/g, "%20"));
-      }
+    function getQueryVariable(variable) {
+        const query = window.location.search.substring(1);
+        const vars = query.split("&");
+        for (let i = 0; i < vars.length; i++) {
+            const pair = vars[i].split("=");
+            if (pair[0] === variable) {
+                return decodeURIComponent(pair[1].replace(/\+/g, "%20"));
+            }
+        }
+        throw new Error("no search query detected");
     }
-  }
-
-  var searchTerm = getQueryVariable("query");
-
-  if (searchTerm) {
-    document.getElementById("search-box").setAttribute("value", searchTerm);
-    // Initalize lunr with the fields it will be searching on. I've given title
-    // a boost of 10 to indicate matches on this field are more important.
-    var idx = lunr(function () {
-      this.field("id");
-      this.field("title", { boost: 10 });
-      this.field("content");
-      this.metadataWhitelist = ['position']
-
-      for (var key in window.store) {
-        // Add the data to lunr
-        this.add({
-          id: key,
-          title: window.store[key].title,
-          content: window.store[key].content,
-        });
-      }
+    const searchTerm = getQueryVariable("query");
+    (_a = document.getElementById("search-box")) === null || _a === void 0 ? void 0 : _a.setAttribute("value", searchTerm);
+    const storedWindow = window;
+    const idx = lunr(function () {
+        this.field("id");
+        this.field("title", { boost: 10 });
+        this.field("content");
+        this.metadataWhitelist = ["position"];
+        for (const key in storedWindow.store) {
+            this.add({
+                id: key,
+                title: storedWindow.store[key].title,
+                content: storedWindow.store[key].content,
+            });
+        }
     });
-    var results = idx.search(searchTerm); // Get lunr to perform a search
-    displaySearchResults(results, window.store); // We'll write this in the next section
-  }
+    const results = idx.search(searchTerm);
+    displaySearchResults(results, storedWindow.store);
 })();
+export {};
+//# sourceMappingURL=search.js.map
