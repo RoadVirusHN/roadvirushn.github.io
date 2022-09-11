@@ -21,9 +21,16 @@ async function copyContent(event: PointerEvent): Promise<void> {
   ) as HTMLElement;
 
   await navigator.clipboard.writeText(content.innerText);
-  target.innerText = "✅";
-  (target.nextElementSibling as HTMLElement).style.visibility = "";
-  setTimeout(() => {
-    target.innerText = "📋";
-  }, 500);
+  const copyDiv = target.parentElement?.querySelectorAll(
+    ".copy-check:not(.animate)"
+  );
+  if (copyDiv !== undefined) {
+    for (const element of copyDiv) {
+      element.classList.add("animate");
+      element.addEventListener("animationend", () => {
+        console.log("animationend!");
+        element.classList.remove("animate");
+      });
+    }
+  }
 }

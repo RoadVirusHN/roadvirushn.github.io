@@ -24,16 +24,21 @@ function hideCard(event) {
     }
 }
 function copyContent(event) {
-    var _a;
+    var _a, _b;
     return __awaiter(this, void 0, void 0, function* () {
         const target = event.target;
         const content = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.children.namedItem("content");
         yield navigator.clipboard.writeText(content.innerText);
-        target.innerText = "✅";
-        target.nextElementSibling.style.visibility = "";
-        setTimeout(() => {
-            target.innerText = "📋";
-        }, 500);
+        const copyDiv = (_b = target.parentElement) === null || _b === void 0 ? void 0 : _b.querySelectorAll(".copy-check:not(.animate)");
+        if (copyDiv !== undefined) {
+            for (const element of copyDiv) {
+                element.classList.add("animate");
+                element.addEventListener("animationend", () => {
+                    console.log("animationend!");
+                    element.classList.remove("animate");
+                });
+            }
+        }
     });
 }
 //# sourceMappingURL=handle_callout.js.map

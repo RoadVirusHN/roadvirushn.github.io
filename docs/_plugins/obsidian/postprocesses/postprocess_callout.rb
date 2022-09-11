@@ -36,7 +36,13 @@ module PostprocessCallout
     return '' if content.gsub(/\s/, '').empty?
 
     "<div class=\"card\" name=\"card\" style=#{collapse == '-' ? 'display:none;' : 'display:block;'}>
-    #{'<button class="copy" onclick="copyContent(event)">📋</button><span class="copy-text"> copy success! </span>' unless copy.nil?}
+    #{unless copy.nil?
+        '<button class="copy" onclick="copyContent(event)">📋</button>
+        <button class="copy-check copy-emoji">✅
+          <span class="copy-check copy-text"> Copied! </span>
+        </button>
+        '
+      end}
     <div class=\"content\" name=\"content\">#{content}</div>
     </div>"
   end

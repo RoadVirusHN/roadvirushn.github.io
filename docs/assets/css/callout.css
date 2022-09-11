@@ -1,103 +1,114 @@
-div.callout {
-  border-radius: 4px 8px 8px 4px;
-  padding: 0px 5px 0px 5px;
-  box-shadow: 2px 2px 2px rgb(0 0 0 / 0.3);
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-div.callout > div.header {
-  border-radius: 0px 8px 0px 0px;
-  padding: 8px;
-  margin: -5px;
-}
-
-div.callout > div.card {
-  padding: 8px 8px 1px 8px;
-}
-
-div.callout button.collapse {
+div.callout button.collapse, div.callout button.copy, div.callout button.copy-emoji {
   text-align: right;
-  float: right;
   background-color: grey;
-  border-color: rgb(0 0 0 / 0);
-  border-radius: 30%;
-}
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 30%; }
 
-div.callout button.collapse:hover {
-  cursor: pointer;
-}
-
-div.callout button.copy {
-  background-color: grey;
-  border-color: rgb(0 0 0 / 0);
-  float: right;
+div.callout button.copy, div.callout button.copy-emoji {
   width: 32px;
   height: 32px;
+  position: absolute;
   text-align: center;
-  border-radius: 30% 
-}
+  right: 10px;
+  margin: 5px -5px -5px; }
 
+div.callout {
+  border-radius: 4px 8px 8px 4px;
+  padding: 0px 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  margin: 10px 0px; }
+  div.callout div.header {
+    border-radius: 0px 8px 0px;
+    padding: 8px;
+    margin: -5px; }
+  div.callout div.card {
+    padding: 8px 8px 1px;
+    position: relative; }
+  div.callout button.collapse {
+    float: right; }
+  div.callout button.collapse:hover {
+    cursor: pointer; }
+  div.callout span.copy-text::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent; }
+  div.callout span.copy-text {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    width: max-content;
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%); }
+  div.callout button.copy-emoji {
+    opacity: 0;
+    z-index: -1; }
+  div.callout .animate {
+    animation: copied 1.5s; }
+@keyframes copied {
+  0% {
+    opacity: 0;
+    z-index: 1; }
+  22% {
+    opacity: 1;
+    z-index: 1; }
+  77% {
+    opacity: 1;
+    z-index: 1; }
+  100% {
+    opacity: 0;
+    z-index: -1; } }
 div.callout-info {
   background-color: floralwhite;
-  border-left: solid 8px darkblue;
-}
-
-div.callout-info > div.header {
-  background-color: turquoise;
-}
+  border-left: solid 8px darkblue; }
+  div.callout-info div.header {
+    background-color: turquoise; }
 
 div.callout-example {
   background-color: floralwhite;
-  border-left: solid 8px blueviolet;
-}
-
-div.callout-example > div.header {
-  background-color: lavender;
-}
+  border-left: solid 8px blueviolet; }
+  div.callout-example div.header {
+    background-color: lavender; }
 
 div.callout-note {
-  display: block;
   background-color: floralwhite;
-  border-left: solid 8px firebrick;
-}
-
-div.callout-note > div.header {
-  background-color: royalblue;
-}
+  border-left: solid 8px firebrick; }
+  div.callout-note div.header {
+    background-color: royalblue; }
 
 div.callout-warning {
   background-color: floralwhite;
-  border-left: solid 8px orange;
-}
-
-div.callout-warning > div.header {
-  background-color: peachpuff;
-}
+  border-left: solid 8px orange; }
+  div.callout-warning div.header {
+    background-color: peachpuff; }
 
 div.callout-danger {
   background-color: floralwhite;
-  border-left: solid 8px red;
-}
-
-div.callout-danger > div.header {
-  background-color: lightcoral;
-}
+  border-left: solid 8px red; }
+  div.callout-danger div.header {
+    background-color: lightcoral; }
 
 div.callout-seealso {
   background-color: floralwhite;
-  border-left: solid 8px forestgreen;
-}
-
-div.callout-seealso > div.header {
-  background-color: darkseagreen;
-}
+  border-left: solid 8px forestgreen; }
+  div.callout-seealso div.header {
+    background-color: darkseagreen; }
 
 div.callout-tip {
   background-color: floralwhite;
-  border-left: solid 8px aqua;
-}
+  border-left: solid 8px aqua; }
+  div.callout-tip div.header {
+    background-color: cadetblue; }
 
-div.callout-tip > div.header {
-  background-color: cadetblue;
-}
+/*# sourceMappingURL=callout.css.map */
