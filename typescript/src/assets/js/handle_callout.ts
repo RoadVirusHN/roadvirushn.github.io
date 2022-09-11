@@ -1,17 +1,35 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-function hideCard(event: PointerEvent): void {
+function toggleCard(event: PointerEvent): void {
   const target = event.target as HTMLElement;
   const card = target.parentElement?.nextElementSibling as HTMLElement;
   if (card === undefined)
     throw new Error(`No card in ${target.parentElement?.innerText ?? ""} here`);
 
   if (card.style.display === "none") {
-    card.style.display = "block";
+    expandCallout(card);
     target.innerText = "🔼";
   } else {
-    card.style.display = "none";
+    shirinkCallout(card);
     target.innerText = "🔽";
   }
+}
+
+function shirinkCallout(card: HTMLElement): void {
+  card.classList.add("animate-shirink");
+  card.addEventListener("animationend", function shirinkCard() {
+    card.classList.remove("animate-shirink");
+    card.removeEventListener("animationend", shirinkCard);
+    card.style.display = "none";
+  });
+}
+
+function expandCallout(card: HTMLElement): void {
+  card.style.display = "block";
+  card.classList.add("animate-expand");
+  card.addEventListener("animationend", function expandCard() {
+    card.classList.remove("animate-expand");
+    card.removeEventListener("animationend", expandCard);
+  });
 }
 
 async function copyContent(event: PointerEvent): Promise<void> {
@@ -21,9 +39,19 @@ async function copyContent(event: PointerEvent): Promise<void> {
   ) as HTMLElement;
 
   await navigator.clipboard.writeText(content.innerText);
-  target.innerText = "✅";
-  (target.nextElementSibling as HTMLElement).style.visibility = "";
-  setTimeout(() => {
-    target.innerText = "📋";
-  }, 500);
+  const copyDiv = target.parentElement?.querySelectorAll(
+    ".copy-check:not(.animate)"
+  );
+  if (copyDiv !== undefined) {
+    playCopyAnimation(copyDiv);
+  }
+}
+
+function playCopyAnimation(copyDiv: NodeListOf<Element>): void {
+  for (const element of copyDiv) {
+    element.classList.add("animate");
+    element.addEventListener("animationend", () => {
+      element.classList.remove("animate");
+    });
+  }
 }
