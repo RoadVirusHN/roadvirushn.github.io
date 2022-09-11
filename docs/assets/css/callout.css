@@ -18,26 +18,42 @@ div.callout {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   margin: 10px 0px; }
   div.callout div.header {
-    border-radius: 0px 8px 0px;
+    border-radius: 0px 8px 0px 0px;
     padding: 8px;
     margin: -5px; }
   div.callout div.card {
     padding: 8px 8px 1px;
-    position: relative; }
+    overflow: hidden;
+    position: relative;
+    height: 100%; }
+  div.callout div.card.animate-expand {
+    animation: expand-card 0.5s ease-in; }
+@keyframes expand-card {
+  0% {
+    max-height: 0px; }
+  100% {
+    max-height: 768px; } }
+  div.callout div.card.animate-shirink {
+    animation: shirink-card 0.5s ease-in; }
+@keyframes shirink-card {
+  0% {
+    max-height: 768px; }
+  100% {
+    max-height: 0px; } }
   div.callout button.collapse {
     float: right; }
   div.callout button.collapse:hover {
     cursor: pointer; }
+  div.callout button.copy:hover {
+    cursor: pointer; }
   div.callout span.copy-text::after {
     content: " ";
     position: absolute;
-    bottom: 100%;
-    /* At the bottom of the tooltip */
-    left: 50%;
-    margin-left: -5px;
+    bottom: 45%;
+    left: 100%;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent black transparent; }
+    border-color: transparent transparent transparent black; }
   div.callout span.copy-text {
     background-color: black;
     color: #fff;
@@ -48,8 +64,8 @@ div.callout {
     position: absolute;
     z-index: 0;
     opacity: 0;
-    top: 130%;
-    left: 50%;
+    top: -10%;
+    left: -150%;
     transform: translateX(-50%); }
   div.callout button.copy-emoji {
     opacity: 0;

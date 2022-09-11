@@ -8,20 +8,36 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function hideCard(event) {
+function toggleCard(event) {
     var _a, _b, _c;
     const target = event.target;
     const card = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.nextElementSibling;
     if (card === undefined)
         throw new Error(`No card in ${(_c = (_b = target.parentElement) === null || _b === void 0 ? void 0 : _b.innerText) !== null && _c !== void 0 ? _c : ""} here`);
     if (card.style.display === "none") {
-        card.style.display = "block";
+        expandCallout(card);
         target.innerText = "🔼";
     }
     else {
-        card.style.display = "none";
+        shirinkCallout(card);
         target.innerText = "🔽";
     }
+}
+function shirinkCallout(card) {
+    card.classList.add("animate-shirink");
+    card.addEventListener("animationend", function shirinkCard() {
+        card.classList.remove("animate-shirink");
+        card.removeEventListener("animationend", shirinkCard);
+        card.style.display = "none";
+    });
+}
+function expandCallout(card) {
+    card.style.display = "block";
+    card.classList.add("animate-expand");
+    card.addEventListener("animationend", function expandCard() {
+        card.classList.remove("animate-expand");
+        card.removeEventListener("animationend", expandCard);
+    });
 }
 function copyContent(event) {
     var _a, _b;
@@ -31,14 +47,16 @@ function copyContent(event) {
         yield navigator.clipboard.writeText(content.innerText);
         const copyDiv = (_b = target.parentElement) === null || _b === void 0 ? void 0 : _b.querySelectorAll(".copy-check:not(.animate)");
         if (copyDiv !== undefined) {
-            for (const element of copyDiv) {
-                element.classList.add("animate");
-                element.addEventListener("animationend", () => {
-                    console.log("animationend!");
-                    element.classList.remove("animate");
-                });
-            }
+            playCopyAnimation(copyDiv);
         }
     });
+}
+function playCopyAnimation(copyDiv) {
+    for (const element of copyDiv) {
+        element.classList.add("animate");
+        element.addEventListener("animationend", () => {
+            element.classList.remove("animate");
+        });
+    }
 }
 //# sourceMappingURL=handle_callout.js.map

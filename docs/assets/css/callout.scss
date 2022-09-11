@@ -29,21 +29,47 @@ div.callout {
   margin: 10px 0px;
 
   div.header {
-    border-radius: 0px 8px 0px;
+    border-radius: 0px 8px 0px 0px;
     padding: 8px;
     margin: -5px;
   }
 
   div.card {
     padding: 8px 8px 1px;
+    overflow: hidden;
     position: relative;
+    height: 100%;
+  }
+
+  div.card.animate-expand {
+    animation: expand-card 0.5s ease-in;
+  }
+  @keyframes expand-card {
+    0%{
+      max-height: 0px;
+    }
+    100%{
+      max-height: 768px;
+    }
+  }
+
+  div.card.animate-shirink {
+    animation: shirink-card 0.5s ease-in;
+  }
+
+  @keyframes shirink-card {
+    0%{
+      max-height: 768px;
+    }
+    100%{
+      max-height: 0px;
+    }
   }
 
   button.collapse {
     @extend %button-shared;
     float: right;
   }
-
   button.collapse:hover {
     cursor: pointer;
   }
@@ -52,16 +78,18 @@ div.callout {
     @extend %button-shared;
     @extend %copy-shared;
   }
+  button.copy:hover {
+    cursor: pointer;
+  }
 
   span.copy-text::after {
     content: " ";
     position: absolute;
-    bottom: 100%; /* At the bottom of the tooltip */
-    left: 50%;
-    margin-left: -5px;
+    bottom: 45%;
+    left: 100%;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent black transparent;
+    border-color: transparent transparent transparent black;
   }
 
   span.copy-text {
@@ -74,8 +102,8 @@ div.callout {
     position: absolute;
     z-index: 0;
     opacity: 0;
-    top: 130%;
-    left: 50%;
+    top: -10%;
+    left: -150%;
     transform: translateX(-50%);
   }
 
