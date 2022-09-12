@@ -8,12 +8,45 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+window.onload = function () {
+    setCallout();
+};
+function setCallout() {
+    const arrayOfCard = document.querySelectorAll(".callout");
+    for (const callout of arrayOfCard) {
+        const collapse = callout.querySelector("button.collapse");
+        if (collapse === null)
+            continue;
+        const calloutId = callout.id;
+        const card = callout.querySelector(".card");
+        if (card === null || calloutId === undefined)
+            throw new Error(`No card in ${calloutId !== null && calloutId !== void 0 ? calloutId : ""} here`);
+        setCalloutAnim(calloutId, card);
+        card.style.display = collapse.innerText === "🔼" ? "block" : "none";
+    }
+}
+function setCalloutAnim(calloutId, card) {
+    const style = document.createElement("style");
+    style.id = calloutId;
+    const height = card.offsetHeight;
+    style.innerHTML = `\
+        div#${calloutId} div.card.animate-expand {
+          animation: expand-card-${calloutId} 0.3s ease-in;
+        }
+        div#${calloutId} div.card.animate-shirink {
+          animation: shirink-card-${calloutId} 0.3s ease-in;
+        }
+        @keyframes expand-card-${calloutId}\
+         { 0% { max-height: 0px; } 100% { max-height: ${height + 10}px; }}
+        @keyframes shirink-card-${calloutId}\
+        { 0% { max-height: ${height + 10}px; } 100% { max-height: 0px; }}
+        `;
+    document.getElementsByTagName("head")[0].appendChild(style);
+}
 function toggleCard(event) {
-    var _a, _b, _c;
+    var _a;
     const target = event.target;
     const card = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.nextElementSibling;
-    if (card === undefined)
-        throw new Error(`No card in ${(_c = (_b = target.parentElement) === null || _b === void 0 ? void 0 : _b.innerText) !== null && _c !== void 0 ? _c : ""} here`);
     if (card.style.display === "none") {
         expandCallout(card);
         target.innerText = "🔼";
