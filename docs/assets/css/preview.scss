@@ -1,0 +1,43 @@
+span.preview-wrapper {
+  display:inline-table;
+  a {
+    transition: 0.5s;
+  }
+  iframe.preview {
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+    width: 95%;
+    height: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    border-radius: 6px;
+    border: none;
+    z-index: 1;
+    background-color: black;
+  }
+}
+
+span.preview-wrapper:hover {
+  a {
+    transition: 0.5s;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    font-style: oblique;
+    padding: 10px;
+    font-size: larger;
+  }
+  iframe.preview {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}

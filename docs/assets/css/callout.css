@@ -1,3 +1,9 @@
+pre {
+  overflow-x: hidden; }
+  pre code {
+    overflow-wrap: break-word;
+    white-space: pre-wrap; }
+
 div.callout button.collapse, div.callout button.copy, div.callout button.copy-emoji {
   text-align: right;
   background-color: grey;
