@@ -79,6 +79,7 @@ exclude:
     "vendor/cache/",
     "vendor/gems/",
     "vendor/ruby/",
+    "/typescript/"
   ]
 # Exclude from processing.
 # The following items will not be processed, by default.

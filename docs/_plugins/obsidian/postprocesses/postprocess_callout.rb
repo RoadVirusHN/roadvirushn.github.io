@@ -24,7 +24,7 @@ module PostprocessCallout
         <span class=\"title\"><strong>#{title == '' ? type : converted_title}</strong></span>
         #{build_collapse(collapse) unless collapse.nil?}
       </div>
-      #{build_content(content, collapse, copy)}
+      #{build_content(content, copy)}
     </div>"
   end
 
@@ -32,14 +32,14 @@ module PostprocessCallout
     "<button class=\"collapse\" onclick=\"toggleCard(event);\">#{collapse == '-' ? '🔽' : '🔼'}</button>"
   end
 
-  def build_content(content, collapse, copy)
+  def build_content(content, copy)
     return '' if content.gsub(/\s/, '').empty?
 
-    "<div class=\"card\" name=\"card\" style=#{collapse == '-' ? 'display:none;' : 'display:block;'}>
+    "<div class=\"card\" name=\"card\">
     #{unless copy.nil?
         '<button class="copy" onclick="copyContent(event)">📋</button>
         <button class="copy-check copy-emoji">✅
-        <span class="copy-check copy-text"> Copied! </span>
+          <span class="copy-check copy-text"> Copied! </span>
         </button>
         '
       end}

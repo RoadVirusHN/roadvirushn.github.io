@@ -1,9 +1,45 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+window.onload = function () {
+  setCallout();
+};
+
+function setCallout(): void {
+  const arrayOfCard = document.querySelectorAll(".callout");
+
+  for (const callout of arrayOfCard) {
+    const collapse = callout.querySelector("button.collapse") as HTMLElement;
+    if (collapse === null) continue;
+    const calloutId = callout.id;
+    const card = callout.querySelector(".card") as HTMLElement;
+    if (card === null || calloutId === undefined)
+      throw new Error(`No card in ${calloutId ?? ""} here`);
+    setCalloutAnim(calloutId, card);
+    card.style.display = collapse.innerText === "🔼" ? "block" : "none";
+  }
+}
+
+function setCalloutAnim(calloutId: string, card: HTMLElement): void {
+  const style = document.createElement("style");
+  style.id = calloutId;
+  const height = card.offsetHeight;
+  style.innerHTML = `\
+        div#${calloutId} div.card.animate-expand {
+          animation: expand-card-${calloutId} 0.3s ease-in;
+        }
+        div#${calloutId} div.card.animate-shirink {
+          animation: shirink-card-${calloutId} 0.3s ease-in;
+        }
+        @keyframes expand-card-${calloutId}\
+         { 0% { max-height: 0px; } 100% { max-height: ${height + 10}px; }}
+        @keyframes shirink-card-${calloutId}\
+        { 0% { max-height: ${height + 10}px; } 100% { max-height: 0px; }}
+        `;
+  document.getElementsByTagName("head")[0].appendChild(style);
+}
+
 function toggleCard(event: PointerEvent): void {
   const target = event.target as HTMLElement;
   const card = target.parentElement?.nextElementSibling as HTMLElement;
-  if (card === undefined)
-    throw new Error(`No card in ${target.parentElement?.innerText ?? ""} here`);
 
   if (card.style.display === "none") {
     expandCallout(card);
