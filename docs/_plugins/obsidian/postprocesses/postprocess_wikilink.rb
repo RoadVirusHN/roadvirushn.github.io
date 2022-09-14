@@ -24,7 +24,8 @@ module PostprocessWikilink
   def change_internal_link(href, a_tag)
     "<span class=\"preview-wrapper\">
       #{a_tag}
-      <iframe class=\"preview\" src=\"#{href}\"></iframe>
+      <iframe class=\"preview\" src=\"#{href}\" style=\"display:none;\" sandbox=\"allow-same-origin allow-scripts\">
+      </iframe>
     </span>"
   end
 end
