@@ -29,7 +29,6 @@ div.callout {
     margin: -5px; }
   div.callout div.card {
     padding: 8px;
-    overflow: hidden;
     position: relative;
     height: 100%; }
   div.callout button.collapse {

@@ -8,9 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-window.onload = function () {
+window.addEventListener("load", calloutLoad, false);
+function calloutLoad() {
     setCallout();
-};
+}
 function setCallout() {
     const arrayOfCard = document.querySelectorAll(".callout");
     for (const callout of arrayOfCard) {
@@ -26,6 +27,7 @@ function setCallout() {
     }
 }
 function setCalloutAnim(calloutId, card) {
+    var _a;
     const style = document.createElement("style");
     style.id = calloutId;
     const height = card.offsetHeight;
@@ -41,7 +43,7 @@ function setCalloutAnim(calloutId, card) {
         @keyframes shirink-card-${calloutId}\
         { 0% { max-height: ${height + 10}px; } 100% { max-height: 0px; }}
         `;
-    document.getElementsByTagName("head")[0].appendChild(style);
+    (_a = document.querySelector("article.post")) === null || _a === void 0 ? void 0 : _a.appendChild(style);
 }
 function toggleCard(event) {
     var _a;
@@ -58,6 +60,7 @@ function toggleCard(event) {
 }
 function shirinkCallout(card) {
     card.classList.add("animate-shirink");
+    card.style.overflow = "hidden";
     card.addEventListener("animationend", function shirinkCard() {
         card.classList.remove("animate-shirink");
         card.removeEventListener("animationend", shirinkCard);
@@ -65,11 +68,13 @@ function shirinkCallout(card) {
     });
 }
 function expandCallout(card) {
+    card.style.overflow = "hidden";
     card.style.display = "block";
     card.classList.add("animate-expand");
     card.addEventListener("animationend", function expandCard() {
         card.classList.remove("animate-expand");
         card.removeEventListener("animationend", expandCard);
+        card.style.overflow = "visible";
     });
 }
 function copyContent(event) {

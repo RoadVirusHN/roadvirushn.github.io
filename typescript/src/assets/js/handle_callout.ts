@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-window.onload = function () {
+window.addEventListener("load", calloutLoad, false);
+function calloutLoad(): void {
   setCallout();
-};
+}
 
 function setCallout(): void {
   const arrayOfCard = document.querySelectorAll(".callout");
@@ -34,7 +35,7 @@ function setCalloutAnim(calloutId: string, card: HTMLElement): void {
         @keyframes shirink-card-${calloutId}\
         { 0% { max-height: ${height + 10}px; } 100% { max-height: 0px; }}
         `;
-  document.getElementsByTagName("head")[0].appendChild(style);
+  document.querySelector("article.post")?.appendChild(style);
 }
 
 function toggleCard(event: PointerEvent): void {
@@ -52,6 +53,7 @@ function toggleCard(event: PointerEvent): void {
 
 function shirinkCallout(card: HTMLElement): void {
   card.classList.add("animate-shirink");
+  card.style.overflow = "hidden";
   card.addEventListener("animationend", function shirinkCard() {
     card.classList.remove("animate-shirink");
     card.removeEventListener("animationend", shirinkCard);
@@ -60,11 +62,13 @@ function shirinkCallout(card: HTMLElement): void {
 }
 
 function expandCallout(card: HTMLElement): void {
+  card.style.overflow = "hidden";
   card.style.display = "block";
   card.classList.add("animate-expand");
   card.addEventListener("animationend", function expandCard() {
     card.classList.remove("animate-expand");
     card.removeEventListener("animationend", expandCard);
+    card.style.overflow = "visible";
   });
 }
 
