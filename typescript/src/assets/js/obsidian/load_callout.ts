@@ -1,10 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-window.addEventListener("load", calloutLoad, false);
-function calloutLoad(): void {
-  setCallout();
-}
-
-function setCallout(): void {
+export default function loadCallout(): void {
   const arrayOfCard = document.querySelectorAll(".callout");
 
   for (const callout of arrayOfCard) {
@@ -22,23 +16,24 @@ function setCallout(): void {
 function setCalloutAnim(calloutId: string, card: HTMLElement): void {
   const style = document.createElement("style");
   style.id = calloutId;
+  const randomId = calloutId + Math.random().toString(16).slice(2);
   const height = card.offsetHeight;
   style.innerHTML = `\
         div#${calloutId} div.card.animate-expand {
-          animation: expand-card-${calloutId} 0.3s ease-in;
+          animation: expand-card-${randomId} 0.2s ease-out;
         }
         div#${calloutId} div.card.animate-shirink {
-          animation: shirink-card-${calloutId} 0.3s ease-in;
+          animation: shirink-card-${randomId} 0.2s ease-out;
         }
-        @keyframes expand-card-${calloutId}\
+        @keyframes expand-card-${randomId}\
          { 0% { max-height: 0px; } 100% { max-height: ${height + 10}px; }}
-        @keyframes shirink-card-${calloutId}\
+        @keyframes shirink-card-${randomId}\
         { 0% { max-height: ${height + 10}px; } 100% { max-height: 0px; }}
         `;
   document.querySelector("article.post")?.appendChild(style);
 }
 
-function toggleCard(event: PointerEvent): void {
+export function toggleCard(event: PointerEvent): void {
   const target = event.target as HTMLElement;
   const card = target.parentElement?.nextElementSibling as HTMLElement;
 
@@ -65,14 +60,17 @@ function expandCallout(card: HTMLElement): void {
   card.style.overflow = "hidden";
   card.style.display = "block";
   card.classList.add("animate-expand");
+  console.log(card);
+
   card.addEventListener("animationend", function expandCard() {
     card.classList.remove("animate-expand");
     card.removeEventListener("animationend", expandCard);
+    console.log(card);
     card.style.overflow = "visible";
   });
 }
 
-async function copyContent(event: PointerEvent): Promise<void> {
+export async function copyContent(event: PointerEvent): Promise<void> {
   const target = event.target as HTMLElement;
   const content = target.parentElement?.children.namedItem(
     "content"
