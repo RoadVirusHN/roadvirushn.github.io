@@ -1,0 +1,1 @@
+{"version":3,"file":"create_observer.js","sourceRoot":"../../../../typescript/src/assets/js/","sources":["obsidian/create_observer.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,UAAU,cAAc,CACpC,QAAsC;IAEtC,MAAM,OAAO,GAAG;QACd,IAAI,EAAE,IAAI;QACV,UAAU,EAAE,KAAK;QACjB,SAAS,EAAE,CAAC,IAAI,EAAE,IAAI,CAAC;KACxB,CAAC;IACF,OAAO,IAAI,oBAAoB,CAAC,QAAQ,EAAE,OAAO,CAAC,CAAC;AACrD,CAAC"}
