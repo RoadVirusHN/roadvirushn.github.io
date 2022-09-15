@@ -1,3 +1,4 @@
+require 'securerandom'
 module PostprocessCallout
   HTML_CALLOUT_MARK_REGEX = /<!-- #@#callout-(?<type>.*?)#@#(?<title>.*?)#@#(?<collapse>[+-])?(?<copy>c)? -->\n(?<content>[\s\S]*?)<!-- @#@-(?:\k<type>)@#@(?:\k<title>)@#@ -->\n/.freeze
 
@@ -18,7 +19,7 @@ module PostprocessCallout
     type, index, emoji, title, collapse, content, copy = \
       data.values_at(:type, :index, :emoji, :title, :collapse, :content, :copy)
     converted_title, content = get_converted_title(title, content)
-    "<div class=\"callout callout-#{type}\" id=\"callout-#{index}\">
+    "<div class=\"callout callout-#{type}\" id=\"callout-#{SecureRandom.uuid}\">
       <div class=\"header\">
         <span class=\"emoji\">#{emoji}</span>
         <span class=\"title\"><strong>#{title == '' ? type : converted_title}</strong></span>

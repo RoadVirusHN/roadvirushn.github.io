@@ -1,11 +1,11 @@
 module PreprocessWikiLink
-  OBSIDIAN_LINK_REGEX = %r{(?<!!)\[\[((?:(?!https?:\/\/).*\/)?(?:([^|/\^\#*?\]\[]+)))?((?:(?:\#[^#\]\[)|]*(?![|\]]))*(\#[^)\]|]*)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?(?:\|([^\#|\]\[]+))?\]\](?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
-  MARKDOWN_LINK_REGEX = %r{(?<!!)\[([^\#|\]]+)?\]\((?:(?:(?!https?:\/\/).*\/)?(?:(?:([^|\/\^\#*?\]\[.]+)(?:.[a-z]{2,3})?))?((?:(?:\#[^#`)(]+?)+?(?!\)))?(\#[^#`)(]+)?)?)?(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&\/=]*))?\)(?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
+  OBSIDIAN_LINK_REGEX = %r{(?<!!)\[\[((?:(?!https?://).*/)?(?:([^|/\^\#*?\]\[]+)))?((?:(?:\#[^#\]\[)|]*(?![|\]]))*(\#[^)\]|]*)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?(?:\|([^\#|\]\[]+))?\]\](?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
+  MARKDOWN_LINK_REGEX = %r{(?<!!)\[([^\#|\]]+)?\]\((?:(?:(?!https?://).*/)?(?:(?:([^|/\^\#*?\]\[.]+)(?:.[a-z]{2,3})?))?((?:(?:\#[^#`)(]+?)+?(?!\)))?(\#[^#`)(]+)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?\)(?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
 
   # rubocop:disable Metrics/MethodLength(RuboCop)
   def convert_wikilink(site, post)
     content = post.content
-        .gsub(MARKDOWN_LINK_REGEX) do
+                  .gsub(MARKDOWN_LINK_REGEX) do
       build_markdown_link({
                             alt_text: Regexp.last_match(1),
                             post_name: Regexp.last_match(2)&.gsub('%20', ' '),
@@ -37,7 +37,10 @@ module PreprocessWikiLink
   end
 
   def add_link_properties(external_url, is_link_in_this_post, innertext, href)
-    "[#{innertext || '🔗'}](#{href}){: .wikilink}#{'{:target="_blank"}' unless is_link_in_this_post}#{'{: .externallink}' if external_url}"
+    link = "[#{innertext || '🔗'}](#{href}){: .wikilink}{:onclick=\"event.preventDefault()\"}"
+    link += "{:target=\"_blank\"}" unless is_link_in_this_post
+    link += "{: .externallink}" if external_url
+    link
   end
 
   def link_in_this_post?(link_data, post)
