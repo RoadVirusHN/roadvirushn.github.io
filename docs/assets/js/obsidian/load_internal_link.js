@@ -6,8 +6,11 @@ export default function loadInternaLink() {
     const internalLinks = document.querySelectorAll(".wikilink:not(.externallink)");
     for (let i = 0; i < internalLinks.length; i++) {
         const preview = internalLinks[i].nextElementSibling;
-        if (window.location === window.parent.location) {
+        internalLinks[i].addEventListener("mouseover", (e) => {
+            e.preventDefault();
             preview.style.display = "block";
+        });
+        if (window.location === window.parent.location) {
             preview.addEventListener("load", (e) => {
                 var _a;
                 const iframe = e.target;
@@ -45,7 +48,7 @@ function handleInternIntersect(entries, _observer) {
         const rect = aTag.getBoundingClientRect();
         if (entry.isIntersecting) {
             if (rect.top > center.y) {
-                target.style.transform = `translate(-50%, calc(-100% - ${previewWrapper.offsetHeight}px))`;
+                target.style.transform = `translate(-50%, calc(-100% - ${aTag.getBoundingClientRect().height}px))`;
             }
             else {
                 target.style.transform = "translate(-50% , 0%)";

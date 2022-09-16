@@ -8,8 +8,11 @@ export default function loadInternaLink(): void {
   );
   for (let i = 0; i < internalLinks.length; i++) {
     const preview = internalLinks[i].nextElementSibling as HTMLIFrameElement;
-    if (window.location === window.parent.location) {
+    internalLinks[i].addEventListener("mouseover", (e) => {
+      e.preventDefault();
       preview.style.display = "block";
+    });
+    if (window.location === window.parent.location) {
       preview.addEventListener("load", (e) => {
         const iframe = e.target as HTMLIFrameElement;
         const body = iframe.contentWindow?.document.querySelector(
@@ -53,7 +56,9 @@ function handleInternIntersect(
     const rect = aTag.getBoundingClientRect();
     if (entry.isIntersecting) {
       if (rect.top > center.y) {
-        target.style.transform = `translate(-50%, calc(-100% - ${previewWrapper.offsetHeight}px))`;
+        target.style.transform = `translate(-50%, calc(-100% - ${
+          aTag.getBoundingClientRect().height
+        }px))`;
       } else {
         target.style.transform = "translate(-50% , 0%)";
       }

@@ -37,7 +37,7 @@ module PreprocessWikiLink
   end
 
   def add_link_properties(external_url, is_link_in_this_post, innertext, href)
-    link = "[#{innertext || '🔗'}](#{href}){: .wikilink}{:onclick=\"event.preventDefault()\"}"
+    link = "[#{innertext || '🔗'}](#{href}){: .wikilink}"
     link += "{:target=\"_blank\"}" unless is_link_in_this_post
     link += "{: .externallink}" if external_url
     link

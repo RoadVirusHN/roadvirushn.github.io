@@ -1,7 +1,5 @@
 /* Link-warning container */
-p {
-  word-wrap: break-word;
-}
+
 .link-warning {
   position: relative;
   width: max-content;
@@ -18,9 +16,7 @@ p {
     transition: 0.5s;
     visibility: hidden;
     opacity: 0;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    transform: translate(calc(50% + 0px), 100%);
     text-align: center;
     width: max-content;
   }
@@ -45,9 +41,7 @@ p {
         width: max-content;
         position: absolute;
         z-index: 1;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
+        transform: translate(calc(50% + 0px), 100%);
         line-height: 1.5;
       }
     }
