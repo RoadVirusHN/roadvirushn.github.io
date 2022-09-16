@@ -30,7 +30,7 @@ module PostprocessCallout
   end
 
   def build_collapse(collapse)
-    "<button class=\"collapse\" onclick=\"toggleCard(event);\">#{collapse == '-' ? '🔽' : '🔼'}</button>"
+    "<button class=\"collapse\">#{collapse == '-' ? '🔽' : '🔼'}</button>"
   end
 
   def build_content(content, copy)
@@ -38,7 +38,7 @@ module PostprocessCallout
 
     "<div class=\"card\" name=\"card\">
     #{unless copy.nil?
-        '<button class="copy" onclick="copyContent(event)">📋</button>
+        '<button class="copy">📋</button>
         <button class="copy-check copy-emoji">✅
           <span class="copy-check copy-text"> Copied! </span>
         </button>
