@@ -9,10 +9,12 @@ layout: post
   {% include mathjax-script.html %} 
 {% endif %} 
 
-{% assign content = content | postprocess_obsidian %} {{content}}
-
 {% include custom-toolbar.html %}
 
 <link rel="stylesheet" href="/{{ site.static_css_dir }}/image.css" />
 <link rel="stylesheet" href="/{{ site.static_css_dir }}/link-warning.css" />
 <link rel="stylesheet" href="/{{ site.static_css_dir }}/preview.css" />
+
+<div class="content-section">
+  {% assign content = content | postprocess_obsidian %} {{content}}
+</div>
