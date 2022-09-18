@@ -4,8 +4,7 @@ let scrollbar;
 let body;
 let scrollWrapper;
 let isScrollClicked = false;
-const SCREENYOFFSET = window.outerHeight - document.documentElement.clientHeight;
-const MAX_LENGTH = 97;
+const MAX_LENGTH = 99;
 export default function loadScrollbar() {
     queryElements();
     document.addEventListener("scroll", scrollEvent);
@@ -31,9 +30,7 @@ function clickScroll(event) {
 }
 function getProgress(event) {
     event.preventDefault();
-    const progressPercentage = (Math.min(window.innerHeight, event.screenY - SCREENYOFFSET) /
-        window.innerHeight) *
-        MAX_LENGTH;
+    const progressPercentage = Math.min(event.clientY / window.innerHeight, 1) * MAX_LENGTH;
     return progressPercentage;
 }
 function focusScrollbarButton() {

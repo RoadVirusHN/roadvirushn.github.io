@@ -5,20 +5,23 @@ export default function loadExternalLink(): void {
   const externalLinks = document.querySelectorAll(".wikilink.externallink");
 
   for (let i = 0; i < externalLinks.length; i++) {
-    const warningText = externalLinks[i].nextElementSibling as HTMLElement;
-    const pTag = externalLinks[i].parentElement?.parentElement as HTMLElement;
     const aTag = externalLinks[i] as HTMLElement;
+    const linkWarning = aTag.parentElement as HTMLElement;
+    const warningText = linkWarning.querySelector(
+      "span.link-warning-text"
+    ) as HTMLElement;
+    const linkTitle = linkWarning.querySelector("a.link-title") as HTMLElement;
     aTag.addEventListener("click", (e) => {
       e.preventDefault();
-      warningText.style.display = "block";
+      linkTitle.focus();
     });
-    aTag.addEventListener("mouseover", (_e) => {
-      pTag.style.whiteSpace = "nowrap";
+    linkTitle.addEventListener("click", (e) => {
+      e.preventDefault();
     });
-    pTag.addEventListener("mouseleave", (_e) => {
-      pTag.style.whiteSpace = "normal";
-    });
+    linkTitle.innerText = aTag.innerText;
+    linkTitle.style.display = "inline";
     if (warningText !== null) {
+      warningText.style.display = "inline";
       if (window.location !== window.parent.location) {
         warningText.innerHTML =
           '<div style="background-color: grey; color: white;">nested iframe cannot access external link! visit this page!</div>';
@@ -35,35 +38,35 @@ function handleExternIntersect(
   const center = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      const target = entry.target as HTMLElement;
-      const rect = target.getBoundingClientRect();
-      const aTag = target.parentElement?.querySelector("a") as HTMLElement;
+      const warningText = entry.target as HTMLElement;
+      const rect = warningText.getBoundingClientRect();
+      const linkTitle = warningText.parentElement?.querySelector(
+        "a.link-title"
+      ) as HTMLElement;
 
-      const left = rect.width - entry.intersectionRect.width;
-      let [_matched, translateX, translateY] = target.style.transform.match(
-        /translate\(calc\(50% \+ (-?\d*.?\d*)px\), (.*?\)?)\)/
-      ) ?? ["", "0", "-100%"];
-
+      const PADDING_SIZE = 10;
       const OVERLAP_PORTION_WIDTH = rect.width / entry.intersectionRect.width;
       const OVERLAP_PORTION_HEIGHT =
         rect.height / entry.intersectionRect.height;
       if (OVERLAP_PORTION_WIDTH > 1.02) {
         if (rect.left > center.x) {
-          translateX = `${Number(translateX) - left}`;
+          // intersected right;
+          warningText.style.left = `calc(-50% - ${PADDING_SIZE}px - ${linkTitle.innerText.length}ch)`;
         } else if (rect.left < center.x) {
-          translateX = `${Number(translateX) + left}`;
+          // intersected left;
+          warningText.style.left = `calc(150% + ${PADDING_SIZE}px + ${linkTitle.innerText.length}ch)`;
         }
       }
 
       if (OVERLAP_PORTION_HEIGHT > 1.02) {
         if (rect.top < center.y) {
-          translateY = `calc(-100% + ${aTag.getBoundingClientRect().height}px)`;
+          // intersected top
+          warningText.style.top = `calc(150% + ${PADDING_SIZE}px + 1em + 1px)`;
         } else {
-          translateY = "0%";
+          // intersected bottom
+          warningText.style.top = `calc(-100% - ${PADDING_SIZE}px - 1em - 1px)`;
         }
       }
-
-      target.style.transform = `translate(calc(50% + ${translateX}px), ${translateY})`;
     }
   });
 }

@@ -5,9 +5,7 @@ let body: HTMLElement;
 let scrollWrapper: HTMLElement;
 let isScrollClicked = false;
 
-const SCREENYOFFSET =
-  window.outerHeight - document.documentElement.clientHeight;
-const MAX_LENGTH = 97;
+const MAX_LENGTH = 99;
 
 export default function loadScrollbar(): void {
   queryElements();
@@ -37,10 +35,9 @@ function clickScroll(event: MouseEvent): void {
 
 function getProgress(event: MouseEvent): number {
   event.preventDefault();
+
   const progressPercentage =
-    (Math.min(window.innerHeight, event.screenY - SCREENYOFFSET) /
-      window.innerHeight) *
-    MAX_LENGTH;
+    Math.min(event.clientY / window.innerHeight, 1) * MAX_LENGTH;
   return progressPercentage;
 }
 
