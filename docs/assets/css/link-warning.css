@@ -1,51 +1,55 @@
 /* Link-warning container */
-p {
-  word-wrap: break-word; }
-
 .link-warning {
-  position: relative;
-  width: max-content; }
+  position: relative; }
   .link-warning a {
     border-bottom: 1px dotted black;
     transition: 0.5s; }
-  .link-warning button {
-    margin: 5px;
-    display: inline-block; }
   .link-warning .link-warning-text {
     position: absolute;
     transition: 0.5s;
     visibility: hidden;
     opacity: 0;
-    bottom: 100%;
+    transform: translate(-50%, -50%);
     left: 50%;
-    transform: translateX(-50%);
+    top: calc(-100% - 10px - 1em - 1px);
     text-align: center;
     width: max-content; }
-  .link-warning:hover a:focus {
+    .link-warning .link-warning-text button {
+      margin: 5px;
+      display: inline-block; }
+  .link-warning a.link-title {
+    top: 50%;
+    left: 50%;
+    width: max-content;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
     transition: 0.5s;
+    cursor: pointer; }
+  .link-warning:hover a.link-title:focus {
     border-radius: 6px;
     background-color: black;
     color: #e75d5d;
     font-style: oblique;
     padding: 10px;
-    font-size: larger; }
-    .link-warning:hover a:focus + .link-warning-text {
+    font-size: larger;
+    opacity: 1;
+    z-index: 3; }
+    .link-warning:hover a.link-title:focus + span.link-warning-text {
       transition: 0.5s;
       visibility: visible;
       opacity: 1;
       background-color: black;
       color: #fff;
       text-align: center;
-      padding: 10px 10px;
+      padding: 10px;
       border-radius: 6px;
       width: max-content;
       position: absolute;
-      z-index: 1;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
+      z-index: 2;
       line-height: 1.5; }
-  .link-warning:hover a:active + .link-warning-text button {
+  .link-warning a:active + .link-warning-text button {
     animation: shaking 0.5s;
     animation-iteration-count: infinite; }
 

@@ -5,9 +5,6 @@ module.exports = {
   watch: true,
   entry: "./assets/js",
   output: {
-    library: "toggleCard",
-    libraryTarget: "window",
-    libraryExport: "default",
     filename: "[name]-bundle.js",
     path: path.resolve(__dirname, "assets"),
   },

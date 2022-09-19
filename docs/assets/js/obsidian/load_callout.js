@@ -8,8 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 export default function loadCallout() {
-    const arrayOfCard = document.querySelectorAll(".callout");
-    for (const callout of arrayOfCard) {
+    const arrayOfCallout = document.querySelectorAll(".callout");
+    for (const callout of arrayOfCallout) {
         const collapse = callout.querySelector("button.collapse");
         if (collapse === null)
             continue;
@@ -17,8 +17,11 @@ export default function loadCallout() {
         const card = callout.querySelector(".card");
         if (card === null || calloutId === undefined)
             throw new Error(`No card in ${calloutId !== null && calloutId !== void 0 ? calloutId : ""} here`);
+        const copyButton = card.querySelector(".copy");
         setCalloutAnim(calloutId, card);
         card.style.display = collapse.innerText === "🔼" ? "block" : "none";
+        collapse.addEventListener("click", toggleCard);
+        copyButton.addEventListener("click", copyContent);
     }
 }
 function setCalloutAnim(calloutId, card) {
@@ -29,10 +32,10 @@ function setCalloutAnim(calloutId, card) {
     const height = card.offsetHeight;
     style.innerHTML = `\
         div#${calloutId} div.card.animate-expand {
-          animation: expand-card-${randomId} 0.2s ease-out;
+          animation: expand-card-${randomId} 0.5s ease-out;
         }
         div#${calloutId} div.card.animate-shirink {
-          animation: shirink-card-${randomId} 0.2s ease-out;
+          animation: shirink-card-${randomId} 0.5s ease-out;
         }
         @keyframes expand-card-${randomId}\
          { 0% { max-height: 0px; } 100% { max-height: ${height + 10}px; }}
@@ -41,7 +44,7 @@ function setCalloutAnim(calloutId, card) {
         `;
     (_a = document.querySelector("article.post")) === null || _a === void 0 ? void 0 : _a.appendChild(style);
 }
-export function toggleCard(event) {
+function toggleCard(event) {
     var _a;
     const target = event.target;
     const card = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.nextElementSibling;
@@ -67,25 +70,23 @@ function expandCallout(card) {
     card.style.overflow = "hidden";
     card.style.display = "block";
     card.classList.add("animate-expand");
-    console.log(card);
     card.addEventListener("animationend", function expandCard() {
         card.classList.remove("animate-expand");
         card.removeEventListener("animationend", expandCard);
-        console.log(card);
         card.style.overflow = "visible";
     });
 }
-export function copyContent(event) {
+function copyContent(event) {
     var _a, _b;
-    return __awaiter(this, void 0, void 0, function* () {
-        const target = event.target;
-        const content = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.children.namedItem("content");
+    const target = event.target;
+    const content = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.children.namedItem("content");
+    void (() => __awaiter(this, void 0, void 0, function* () {
         yield navigator.clipboard.writeText(content.innerText);
-        const copyDiv = (_b = target.parentElement) === null || _b === void 0 ? void 0 : _b.querySelectorAll(".copy-check:not(.animate)");
-        if (copyDiv !== undefined) {
-            playCopyAnimation(copyDiv);
-        }
-    });
+    }))();
+    const copyDiv = (_b = target.parentElement) === null || _b === void 0 ? void 0 : _b.querySelectorAll(".copy-check:not(.animate)");
+    if (copyDiv !== undefined) {
+        playCopyAnimation(copyDiv);
+    }
 }
 function playCopyAnimation(copyDiv) {
     for (const element of copyDiv) {

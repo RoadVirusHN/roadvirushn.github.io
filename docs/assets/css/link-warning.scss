@@ -1,63 +1,67 @@
 /* Link-warning container */
-p {
-  word-wrap: break-word;
-}
 .link-warning {
   position: relative;
-  width: max-content;
   a {
     border-bottom: 1px dotted black;
     transition: 0.5s;
-  }
-  button {
-    margin: 5px;
-    display: inline-block;
   }
   .link-warning-text {
     position: absolute;
     transition: 0.5s;
     visibility: hidden;
     opacity: 0;
-    bottom: 100%;
+    transform: translate(-50%, -50%);
     left: 50%;
-    transform: translateX(-50%);
+    top: calc(-100% - 10px - 1em - 1px);
     text-align: center;
     width: max-content;
+    button {
+      margin: 5px;
+      display: inline-block;
+    }
+  }
+  a.link-title {
+    top: 50%;
+    left: 50%;
+    width: max-content;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+    transition: 0.5s;
+    cursor: pointer;
   }
   &:hover {
-    a:focus {
-      transition: 0.5s;
+    a.link-title:focus {
       border-radius: 6px;
       background-color: black;
       color: rgb(231, 93, 93);
       font-style: oblique;
       padding: 10px;
       font-size: larger;
-      & + .link-warning-text {
+      opacity: 1;
+      z-index: 3;
+      & + span.link-warning-text {
         transition: 0.5s;
         visibility: visible;
         opacity: 1;
         background-color: black;
         color: #fff;
         text-align: center;
-        padding: 10px 10px;
+        padding: 10px;
         border-radius: 6px;
         width: max-content;
         position: absolute;
-        z-index: 1;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
+        z-index: 2;
         line-height: 1.5;
       }
     }
-    a:active + .link-warning-text button {
-      animation: shaking 0.5s;
-      animation-iteration-count: infinite;
-    }
+  }
+  a:active + .link-warning-text button {
+    animation: shaking 0.5s;
+    animation-iteration-count: infinite;
   }
 }
-
 @keyframes shaking {
   0% {
     transform: translate(1px, 1px) rotate(0deg);
