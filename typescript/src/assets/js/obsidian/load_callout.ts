@@ -22,10 +22,10 @@ function setCalloutAnim(calloutId: string, card: HTMLElement): void {
   const height = card.offsetHeight;
   style.innerHTML = `\
         div#${calloutId} div.card.animate-expand {
-          animation: expand-card-${randomId} 0.2s ease-out;
+          animation: expand-card-${randomId} 0.5s ease-out;
         }
         div#${calloutId} div.card.animate-shirink {
-          animation: shirink-card-${randomId} 0.2s ease-out;
+          animation: shirink-card-${randomId} 0.5s ease-out;
         }
         @keyframes expand-card-${randomId}\
          { 0% { max-height: 0px; } 100% { max-height: ${height + 10}px; }}
