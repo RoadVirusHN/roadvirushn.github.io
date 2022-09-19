@@ -19,8 +19,9 @@ export default function loadExternalLink() {
         if (warningText !== null) {
             warningText.style.display = "inline";
             if (window.location !== window.parent.location) {
+                warningText.style.zIndex = "10";
                 warningText.innerHTML =
-                    '<div style="background-color: grey; color: white;">nested iframe cannot access external link! visit this page!</div>';
+                    'Security alert ❌ <br/><strong>Link in the nested iframe</strong><br/> visit <a href="#" style="border-radius: 4px; background-color: white; padding: 1px 3px;">this</a> page!';
             }
             externObserver.observe(warningText);
         }

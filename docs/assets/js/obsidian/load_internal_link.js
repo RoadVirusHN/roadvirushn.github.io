@@ -28,10 +28,9 @@ export default function loadInternaLink() {
             if (preview !== null) {
                 (_b = aTag.parentElement) === null || _b === void 0 ? void 0 : _b.removeChild(preview);
                 const warningText = document.createElement("span");
-                warningText.style.color = "white";
-                warningText.style.backgroundColor = "grey";
-                warningText.innerText =
-                    "netsted iframe cannot render page! visit this page!";
+                warningText.classList.add("blocked-preview");
+                warningText.innerHTML =
+                    'Security alert ❌<br/> <strong>Link in the nested iframe</strong><br/> visit <a href="#">this</a> page!';
                 (_c = aTag.parentElement) === null || _c === void 0 ? void 0 : _c.appendChild(warningText);
             }
         }

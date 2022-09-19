@@ -6,22 +6,22 @@ export default function loadInternaLink(): void {
   const internalLinks = document.querySelectorAll(
     ".wikilink:not(.externallink)"
   );
-//   const newContent = convertStringToHTML(`<div class="content-section">
-//   <div>...</div>
-//   <div class="additional top"></div>
-//   <div class="quoted-section"></div>
-//   <div class="additional bottom"></div>
-//   <div>...</div>
-//   <div>
-//     이외의 컨텐츠는 <a class="original-href" href="">이곳</a>을 확인해주세요.
-//   </div>
-//   <style>
-//     div.quoted-section {
-//       border-left: solid 8px greenyellow;
-//     }
-//   </style>
-// </div>
-// `);
+  //   const newContent = convertStringToHTML(`<div class="content-section">
+  //   <div>...</div>
+  //   <div class="additional top"></div>
+  //   <div class="quoted-section"></div>
+  //   <div class="additional bottom"></div>
+  //   <div>...</div>
+  //   <div>
+  //     이외의 컨텐츠는 <a class="original-href" href="">이곳</a>을 확인해주세요.
+  //   </div>
+  //   <style>
+  //     div.quoted-section {
+  //       border-left: solid 8px greenyellow;
+  //     }
+  //   </style>
+  // </div>
+  // `);
 
   for (let i = 0; i < internalLinks.length; i++) {
     const aTag = internalLinks[i] as HTMLLinkElement;
@@ -71,10 +71,9 @@ export default function loadInternaLink(): void {
       if (preview !== null) {
         aTag.parentElement?.removeChild(preview);
         const warningText = document.createElement("span");
-        warningText.style.color = "white";
-        warningText.style.backgroundColor = "grey";
-        warningText.innerText =
-          "netsted iframe cannot render page! visit this page!";
+        warningText.classList.add("blocked-preview");
+        warningText.innerHTML =
+          'Security alert ❌<br/> <strong>Link in the nested iframe</strong><br/> visit <a href="#">this</a> page!';
         aTag.parentElement?.appendChild(warningText);
       }
     }
