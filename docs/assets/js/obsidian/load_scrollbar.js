@@ -1,21 +1,31 @@
 let scrollbarButton;
 let progressbar;
-let scrollbar;
 let body;
 let scrollWrapper;
 let isScrollClicked = false;
-const MAX_LENGTH = 99;
 export default function loadScrollbar() {
     queryElements();
+    scrollbarInit();
     document.addEventListener("scroll", scrollEvent);
     scrollWrapper.addEventListener("mousedown", clickScroll);
     document.addEventListener("mousemove", dragScroll);
-    document.addEventListener("mouseup", reliseScroll);
+    document.addEventListener("mouseup", releseScroll);
+}
+function scrollbarInit() {
+    const screenArticleRatio = window.innerHeight /
+        document.documentElement.getBoundingClientRect().height;
+    if (screenArticleRatio >= 1) {
+        scrollWrapper.style.display = "none";
+    }
+    else {
+        const startProgress = `${screenArticleRatio * window.innerHeight}px`;
+        scrollbarButton.style.height = startProgress;
+        scrollbarButton.style.top = `${(screenArticleRatio * window.innerHeight) / 2}px`;
+    }
 }
 function queryElements() {
     scrollbarButton = document.querySelector(".scrollbarButton");
     progressbar = document.querySelector(".progressbar");
-    scrollbar = document.querySelector(".scrollbar");
     scrollWrapper = document.querySelector(".scrollWrapper");
     body = document.querySelector("body");
 }
@@ -30,7 +40,7 @@ function clickScroll(event) {
 }
 function getProgress(event) {
     event.preventDefault();
-    const progressPercentage = Math.min(event.clientY / window.innerHeight, 1) * MAX_LENGTH;
+    const progressPercentage = Math.min(event.clientY / window.innerHeight, 1);
     return progressPercentage;
 }
 function focusScrollbarButton() {
@@ -38,7 +48,7 @@ function focusScrollbarButton() {
     scrollbarButton.style.outline = "none";
     scrollbarButton.focus();
 }
-function reliseScroll(_event) {
+function releseScroll(_event) {
     scrollbarButton.classList.remove("no-animation");
     progressbar.classList.remove("no-animation");
     isScrollClicked = false;
@@ -57,28 +67,21 @@ function dragScroll(event) {
     }
 }
 function moveScreenYTo(progressPercentage) {
-    const ScrollPos = (progressPercentage *
+    const ScrollPos = progressPercentage *
         (body.getBoundingClientRect().height -
-            document.documentElement.clientHeight)) /
-        MAX_LENGTH;
+            document.documentElement.clientHeight);
     window.scrollTo(0, ScrollPos);
 }
 function scrollEvent(_event) {
     const scrollDistance = -body.getBoundingClientRect().top;
-    const progressPercentage = (scrollDistance /
+    const progressPercentage = scrollDistance /
         (body.getBoundingClientRect().height -
-            document.documentElement.clientHeight)) *
-        MAX_LENGTH;
+            document.documentElement.clientHeight);
     changeProgress(progressPercentage);
 }
 function changeProgress(progressPercentage) {
-    if (progressPercentage < 0) {
-        progressbar.style.height = "0%";
-        scrollbarButton.style.top = "0%";
-    }
-    else {
-        progressbar.style.height = `${progressPercentage}%`;
-        scrollbarButton.style.top = `${progressPercentage}%`;
-    }
+    const clampedVal = `calc(100% * ${progressPercentage} - ${scrollbarButton.style.height} * ${progressPercentage} + ${scrollbarButton.style.height}/2)`;
+    progressbar.style.height = `clamp(${scrollbarButton.style.height}/2,${clampedVal},calc(100% - ${scrollbarButton.style.height}/2))`;
+    scrollbarButton.style.top = `clamp(${scrollbarButton.style.height}/2,${clampedVal},calc(100% - ${scrollbarButton.style.height}/2))`;
 }
 //# sourceMappingURL=load_scrollbar.js.map

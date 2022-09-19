@@ -11,7 +11,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 10px;
+  width: 12px;
   background: linear-gradient(to bottom, #ff5f6d, #ffc371);
   height: 0%;
   z-index: 7;
@@ -22,7 +22,7 @@ body {
   right: 0;
   top: 0;
   height: 100%;
-  width: 10px;
+  width: 12px;
   z-index: 6;
   background-color: gainsboro;
 }
@@ -37,32 +37,35 @@ body {
 }
 
 .scrollbarButton {
-  margin-top: 8px;
+  margin-top: -1px;
   position: fixed;
-  right: 5px;
-  top: 0px;
+  right: 7px;
+  top: 0.5em;
+  
+  min-height: 27px;
   height: 27px;
   width: 14px;
   transform: translate(50%, -50%);
   background-color: gray;
-  border-radius: 20%;
+  border-radius: 2px;
   z-index: 8;
   transition: top 0.2s ease-out;
+  transition: height 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
   &:hover {
-    height: 33px;
     width: 18px;
     background-color: rgb(180, 180, 180);
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
     cursor: grab;
   }
   &:active {
     background-color: rgb(255, 63, 63);
-    transition: background-color 0.2s ease-out;
+    transition: background-color 0.5s ease-out;
     cursor: grabbing;
   }
   &:focus {
     background-color: rgb(255, 63, 63);
-    transition: background-color 0.2s ease-out;
+    transition: background-color 0.5s ease-out;
     cursor: grabbing;
   }
 }
