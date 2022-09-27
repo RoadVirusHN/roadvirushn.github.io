@@ -1,16 +1,15 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "noImplicitAny": true,
-      "removeComments": true,
-      "preserveConstEnums": true,
-      "esModuleInterop": true,
-      "strict": true,
-      "outDir": "../docs/assets/js",
-      "sourceMap": true,
-      "sourceRoot": "../../../../typescript/src/assets/js"
-    },
-    "include": ["src/assets/js/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
-  }
-  
+  "compilerOptions": {
+    "target": "es6",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "outDir": "../docs/assets/js",
+    "sourceMap": true,
+    "sourceRoot": "../../../../typescript/src/assets/js"
+  },
+  "include": ["src/assets/js/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
