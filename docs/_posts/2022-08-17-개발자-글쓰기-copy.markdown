@@ -29,3 +29,7 @@ copy: true
 개발자의 글쓰기 (_김철수_ 위키북스)를 읽고 정리한 내용입니다.
 ```
 [[개발자 글쓰기]]
+
+
+updated have had has was
+

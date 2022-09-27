@@ -1,11 +1,9 @@
 ---
 permalink: /search.html
+layout: default
 ---
-<form action="/search.html" method="get">
-  <label for="search-box">Search</label>
-  <input type="text" id="search-box" name="query" placeholder="search text" />
-  <input type="submit" />
-</form>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script type="module" src="/assets/js/lunr/search.js" charset="utf-8"></script>
 
 <ul id="search-results"></ul>
 
@@ -21,10 +19,3 @@ permalink: /search.html
     {% endfor %}
     };
 </script>
-
-<script
-  src="/node_modules/lunr/lunr.js"
-  type="text/javascript"
-  charset="utf-8"
-></script>
-<script type="module" src="/assets/js/lunr/search.js" charset="utf-8"></script>
