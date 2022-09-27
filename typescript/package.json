@@ -5,7 +5,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/js-yaml": "^4.0.5",
     "@types/lunr": "^2.3.4",
+    "@types/node": "^18.7.22",
+    "@types/string": "^0.0.31",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "eslint": "^8.23.0",
@@ -17,5 +21,11 @@
     "eslint-plugin-promise": "^6.0.1",
     "prettier": "^2.7.1",
     "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "glob": "^8.0.3",
+    "js-yaml": "^4.1.0",
+    "lunr": "^2.3.9",
+    "string": "^3.3.3"
   }
 }

@@ -6,12 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/webpack --watch | bundle exec jekyll serve --livereload --incremental",
-    "build": "./node_modules/.bin/webpack | bundle exec jekyll build"
+    "build": "./node_modules/.bin/webpack | bundle exec jekyll build",
+    "build-index": "node build-index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lunr": "^2.3.9"
+    "glob": "^8.0.3",
+    "js-yaml": "^4.1.0",
+    "lunr": "^2.3.9",
+    "string": "^3.3.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
