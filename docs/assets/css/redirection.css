@@ -1,0 +1,55 @@
+.redirection {
+  z-index: -999;
+  position: fixed;
+  visibility: hidden;
+  left: 50%;
+  top: 50%;
+  height: fit-content;
+  width: 40%;
+  transform: translate(-50%, -50%);
+  padding: 20px 10px;
+  opacity: 0;
+  background-color: black;
+  border-radius: 5px;
+  color: aliceblue;
+  text-align: center; }
+  .redirection.show {
+    z-index: 999;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s; }
+  .redirection .title {
+    background: linear-gradient(30deg, #ff5f6d, #48a249 50%, #2f47cf);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: rgba(255, 255, 255, 0.2) 1px 1px; }
+  .redirection .counter {
+    font-size: 3em; }
+  .redirection a.to {
+    font-size: medium; }
+    .redirection a.to:hover {
+      font-size: larger;
+      color: bisque;
+      transition: font-size 0.5s; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: -999;
+  visibility: hidden;
+  opacity: 0; }
+
+.overlay.show {
+  z-index: 998;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s; }
+
+/*# sourceMappingURL=redirection.css.map */
