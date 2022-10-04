@@ -1,15 +1,37 @@
+.search-form {
+    display: inline;
+}
+#search-wrapper{
+    display: inline-block;
+}
 #search-box {
     padding: 5px;
     font-size: 16px;
     border-width: 4px;
     border-color: #CCCCCC;
     background-color: #FFFFFF;
+    margin: 10px 15px;
     color: #000000;
+    width: 50px;
     border-style: solid;
     border-radius: 24px;
     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
     text-shadow: 0px 0px 2px rgba(66,66,66,.5);
+    transition: width 0.5s;
+    & +div.inner-search {
+        transition: all 0.5s;
+        display: inline;
+        position: relative;
+        right: 80px;
+    }
 }
 #search-box:focus {
     outline:none;
+    width: 200px;
+    transition: width 0.5s;
+    & +div.inner-search {
+        transition: all 0.5s;
+        opacity: 0;
+        visibility: hidden;
+    }
 }
