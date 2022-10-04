@@ -207,6 +207,25 @@
   @include relative-font-size(1.5);
 }
 
+.category-link {
+  display: inline;
+  background-color: aqua;
+  border-radius: 10px;
+  margin-right: 5px;
+  padding: 3px 3px 3px 3px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  font-size: smaller;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  &:hover {
+    font-size: medium;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+  }
+}
+
 
 
 /**
