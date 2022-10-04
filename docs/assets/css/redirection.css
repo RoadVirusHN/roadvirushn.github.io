@@ -27,11 +27,13 @@
   .redirection .counter {
     font-size: 3em; }
   .redirection a.to {
-    font-size: medium; }
+    font-size: medium;
+    color: #ab53fd;
+    transition: all 0.5s; }
     .redirection a.to:hover {
       font-size: larger;
       color: bisque;
-      transition: font-size 0.5s; }
+      transition: all 0.5s; }
 
 .overlay {
   position: fixed;

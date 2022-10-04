@@ -31,10 +31,12 @@
   }
   a.to {
     font-size: medium;
+    color: rgb(171, 83, 253);
+    transition: all 0.5s;
     &:hover{
-        font-size: larger;
-        color: bisque;
-        transition: font-size 0.5s;
+      font-size: larger;
+      color: bisque;
+      transition: all 0.5s;
     }
   }
 }
