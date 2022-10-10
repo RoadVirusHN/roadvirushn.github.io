@@ -43,7 +43,6 @@ static_etc_dir: "asstes/etc"
 
 defaults:
   - scope:
-      # static folder directory settings
       path: "assets/img"
     values:
       image: true # The files inside the defaults.scope.path folder have a variable {image: true}.
