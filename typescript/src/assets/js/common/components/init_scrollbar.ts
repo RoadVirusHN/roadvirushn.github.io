@@ -4,7 +4,7 @@ let body: HTMLElement;
 let scrollWrapper: HTMLElement;
 let isScrollClicked = false;
 
-export default function loadScrollbar(): void {
+export default function initScrollbar(): void {
   queryElements();
   scrollbarInit();
   document.addEventListener("scroll", scrollEvent);

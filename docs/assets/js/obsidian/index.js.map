@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"../../../../typescript/src/assets/js/","sources":["obsidian/index.ts"],"names":[],"mappings":"AAAA,OAAO,WAAW,MAAM,2BAA2B,CAAC;AACpD,OAAO,gBAAgB,MAAM,iCAAiC,CAAC;AAC/D,OAAO,eAAe,MAAM,iCAAiC,CAAC;AAE9D,MAAM,CAAC,gBAAgB,CAAC,MAAM,EAAE,GAAG,EAAE;IACnC,WAAW,EAAE,CAAC;IACd,eAAe,EAAE,CAAC;IAClB,gBAAgB,EAAE,CAAC;AACrB,CAAC,CAAC,CAAC"}

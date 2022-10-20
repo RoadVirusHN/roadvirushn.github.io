@@ -1,4 +1,4 @@
-import CreateObserver from "./create_observer";
+import CreateObserver from "../../utils/create_observer";
 
 export default function loadExternalLink(): void {
   const externObserver = CreateObserver(handleExternIntersect);

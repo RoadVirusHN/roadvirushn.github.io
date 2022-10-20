@@ -1,4 +1,4 @@
-import CreateObserver from "./create_observer";
+import CreateObserver from "../../utils/create_observer";
 const center = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
 export default function loadInternaLink(): void {
@@ -87,7 +87,6 @@ function buildPreview(
   const additionalTop = newContent.querySelector("div.additional.top");
   const quotedSection = newContent.querySelector(".quoted-section");
   const additionalBottom = newContent.querySelector("div.additional.bottom");
-  console.log(heading);
 
   let beforeElement = heading?.previousElementSibling;
   for (const _ of [Array(5).keys()]) {
@@ -97,7 +96,6 @@ function buildPreview(
     additionalTop?.prepend(beforeElement);
     beforeElement = beforeElement.previousElementSibling;
   }
-  console.log(additionalTop);
 
   let targetElement = heading;
   quotedSection?.appendChild(targetElement);
@@ -111,15 +109,12 @@ function buildPreview(
   }
 
   for (const _ of [Array(5).keys()]) {
-    console.log("targetelement", targetElement);
-
     additionalBottom?.appendChild(targetElement);
     targetElement = targetElement?.nextElementSibling as HTMLElement;
     if (targetElement === null || targetElement === undefined) {
       break;
     }
   }
-  console.log(additionalBottom);
 
   return newContent;
 }
@@ -130,7 +125,6 @@ function isUpperHeading(
   if (targetHeading.tagName in ["H1", "H2", "H3", "H4", "H5", "H6"]) {
     const originLevel = originHeading.tagName.match(/\d/)!;
     const targetLevel = originHeading.tagName.match(/\d/)!;
-    console.log(originLevel, targetLevel);
     if (targetLevel <= originLevel) {
       return true;
     }

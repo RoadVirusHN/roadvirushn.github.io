@@ -3,7 +3,7 @@ let progressbar;
 let body;
 let scrollWrapper;
 let isScrollClicked = false;
-export default function loadScrollbar() {
+export default function initScrollbar() {
     queryElements();
     scrollbarInit();
     document.addEventListener("scroll", scrollEvent);
@@ -84,4 +84,4 @@ function changeProgress(progressPercentage) {
     progressbar.style.height = `clamp(${scrollbarButton.style.height}/2,${clampedVal},calc(100% - ${scrollbarButton.style.height}/2))`;
     scrollbarButton.style.top = `clamp(${scrollbarButton.style.height}/2,${clampedVal},calc(100% - ${scrollbarButton.style.height}/2))`;
 }
-//# sourceMappingURL=load_scrollbar.js.map
+//# sourceMappingURL=init_scrollbar.js.map

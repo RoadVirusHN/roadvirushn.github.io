@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 export default function loadCallout() {
     const arrayOfCallout = document.querySelectorAll(".callout");
     for (const callout of arrayOfCallout) {
@@ -16,7 +7,7 @@ export default function loadCallout() {
         const calloutId = callout.id;
         const card = callout.querySelector(".card");
         if (card === null || calloutId === undefined)
-            throw new Error(`No card in ${calloutId !== null && calloutId !== void 0 ? calloutId : ""} here`);
+            throw new Error(`No card in ${calloutId ?? ""} here`);
         const copyButton = card.querySelector(".copy");
         setCalloutAnim(calloutId, card);
         card.style.display = collapse.innerText === "🔼" ? "block" : "none";
@@ -25,7 +16,6 @@ export default function loadCallout() {
     }
 }
 function setCalloutAnim(calloutId, card) {
-    var _a;
     const style = document.createElement("style");
     style.id = calloutId;
     const randomId = calloutId + Math.random().toString(16).slice(2);
@@ -42,12 +32,11 @@ function setCalloutAnim(calloutId, card) {
         @keyframes shirink-card-${randomId}\
         { 0% { max-height: ${height + 10}px; } 100% { max-height: 0px; }}
         `;
-    (_a = document.querySelector("article.post")) === null || _a === void 0 ? void 0 : _a.appendChild(style);
+    document.querySelector("article.post")?.appendChild(style);
 }
 function toggleCard(event) {
-    var _a;
     const target = event.target;
-    const card = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.nextElementSibling;
+    const card = target.parentElement?.nextElementSibling;
     if (card.style.display === "none") {
         expandCallout(card);
         target.innerText = "🔼";
@@ -77,13 +66,12 @@ function expandCallout(card) {
     });
 }
 function copyContent(event) {
-    var _a, _b;
     const target = event.target;
-    const content = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.children.namedItem("content");
-    void (() => __awaiter(this, void 0, void 0, function* () {
-        yield navigator.clipboard.writeText(content.innerText);
-    }))();
-    const copyDiv = (_b = target.parentElement) === null || _b === void 0 ? void 0 : _b.querySelectorAll(".copy-check:not(.animate)");
+    const content = target.parentElement?.children.namedItem("content");
+    void (async () => {
+        await navigator.clipboard.writeText(content.innerText);
+    })();
+    const copyDiv = target.parentElement?.querySelectorAll(".copy-check:not(.animate)");
     if (copyDiv !== undefined) {
         playCopyAnimation(copyDiv);
     }
@@ -96,4 +84,4 @@ function playCopyAnimation(copyDiv) {
         });
     }
 }
-//# sourceMappingURL=load_callout.js.map
+//# sourceMappingURL=init_callout.js.map

@@ -1,4 +1,4 @@
-import CreateObserver from "./create_observer";
+import CreateObserver from "../../utils/create_observer";
 export default function loadExternalLink() {
     const externObserver = CreateObserver(handleExternIntersect);
     const externalLinks = document.querySelectorAll(".wikilink.externallink");
@@ -30,11 +30,10 @@ export default function loadExternalLink() {
 function handleExternIntersect(entries, _observer) {
     const center = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     entries.forEach((entry) => {
-        var _a;
         if (entry.isIntersecting) {
             const warningText = entry.target;
             const rect = warningText.getBoundingClientRect();
-            const linkTitle = (_a = warningText.parentElement) === null || _a === void 0 ? void 0 : _a.querySelector("a.link-title");
+            const linkTitle = warningText.parentElement?.querySelector("a.link-title");
             const PADDING_SIZE = 10;
             const OVERLAP_PORTION_WIDTH = rect.width / entry.intersectionRect.width;
             const OVERLAP_PORTION_HEIGHT = rect.height / entry.intersectionRect.height;
@@ -57,4 +56,4 @@ function handleExternIntersect(entries, _observer) {
         }
     });
 }
-//# sourceMappingURL=load_external_link.js.map
+//# sourceMappingURL=init_external_link.js.map
