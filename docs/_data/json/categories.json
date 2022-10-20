@@ -1,0 +1,18 @@
+{
+  "JEKYLL": {
+    "background-color": "rgb(66, 247, 247)",
+    "color": "rgb(189, 8, 35)"
+  },
+  "UPDATE": {
+    "background-color": "rgb(47, 59, 59)",
+    "color": "rgb(208, 196, 218)"
+  },
+  "BOOK": {
+    "background-color": "rgb(170, 211, 211)",
+    "color": "rgb(85, 44, 202)"
+  },
+  "TEST": {
+    "background-color": "rgb(162, 42, 42)",
+    "color": "rgb(93, 213, 86)"
+  }
+}

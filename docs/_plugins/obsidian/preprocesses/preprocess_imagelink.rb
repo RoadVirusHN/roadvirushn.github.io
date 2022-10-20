@@ -9,7 +9,7 @@ module PreprocessImageLink
 
     format('![%s](%s)', linkData[:altText], src)
   end
-    
+
   def convert_image_link(post)
     static_dir = '/' + Jekyll.configuration({})['static_img_dir'] + '/' + post.date.strftime('%Y-%m-%d') + '-' + post['slug']
     post.content

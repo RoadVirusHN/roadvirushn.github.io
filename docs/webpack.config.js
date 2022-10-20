@@ -3,10 +3,14 @@ const path = require("path");
 module.exports = {
   mode: "production",
   watch: true,
-  entry: "./assets/js",
+  entry: {
+    common: "./assets/js/common/index.js",
+    lunr: "./assets/js/lunr/index.js",
+    obsidian: "./assets/js/obsidian/index.js",
+  },
   output: {
-    filename: "[name]-bundle.js",
-    path: path.resolve(__dirname, "assets"),
+    filename: "[name]/[name].bundle.js",
+    path: path.resolve(__dirname, "assets/js"),
   },
   module: {
     rules: [

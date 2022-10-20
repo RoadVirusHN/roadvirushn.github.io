@@ -43,7 +43,6 @@ static_etc_dir: "asstes/etc"
 
 defaults:
   - scope:
-      # static folder directory settings
       path: "assets/img"
     values:
       image: true # The files inside the defaults.scope.path folder have a variable {image: true}.
@@ -68,6 +67,18 @@ kramdown:
   auto_ids: false
   hard_wrap: true
 
+exclude:  
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - _data/
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

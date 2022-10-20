@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2021",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
@@ -8,7 +8,8 @@
     "strict": true,
     "outDir": "../docs/assets/js",
     "sourceMap": true,
-    "sourceRoot": "../../../../typescript/src/assets/js"
+    "sourceRoot": "../../../../typescript/src/assets/js",
+    "typeRoots": ["./node_modules/@types", "./src/assets/js/types"]
   },
   "include": ["src/assets/js/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]

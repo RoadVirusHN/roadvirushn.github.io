@@ -1,0 +1,66 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none; }
+
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */ }
+
+.progressbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 12px;
+  background: linear-gradient(to bottom, #ff5f6d, #ffc371);
+  height: 0%;
+  z-index: 7;
+  transition: height 0.2s ease-out; }
+
+.scrollbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 12px;
+  z-index: 6;
+  background-color: gainsboro; }
+
+.scrollWrapper:focus {
+  cursor: grabbing; }
+.scrollWrapper:active {
+  cursor: grabbing; }
+
+.scrollbarButton {
+  margin-top: -1px;
+  position: fixed;
+  right: 7px;
+  top: 0.5em;
+  min-height: 27px;
+  height: 27px;
+  width: 14px;
+  transform: translate(50%, -50%);
+  background-color: gray;
+  border-radius: 2px;
+  z-index: 8;
+  transition: all 0.2s ease-out; }
+  .scrollbarButton:hover {
+    width: 18px;
+    background-color: #b4b4b4;
+    transition: all 0.2s ease-out;
+    cursor: grab; }
+  .scrollbarButton:active {
+    background-color: #ff3f3f;
+    transition: all 0.2s ease-out;
+    cursor: grabbing; }
+  .scrollbarButton:focus {
+    background-color: #ff3f3f;
+    transition: all 0.2s ease-out;
+    cursor: grabbing; }
+
+.no-animation {
+  transition: none !important;
+  animation: none !important; }
+
+/*# sourceMappingURL=obs-scrollbar.css.map */

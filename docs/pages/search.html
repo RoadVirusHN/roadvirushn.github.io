@@ -2,20 +2,28 @@
 permalink: /search.html
 layout: default
 ---
-<script src="https://unpkg.com/lunr/lunr.js"></script>
-<script type="module" src="/assets/js/lunr/search.js" charset="utf-8"></script>
-
-<ul id="search-results"></ul>
-
 <script>
   window.store = {
-    {% for post in site.posts%}
-      "{{post.url | slugify}}": {
-        title: "{{post.title | xml_escape}}",
-        url: "{{post.url | xml_escape}}",
-        content: {{post.content | strip_html | strip_newlines | jsonify}}
-      }
-      {% unless forloop.last %}, {% endunless %}
-    {% endfor %}
+    {% for post in site.posts %}
+  "{{post.url | slugify}}": {
+    title: "{{post.title | xml_escape}}",
+    date: "{{post.date | date: " %b %-d, %Y "}}",
+    url: "{{post.url | xml_escape}}",
+    categories: {{ post.categories | jsonify | upcase }},
+    content: {{ post.content | strip_html | strip_newlines | jsonify }}
+  }
+  {% unless forloop.last %}, {% endunless %}
+  {% endfor %}
     };
 </script>
+<script type="module" src="{{ site.static_js_dir }}/common/components/init_searchpage.js" charset="utf-8"></script>
+<script src="{{ site.static_js_dir }}/lunr/lunr.bundle.js"></script>
+<div id="query-results">
+  <h2 class="post-list-heading">Query <span class="query-str"></span> <span class="query-categories"></span> Search
+    Results</h2>
+  <ul class="post-list">
+    <h1>
+      🙊 Oops! No result!
+    </h1>
+  </ul>
+</div>

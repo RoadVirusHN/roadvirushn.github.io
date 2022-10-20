@@ -1,11 +1,60 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "jekyll",
-        "command": "bundle exec jekyll serve",
-        "type": "shell",
-        "options": {"cwd": "docs/"}
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "test",
+      "dependsOn":["jekyll", "webpack", "sass", "tsc"]
+    },
+    {
+      "label": "jekyll",
+      "command": "bundle exec jekyll serve",
+      "type": "shell",
+      "options": {
+        "cwd": "docs/"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
       }
-    ]
+    },
+    {
+      "label": "webpack",
+      "command": "node_modules/.bin/webpack",
+      "type": "shell",
+      "options": {
+        "cwd": "docs/"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "sass",
+      "command": "sass -w _sass:assets/css",
+      "type": "shell",
+      "options": {
+        "cwd": "docs/"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "tsc",
+      "command": "npx tsc -w",
+      "type": "shell",
+      "options": {
+        "cwd": "typescript/"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
 }

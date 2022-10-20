@@ -2,16 +2,16 @@
 layout: post
 ---
 
-<link rel="stylesheet" href="/{{ site.static_css_dir }}/callout.css" />
+<link rel="stylesheet" href="/{{ site.static_css_dir }}/obsidian/callout.css" />
 
 {% if page.use_Mathjax %} 
   {% include mathjax-script.html %} 
 {% endif %} 
 
 
-<link rel="stylesheet" href="/{{ site.static_css_dir }}/image.css" />
-<link rel="stylesheet" href="/{{ site.static_css_dir }}/link-warning.css" />
-<link rel="stylesheet" href="/{{ site.static_css_dir }}/preview.css" />
+<link rel="stylesheet" href="/{{ site.static_css_dir }}/obsidian/image.css" />
+<link rel="stylesheet" href="/{{ site.static_css_dir }}/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/{{ site.static_css_dir }}/obsidian/preview.css" />
 
 <div class="content-section">
   {% assign content = content | postprocess_obsidian %} {{content}}
