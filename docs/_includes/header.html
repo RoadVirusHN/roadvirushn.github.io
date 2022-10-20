@@ -5,12 +5,7 @@
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <div id="header-wrapper">
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-    <form class="search-form" action="/search.html" method="get">
-      <div id="search-wrapper">
-        <input type="text" id="search-box" name="query" > 
-        <div class="inner-search" >🔍</div>
-      </div>
-    </form>
+    {%- include searchbar.html -%}
     </div>
 
     {%- if page_paths -%}

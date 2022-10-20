@@ -1,24 +1,35 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+<script>
+  window.categories = {
+  {% for category in site.data.json.categories %}
+    {% assign data = site.data.json.categories[category[0]] %}
+    "{{category[0]}}" : {
+      "background-color": "{{category[1]["background-color"]}}",
+        "color": "{{category[1]["color"]}}"
+    }
+    {% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+  }
+</script>
+{%- include head.html -%}
 
-  {%- include head.html -%}
+{% include custom-scrollbar.html %}
+{% include redirection.html %}
 
-  {% include custom-toolbar.html %}
-  <script src="/assets/main-bundle.js"></script>
-  {% include redirection.html %}
-  <link rel="stylesheet" href="/{{ site.static_css_dir }}/common/search.css" />
-  <body>
+<body>
+  {%- include header.html -%}
 
-    {%- include header.html -%}
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+  {%- include footer.html -%}
 
-    {%- include footer.html -%}
+</body>
 
-  </body>
+<script src="/{{ site.static_js_dir }}/common/common.bundle.js"></script>
 
 </html>

@@ -1,0 +1,11 @@
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/{{ site.static_css_dir }}/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form>
+<script type="module" src="/{{ site.static_js_dir }}/common/components/init_searchbar.js"></script>
