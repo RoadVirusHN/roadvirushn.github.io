@@ -9,16 +9,16 @@ module PostprocessCallout
                       collapse: Regexp.last_match(3),
                       copy: Regexp.last_match(4),
                       content: Regexp.last_match(5),
-                      index: index,
                       emoji: get_emoji_from_type(Regexp.last_match(1)) })
     end
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
   def build_callout(data)
-    type, index, emoji, title, collapse, content, copy = \
-      data.values_at(:type, :index, :emoji, :title, :collapse, :content, :copy)
+    type, emoji, title, collapse, content, copy = \
+      data.values_at(:type, :emoji, :title, :collapse, :content, :copy)
     converted_title, content = get_converted_title(title, content)
+    puts converted_title, content if emoji == "🛠️"
     "<div class=\"callout callout-#{type}\" id=\"callout-#{SecureRandom.uuid}\">
       <div class=\"header\">
         <span class=\"emoji\">#{emoji}</span>

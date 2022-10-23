@@ -3,22 +3,30 @@ require_relative './obsidian/preprocesses/preprocess_wikilink'
 require_relative './obsidian/preprocesses/preprocess_headings'
 require_relative './obsidian/preprocesses/preprocess_callout'
 require_relative './post/preprocesses/preprocess_frontmatter'
+require_relative './crude/preprocesses/preprocess_notice'
 
 module PostPreprocessor
   class PostConverter < Jekyll::Generator
     safe true
 
     def generate(site)
-      site.posts.docs.map { |doc|
+      site.posts.docs.map do |doc|
         preprocess_general(site, doc)
-        if doc['layout'] == 'obsidian'
-          preprocess_obsidian(site, doc)
-        end
-      }
+
+        result = preprocess_obsidian(site, doc) if doc['layout'] == 'obsidian'
+        result = preprocess_crude(site, result) if doc['categories'].include?('crude')
+        result
+      end
     end
     include PreprocessFrontmatter
     def preprocess_general(_site, post)
       register_categories(post)
+    end
+
+    include PreprocessNotice
+    def preprocess_crude(_site, post)
+      post.content = add_notice(post.content)
+      post
     end
 
     include PreprocessImageLink

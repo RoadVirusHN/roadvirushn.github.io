@@ -14,5 +14,9 @@
   "TEST": {
     "background-color": "rgb(162, 42, 42)",
     "color": "rgb(93, 213, 86)"
+  },
+  "CRUDE": {
+    "background-color": "rgb(223, 220, 220)",
+    "color": "rgb(32, 35, 202)"
   }
 }
