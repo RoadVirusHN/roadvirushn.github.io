@@ -1,4 +1,4 @@
-function popUpRedirection(): void {
+function initRedirection(): void {
   let pluginSupportedURL = "https://luminous-bubblegum-8e9be4.netlify.app";
 
   if (
@@ -42,4 +42,4 @@ function popUpRedirection(): void {
     };
   }
 }
-popUpRedirection();
+initRedirection();

@@ -1,7 +1,7 @@
 import { NewWindow } from "../../types/lunr_types";
 
 const storedWindow = window as NewWindow;
-let queryCategories = [] as string[];
+let queryTags = [] as string[];
 function initSearchbar(): void {
   const searchBar = document.getElementById("search-box") as HTMLInputElement;
   const searchWrapper = document.getElementById(
@@ -40,7 +40,7 @@ function initSearchbar(): void {
   });
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (searchBar.value === "" && queryCategories.length === 0) {
+    if (searchBar.value === "" && queryTags.length === 0) {
       playNoQueryAnim(searchBar, searchWrapper);
       return;
     }
@@ -78,7 +78,7 @@ function isTryToDeleteTag(
 }
 
 function removeLastTag(tagHolder: HTMLInputElement): void {
-  queryCategories.pop();
+  queryTags.pop();
   if (tagHolder.hasChildNodes()) {
     tagHolder.removeChild(tagHolder.lastChild!);
   }
@@ -93,24 +93,24 @@ function goToSearchpage(
     replaceTagToElement(tagHolder)
   );
   let url = `search.html?query=${searchBar.value}`;
-  if (queryCategories.length > 0) {
-    url += "&categories=";
-    for (const category of queryCategories) {
-      url += `${category}|`;
+  if (queryTags.length > 0) {
+    url += "&tags=";
+    for (const tag of queryTags) {
+      url += `${tag}|`;
     }
     url = url.slice(0, -1);
   }
-  queryCategories = [];
+  queryTags = [];
   window.location.replace(url);
 }
 
 function clickToDeleteTag(e: MouseEvent): void {
   const tag = e.target as HTMLElement;
-  const removeTarget = queryCategories.findIndex(
+  const removeTarget = queryTags.findIndex(
     (e) => e === tag.innerText.slice(0, -2)
   );
 
-  queryCategories.splice(removeTarget, 1);
+  queryTags.splice(removeTarget, 1);
 
   tag.remove();
 }
@@ -121,24 +121,24 @@ export function replaceTagToElement(
   tagHolder: HTMLInputElement
 ): (substring: string, ...args: any[]) => string {
   return (_str: string, tagName: string) => {
-    const categoryLink = document.createElement("a");
-    const category = tagName.toUpperCase();
-    categoryLink.innerText = category + " x";
-    categoryLink.classList.add("category-link");
-    categoryLink.classList.add("for-search");
-    if (storedWindow.categories[category] !== undefined) {
-      categoryLink.style.color = storedWindow.categories[category].color;
-      categoryLink.style.backgroundColor =
-        storedWindow.categories[category]["background-color"];
-      queryCategories.push(category);
+    const tagLink = document.createElement("a");
+    const tag = tagName.toUpperCase();
+    tagLink.innerText = tag + " x";
+    tagLink.classList.add("tag-link");
+    tagLink.classList.add("for-search");
+    if (storedWindow.tags[tag] !== undefined) {
+      tagLink.style.color = storedWindow.tags[tag].color;
+      tagLink.style.backgroundColor =
+        storedWindow.tags[tag]["background-color"];
+      queryTags.push(tag);
     } else {
-      categoryLink.innerText = "❓UNREGISTERED TAG x";
+      tagLink.innerText = "❓UNREGISTERED TAG x";
     }
-    categoryLink.addEventListener("click", (e) => {
+    tagLink.addEventListener("click", (e) => {
       e.preventDefault();
       clickToDeleteTag(e);
     });
-    tagHolder.appendChild(categoryLink);
+    tagHolder.appendChild(tagLink);
     return "";
   };
 }

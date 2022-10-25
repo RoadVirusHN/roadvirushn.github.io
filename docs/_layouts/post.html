@@ -24,4 +24,6 @@ layout: default
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  <p class="u-path" hidden>{{ page.path }}</p>
+  <script type="module" src="/{{site.static_js_dir}}/utils/update_recents.js"></script>
 </article>

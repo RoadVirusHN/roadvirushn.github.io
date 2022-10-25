@@ -1,6 +1,6 @@
 import CreateObserver from "../../utils/create_observer";
 const center = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-export default function loadInternaLink() {
+export default function initInternalLinks() {
     const internObserver = CreateObserver(handleInternIntersect);
     const internalLinks = document.querySelectorAll(".wikilink:not(.externallink)");
     for (let i = 0; i < internalLinks.length; i++) {
@@ -19,6 +19,10 @@ export default function loadInternaLink() {
                 const footer = body.querySelector("footer");
                 body.removeChild(header);
                 body.removeChild(footer);
+                const drawer = body.querySelector("#drawer");
+                const drawerButton = body.querySelector("button.drawer-button.open");
+                body.querySelector("main").removeChild(drawer);
+                body.querySelector("main").removeChild(drawerButton);
             });
             preview.src = preview.dataset.href ?? "#";
         }

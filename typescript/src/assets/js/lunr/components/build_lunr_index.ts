@@ -21,12 +21,12 @@ export default function buildLunr(): lunr.Index {
     this.field("content");
     this.metadataWhitelist = ["position"];
 
-    for (const postUrl in storedWindow.store) {
+    for (const postPath in storedWindow.store) {
       // Add the data to lunr
       this.add({
-        id: postUrl,
-        title: storedWindow.store[postUrl].title,
-        content: storedWindow.store[postUrl].content,
+        id: postPath,
+        title: storedWindow.store[postPath].title,
+        content: storedWindow.store[postPath].content,
       });
     }
   });

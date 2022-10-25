@@ -1,22 +1,30 @@
 {
-  "JEKYLL": {
-    "background-color": "rgb(66, 247, 247)",
-    "color": "rgb(189, 8, 35)"
+  "categories": {
+    "DEFAULT": {
+      "categories": {
+      },
+      "posts": [
+        "_posts/default/2022-08-17-welcome-to-jekyll.markdown"
+      ]
+    },
+    "OBSIDIANS": {
+      "categories": {
+        "TESTS": {
+          "categories": {
+          },
+          "posts": [
+            "_posts/obsidians/tests/2022-08-24-Obsidian-example-pt-1.md",
+            "_posts/obsidians/tests/2022-08-24-Obsidian-example-pt-2.md"
+          ]
+        }
+      },
+      "posts": [
+        "_posts/obsidians/2022-08-17-개발자-글쓰기-copy.markdown",
+        "_posts/obsidians/2022-08-17-개발자-글쓰기.markdown"
+      ]
+    }
   },
-  "UPDATE": {
-    "background-color": "rgb(47, 59, 59)",
-    "color": "rgb(208, 196, 218)"
-  },
-  "BOOK": {
-    "background-color": "rgb(170, 211, 211)",
-    "color": "rgb(85, 44, 202)"
-  },
-  "TEST": {
-    "background-color": "rgb(162, 42, 42)",
-    "color": "rgb(93, 213, 86)"
-  },
-  "CRUDE": {
-    "background-color": "rgb(223, 220, 220)",
-    "color": "rgb(32, 35, 202)"
-  }
+  "posts": [
+
+  ]
 }

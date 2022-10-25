@@ -7,27 +7,28 @@ import {
 } from "../../types/search_types";
 import { NewWindow } from "../../types/lunr_types";
 import { playNoQueryAnim, replaceTagToElement } from "./init_searchbar.js";
+import { buildTagLink } from "../../search/utils/build_tags";
 
 const storedWindow = window as NewWindow;
 
 function getQueryVariables(): {
   query: string;
-  categories: string[];
+  tags: string[];
 } {
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);
   let query = params.get("query");
   query = query !== null ? decodeURIComponent(query.replace(/\+/g, "%20")) : "";
-  let categories = params
-    .get("categories")
+  let tags = params
+    .get("tags")
     ?.split("|")
     .map(decodeURIComponent)
     .map((v: string) => v.toUpperCase())
     .filter((v: string) => v.match(/[^ ]/) != null);
-  categories = categories !== undefined ? categories : ([] as string[]);
+  tags = tags !== undefined ? tags : ([] as string[]);
   return {
     query,
-    categories,
+    tags,
   };
 }
 function displaySearchResults(
@@ -46,37 +47,30 @@ function displaySearchResults(
     ".post-list"
   ) as HTMLElement;
 
-  const categoryResultsTitle = queryResultsDisplay.querySelector(
-    ".query-categories"
+  const tagResultsTitle = queryResultsDisplay.querySelector(
+    ".query-tags"
   ) as HTMLElement;
-  for (const category of searchSetting.categories) {
-    const categoryLink = buildCategoryLink(
-      category,
-      searchSetting.categories.includes(category)
-    );
-    categoryResultsTitle.appendChild(categoryLink);
+  for (const tag of searchSetting.tags) {
+    const tagLink = buildTagLink(tag, searchSetting.tags.includes(tag));
+    tagResultsTitle.appendChild(tagLink);
   }
 
   if (queryResults.length > 0) {
     queryResultList.innerHTML = "";
     for (const queryResult of queryResults) {
-      queryResultList.append(
-        buildPostItem(queryResult, searchSetting.categories)
-      );
+      queryResultList.append(buildPostItem(queryResult, searchSetting.tags));
     }
   }
 }
 
 function buildPostItem(
   queryResult: QueryResult,
-  queryCategories: string[]
+  queryTags: string[]
 ): HTMLElement {
   const result = document.createElement("li") as HTMLElement;
   result.appendChild(buildPostMeta(queryResult.date));
-  for (const category of queryResult.categories) {
-    result.appendChild(
-      buildCategoryLink(category, queryCategories.includes(category))
-    );
+  for (const tag of queryResult.tags) {
+    result.appendChild(buildTagLink(tag, queryTags.includes(tag)));
   }
 
   result.appendChild(
@@ -142,27 +136,12 @@ function buildPostMeta(date: string): HTMLElement {
   return postMeta;
 }
 
-function buildCategoryLink(category: string, isEmphasis: boolean): HTMLElement {
-  const categoryLink = document.createElement("a");
-  categoryLink.classList.add("category-link");
-  categoryLink.href = `/search.html?categories=${category}`;
-  categoryLink.innerText = category;
-  if (isEmphasis) {
-    categoryLink.classList.add("emphasis");
-  } else {
-    categoryLink.style.color = storedWindow.categories[category].color;
-    categoryLink.style.backgroundColor =
-      storedWindow.categories[category]["background-color"];
-  }
-  return categoryLink;
-}
-
 function fillSearchBox(searchSetting: SearchSetting): void {
   const searchBox = document.getElementById("search-box") as HTMLInputElement;
   const tagHolder = document.querySelector("#tag-holder") as HTMLInputElement;
   searchBox.value = `${searchSetting.query}`;
-  for (const category of searchSetting.categories) {
-    searchBox.value += ` #${category}`;
+  for (const tag of searchSetting.tags) {
+    searchBox.value += ` #${tag}`;
   }
   searchBox.value = searchBox.value.replaceAll(
     /#([^# ]+)/g,
@@ -175,15 +154,14 @@ function fillSearchBox(searchSetting: SearchSetting): void {
   searchBox.dispatchEvent(new Event("focusin"));
 }
 function getQueryResults(searchSetting: SearchSetting): QueryResult[] {
-  if (searchSetting.query === "")
-    return queryByCategories(searchSetting.categories);
+  if (searchSetting.query === "") return queryByTags(searchSetting.tags);
 
   const lunrResult =
     searchSetting.query !== ""
       ? window.searchIndex.search(searchSetting.query) // Get lunr to perform a search
       : ([] as lunr.Index.Result[]);
 
-  const filteredLunrResult = filterCategories(lunrResult, searchSetting);
+  const filteredLunrResult = filterTags(lunrResult, searchSetting);
   const queryResult = formQueryResults(filteredLunrResult);
   return queryResult;
 }
@@ -210,7 +188,7 @@ function formQueryResults(lunrResult: lunr.Index.Result[]): QueryResult[] {
     queryResult.push({
       url: item.url,
       date: item.date,
-      categories: item.categories.map((v: string) => v.toUpperCase()),
+      tags: item.tags.map((v: string) => v.toUpperCase()),
       title: item.title,
       titleMatchs,
       content: item.content,
@@ -220,22 +198,22 @@ function formQueryResults(lunrResult: lunr.Index.Result[]): QueryResult[] {
   return queryResult;
 }
 
-function queryByCategories(categories: string[]): QueryResult[] {
+function queryByTags(tags: string[]): QueryResult[] {
   const result = [];
-  for (const url of Object.keys(storedWindow.store)) {
-    const item = storedWindow.store[url];
+  for (const path of Object.keys(storedWindow.store)) {
+    const item = storedWindow.store[path];
     let doubleBreak = false;
-    for (const category of categories) {
-      if (!item.categories.includes(category)) {
+    for (const tag of tags) {
+      if (!item.tags.includes(tag)) {
         doubleBreak = true;
         break;
       }
     }
     if (doubleBreak) continue;
     result.push({
-      url,
+      url: item.url,
       date: item.date,
-      categories: item.categories.map((v: string) => v.toUpperCase()),
+      tags: item.tags.map((v: string) => v.toUpperCase()),
       title: item.title,
       titleMatchs: [],
       content: item.content,
@@ -245,17 +223,13 @@ function queryByCategories(categories: string[]): QueryResult[] {
   return result;
 }
 
-function filterCategories(
+function filterTags(
   lunrResult: lunr.Index.Result[],
   searchSetting: SearchSetting
 ): lunr.Index.Result[] {
   return lunrResult.filter((result) => {
-    for (const category of searchSetting.categories) {
-      if (
-        !storedWindow.store[result.ref].categories.includes(
-          category.toUpperCase()
-        )
-      )
+    for (const tag of searchSetting.tags) {
+      if (!storedWindow.store[result.ref].tags.includes(tag.toUpperCase()))
         return false;
     }
     return true;
@@ -264,7 +238,7 @@ function filterCategories(
 
 function initSearchpage(): void {
   const searchSetting = getQueryVariables();
-  if (searchSetting.query === "" && searchSetting.categories.length === 0) {
+  if (searchSetting.query === "" && searchSetting.tags.length === 0) {
     const postHeading = document.querySelector(
       ".post-list-heading"
     ) as HTMLElement;

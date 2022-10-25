@@ -18,7 +18,6 @@ module PostprocessCallout
     type, emoji, title, collapse, content, copy = \
       data.values_at(:type, :emoji, :title, :collapse, :content, :copy)
     converted_title, content = get_converted_title(title, content)
-    puts converted_title, content if emoji == "🛠️"
     "<div class=\"callout callout-#{type}\" id=\"callout-#{SecureRandom.uuid}\">
       <div class=\"header\">
         <span class=\"emoji\">#{emoji}</span>

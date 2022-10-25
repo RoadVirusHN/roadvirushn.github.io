@@ -10,17 +10,19 @@ module PostPreprocessor
     safe true
 
     def generate(site)
+      clear_categories
       site.posts.docs.map do |doc|
-        preprocess_general(site, doc)
+        result = preprocess_general(site, doc)
 
-        result = preprocess_obsidian(site, doc) if doc['layout'] == 'obsidian'
-        result = preprocess_crude(site, result) if doc['categories'].include?('crude')
+        result = preprocess_obsidian(site, result) if result['layout'] == 'obsidian'
+        result = preprocess_crude(site, result) if result['tags'].include?('crude')
         result
       end
     end
     include PreprocessFrontmatter
     def preprocess_general(_site, post)
-      register_categories(post)
+      register_tags(post)
+      regsiter_categories(post)
     end
 
     include PreprocessNotice

@@ -1,4 +1,4 @@
-export default function loadCallout() {
+export default function initCallouts() {
     const arrayOfCallout = document.querySelectorAll(".callout");
     for (const callout of arrayOfCallout) {
         const collapse = callout.querySelector("button.collapse");
