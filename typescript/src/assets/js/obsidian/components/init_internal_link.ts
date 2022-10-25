@@ -1,7 +1,7 @@
 import CreateObserver from "../../utils/create_observer";
 const center = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
-export default function loadInternaLink(): void {
+export default function initInternalLinks(): void {
   const internObserver = CreateObserver(handleInternIntersect);
   const internalLinks = document.querySelectorAll(
     ".wikilink:not(.externallink)"
@@ -41,6 +41,10 @@ export default function loadInternaLink(): void {
         const footer = body.querySelector("footer")!;
         body.removeChild(header);
         body.removeChild(footer);
+        const drawer = body.querySelector("#drawer")!;
+        const drawerButton = body.querySelector("button.drawer-button.open")!;
+        body.querySelector("main")!.removeChild(drawer);
+        body.querySelector("main")!.removeChild(drawerButton);
         // const regexResult = aTag.href.match(
         //   /#(?<id>[^#\s]+)$/
         // ) as RegExpMatchArray;

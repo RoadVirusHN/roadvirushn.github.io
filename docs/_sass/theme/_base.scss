@@ -1,3 +1,5 @@
+@import "../theme.scss";
+
 /**
  * Reset some basic elements
  */
@@ -46,7 +48,9 @@ ul, ol, dl, figure,
  * `main` element
  */
 main {
-  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  display: flex; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 
@@ -191,6 +195,24 @@ pre {
 }
 
 
+/**
+ * Wrapper
+ */
+ .wrapper {
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 8));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 8));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit * 4;
+  padding-left: $spacing-unit * 4;
+
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+  }
+}
 
 /**
  * Clearfix

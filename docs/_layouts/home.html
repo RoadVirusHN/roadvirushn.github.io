@@ -16,10 +16,10 @@ layout: default
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
-        {%for category in post.categories %}
-        {% assign category_upcase = category | upcase %}
-        <a class="category-link" href="/search.html?categories={{category}}" style="color: {{site.data.json.categories[category_upcase]["color"]}}; background-color: {{ site.data.json.categories[category_upcase]["background-color"] }};">
-          {{category_upcase}}
+        {%for tag in post.tags %}
+        {% assign tag_upcase = tag | upcase %}
+        <a class="tag-link" href="/search.html?tags={{tag}}" style="color: {{site.data.json.tags[tag_upcase]["color"]}}; background-color: {{ site.data.json.tags[tag_upcase]["background-color"] }};">
+          {{tag_upcase}}
         </a>
         {% endfor %}
         <h3>
@@ -34,7 +34,7 @@ layout: default
       {%- endfor -%}
     </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
   {%- endif -%}
 
 </div>

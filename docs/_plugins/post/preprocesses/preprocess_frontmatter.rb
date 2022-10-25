@@ -13,18 +13,48 @@ module PreprocessFrontmatter
     { 'background-color' => "rgb(#{r}, #{g}, #{g})", 'color' => "rgb(#{comp_r}, #{comp_g}, #{comp_b})" }
   end
 
-  def register_categories(post)
-    categories = post.data['categories']
-    data = JSON.parse(File.open('_data/json/categories.json').read)
+  def register_tags(post)
+    tags = post.data['tags']
+    data = JSON.parse(File.open('_data/json/tags.json').read)
+    File.open('_data/json/tags.json', 'w') do |file|
+      tags.each do |tag|
+        next if data.key?(tag.upcase)
 
-    File.open('_data/json/categories.json', 'w') do |file|
-      categories.each do |category|
-        next if data.key?(category.upcase)
-
-        data[category.upcase] = set_random_color
+        data[tag.upcase] = set_random_color
       end
 
       file.write(JSON.pretty_generate(data))
     end
+  end
+
+  def clear_categories()
+    File.open('_data/json/categories.json', 'w') do |file|
+      data = {"categories"=>{}, "posts"=>[]}
+      file.write(JSON.pretty_generate(data))
+    end
+  end
+
+  def regsiter_categories(post)
+    post.path.match(%r{_posts/(.+)/[^/]+\.(?:(?:md)|(?:markdown))}) do |_matched|
+      categories = Regexp.last_match(1).split('/')
+      post.data['categories'] = categories
+      data = JSON.parse(File.open('_data/json/categories.json').read)
+      File.open('_data/json/categories.json', 'w') do |file|
+        data_recursive = data
+        categories.each_with_index do |category, index|
+          category_upcase = category.upcase
+          unless data_recursive['categories'].key?(category_upcase)
+            data_recursive['categories'][category_upcase] = { 'categories' => {}, 'posts' => [] }
+          end
+          data_recursive = data_recursive['categories'][category_upcase]
+          if index == categories.size - 1
+            data_recursive["posts"].push(post.path.sub(%r{.*\/(?=_posts)},""))
+          end
+        end
+
+        file.write(JSON.pretty_generate(data))
+      end 
+    end
+    post
   end
 end

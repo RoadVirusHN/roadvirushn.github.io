@@ -1,6 +1,6 @@
 import CreateObserver from "../../utils/create_observer";
 
-export default function loadExternalLink(): void {
+export default function initExternalLinks(): void {
   const externObserver = CreateObserver(handleExternIntersect);
   const externalLinks = document.querySelectorAll(".wikilink.externallink");
 

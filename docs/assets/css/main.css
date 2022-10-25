@@ -37,8 +37,10 @@ ul, ol, dl, figure,
  * `main` element
  */
 main {
-  display: block;
-  /* Default value of `display` of `main` element is 'inline' in IE 11. */ }
+  display: flex;
+  /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  justify-content: space-between;
+  flex-direction: row; }
 
 /**
  * Images
@@ -140,6 +142,23 @@ pre {
       padding-left: 30px; } }
 
 /**
+ * Wrapper
+ */
+.wrapper {
+  max-width: -webkit-calc(1024px - (30px * 8));
+  max-width: calc(1024px - (30px * 8));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 120px;
+  padding-left: 120px; }
+  @media screen and (max-width: 1024px) {
+    .wrapper {
+      max-width: -webkit-calc(1024px - (30px * 2));
+      max-width: calc(1024px - (30px * 2));
+      padding-right: 30px;
+      padding-left: 30px; } }
+
+/**
  * Clearfix
  */
 .footer-col-wrapper:after {
@@ -186,7 +205,7 @@ table {
  * Site header
  */
 .site-header {
-  border-top: 5px solid #424242;
+  border-top: 1px solid #424242;
   border-bottom: 1px solid #e8e8e8;
   min-height: 55.95px;
   position: relative; }
@@ -200,6 +219,9 @@ table {
   float: left; }
   .site-title, .site-title:visited {
     color: #424242; }
+  @media screen and (max-width: 640px) {
+    .site-title {
+      display: none; } }
 
 .site-nav {
   float: right;
@@ -331,7 +353,7 @@ table {
   display: block;
   font-size: 24px; }
 
-.category-link {
+.tag-link {
   display: inline;
   border-radius: 10px;
   margin-right: 5px;
@@ -340,17 +362,17 @@ table {
   text-align: center;
   font-size: smaller;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
-  .category-link:hover:not(.for-search) {
+  .tag-link:hover:not(.for-search) {
     font-size: medium;
     transition: 0.5s;
     text-decoration: none;
     color: black;
     font-weight: bolder; }
-  .category-link.emphasis {
+  .tag-link.emphasis {
     font-size: medium;
     background-color: greenyellow;
     padding: 5px; }
-    .category-link.emphasis:hover {
+    .tag-link.emphasis:hover {
       font-size: large;
       transition: 0.5s;
       text-decoration: none;

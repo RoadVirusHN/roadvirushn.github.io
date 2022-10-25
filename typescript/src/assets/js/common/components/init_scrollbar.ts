@@ -6,14 +6,14 @@ let isScrollClicked = false;
 
 export default function initScrollbar(): void {
   queryElements();
-  scrollbarInit();
+  setScrollbarLength();
   document.addEventListener("scroll", scrollEvent);
   scrollWrapper.addEventListener("mousedown", clickScroll);
   document.addEventListener("mousemove", dragScroll);
   document.addEventListener("mouseup", releseScroll);
 }
 
-function scrollbarInit(): void {
+function setScrollbarLength(): void {
   const screenArticleRatio =
     window.innerHeight /
     document.documentElement.getBoundingClientRect().height;

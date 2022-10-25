@@ -42,10 +42,3 @@ $on-laptop:        1024px !default;
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
 }
-
-// Import partials.
-@import
-  "theme/base",
-  "theme/layout",
-  "theme/syntax-highlighting"
-;

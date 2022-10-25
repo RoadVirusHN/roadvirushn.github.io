@@ -1,9 +1,9 @@
-import loadCallout from "./components/init_callout";
-import loadExternalLink from "./components/init_external_link";
-import loadInternaLink from "./components/init_internal_link";
+import initCallouts from "./components/init_callout";
+import initExternalLinks from "./components/init_external_link";
+import initInternalLinks from "./components/init_internal_link";
 window.addEventListener("load", () => {
-    loadCallout();
-    loadInternaLink();
-    loadExternalLink();
+    initCallouts();
+    initInternalLinks();
+    initExternalLinks();
 });
 //# sourceMappingURL=index.js.map

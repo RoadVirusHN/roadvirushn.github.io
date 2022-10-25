@@ -1,12 +1,12 @@
 export interface PostList {
-  [url: string]: PostData;
+  [path: string]: PostData;
 }
 interface PositionList {
   position: [[number, number]];
 }
 export interface SearchSetting {
   query: string;
-  categories: string[];
+  tags: string[];
 }
 
 interface Attributes {
@@ -21,13 +21,13 @@ export interface PostData {
   title: string;
   date: string;
   url: string;
-  categories: string[];
+  tags: string[];
   content: string;
 }
 export interface QueryResult {
   url: string;
   date: string;
-  categories: string[];
+  tags: string[];
   title: string;
   titleMatchs: QueryMatchData[];
   content: string;
@@ -38,9 +38,13 @@ interface QueryMatchData {
   position: [[number, number]];
 }
 
-interface categoryInfo {
-  [category: string]: {
+interface TagInfo {
+  [tag: string]: {
     "background-color": string;
     color: string;
   };
+}
+interface CategoryInfo {
+  categories: { [categories: string]: CategoryInfo };
+  posts: string[];
 }

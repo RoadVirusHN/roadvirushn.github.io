@@ -5,13 +5,13 @@ let scrollWrapper;
 let isScrollClicked = false;
 export default function initScrollbar() {
     queryElements();
-    scrollbarInit();
+    setScrollbarLength();
     document.addEventListener("scroll", scrollEvent);
     scrollWrapper.addEventListener("mousedown", clickScroll);
     document.addEventListener("mousemove", dragScroll);
     document.addEventListener("mouseup", releseScroll);
 }
-function scrollbarInit() {
+function setScrollbarLength() {
     const screenArticleRatio = window.innerHeight /
         document.documentElement.getBoundingClientRect().height;
     if (screenArticleRatio >= 1) {
