@@ -16,8 +16,8 @@
   .drawer-button.close {
     display: inline;
     position: absolute;
-    right: 5px;
-    top: 25px;
+    right: 10px;
+    top: 10px;
     height: 30px;
     width: 30px;
     border: 2px solid #e8e8e8;
@@ -35,8 +35,22 @@
   justify-content: center;
   flex: 4; }
 
-div.avatar {
+div.my-description {
   flex: 1; }
+  div.my-description img.avatar {
+    object-fit: cover;
+    display: inline;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-position: 0 30%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    margin: 3px 0px; }
+  div.my-description .name {
+    margin: 0; }
+  div.my-description .stack-list a {
+    text-decoration: none; }
 
 #drawer {
   display: flex;
@@ -53,6 +67,8 @@ div.avatar {
   height: 80vh;
   background-color: white;
   padding: 10px; }
+  #drawer hr {
+    border: 1px solid #e8e8e8; }
   @media screen and (max-width: 1240px) {
     #drawer {
       display: none;
