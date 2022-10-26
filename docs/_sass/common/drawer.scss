@@ -18,15 +18,15 @@
   &.close {
     display: inline;
     position: absolute;
-    right: 5px;
-    top: 25px;
+    right: 10px;
+    top: 10px;
     height: 30px;
     width: 30px;
     border: 2px solid $grey-color-light;
     background-color: white;
   }
 }
-.drawer-content {  
+.drawer-content {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -36,11 +36,28 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 4
+  flex: 4;
 }
 
-div.avatar{
+div.my-description {
   flex: 1;
+  img.avatar {
+    object-fit: cover;
+    display: inline;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-position: 0 30%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    margin: 3px 0px;
+  }
+  .name {
+    margin: 0;
+  }
+  .stack-list a {
+    text-decoration: none;
+  }
 }
 
 #drawer {
@@ -58,6 +75,9 @@ div.avatar{
   height: 80vh;
   background-color: white;
   padding: 10px;
+  hr {
+    border: 1px solid $grey-color-light;
+  }
   @include media-query(1240px) {
     display: none;
     width: 256px;

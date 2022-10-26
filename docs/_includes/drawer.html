@@ -5,11 +5,38 @@
     ◀️
   </button>
   <div class="drawer-content">
-    <div class="avatar">
-      <h2>drawer test</h2>
-      <p>
-        asdfasdfasdfas
-        asdfasdfasdfasd
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/{{ site.static_img_dir }}/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+              <svg class="svg-icon">
+                <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+              </svg>
+            </a>
+            <a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+              <svg class="svg-icon">
+                <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+              </svg>
+            </a>
+            <a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+              <svg class="svg-icon">
+                <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹 개발자 지망생
+        <br>
+        + 머신러닝 관심
       </p>
     </div>
     <div class="drawer-posts">
@@ -42,7 +69,7 @@
         <h3 style="margin: 0;">Recent views</h3>
         <ul style="margin-left: 16px;">
           <li>
-            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong> 
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
           </li>
           <li>
             2 <a id="recent-2"></a>
@@ -61,6 +88,5 @@
     </div>
     <hr>
   </div>
-  <hr style="border-style: groove;">
   <div style="bottom: 10px; height: 7vh; flex: 1;"></div>
 </div>
