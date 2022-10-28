@@ -28,27 +28,8 @@
     <div class="drawer-posts">
       <hr>
       <div class="categories" style="flex: 2;">
-        <h3 style="margin: 0;">Categories</h3>
-        <ul class="category-list">
-          {% for category in site.data.json.categories.categories %}
-          <li><strong style="font-size: larger;">{% if forloop.last %}┗ {% else %}┣ {% endif %}</strong>
-            <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-              {{category[0]}}</h4>
-            ({% if category[1].posts.size %}📄: {{category[1].posts.size}},{% endif %} {% if category[1].categories.size
-            %}📂: {{category[1].categories.size}}{% endif %})
-            <ul class="deeper-category-list">
-              {% for deeper_category in category[1].categories %}
-              <li><strong style="font-size: larger;">{% if forloop.last %}┗ {% else %}┣ {% endif %}</strong>
-                <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-                  {{deeper_category[0]}}</h4>
-                ({% if deeper_category[1].posts.size %}📄: {{deeper_category[1].posts.size}},{% endif %} {% if
-                deeper_category[1].categories.size %}📂: {{deeper_category[1].categories.size}}{% endif %})
-              </li>
-              {% endfor %}
-            </ul>
-          </li>
-          {% endfor %}
-        </ul>
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        {% include drawer-categories-section.html  %}
       </div>
       <hr>
       <div class="recent-view" style="flex: 1;">
