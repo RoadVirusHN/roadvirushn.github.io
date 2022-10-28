@@ -65,6 +65,7 @@ module PostprocessCallout
     return '☠️' if type == 'danger'
     return '➕' if type == 'seealso'
     return '💡' if type == 'tip'
+    return '🗣️' if type == 'quote'
 
     '✨'
   end
