@@ -1,26 +1,44 @@
 {
   "categories": {
-    "DEFAULT": {
+    "COMPUTER_SCIENCE": {
       "categories": {
-      },
-      "posts": [
-        "_posts/default/2022-08-17-welcome-to-jekyll.markdown"
-      ]
-    },
-    "OBSIDIANS": {
-      "categories": {
-        "TESTS": {
+        "OPERATING_SYSTEM": {
           "categories": {
           },
           "posts": [
-            "_posts/obsidians/tests/2022-08-24-Obsidian-example-pt-1.md",
-            "_posts/obsidians/tests/2022-08-24-Obsidian-example-pt-2.md"
+            "/2022/08/10/1-%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EC%86%8C%EA%B0%9C.html",
+            "/2022/08/10/2-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EB%9E%80.html",
+            "/2022/08/10/3-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C.html",
+            "/2022/08/10/4-%EB%B3%91%ED%96%89-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EC%83%81%ED%98%B8%EB%B0%B0%EC%A0%9C.html",
+            "/2022/08/10/5-%EA%B5%90%EC%B0%A9-%EC%83%81%ED%83%9C%EC%99%80-%EA%B8%B0%EC%95%84-%EC%83%81%ED%83%9C.html",
+            "/2022/08/10/6-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html",
+            "/2022/08/10/7-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EA%B4%80%EB%A6%AC.html",
+            "/2022/08/10/8-%EA%B0%80%EC%83%81-%EB%A9%94%EB%AA%A8%EB%A6%AC.html",
+            "/2022/08/10/9-%EC%9E%85%EC%B6%9C%EB%A0%A5-%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC-%EB%94%94%EC%8A%A4%ED%81%AC-%EA%B4%80%EB%A6%AC.html",
+            "/2022/08/11/10-%ED%8C%8C%EC%9D%BC-%EA%B4%80%EB%A6%AC.html",
+            "/2022/08/11/11-%EB%B6%84%EC%82%B0-%EB%B0%8F-%EB%8B%A4%EC%A4%91%EB%B3%91%EB%A0%AC-%EC%B2%98%EB%A6%AC-%EC%8B%9C%EC%8A%A4%ED%85%9C.html",
+            "/2022/08/11/12-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%B3%B4%EC%95%88%EA%B3%BC-%EB%B3%B4%EC%95%88-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html",
+            "/2022/08/11/13-%EC%9C%A0%EB%8B%89%EC%8A%A4-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html"
           ]
         }
       },
       "posts": [
-        "_posts/obsidians/2022-08-17-개발자-글쓰기-copy.markdown",
-        "_posts/obsidians/2022-08-17-개발자-글쓰기.markdown"
+
+      ]
+    },
+    "DEFAULT": {
+      "categories": {
+      },
+      "posts": [
+        "/2022/08/17/welcome-to-jekyll.html"
+      ]
+    },
+    "TESTS": {
+      "categories": {
+      },
+      "posts": [
+        "/2022/08/24/Obsidian-example-pt-1.html",
+        "/2022/08/24/Obsidian-example-pt-2.html"
       ]
     }
   },

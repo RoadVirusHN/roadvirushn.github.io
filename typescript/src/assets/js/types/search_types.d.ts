@@ -1,5 +1,5 @@
 export interface PostList {
-  [path: string]: PostData;
+  [url: string]: PostData;
 }
 interface PositionList {
   position: [[number, number]];
@@ -20,10 +20,19 @@ export interface MyMetadata {
 export interface PostData {
   title: string;
   date: string;
-  url: string;
   tags: string[];
+  url: string;
   content: string;
 }
+
+export interface WindowPostData {
+  [url: string]: {
+    title: string;
+    date: string;
+    tags: string[];
+  };
+}
+
 export interface QueryResult {
   url: string;
   date: string;

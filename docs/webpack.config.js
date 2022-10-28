@@ -7,6 +7,7 @@ module.exports = {
     common: "./assets/js/common/index.js",
     lunr: "./assets/js/lunr/index.js",
     obsidian: "./assets/js/obsidian/index.js",
+    search: "./assets/js/search/index.js",
   },
   output: {
     filename: "[name]/[name].bundle.js",

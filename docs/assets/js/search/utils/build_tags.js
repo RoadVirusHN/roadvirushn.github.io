@@ -1,4 +1,5 @@
-const storedWindow = window;
+import tagJson from "../../../../_data/json/tags.json";
+const tagData = tagJson;
 export function buildTagLink(tag, isEmphasis) {
     const tagLink = document.createElement("a");
     tagLink.classList.add("tag-link");
@@ -8,8 +9,8 @@ export function buildTagLink(tag, isEmphasis) {
         tagLink.classList.add("emphasis");
     }
     else {
-        tagLink.style.color = storedWindow.tags[tag].color;
-        tagLink.style.backgroundColor = storedWindow.tags[tag]["background-color"];
+        tagLink.style.color = tagData[tag].color;
+        tagLink.style.backgroundColor = tagData[tag]["background-color"];
     }
     return tagLink;
 }

@@ -1,33 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: " en" }}">
-<script>
-  window.tags = {
-  {% for tag in site.data.json.tags %}
-    {% assign data = site.data.json.tags[tag[0]] %}
-    "{{tag[0]}}" : {
-      "background-color": "{{tag[1]["background-color"]}}",
-        "color": "{{tag[1]["color"]}}"
-    }
-    {% unless forloop.last %}, {% endunless %}
-  {% endfor %}
-  }
-  
-  window.categories = {{ site.data.json.categories| jsonify}}
-  
-  window.store = {
-    {% for post in site.posts %}
-    "{{post.path}}": {
-      title: "{{post.title | xml_escape}}",
-      date: "{{post.date | date: " %b %-d, %Y "}}",
-      url: "{{post.url | xml_escape}}",
-      tags: {{ post.tags | jsonify | upcase }},
-      content: {{ post.content | strip_html | strip_newlines | jsonify }}
-    }
-    {% unless forloop.last %}, {% endunless %}
-    {% endfor %}
-  };
-</script>
 {%- include head.html -%}
 
 {% include custom-scrollbar.html %}

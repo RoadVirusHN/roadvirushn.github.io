@@ -1,6 +1,7 @@
-const storedWindow = window;
+import tagJson from "../../../../_data/json/tags.json";
+const tagData = tagJson;
 let queryTags = [];
-function initSearchbar() {
+export default function initSearchbar() {
     const searchBar = document.getElementById("search-box");
     const searchWrapper = document.getElementById("search-wrapper");
     const tagHolder = searchWrapper.querySelector("#tag-holder");
@@ -83,7 +84,6 @@ function clickToDeleteTag(e) {
     queryTags.splice(removeTarget, 1);
     tag.remove();
 }
-initSearchbar();
 export function replaceTagToElement(tagHolder) {
     return (_str, tagName) => {
         const tagLink = document.createElement("a");
@@ -91,10 +91,9 @@ export function replaceTagToElement(tagHolder) {
         tagLink.innerText = tag + " x";
         tagLink.classList.add("tag-link");
         tagLink.classList.add("for-search");
-        if (storedWindow.tags[tag] !== undefined) {
-            tagLink.style.color = storedWindow.tags[tag].color;
-            tagLink.style.backgroundColor =
-                storedWindow.tags[tag]["background-color"];
+        if (tagData[tag] !== undefined) {
+            tagLink.style.color = tagData[tag].color;
+            tagLink.style.backgroundColor = tagData[tag]["background-color"];
             queryTags.push(tag);
         }
         else {

@@ -1,5 +1,8 @@
 import { buildTagLink } from "../../search/utils/build_tags";
-const newWindow = window;
+import postsJson from "../../../../_data/json/posts.json";
+import categoriesJson from "../../../../_data/json/categories.json";
+const categoriesData = categoriesJson;
+const postsData = postsJson;
 export default function initDrawer() {
     const drawer = document.getElementById("drawer");
     if (drawer === null) {
@@ -32,10 +35,20 @@ function setCategories() {
         throw Error("missing categories");
     }
     for (const category of categories.querySelectorAll("ul.category-list>li>h4")) {
-        category.addEventListener("click", (e) => {
-            const eventTarget = e.target;
-            changePageToPostList(eventTarget.innerText, newWindow.categories.categories[eventTarget.innerText]);
+        const categoryName = category.innerText.replace(/[\s]/g, "");
+        category.addEventListener("click", () => {
+            const queryRes = document.querySelector("div#query-results");
+            queryRes?.remove();
+            changePageToPostList(categoryName, categoriesData.categories[categoryName]);
         });
+        for (const childCategory of category.parentElement.querySelectorAll("ul.deeper-category-list>li>h4")) {
+            const childCategoryName = childCategory.innerText.replace(/[\s]/g, "");
+            childCategory.addEventListener("click", () => {
+                const queryRes = document.querySelector("div#query-results");
+                queryRes?.remove();
+                changePageToPostList(childCategoryName, categoriesData.categories[categoryName].categories[childCategoryName]);
+            });
+        }
     }
 }
 function changePageToPostList(categoryName, categoryInfo) {
@@ -56,26 +69,33 @@ function changePageToPostList(categoryName, categoryInfo) {
         folderItem.classList.add("folder-item");
         const folderTitle = document.createElement("h3");
         const folderAnchor = document.createElement("a");
-        folderAnchor.innerHTML = `📂 <strong>${category}</strong>(📄: ${categoryInfo.categories[category].posts.length}, 📂: ${Object.keys(categoryInfo.categories[category].categories).length})`;
+        const fileNum = categoryInfo.categories[category].posts.length;
+        const folderNum = Object.keys(categoryInfo.categories[category].categories).length;
+        const insideInfo = fileNum + folderNum === 0
+            ? "(Empty)"
+            : `<span style="font-size: xx-small;">(${fileNum > 0 ? `📄: ${fileNum}` : ""}${folderNum > 0 ? `📂: ${folderNum}` : ""})</span>`;
+        folderAnchor.innerHTML = `📂 <strong>${category}</strong>${insideInfo}`;
         folderTitle.appendChild(folderAnchor);
         folderItem.appendChild(folderTitle);
         postList.appendChild(folderItem);
     }
     for (const post of categoryInfo.posts) {
+        if (postsData[post].tags.includes("HIDE"))
+            continue;
         const postItem = document.createElement("li");
         const postMeta = document.createElement("span");
         postMeta.classList.add("post-meta");
-        postMeta.innerText = newWindow.store[post].date;
+        postMeta.innerText = postsData[post].date;
         postItem.appendChild(postMeta);
-        for (const tag of newWindow.store[post].tags) {
+        for (const tag of postsData[post].tags) {
             const tagLink = buildTagLink(tag, false);
             postItem.appendChild(tagLink);
         }
         const postTitle = document.createElement("h3");
         const postLink = document.createElement("a");
         postLink.classList.add("post-link");
-        postLink.href = newWindow.store[post].url;
-        postLink.innerText = newWindow.store[post].title;
+        postLink.href = post;
+        postLink.innerText = postsData[post].title;
         postTitle.appendChild(postLink);
         postItem.appendChild(postTitle);
         postList.appendChild(postItem);
@@ -90,8 +110,9 @@ function changePageToPostList(categoryName, categoryInfo) {
 export function updateRecentViews() {
     const recents = JSON.parse(window.localStorage.getItem("recents") ?? "[]");
     for (let i = 1; i <= recents.length; i += 1) {
-        const recentTitle = newWindow.store[recents[i - 1]].title;
-        const recentUrl = newWindow.store[recents[i - 1]].url;
+        const info = recents[i - 1];
+        const recentTitle = info.title;
+        const recentUrl = info.url;
         const targetAnchor = document.querySelector(`a#recent-${recents.length + 1 - i}`);
         targetAnchor.innerText = recentTitle;
         targetAnchor.href = recentUrl;

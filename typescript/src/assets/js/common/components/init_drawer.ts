@@ -1,19 +1,20 @@
 import { buildTagLink } from "../../search/utils/build_tags";
-import { NewWindow } from "../../types/lunr_types";
-import { CategoryInfo } from "../../types/search_types";
-
-const newWindow = window as NewWindow;
+import { CategoryInfo, WindowPostData } from "../../types/search_types";
+import { RecentPageInfo } from "../../types/storage_types";
+// @ts-expect-error: ooh! you suck TS!
+import postsJson from "../../../../_data/json/posts.json";
+// @ts-expect-error: you even dunno where the file is.
+import categoriesJson from "../../../../_data/json/categories.json";
+const categoriesData = categoriesJson as CategoryInfo;
+const postsData = postsJson as WindowPostData;
 export default function initDrawer(): void {
   const drawer = document.getElementById("drawer");
 
   if (drawer === null) {
     throw Error("missing Drawer");
   }
-
   setButtonEvent(drawer);
-
   setCategories();
-
   updateRecentViews();
 }
 
@@ -50,13 +51,34 @@ function setCategories(): void {
   for (const category of categories.querySelectorAll(
     "ul.category-list>li>h4"
   )) {
-    category.addEventListener("click", (e: Event) => {
-      const eventTarget = e.target as HTMLElement;
+    const categoryName = (category as HTMLElement).innerText.replace(
+      /[\s]/g,
+      ""
+    );
+    category.addEventListener("click", () => {
+      const queryRes = document.querySelector("div#query-results");
+      queryRes?.remove();
       changePageToPostList(
-        eventTarget.innerText,
-        newWindow.categories.categories[eventTarget.innerText]
+        categoryName,
+        categoriesData.categories[categoryName]
       );
     });
+    for (const childCategory of (
+      category.parentElement as HTMLElement
+    ).querySelectorAll("ul.deeper-category-list>li>h4")) {
+      const childCategoryName = (
+        childCategory as HTMLElement
+      ).innerText.replace(/[\s]/g, "");
+
+      childCategory.addEventListener("click", () => {
+        const queryRes = document.querySelector("div#query-results");
+        queryRes?.remove();
+        changePageToPostList(
+          childCategoryName,
+          categoriesData.categories[categoryName].categories[childCategoryName]
+        );
+      });
+    }
   }
 }
 
@@ -81,31 +103,38 @@ function changePageToPostList(
     folderItem.classList.add("folder-item");
     const folderTitle = document.createElement("h3");
     const folderAnchor = document.createElement("a");
-    folderAnchor.innerHTML = `📂 <strong>${category}</strong>(📄: ${
-      categoryInfo.categories[category].posts.length
-    }, 📂: ${
-      Object.keys(categoryInfo.categories[category].categories).length
-    })`;
+    const fileNum = categoryInfo.categories[category].posts.length;
+    const folderNum = Object.keys(
+      categoryInfo.categories[category].categories
+    ).length;
+    const insideInfo =
+      fileNum + folderNum === 0
+        ? "(Empty)"
+        : `<span style="font-size: xx-small;">(${
+            fileNum > 0 ? `📄: ${fileNum}` : ""
+          }${folderNum > 0 ? `📂: ${folderNum}` : ""})</span>`;
+    folderAnchor.innerHTML = `📂 <strong>${category}</strong>${insideInfo}`;
     folderTitle.appendChild(folderAnchor);
     folderItem.appendChild(folderTitle);
     postList.appendChild(folderItem);
   }
 
   for (const post of categoryInfo.posts) {
+    if (postsData[post].tags.includes("HIDE")) continue;
     const postItem = document.createElement("li");
     const postMeta = document.createElement("span");
     postMeta.classList.add("post-meta");
-    postMeta.innerText = newWindow.store[post].date;
+    postMeta.innerText = postsData[post].date;
     postItem.appendChild(postMeta);
-    for (const tag of newWindow.store[post].tags) {
+    for (const tag of postsData[post].tags) {
       const tagLink = buildTagLink(tag, false);
       postItem.appendChild(tagLink);
     }
     const postTitle = document.createElement("h3");
     const postLink = document.createElement("a");
     postLink.classList.add("post-link");
-    postLink.href = newWindow.store[post].url;
-    postLink.innerText = newWindow.store[post].title;
+    postLink.href = post;
+    postLink.innerText = postsData[post].title;
     postTitle.appendChild(postLink);
     postItem.appendChild(postTitle);
     postList.appendChild(postItem);
@@ -122,15 +151,17 @@ function changePageToPostList(
 export function updateRecentViews(): void {
   const recents = JSON.parse(
     window.localStorage.getItem("recents") ?? "[]"
-  ) as string[];
+  ) as RecentPageInfo[];
 
   for (let i = 1; i <= recents.length; i += 1) {
-    const recentTitle = newWindow.store[recents[i - 1]].title;
-    const recentUrl = newWindow.store[recents[i - 1]].url;
+    const info = recents[i - 1];
+    const recentTitle = info.title;
+    const recentUrl = info.url;
 
     const targetAnchor = document.querySelector(
       `a#recent-${recents.length + 1 - i}`
     ) as HTMLAnchorElement;
+
     targetAnchor.innerText = recentTitle;
     targetAnchor.href = recentUrl;
   }

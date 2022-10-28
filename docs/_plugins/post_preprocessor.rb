@@ -9,16 +9,20 @@ module PostPreprocessor
   class PostConverter < Jekyll::Generator
     safe true
 
+    include PreprocessFrontmatter
     def generate(site)
       clear_categories
+      register_posts(site.posts.docs)
       site.posts.docs.map do |doc|
         result = preprocess_general(site, doc)
 
         result = preprocess_obsidian(site, result) if result['layout'] == 'obsidian'
-        result = preprocess_crude(site, result) if result['tags'].include?('crude')
+        result = preprocess_crude(site, result) if result['tags'].include?('crude') || result['tags'].include?('CRUDE')
+        # result = preprocess_hide(site, result) if result['tags'].include?('hide') || result['tags'].include?('HIDE')
         result
       end
     end
+    
     include PreprocessFrontmatter
     def preprocess_general(_site, post)
       register_tags(post)
