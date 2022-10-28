@@ -5,6 +5,8 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "esModuleInterop": true,
+    // "moduleResolution": "node",
+    // "resolveJsonModule": true,
     "strict": true,
     "outDir": "../docs/assets/js",
     "sourceMap": true,

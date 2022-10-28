@@ -1,5 +1,5 @@
-import { playNoQueryAnim, replaceTagToElement } from "./init_searchbar.js";
-import { buildTagLink } from "../../search/utils/build_tags";
+import { playNoQueryAnim, replaceTagToElement, } from "../../common/components/init_searchbar.js";
+import { buildTagLink } from "./build_tags";
 const storedWindow = window;
 function getQueryVariables() {
     const queryString = window.location.search;
@@ -136,8 +136,8 @@ function formQueryResults(lunrResult) {
 }
 function queryByTags(tags) {
     const result = [];
-    for (const path of Object.keys(storedWindow.store)) {
-        const item = storedWindow.store[path];
+    for (const url of Object.keys(storedWindow.store)) {
+        const item = storedWindow.store[url];
         let doubleBreak = false;
         for (const tag of tags) {
             if (!item.tags.includes(tag)) {
@@ -168,7 +168,7 @@ function filterTags(lunrResult, searchSetting) {
         return true;
     });
 }
-function initSearchpage() {
+export function initSearchpage() {
     const searchSetting = getQueryVariables();
     if (searchSetting.query === "" && searchSetting.tags.length === 0) {
         const postHeading = document.querySelector(".post-list-heading");
@@ -184,5 +184,4 @@ function initSearchpage() {
     const queryResults = getQueryResults(searchSetting);
     displaySearchResults(queryResults, searchSetting);
 }
-initSearchpage();
 //# sourceMappingURL=init_searchpage.js.map

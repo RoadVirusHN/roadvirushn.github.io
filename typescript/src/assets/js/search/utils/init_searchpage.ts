@@ -6,8 +6,11 @@ import {
   SearchSetting,
 } from "../../types/search_types";
 import { NewWindow } from "../../types/lunr_types";
-import { playNoQueryAnim, replaceTagToElement } from "./init_searchbar.js";
-import { buildTagLink } from "../../search/utils/build_tags";
+import {
+  playNoQueryAnim,
+  replaceTagToElement,
+} from "../../common/components/init_searchbar.js";
+import { buildTagLink } from "./build_tags";
 
 const storedWindow = window as NewWindow;
 
@@ -200,8 +203,8 @@ function formQueryResults(lunrResult: lunr.Index.Result[]): QueryResult[] {
 
 function queryByTags(tags: string[]): QueryResult[] {
   const result = [];
-  for (const path of Object.keys(storedWindow.store)) {
-    const item = storedWindow.store[path];
+  for (const url of Object.keys(storedWindow.store)) {
+    const item = storedWindow.store[url];
     let doubleBreak = false;
     for (const tag of tags) {
       if (!item.tags.includes(tag)) {
@@ -236,7 +239,7 @@ function filterTags(
   });
 }
 
-function initSearchpage(): void {
+export function initSearchpage(): void {
   const searchSetting = getQueryVariables();
   if (searchSetting.query === "" && searchSetting.tags.length === 0) {
     const postHeading = document.querySelector(
@@ -257,5 +260,3 @@ function initSearchpage(): void {
   const queryResults = getQueryResults(searchSetting);
   displaySearchResults(queryResults, searchSetting);
 }
-
-initSearchpage();
