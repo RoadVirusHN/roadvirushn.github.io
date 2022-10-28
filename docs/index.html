@@ -6,25 +6,40 @@ layout: home
 <h2 class="post-list-heading">{{ page.list_title | default: "Recent Posts" }}</h2>
 <ul class="post-list">
   {% for post in paginator.posts %}
-  <li>
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    <span class="post-meta">{{ post.date | date: date_format }}</span>
-    {%for tag in post.tags %}
-    {% assign tag_upcase = tag | upcase %}
-    <a class="tag-link" href="/search.html?tags={{tag}}" style="color: {{site.data.json.tags[tag_upcase]["color"]}};
-      background-color: {{ site.data.json.tags[tag_upcase]["background-color"] }};">
-      {{tag_upcase}}
-    </a>
-    {% endfor %}
-    <h3>
-      <a class="post-link" href="{{ post.url | relative_url }}">
-        {{ post.title | escape }}
+    {% if post.tags contains "HIDE" %}
+      <li>    
+        <span class="post-meta">this post is hidden for some reason. but you can check it in github page.</span>
+        <a class="tag-link" href="/" style="color: {{site.data.json.tags["HIDE"]["color"]}};
+        background-color: {{ site.data.json.tags["HIDE"]["background-color"] }};">
+        HIDE
       </a>
-    </h3>
-    {%- if site.show_excerpts -%}
-    {{ post.excerpt }}
-    {%- endif -%}
-  </li>
+        <h3>
+          <a class="post-link" style="color: #7a7a7a;">
+            👻 HIDDEN CONTENTS
+          </a>
+        </h3>
+      </li>
+    {% else %}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        {%for tag in post.tags %}
+        {% assign tag_upcase = tag | upcase %}
+        <a class="tag-link" href="/search.html?tags={{tag}}" style="color: {{site.data.json.tags[tag_upcase]["color"]}};
+          background-color: {{ site.data.json.tags[tag_upcase]["background-color"] }};">
+          {{tag_upcase}}
+        </a>
+        {% endfor %}
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+    {% endif %}
   {%- endfor -%}
 </ul>
 <!-- Pagination links -->
