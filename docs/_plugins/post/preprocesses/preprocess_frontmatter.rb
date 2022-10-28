@@ -13,6 +13,23 @@ module PreprocessFrontmatter
     { 'background-color' => "rgb(#{r}, #{g}, #{g})", 'color' => "rgb(#{comp_r}, #{comp_g}, #{comp_b})" }
   end
 
+  def register_posts(posts)
+    data = {}
+    posts.each do |post|
+      data[post.url.encode('utf-8')] = {
+        "title" => post.data['title'].encode('utf-8'),
+        "date" => post.data['date'],
+        "path" => post.path.encode('utf-8'),
+        "tags" => post.data['tags'].map do |tag|
+          tag.upcase.encode('utf-8')
+        end
+      }
+    end
+    File.open('_data/json/posts.json', 'w') do |file|
+      file.write(JSON.pretty_generate(data))
+    end
+  end
+
   def register_tags(post)
     tags = post.data['tags']
     data = JSON.parse(File.open('_data/json/tags.json').read)
@@ -27,9 +44,9 @@ module PreprocessFrontmatter
     end
   end
 
-  def clear_categories()
+  def clear_categories
     File.open('_data/json/categories.json', 'w') do |file|
-      data = {"categories"=>{}, "posts"=>[]}
+      data = { 'categories' => {}, 'posts' => [] }
       file.write(JSON.pretty_generate(data))
     end
   end
@@ -47,13 +64,11 @@ module PreprocessFrontmatter
             data_recursive['categories'][category_upcase] = { 'categories' => {}, 'posts' => [] }
           end
           data_recursive = data_recursive['categories'][category_upcase]
-          if index == categories.size - 1
-            data_recursive["posts"].push(post.path.sub(%r{.*\/(?=_posts)},""))
-          end
+          data_recursive['posts'].push(post.url) if index == categories.size - 1
         end
 
         file.write(JSON.pretty_generate(data))
-      end 
+      end
     end
     post
   end

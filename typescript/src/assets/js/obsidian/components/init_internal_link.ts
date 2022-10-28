@@ -105,9 +105,6 @@ function buildPreview(
   quotedSection?.appendChild(targetElement);
   targetElement = targetElement.nextElementSibling as HTMLElement;
   while (targetElement !== null && !isUpperHeading(heading, targetElement)) {
-    console.log("targetElement", targetElement);
-    console.log(targetElement === null);
-
     quotedSection?.appendChild(targetElement);
     targetElement = targetElement.nextElementSibling as HTMLElement;
   }

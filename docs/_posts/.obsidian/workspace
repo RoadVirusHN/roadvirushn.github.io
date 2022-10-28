@@ -1,0 +1,145 @@
+{
+  "main": {
+    "id": "0d7db81f27cdeed5",
+    "type": "split",
+    "children": [
+      {
+        "id": "d2134d00e94d2807",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "templates/TIL template.md",
+            "mode": "source",
+            "source": true
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ead0a52ae61fe335",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b26f3a545691f34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "daab8ce8700881fe",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "976fdc90bc2077b8",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "866141b297938d7d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2f957799fb48536f",
+    "type": "split",
+    "children": [
+      {
+        "id": "b772d4f5d7319cde",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e52cd4640b913dc8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "templates/TIL template.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "760655ecb5f8c9c7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "templates/TIL template.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "23eece7229731e57",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "193b6c4338d301bd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "templates/TIL template.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "d2134d00e94d2807",
+  "lastOpenFiles": [
+    "2022-08-24-Obsidian-example-pt-1.md",
+    "2022-08-24-Obsidian-example-pt-2.md",
+    "Obsidian-example-pt-1.md",
+    "templates/TIL template.md",
+    "무제노트.md",
+    "2022-08-24-Obsidian-example-pt-1/image-20220824145210135.png",
+    "2022-08-24-Obsidian-example-pt-1/@image-20220824145023230_.png",
+    "2022-08-24-Obsidian-example-pt-1/@Pasted image-20220824144539_$.png",
+    "2022-08-24-obsidian-example pt.2.md",
+    "symbols.pdf"
+  ]
+}

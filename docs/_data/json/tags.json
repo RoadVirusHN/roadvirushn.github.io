@@ -1,22 +1,38 @@
 {
-  "JEKYLL": {
-    "background-color": "rgb(66, 247, 247)",
-    "color": "rgb(189, 8, 35)"
+  "OS": {
+    "background-color": "rgb(160, 43, 43)",
+    "color": "rgb(95, 212, 235)"
   },
-  "UPDATE": {
-    "background-color": "rgb(47, 59, 59)",
-    "color": "rgb(208, 196, 218)"
+  "CS": {
+    "background-color": "rgb(244, 217, 217)",
+    "color": "rgb(11, 38, 231)"
   },
-  "BOOK": {
-    "background-color": "rgb(170, 211, 211)",
-    "color": "rgb(85, 44, 202)"
+  "컴퓨터_구조": {
+    "background-color": "rgb(31, 78, 78)",
+    "color": "rgb(224, 177, 4)"
   },
-  "TEST": {
-    "background-color": "rgb(162, 42, 42)",
-    "color": "rgb(93, 213, 86)"
+  "요약": {
+    "background-color": "rgb(193, 68, 68)",
+    "color": "rgb(62, 187, 80)"
   },
   "CRUDE": {
-    "background-color": "rgb(223, 220, 220)",
-    "color": "rgb(32, 35, 202)"
+    "background-color": "rgb(50, 151, 151)",
+    "color": "rgb(205, 104, 144)"
+  },
+  "HIDE": {
+    "background-color": "rgb(167, 47, 47)",
+    "color": "rgb(88, 208, 83)"
+  },
+  "JEKYLL": {
+    "background-color": "rgb(147, 253, 253)",
+    "color": "rgb(108, 2, 94)"
+  },
+  "UPDATE": {
+    "background-color": "rgb(78, 111, 111)",
+    "color": "rgb(177, 144, 122)"
+  },
+  "BLOG_TEST": {
+    "background-color": "rgb(57, 77, 77)",
+    "color": "rgb(198, 178, 209)"
   }
 }

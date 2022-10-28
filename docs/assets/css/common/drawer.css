@@ -53,6 +53,7 @@ div.my-description {
     text-decoration: none; }
 
 #drawer {
+  z-index: 3;
   display: flex;
   position: fixed;
   border-style: solid;
@@ -91,5 +92,24 @@ div.my-description {
     margin-left: 16px; }
     #drawer .drawer-posts > ul.deeper-category-list li h4 {
       cursor: pointer; }
+
+.name {
+  display: inline-block;
+  animation: name 2s ease;
+  background: linear-gradient(30deg, #ff5f6d, #48a249 50%, #2f47cf);
+  background-size: 200% auto;
+  animation-iteration-count: infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: rgba(255, 255, 255, 0.2) 1px 1px; }
+
+@keyframes name {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
 
 /*# sourceMappingURL=drawer.css.map */

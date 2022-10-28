@@ -1,6 +1,8 @@
-import { NewWindow } from "../../types/lunr_types";
+// @ts-expect-error: ooh! you suck TS!
+import tagJson from "../../../../_data/json/tags.json";
+import { TagInfo } from "../../types/search_types";
 
-const storedWindow = window as NewWindow;
+const tagData = tagJson as TagInfo;
 
 export function buildTagLink(tag: string, isEmphasis: boolean): HTMLElement {
   const tagLink = document.createElement("a");
@@ -10,8 +12,8 @@ export function buildTagLink(tag: string, isEmphasis: boolean): HTMLElement {
   if (isEmphasis) {
     tagLink.classList.add("emphasis");
   } else {
-    tagLink.style.color = storedWindow.tags[tag].color;
-    tagLink.style.backgroundColor = storedWindow.tags[tag]["background-color"];
+    tagLink.style.color = tagData[tag].color;
+    tagLink.style.backgroundColor = tagData[tag]["background-color"];
   }
   return tagLink;
 }

@@ -150,3 +150,7 @@ div.callout-seealso {
 div.callout-tip {
   @include callout-color(aqua, cadetblue);
 }
+
+div.callout-quote {
+  @include callout-color(rgb(51, 83, 172),rgb(122, 185, 252));
+}

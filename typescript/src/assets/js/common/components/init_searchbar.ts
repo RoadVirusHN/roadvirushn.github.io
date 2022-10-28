@@ -1,8 +1,10 @@
-import { NewWindow } from "../../types/lunr_types";
+// @ts-expect-error: ooh! you suck TS!
+import tagJson from "../../../../_data/json/tags.json";
+import { TagInfo } from "../../types/search_types";
 
-const storedWindow = window as NewWindow;
+const tagData = tagJson as TagInfo;
 let queryTags = [] as string[];
-function initSearchbar(): void {
+export default function initSearchbar(): void {
   const searchBar = document.getElementById("search-box") as HTMLInputElement;
   const searchWrapper = document.getElementById(
     "search-wrapper"
@@ -115,8 +117,6 @@ function clickToDeleteTag(e: MouseEvent): void {
   tag.remove();
 }
 
-initSearchbar();
-
 export function replaceTagToElement(
   tagHolder: HTMLInputElement
 ): (substring: string, ...args: any[]) => string {
@@ -126,10 +126,9 @@ export function replaceTagToElement(
     tagLink.innerText = tag + " x";
     tagLink.classList.add("tag-link");
     tagLink.classList.add("for-search");
-    if (storedWindow.tags[tag] !== undefined) {
-      tagLink.style.color = storedWindow.tags[tag].color;
-      tagLink.style.backgroundColor =
-        storedWindow.tags[tag]["background-color"];
+    if (tagData[tag] !== undefined) {
+      tagLink.style.color = tagData[tag].color;
+      tagLink.style.backgroundColor = tagData[tag]["background-color"];
       queryTags.push(tag);
     } else {
       tagLink.innerText = "❓UNREGISTERED TAG x";

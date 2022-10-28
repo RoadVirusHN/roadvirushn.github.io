@@ -1,18 +1,25 @@
-const newWindow = window;
 function updateRecents() {
     let recents = JSON.parse(window.localStorage.getItem("recents") ?? "[]");
-    const uPath = document.querySelector(".u-path");
-    const recentPath = uPath.innerText;
-    if (recents.includes(recentPath)) {
+    const Title = document.querySelector("h1.post-title.p-name");
+    const recentTitle = Title.innerText;
+    const uUrl = document.querySelector(".u-url");
+    const recentUrl = uUrl.href;
+    const recentInfo = { title: recentTitle, url: recentUrl };
+    const isAlreadySeen = recents.map((e) => e.title === recentTitle && e.url === recentUrl);
+    if (isAlreadySeen.includes(true)) {
         recents = recents
-            .slice(0, recents.indexOf(recentPath))
-            .concat(recents.slice(recents.indexOf(recentPath) + 1));
+            .slice(0, isAlreadySeen.indexOf(true))
+            .concat(recents.slice(isAlreadySeen.indexOf(true) + 1));
     }
-    recents.push(recentPath);
+    recents.push(recentInfo);
+    if (recents.length > 5) {
+        recents.shift();
+    }
     window.localStorage.setItem("recents", JSON.stringify(recents));
     for (let i = 1; i <= recents.length; i += 1) {
-        const recentTitle = newWindow.store[recents[i - 1]].title;
-        const recentUrl = newWindow.store[recents[i - 1]].url;
+        const info = recents[i - 1];
+        const recentTitle = info.title;
+        const recentUrl = info.url;
         const targetAnchor = document.querySelector(`a#recent-${recents.length + 1 - i}`);
         targetAnchor.innerText = recentTitle;
         targetAnchor.href = recentUrl;

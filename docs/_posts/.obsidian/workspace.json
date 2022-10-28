@@ -1,0 +1,146 @@
+{
+  "main": {
+    "id": "0d7db81f27cdeed5",
+    "type": "split",
+    "children": [
+      {
+        "id": "ca89e4192f9ca6a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a88a0c260ca0c8ae",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ead0a52ae61fe335",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b26f3a545691f34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "daab8ce8700881fe",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "976fdc90bc2077b8",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "b6b092734a9a4c1e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2f957799fb48536f",
+    "type": "split",
+    "children": [
+      {
+        "id": "b772d4f5d7319cde",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e52cd4640b913dc8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "760655ecb5f8c9c7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "23eece7229731e57",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "193b6c4338d301bd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "active": "a88a0c260ca0c8ae",
+  "lastOpenFiles": [
+    "_posts/computer_science/operating_system/2022-10-28-2-운영체제란.md",
+    "_posts/computer_science/operating_system/2022-10-28-7-메모리-관리.md",
+    "_posts/computer_science/operating_system/2022-10-28-4-병행-프로세스와-상호배제.md",
+    "_posts/computer_science/operating_system/2022-10-28-1-컴퓨터-시스템의-소개.md",
+    "_posts/computer_science/operating_system/2022-10-28-9-입출력-시스템과-디스크-관리.md",
+    "_posts/computer_science/operating_system/2022-10-28-13-유닉스-운영체제.md",
+    "_posts/computer_science/operating_system/2022-10-28-12-시스템-보안과-보안-운영체제.md",
+    "_posts/computer_science/operating_system/2022-10-28-11-분산-및-다중병렬-처리-시스템.md",
+    "_posts/computer_science/operating_system/2022-10-28-10-파일-관리.md",
+    "_posts/computer_science/operating_system/2022-10-28-8-가상-메모리.md"
+  ]
+}

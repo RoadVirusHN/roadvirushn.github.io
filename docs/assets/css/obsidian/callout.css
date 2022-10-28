@@ -122,4 +122,10 @@ div.callout-tip {
   div.callout-tip div.header {
     background-color: cadetblue; }
 
+div.callout-quote {
+  background-color: floralwhite;
+  border-left: solid 8px #3353ac; }
+  div.callout-quote div.header {
+    background-color: #7ab9fc; }
+
 /*# sourceMappingURL=callout.css.map */
