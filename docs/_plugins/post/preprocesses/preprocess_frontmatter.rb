@@ -3,6 +3,12 @@
 require 'json'
 
 module PreprocessFrontmatter
+  def prevent_liquid(str)
+    str = "{% raw %}\n#{str}\n{% endraw %}"
+    str
+  end
+
+
   def set_random_color
     r = rand(255)
     g = rand(255)

@@ -79,7 +79,11 @@ function changePageToPostList(categoryName, categoryInfo) {
         folderItem.appendChild(folderTitle);
         postList.appendChild(folderItem);
     }
-    for (const post of categoryInfo.posts) {
+    const sortedPosts = categoryInfo.posts.sort((a, b) => {
+        return -(new Date(postsData[a].date).getTime() -
+            new Date(postsData[b].date).getTime());
+    });
+    for (const post of sortedPosts) {
         if (postsData[post].tags.includes("HIDE"))
             continue;
         const postItem = document.createElement("li");
