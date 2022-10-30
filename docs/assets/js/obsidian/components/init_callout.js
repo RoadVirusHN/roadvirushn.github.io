@@ -12,7 +12,9 @@ export default function initCallouts() {
         setCalloutAnim(calloutId, card);
         card.style.display = collapse.innerText === "🔼" ? "block" : "none";
         collapse.addEventListener("click", toggleCard);
-        copyButton.addEventListener("click", copyContent);
+        if (copyButton !== null){
+            copyButton.addEventListener("click", copyContent);
+        }
     }
 }
 function setCalloutAnim(calloutId, card) {

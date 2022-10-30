@@ -1,7 +1,74 @@
 {
   "categories": {
+    "WEB": {
+      "categories": {
+        "FRONTEND": {
+          "categories": {
+          },
+          "posts": [
+            "/2019/11/02/CSS-%EA%B0%9C%EB%85%90.html",
+            "/2019/11/02/HTML-%EB%82%99%EC%84%9C.html"
+          ]
+        },
+        "BACKEND": {
+          "categories": {
+          },
+          "posts": [
+            "/2020/02/13/Database-SQL-%EA%B8%B0%EC%B4%88.html",
+            "/2020/02/14/django.html",
+            "/2020/02/15/django-wsgi.html",
+            "/2020/02/16/Django-CRUD.html",
+            "/2020/02/16/Nodemon.html",
+            "/2022/03/16/ExpressJs.html",
+            "/2022/04/16/GraphQL-with-flask.html"
+          ]
+        },
+        "CI,CD": {
+          "categories": {
+          },
+          "posts": [
+            "/2020/09/08/AWS.html",
+            "/2021/03/23/Docker.html",
+            "/2021/03/23/docker-compose-%EA%B0%9C%EB%85%90.html",
+            "/2022/05/12/DinD_DooD.html"
+          ]
+        }
+      },
+      "posts": [
+
+      ]
+    },
     "COMPUTER_SCIENCE": {
       "categories": {
+        "ALGORITHM": {
+          "categories": {
+          },
+          "posts": [
+            "/2020/08/13/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%83%81.html",
+            "/2020/08/19/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A4%91.html",
+            "/2020/08/23/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%95%98.html",
+            "/2021/07/06/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-counting.html",
+            "/2021/07/06/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%95%A8%EC%88%98.html",
+            "/2021/07/08/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%EA%B8%B0%ED%95%98-%EC%9D%B4%ED%95%AD-%EB%B6%84%ED%8F%AC.html",
+            "/2021/07/09/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%EA%B7%B8%EB%9E%98%ED%94%84.html",
+            "/2021/07/10/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%96%89%EB%A0%AC.html",
+            "/2021/07/10/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0.html",
+            "/2021/07/10/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0-%EB%B3%80%EC%88%98.html",
+            "/2021/07/10/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%EA%B4%80%EA%B3%84.html",
+            "/2021/07/10/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%EC%A7%91%ED%95%A9.html",
+            "/2021/07/11/%EB%B3%91%ED%95%A9-%EC%A0%95%EB%A0%AC.html",
+            "/2021/07/11/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%EC%9C%A0%ED%95%9C%ED%95%A9.html",
+            "/2021/07/11/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%8A%B8%EB%A6%AC.html",
+            "/2021/09/19/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%9E%80.html",
+            "/2021/09/20/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%84%B1%EB%8A%A5-%EB%B6%84%EC%84%9D.html",
+            "/2021/09/22/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84.html",
+            "/2021/09/23/%EB%A3%A8%ED%94%84-%EB%B6%88%EB%B3%80%EC%84%B1.html",
+            "/2022/09/19/Python-for-Algorithms-libraries.html",
+            "/2022/09/22/Python-for-Algorithms-Graph.html",
+            "/2022/09/23/Python-for-Algorithms-Tree.html",
+            "/2022/09/23/Python-for-Algorithms-etc.html"
+          ]
+        },
         "OPERATING_SYSTEM": {
           "categories": {
           },
@@ -20,17 +87,36 @@
             "/2022/08/11/12-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%B3%B4%EC%95%88%EA%B3%BC-%EB%B3%B4%EC%95%88-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html",
             "/2022/08/11/13-%EC%9C%A0%EB%8B%89%EC%8A%A4-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html"
           ]
+        },
+        "NETWORK": {
+          "categories": {
+          },
+          "posts": [
+            "/2022/08/21/1-%EC%BB%B4%ED%93%A8%ED%84%B0-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%99%80-%EC%9D%B8%ED%84%B0%EB%84%B7.html",
+            "/2022/08/21/2-%EC%9D%91%EC%9A%A9-%EA%B3%84%EC%B8%B5.html",
+            "/2022/08/21/3-%EC%A0%84%EB%8B%AC-%EA%B3%84%EC%B8%B5.html",
+            "/2022/08/21/4-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B3%84%EC%B8%B5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B8%A1%EB%A9%B4.html",
+            "/2022/08/22/5-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B3%84%EC%B8%B5-%EC%BB%A8%ED%8A%B8%EB%A1%A4-%EC%B8%A1%EB%A9%B4.html",
+            "/2022/08/22/6-%EC%97%B0%EA%B2%B0-%EA%B3%84%EC%B8%B5%EA%B3%BC-LAN.html",
+            "/2022/08/22/7-%EB%AC%B4%EC%84%A0%EA%B3%BC-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC.html",
+            "/2022/08/22/8-%EC%BB%B4%ED%93%A8%ED%84%B0-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EB%B3%B4%EC%95%88.html"
+          ]
         }
       },
       "posts": [
 
       ]
     },
-    "DEFAULT": {
+    "ETC": {
       "categories": {
       },
       "posts": [
-        "/2022/08/17/welcome-to-jekyll.html"
+        "/2022/03/23/git-deploy-key-%EA%B0%9C%EB%85%90.html",
+        "/2022/03/24/gitignore-%EC%9E%91%EC%84%B1%EB%B2%95.html",
+        "/2022/06/10/%EC%98%81%EC%96%B4-%EC%8B%9C%EC%A0%9C.html",
+        "/2022/06/11/English-Determiner.html",
+        "/2022/07/12/Git-%ED%8C%8C%EC%9D%BC-%EA%B8%B0%EB%A1%9D-%EC%A7%80%EC%9A%B0%EA%B8%B0.html",
+        "/2022/08/10/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EA%B8%80%EC%93%B0%EA%B8%B0.html"
       ]
     },
     "TESTS": {

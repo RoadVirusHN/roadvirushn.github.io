@@ -1,38 +1,130 @@
 {
-  "OS": {
-    "background-color": "rgb(160, 43, 43)",
-    "color": "rgb(95, 212, 235)"
+  "CSS": {
+    "background-color": "rgb(34, 225, 225)",
+    "color": "rgb(221, 30, 99)"
+  },
+  "FRONTEND": {
+    "background-color": "rgb(213, 5, 5)",
+    "color": "rgb(42, 250, 224)"
+  },
+  "HTML": {
+    "background-color": "rgb(86, 131, 131)",
+    "color": "rgb(169, 124, 83)"
+  },
+  "DB": {
+    "background-color": "rgb(7, 73, 73)",
+    "color": "rgb(248, 182, 37)"
+  },
+  "SQL": {
+    "background-color": "rgb(144, 132, 132)",
+    "color": "rgb(111, 123, 180)"
+  },
+  "DJANGO": {
+    "background-color": "rgb(216, 139, 139)",
+    "color": "rgb(39, 116, 91)"
+  },
+  "PYTHON": {
+    "background-color": "rgb(55, 230, 230)",
+    "color": "rgb(200, 25, 15)"
+  },
+  "BACKEND": {
+    "background-color": "rgb(165, 32, 32)",
+    "color": "rgb(90, 223, 122)"
+  },
+  "JAVASCRIPT": {
+    "background-color": "rgb(246, 114, 114)",
+    "color": "rgb(9, 141, 91)"
+  },
+  "NODEJS": {
+    "background-color": "rgb(34, 129, 129)",
+    "color": "rgb(221, 126, 35)"
+  },
+  "알고리즘": {
+    "background-color": "rgb(15, 180, 180)",
+    "color": "rgb(240, 75, 94)"
   },
   "CS": {
-    "background-color": "rgb(244, 217, 217)",
-    "color": "rgb(11, 38, 231)"
-  },
-  "컴퓨터_구조": {
-    "background-color": "rgb(31, 78, 78)",
-    "color": "rgb(224, 177, 4)"
+    "background-color": "rgb(112, 233, 233)",
+    "color": "rgb(143, 22, 19)"
   },
   "요약": {
-    "background-color": "rgb(193, 68, 68)",
-    "color": "rgb(62, 187, 80)"
+    "background-color": "rgb(141, 219, 219)",
+    "color": "rgb(114, 36, 250)"
+  },
+  "AWS": {
+    "background-color": "rgb(203, 115, 115)",
+    "color": "rgb(52, 140, 230)"
+  },
+  "CLOUD": {
+    "background-color": "rgb(104, 64, 64)",
+    "color": "rgb(151, 191, 224)"
+  },
+  "DOCKER": {
+    "background-color": "rgb(242, 224, 224)",
+    "color": "rgb(13, 31, 196)"
+  },
+  "CICD": {
+    "background-color": "rgb(63, 142, 142)",
+    "color": "rgb(192, 113, 188)"
+  },
+  "MATH": {
+    "background-color": "rgb(104, 195, 195)",
+    "color": "rgb(151, 60, 7)"
+  },
+  "MATH,": {
+    "background-color": "rgb(128, 31, 31)",
+    "color": "rgb(127, 224, 149)"
+  },
+  "EXPRESSJS": {
+    "background-color": "rgb(56, 71, 71)",
+    "color": "rgb(199, 184, 91)"
+  },
+  "JS": {
+    "background-color": "rgb(18, 83, 83)",
+    "color": "rgb(237, 172, 135)"
+  },
+  "GIT": {
+    "background-color": "rgb(9, 213, 213)",
+    "color": "rgb(246, 42, 209)"
+  },
+  "FLASK": {
+    "background-color": "rgb(200, 121, 121)",
+    "color": "rgb(55, 134, 150)"
+  },
+  "GRAPHQL": {
+    "background-color": "rgb(12, 190, 190)",
+    "color": "rgb(243, 65, 103)"
+  },
+  "ENG": {
+    "background-color": "rgb(2, 160, 160)",
+    "color": "rgb(253, 95, 215)"
+  },
+  "OS": {
+    "background-color": "rgb(237, 71, 71)",
+    "color": "rgb(18, 184, 138)"
+  },
+  "컴퓨터_구조": {
+    "background-color": "rgb(104, 67, 67)",
+    "color": "rgb(151, 188, 207)"
+  },
+  "NOTAG": {
+    "background-color": "rgb(185, 185, 185)",
+    "color": "rgb(70, 70, 63)"
   },
   "CRUDE": {
-    "background-color": "rgb(50, 151, 151)",
-    "color": "rgb(205, 104, 144)"
+    "background-color": "rgb(214, 71, 71)",
+    "color": "rgb(41, 184, 50)"
   },
   "HIDE": {
-    "background-color": "rgb(167, 47, 47)",
-    "color": "rgb(88, 208, 83)"
+    "background-color": "rgb(133, 211, 211)",
+    "color": "rgb(122, 44, 49)"
   },
-  "JEKYLL": {
-    "background-color": "rgb(147, 253, 253)",
-    "color": "rgb(108, 2, 94)"
-  },
-  "UPDATE": {
-    "background-color": "rgb(78, 111, 111)",
-    "color": "rgb(177, 144, 122)"
+  "NETWORK": {
+    "background-color": "rgb(32, 245, 245)",
+    "color": "rgb(223, 10, 89)"
   },
   "BLOG_TEST": {
-    "background-color": "rgb(57, 77, 77)",
-    "color": "rgb(198, 178, 209)"
+    "background-color": "rgb(186, 170, 170)",
+    "color": "rgb(69, 85, 109)"
   }
 }

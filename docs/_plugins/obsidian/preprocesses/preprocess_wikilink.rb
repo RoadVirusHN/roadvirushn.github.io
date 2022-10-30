@@ -83,9 +83,11 @@ module PreprocessWikiLink
     if post.length == 1
       post[0].url + (raw_headings_to_href(target_heading) || '')
     elsif post.length > 1
-      raise "ERROR post title: #{post_name} => Duplicated posts."
+      puts "ERROR post title: #{post_name} => Duplicated posts."
+      post[0].url + (raw_headings_to_href(target_heading) || '')
     elsif post.empty?
-      raise "ERROR post title: #{post_name} => No such a post in your website."
+      puts "ERROR post title: #{post_name} => No such a post in your website."
+      ""
     end
   end
 

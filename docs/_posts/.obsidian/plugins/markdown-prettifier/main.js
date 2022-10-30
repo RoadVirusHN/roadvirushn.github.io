@@ -14618,7 +14618,7 @@ function inlineMath(node) {
   var pad = '';
   var sequence;
 
-  // If there is a single dollar sign on its own in the math, use a fence of
+  // If there is a single dollar sign on its own in the MATH use a fence of
   // two.
   // If there are two in a row, use one.
   while (
@@ -20919,7 +20919,7 @@ var characterEntities = {
 	image: image$4,
 	imagline: imagline,
 	imagpart: imagpart,
-	imath: imath,
+	imath: iMATH
 	imof: imof,
 	imped: imped,
 	"in": "∈",
@@ -20955,7 +20955,7 @@ var characterEntities = {
 	jcirc: jcirc,
 	jcy: jcy,
 	jfr: jfr,
-	jmath: jmath,
+	jmath: jMATH
 	jopf: jopf,
 	jscr: jscr,
 	jsercy: jsercy,

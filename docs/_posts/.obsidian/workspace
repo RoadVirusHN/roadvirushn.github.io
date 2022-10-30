@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "d2134d00e94d2807",
+        "id": "9ff7e4bf2802066a",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "templates/TIL template.md",
+            "file": "CICD/Jenkins/Jenkins.md",
             "mode": "source",
-            "source": true
+            "source": false
           }
         }
       }
@@ -32,7 +32,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#include",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -50,7 +50,7 @@
             }
           },
           {
-            "id": "866141b297938d7d",
+            "id": "e52fa2f4498bb0b6",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -62,7 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 278
   },
   "right": {
     "id": "2f957799fb48536f",
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "templates/TIL template.md",
+                "file": "CICD/Jenkins/Jenkins.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "templates/TIL template.md",
+                "file": "CICD/Jenkins/Jenkins.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,28 +118,37 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "templates/TIL template.md"
+                "file": "CICD/Jenkins/Jenkins.md"
               }
+            }
+          },
+          {
+            "id": "ed23add1c277cbaf",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 339,
+    "collapsed": true
   },
-  "active": "d2134d00e94d2807",
+  "active": "9ff7e4bf2802066a",
   "lastOpenFiles": [
-    "2022-08-24-Obsidian-example-pt-1.md",
-    "2022-08-24-Obsidian-example-pt-2.md",
-    "Obsidian-example-pt-1.md",
-    "templates/TIL template.md",
-    "무제노트.md",
-    "2022-08-24-Obsidian-example-pt-1/image-20220824145210135.png",
-    "2022-08-24-Obsidian-example-pt-1/@image-20220824145023230_.png",
-    "2022-08-24-Obsidian-example-pt-1/@Pasted image-20220824144539_$.png",
-    "2022-08-24-obsidian-example pt.2.md",
-    "symbols.pdf"
+    "CICD/Docker/Docker.md",
+    "CICD/Jenkins/Jenkins.md",
+    "CICD/Docker/DinD_DooD.md",
+    "CS/Algorithm/5. 자료구조란/자료구조.md",
+    "CS/Algorithm/3. 시간 복잡도/Time complexity.md",
+    "CS/OS/10. 파일 관리.md",
+    "CS/OS/9. 입출력 시스템과 디스크 관리.md",
+    "CS/OS/8. 가상 메모리.md",
+    "CS/OS/7. 메모리 관리.md",
+    "CS/OS/6. 프로세스 스케줄링.md"
   ]
 }

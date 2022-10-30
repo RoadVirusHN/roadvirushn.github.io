@@ -25,6 +25,7 @@ module PostPreprocessor
     
     include PreprocessFrontmatter
     def preprocess_general(_site, post)
+      post.content = prevent_liquid(post.content) if post['use_Mathjax']
       register_tags(post)
       regsiter_categories(post)
     end

@@ -9271,7 +9271,7 @@ function parsePullErrorResult(stdOut, stdErr) {
   return pullError.message && pullError;
 }
 var FILE_UPDATE_REGEX;
-var 요약_REGEX;
+var SUMMARY_REGEX;
 var ACTION_REGEX;
 var parsers3;
 var errorParsers;
@@ -9283,7 +9283,7 @@ var init_parse_pull = __esm({
     init_utils();
     init_parse_remote_messages();
     FILE_UPDATE_REGEX = /^\s*(.+?)\s+\|\s+\d+\s*(\+*)(-*)/;
-    요약_REGEX = /(\d+)\D+((\d+)\D+\(\+\))?(\D+(\d+)\D+\(-\))?/;
+    SUMMARY_REGEX = /(\d+)\D+((\d+)\D+\(\+\))?(\D+(\d+)\D+\(-\))?/;
     ACTION_REGEX = /^(create|delete) mode \d+ (.+)/;
     parsers3 = [
       new LineParser(FILE_UPDATE_REGEX, (result, [file, insertions, deletions]) => {
@@ -9295,7 +9295,7 @@ var init_parse_pull = __esm({
           result.deletions[file] = deletions.length;
         }
       }),
-      new LineParser( 요약_REGEX, (result, [changes, , insertions, , deletions]) => {
+      new LineParser(SUMMARY_REGEX, (result, [changes, , insertions, , deletions]) => {
         if (insertions !== void 0 || deletions !== void 0) {
           result.summary.changes = +changes || 0;
           result.summary.insertions = +insertions || 0;
