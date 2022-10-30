@@ -1,6 +1,6 @@
 {
   "userAdmonitions": {},
-  "syntaxHighlight": false,
+  "syntaxHighlight": true,
   "copyButton": false,
   "version": "9.0.3",
   "autoCollapse": false,
@@ -13,10 +13,10 @@
     "admonitions": true,
     "icons": true,
     "other": true,
-    "advanced": false
+    "advanced": true
   },
   "icons": [],
-  "useFontAwesome": true,
+  "useFontAwesome": false,
   "rpgDownloadedOnce": false,
   "msDocConverted": false,
   "useSnippet": false,

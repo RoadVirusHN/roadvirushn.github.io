@@ -1,17 +1,4 @@
 {
-  "showLineNumber": true,
-  "spellcheck": true,
-  "vimMode": false,
-  "attachmentFolderPath": "./2022-10-28-2-운영체제란",
-  "userIgnoreFilters": null,
-  "pdfExportSettings": {
-    "pageSize": "A4",
-    "landscape": false,
-    "margin": "0",
-    "downscalePercent": 100
-  },
-  "useMarkdownLinks": false,
-  "alwaysUpdateLinks": true,
-  "promptDelete": false,
-  "showUnsupportedFiles": true
+  "attachmentFolderPath": "./2022-03-23-git-deploy-key-개념",
+  "alwaysUpdateLinks": true
 }

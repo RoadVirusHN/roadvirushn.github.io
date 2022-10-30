@@ -5,7 +5,7 @@ tags: BLOG_TEST
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2022-08-24 14:10:02 +0900
-add_Mathjax: true
+use_Mathjax: true
 ---
 
 # Obsidian-example-pt-1
