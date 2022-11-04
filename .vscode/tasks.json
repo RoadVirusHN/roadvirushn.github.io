@@ -10,7 +10,7 @@
       "command": "bundle exec jekyll serve",
       "type": "shell",
       "options": {
-        "cwd": "docs/"
+        "cwd": "./"
       },
       "presentation": {
         "reveal": "always",
@@ -22,7 +22,7 @@
       "command": "node_modules/.bin/webpack",
       "type": "shell",
       "options": {
-        "cwd": "docs/"
+        "cwd": "./"
       },
       "presentation": {
         "reveal": "always",
@@ -35,7 +35,7 @@
       "command": "sass -w _sass:assets/css",
       "type": "shell",
       "options": {
-        "cwd": "docs/"
+        "cwd": "./"
       },
       "presentation": {
         "reveal": "always",
@@ -48,7 +48,7 @@
       "command": "npx tsc -w",
       "type": "shell",
       "options": {
-        "cwd": "typescript/"
+        "cwd": "./"
       },
       "presentation": {
         "reveal": "always",

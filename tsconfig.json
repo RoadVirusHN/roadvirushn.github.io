@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strict": true,
+    "outDir": "assets/js",
+    "sourceMap": true,
+    "sourceRoot": "../../../../ts/assets/js",
+    "typeRoots": ["./node_modules/@types", "ts/assets/js/types"]
+  },
+  "include": ["ts/assets/js/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
