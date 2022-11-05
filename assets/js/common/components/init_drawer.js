@@ -30,19 +30,15 @@ function setButtonEvent(drawer) {
     };
 }
 function setCategories() {
-    console.log("ddddd");
     const categories = document.querySelector(".drawer-content .drawer-posts .categories");
     if (categories === null) {
         throw Error("missing categories");
     }
-    console.log("ddddffd");
     for (const category of categories.querySelectorAll("ul.category-list>li>h3")) {
         const categoryName = category.innerText.replace(/[\s]/g, "");
-        console.log("dddsghddd");
         category.addEventListener("click", () => {
             const queryRes = document.querySelector("div#query-results");
             queryRes?.remove();
-            console.log("sdfd");
             changePageToPostList(categoryName, categoriesData.categories[categoryName]);
         });
         for (const childCategory of category.parentElement.querySelectorAll("ul.child-category-list>li>h4")) {

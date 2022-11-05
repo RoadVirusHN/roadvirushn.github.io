@@ -3,6 +3,9 @@ const path = require("path");
 module.exports = {
   mode: "production",
   watch: true,
+  watchOptions: {
+    ignored: "./_data/",
+  },
   entry: {
     common: "./assets/js/common/index.js",
     lunr: "./assets/js/lunr/index.js",
@@ -10,7 +13,7 @@ module.exports = {
     search: "./assets/js/search/index.js",
   },
   output: {
-    filename: "[name]/[name].bundle.js",
+    filename: "bundle/[name].bundle.js",
     path: path.resolve(__dirname, "assets/js"),
   },
   module: {

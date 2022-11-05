@@ -76,6 +76,7 @@ exclude:
   - webpack.config.js
   - .eslintrc.json
   - ts/
+  - _data/
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/

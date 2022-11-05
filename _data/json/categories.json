@@ -1,45 +1,5 @@
 {
   "categories": {
-    "WEB": {
-      "categories": {
-        "FRONTEND": {
-          "categories": {
-          },
-          "posts": [
-            "/2019/11/02/CSS-%EA%B0%9C%EB%85%90.html",
-            "/2019/11/02/HTML-%EB%82%99%EC%84%9C.html"
-          ]
-        },
-        "BACKEND": {
-          "categories": {
-          },
-          "posts": [
-            "/2020/02/13/Database-SQL-%EA%B8%B0%EC%B4%88.html",
-            "/2020/02/14/django.html",
-            "/2020/02/15/django-wsgi.html",
-            "/2020/02/16/Django-CRUD.html",
-            "/2020/02/16/Nodemon.html"
-          ]
-        }
-      },
-      "posts": [
-
-      ]
-    },
-    "COMPUTER_SCIENCE": {
-      "categories": {
-        "ALGORITHM": {
-          "categories": {
-          },
-          "posts": [
-            "/2020/08/13/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%83%81.html"
-          ]
-        }
-      },
-      "posts": [
-
-      ]
-    }
   },
   "posts": [
 

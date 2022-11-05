@@ -8,11 +8,10 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "strict": true,
-    "outDir": "assets/js",
+    "outDir": "/",
     "sourceMap": true,
-    "sourceRoot": "../../../../ts/assets/js",
     "typeRoots": ["./node_modules/@types", "ts/assets/js/types"]
   },
-  "include": ["ts/assets/js/**/*"],
+  "include": ["ts/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

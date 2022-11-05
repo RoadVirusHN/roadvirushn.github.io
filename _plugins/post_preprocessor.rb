@@ -11,11 +11,11 @@ module PostPreprocessor
 
     include PreprocessFrontmatter
     def generate(site)
-      clear_categories
-      register_posts(site.posts.docs)
+      changed = register_posts(site.posts.docs)
+      clear_categories if changed
       site.posts.docs.map do |doc|
-        result = preprocess_general(site, doc)
-
+        result = doc
+        result = preprocess_general(site, result, changed)
         result = preprocess_obsidian(site, result) if result['layout'] == 'obsidian'
         result = preprocess_crude(site, result) if result['tags'].include?('crude') || result['tags'].include?('CRUDE')
         # result = preprocess_hide(site, result) if result['tags'].include?('hide') || result['tags'].include?('HIDE')
@@ -24,10 +24,13 @@ module PostPreprocessor
     end
     
     include PreprocessFrontmatter
-    def preprocess_general(_site, post)
+    def preprocess_general(_site, post, changed)
       post.content = prevent_liquid(post.content) if post['use_Mathjax']
-      register_tags(post)
-      regsiter_categories(post)
+      if changed
+        register_tags(post)
+        post = register_categories(post)
+      end
+      post
     end
 
     include PreprocessNotice

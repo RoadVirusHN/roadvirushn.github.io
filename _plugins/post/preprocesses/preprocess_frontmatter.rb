@@ -20,25 +20,30 @@ module PreprocessFrontmatter
   end
 
   def register_posts(posts)
-    data = {}
+    posts_data = File.open('_data/json/posts.json').read
+    data = JSON.parse(posts_data != '' ? posts_data : '{}')
+    changed = false
     posts.each do |post|
-      data[post.url.encode('utf-8')] = {
+      new_data = {
         "title" => post.data['title'].encode('utf-8'),
-        "date" => post.data['date'],
+        "date" => post.data['date'].to_s.encode('utf-8'),
         "path" => post.path.encode('utf-8'),
         "tags" => post.data['tags'].map do |tag|
           tag.upcase.encode('utf-8')
         end
       }
+      if !data.key?(post.url.encode('utf-8')) || data[post.url.encode('utf-8')] != new_data
+        data[post.url.encode('utf-8')] = new_data
+        changed = true
+      end
     end
-    File.open('_data/json/posts.json', 'w') do |file|
-      file.write(JSON.pretty_generate(data))
+    if changed
+      File.open('_data/json/posts.json', 'w') do |file|
+        file.write(JSON.pretty_generate(data))
+      end
     end
+    changed
   end
-
-  def str_blank?
-    self
-  end 
 
   def register_tags(post)
     tags = post.data['tags']
@@ -62,7 +67,7 @@ module PreprocessFrontmatter
     end
   end
 
-  def regsiter_categories(post)
+  def register_categories(post)
     post.path.match(%r{_posts/(.+)/[^/]+\.(?:(?:md)|(?:markdown))}) do |_matched|
       categories = Regexp.last_match(1).split('/')
       post.data['categories'] = categories

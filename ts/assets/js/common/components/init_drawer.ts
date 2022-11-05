@@ -1,14 +1,13 @@
 import { buildTagLink } from "../../search/utils/build_tags";
 import { CategoryInfo, WindowPostData } from "../../types/search_types";
 import { RecentPageInfo } from "../../types/storage_types";
-// @ts-expect-error: ooh! you suck TS!
-import postsJson from "../../../../_data/json/posts.json";
-// @ts-expect-error: you even dunno where the file is.
-import categoriesJson from "../../../../_data/json/categories.json";
+import postsJson from "../../../../../_data/json/posts.json";
+import categoriesJson from "../../../../../_data/json/categories.json";
 const categoriesData = categoriesJson as CategoryInfo;
 const postsData = postsJson as WindowPostData;
 export default function initDrawer(): void {
   const drawer = document.getElementById("drawer");
+  console.log("asdf");
 
   if (drawer === null) {
     throw Error("missing Drawer");
@@ -43,13 +42,13 @@ function setButtonEvent(drawer: HTMLElement): void {
 
 function setCategories(): void {
   const categories = document.querySelector(
-    ".drawer-content > .drawer-posts > .categories"
+    ".drawer-content .drawer-posts .categories"
   ) as HTMLElement;
   if (categories === null) {
     throw Error("missing categories");
   }
   for (const category of categories.querySelectorAll(
-    "ul.category-list>li>h4"
+    "ul.category-list>li>h3"
   )) {
     const categoryName = (category as HTMLElement).innerText.replace(
       /[\s]/g,
@@ -58,8 +57,7 @@ function setCategories(): void {
     category.addEventListener("click", () => {
       const queryRes = document.querySelector("div#query-results");
       queryRes?.remove();
-      console.log("sdfd");
-      
+
       changePageToPostList(
         categoryName,
         categoriesData.categories[categoryName]
