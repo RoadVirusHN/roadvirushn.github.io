@@ -106,9 +106,7 @@ function changePageToPostList(categoryName, categoryInfo) {
     }
     newDivHome.appendChild(postList);
     const wrapper = document.querySelector("main.page-content div.wrapper");
-    const oldDivHome = wrapper.querySelector("div.home");
-    if (oldDivHome !== null)
-        wrapper?.removeChild(oldDivHome);
+    wrapper.innerHTML = "";
     wrapper?.appendChild(newDivHome);
 }
 export function updateRecentViews() {

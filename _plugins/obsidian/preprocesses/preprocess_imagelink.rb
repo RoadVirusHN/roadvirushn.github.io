@@ -14,14 +14,14 @@ module PreprocessImageLink
     static_dir = '/' + Jekyll.configuration({})['static_img_dir'] + '/' + post.date.strftime('%Y-%m-%d') + '-' + post['slug']
     post.content
         .gsub(MARKDOWN_IMAGE_LINK_REGEX)  do |_matched|
-      matched = build_markdown_img({
+     build_markdown_img({
                                      altText: Regexp.last_match(1),
                                      staticImgFile: Regexp.last_match(2)&.gsub('%20', ' '),
                                      externalURL: Regexp.last_match(3)
                                    }, static_dir)
     end
         .gsub(OBSIDIAN_IMAGE_LINK_REGEX)  do |_matched|
-      matched = build_markdown_img({
+      build_markdown_img({
                                      staticImgFile: Regexp.last_match(1),
                                      externalURL: Regexp.last_match(2),
                                      altText: Regexp.last_match(3)
