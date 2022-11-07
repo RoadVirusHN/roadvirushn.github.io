@@ -7,7 +7,6 @@ const categoriesData = categoriesJson as CategoryInfo;
 const postsData = postsJson as WindowPostData;
 export default function initDrawer(): void {
   const drawer = document.getElementById("drawer");
-  console.log("asdf");
 
   if (drawer === null) {
     throw Error("missing Drawer");
@@ -148,8 +147,7 @@ function changePageToPostList(
   const wrapper = document.querySelector(
     "main.page-content div.wrapper"
   ) as HTMLElement;
-  const oldDivHome = wrapper.querySelector("div.home");
-  if (oldDivHome !== null) wrapper?.removeChild(oldDivHome);
+  wrapper.innerHTML = "";
   wrapper?.appendChild(newDivHome);
 }
 

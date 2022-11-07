@@ -13,8 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2022-10-30-Untitled.md",
+                "file": "etc/2022-08-10-개발자-글쓰기.md",
                 "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7b3a734c2ccf3692",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -23,10 +35,8 @@
             "id": "594cb78ecbea0411",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "README.md/image-20221103005139660.png"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ],
@@ -97,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md/image-20221103005139660.png",
+                "file": "README.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md/image-20221103005139660.png",
+                "file": "README.md.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md/image-20221103005139660.png"
+                "file": "README.md.md"
               }
             }
           },
@@ -157,17 +167,17 @@
     "width": 339,
     "collapsed": true
   },
-  "active": "e52fa2f4498bb0b6",
+  "active": "7b3a734c2ccf3692",
   "lastOpenFiles": [
+    "README.md/image-20221106171811136.png",
+    "README.md.md",
+    "etc/2022-08-10-개발자-글쓰기.md",
     "README.md/image-20221103011535709.png",
     "README.md/image-20221103005349918.png",
     "README.md/image-20221103005139660.png",
     "README.md/image-20221103002246024.png",
     "README.md/image-20221102155927579.png",
     "README.md/image-20221102155824635.png",
-    "README.md/image-20221102155755141.png",
-    "README.md/image-20221102155734607.png",
-    "README.md/DNS_ERD.png",
-    "README.md/슬라이드1.png"
+    "README.md/image-20221102155755141.png"
   ]
 }
