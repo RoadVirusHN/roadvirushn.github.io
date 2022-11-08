@@ -7,11 +7,12 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "strict": true,
-    "outDir": "/",
     "sourceMap": true,
-    "typeRoots": ["./node_modules/@types", "ts/assets/js/types"]
+    "strict": true,
+    "rootDirs": [".", "./js/"],
+    "outDir": "dist/",
+    "typeRoots": ["node_modules/@types", "ts/types"],
   },
-  "include": ["ts/**/*"],
+  "include": ["js/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

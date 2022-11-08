@@ -7,14 +7,14 @@ module.exports = {
     ignored: "./_data/",
   },
   entry: {
-    common: "./assets/js/common/index.js",
-    lunr: "./assets/js/lunr/index.js",
-    obsidian: "./assets/js/obsidian/index.js",
-    search: "./assets/js/search/index.js",
+    common: "./dist/js/common/index.js",
+    lunr: "./dist/js/lunr/index.js",
+    obsidian: "./dist/js/obsidian/index.js",
+    search: "./dist/js/search/index.js",
   },
   output: {
     filename: "bundle/[name].bundle.js",
-    path: path.resolve(__dirname, "assets/js"),
+    path: path.resolve(__dirname, "dist/js"),
   },
   module: {
     rules: [

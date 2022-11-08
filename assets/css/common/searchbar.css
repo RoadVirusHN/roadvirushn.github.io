@@ -24,8 +24,7 @@
   transition: width 0.5s;
   width: 0; }
   #search-box.inputted, #search-box:focus {
-    width: fit-content;
-    max-width: 15vw;
+    width: 200px;
     max-height: max-content;
     transition: width 0.5s;
     display: inline-block;

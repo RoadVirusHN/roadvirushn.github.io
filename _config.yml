@@ -37,9 +37,9 @@ plugins:
 
 # custom variables
 static_img_dir: "assets/img"
-static_js_dir: "assets/js"
+static_js_dir: "dist/js"
 static_css_dir: "assets/css"
-static_etc_dir: "asstes/etc"
+static_etc_dir: "assets/etc"
 
 defaults:
   - scope:
@@ -51,7 +51,7 @@ defaults:
     values:
       css: true
   - scope:
-      path: "assets/js"
+      path: "dist/js"
     values:
       script: true
   - scope:
@@ -75,7 +75,6 @@ exclude:
   - tsconfig.json
   - webpack.config.js
   - .eslintrc.json
-  - ts/
   - _data/
   - .sass-cache/
   - .jekyll-cache/
