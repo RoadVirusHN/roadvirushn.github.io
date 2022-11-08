@@ -647,13 +647,12 @@
       "PYTHON"
     ]
   },
-  "/docs/2022/08/17/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EA%B8%80%EC%93%B0%EA%B8%B0.html": {
-    "title": "개발자 글쓰기",
-    "date": "2022-08-17 17:32:16 +0900",
-    "path": "C:/Users/roadv/Desktop/works/Subbrain/docs/_posts/obsidians/2022-08-17-개발자-글쓰기.markdown",
+  "/2022/11/07/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0-%EA%B3%BC%EC%A0%95.html": {
+    "title": "알고리즘 문제 해결 과정",
+    "date": "2022-11-07 17:28:52 +0900",
+    "path": "C:/Users/roadv/Desktop/works/Subbrain/_posts/computer_science/algorithm/2022-11-07-알고리즘-문제-해결-과정.md",
     "tags": [
-      "BOOK",
-      "TEST"
+      "알고리즘"
     ]
   }
 }

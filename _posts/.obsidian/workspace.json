@@ -25,8 +25,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md.md",
-                "mode": "preview",
+                "file": "computer_science/algorithm/2022-11-07-알고리즘-문제-해결-과정.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md.md",
+                "file": "computer_science/algorithm/2022-11-07-알고리즘-문제-해결-과정.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md.md",
+                "file": "computer_science/algorithm/2022-11-07-알고리즘-문제-해결-과정.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md.md"
+                "file": "computer_science/algorithm/2022-11-07-알고리즘-문제-해결-과정.md"
               }
             }
           },
@@ -169,15 +169,15 @@
   },
   "active": "7b3a734c2ccf3692",
   "lastOpenFiles": [
+    "computer_science/algorithm/2022-09-23-Python-for-Algorithms-etc.md",
+    "computer_science/algorithm/2021-09-22-시간-복잡도.md",
+    "computer_science/algorithm/2022-11-07-알고리즘-문제-해결-과정.md",
+    "computer_science/algorithm/2021-09-23-루프-불변성.md",
+    "computer_science/algorithm/2021-07-11-알고리즘-수학-트리.md",
     "README.md/image-20221106171811136.png",
     "README.md.md",
     "etc/2022-08-10-개발자-글쓰기.md",
     "README.md/image-20221103011535709.png",
-    "README.md/image-20221103005349918.png",
-    "README.md/image-20221103005139660.png",
-    "README.md/image-20221103002246024.png",
-    "README.md/image-20221102155927579.png",
-    "README.md/image-20221102155824635.png",
-    "README.md/image-20221102155755141.png"
+    "README.md/image-20221103005349918.png"
   ]
 }
