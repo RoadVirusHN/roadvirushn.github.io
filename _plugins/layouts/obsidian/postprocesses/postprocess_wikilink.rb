@@ -1,6 +1,7 @@
+# frozen_string_literal: true
 module PostprocessWikilink
-  INTERNAL_LINK_REGEX = %r{<a(?:\b[^<>]*?)href=(?:"|')([^"'<>]*)(?:"|')(?:[^<>]*?)class=(?:"|')wikilink(?:"|')(?:[^<>]*?)>([\s\S]*?)</a>}.freeze
-  EXTERNAL_LINK_REGEX = %r{<a(?:\b[^<>]*?)href=(?:"|')([^"'<>]*)(?:"|')(?:[^<>]*?)class=(?:"|')wikilink externallink(?:"|')(?:[^<>]*?)>([\s\S]*?)</a>}.freeze
+  INTERNAL_LINK_REGEX = %r{<a(?:\b[^<>]*?)href=(?:"|')([^"'<>]*)(?:"|')(?:[^<>]*?)class=(?:"|')wikilink(?:"|')(?:[^<>]*?)>([\s\S]*?)</a>}
+  EXTERNAL_LINK_REGEX = %r{<a(?:\b[^<>]*?)href=(?:"|')([^"'<>]*)(?:"|')(?:[^<>]*?)class=(?:"|')wikilink externallink(?:"|')(?:[^<>]*?)>([\s\S]*?)</a>}
 
   def convert_wikilink(str)
     str = str.gsub(EXTERNAL_LINK_REGEX) do |matched|

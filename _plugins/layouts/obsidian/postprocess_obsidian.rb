@@ -1,10 +1,10 @@
 require 'liquid'
-require_relative './obsidian/postprocesses/postprocess_toc'
-require_relative './obsidian/postprocesses/postprocess_callout'
-require_relative './obsidian/postprocesses/postprocess_wikilink'
+require_relative './postprocesses/postprocess_toc'
+require_relative './postprocesses/postprocess_callout'
+require_relative './postprocesses/postprocess_wikilink'
 
 module Jekyll
-  module ObsidianPostprocessor
+  module PostprocessObsidian
 
     include PostprocessToc
     include PostprocessCallout
@@ -19,4 +19,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_filter(Jekyll::ObsidianPostprocessor)
+Liquid::Template.register_filter(Jekyll::PostprocessObsidian)

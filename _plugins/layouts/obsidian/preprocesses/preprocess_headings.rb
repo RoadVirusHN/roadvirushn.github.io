@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module PreprocessHeadings
   OBSIDIAN_TOC_REGEX = /(?:\[TOC\])|(?:\* TOC\n\{:toc\})(?=[^`]*(?:`[^`]*`[^`]*)*\Z)/i
   MARKDOWN_HEADINGS = /(?<headings>^#+[^#\n]+(?=[^`]*(?:`[^`]*`[^`]*)*\Z))/m
 
   def convert_toc_formats(str)
     generate_headings_id(str.gsub(OBSIDIAN_TOC_REGEX) do |_matched|
-      matched = "```TOC\n```"
+      '```TOC\n```'
     end)
   end
 

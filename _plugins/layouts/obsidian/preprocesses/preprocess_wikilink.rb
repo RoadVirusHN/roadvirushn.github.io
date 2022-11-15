@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module PreprocessWikiLink
-  OBSIDIAN_LINK_REGEX = %r{(?<!!)\[\[((?:(?!https?://).*/)?(?:([^|/\^\#*?\]\[]+)))?((?:(?:\#[^#\]\[)|]*(?![|\]]))*(\#[^)\]|]*)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?(?:\|([^\#|\]\[]+))?\]\](?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
-  MARKDOWN_LINK_REGEX = %r{(?<!!)\[([^\#|\]]+)?\]\((?:(?:(?!https?://).*/)?(?:(?:([^|/\^\#*?\]\[.]+)(?:.[a-z]{2,3})?))?((?:(?:\#[^#`)(]+?)+?(?!\)))?(\#[^#`)(]+)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?\)(?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
+  OBSIDIAN_LINK_REGEX = %r{(?<!!)\[\[((?:(?!https?://).*/)?(?:([^|/\^\#*?\]\[]+)))?((?:(?:\#[^#\]\[)|]*(?![|\]]))*(\#[^)\]|]*)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?(?:\|([^\#|\]\[]+))?\]\](?=[^`]*(?:`[^`]*`[^`]*)*\Z)}
+  MARKDOWN_LINK_REGEX = %r{(?<!!)\[([^\#|\]]+)?\]\((?:(?:(?!https?://).*/)?(?:(?:([^|/\^\#*?\]\[.]+)(?:.[a-z]{2,3})?))?((?:(?:\#[^#`)(]+?)+?(?!\)))?(\#[^#`)(]+)?)?)?(https?://(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[\-a-zA-Z0-9(@:%_+.~\#?&/=]*))?\)(?=[^`]*(?:`[^`]*`[^`]*)*\Z)}
 
   # rubocop:disable Metrics/MethodLength(RuboCop)
   def convert_wikilink(site, post)
@@ -38,8 +40,8 @@ module PreprocessWikiLink
 
   def add_link_properties(external_url, is_link_in_this_post, innertext, href)
     link = "[#{innertext || '🔗'}](#{href}){: .wikilink}"
-    link += "{:target=\"_blank\"}" unless is_link_in_this_post
-    link += "{: .externallink}" if external_url
+    link += '{:target=\"_blank\"}' unless is_link_in_this_post
+    link += '{: .externallink}' if external_url
     link
   end
 
@@ -87,7 +89,7 @@ module PreprocessWikiLink
       post[0].url + (raw_headings_to_href(target_heading) || '')
     elsif post.empty?
       puts "ERROR post title: #{post_name} => No such a post in your website."
-      ""
+      ''
     end
   end
 

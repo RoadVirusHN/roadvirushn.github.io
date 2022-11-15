@@ -126,5 +126,9 @@
   "BLOG_TEST": {
     "background-color": "rgb(223, 22, 22)",
     "color": "rgb(32, 233, 34)"
+  },
+  "컴퓨터구조": {
+    "background-color": "rgb(219, 68, 68)",
+    "color": "rgb(36, 187, 253)"
   }
 }

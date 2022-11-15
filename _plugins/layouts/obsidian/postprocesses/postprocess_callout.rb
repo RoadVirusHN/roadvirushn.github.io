@@ -1,9 +1,10 @@
 require 'securerandom'
+# frozen_string_literal: true
 module PostprocessCallout
-  HTML_CALLOUT_MARK_REGEX = /<!-- #@#callout-(?<type>.*?)#@#(?<title>.*?)#@#(?<collapse>[+-])?(?<copy>c)? -->\n(?<content>[\s\S]*?)<!-- @#@-(?:\k<type>)@#@(?:\k<title>)@#@ -->\n/.freeze
+  HTML_CALLOUT_MARK_REGEX = /<!-- #@#callout-(?<type>.*?)#@#(?<title>.*?)#@#(?<collapse>[+-])?(?<copy>c)? -->\n(?<content>[\s\S]*?)<!-- @#@-(?:\k<type>)@#@(?:\k<title>)@#@ -->\n/
 
   def convert_callout(str)
-    str.gsub(HTML_CALLOUT_MARK_REGEX).with_index do |_matched, index|
+    str.gsub(HTML_CALLOUT_MARK_REGEX).with_index do |_matched, _index|
       build_callout({ type: Regexp.last_match(1),
                       title: Regexp.last_match(2),
                       collapse: Regexp.last_match(3),
@@ -13,7 +14,6 @@ module PostprocessCallout
     end
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
   def build_callout(data)
     type, emoji, title, collapse, content, copy = \
       data.values_at(:type, :emoji, :title, :collapse, :content, :copy)
@@ -22,7 +22,7 @@ module PostprocessCallout
       <div class=\"header\">
         <span class=\"emoji\">#{emoji}</span>
         <span class=\"title\"><strong>#{title == '' ? type : converted_title}</strong></span>
-        #{build_collapse(collapse) unless collapse.nil?}
+        #{build_collapse(collapse)}
       </div>
       #{build_content(content, copy)}
     </div>"
@@ -58,16 +58,11 @@ module PostprocessCallout
   end
 
   def get_emoji_from_type(type)
-    return '️🧾️' if type == 'example'
-    return '✍' if type == 'note'
-    return 'ℹ️' if type == 'info'
-    return '⚠️' if type == 'warning'
-    return '☠️' if type == 'danger'
-    return '➕' if type == 'seealso'
-    return '💡' if type == 'tip'
-    return '🗣️' if type == 'quote'
-
-    '✨'
+    emojis_data = JSON.parse(File.open('_data/json/callout_emojis.json').read)
+    if emojis_data.key?(type)
+      emojis_data[type]
+    else
+      '✨'
+    end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
 end

@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 {%- include head.html -%}
 
 {% include custom-scrollbar.html %}
@@ -11,7 +11,7 @@
   <main class="page-content" aria-label="Content">
       {% include drawer.html %}
       <div class="wrapper">
-        {{ content }}
+        {{ content | postprocess}}
       </div>
   </main>
 

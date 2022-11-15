@@ -1,14 +1,12 @@
+# frozen_string_literal: true
+
 # Get Headings data and Create TOC.
 module PostprocessToc
-  NO_ID_HEADINGS_REGEX = %r{<h(?<level>[123456])>(?<innerText>.*)</h\k<level>>(?=[^`]*(?:`[^`]*`[^`]*)*\Z)}.freeze
-
-  HTML_TOC_REGEX = %r{<pre><code[^>]+class\s*=\s*['"]language-toc['"][^>]*>([\s\S]*?)</code></pre>}i.freeze
-
-  TOC_CONFIG_REGEX = /(?<key>style|min_depth|max_depth|title|allow_inconsistent_headings|delimiter|varied_style): (?<value>.*)/.freeze
-
-  HEADINGS_REGEX = %r{<h(?<level>[123456])[^>]+id\s*=\s*['"](?<id>[^'"]+)['"][^>]*>(?<innerText>.*)</h\k<level>}.freeze
-
-  CODE_BLOCK = %r{<code\b[^<>]*>([\s\S]*?)</code>}.freeze
+  NO_ID_HEADINGS_REGEX = %r{<h(?<level>[123456])>(?<innerText>.*)</h\k<level>>(?=[^`]*(?:`[^`]*`[^`]*)*\Z)}
+  HTML_TOC_REGEX = %r{<pre><code[^>]+class\s*=\s*['"]language-toc['"][^>]*>([\s\S]*?)</code></pre>}i
+  TOC_CONFIG_REGEX = /(?<key>style|min_depth|max_depth|title|allow_inconsistent_headings|delimiter|varied_style): (?<value>.*)/
+  HEADINGS_REGEX = %r{<h(?<level>[123456])[^>]+id\s*=\s*['"](?<id>[^'"]+)['"][^>]*>(?<innerText>.*)</h\k<level>}
+  CODE_BLOCK = %r{<code\b[^<>]*>([\s\S]*?)</code>}
 
   def convert_noneng_custom_id(str)
     str.gsub(NO_ID_HEADINGS_REGEX) do |_matched|
@@ -74,8 +72,7 @@ module PostprocessToc
   def extract_render_headings(headings_data, config)
     render_headings_data = []
     headings_data.each do |heading|
-      # Should the heading be rendered?
-      if heading[:level] >= config[:min_depth]
+      if heading[:level] >= config[:min_depth] # check if this heading should be rendered.
         render_headings_data.push(heading)
       else
         render_headings_data += extract_render_headings(heading[:childs], config)
@@ -106,9 +103,8 @@ module PostprocessToc
     result = ''
     list_type = config[:list_type]
     headings_data.each do |heading|
+      next if heading[:level] > config[:max_depth]
       id, inner_text, lvl, childs = heading.values_at(:id, :innerText, :level, :childs)
-      next if lvl > config[:max_depth]
-
       generation_gap = (lvl - upper_level)
       li_tag = "#{"<#{list_type}>" * (generation_gap - 1)}<li><a href='##{id}' id='markdown-toc-#{config[:toc_index]}-#{id}'>#{inner_text}</a>"
       li_tag += "<#{list_type}>#{build_toc_items(childs, config, lvl)}\n</#{list_type}>" unless childs.empty?

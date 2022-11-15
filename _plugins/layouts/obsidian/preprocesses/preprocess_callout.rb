@@ -1,7 +1,9 @@
-module PreprocessCallout
-  # Preprocessing for callout.
+# frozen_string_literal: true
 
-  CALLOUT_REGEX = /(?<front_tag>```ad-(?<type>[a-zA-Z]*))\n(?:(?:title: (?<title>.*)\n)?(?:collapse: (?<collapse>.*)\n)?(?:copy: (?<copy>.*)\n)?)?(?<content>[\s\S]*?)(?<back_tag>```)\n/.freeze
+# Preprocessing for callout.
+module PreprocessCallout
+
+  CALLOUT_REGEX = /(?<front_tag>```ad-(?<type>[a-zA-Z]*))\n(?:(?:title: (?<title>.*)\n)?(?:collapse: (?<collapse>.*)\n)?(?:copy: (?<copy>.*)\n)?)?(?<content>[\s\S]*?)(?<back_tag>```)\n/
 
   def decouple_callout(str)
     # decouple callout tags to render inside codes.

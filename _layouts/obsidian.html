@@ -15,5 +15,5 @@ layout: post
 <link rel="stylesheet" href="/{{ site.static_css_dir }}/obsidian/preview.css" />
 
 <div class="content-section">
-  {% assign content = content | postprocess_obsidian %} {{content}}
+  {{content | postprocess_obsidian}}
 </div>
