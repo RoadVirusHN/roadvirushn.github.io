@@ -127,18 +127,8 @@
     "background-color": "rgb(223, 22, 22)",
     "color": "rgb(32, 233, 34)"
   },
-<<<<<<< HEAD
-  "BOOK": {
-    "background-color": "rgb(168, 202, 202)",
-    "color": "rgb(87, 53, 184)"
-  },
-  "TEST": {
-    "background-color": "rgb(252, 218, 218)",
-    "color": "rgb(3, 37, 113)"
-=======
   "컴퓨터구조": {
     "background-color": "rgb(219, 68, 68)",
     "color": "rgb(36, 187, 253)"
->>>>>>> develop
   }
 }

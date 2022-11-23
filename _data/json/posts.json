@@ -598,7 +598,7 @@
   "/2022/08/24/Obsidian-example-pt-1.html": {
     "title": "Obsidian-example-pt-1",
     "date": "2022-08-24 14:10:02 +0900",
-    "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/tests/obsidian_test/2022-08-24-Obsidian-example-pt-1.md",
+    "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/etc/2022-08-24-Obsidian-example-pt-1.md",
     "tags": [
       "BLOG_TEST"
     ]
@@ -606,7 +606,7 @@
   "/2022/08/24/Obsidian-example-pt-2.html": {
     "title": "Obsidian-example-pt-2",
     "date": "2022-08-24 15:03:32 +0900",
-    "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/tests/obsidian_test/2022-08-24-Obsidian-example-pt-2.md",
+    "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/etc/2022-08-24-Obsidian-example-pt-2.md",
     "tags": [
 
     ]
@@ -652,7 +652,8 @@
     "date": "2022-11-07 17:28:52 +0900",
     "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/computer_science/algorithm/2022-11-07-알고리즘-문제-해결-과정.md",
     "tags": [
-      "알고리즘"
+      "알고리즘",
+      "CRUDE"
     ]
   },
   "/docs/2022/08/17/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EA%B8%80%EC%93%B0%EA%B8%B0.html": {
@@ -662,6 +663,26 @@
     "tags": [
       "BOOK",
       "TEST"
+    ]
+  },
+  "/2022/11/11/float-%EC%B2%98%EB%A6%AC.html": {
+    "title": "float 처리",
+    "date": "2022-11-11 13:13:04 +0900",
+    "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/computer_science/etc/2022-11-11-float-처리.md",
+    "tags": [
+      "CS",
+      "컴퓨터_구조",
+      "CRUDE"
+    ]
+  },
+  "/2022/11/11/%EC%A0%95%EB%A0%AC-%EC%A0%95%EB%A6%AC.html": {
+    "title": "정렬-정리",
+    "date": "2022-11-11 13:16:20 +0900",
+    "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/computer_science/algorithm/2022-11-11-정렬-정리.md",
+    "tags": [
+      "CS",
+      "알고리즘",
+      "CRUDE"
     ]
   }
 }
