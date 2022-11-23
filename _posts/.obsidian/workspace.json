@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "etc/2022-08-10-개발자-글쓰기.md",
+                "file": "computer_science/algorithm/2022-11-07-알고리즘-문제-해결-과정.md",
                 "mode": "source",
                 "source": false
               }
@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "79ba4c3c013a7d62",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/algorithm/2021-07-11-알고리즘-수학-트리.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "594cb78ecbea0411",
             "type": "leaf",
             "state": {
@@ -39,8 +51,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -80,6 +91,18 @@
             "id": "e52fa2f4498bb0b6",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/etc/2022-11-11-float-처리.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5038fe9288fe9965",
+            "type": "leaf",
+            "state": {
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
@@ -87,7 +110,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -167,17 +190,17 @@
     "width": 339,
     "collapsed": true
   },
-  "active": "7b3a734c2ccf3692",
+  "active": "31d785787939d3ff",
   "lastOpenFiles": [
-    "computer_science/algorithm/2022-09-23-Python-for-Algorithms-etc.md",
-    "computer_science/algorithm/2021-09-22-시간-복잡도.md",
+    "computer_science/algorithm/2021-09-20-알고리즘-성능-분석.md",
     "computer_science/algorithm/2022-11-07-알고리즘-문제-해결-과정.md",
-    "computer_science/algorithm/2021-09-23-루프-불변성.md",
-    "computer_science/algorithm/2021-07-11-알고리즘-수학-트리.md",
-    "README.md/image-20221106171811136.png",
-    "README.md.md",
-    "etc/2022-08-10-개발자-글쓰기.md",
-    "README.md/image-20221103011535709.png",
-    "README.md/image-20221103005349918.png"
+    "computer_science/algorithm/2021-09-22-시간-복잡도.md",
+    "computer_science/operating_system/2022-08-10-7-메모리-관리.md",
+    "computer_science/operating_system/2022-08-10-5-교착-상태와-기아-상태.md",
+    "computer_science/operating_system/2022-08-10-6-프로세스-스케줄링.md",
+    "computer_science/operating_system/2022-08-11-13-유닉스-운영체제.md",
+    "computer_science/operating_system/2022-08-11-12-시스템-보안과-보안-운영체제.md",
+    "computer_science/operating_system/2022-08-11-11-분산-및-다중병렬-처리-시스템.md",
+    "computer_science/operating_system/2022-08-11-10-파일-관리.md"
   ]
 }

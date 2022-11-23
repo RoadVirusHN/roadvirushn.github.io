@@ -1,18 +1,18 @@
-
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 {%- include head.html -%}
 
 {% include custom-scrollbar.html %}
 {% include redirection.html %}
+
 <body>
   {%- include header.html -%}
-  
+
   <main class="page-content" aria-label="Content">
-      {% include drawer.html %}
-      <div class="wrapper">
-        {{ content }}
-      </div>
+    {% include drawer.html %}
+    <div class="wrapper">
+      {{ content | postprocess}}
+    </div>
   </main>
 
   {%- include footer.html -%}
