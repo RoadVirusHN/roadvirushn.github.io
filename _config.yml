@@ -33,11 +33,10 @@ languages: ["kr", "en"]
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-paginate
 
 # custom variables
 static_img_dir: "assets/img"
-static_js_dir: "dist/js"
+static_js_dir: "assets/scripts"
 static_css_dir: "assets/css"
 static_etc_dir: "assets/etc"
 
@@ -51,27 +50,20 @@ defaults:
     values:
       css: true
   - scope:
-      path: "dist/js"
+      path: "assets/scripts"
     values:
       script: true
   - scope:
       path: "assets/etc"
     values:
       etc: true
-  - scope:
-      type: "_posts"
-    values:
-      layout: "obsidian"
 
 kramdown:
   auto_ids: false
   hard_wrap: true
 
-paginate: 5
-
-paginate_path: "/blog/:num/"
-
 exclude:  
+  - scripts/
   - tsconfig.json
   - webpack.config.js
   - .eslintrc.json
