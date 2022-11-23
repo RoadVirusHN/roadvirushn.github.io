@@ -1,7 +1,7 @@
-require_relative './preprocesses/preprocess_imagelink'
-require_relative './preprocesses/preprocess_wikilink'
-require_relative './preprocesses/preprocess_headings'
-require_relative './preprocesses/preprocess_callout'
+require_relative './modules/preprocess_imagelink'
+require_relative './modules/preprocess_wikilink'
+require_relative './modules/preprocess_headings'
+require_relative './modules/preprocess_callout'
 
 
 module PreprocessObsidian

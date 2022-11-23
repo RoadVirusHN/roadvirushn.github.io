@@ -1,7 +1,7 @@
 require 'liquid'
-require_relative './postprocesses/postprocess_toc'
-require_relative './postprocesses/postprocess_callout'
-require_relative './postprocesses/postprocess_wikilink'
+require_relative './modules/postprocess_toc'
+require_relative './modules/postprocess_callout'
+require_relative './modules/postprocess_wikilink'
 
 module Jekyll
   module PostprocessObsidian
@@ -13,7 +13,8 @@ module Jekyll
       str = convert_noneng_custom_id(str)
       str = convert_toc(str)
       str = convert_callout(str)
-      convert_wikilink(str)
+      str = convert_wikilink(str)
+      str
     end
 
   end

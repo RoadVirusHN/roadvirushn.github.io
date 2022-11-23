@@ -1,4 +1,4 @@
-require_relative './preprocesses/preprocess_frontmatter'
+require_relative './modules/preprocess_frontmatter'
 module PreprocessCommon
   include PreprocessFrontmatter
   def preprocess_common(_site, post, changed)
