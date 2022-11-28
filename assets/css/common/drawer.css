@@ -86,6 +86,17 @@ div.my-description {
     margin-left: 0px; }
     #drawer .drawer-posts ul.category-list > li h3 {
       cursor: pointer; }
+    #drawer .drawer-posts ul.category-list span.category-drop-down {
+      font-size: xx-small;
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: 5px; }
+    #drawer .drawer-posts ul.category-list a.category-link {
+      background-color: lightgray;
+      padding: 0px 1px;
+      border-radius: 2px; }
+      #drawer .drawer-posts ul.category-list a.category-link:hover {
+        text-decoration: none; }
   #drawer .drawer-posts ul.category-list ul.child-category-list {
     margin: 0; }
     #drawer .drawer-posts ul.category-list ul.child-category-list li h4 {

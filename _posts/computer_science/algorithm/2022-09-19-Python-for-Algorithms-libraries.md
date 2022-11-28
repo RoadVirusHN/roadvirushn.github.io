@@ -48,7 +48,7 @@ arrayOfAnswer = [
 
 if len(arrayOfInput) != len(arrayOfAnswer):
     raise Exception(
-        f"The length of `arrayOfInput`={len(arrayOfInput)} and the length of `arrayOfAnswer`={len(arrayOfAnswer)} do not match.")  
+        f"Error: (len(arrayOfInput)={len(arrayOfInput)}) != (len(arrayOfAnswer)={len(arrayOfAnswer)})")  
 
 def solution(
     # your arguments

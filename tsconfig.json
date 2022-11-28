@@ -9,10 +9,10 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "rootDirs": [".", "scripts"],
-    "outDir": "assets/",
-    "typeRoots": ["node_modules/@types", "ts/types"],
+    "rootDir": "scripts",
+    "outDir": "assets/scripts",
+    "typeRoots": ["node_modules/@types", "ts/types"]
   },
-  "include": ["scripts/**/*"],
+  "include": ["js/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
