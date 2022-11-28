@@ -681,7 +681,7 @@
         ]
     },
     "/2022/11/11/%EC%A0%95%EB%A0%AC-%EC%A0%95%EB%A6%AC.html": {
-        "title": "정렬-정리",
+        "title": "정렬 정리",
         "date": "2022-11-11 13:16:20 +0900",
         "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/computer_science/algorithm/2022-11-11-정렬-정리.md",
         "tags": [
@@ -690,10 +690,14 @@
             "CRUDE"
         ]
     },
-    "/2022/04/03/16-12-18-image.png.html": {
-        "title": "16 12 18 Image.png",
-        "date": "2022-04-03 00:00:00 +0900",
-        "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/2022-04-03-16-12-18-image.png.md",
-        "tags": []
+    "/2022/11/24/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%8B%B9%EC%84%B1-%EC%A6%9D%EB%AA%85.html": {
+        "title": "알고리즘 정당성 증명",
+        "date": "2022-11-24 16:06:23 +0900",
+        "path": "C:/Users/roadv/Desktop/works/Projects/Subbrain/_posts/computer_science/algorithm/2022-11-24-알고리즘-정당성-증명.md",
+        "tags": [
+            "CS",
+            "알고리즘",
+            "CRUDE"
+        ]
     }
 }

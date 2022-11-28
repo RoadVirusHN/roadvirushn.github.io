@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/{{ site.static_css_dir }}/common/drawer.css" />
 <button class="drawer-button open">▶️</button>
-<div id="drawer">
+<div id="drawer" class="close">
   <button class="drawer-button close">
     ◀️
   </button>
@@ -22,14 +22,14 @@
       <p style="margin: 5px 0 0 0;">
         풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
         <br>
-        ➕ 인공지능 관심 🤖 
+        ➕ 인공지능 관심 🤖
       </p>
     </div>
     <div class="drawer-posts">
       <hr>
       <div class="categories" style="flex: 2;">
         <h3 style="margin: 0;"><a href="/">Categories</a></h3>
-        {% include drawer-categories-section.html  %}
+        {% include drawer-categories-section.html %}
       </div>
       <hr>
       <div class="recent-view" style="flex: 1;">
