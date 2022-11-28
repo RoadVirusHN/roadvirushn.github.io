@@ -11,7 +11,7 @@
     "strict": true,
     "rootDir": "scripts",
     "outDir": "assets/scripts",
-    "typeRoots": ["node_modules/@types", "ts/types"]
+    "typeRoots": ["node_modules/@types", "scripts/types"]
   },
   "include": ["js/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]

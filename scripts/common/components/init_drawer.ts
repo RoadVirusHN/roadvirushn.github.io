@@ -143,7 +143,7 @@ function setCategoryButtonEV(
         childCategory.style.display = "none";
         drawerStatus[categoryLink.innerText] = "up";
       }
-      sessionStorage.setItem("category_status", JSON.stringify(drawerStatus));
+      sessionStorage.setItem("drawer_status", JSON.stringify(drawerStatus));
     });
   }
 }
@@ -162,6 +162,7 @@ function renderCategoryByStatus(
   const childCategory = category.querySelector(
     "ul.child-category-list"
   ) as HTMLUListElement;
+  
 
   if (
     drawerStatus[categoryLink.innerText] === undefined ||

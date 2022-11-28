@@ -98,7 +98,7 @@ function setCategoryButtonEV(category, drawerStatus) {
                 childCategory.style.display = "none";
                 drawerStatus[categoryLink.innerText] = "up";
             }
-            sessionStorage.setItem("category_status", JSON.stringify(drawerStatus));
+            sessionStorage.setItem("drawer_status", JSON.stringify(drawerStatus));
         });
     }
 }
