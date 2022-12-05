@@ -9,11 +9,11 @@ module PreprocessObsidian
   include PreprocessWikiLink
   include PreprocessHeadings
   include PreprocessCallout
-  def preprocess_obsidian(site, post)
-    post.content = decouple_callout(post.content)
-    post.content = convert_imagelink(post)
-    post.content = convert_wikilink(site, post)
-    post.content = convert_toc_formats(post.content)
-    post
+  def preprocess_obsidian(site, article)
+    article.content = decouple_callout(article.content)
+    article.content = convert_imagelink(article)
+    article.content = convert_wikilink(site, article)
+    article.content = convert_toc_formats(article.content)
+    article
   end
 end

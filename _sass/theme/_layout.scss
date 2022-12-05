@@ -184,11 +184,11 @@
   @include relative-font-size(2);
 }
 
-.post-list-heading {
+.article-list-heading {
   @include relative-font-size(1.75);
 }
 
-.post-list {
+.article-list {
   margin-left: 0;
   list-style: none;
 
@@ -197,12 +197,12 @@
   }
 }
 
-.post-meta {
+.article-meta {
   font-size: $small-font-size;
   color: $grey-color;
 }
 
-.post-link {
+.article-link {
   display: block;
   @include relative-font-size(1.5);
 }
@@ -242,11 +242,11 @@
 /**
  * Posts
  */
-.post-header {
+.article-header {
   margin-bottom: $spacing-unit;
 }
 
-.post-title {
+.article-title {
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1;
@@ -256,7 +256,7 @@
   }
 }
 
-.post-content {
+.article-content {
   margin-bottom: $spacing-unit;
 
   h2 {

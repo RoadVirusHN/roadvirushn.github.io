@@ -40,6 +40,10 @@ static_js_dir: "assets/scripts"
 static_css_dir: "assets/css"
 static_etc_dir: "assets/etc"
 
+collections: 
+  articles:
+    output: true
+
 defaults:
   - scope:
       path: "assets/img"

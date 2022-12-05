@@ -8,38 +8,38 @@ module PreprocessFrontmatter
     "{% raw %}\n#{str}\n{% endraw %}"
   end
 
-  def register_posts(posts)
-    posts_data = File.open('_data/json/posts.json').read
-    data = JSON.parse(posts_data != '' ? posts_data : '{}')
-    changed = update_posts_data(data, posts)
+  def register_articles(articles)
+    articles_data = File.open('_data/json/articles.json').read
+    data = JSON.parse(articles_data != '' ? articles_data : '{}')
+    changed = update_articles_data(data, articles)
     if changed
-      File.open('_data/json/posts.json', 'w') do |file|
+      File.open('_data/json/articles.json', 'w') do |file|
         file.write(JSON.pretty_generate(data))
       end
     end
     changed
   end
 
-  def update_posts_data(data, posts)
+  def update_articles_data(data, articles)
     changed = false
-    posts.each do |post|
-      new_data = build_post_info(post)
-      post_id = post.url.encode('utf-8')
-      if !data.key?(post_id) || data[post_id] != new_data
-        data[post_id] = new_data
+    articles.docs.each do |article|
+      new_data = build_article_info(article)
+      article_id = article.url.encode('utf-8')
+      if !data.key?(article_id) || data[article_id] != new_data
+        data[article_id] = new_data
         changed = true
       end
     end
     changed
   end
 
-  def build_post_info(post)
-    post_data = post.data
+  def build_article_info(article)
+    article_data = article.data
     {
-      'title' => post_data['title'].encode('utf-8'),
-      'date' => post_data['date'].to_s.encode('utf-8'),
-      'path' => post.path.encode('utf-8'),
-      'tags' => post_data['tags'].map do |tag|
+      'title' => article_data['title'].encode('utf-8'),
+      'date' => article_data['date'].to_s.encode('utf-8'),
+      'path' => article.path.encode('utf-8'),
+      'tags' => article_data['tags'].map do |tag|
         tag.upcase.encode('utf-8')
       end
     }

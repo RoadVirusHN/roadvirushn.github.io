@@ -55,5 +55,5 @@ interface TagInfo {
 }
 interface CategoryInfo {
   categories: { [categories: string]: CategoryInfo };
-  posts: string[];
+  articles: string[];
 }

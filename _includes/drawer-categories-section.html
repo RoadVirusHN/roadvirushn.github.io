@@ -11,7 +11,7 @@
       <a class="category-link" href="/categories/{{category[0]}}/" >{{category[0]}}</a>
     </h3>
     <span style="font-size: xx-small;">
-      ({% if category[1].posts.size > 0%}📄: {{category[1].posts.size}}{% endif %} 
+      ({% if category[1].articles.size > 0%}📄: {{category[1].articles.size}}{% endif %} 
       {% if category[1].categories.size > 0%}📂: {{category[1].categories.size > 0}}{% endif %})
     </span>
     <ul class="child-category-list">
@@ -25,7 +25,7 @@
           <a class="category-link" href="/categories/{{category[0]}}/{{deeper_category[0]}}/">{{deeper_category[0]}}</a>
         </h4>
           <span style="font-size: xx-small;">
-            ({% if deeper_category[1].posts.size > 0 %}📄: {{deeper_category[1].posts.size}}{% endif %} 
+            ({% if deeper_category[1].articles.size > 0 %}📄: {{deeper_category[1].articles.size}}{% endif %} 
             {% if deeper_category[1].categories.size > 0 %}📂: {{deeper_category[1].categories.size}}{% endif %})
           </span>
       </li>

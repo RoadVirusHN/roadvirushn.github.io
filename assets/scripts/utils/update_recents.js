@@ -1,6 +1,6 @@
 function updateRecents() {
     let recents = JSON.parse(window.localStorage.getItem("recents") ?? "[]");
-    const Title = document.querySelector("h1.post-title.p-name");
+    const Title = document.querySelector("h1.article-title.a-name");
     const recentTitle = Title.innerText;
     const uUrl = document.querySelector(".u-url");
     const recentUrl = uUrl.href;

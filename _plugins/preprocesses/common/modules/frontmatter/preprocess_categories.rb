@@ -20,37 +20,37 @@ module PreprocessCategories
 
   def clear_categories
     File.open('_data/json/categories.json', 'w') do |file|
-      data = { 'categories' => {}, 'posts' => [] }
+      data = { 'categories' => {}, 'articles' => [] }
       file.write(JSON.pretty_generate(data))
     end
   end
 
-  def register_categories(post)
-    post.path.match(%r{_posts/(.+)/[^/]+\.(?:(?:md)|(?:markdown))}) do |_matched|
+  def register_categories(article)
+    article.path.match(%r{_articles/(.+)/[^/]+\.(?:(?:md)|(?:markdown))}) do |_matched|
       categories = Regexp.last_match(1).split('/')
-      post.data['categories'] = categories
-      update_categories_json(categories, post)
+      article.data['categories'] = categories
+      update_categories_json(categories, article)
     end
-    post
+    article
   end
 
-  def update_categories_json(categories, post)
+  def update_categories_json(categories, article)
     data = JSON.parse(File.open('_data/json/categories.json').read)
     File.open('_data/json/categories.json', 'w') do |file|
-      update_categories_data(data, categories, post)
+      update_categories_data(data, categories, article)
       file.write(JSON.pretty_generate(data))
     end
   end
 
-  def update_categories_data(data, categories, post)
+  def update_categories_data(data, categories, article)
     data_recursive = data
     categories.each_with_index do |category, index|
       category_upcase = category.upcase
       unless data_recursive['categories'].key?(category_upcase)
-        data_recursive['categories'][category_upcase] = { 'categories' => {}, 'posts' => [] }
+        data_recursive['categories'][category_upcase] = { 'categories' => {}, 'articles' => [] }
       end
       data_recursive = data_recursive['categories'][category_upcase]
-      data_recursive['posts'].push(post.url) if index == categories.size - 1
+      data_recursive['articles'].push(article.url) if index == categories.size - 1
     end
   end
 end
@@ -61,7 +61,7 @@ end
 # rubocop:disable Lint/MissingSuper(RuboCop)
 class CategoryPage < Jekyll::Page
   def initialize(site, categories, data)
-    posts_data = JSON.parse(File.open('_data/json/posts.json').read)
+    posts_data = JSON.parse(File.open('_data/json/articles.json').read)
     @site = site             # the current site instance.
     @base = site.source      # path to the source directory.
     @dir  = categories.inject('/categories/') do |url, category| # the directory the page will reside in.
@@ -73,10 +73,10 @@ class CategoryPage < Jekyll::Page
     @ext      = '.html' # the extension.
     @name     = 'index.html' # basically @basename + @ext.
 
-    # Initialize data hash with a key pointing to all posts under current category.
+    # Initialize data hash with a key pointing to all articles under current category.
     # This allows accessing the list in a template via `page.linked_docs`.
     @data = {
-      'linked_docs' => data['posts'].map do |url|
+      'linked_articles' => data['articles'].map do |url|
         posts_data[url]['url'] = url
         posts_data[url]
       end,
@@ -86,7 +86,7 @@ class CategoryPage < Jekyll::Page
       'subdirectories' => data['categories'].keys.map do |category|
         { 'url' => @dir + "#{category}/",
           'name' => category,
-          'posts' => { 'size' => data['categories'][category]['posts'].length },
+          'articles' => { 'size' => data['categories'][category]['articles'].length },
           'categories' => { 'size' => data['categories'][category]['categories'].length } }
       end
     }
