@@ -4,13 +4,13 @@ layout: default
 ---
 <script>
 window.store = {
-  {% for post in site.posts %}
-  "{{post.url}}": {
-    title: "{{post.title | xml_escape}}",
-    date: "{{post.date | date: " %b %-d, %Y "}}",
-    url: "{{post.url | xml_escape}}",
-    tags: {{ post.tags | jsonify | upcase }},
-    content: {{ post.content | strip_html | strip_newlines | jsonify }}
+  {% for article in site.articles %}
+  "{{article.url}}": {
+    title: "{{article.title | xml_escape}}",
+    date: "{{article.date | date: " %b %-d, %Y "}}",
+    url: "{{article.url | xml_escape}}",
+    tags: {{ article.tags | jsonify | upcase }},
+    content: {{ article.content | strip_html | strip_newlines | jsonify }}
   }
   {% unless forloop.last %}, {% endunless %}
   {% endfor %}
@@ -20,9 +20,9 @@ window.store = {
 <script type="module" src="{{ site.static_js_dir }}/bundle/search.bundle.js" charset="utf-8"></script>
 <script src="{{ site.static_js_dir }}/bundle/lunr.bundle.js"></script>
 <div id="query-results">
-  <h2 class="post-list-heading">Query <span class="query-str"></span> <span class="query-tags"></span> Search
+  <h2 class="article-list-heading">Query <span class="query-str"></span> <span class="query-tags"></span> Search
     Results</h2>
-  <ul class="post-list">
+  <ul class="article-list">
     <h1>
       🙊 Oops! No result!
     </h1>

@@ -29,7 +29,7 @@
   flex-direction: column;
   justify-content: space-between; }
 
-.drawer-posts {
+.drawer-components {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,28 +78,28 @@ div.my-description {
     display: flex; }
   #drawer.close {
     display: none; }
-  #drawer .drawer-posts ul {
+  #drawer .drawer-components ul {
     list-style-type: none; }
-  #drawer .drawer-posts ul.category-list {
+  #drawer .drawer-components ul.category-list {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 0px; }
-    #drawer .drawer-posts ul.category-list > li h3 {
+    #drawer .drawer-components ul.category-list > li h3 {
       cursor: pointer; }
-    #drawer .drawer-posts ul.category-list span.category-drop-down {
+    #drawer .drawer-components ul.category-list span.category-drop-down {
       font-size: xx-small;
       display: table-cell;
       vertical-align: middle;
       padding-right: 5px; }
-    #drawer .drawer-posts ul.category-list a.category-link {
+    #drawer .drawer-components ul.category-list a.category-link {
       background-color: lightgray;
       padding: 0px 1px;
       border-radius: 2px; }
-      #drawer .drawer-posts ul.category-list a.category-link:hover {
+      #drawer .drawer-components ul.category-list a.category-link:hover {
         text-decoration: none; }
-  #drawer .drawer-posts ul.category-list ul.child-category-list {
+  #drawer .drawer-components ul.category-list ul.child-category-list {
     margin: 0; }
-    #drawer .drawer-posts ul.category-list ul.child-category-list li h4 {
+    #drawer .drawer-components ul.category-list ul.child-category-list li h4 {
       cursor: pointer; }
 
 .name {

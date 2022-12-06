@@ -22,7 +22,7 @@ function displaySearchResults(queryResults, searchSetting) {
     const queryResultsDisplay = document.getElementById("query-results");
     const queryResultsTitle = queryResultsDisplay.querySelector(".query-str");
     queryResultsTitle.innerHTML = `<mark>${searchSetting.query}</mark>`;
-    const queryResultList = queryResultsDisplay.querySelector(".post-list");
+    const queryResultList = queryResultsDisplay.querySelector(".article-list");
     const tagResultsTitle = queryResultsDisplay.querySelector(".query-tags");
     for (const tag of searchSetting.tags) {
         const tagLink = buildTagLink(tag, searchSetting.tags.includes(tag));
@@ -31,13 +31,13 @@ function displaySearchResults(queryResults, searchSetting) {
     if (queryResults.length > 0) {
         queryResultList.innerHTML = "";
         for (const queryResult of queryResults) {
-            queryResultList.append(buildPostItem(queryResult, searchSetting.tags));
+            queryResultList.append(buildArticleItem(queryResult, searchSetting.tags));
         }
     }
 }
-function buildPostItem(queryResult, queryTags) {
+function buildArticleItem(queryResult, queryTags) {
     const result = document.createElement("li");
-    result.appendChild(buildPostMeta(queryResult.date));
+    result.appendChild(buildArticleMeta(queryResult.date));
     for (const tag of queryResult.tags) {
         result.appendChild(buildTagLink(tag, queryTags.includes(tag)));
     }
@@ -45,39 +45,39 @@ function buildPostItem(queryResult, queryTags) {
     result.appendChild(buildExcerpt(queryResult.contentMatchs, queryResult.content));
     return result;
 }
-function buildExcerpt(matches, postContent) {
+function buildExcerpt(matches, articleContent) {
     const p = document.createElement("p");
     if (matches.length > 0) {
         const excerptStart = Math.max(matches[0].position[0][0] - 50, 0);
-        const excerptEnd = Math.min(matches[0].position[0][0] + matches[0].position[0][1] + 150, postContent.length);
-        postContent = postContent.substring(excerptStart, excerptEnd);
+        const excerptEnd = Math.min(matches[0].position[0][0] + matches[0].position[0][1] + 150, articleContent.length);
+        articleContent = articleContent.substring(excerptStart, excerptEnd);
         for (const match of matches) {
-            postContent = postContent.replaceAll(new RegExp(match.query, "gi"), (str) => `<mark>${str}</mark>`);
+            articleContent = articleContent.replaceAll(new RegExp(match.query, "gi"), (str) => `<mark>${str}</mark>`);
         }
-        p.innerHTML = postContent + "...";
+        p.innerHTML = articleContent + "...";
     }
     else {
-        p.innerHTML = postContent.substring(0, 200) + "...";
+        p.innerHTML = articleContent.substring(0, 200) + "...";
     }
     return p;
 }
-function buildTitle(matches, postTitle, postUrl) {
+function buildTitle(matches, articleTitle, articleURL) {
     const title = document.createElement("h3");
     const titleLink = document.createElement("a");
-    titleLink.classList.add("post-link");
+    titleLink.classList.add("article-link");
     for (const match of matches) {
-        postTitle = postTitle.replaceAll(new RegExp(match.query, "gi"), (str) => `<mark>${str}</mark>`);
+        articleTitle = articleTitle.replaceAll(new RegExp(match.query, "gi"), (str) => `<mark>${str}</mark>`);
     }
-    titleLink.innerHTML = postTitle;
-    titleLink.href = postUrl;
+    titleLink.innerHTML = articleTitle;
+    titleLink.href = articleURL;
     title.appendChild(titleLink);
     return title;
 }
-function buildPostMeta(date) {
-    const postMeta = document.createElement("span");
-    postMeta.classList.add("post-meta");
-    postMeta.innerText = date;
-    return postMeta;
+function buildArticleMeta(date) {
+    const articleMeta = document.createElement("span");
+    articleMeta.classList.add("article-meta");
+    articleMeta.innerText = date;
+    return articleMeta;
 }
 function fillSearchBox(searchSetting) {
     const searchBox = document.getElementById("search-box");
@@ -171,12 +171,12 @@ function filterTags(lunrResult, searchSetting) {
 export function initSearchpage() {
     const searchSetting = getQueryVariables();
     if (searchSetting.query === "" && searchSetting.tags.length === 0) {
-        const postHeading = document.querySelector(".post-list-heading");
+        const articleHeading = document.querySelector(".article-list-heading");
         const searchBar = document.getElementById("search-box");
         const searchWrapper = document.getElementById("search-wrapper");
-        postHeading.innerHTML = "You entered No Query!";
-        postHeading.style.color = "red";
-        postHeading.style.fontSize = "xx-large";
+        articleHeading.innerHTML = "You entered No Query!";
+        articleHeading.style.color = "red";
+        articleHeading.style.fontSize = "xx-large";
         playNoQueryAnim(searchBar, searchWrapper);
         return;
     }

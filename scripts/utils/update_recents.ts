@@ -4,7 +4,9 @@ function updateRecents(): void {
   let recents = JSON.parse(
     window.localStorage.getItem("recents") ?? "[]"
   ) as RecentPageInfo[];
-  const Title = document.querySelector("h1.post-title.p-name") as HTMLElement;
+  const Title = document.querySelector(
+    "h1.article-title.a-name"
+  ) as HTMLElement;
   const recentTitle = Title.innerText;
   const uUrl = document.querySelector(".u-url") as HTMLAnchorElement;
 

@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.drawer-posts {
+.drawer-components {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,7 +89,7 @@ div.my-description {
   &.close {
     display: none;
   }
-  & .drawer-posts {
+  & .drawer-components {
     & ul {
       list-style-type: none;
     }

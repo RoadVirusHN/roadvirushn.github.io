@@ -1,0 +1,170 @@
+{
+  "main": {
+    "id": "0d7db81f27cdeed5",
+    "type": "split",
+    "children": [
+      {
+        "id": "0597100afae73d57",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9218438fd39b00d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "web/CI,CD/2021-3-23-docker-compose-개념.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ead0a52ae61fe335",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b26f3a545691f34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "daab8ce8700881fe",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "976fdc90bc2077b8",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "e52fa2f4498bb0b6",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "5038fe9288fe9965",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 321.5
+  },
+  "right": {
+    "id": "2f957799fb48536f",
+    "type": "split",
+    "children": [
+      {
+        "id": "b772d4f5d7319cde",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e52cd4640b913dc8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "web/CI,CD/2021-3-23-docker-compose-개념.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "760655ecb5f8c9c7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "web/CI,CD/2021-3-23-docker-compose-개념.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "23eece7229731e57",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "193b6c4338d301bd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "web/CI,CD/2021-3-23-docker-compose-개념.md"
+              }
+            }
+          },
+          {
+            "id": "ed23add1c277cbaf",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 339,
+    "collapsed": true
+  },
+  "active": "9218438fd39b00d1",
+  "lastOpenFiles": [
+    "web/frontend/2019-11-02-CSS-개념.md",
+    "web/CI,CD/K8S/2022-12-04-1-Kubernetes-소개-및-설치.md",
+    "templates/_TIL template.md",
+    "computer_science/operating_system/2022-08-10-3-프로세스와-스레드.md",
+    "web/CI,CD/2021-03-23-Docker.md",
+    "web/backend/2020-02-14-django.md",
+    "2022-12-04-Untitled.md",
+    "computer_science/operating_system/2022-08-10-4-병행-프로세스와-상호배제.md",
+    "computer_science/operating_system/2022-08-10-1-컴퓨터-시스템의-소개.md",
+    "computer_science/algorithm/2022-11-11-정렬-정리.md"
+  ]
+}

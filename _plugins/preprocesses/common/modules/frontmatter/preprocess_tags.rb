@@ -13,8 +13,8 @@ module PreprocessTags
     { 'background-color' => "rgb(#{r}, #{g}, #{g})", 'color' => "rgb(#{comp_r}, #{comp_g}, #{comp_b})" }
   end
 
-  def register_tags(post)
-    tags = post.data['tags']
+  def register_tags(article)
+    tags = article.data['tags']
     tag_data = File.open('_data/json/tags.json').read
     data = JSON.parse(tag_data != '' ? tag_data : '{}')
     File.open('_data/json/tags.json', 'w') do |file|

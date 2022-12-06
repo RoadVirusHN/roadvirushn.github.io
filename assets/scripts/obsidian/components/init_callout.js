@@ -34,7 +34,7 @@ function setCalloutAnim(calloutId, card) {
         @keyframes shirink-card-${randomId}\
         { 0% { max-height: ${height + 10}px; } 100% { max-height: 0px; }}
         `;
-    document.querySelector("article.post")?.appendChild(style);
+    document.querySelector("article.article")?.appendChild(style);
 }
 function toggleCard(event) {
     const target = event.target;

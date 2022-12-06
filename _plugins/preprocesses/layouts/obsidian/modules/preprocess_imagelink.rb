@@ -14,9 +14,9 @@ module PreprocessImageLink
 
   # rubocop:disable Metrics/MethodLength(RuboCop)
   # rubocop:disable Metrics/AbcSize(RuboCop)
-  def convert_imagelink(post)
-    static_dir = "/#{Jekyll.configuration({})['static_img_dir']}/#{post.date.strftime('%Y-%m-%d')}-#{post['slug']}"
-    post.content = post.content
+  def convert_imagelink(article)
+    static_dir = "/#{Jekyll.configuration({})['static_img_dir']}/#{article.date.strftime('%Y-%m-%d')}-#{article['slug']}"
+    article.content = article.content
         .gsub(MARKDOWN_IMAGE_LINK_REGEX) do |_matched|
       build_markdown_img({
                            altText: Regexp.last_match(1),
@@ -24,7 +24,7 @@ module PreprocessImageLink
                            external_URL: Regexp.last_match(3)
                          }, static_dir)
     end
-    post.content.gsub(OBSIDIAN_IMAGE_LINK_REGEX) do |_matched|
+    article.content.gsub(OBSIDIAN_IMAGE_LINK_REGEX) do |_matched|
       build_markdown_img({
                            static_img_file: Regexp.last_match(1),
                            external_URL: Regexp.last_match(2),

@@ -13,11 +13,11 @@ export default function buildLunr() {
         this.field("title", { boost: 10 });
         this.field("content");
         this.metadataWhitelist = ["position"];
-        for (const postUrl in storedWindow.store) {
+        for (const articleURL in storedWindow.store) {
             this.add({
-                id: postUrl,
-                title: storedWindow.store[postUrl].title,
-                content: storedWindow.store[postUrl].content,
+                id: articleURL,
+                title: storedWindow.store[articleURL].title,
+                content: storedWindow.store[articleURL].content,
             });
         }
     });
