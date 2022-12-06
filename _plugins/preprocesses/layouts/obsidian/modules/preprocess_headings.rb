@@ -2,7 +2,7 @@
 
 module PreprocessHeadings
   OBSIDIAN_TOC_REGEX = /(?:\[TOC\])|(?:\* TOC\n\{:toc\})(?=[^`]*(?:`[^`]*`[^`]*)*\Z)/i
-  MARKDOWN_HEADINGS = /(?<headings>^#+[^#\n]+(?=[^`]*(?:`[^`]*`[^`]*)*\Z))/m
+  MARKDOWN_HEADINGS = /(?<headings>^# +[^#\n]+(?=[^`]*(?:`[^`]*`[^`]*)*\Z))/m
 
   def convert_toc_formats(str)
     generate_headings_id(str.gsub(OBSIDIAN_TOC_REGEX) do |_matched|
