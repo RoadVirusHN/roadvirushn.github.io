@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {%- include head.html -%}
+  {%- include common/head.html -%}
 
-  {% include custom-scrollbar.html %}
-  {% include redirection.html %}
+  {% include common/custom-scrollbar.html %}
+  {% include common/redirection.html %}
   <body>  
-    {%- include header.html -%}
+    {%- include header/header.html -%}
     <main class="page-content" aria-label="Content">
-      {% include drawer.html %}
+      {% include drawer/drawer.html %}
       <div class="wrapper">
         <!-- This loops through the paginated articles -->
         <h2 class="article-list-heading">📂 {{ page.list_title | default: "articles" }}</h2>
@@ -78,7 +78,7 @@
     </div>
   </main>
 
-  {%- include footer.html -%}
+  {%- include common/footer.html -%}
 
   </body>
 
