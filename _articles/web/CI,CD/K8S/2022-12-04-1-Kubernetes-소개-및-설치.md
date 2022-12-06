@@ -28,6 +28,9 @@ title:  _[[https://www.youtube.com/@ttabae-learn4274/featured|TTABE-LEARN]] 채�
 
 개인적으로 도커만 활용했던 시기에 스케일링 방법이나 모니터링, 젠킨스 만을 이용한 마스터-워커 관계 수립에 어려움을 느꼈는데 K8S를 학습하면서 해결되길 바란다.
 
+실습의 경우, AWS EC2나 직접 Linux 설치, VMware를 활용하는 것을 추천한다.
+실무 환경에 가깝기도 하고, `systemd` 활용 여부, 방화벽 설정 등의 부분이 다르기 때문
+
 ### 쿠버네티스 아키텍처(K8S architecture)
 
 **CNI(Container Network Interface)**
@@ -51,7 +54,7 @@ docker run --privileged -d --name worker2 -t ubuntu:20.04 bash
 docker exec -ti ${container_name} bash
 # adduser ${username}
 ```
-## Docker, cri-docker 설치
+## Docker, cri-dockerd 설치
 ### Docker 설치
 - [[2021-03-23-Docker#Docker 설치|Docker]] 설치과정 참조
 
@@ -99,7 +102,7 @@ ENTRYPOINT service docker start && /bin/bash
 ~~~
 ```
 
-### cri-docker 설치
+### cri-dockerd 설치
 cri-docker는 docker를 설치 후에 설치해야하는 추가적인 어뎁터이다.
 Kubernetes가 더이상 순정 Docker를 지원하지 않기 때문이다. [[https://kubernetes.io/blog/2020/12/02/dont-panic-kubernetes-and-docker/|왜?]]
 
