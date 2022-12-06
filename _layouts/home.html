@@ -13,18 +13,9 @@ layout: default
     <ul class="article-list">
       {%- for article in site.articles -%}
         {% if article.tags contains "HIDE" %}
-          <li>
-            <span class="article-meta">this article is hidden for some reasons. but you can check it in my <a href="https://github.com/RoadVirusHN/RoadVirusHN.github.io">github repository.</a></span>
-            <a class="tag-link" href="/search.html?tags=HIDE" style="color: {{site.data.json.tags["HIDE"]["color"]}};
-            background-color: {{ site.data.json.tags["HIDE"]["background-color"] }};">
-            HIDE
-          </a>
-            <h3>
-              <a class="article-link" style="color: #7a7a7a;">
-                👻 HIDDEN CONTENTS
-              </a>
-            </h3>
-          </li>
+          {% assign color = site.data.json.tags["HIDE"]["color"] %}
+          {% assign background = site.data.json.tags["HIDE"]["background-color"] %}
+          {% include list/hidden-article.html color=color background=background %}
         {% else %}
           <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
