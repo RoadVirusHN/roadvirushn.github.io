@@ -5,7 +5,6 @@ require_relative './tags/crude/preprocess_crude'
 
 module Preprocessor
   class ArticleConverter < Jekyll::Generator
-    safe true
     include PreprocessObsidian
     include PreprocessFrontmatter
     include PreprocessCommon
