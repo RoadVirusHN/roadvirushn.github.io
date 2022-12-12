@@ -1,7 +1,7 @@
 require_relative './layouts/obsidian/preprocess_obsidian'
 require_relative './common/modules/preprocess_frontmatter'
 require_relative './common/preprocess_common'
-require_relative './tags/crude/preprocess_crude.rb'
+require_relative './tags/crude/preprocess_crude'
 
 module Preprocessor
   class ArticleConverter < Jekyll::Generator
