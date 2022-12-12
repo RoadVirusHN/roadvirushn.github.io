@@ -23,6 +23,15 @@ module PreprocessCodeblock
       .gsub("'") do |_matched|
         "&#39;"
       end
+      .gsub("%") do |_matched|
+        "&#37;"
+      end
+      .gsub("{") do |_matched|
+        "&#123;"
+      end 
+      .gsub("}") do |_matched|
+        "&#125;"
+      end 
       "```#{type}\n#{content}\n```\n"
     end
   end
