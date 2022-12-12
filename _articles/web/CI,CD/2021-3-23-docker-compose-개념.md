@@ -15,10 +15,12 @@ use_Mathjax: false
 
 먼저 docker-compose를 깔기 위해 앞선 `Docker`가 설치되어야 있어야 한다.
 
-- [Install Docker Compose CLI plugin | Docker Documentation](https://docs.docker.com/compose/install/compose-plugin/#install-the-plugin-manually) 참고(최신 버전으로 업데이트 되는 코드)
+- [Install Docker Compose CLI plugin | Docker Documentation](https://docs.docker.com/compose/install/) 참고(최신 버전으로 업데이트 되는 코드)
 
 ```bash
-sudo curl -L https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+curl -SL https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
 ```
 
 만약, 무조건 최신의 docker-compose를 다운받고 싶다면
@@ -30,7 +32,7 @@ sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-c
 만약 위 코드로 안된다면 그 위에 적어 놓은 링크를 참조해 보자.
 
 ```bash
-sudo chmod +x /usr/local/bin/docker-compose
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 ```
 
 위 코드를 통해 `docker-compose`의 권한을 바꿔준다.
