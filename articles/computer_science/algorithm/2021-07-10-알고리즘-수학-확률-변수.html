@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>알고리즘 수학 기본 - 확률 변수 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="알고리즘 수학 기본 - 확률 변수" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0-%EB%B3%80%EC%88%98.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0-%EB%B3%80%EC%88%98.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-10T12:53:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="알고리즘 수학 기본 - 확률 변수" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-07-10T12:53:58+09:00","datePublished":"2021-07-10T12:53:58+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"알고리즘 수학 기본 - 확률 변수","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0-%EB%B3%80%EC%88%98.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0-%EB%B3%80%EC%88%98.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/">The Digital garden of Nurgle.</a><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form></div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/blog/">FRONTPAGE</a><a class="page-link" href="/about/">ABOUT ME</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+    <div class="drawer-components">
+      <hr>
+      <div class="categories" style="flex: 2;">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 5)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 26 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OPERATING_SYSTEM/">OPERATING_SYSTEM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 14 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 8 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 3)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 2 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 7 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 5 
+            📂: 1)
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      (📄: 8 
+      )
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view" style="flex: 1;">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin-left: 16px;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            3 <a id="recent-3" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            4 <a id="recent-4" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div style="bottom: 10px; height: 7vh; flex: 1;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">알고리즘 수학 기본 - 확률 변수</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2021-07-10T12:53:58+09:00" itemprop="datePublished">Jul 10, 2021
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#확률-변수-random-variables' id='markdown-toc-0-확률-변수-random-variables'>확률 변수(random variables)</a><ul><li><a href='#이산-확률-변수와-연속-확률-변수-discrete-random-variables-and-continuous-random-variables' id='markdown-toc-0-이산-확률-변수와-연속-확률-변수-discrete-random-variables-and-continuous-random-variables'>이산 확률 변수와 연속 확률 변수(discrete random variables and continuous random variables)</a></li> 
+<li><a href='#확률-질량-함수와-확률-밀도-함수-Probability-Mass-Function-and-Probability-Density-Function' id='markdown-toc-0-확률-질량-함수와-확률-밀도-함수-Probability-Mass-Function-and-Probability-Density-Function'>확률 질량 함수와 확률 밀도 함수(Probability Mass Function and Probability Density Function)</a></li> 
+<li><a href='#확률-변수의-기대값-Expected-value-of-a-random-variable' id='markdown-toc-0-확률-변수의-기대값-Expected-value-of-a-random-variable'>확률 변수의 기대값 (Expected value of a random variable)</a></li> 
+<li><a href='#기대값의-선형성-linearity-of-expectation' id='markdown-toc-0-기대값의-선형성-linearity-of-expectation'>기대값의 선형성(linearity of expectation)</a></li> 
+<li><a href='#확산과-표준-편차-Variance-and-standard-deviation' id='markdown-toc-0-확산과-표준-편차-Variance-and-standard-deviation'>확산과 표준 편차 (Variance and standard deviation)</a></li> 
+
+</ul></li> 
+</ol>
+<h1 id='알고리즘을-위한-수학-확률-변수-random-variables'>알고리즘을 위한 수학 - 확률 변수(random variables)</h1>
+
+<p><em>Introduction to Algorithm, 3rd, Cormen을 토대로 정리한 내용입니다.</em></p>
+
+<p>일부 표기나 개념이 기존의 수학과 다를 수도 있으므로, 여기서 배운 내용은 단순 해당 책(Introduction to Algorithm, 3rd, Cormen)의 부록으로 취급해야한다.</p>
+
+<p>추가로 _존이(mykepzzang)님의 블로그(https://blog.naver.com/PostList.naver?blogId=mykepzzang)_에서 내용을 발췌하였다.</p>
+
+<p>이 장에서는 확률의 표기법, 정의, 속성 같은 기본적인 것만 배운다.</p>
+
+<p>들어가기에 앞서 확률에 대한 기본적인 이해가 필요하므로 알고리즘을 위한 수학 -확률편을 보고 오는 것을 추천한다.</p>
+
+<hr />
+
+<h2 id='확률-변수-random-variables'>확률 변수(random variables)</h2>
+
+<h3 id='이산-확률-변수와-연속-확률-변수-discrete-random-variables-and-continuous-random-variables'>이산 확률 변수와 연속 확률 변수(discrete random variables and continuous random variables)</h3>
+
+<p>확률 변수는 표본 공간의 각 원소사건을 특정 실수에 대응시켜 확률이 나오게 하는 함수이다.</p>
+
+<p><img src="/assets/img/2021-07-10-알고리즘-수학-확률-변수/image-20220107073702669.png" alt="image-20220107073702669" /></p>
+
+<p>예를 들어, 동전 두개를 던져, 앞면이 2개 나올 확률은 1/4, 앞면 1개, 뒷면 1개가 나올 확률은 1/2, 뒷면 2개가 나올 확률은 1/4가 된다.</p>
+
+<p>이때, 앞면의 갯수는 앞에서 부터 2개,1개,0개가 되는데, 이를 확률 변수로 이용할 수 있다.</p>
+
+<p>즉 앞면의 갯수 확률 변수 X 0, 1, 2에 따라 다음과 같다.<br />
+\(P(X=0)=1/4\\
+P(X=1)=1/2\\
+P(X=2)=1/4\)<br />
+확률변수는 가능한 결과에 대한 실수값을 할당하여 이를 통해 확률 분포를 유도할 수 있게 해준다.</p>
+
+<p><strong>이산 확률 변수(Discrete random variables)</strong> X는 유한 또는 가산 무한 표본 공간 S를 입력으로 받아, 실수를 출력하는 함수이다.</p>
+
+<p><strong>연속 확률 변수(Continuous random variables)</strong> X는 적분을 이용하여, 불가산 무한 표본 공간에도 확률 변수를 이용할 수 있게 한 함수이다.</p>
+
+<h3 id='확률-질량-함수와-확률-밀도-함수-Probability-Mass-Function-and-Probability-Density-Function'>확률 질량 함수와 확률 밀도 함수(Probability Mass Function and Probability Density Function)</h3>
+
+<p>확률 변수 X와 실수 x 에 대해 사건 X=x를 ${s \in S : X(s)=x}$로 정의할 때, 다음과 같이 표현할 수 있다.<br />
+\(\begin{align}
+&amp;이산\ 확률\ 변수의\ 확률\ 질량\ 함수 :\\
+&amp;\Pr\{X=x\}=\sum_{s\in S:X(s)=x}\Pr\{s\}\\
+&amp;연속\ 확률\ 변수의\ 확률\ 밀도\ 함수 :\\
+&amp;\Pr\{X=x\}=\int_{-\infty}^\infty \Pr\{s\}
+\end{align}\)<br />
+이때, 이산 확률 변수 X에 관한 확률의 함수 $f(x)=\Pr{X=x}$를 <strong>확률 질량 함수(probability Mass Function) Pr(X)</strong>이라고 한다.</p>
+
+<p>위의 예시에서는 $P(X)={}_2 C_x\cdot(1/2)^x(1/2)^{2-x}={}_2 C_x \cdot (1/4)$이 될 것이다.</p>
+
+<p>연속 확률 변수 처럼 연속적인 공간에서는 확률 질량 함수가 아닌 <strong>확률 변수 X에 대한 확률 밀도 함수(probability density function)</strong>라고 부르며,</p>
+
+<p>확률 질량 함수와 확률 밀도 함수 둘다 확률 정리에 의해 $\Pr{X=x}\geq 0$이며,  $\sum_x\Pr{X=x}=1$이다.</p>
+
+<p>예를 들어, 두개의 6면 주사위의 결과 실험은 표본 공간 내에서 6 * 6, 총 36개의  근원 사건으로 이루어져 있다. 확률 분포가 균등하다고 가정하면, 각 근원 사건 $s\in S$의 확률은 정확히 $\Pr{s}=1/36$이 된다.</p>
+
+<p>확률 변수 X를 “주사위 두 값 중의 최댓값”이라고 정의하면, $\Pr{X=3}=5/36$이 되는데, 최대값이 3이 되는 방법은 (1,3), (2,3), (3,3), (3,2), (3,1) 총 5가지이기 때문이다.</p>
+
+<p>여러개의 확률 변수를 이용할 수도 있다. 확률 변수 X, Y에 대해 함수 $f(x,y)=\Pr{X=x\ and\ Y=y}$를 <strong>X와 Y의 결합 확률 밀도 함수(joint probability density function)</strong>라고 한다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>고정된 값 x, y에 대하여 각각 식 $\Pr{X=x}=\sum_y\Pr{X=x\ and\ Y=y}$과 식 $\Pr{Y=y}=\sum_x\Pr{X=x\ and\ Y=y}$이 성립하며, 확률 편에서 배웠던 조건부 확률의 정의를 이용해 식 $\Pr{X=x</td>
+      <td>Y=y}=\frac{\Pr{X=x\ and\ Y= y}}{\Pr{Y=y}}$을 얻을 수 있다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>모든 x와 y에 대해 사건 X=x와 Y=y은 독립적이라 가정하면 두 확률 변수 X와 Y가 서로 독립적이며,</p>
+
+<p>만약 모든 x와 y에 대해 식 $\Pr{X=x\ and\ Y=y}=\Pr{X=x}\Pr{ Y=y}$이 성립한다면 두 확률 변수 X와 Y는 서로 동일하다는 의미이다.</p>
+
+<p>동일한 표본 공간에 정의된 여러 확률 변수의 집합으로 곱, 합, 또는 다른 함수를 통해 새로운 확률 변수들을 정의할 수 있다.</p>
+
+<h3 id='확률-변수의-기대값-Expected-value-of-a-random-variable'>확률 변수의 기대값 (Expected value of a random variable)</h3>
+
+<p>확률 변수의 분산을 가장 간단하고 유용하게 요약하는 방법은 바로 값들의 평균을 취하는 것이다.</p>
+
+<p>이산 확률 변수 X에 대해 기대값(expected value), 기대치(expactation), 혹은 평균(mean)은 다음 식과 같다.<br />
+\(이산 확률 변수의\ 기대값 :
+\\E[X]=\sum_x x\cdot\Pr\{X=x\}\tag{1}\label{eq:expected value of discrete random variable X}\)<br />
+이 식은 예상치가 수렴 또는 유한할 때, 적합하며 $\mu_x$ 또는 $\mu$라고 표기한다.</p>
+
+<p>확률 변수 X의 확률분포함수가 $f(x)=\Pr{X=x}$일 때, 연속 확률 변수의 기대값은 아래와 같다.<br />
+\(\begin{align}
+  \\&amp;연속 확률 변수의\ 기대값: 
+  \\&amp;E(X)=\int^\infty_{-\infty}x\cdot \Pr\{X=x\}dx
+  \end{align}\)<br />
+앞면(H) 하나당 3달러를 얻고 뒷면(T) 하나당 2달러를 잃는 동전을 두개 튕기는 게임에서 확률 변수 X의 기대값은 다음과 같은 방법으로 구한다.<br />
+\(\begin{align}
+E[X]&amp;=6\cdot\Pr\{2\small{H}'s\}+1\cdot\Pr\{1\small{H},1\small{T}\}-4\cdot \Pr\{2\small{T}'s\}\\
+&amp;=6(1/4)+1(1/2)-4(1/4)\\
+&amp;=1\\
+\end{align}\)</p>
+
+<h3 id='기대값의-선형성-linearity-of-expectation'>기대값의 선형성(linearity of expectation)</h3>
+
+<p>두 확률 변수의 합의 기대값은 두 예상치의 합과 같으며, 이는 다음과 같은 식으로 표현된다.</p>
+
+<p>$1.\ E[X+Y]=E[X]+E[Y]$</p>
+
+<p>이를 연속 확률 변수의 기대값의 정의를 이용해 증명하자면 다음과 같다.<br />
+\(\begin{align}
+E(X+Y)&amp;=\int^\infty_{-\infty}\int^\infty_{-\infty}(x+y)\cdot f(x,y)\ dxdy
+\\&amp;=\int^\infty_{-\infty}\int^\infty_{-\infty}x\cdot f(x,y)+y\cdot f(x,y)\ dxdy
+\\&amp;=\int^\infty_{-\infty}\int^\infty_{-\infty}x\cdot f(x,y)\ dxdy+\int^\infty_{-\infty}\int^\infty_{-\infty}y\cdot f(x,y)\ dxdy
+\\&amp;=E(X)+E(Y)
+\end{align}\)<br />
+이외에도 확률 변수를 이용하여 아래와 같은 다른 성질들을 증명 할 수 있다.<br />
+\(\begin{align}
+&amp;2.\ E(aX+b)=aE(X)+b\\
+&amp;3.\ E(XY)=E(X)E(Y)\\
+&amp;4.\ E(aX^2+bX+c)=aE(X^2)+bE(X)+c\\
+&amp;5.\ E(aX+bY)=aE(X)+bE(Y)
+\end{align}\)<br />
+모든 확률 변수 X에 대해, 함수 g(x)가 새로운 확률 변수 g(X)를 정의할 수 있고, g(X)의 기대값이 정의될 수 있다면, 아래와 같은 식이 성립된다.<br />
+\(E[g(X)]=\sum_xg(x)\cdot \Pr\{X=x\}\)<br />
+이때 $g(x)=ax$로 놓고, a를 상수로 본다면, $E[aX]=aE[X]$가 성립된다.</p>
+
+<p>결과적으로 기대값은 선형이며, 식 $E[aX+Y]=aE[X]+E[Y]$ 또한 성립된다.</p>
+
+<p>만약 두 확률 변수 X와 Y가 서로 독립적이고 정의된 기대값이 존재한다면, 아래와 같은 결과가 나온다.<br />
+\(\begin{align}
+E[XY]&amp;=\sum_x\sum_yxy\cdot\Pr\{X=x\ and\ Y=y\}\\
+&amp;=\sum_x\sum_yxy\cdot \Pr\{X=x\}\Pr\{Y=y\}\\
+&amp;=\left(\sum_xx\cdot\Pr\{X=x\}\right)\left(\sum_yy\cdot\Pr\{Y=y\}\right)\\
+&amp;=E[X]E[Y]
+\end{align}\)<br />
+보통, n개의 확률 변수 $X_1,X_2,\dots,X_n$가 상호 독립적이라면, 선형성에 의해 아래 같은 식이 성립한다.</p>
+
+<p>$E[X_1X_2\cdots X_n]=E[X_1]E[X_2]\cdots E[X_n]$</p>
+
+<p>이러한 성질을 <strong>기대값의 선형성(linearity of expectation)</strong>이라고 하며, X와 Y가 서로 독립적이지 않아도 성립하며, 유한 또는 완전 수렴하는 기대값의 유한합에도 성립한다.</p>
+
+<p>기대값의 선형성은 <strong>지시 확률 변수(indicator random variables)</strong>를 이용한 확률적 분석을 하는데 중요한 역할을 한다.</p>
+
+<ul>
+  <li>지시 확률 변수 : 어떤 사건이 일어나면 1 아니면 0이 되는 함수, 자세한 이야기는 이곳에서 하지 않는다.</li>
+</ul>
+
+<p>확률 변수 X가 값이 자연수 집합 $\N={0,1,2,\dots}$에 속한다면, 다음과 같은 기대값에 대한 식을 사용할 수 있다. <br />
+\(\begin{align}
+E[X]&amp;=\sum_{i=0}^\infty i\cdot\Pr\{X=i\}\\
+&amp;=\sum_{i=0}^\infty i(\Pr\{X\geq i\}-\Pr\{X\geq i+1\})\\
+&amp;=\sum_{i=1}^\infty \Pr\{X\geq i\}
+\end{align}
+\tag{2}
+\label{eq: expectation on natural numbers}\)<br />
+볼록 함수(convex function) $f(x)$를 확률 변수 X에 적용하며, 옌센 부등식(Jensen’s inequality)을 통해 다음과 같은 식을 얻을 수 있다.</p>
+
+<p>$E[f(X)]\geq f(E[X])$</p>
+
+<ul>
+  <li>옌센 부등식(Jensen’s inequality) : 기댓값의 볼록함수와 볼록 함수의 기댓값 사이에 성립하는 부등식</li>
+</ul>
+
+<p>이 식을 통해 기대값의 존재와 유한함을 예상할 수 있다.</p>
+
+<ul>
+  <li>
+    <p>볼록 함수 $f(x)$</p>
+
+    <p>모든 x와 y, 그리고 $0\leq \lambda \leq 1$에서 식 $f(\lambda x + (1-\lambda )y)\leq \lambda f(x)+(1-\lambda)f(y)$이 성립하는 함수</p>
+  </li>
+</ul>
+
+<h3 id='확산과-표준-편차-Variance-and-standard-deviation'>확산과 표준 편차 (Variance and standard deviation)</h3>
+
+<p>확률 변수의 기댓값만으로는 얼마나 값들이 확산되어있는지 알 수 없다.</p>
+
+<p>확산(Variance)는 확률 변수의 값들이 평균에서 얼마나 동떨어져 있는 가에 대한 표현이다.</p>
+
+<p>평균 기대값 E[X]에 대한 확률 변수 X의 확산은 다음과 같이 구할 수 있다.<br />
+\(\begin{align}
+Var[X] &amp;= E[(X-E[X])^2]\\
+&amp;= E[X^2-2XE[X]+E^2[X]]\\
+&amp;= E[X^2]-2E[XE[X]]+E^2[X]\\
+&amp;= E[X^2]-2E^2[X] +E^2[X]\\
+&amp;= E[X^2]-E^2[X]\\
+\end{align}
+\tag{3}
+\label{eq:variance}\)</p>
+
+<p>위 식의 $E[E^2[X]]=E^2[X]$의 경우, 앞서 배운 기댓값의 선형성 2번 ()$E(aX+b)=aE(X)+b$)에 의해, $E[X]$의 값이 실수일 것이므로, $b$와 같은 상수로 취급 받아($E[X^2]=b$)</p>
+
+<p>$E[E^2[X]]=E[b]=b=E^2[X]$가 되어 성립한다.</p>
+
+<p>$E[XE[X]]=E^2[X]$은 기댓값의 선형성 2번과, 3번 ($E(XY)=E(X)E(Y)$)을 이용해 증명할 수 있다.</p>
+
+<ul>
+  <li>$E[XE[X]]=E[X]E[E[X]]=E[X]E[X]=E^2[X]$</li>
+</ul>
+
+<p>이렇게 증명한 확산의 식을 이용해 아래와 같이 확률 변수 제곱에 대한 기대값을 구할 수 있다.</p>
+
+<p>$E[X^2]=Var[X]+E^2[X]$</p>
+
+<p>확률 변수 X에 대한 확산과 aX에 대한 확산은 다음과 같은 관계를 가진다.</p>
+
+<p>$Var[aX]=a^2Var[X]$</p>
+
+<p>확률 변수 X와 Y가 상호 독립적이라면, 다음이 성립한다.</p>
+
+<p>$Var[X+Y]=Var[X]+Var[Y]$</p>
+
+<p>일반적적으로, n개의 확률 변수 $X_1,X_2,\dots,X_n$가 쌍방향 독립적이라면, 다음이 성립한다.<br />
+\(Var\left[\sum^n_{i=1}X_i\right]=\sum^n_{i=1}Var[X_i]\)</p>
+
+<p>확률 변수 X의 표준 편차(standard deviation)는 확률 변수 X의 분산의 음이 아닌 제곱근이며, $\sigma_x$ 또는 $\sigma$로 표현한다. 즉, 확률변수 X의  분산은 $\sigma^2$이다.</p>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0-%EB%B3%80%EC%88%98.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/2021-07-10-알고리즘-수학-확률-변수.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

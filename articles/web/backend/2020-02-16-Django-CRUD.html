@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Django CRUD | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Django CRUD" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true Django CRUD(Create, Read, Update, Delete ) 만들기 Django 프로젝트 생성과 가상 환경 설정 mkdir 대상폴더이름, cd 대상폴더 이름으로 폴더를 생성하고 이동한다 python -m venv venv로 해당 디렉토리에 폴더이름의 가상환경을 만들어줌 source venv/Scripts/activate로 터미널을 가상환경에 들어가게 한다. (deactivate로 나감) 또는 vsCode에서 f1으로 select interpreter를 통하여 가상환경 들어가기 가능 pip install django로 가상환경 내에 django를 설치한다. django-admin startproject 프로젝트명 . 으로 현재 폴더 내에 프로젝트를 만든다 마지막 .이 없으면 프로젝트명으로 된 폴더를 만들고 그 내부에 만들게 된다. python manage.py runserver로 서버를 돌리고 확인해본다. http://127.0.0.1:8000/ 가 기본 주소 , 터미널에서 Ctrl + C로 서버를 닫는다 터미널에 code .을 치면 해당 디렉토리로 VS Code IDE가 켜짐(버그 있음) Django 앱 생성과 추가 대상 폴더(보통 프로젝트 폴더와 동일 위치)에서 django-admin startapp 앱이름 으로 앱 생성 python manage.py startapp 앱이름 으로도 가능 프로젝트명 폴더 내부의 settings.py의 INSTALLED_APPS 리스트에 앱이름을 추가 보통 커스텀 app은 맨 위에 놓으며 동명일시 맨 위의 app이 우선이다.(‘,’ 추가 주의) myCRUD 프로젝트 폴더 내부의 settings.py의 일부 ```python # Application definition INSTALLED_APPS = [ ‘CRUD’, # 앱 이름 ‘django.contrib.admin’, ‘django.contrib.auth’, ‘django.contrib.contenttypes’, ‘django.contrib.sessions’, ‘django.contrib.messages’, ‘django.contrib.staticfiles’, ] ``` 동일한 폴더의 urls.py 파일 내부의 urlpatterns 리스트에 path()함수를 이용해 해당 앱 URL 추가 보통 path(‘앱이름/’, include(‘앱이름.urls’)), 를 추가한다 (뒤의 / 추가 필수!) 굳이 앱이름을 쓸필요 없지만 관례와 효율 상 그렇게 한다. include()함수는 django.urls에서 임포트 해온다.(from django.urls import path, include) 프로젝트 폴더의 urls.py의 일부 ```python from django.contrib import admin from django.urls import path, include" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true Django CRUD(Create, Read, Update, Delete ) 만들기 Django 프로젝트 생성과 가상 환경 설정 mkdir 대상폴더이름, cd 대상폴더 이름으로 폴더를 생성하고 이동한다 python -m venv venv로 해당 디렉토리에 폴더이름의 가상환경을 만들어줌 source venv/Scripts/activate로 터미널을 가상환경에 들어가게 한다. (deactivate로 나감) 또는 vsCode에서 f1으로 select interpreter를 통하여 가상환경 들어가기 가능 pip install django로 가상환경 내에 django를 설치한다. django-admin startproject 프로젝트명 . 으로 현재 폴더 내에 프로젝트를 만든다 마지막 .이 없으면 프로젝트명으로 된 폴더를 만들고 그 내부에 만들게 된다. python manage.py runserver로 서버를 돌리고 확인해본다. http://127.0.0.1:8000/ 가 기본 주소 , 터미널에서 Ctrl + C로 서버를 닫는다 터미널에 code .을 치면 해당 디렉토리로 VS Code IDE가 켜짐(버그 있음) Django 앱 생성과 추가 대상 폴더(보통 프로젝트 폴더와 동일 위치)에서 django-admin startapp 앱이름 으로 앱 생성 python manage.py startapp 앱이름 으로도 가능 프로젝트명 폴더 내부의 settings.py의 INSTALLED_APPS 리스트에 앱이름을 추가 보통 커스텀 app은 맨 위에 놓으며 동명일시 맨 위의 app이 우선이다.(‘,’ 추가 주의) myCRUD 프로젝트 폴더 내부의 settings.py의 일부 ```python # Application definition INSTALLED_APPS = [ ‘CRUD’, # 앱 이름 ‘django.contrib.admin’, ‘django.contrib.auth’, ‘django.contrib.contenttypes’, ‘django.contrib.sessions’, ‘django.contrib.messages’, ‘django.contrib.staticfiles’, ] ``` 동일한 폴더의 urls.py 파일 내부의 urlpatterns 리스트에 path()함수를 이용해 해당 앱 URL 추가 보통 path(‘앱이름/’, include(‘앱이름.urls’)), 를 추가한다 (뒤의 / 추가 필수!) 굳이 앱이름을 쓸필요 없지만 관례와 효율 상 그렇게 한다. include()함수는 django.urls에서 임포트 해온다.(from django.urls import path, include) 프로젝트 폴더의 urls.py의 일부 ```python from django.contrib import admin from django.urls import path, include" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/2020-02-16-Django-CRUD.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/2020-02-16-Django-CRUD.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-16T17:21:08+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Django CRUD" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-02-16T17:21:08+09:00","datePublished":"2020-02-16T17:21:08+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true Django CRUD(Create, Read, Update, Delete ) 만들기 Django 프로젝트 생성과 가상 환경 설정 mkdir 대상폴더이름, cd 대상폴더 이름으로 폴더를 생성하고 이동한다 python -m venv venv로 해당 디렉토리에 폴더이름의 가상환경을 만들어줌 source venv/Scripts/activate로 터미널을 가상환경에 들어가게 한다. (deactivate로 나감) 또는 vsCode에서 f1으로 select interpreter를 통하여 가상환경 들어가기 가능 pip install django로 가상환경 내에 django를 설치한다. django-admin startproject 프로젝트명 . 으로 현재 폴더 내에 프로젝트를 만든다 마지막 .이 없으면 프로젝트명으로 된 폴더를 만들고 그 내부에 만들게 된다. python manage.py runserver로 서버를 돌리고 확인해본다. http://127.0.0.1:8000/ 가 기본 주소 , 터미널에서 Ctrl + C로 서버를 닫는다 터미널에 code .을 치면 해당 디렉토리로 VS Code IDE가 켜짐(버그 있음) Django 앱 생성과 추가 대상 폴더(보통 프로젝트 폴더와 동일 위치)에서 django-admin startapp 앱이름 으로 앱 생성 python manage.py startapp 앱이름 으로도 가능 프로젝트명 폴더 내부의 settings.py의 INSTALLED_APPS 리스트에 앱이름을 추가 보통 커스텀 app은 맨 위에 놓으며 동명일시 맨 위의 app이 우선이다.(‘,’ 추가 주의) myCRUD 프로젝트 폴더 내부의 settings.py의 일부 ```python # Application definition INSTALLED_APPS = [ ‘CRUD’, # 앱 이름 ‘django.contrib.admin’, ‘django.contrib.auth’, ‘django.contrib.contenttypes’, ‘django.contrib.sessions’, ‘django.contrib.messages’, ‘django.contrib.staticfiles’, ] ``` 동일한 폴더의 urls.py 파일 내부의 urlpatterns 리스트에 path()함수를 이용해 해당 앱 URL 추가 보통 path(‘앱이름/’, include(‘앱이름.urls’)), 를 추가한다 (뒤의 / 추가 필수!) 굳이 앱이름을 쓸필요 없지만 관례와 효율 상 그렇게 한다. include()함수는 django.urls에서 임포트 해온다.(from django.urls import path, include) 프로젝트 폴더의 urls.py의 일부 ```python from django.contrib import admin from django.urls import path, include","headline":"Django CRUD","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/2020-02-16-Django-CRUD.html"},"url":"http://localhost:4000/articles/web/backend/2020-02-16-Django-CRUD.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/">The Digital garden of Nurgle.</a><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form></div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/blog/">FRONTPAGE</a><a class="page-link" href="/about/">ABOUT ME</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+    <div class="drawer-components">
+      <hr>
+      <div class="categories" style="flex: 2;">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 5)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 26 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OPERATING_SYSTEM/">OPERATING_SYSTEM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 14 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 8 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 3)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 2 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 7 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 5 
+            📂: 1)
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      (📄: 8 
+      )
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view" style="flex: 1;">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin-left: 16px;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            3 <a id="recent-3" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            4 <a id="recent-4" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div style="bottom: 10px; height: 7vh; flex: 1;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Django CRUD</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2020-02-16T17:21:08+09:00" itemprop="datePublished">Feb 16, 2020
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#Django-프로젝트-생성과-가상-환경-설정' id='markdown-toc-0-Django-프로젝트-생성과-가상-환경-설정'>Django 프로젝트 생성과 가상 환경 설정</a></li> 
+<li><a href='#Django-앱-생성과-추가' id='markdown-toc-0-Django-앱-생성과-추가'>Django 앱 생성과 추가</a></li> 
+<li><a href='#기본-html-파일-설정' id='markdown-toc-0-기본-html-파일-설정'>기본 html 파일 설정</a></li> 
+<li><a href='#Django-Read-detail-생성' id='markdown-toc-0-Django-Read-detail-생성'>Django Read(detail) 생성</a></li> 
+<li><a href='#Django-Update-생성' id='markdown-toc-0-Django-Update-생성'>Django Update 생성</a><ul>
+</ul></li> 
+</ol>
+<h1 id='Django-CRUD-Create-Read-Update-Delete-만들기'>Django CRUD(Create, Read, Update, Delete ) 만들기</h1>
+<h2 id='Django-프로젝트-생성과-가상-환경-설정'>Django 프로젝트 생성과 가상 환경 설정</h2>
+<ol>
+  <li>mkdir 대상폴더이름, cd 대상폴더 이름으로 폴더를 생성하고 이동한다</li>
+  <li>python -m venv venv로 해당 디렉토리에 폴더이름의 가상환경을 만들어줌</li>
+  <li>source venv/Scripts/activate로 터미널을 가상환경에 들어가게 한다. (deactivate로 나감)
+    <ul>
+      <li>또는 vsCode에서 f1으로 select interpreter를 통하여 가상환경 들어가기 가능</li>
+    </ul>
+  </li>
+  <li>pip install django로 가상환경 내에 django를 설치한다.</li>
+  <li>django-admin startproject 프로젝트명 . 으로 현재 폴더 내에 프로젝트를 만든다
+    <ul>
+      <li>마지막 .이 없으면 프로젝트명으로 된 폴더를 만들고 그 내부에 만들게 된다.</li>
+    </ul>
+  </li>
+  <li>python manage.py runserver로 서버를 돌리고 확인해본다.
+    <ul>
+      <li>http://127.0.0.1:8000/ 가 기본 주소 , 터미널에서 Ctrl + C로 서버를 닫는다</li>
+      <li>터미널에 code .을 치면 해당 디렉토리로 VS Code IDE가 켜짐(버그 있음)
+        <h2 id='Django-앱-생성과-추가'>Django 앱 생성과 추가</h2>
+      </li>
+    </ul>
+  </li>
+  <li>대상 폴더(보통 프로젝트 폴더와 동일 위치)에서 django-admin startapp 앱이름 으로 앱 생성
+    <ul>
+      <li>python manage.py startapp 앱이름 으로도 가능</li>
+    </ul>
+  </li>
+  <li>프로젝트명 폴더 내부의 settings.py의 INSTALLED_APPS 리스트에 앱이름을 추가
+    <ul>
+      <li>보통 커스텀 app은 맨 위에 놓으며 동명일시 맨 위의 app이 우선이다.(‘,’ 추가 주의)
+        <blockquote>
+          <p>myCRUD 프로젝트 폴더 내부의 settings.py의 일부<br />
+ ```python<br />
+ # Application definition</p>
+        </blockquote>
+      </li>
+    </ul>
+
+    <p>INSTALLED_APPS = [<br />
+ 'CRUD', # 앱 이름<br />
+ 'django.contrib.admin',<br />
+ 'django.contrib.auth',<br />
+ 'django.contrib.contenttypes',<br />
+ 'django.contrib.sessions',<br />
+ 'django.contrib.messages',<br />
+ 'django.contrib.staticfiles',<br />
+]</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3. 동일한 폴더의 urls.py 파일 내부의 urlpatterns 리스트에 path()함수를 이용해 해당 앱 URL 추가
+	- 보통 path('앱이름/', include('앱이름.urls')), 를 추가한다 (뒤의 / 추가 필수!)
+	- 굳이 앱이름을 쓸필요 없지만 관례와 효율 상 그렇게 한다.
+	- include()함수는 django.urls에서 임포트 해온다.(from django.urls import path, include)
+	&gt; 프로젝트 폴더의 urls.py의 일부
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path(&amp;#39;admin/&amp;#39;, admin.site.urls),
+    path(&amp;#39;CRUD/&amp;#39;, include(&amp;#39;CRUD.urls&amp;#39;)),
+]
+
+</code></pre></div></div>
+<ol>
+  <li>해당 앱 폴더 내부에 urls.py 파일을 생성하고, urlpatterns 리스트를 만든다</li>
+  <li>필요 모듈들 (django.urls의 path함수, 해당 폴더(.)의 views 파일 등)을 임포트
+    <blockquote>
+      <p>앱 폴더 내부의 새로만든 urls.py 예시<br />
+```python<br />
+from django.urls import path<br />
+from . import views</p>
+    </blockquote>
+  </li>
+</ol>
+
+<p>app_name = 'CRUD' # 일반적으로 앱 이름과 같은 이름을 넣음</p>
+
+<p>urlpatterns = [<br />
+    path('create/', views.create, name="create"),<br />
+    # variable routing + namespacing<br />
+    path('&#38;#60;int:id&#38;#62;/update/', views.update, name="update"),<br />
+    # 기타 필요한 path 추가<br />
+]</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## model에 데이터베이스 모델 추가
+1. 해당 앱 폴더 내부의 models.py 파일에 원하는 이름의 모델 클래스를 만든다.
+	- 이 클래스는 models.Model을 상속받아야한다.
+2. 내부의 클래스 변수로 각각의 정보 필드를 설정한다.
+	- models.CharField(max_length=)는 보통 짧은 내용의 문자열 정보에 사용하며, max_length라는 최대 저장 공간을 미리 할당해줘야 한다.
+	- models.TextFiled()는 보통 본문 같은 긴 길이의 문자열 정보에 사용, max_length 할당이 필요 없다
+	- models.DateField()는 날짜와 시간 정보에 사용한다.
+	- models.BooleanField()는 참, 거짓으로 구분하는 정보에 사용한다.
+&gt; 해당 앱 폴더의 models.py 예시
+```python
+from django.db import models
+
+# Create your models here.
+class TODO(models.Model): # models.Model 상속해주기 필수
+    title = models.CharField(max_length=50)
+    content = models.TextField()
+    due_date = models.DateField()
+    check = models.BooleanField()
+    
+    def __str__(self): # __str__을 오버로딩하면 admin의 데이터베이스에 가시성좋게 보여줄 수 있다.
+        return f&amp;#39;&amp;#123;self.due_date&amp;#125;까지 &amp;#123;self.title&amp;#125;일을 해야합니다. 내용 : &amp;#123;self.content&amp;#125;, 행동 여부 : &amp;#123;self.check&amp;#125;&amp;#39;
+
+</code></pre></div></div>
+<ul>
+  <li>해당 데이터필드의 종류를 잘 설정해줘야, 나중에 form 자동 생성기능을 사용할 때 적절하게 생성된다.
+    <ol>
+      <li>모델이 완성되면 터미널에서 python manage.py makemigrations를 통하여 모델을 SQL 번역기로 보낸다. (일종의 데이터표 헤더 만들기)</li>
+    </ol>
+    <ul>
+      <li>이때 0001_initial.py가 생성되며, 지우면 다시 만들어줘야 한다.
+        <ol>
+          <li>python manage.py migrate를 통해 SQL로 해석한다. (일종의 데이터 표 그리기)</li>
+        </ol>
+      </li>
+      <li>이때 모델링을 신중히하여 나중에 모델을 수정하는 일을 없도록 하자.</li>
+      <li>모델링 수정시 해당 모델 파일(0001_initial.py)를 지우고 다시 만들어야 한다.</li>
+      <li>만약 기존에 데이터베이스에 해당 모델의 정보가 있으면 문제를 일으킨다. (다 지우고 새로 바꿔주는게 나음)
+        <h2 id='기본-html-파일-설정'>기본 html 파일 설정</h2>
+        <ol>
+          <li>해당 앱 폴더 내부에 templates 라는 이름으로 새 폴더를 만든다.</li>
+          <li>내부 폴더에 base.html을 만들고 !+tab으로 기본 형식을 잡는다.</li>
+          <li>&lt;body&gt;태그 사이에 {% block body %}와 {% endblock %} DTL 문법을 넣는다.</li>
+        </ol>
+      </li>
+      <li>이때 원한다면 bootstrap을 추가하거나 여러가지를 꾸민다.
+        <blockquote>
+          <p>base.html 파일 예시<br />
+```html<br />
+&#38;#60;!DOCTYPE html&#38;#62;<br />
+&#38;#60;html lang="en"&#38;#62;<br />
+&#38;#60;head&#38;#62;<br />
+&#38;#60;meta charset="UTF-8"&#38;#62;<br />
+&#38;#60;meta name="viewport" content="width=device-width, initial-scale=1.0"&#38;#62;<br />
+&#38;#60;meta http-equiv="X-UA-Compatible" content="ie=edge"&#38;#62;<br />
+&#38;#60;title&#38;#62;MyOwnSuckyBulletin&#38;#60;/title&#38;#62;<br />
+&#38;#60;/head&#38;#62;<br />
+&#38;#60;body&#38;#62;<br />
+{% block body %}<br />
+{% endblock %}<br />
+{% block body2 %}<br />
+{% endblock %}<br />
+&#38;#60;!–이런 식으로 2개 이상 놓을 수도 있다.–&#38;#62;<br />
+&#38;#60;!–html 주석 달기, 하지만 DTL과 충돌이 일어날 수 도 있다. –&#38;#62;<br />
+&#38;#60;/body&#38;#62;<br />
+&#38;#60;/html&#38;#62;</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4. base.html과 같은 폴더에 index.html 파일을 만들어준다.
+5. {% extends 'base.html' %}, {% block body %}, {% endblock %}를 통하여 base.html의 템플릿을 가져온다.
+	- body라는 이름을 바꾸면 다른 위치의 템플릿을 가져올 수 있다.
+	- 하지만 2개이상의 템플릿을 가져오는 것은 할 수 없다.
+6. 해당 폴더의 urls.py의 urlpatterns에 메인 페이지 표시를 위한 path를 추가한다.
+7.  해당 폴더의 views.py에 index 함수를 만들고 추가한 모델들을 정렬 후 변수에 집어넣는다.
+8. index 함수로 index.html 파일로 데이터를 넘겨주고 출력하는 html 코드를 만든다.
+&gt; urls.py의 일부(앱 내부 폴더)
+```python
+urlpatterns = [
+    path(&amp;#39;&amp;#39;, views.index, name=&amp;#34;index&amp;#34;), #todos의 메인 페이지 url을 의미
+    ]
+
+</code></pre></div></div>
+<blockquote>
+  <p>views.py (앱 내부 폴더)<br />
+```python<br />
+from django.shortcuts import render<br />
+from .models import TODO</p>
+  <h1>이용할 모델을 models.py에서 가져와야 한다.</h1>
+  <h1>Create your views here.</h1>
+  <p>def index(request): # request는 요청자가 보낸 정보들이 담겨져있다.<br />
+    todos = TODO.objects.order_by('due_date').all() # 날짜순으로 정렬<br />
+    context = { # context라는 딕셔너리 형태로 넣어주어야 한다.<br />
+        'todos': todos,<br />
+    }<br />
+    return render(request, 'index.html', context)</p>
+  <h1>render 함수는 정보와 html 코드, 가공된 정보를 가지고 사람들에게 보여줄 페이지를 만들어준다.</h1>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 모델 클래스 내부의 함수들
+	- 모델.objects.all(count) : 클래스의 모든 객체를 출력, count를 빈칸으로 놓지 않으면, count번째 요소를 가져온다.
+	
+	- 모델.objects.get(id=count, title="content"): 1개의 데이터 객체만 가져온다. id에 값을 지정하면, id가 1인 객체 하나, content를 지정하면 해당 content를 title로 가지고 있는 데이터 객체를 가져온다. 일치하는 객체가 2개 이상 있으면 에러가 발생한다.
+	
+	- 모델.objects.filter(title="hello") : 괄호안에 조건과 일치하는 모든 데이터를 가져옴 ex) title="hello", 인 모든 객체 가져옴
+	
+	- 모델 객체.delete() : 해당 모델 객체 삭제
+	
+	- 모델객체 = 모델이름(열요소=내용,열요소2=내용2) : 모델 객체 생성
+	
+	- &gt; 모델 객체 생성 2
+	- ```python
+	  모델객체 = 모델이름()
+	  모델객체.열요소1 = 내용
+	  모델겍체.열요소2 = 내용
+	  모델객체.save() # 모델 객체 적용
+	  
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 이 방법으로 모델객체 생성을 다른 타이밍에 할 수 있다. &gt; index.html (앱 내부 templates 폴더 내부) ```html &amp;#123;&amp;#37; extends &amp;#39;base.html&amp;#39; &amp;#37;&amp;#125; &amp;#38;#60;!--base.html의 템플릿을 가져옴--&amp;#38;#62; &amp;#123;&amp;#37; block body &amp;#37;&amp;#125;	&amp;#38;#60;!-- base.html의 구멍을 선택--&amp;#38;#62;
+&amp;#123;&amp;#37; for todo in todos &amp;#37;&amp;#125; &amp;#38;#60;!-- DTL for문 구문--&amp;#38;#62;
+제목 : &amp;#38;#60;h1&amp;#38;#62;todo.title&amp;#38;#60;/h1&amp;#38;#62; &amp;#38;#60;!-- 각 todo 객체의 내용물 보여주기--&amp;#38;#62;
+내용 : &amp;#38;#60;h2&amp;#38;#62;todo.content&amp;#38;#60;/h2&amp;#38;#62;
+날짜 : &amp;#38;#60;h3&amp;#38;#62;todo.due_date&amp;#38;#60;/h3&amp;#38;#62;
+체크 : &amp;#38;#60;h3&amp;#38;#62;todo.check&amp;#38;#60;/h3&amp;#38;#62;
+&amp;#123;&amp;#37; endfor &amp;#37;&amp;#125;&amp;#38;#60;!-- for문, 꼭 끝을 알릴것 --&amp;#38;#62; &amp;#123;&amp;#37; endblock &amp;#37;&amp;#125; &amp;#38;#60;!-- block의 끝 --&amp;#38;#62;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Django Create 생성
+1. 앱의 urls.py의 urlpatterns 리스트에 url이름, views의 함수, url 변수명을 할당해 넣는다.
+&gt; 앱 폴더 내부의 urls.py의 urlpatterns 예시
+```python
+urlpatterns = [
+    path(&amp;#39;create/&amp;#39;, views.create, name=&amp;#34;create&amp;#34;),
+    #뒤의 name은 namespacing으로, url대신 쓸 이름
+    # 기타 필요한 path 추가
+]
+
+</code></pre></div></div>
+<ol>
+  <li>해당 앱 폴더 내부에 views.py 파일로 가서 위 path함수의 2번째 인자인 함수명을 만든다. (일반적으로 url 이름과 같다.)
+    <blockquote>
+      <p>앱 폴더 내부의 views.py의 create 함수 예시<br />
+```python<br />
+from django.shortcuts import render, redirect # redirect와 render를 사용하기 위해 임포트 해야한다.<br />
+from .models import TODO # 사용할 모델 또한 불러와야함</p>
+    </blockquote>
+  </li>
+</ol>
+
+<p>def create(request):<br />
+    if request.method == "POST": # 만약 form의 method가 Post인채로 보내지면?<br />
+    # 그렇다면 정보를 저장하고 데이터베이스에 올리고 메인 페이지로 돌려보냄<br />
+        check = request.POST.get('check') # check 되면 'on'을 리턴함<br />
+        if check == 'on':<br />
+            check = True<br />
+        else:<br />
+            check = False<br />
+        title = request.POST.get('title')<br />
+        content = request.POST.get('content')<br />
+        due_date = request.POST.get('due-date')<br />
+        # todo = TODO()<br />
+        # todo.check = check<br />
+        # todo.title = title<br />
+        # todo.content = content<br />
+        # todo.due_date = due_date<br />
+        # todo.save() # 똑같은 기능을 하는 코드<br />
+        # 더 길지만 대신 save()를 이용해 todo 객체의 생성 타이밍을 원하는 시간에 할 수 있음<br />
+        todo = TODO.objects.create(check=check, title=title, content=content, due_date=due_date)<br />
+        return redirect('CRUD:index') # /있으면 루트주소에 추가, 없으면 현재 주소 앞에 추가<br />
+    else: # form의 method가 Get이라면?<br />
+    # 그렇다면 todo 정보를 입력하는 페이지로 보내야함<br />
+        return render(request, 'create.html')</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 기본 정보 method는 GET방식이다. 사용자가 새로운 글을 쓰기 위해 create url로 들어오면 GET방식이므로 crete.html이 만드는 페이지로 가서 정보 입력창으로 간다.
+- 정보를 모두 입력하고 사용자가 method를 POST 방식으로 설정한 폼에서 submit 버튼을 누르면, POST 방식으로 정보가 들어오므로 TODO 객체를 만들고 메인페이지로 돌아간다.
+- 이런 식으로 하나의 url 주소에서 받은 정보 유형에 따라 다르게 동작하게 만들어 효율적인 웹 코딩을 구현한 것이 restfull한 웹 코딩이라고 부른다.
+- 다른 프레임워크는 delete와 put 형식의 method도 지원하나 django와 HTML5는 공식적으로 지원하지 않고 있다. 이외에 인기있는 http verb 라는 개념도 지원안함
+- HTML5도 공식적으로 지원하지 않으므로 delete와 put형식으로 보낼 때는 새로 input 태그를 만들어, type= hidden에  name='_method', value="DELETE" 로 숨겨서 보냄
+3. templates 폴더에 create.html을 만든다.
+&gt; create.html 예시
+```html
+&amp;#123;&amp;#37; extends &amp;#39;base.html&amp;#39; &amp;#37;&amp;#125;
+
+&amp;#123;&amp;#37; block body &amp;#37;&amp;#125;
+&amp;#38;#60;form action=&amp;#34;&amp;#123;&amp;#37; url &amp;#39;CRUD:create&amp;#39; &amp;#37;&amp;#125;&amp;#34; method=&amp;#34;POST&amp;#34;&amp;#38;#62; # 대소문자 구별안함
+  &amp;#123;&amp;#37; csrf_token &amp;#37;&amp;#125; # 폼 내부에 이게 있어야지 인증이되서 에러 안남
+  달성여부 : &amp;#38;#60;input type=&amp;#34;checkbox&amp;#34; name=&amp;#34;check&amp;#34;&amp;#38;#62; # check하면 &amp;#39;on&amp;#39;을 보냄
+  제목 : &amp;#38;#60;input type=&amp;#34;text&amp;#34; name=&amp;#34;title&amp;#34;&amp;#38;#62; # 각자 모델 정보명으로 보냄
+  내용 : &amp;#38;#60;input type=&amp;#34;text&amp;#34; name=&amp;#34;content&amp;#34;&amp;#38;#62;
+  마감일 : &amp;#38;#60;input type=&amp;#34;date&amp;#34; name=&amp;#34;due-date&amp;#34;&amp;#38;#62;
+  &amp;#38;#60;input type=&amp;#34;submit&amp;#34; value=&amp;#34;저장&amp;#34;&amp;#38;#62;
+&amp;#38;#60;/form&amp;#38;#62;
+&amp;#123;&amp;#37; endblock &amp;#37;&amp;#125;
+
+</code></pre></div></div>
+<ul>
+  <li>form의 action 요소를 DTL 문법으로 namespacing을 이용하여 보낼 수 있다.</li>
+  <li>”{% url ‘앱이름:url변수명’ 매개변수1, 매개변수2, …%}” 매개변수 또한 보낼 수 있으며, 앱이름을 설정하지 않으면 ‘앱이름:’부분은 빼도 된다. 그러면 다른 앱에 겹치는 url 변수명이 서로 충돌할 수 있다.</li>
+  <li>POST 방식으로 보내면 url 주소에 정보 값이 보이질 않고, csrf로 암호화되서 보내지며, 이를 제대로 해독해서 받으려면 form 태그 내부에 {% csrf_token %}을 지정하여 토큰도 같이 보내야 한다. 이를 통해 restfull 한 웹 코딩도 가능하다.
+    <h2 id='Django-Read-detail-생성'>Django Read(detail) 생성</h2>
+    <ol>
+      <li>먼저 앱 폴더 내부의 urlpatterns 리스트에 새로 path를 추가한다.
+        <blockquote>
+          <p>새로 추가한 detail path<br />
+```python<br />
+path('&#38;#60;int:id&#38;#62;/', views.detail, name="detail"), # 자세히 볼 id를 variable routing 해야함</p>
+        </blockquote>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. views.py에 detail 함수를 추가한다.
+&gt; 새로 추가한 detail 함수
+```python
+def detail(request, id): #자세히 볼 todo의 id를 html파일로 넘겨주어야 한다.
+    todo = TODO.objects.get(id=id) # 해당 id인 TODO 객체 찾기
+    context = &amp;#123; # render로 넘겨줄 때 3번째 인자로, 딕셔너리 형태로 넘겨줘야한다.
+        &amp;#39;todo&amp;#39;: todo,
+    &amp;#125;
+    return render(request, &amp;#39;detail.html&amp;#39;, context)
+
+</code></pre></div></div>
+<ol>
+  <li>deatil.html 파일을 만들어 templates 폴더에 추가한다.
+    <blockquote>
+      <p>detail.html<br />
+```python<br />
+{% extends 'base.html' %}<br />
+{% block body %}<br />
+&#38;#60;h1&#38;#62;{{todo.title}}&#38;#60;/h1&#38;#62;<br />
+&#38;#60;h2&#38;#62;{{todo.content}}&#38;#60;/h2&#38;#62;<br />
+&#38;#60;h3&#38;#62;{{todo.due_date}}&#38;#60;/h3&#38;#62;<br />
+&#38;#60;h3&#38;#62;{{todo.check}}&#38;#60;/h3&#38;#62;<br />
+&#38;#60;a href=""&#38;#62;삭제&#38;#60;/a&#38;#62;<br />
+&#38;#60;a href=""&#38;#62;수정&#38;#60;/a&#38;#62;<br />
+&#38;#60;a href="{% url 'CRUD:index' %}"&#38;#62;뒤로&#38;#60;/a&#38;#62;<br />
+{% endblock %}</p>
+    </blockquote>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 메인 페이지로 돌아가나는 뒤로와 나중에 추가될 삭제와 수정 버튼을 넣었다.
+4. 기존에 있던 index.html에 해당 모델 객체의 detail 페이지로 갈 수 있는 링크를 추가한다.
+&gt; index.html 의 일부
+```html
+&amp;#38;#60;a href=&amp;#34;&amp;#123;&amp;#37; url &amp;#39;CRUD:detail&amp;#39; todo.id &amp;#37;&amp;#125;&amp;#34;&amp;#38;#62;자세히&amp;#38;#60;/a&amp;#38;#62;
+
+</code></pre></div></div>
+<ul>
+  <li>namspacing을 이용한 url 할당에 todo의 id를 매개변수로 보내고 있다.</li>
+  <li>보내야될 변수가 2개 이상이면 앞에서 부터 차례대로 적용.
+    <h2 id='Django-Update-생성'>Django Update 생성</h2>
+    <ol>
+      <li>앱 폴더 내부의 urls.py의 urlpatterns 리스트에 update path를 추가한다.
+        <blockquote>
+          <p>url.py의 일부<br />
+```python<br />
+  path('&#38;#60;int:id&#38;#62;/update/', views.update, name="update"),</p>
+        </blockquote>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. 앱 폴더 내부의 views.py에 update 함수를 추가한다.
+&gt; views.py의 update 함수
+```python
+def update(request, id):
+    todo = TODO.objects.get(id=id) # get일 때도, post일 때도 todo를 쓰므로 외부에서 구한다.
+    if request.method == &amp;#34;POST&amp;#34;:        
+        todo.check = request.POST.get(&amp;#39;check&amp;#39;)
+        if todo.check == &amp;#39;on&amp;#39;:
+            todo.check = True
+        else:
+            todo.check = False
+        todo.title = request.POST.get(&amp;#39;title&amp;#39;)
+        todo.content = request.POST.get(&amp;#39;content&amp;#39;)
+        todo.due_date = request.POST.get(&amp;#39;due-date&amp;#39;)
+        return redirect(&amp;#39;CRUD:index&amp;#39;) # 값을 수정하고 메인 페이지로
+    else:
+        context = &amp;#123;
+        &amp;#34;todo&amp;#34;: todo,
+        &amp;#125;
+        return render(request, &amp;#39;update.html&amp;#39;, context)
+
+</code></pre></div></div>
+<ol>
+  <li>update.html 파일을 templates 폴더 안에 추가한다.
+    <blockquote>
+      <p>update.html<br />
+```html<br />
+{% extends 'base.html' %}<br />
+{% block body %}<br />
+&#38;#60;form action="{% url 'CRUD:update' %}" method="POST"&#38;#62; <br />
+  {% csrf_token %}<br />
+  달성여부 : &#38;#60;input type="checkbox" name="check"&#38;#62;<br />
+  제목 : &#38;#60;input type="text" name="title" value="{{todo.title}}"&#38;#62;<br />
+  내용 : &#38;#60;input type="text" name="content" value="{{todo.content}}"&#38;#62;<br />
+  마감일 : &#38;#60;input type="date" name="due-date" value="{{todo.due_date}}"&#38;#62;<br />
+  &#38;#60;input type="submit" value="저장"&#38;#62;<br />
+&#38;#60;/form&#38;#62;<br />
+{% endblock %}</p>
+    </blockquote>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Django Delete 생성
+
+## bootstrap 꾸미기
+
+## git
+1. gitignore.io에 가서 자신의 환경을 입력한 뒤 깃헙에 올리지 않을 설정을 받아 .gitignore에 넣기
+2. github에 가서 새로운 레포지토리 만들기
+3. 해당 폴더에 가서 터미널 안에  git init으로 git 환경으로 만든 뒤, 
+4. 터미널에 git commit -m "message"로 첫 커밋 남기기
+5. 터미널에 git remote add origin 레포지토리주소로 연결하기
+6. git push origin master로 현재 상태 업로드하기
+7. git add ., git commit -m "message", git push origin master로 업데이트, 커밋 남기기
+
+## admin 생성하기, 로그인 하기
+1. 터미널에 python manage.py createsuperuser 입력
+2. 터미널에 유저네임, 이메일주소, 패스워드 입력, 패스워드 확인을 물어봄
+	- 패스워드 입력시 입력결과가 눈에 보이지 않는다.
+2. http://서버주소/admin 에 들어가서 로그인하면 관리자 페이지로 들어갈 수 있다.
+3. 해당 앱 폴더 내부의 admin.py에서 admin.site.register(대상 모델)로 대상 모델을 업데이트하면 관리 페이지로 들어가면 볼 수 있다.
+	- 그 전에 from .models import 모델이름 으로 불러온다.
+## 댓글 달기 기능
+### django ORM
+#### READ
+&gt; 게시물 가져오는 법
+```python
+Question.objects.get(id=1)
+
+</code></pre></div></div>
+<ul>
+  <li>없는 id면 에러 발생
+    <blockquote>
+      <p>게시물 불러오기<br />
+```python<br />
+In [6]: question = Question.objects.get(id=1)</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>In [7]: question<br />
+Out[7]: &#38;#60;Question: Question object (1)&#38;#62;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 게시물 불러오기
+&gt; 댓글 저장하기
+```python
+In [7]: question
+Out[7]: &amp;#38;#60;Question: Question object (1)&amp;#38;#62;
+
+In [8]: Answer
+Out[8]: questions.models.Answer
+
+In [9]: answer = Answer()
+
+In [10]: answer
+Out[10]: &amp;#38;#60;Answer: Answer object (None)&amp;#38;#62; # 아직 정보가 없으므로 None
+
+In [11]: answer.content
+Out[11]: &amp;#39;&amp;#39;
+
+In [12]: answer.content = &amp;#34;이것은 댓글입니다.&amp;#34;
+
+In [13]: answer.content
+Out[13]: &amp;#39;이것은 댓글입니다.&amp;#39;
+
+In [14]: answer.question = question
+
+In [15]: answer.question
+Out[15]: &amp;#38;#60;Question: Question object (1)&amp;#38;#62;
+
+In [16]: answer.save() # 정보 다 안채운채로 하면 에러 발생
+
+In [17]: answer
+Out[17]: &amp;#38;#60;Answer: Answer object (1)&amp;#38;#62;
+
+In [18]: Answer.objects.create(content=&amp;#34;두번째 댓글&amp;#34;, question=question)
+Out[18]: &amp;#38;#60;Answer: Answer object (2)&amp;#38;#62;
+
+</code></pre></div></div>
+<h4 id='댓글-정보'>댓글 정보</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">answer</span><span class="p">.</span><span class="nb">id</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="mi">1</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">answer</span><span class="p">.</span><span class="n">pk</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="mi">1</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">answer</span><span class="p">.</span><span class="n">question_id</span> <span class="c1"># answer가 가지고 있는 id값, **이게 더 빠름**
+</span><span class="n">Out</span><span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="mi">1</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">answer</span><span class="p">.</span><span class="n">question</span><span class="p">.</span><span class="nb">id</span> <span class="c1"># answer가 가지고있는 question이 가지고 있는 id값
+</span><span class="n">Out</span><span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="mi">1</span>
+
+</code></pre></div></div>
+<ul>
+  <li>answer.id == answer.pk(primary key) 아이디랑 같음</li>
+  <li>question_id와 answer.question.id 값은 같지만 접근하는데 question을 찾지 않으므로 question_id가 더욱 빠르다.<br />
+```python<br />
+In [26]: answer.question.content<br />
+Out[26]: 'worst mankind on the planet earth'</li>
+</ul>
+
+<p>In [27]: question.answer_set # foreignkey를 가지고 있는 answer에 의해 자동으로 생성된 question의 요소<br />
+Out[27]: &#38;#60;django.db.models.fields.related_descriptors.create_reverse_many_to_one_manager.&#38;#60;locals&#38;#62;.RelatedManager at 0x28b04474808&#38;#62;</p>
+
+<p>In [28]: question.answer_set.all()<br />
+Out[28]: &#38;#60;QuerySet [&#38;#60;Answer: Answer object (1)&#38;#62;, &#38;#60;Answer: Answer object (2)&#38;#62;]&#38;#62; # answer 객체가 2개 들어있고 이에 접근 가능</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- answer가 가지고 있는 question의 내용에 접근 가능
+
+#### 1:N
+&gt; Question(1)=&gt;Answer(N) : answer_set 으로 접근 가능
+```python
+In [28]: question.answer_set.all()
+Out[28]: &amp;#38;#60;QuerySet [&amp;#38;#60;Answer: Answer object (1)&amp;#38;#62;, &amp;#38;#60;Answer: Answer object (2)&amp;#38;#62;]&amp;#38;#62;
+
+</code></pre></div></div>
+<ul>
+  <li>question.answer 로는 가져올 수 없다. (1개여도)</li>
+  <li>항상 데이터가 여러개라고 생각해야한다.</li>
+  <li>question에는 answer에 대한 정보를 넣지 않는다.(없을 수도 있으므로) dir(객체)로 확인 가능
+    <blockquote>
+      <p>Answer(N)=&gt;Question(1): question 으로 접근 가능<br />
+```python<br />
+In [15]: answer.question<br />
+Out[15]: &#38;#60;Question: Question object (1)&#38;#62;</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>```</p>
+
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/2020-02-16-Django-CRUD.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/2020-02-16-Django-CRUD.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>알고리즘 수학 기본 - 확률 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="알고리즘 수학 기본 - 확률" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-10T11:53:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="알고리즘 수학 기본 - 확률" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-07-10T11:53:58+09:00","datePublished":"2021-07-10T11:53:58+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"알고리즘 수학 기본 - 확률","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/">The Digital garden of Nurgle.</a><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form></div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/blog/">FRONTPAGE</a><a class="page-link" href="/about/">ABOUT ME</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+    <div class="drawer-components">
+      <hr>
+      <div class="categories" style="flex: 2;">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 5)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 26 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OPERATING_SYSTEM/">OPERATING_SYSTEM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 14 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 8 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 3)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 2 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 7 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 5 
+            📂: 1)
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      (📄: 8 
+      )
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view" style="flex: 1;">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin-left: 16px;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            3 <a id="recent-3" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            4 <a id="recent-4" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div style="bottom: 10px; height: 7vh; flex: 1;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">알고리즘 수학 기본 - 확률</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2021-07-10T11:53:58+09:00" itemprop="datePublished">Jul 10, 2021
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#확률-Probability' id='markdown-toc-0-확률-Probability'>확률(Probability)</a><ul><li><a href='#확률에-대한-공리-Axioms-of-probability' id='markdown-toc-0-확률에-대한-공리-Axioms-of-probability'>확률에 대한 공리(Axioms of probability)</a></li> 
+<li><a href='#이산-확률-분포-Discrete-probability-distributions' id='markdown-toc-0-이산-확률-분포-Discrete-probability-distributions'>이산 확률 분포 (Discrete probability distributions)</a></li> 
+<li><a href='#연속-균등-확률-분포-Continuous-uniform-probability-distribution' id='markdown-toc-0-연속-균등-확률-분포-Continuous-uniform-probability-distribution'>연속 균등 확률 분포 (Continuous uniform probability distribution)</a></li> 
+<li><a href='#조건부-확률과-독립성-Conditional-probability-and-independece' id='markdown-toc-0-조건부-확률과-독립성-Conditional-probability-and-independece'>조건부 확률과 독립성(Conditional probability and independece)</a></li> 
+<li><a href='#베이즈-정리-Bayes’s-theorem' id='markdown-toc-0-베이즈-정리-Bayes’s-theorem'>베이즈 정리(Bayes’s theorem)</a></li> 
+
+</ul></li> 
+</ol>
+<h1 id='알고리즘을-위한-수학-확률-Probability'>알고리즘을 위한 수학 - 확률(Probability)</h1>
+
+<p><em>Introduction to Algorithm, 3rd, Cormen을 토대로 정리한 내용입니다.</em></p>
+
+<p>일부 표기나 개념이 기존의 수학과 다를 수도 있으므로, 여기서 배운 내용은 단순 해당 책(Introduction to Algorithm, 3rd, Cormen)의 부록으로 취급해야한다.</p>
+
+<p>이 장에서는 확률의 표기법, 정의, 속성 같은 기본적인 것만 배운다.</p>
+
+<p>들어가기에 앞서 집합에 대한 기본적인 이해가 필요하므로 알고리즘을 위한 수학 -집합 편을 보고 오는 것을 추천한다.</p>
+
+<hr />
+
+<h2 id='확률-Probability'>확률(Probability)</h2>
+
+<p>확률은 확률적, 무작위성을 띄고 있는 알고리즘을 설계하고, 분석하는 중요한 장치이다.</p>
+
+<p>우리는 확률을 확률적으로 더 이상 쪼개질 수 없는 <strong>최소 단위 사건인 근원 사건(elementary events)</strong>을 기본 원소로 하는 집합인 <strong>표본 공간(sample space) S</strong>에 대하여 정의한다.</p>
+
+<p>예를 들어 2개의 동전 튕기기에서 각 튕김의 결과인 앞면, 뒷면을 각각 H, T 라고 정의할 때, 이를 근원 사건은 ${H, T}$이 존재하며, 표본 공간 S는 아래 같이 된다.</p>
+
+<p>$S={HH, HT, TH, TT}$</p>
+
+<p><strong>사건(event)는 표본 공간 S에 대한 부분집합</strong>으로, 사건의 모음이라 할 수 있다. 예를 들어 앞면 하나, 뒷면 하나만 나올 사건은 ${HT, TH}$이다.</p>
+
+<p>표본 공간과 같은 전체 근원 사건들의 집합 <strong>사건 S를 전사건(cetrain event)</strong>라고 하며, <strong>사건 $\O$를 공사건(null event</strong>)이라 한다.</p>
+
+<p>두 사건 A와 B가 만약 $A\cap B=\O$라면 상호배타적인 관계라고 하며, 모든 근원사건들은 서로에게 상호배타적이다.</p>
+
+<p>가끔 표본 공간 S에 속한 근원사건 s를  사건 ${s}$로 생각하기도 한다.</p>
+
+<h3 id='확률에-대한-공리-Axioms-of-probability'>확률에 대한 공리(Axioms of probability)</h3>
+
+<p><strong>표본 공간 S에서의 확률 분포 $\Pr{}$는 S의 사건들을 실수로 투영한 것</strong>으로, 예를 들어 $\Pr{A}$는 사건 A가 일어날 확률이다. 또한, 다음 같은 확률 공리를 만족한다.</p>
+
+<ol>
+  <li>모든 사건 A에 대해 $\Pr{A}\geq0$를 만족</li>
+  <li>$\Pr{S}=1$, 즉 모든 사건들의 합은 1, 이는 정규화(normalization)를 가능케 한다.</li>
+  <li>모든 상호배타적 사건 A, B에 대하여 $\Pr{A\cup B}=\Pr{A}+\Pr{B}$를 성립,
+    <ul>
+      <li>정확히는, 유한 또는 계수 가능 무한 이벤트 수열 $A_1,A_2,\dots$에 대해 모든 쌍은 아래와 같이 상호 배타적이다. (아래 이산 확률 분포 참고)</li>
+      <li>즉, 각 사건이 일어날 확률들의 합은 모든 확률의 합이다.</li>
+    </ul>
+  </li>
+</ol>
+
+\[\Pr\begin{Bmatrix}
+\bigcup_iA_i
+\end{Bmatrix}=\sum_i\Pr\{A_i\}\]
+
+<p>앞서 배웠던 집합에 대한 공리와 이론이 많은 연관을 가지고 있다.</p>
+
+<p>먼저,</p>
+
+<ul>
+  <li>
+    <p>$\Pr{\O}=0$, 즉 공사건의 확률은 0이다.</p>
+  </li>
+  <li>
+    <p>만약 $A\subseteq B$라면,  $\Pr{A}\leq \Pr{B}$이며,</p>
+  </li>
+  <li>
+    <p>여사건 $\bar{A}$은 $S-A$로, 확률은 $\Pr{\bar{A}}=1-\Pr{A}$이 된다.</p>
+  </li>
+  <li>
+    <p>모든 경우의 두 사건 A, B에 대하여 다음이 성립한다.</p>
+  </li>
+</ul>
+
+\[\begin{align}
+\Pr\{A\cup B\}&amp;=\Pr\{A\}+\Pr\{B\}-\Pr\{A\cap B\}\tag{1}\label{eq:equal}
+\\&amp;\leq \Pr\{A\}+\Pr\{B\}\tag{2}\label{eq:bound}
+\end{align}\]
+
+<h3 id='이산-확률-분포-Discrete-probability-distributions'>이산 확률 분포 (Discrete probability distributions)</h3>
+
+<p><img src="/assets/img/2021-07-10-알고리즘-수학-확률/image-20220102083632192.png" alt="Figure 1. 주사위 던지기에 대한 이산 확률 분포" /></p>
+
+<ul>
+  <li>주사위 던지기에 대한 이산 확률 분포, 각 사건의 확률들이 동일한 값을 가진 다른 사건이 존재하거나 다른 확률의 배수인 것 등을 확인할 수 있는데, 이산 확률 분포는 확률 변수가 가질 수 있는 값의 갯수가 가산개라는 특징이 있다.</li>
+</ul>
+
+<p>만약 유한하거나 계수 가능 무한한 표본 공간 S에 대해서 확률 분포가 정의된다면, 이를 <strong>이산 확률 분포 (Discrete probability distributions</strong>)라고 한다.</p>
+
+<p>상호배타적인 근원사건으로 구성된 사건 A에 대해 다음이 성립한다.</p>
+
+<p>$\Pr{A}=\sum_{s\in A}\Pr{s}$</p>
+
+<p>만약 표본 공간 S가 유한하다면, S에 속한 모든 근원사건 s의 확률은 다음과 같이 된다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$\Pr{s}=1/</td>
+      <td>S</td>
+      <td>$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>이는 <strong>균등 확률 분포(uniform probability distribution)</strong>를 나타나게 한다.</p>
+
+<p><img src="/assets/img/2021-07-10-알고리즘-수학-확률/image-20220103125412135.png" alt="Figure 3. 이산 균등 확률 분포의 예시" /></p>
+
+<ul>
+  <li>균등 분포의 예, 두 사건 a, b의 확률이 같음을 알 수 있다.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>예를 들어 앞뒤가 나올 확률이 1/2로 동일한 동전이 있을 때, 코인을 n번 튕기면, 표본 공간 $S ={H,T}^n,</td>
+      <td>S</td>
+      <td>=2^n $에 대한 균등 확률 분포를 얻을 수 있다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>우리는 S의 근원 사건을 H와 T로 이루어진 길이 n의 문자열로 나타낼 수 있으며, 각 문자열의 확률은 $(1/2)^n$이다.</p>
+
+<ul>
+  <li>예를 들어, 동전을 3번 던진다면, HHH, HHT, HTH, THH, HTT, THT, TTH, TTT 총 8개의 문자열이 나올 것이며, 각 확률은 1/8이다.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>사건 A는 정확히 k번의 앞면과 n-k번의 뒷면이 나올 방법이며, 크기가 $</td>
+      <td>A</td>
+      <td>=\binom{n}{k}$인 S의 부분집합이다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>사건 A의 확률은 $\Pr{A}=\binom{n}{k}/2^n$이다.</p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>예를 들어 3번 동전을 던져 2번의 앞면과 3-2번의 뒷면이 나올 사건 A가 포함하는 근원 사건은 HHT, HTH, THH이며,  사건 A의 크기는 $</td>
+          <td>A</td>
+          <td>=\binom{3}{2}=\frac{3!}{2!1!}=3$이며, 사건 A의 확률은 $\Pr{A}=\binom{3}{2}/2^3=3/8$이다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h3 id='연속-균등-확률-분포-Continuous-uniform-probability-distribution'>연속 균등 확률 분포 (Continuous uniform probability distribution)</h3>
+
+<p>연속 균등 확률 분포 (Continuous uniform probability distribution)는 표본 공간의 일부 부분집합이 사건으로 여겨지지 않는 확률 분포의 예이다.</p>
+
+<p><img src="/assets/img/2021-07-10-알고리즘-수학-확률/image-20220102083856759.png" alt="" /></p>
+
+<p>연속 균등 확률 분포는 a&lt; b인 닫힌 실수 구간 [a,b] 사이로 정의되며, [a, b] 사이의 실수 점들이 무수히 많기 때문에 모든 점들이 같은 확률을 가진다면, 확률의 총합이 1이 넘어가버린다. 따라서, S의 일부 부분집합에만 확률을 적용한다.</p>
+
+<ul>
+  <li>보통 특정 구간 [a, b]나 (a, b)의 유한 또는 가산 가능한 부분집합이나, 좀 더 복잡한 집합들을 포함한다.</li>
+</ul>
+
+<p>일정 구간 [c,d]에 대해, $a\leq c \leq d \leq b$를 만족할 때, 사건 [c, d]의 확률은 $\Pr{[c,d]}=\frac{d-c}{b-a}$로 정의 된다.</p>
+
+<p>만약, 구간이 [x, x]처럼 시작과 끝이 동일한 경우에 확률은 0이 된다.</p>
+
+<p>닫힌 구간 [c,d]의 양 끝단 지점, [c, c]와 [d, d]를 지운 구간을 열린 구간 (c, d)라고 표기한다고 하면, $[c,d]=[c,c]\cup(c,d)\cup[d,d]$를 만족하며, 양 끝단의 확률은 0이므로, $\Pr{[c,d]}=\Pr{(c,d)}$를 만족한다.</p>
+
+<h3 id='조건부-확률과-독립성-Conditional-probability-and-independece'>조건부 확률과 독립성(Conditional probability and independece)</h3>
+
+<p>조건부 확률은 부분적인 사전 지식이 있을 때의 확률을 의미하며, 예를 들자면, 동전 1개 이상의 앞면이 확정되었을 때, 동전 2개가 전부 앞면일 확률이다.</p>
+
+<p>원래는 둘다 앞면일 확률은 1/4이겠지만, 동전 1개 이상이 앞면으로 확정되었으므로, 뒷면이 2개가 나올 확률이 없어져, 1/3으로 바뀐다.</p>
+
+<p>사건 B가 확정된 상황에서 A가 일어날 조건부 확률($\Pr{A|B}$)은 아래와 같이 정의 된다. <br />
+\(\Pr\{A|B\}=\frac{\Pr\{A \cap B\}}{\Pr\{B\}} \tag{3} \label{eq:conditional probability}, where\ \Pr\{B\}\neq 0\)</p>
+
+<p>이때, $A \cap B$는 사건 A와 사건 B가 같이 일어난 결과(outcome)(=둘 다 만족하는 결과)의 집합이며, 이때 결과(outcome)은 표본 공간의 원소를 의미한다.</p>
+
+<p>$A\cap B$에 속한 결과들은 사건 B의 근원 사건이기도 하므로, $\Pr{B}$로 나누어 정규화되며, 따라서 사건 B의 근원사건의 확률을 모두 더하면 1이 나온다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>따라서 B가 확정된 A의 조건부 확률은 사건 $A \cap B$의 확률과 사건 B의 확률 간의 비율이며, 예를 들면 사건 A는 두 동전이 모두 앞면이 나올 확률이며, B는 적어도 하나의 동전이 앞면일 확률이다. $\Pr{A</td>
+      <td>B}=(1/4)/(3/4)=1/3$이 나옴을 알 수 있다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>만약 두 사건이 $\Pr{A\cap B}=\Pr{A}\Pr{B} \tag{4} \label{eq:independent condition}$가 성립된다면, 두 사건은 독립적(independent)이라고 한다.</p>
+
+<ul>
+  <li>예를 들어 서로 다른 두 동전의 앞면이 나올 확률은 각각 1/2, 1/2이며, 두 동전다 앞면이 나올 확률은 (1/2)(1/2) =1/4이므로, 위 식을 만족하여 이 두 사건은 서로 독립적이다.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>위의 식 $\eqref{eq:independent condition}$은 $\Pr{B}\neq 0$일 때, $\Pr{A</td>
+      <td>B}=\Pr{A}$과 동치이다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>만약 1개 이상의 사건들 $A_1,A_2,\dots,A_n$의 집합이 쌍방향 독립적(pairwise independent)이라면, $1\leq i&lt;j\leq n$에 대해 $\Pr{A_i\cap A_j}=\Pr{A_i}\Pr{A_j}$을 만족한다.</p>
+
+<p>만약 1개 이상의 사건들 $A_1,A_2,\dots,A_n$의 집합이 상호 독립적(mutually independent)이라면, $1\leq i_n&lt;i_{n+1}\leq n$에 대해 $\Pr{A_{i_1}\cap A_{i_2}\cap\cdots\cap A_{i_k} }=\Pr{A_{i_1}}\Pr{A_{i_2}}\cdots\Pr{A_{i_k}}$을 만족한다.</p>
+
+<p>만약 $A_1$을 첫번째 동전이 앞면이 나오는 사건, $A_2$를 두번째 동전이 앞면이 나오는 사건, $A_3$를 두 동전이 서로 다른 면이 나오는 사건이라고 하면, 확률은 다음과 같다.<br />
+\({align}
+\Pr\{A_1\}=1/2,\\
+\Pr\{A_2\}=1/2,\\
+\Pr\{A_3\}=1/2,\\
+\Pr\{A_1 \cap A_2\}=1/4,\\
+\Pr\{A_1 \cap A_3\}=1/4,\\
+\Pr\{A_2\cap A_3\}=1/4,\\
+\Pr\{A_1\cap A_2\cap A_3 \}=0\) {algin}</p>
+
+<p>$1\leq i &lt; j \leq 3$에서 $\Pr{A_i \cap A_j}=\Pr{A_i}\Pr{A_j}=1/4$를 만족하므로, 쌍방향 독립적이지만,</p>
+
+<p>$\Pr{A_1\cap A_2\cap A_3}=0$이며, $\Pr{A_1}\Pr{A_2}\Pr{A_3}=1/8\neq0$이므로 상호 독립적이지 않다.</p>
+
+<h3 id='베이즈-정리-Bayes’s-theorem'>베이즈 정리(Bayes’s theorem)</h3>
+
+<p>조건부 확률의 정의 $\eqref{eq:conditional probability}$와 교환 법칙 $A\cap B =B\cap A$에 의해 두 사건 A와 B가 확률이 0이 아닌 사건일 때, 다음과 같은 식이 성립한다.<br />
+\(\Pr\{A \cap B\}&amp;= \Pr\{B\}\Pr\{A|B\}\\\label{eq:eq by commutative law}\tag{5}&amp;=\Pr\{A\}\Pr\{B|A\}\)</p>
+
+<p>이를 통해 다음과 같은 식, 베이즈 정리(Bayes’s theorem)를 얻을 수 있다.<br />
+\(\Pr\{A|B\}=\frac{\Pr\{A\}\Pr\{B|A\}}{\Pr\{B\}} \label{eq:Bayes's theorem} \tag{6}\)</p>
+
+<p>분모 $\Pr{B}$는 정규화 상수(normalizing constant)로, 다음과 같은 식으로 변경할 수 있다.</p>
+
+<p>$B=(B\cap A)\cup(B\cap\bar{A})$이고, $B \cap A$와 $B \cap \bar{A}$가 상호배타적 사건일 때, 다음이 성립한다.<br />
+\(\begin{align}
+\Pr\{B\}&amp;=\Pr\{B\cap A\}+\Pr\{B\cap \bar{A}\}\\
+&amp;=\Pr\{A\}\Pr\{B|A\}+\Pr\{\bar{A}\}\Pr\{B|\bar{A}\}
+\end{align}\)</p>
+
+<p>이 값을 식 $\eqref{eq:Bayes’s theorem}$의 분모와 바꾸면, 다음과 같은 베이즈 정리의 동치 형태 식이 나온다.<br />
+\(\Pr\{A|B\}=\frac{\Pr\{A\}\Pr\{B|A\}}{\Pr\{A\}\Pr\{B|A\}+\Pr\{\bar{A}\}\Pr\{B|\bar{A}\}} \tag{7}\label{eq: equivalent form of Bayes's theorem}\)</p>
+
+<p>베이즈의 정리는 조건부 확률을 구하는데 편리하다.</p>
+
+<p>예를 들어, 무조건 앞면만 나오게 되는 편향된(biased) 동전과 확률이 동일한 공평한 동전이 존재한다고 하자.</p>
+
+<p>이 두 동전 중 하나를 무작위로 골랐고, 해당 동전을 2번 튕겼을 때 두번 다 앞면이 나왔다고 가정하자, 이때 이 동전이 편향된 동전이였을 확률은 얼마나 되는가?</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>이를 베이즈 정리를 이용해 풀 수 있는데, 사건 A를 편향된 동전을 골랐을 확률, 사건 B를 두 번의 기회 전부 앞면이 나올 확률이라고 할 때, $\Pr{A</td>
+      <td>B}$를 구해보자.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>$\Pr{A}=1/2$, $\Pr{B|A}=1$, $\Pr{\bar{A}}=1/2$, $\Pr{B|\bar{A}}=1/4$(공평한 동전의 경우 1/4 확률로 두번 다 앞면이 나올 확률)이며, 다음과 같이 구하게 된다.<br />
+\(\Pr\{A|B\}=\frac{(1/2)\cdot 1}{(1/2)\cdot 1+ (1/2)\cdot(1/4)}=4/5\)</p>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/2021-07-10-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-%ED%99%95%EB%A5%A0.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/2021-07-10-알고리즘-수학-확률.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

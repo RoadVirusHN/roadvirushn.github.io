@@ -1,0 +1,12 @@
+div.sort-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: end;
+  padding: 5px; }
+  div.sort-container * {
+    margin-left: 5px;
+    margin-right: 5px; }
+  div.sort-container button.sort-direction {
+    border: none; }
+
+/*# sourceMappingURL=article-list.css.map */

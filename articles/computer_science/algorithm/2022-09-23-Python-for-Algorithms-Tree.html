@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python for Algorithms-Tree | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Python for Algorithms-Tree" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/2022-09-23-Python-for-Algorithms-Tree.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/2022-09-23-Python-for-Algorithms-Tree.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-23T12:28:28+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Python for Algorithms-Tree" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-23T12:28:28+09:00","datePublished":"2022-09-23T12:28:28+09:00","description":"min_depth: 2 max_depth: 3 varied_style: true","headline":"Python for Algorithms-Tree","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/2022-09-23-Python-for-Algorithms-Tree.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/2022-09-23-Python-for-Algorithms-Tree.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/">The Digital garden of Nurgle.</a><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form></div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/blog/">FRONTPAGE</a><a class="page-link" href="/about/">ABOUT ME</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+    <div class="drawer-components">
+      <hr>
+      <div class="categories" style="flex: 2;">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 5)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 26 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OPERATING_SYSTEM/">OPERATING_SYSTEM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 14 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 8 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 3)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 2 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 7 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 5 
+            📂: 1)
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      (📄: 8 
+      )
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view" style="flex: 1;">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin-left: 16px;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            3 <a id="recent-3" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            4 <a id="recent-4" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div style="bottom: 10px; height: 7vh; flex: 1;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Python for Algorithms-Tree</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-09-23T12:28:28+09:00" itemprop="datePublished">Sep 23, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ul id='markdown-toc-0'>
+<li><a href='#상호-배타-집합' id='markdown-toc-0-상호-배타-집합'>상호 배타 집합</a></li> 
+<li><a href='#이진-탐색-트리' id='markdown-toc-0-이진-탐색-트리'>이진 탐색 트리</a><ol><li><a href='#AVL-트리' id='markdown-toc-0-AVL-트리'>AVL 트리</a></li> 
+
+</ol></li> 
+<li><a href='#세그먼트-트리-segment-tree' id='markdown-toc-0-세그먼트-트리-segment-tree'>세그먼트 트리 (segment tree)</a><ol><li><a href='#동적-세그먼트-트리-Dynamic-segment-tree' id='markdown-toc-0-동적-세그먼트-트리-Dynamic-segment-tree'>동적 세그먼트 트리(Dynamic segment tree)</a></li> 
+<li><a href='#지속-세그먼트-트리-Persistent-segment-tree' id='markdown-toc-0-지속-세그먼트-트리-Persistent-segment-tree'>지속 세그먼트 트리(Persistent segment tree)</a></li> 
+<li><a href='#다차원-세그먼트-트리-multi-dimensional-segment-tree' id='markdown-toc-0-다차원-세그먼트-트리-multi-dimensional-segment-tree'>다차원 세그먼트 트리 (multi dimensional segment tree)</a></li> 
+<li><a href='#게으른-전파-세그먼트-트리-segment-tree-with-lazy-propagation' id='markdown-toc-0-게으른-전파-세그먼트-트리-segment-tree-with-lazy-propagation'>게으른 전파 세그먼트 트리 (segment tree with lazy propagation)</a></li> 
+<li><a href='#BIT-Binary-Indexed-Tree-펜윅-트리-fenwick-tree' id='markdown-toc-0-BIT-Binary-Indexed-Tree-펜윅-트리-fenwick-tree'>BIT (Binary Indexed Tree, 펜윅 트리, fenwick tree)</a></li> 
+
+</ol></li> 
+<li><a href='#트라이-Trie' id='markdown-toc-0-트라이-Trie'>트라이(Trie)</a></li> 
+</ul>
+<h1 id="python-for-algorithms-tree">Python for Algorithms-Tree</h1>
+<p>비선형 구조, 원소들 간에 1:n, 계층형 관계를 가진다.</p>
+
+<h2 id='상호-배타-집합'>상호 배타 집합</h2>
+<p>서로소 집합(disjoint set) 혹은 상호 배타 집합은 집합 간에 중복되는(교집합) 원소가 없는 집합들이다.</p>
+
+<p>문제를 풀 때 서로 교집합이 없는 집합들의 수 등이 주제라면 생각해볼 만 하다.</p>
+
+<p>집합의 대표자(루트)로 각 집합을 구분한다.</p>
+
+<div class="callout callout-example" id="callout-60ff4343-d24b-40c4-ac33-e3f9d10548b5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>상호 배타 집합 (배열 구현, $O(N)$) 함수
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">node_num</span><span class="p">)]</span> <span class="err"> </span><span class="c1"># p[x]: 노드 x의 부모 저장
+</span><span class="n">rank</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">node_num</span><span class="p">)]</span> <span class="err"> </span><span class="c1"># rank[x]: 루트 노드가 x인 트리의 랭크 값 저장
+</span><span class="k">def</span> <span class="nf">make_set</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">"""유일한 멤버 X를 포함하는 새로운 집합을 생성하는 연산"""</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span> <span class="err"> </span><span class="c1"># 자기자신이 루트
+</span><span class="err"> </span> <span class="err"> </span> <span class="n">rank</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  
+
+<span class="k">def</span> <span class="nf">find_set</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">""" x를 포함하는 집합을 찾는 오퍼레이션 """</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]:</span> <span class="err"> </span> <span class="err"> </span><span class="c1"># x가 루트가 아닌 경우
+</span><span class="err"> </span> <span class="err"> </span> <span class="c1"># Path Compression: 특정 노드에서 루트까지의 경로에 존재하는 노드가 루트를 부모로 가리키도록 갱신, 단방향 그래프에서만 가능함
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">find_set</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>  <span class="c1"># 양방향일 시 다음으로 대체 : return find_set(x)
+</span><span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>  
+
+<span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">""" x와 y를 포함하는 두 집합을 통합하는 오퍼레이션 """</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">link</span><span class="p">(</span><span class="n">find_set</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">find_set</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>  
+
+<span class="k">def</span> <span class="nf">link</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">""" 두 루트를 통합하는 오퍼레이션 """</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">rank</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">rank</span><span class="p">[</span><span class="n">y</span><span class="p">]:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">p</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">rank</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">rank</span><span class="p">[</span><span class="n">y</span><span class="p">]:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">rank</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='이진-탐색-트리'>이진 탐색 트리</h2>
+<p>이진 트리는 모든 노드들이 2개의 서브트리를 갖는 특별한 형태</p>
+
+<p>레벨이 $i$라면 노드의 최대 갯수는 $2^i$개</p>
+
+<p>이진 탐색 트리는 탐색 작업을 효율적으로 하기 위한 자료 구조, 다음과 같은 특성을 가짐</p>
+<ul>
+  <li>각 노드는 서로 다른 유일한 키(데이터)를 가진다.</li>
+  <li>$왼쪽\ 자식\ 값 &lt;= 자신의\ 값 &lt;= 오른쪽\ 자식\ 값$</li>
+  <li>트리를 중위 순회 시 오름차 순 정렬을 얻을 수 있다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-e94963b4-1b8f-49ba-9de9-73b550b9ac9f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>이진 탐색 트리 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='AVL-트리'>AVL 트리</h3>
+
+<div class="callout callout-example" id="callout-7fe78784-8b28-4455-bfd1-c34470988a7b">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>이진 탐색 트리 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='세그먼트-트리-segment-tree'>세그먼트 트리 (segment tree)</h2>
+<p>수열의 총 합, 총 곱, 최댓값, 최솟값 등을 $O(\log N)$의 시간에 해결할 수 있는 자료구조</p>
+
+<div class="callout callout-example" id="callout-b5cb8420-18b9-423e-818c-f80eb316cf8a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>세그먼트 트리 $O(\log n)$ 예시 - 재귀 버전
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">create_seg_tree</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">'''
+    재귀를 통한 세그먼트 트리 생성
+    index: 처리 중인 노드, index *2, index * 2 + 1 : 노드의 자식 노드들
+      - 세그먼트 트리의 최고 부모인 1부터 시작, 자식을 가르키는 방향으로 진행함
+    start - mid :왼쪽 자식이 저장하는 값, mid+1 - end : 오른쪽 자식이 저장하는 값
+    '''</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">global</span> <span class="n">num_list</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">global</span> <span class="n">tree</span>
+
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># tree의 leap에 도달했으면 num_list 값 그대로 삽입
+</span><span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_list</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> 
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 좌측 노드와 우측 노드 값을 구해 부모 노드의 값을 합쳐 만든다. (이때 합이 아니라 구간곱이면 바꿔주자)
+</span><span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_seg_tree</span><span class="p">(</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">create_seg_tree</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>  
+
+<span class="k">def</span> <span class="nf">interval_sum</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">'''
+    재귀를 통한 구간합 계산 함수
+    index: 현재 처리 중인 인덱스
+    start - end : 현재 index 노드가 값을 저장한 구간
+    left, right : 구간 합을 구하고자 하는 범위
+    '''</span>
+
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 원하는 구간이 tree 밖인 경우
+</span><span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">left</span> <span class="o">&gt;</span> <span class="n">end</span> <span class="ow">or</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="mi">0</span> <span class="err"> </span><span class="c1"># 곱일 경우 1!
+</span>
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 현재 인덱스가 포함하는 구간이 전부 내가 원하는 구간 안에 있는 경우 더한다.
+</span><span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">right</span> <span class="o">&gt;=</span> <span class="n">end</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 일부만 겹친 경우는 두 자식으로 나누어 구간내에 있는 자식만 더함
+</span><span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">interval_sum</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">interval_sum</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">'''
+    특정 원소의 값을 수정하는 함수
+    index : 현재 수정 필요 여부를 판단하고 있는 함수
+    start - end: index 노드가 포함하고 있는 범위
+    where : 구간 합을 수정하고자 하는 노드
+    value : 수정할 값
+    '''</span>
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 범위 밖에 있는 경우는 아무것도 안하고 재귀 중단
+</span><span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">where</span> <span class="o">&lt;</span> <span class="n">start</span> <span class="ow">or</span> <span class="n">where</span> <span class="o">&gt;</span> <span class="n">end</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span>  
+
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 범위 안에 있으면 내려가면서 다른 원소도 갱신
+</span><span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+=</span> <span class="n">diff</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">update</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">update</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># segment tree
+</span><span class="p">{:</span> <span class="c1">#segment-tree}
+</span><span class="n">numCount</span><span class="p">,</span> <span class="n">changeCount</span><span class="p">,</span> <span class="n">caseCount</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+
+<span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numCount</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numCount</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">num_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">log2</span><span class="p">(</span><span class="n">numCount</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># 필요한 노드 수 == 잎새 노드(N) + 부모 노드(N-1) == 2N - 1
+</span><span class="p">{:</span> <span class="c1">#필요한-노드-수-잎새-노드-n-부모-노드-n-1-2n-1}
+# 따라서 높이를 H라고 놓을 때 ∑^{H}_{n=0}2^n &gt;= 2N -1을 만족해야 한다.
+</span><span class="p">{:</span> <span class="c1">#따라서-높이를-h라고-놓을-때-∑-h-n-0-2-n-2n-1을-만족해야-한다}
+# tree의 크기는 2의 (예상 트리의 높이 + 1)승이면 절대 부족하지 않다.
+</span><span class="p">{:</span> <span class="c1">#tree의-크기는-2의-예상-트리의-높이-1-승이면-절대-부족하지-않다}
+</span>
+<span class="n">seg</span> <span class="o">=</span> <span class="n">create_seg_tree</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">changeCount</span> <span class="o">+</span> <span class="n">caseCount</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">cmd</span><span class="p">,</span> <span class="n">par1</span><span class="p">,</span> <span class="n">par2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">loc</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">par1</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">par2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">update</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">numCount</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">par1</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">par2</span><span class="o">-</span><span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">print</span><span class="p">(</span><span class="n">interval_sum</span><span class="p">(</span><span class="n">numCount</span><span class="p">,</span> <span class="n">seg</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span><span class="p">))</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>아래는 다른 버전의 세그먼트 트리이다.<br />
++ PROS<br />
+    - 반복문과 비트 연산을 활용해 좀 더 빠르다.<br />
+    - 자료형의 크기가 입력 값의 2배로, 비교적 효율적이다.<br />
+    - 자료형에 배치된 원소들이 위치적으로 직관적임.<br />
+        - 위치 n의 $n\times 2,\ n\times 2 + 1$이 자식이며, 반대로 $n//2$는 부모<br />
+        - 원소들이 층 별로 일렬로 배치됨.<br />
+- CONS<br />
+    - 코드를 이해하기 힘들다. 특히, left 인덱스와 right 인덱스의 활용 부분<br />
+    - 자료형에 배치된 원소들이 실제 원리의 노드와 조금 다르다.<br />
+        - 예를 들어, 원소의 갯수가 홀수 일 경우, 서로 다른 층 값의 합을 가지고 있는 부모 노드가 생김.<br />
+        - 따라서 lazy propagation 같은 추가적인 알고리즘 적용 힘듬.<br />
+<del>잠깐, 이거 혹시 BIT 트리인가? 나중에 확인 바람</del></p>
+
+<div class="callout callout-example" id="callout-7cf43d39-680a-445f-99aa-6b82da62e0c1">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>세그먼트 트리 $O(\log n)$ 예시 - 반복 버전
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1"># 반복문을 이용한 세그먼트 트리 생성
+</span><span class="p">{:</span> <span class="c1">#반복문을-이용한-세그먼트-트리-생성}
+</span><span class="k">def</span> <span class="nf">create_tree</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 부모 노드들이 들어갈 공간 + 원본 값 공간
+</span><span class="err"> </span> <span class="err"> </span> <span class="n">tree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">))]</span> <span class="o">+</span> <span class="n">num_list</span>
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 부모 노드 생성 
+</span><span class="err"> </span> <span class="err"> </span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># 거꾸로 시작하여 말단 노드에 가까운 부모부터 생성
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">tree</span><span class="p">[</span><span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">1</span><span class="p">]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">tree</span>  
+
+<span class="c1"># 반복문을 이용한 구간합 구하기
+</span><span class="p">{:</span> <span class="c1">#반복문을-이용한-구간합-구하기}
+</span><span class="k">def</span> <span class="nf">interval_total</span><span class="p">(</span><span class="n">num_count</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 실제 범위는 부모 공간에 의해 밀려났으므로 그만큼 더해줌
+</span><span class="err"> </span> <span class="err"> </span> <span class="n">left</span> <span class="o">+=</span> <span class="n">num_count</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">right</span> <span class="o">+=</span> <span class="n">num_count</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">while</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="c1"># 인덱스의 홀수 짝수 여부에 따라 두가지로 나뉜다.
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="c1"># 1. 이 노드의 값을 포함한 부모 노드가 있음(=더하지 않음)
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="c1"># 2. 이 노드의 값을 포함한 노드가 없음 (=더해줘야 함)
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="p">(</span><span class="n">left</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">):</span> <span class="err"> </span><span class="c1"># 왼쪽 인덱스가 홀수이면
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">result</span> <span class="o">+=</span> <span class="n">tree</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="err"> </span><span class="c1"># 해당 값을 더해 주고
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span> <span class="err"> </span><span class="c1"># 인덱스 증가
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">right</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">):</span> <span class="err"> </span><span class="c1"># 오른쪽 인덱스가 짝수이면
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">result</span> <span class="o">+=</span> <span class="n">tree</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="err"> </span><span class="c1"># 해당 값을 더해주고
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">right</span> <span class="o">-=</span> <span class="mi">1</span> <span class="err"> </span><span class="c1"># 인덱스 감
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="c1"># 인덱스를 절반으로 줄임 == 해당 값의 부모 노드로
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">left</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">right</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># 반복문을 이용한 트리 갱신
+</span><span class="p">{:</span> <span class="c1">#반복문을-이용한-트리-갱신}
+</span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">num_count</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">index</span> <span class="o">+=</span> <span class="n">num_count</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 부모 노드 업데이트
+</span><span class="err"> </span> <span class="err"> </span> <span class="k">while</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span> <span class="o">^</span> <span class="mi">1</span><span class="p">]</span> <span class="err"> </span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">index</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">tree</span>
+<span class="err"> </span> <span class="err"> </span> 
+<span class="c1"># segment tree
+</span><span class="p">{:</span> <span class="c1">#segment-tree}
+</span><span class="n">numCount</span><span class="p">,</span> <span class="n">changeCount</span><span class="p">,</span> <span class="n">caseCount</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>  
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numCount</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numCount</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>  
+
+<span class="n">seg</span> <span class="o">=</span> <span class="n">create_tree</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> 
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">changeCount</span> <span class="o">+</span> <span class="n">caseCount</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">cmd</span><span class="p">,</span> <span class="n">par1</span><span class="p">,</span> <span class="n">par2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">loc</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">par1</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">par2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">update</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">numCount</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">par1</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">par2</span><span class="o">-</span><span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">print</span><span class="p">(</span><span class="n">interval_total</span><span class="p">(</span><span class="n">numCount</span><span class="p">,</span> <span class="n">seg</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span><span class="p">))</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='동적-세그먼트-트리-Dynamic-segment-tree'>동적 세그먼트 트리(Dynamic segment tree)</h3>
+
+<div class="callout callout-example" id="callout-f123fd9a-ec6d-48dd-9d71-e90ced829ead">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>동적 세그먼트 트리 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='지속-세그먼트-트리-Persistent-segment-tree'>지속 세그먼트 트리(Persistent segment tree)</h3>
+
+<div class="callout callout-example" id="callout-d0de186c-bac0-470d-801f-8f6472e60278">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>지속 세그먼트 트리 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='다차원-세그먼트-트리-multi-dimensional-segment-tree'>다차원 세그먼트 트리 (multi dimensional segment tree)</h3>
+
+<div class="callout callout-example" id="callout-1be35bb8-aa05-4218-9e78-5d39ddd796c5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>다차원 세그먼트 트리 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='게으른-전파-세그먼트-트리-segment-tree-with-lazy-propagation'>게으른 전파 세그먼트 트리 (segment tree with lazy propagation)</h3>
+<ul>
+  <li>하단 코드는 이해를 돕기 위해 <code class="language-plaintext highlighter-rouge">dictionary</code>를 활용했으며, 실제로 아래 코드는 필요한 메모리가 어마어마하므로, 다차원 배열이나 <code class="language-plaintext highlighter-rouge">lazy</code>와 <code class="language-plaintext highlighter-rouge">value</code>를 다른 배열로 나누자.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-90e7501f-fe1c-493a-8f39-e9115e638a7c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>게으른 전파 세그먼트 트리 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>  
+
+<span class="k">def</span> <span class="nf">create_seg_tree_lazy</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">'''
+    기존 방식과 동일한 방법으로 트리 생성
+    '''</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span> <span class="o">=</span> <span class="n">number_list</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">create_seg_tree_lazy</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">create_seg_tree_lazy</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span> <span class="o">+</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">propagation</span><span class="p">(</span><span class="n">where</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">'''
+    lazy값이 존재하는 경우 값을 추가하고 자식 노드로 lazy 값을 전파하는 함수
+    '''</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">where</span> <span class="o">*</span> <span class="mi">2</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">tree</span><span class="p">[</span><span class="n">where</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">where</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">tree</span><span class="p">[</span><span class="n">where</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">where</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">tree</span><span class="p">[</span><span class="n">where</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+ 
+<span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">where</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+
+<span class="k">def</span> <span class="nf">interval_update_lazy</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">'''
+    lazy 구간 업데이트 구하기
+    left, right : 수정하고자 하는 범위
+    start, end : 현재 계산 중인 범위(현재 index번의 노드가 커버하는 공간)
+    index : 현재 update하는 노드
+    diff : 변화되는 값
+    '''</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]:</span> <span class="c1"># 이전에 쌓은 lazy값이 존재하는 경우 수정 뒤 lazy 전파
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">propagation</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">end</span> <span class="o">&lt;</span> <span class="n">left</span> <span class="ow">or</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">:</span> <span class="c1"># 구하는 구간이 관계 없는 경우
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">end</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">:</span> <span class="c1"># 해당 노드가 커버하는 구간이 완전히 포함될 경우
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">diff</span>
+
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">:</span> <span class="c1"># 말단 노드가 아닐 경우,
+</span><span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">diff</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">diff</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">interval_update_lazy</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">interval_update_lazy</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span> <span class="o">+</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">interval_sum_lazy</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="s">'''
+    lazy 구간 합 구하기
+    index : 현재 처리 중인 노드의 인덱스
+    start, end : 현재 처리 중인 인덱스 노드가 값을 포함하고 있는 범위
+    left, right : 값을 구할 범위
+    '''</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s">"lazy"</span><span class="p">]:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">propagation</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+
+  <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">end</span> <span class="o">&lt;</span> <span class="n">left</span> <span class="ow">or</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="mi">0</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">end</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="n">end</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">interval_sum_lazy</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">interval_sum_lazy</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">number_count</span><span class="p">,</span> <span class="n">change_count</span><span class="p">,</span> <span class="n">sum_count</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+<span class="n">number_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_count</span><span class="p">)]</span>
+
+<span class="n">tree</span> <span class="o">=</span> <span class="p">[{</span><span class="s">"value"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"lazy"</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">log2</span><span class="p">(</span><span class="n">number_count</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">))]</span>
+<span class="c1"># 필요한 노드 수 == 잎새 노드(N) + 부모 노드(N-1) == 2N - 1
+</span><span class="p">{:</span> <span class="c1">#필요한-노드-수-잎새-노드-n-부모-노드-n-1-2n-1}
+# 따라서 높이를 H라고 놓을 때 ∑^{H}_{n=0}2^n &gt;= 2N -1을 만족해야 한다.
+</span><span class="p">{:</span> <span class="c1">#따라서-높이를-h라고-놓을-때-∑-h-n-0-2-n-2n-1을-만족해야-한다}
+# tree의 크기는 2의 (예상 트리의 높이 + 1)승이면 절대 부족하지 않다.  
+</span><span class="p">{:</span> <span class="c1">#tree의-크기는-2의-예상-트리의-높이-1-승이면-절대-부족하지-않다}
+</span>
+<span class="n">create_seg_tree_lazy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">number_count</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">change_count</span> <span class="o">+</span> <span class="n">sum_count</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">cmds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">()))</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">cmds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">_</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">chng</span> <span class="o">=</span> <span class="n">cmds</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">interval_update_lazy</span><span class="p">(</span> <span class="n">fr</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">to</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">number_count</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">chng</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">_</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">cmds</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">print</span><span class="p">(</span><span class="n">interval_sum_lazy</span><span class="p">(</span> <span class="n">fr</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">to</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">number_count</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='BIT-Binary-Indexed-Tree-펜윅-트리-fenwick-tree'>BIT (Binary Indexed Tree, 펜윅 트리, fenwick tree)</h3>
+
+<div class="callout callout-example" id="callout-9b78e55b-e59c-4c97-845a-a03de07344b8">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>BIT 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='트라이-Trie'>트라이(Trie)</h2>
+
+<p>주로 문자열과 관련되어 사용되나, 트리를 이용하기 때문에 이곳에 편입</p>
+
+<p>n진 트리 구조를 이용해 찾고자 하는 검색할 문자열의 길이를 $M$이라 할 때, $O(M)$이 된다.</p>
+
+<div class="callout callout-example" id="callout-e2bec9cc-33f9-41aa-bf01-dba1c60b8c69">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Trie 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Trie</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="bp">self</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="bp">self</span><span class="p">.</span><span class="n">childs</span> <span class="o">=</span> <span class="p">{}</span> 
+
+<span class="err"> </span> <span class="err"> </span> <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">currNode</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">currNode</span><span class="p">.</span><span class="n">childs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">currNode</span><span class="p">.</span><span class="n">childs</span><span class="p">[</span><span class="n">letter</span><span class="p">].</span><span class="n">value</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">currNode</span><span class="p">.</span><span class="n">childs</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">currNode</span> <span class="o">=</span> <span class="n">currNode</span><span class="p">.</span><span class="n">childs</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
+
+<span class="err"> </span> <span class="err"> </span> <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">currNode</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">currNode</span><span class="p">.</span><span class="n">childs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">currNode</span> <span class="o">=</span> <span class="n">currNode</span><span class="p">.</span><span class="n">childs</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="mi">0</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">currNode</span><span class="p">.</span><span class="n">value</span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span>
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">words</span><span class="p">,</span> <span class="n">queries</span>
+<span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">trie</span> <span class="o">=</span> <span class="n">Trie</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">trie</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">trie</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/2022-09-23-Python-for-Algorithms-Tree.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/2022-09-23-Python-for-Algorithms-Tree.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

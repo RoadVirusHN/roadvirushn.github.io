@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>알고리즘 - 하 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="알고리즘 - 하" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/2020-08-23-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%95%98.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/2020-08-23-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%95%98.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-23T16:53:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="알고리즘 - 하" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-08-23T16:53:58+09:00","datePublished":"2020-08-23T16:53:58+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"알고리즘 - 하","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/2020-08-23-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%95%98.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/2020-08-23-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%95%98.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/">The Digital garden of Nurgle.</a><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form></div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/blog/">FRONTPAGE</a><a class="page-link" href="/about/">ABOUT ME</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+    <div class="drawer-components">
+      <hr>
+      <div class="categories" style="flex: 2;">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 5)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 26 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OPERATING_SYSTEM/">OPERATING_SYSTEM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 14 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 8 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 3)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 2 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 7 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 5 
+            📂: 1)
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      (📄: 8 
+      )
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view" style="flex: 1;">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin-left: 16px;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            3 <a id="recent-3" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            4 <a id="recent-4" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div style="bottom: 10px; height: 7vh; flex: 1;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">알고리즘 - 하</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2020-08-23T16:53:58+09:00" itemprop="datePublished">Aug 23, 2020
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#Array-활용' id='markdown-toc-0-Array-활용'>Array 활용</a><ul><li><a href='#미트-인-더-미들-알고리즘-Meet-in-the-middle-Algorithm' id='markdown-toc-0-미트-인-더-미들-알고리즘-Meet-in-the-middle-Algorithm'>미트 인 더 미들 알고리즘 (Meet in the middle Algorithm)</a></li> 
+<li><a href='#투-포인터-알고리즘-Two-Pointers-Algorithm' id='markdown-toc-0-투-포인터-알고리즘-Two-Pointers-Algorithm'>투 포인터 알고리즘 (Two Pointers Algorithm)</a></li> 
+<li><a href='#스위핑' id='markdown-toc-0-스위핑'>스위핑</a></li> 
+
+</ul></li> 
+<li><a href='#기하' id='markdown-toc-0-기하'>기하</a><ul><li><a href='#Convex-Hull' id='markdown-toc-0-Convex-Hull'>Convex Hull</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#기타' id='markdown-toc-0-기타'>기타</a><ul><li><a href='#SCC-Strongly-Connected-Component-강한-연결-요소' id='markdown-toc-0-SCC-Strongly-Connected-Component-강한-연결-요소'>SCC (Strongly Connected Component, 강한 연결 요소)</a></li> 
+<li><a href='#코사라주-알고리즘' id='markdown-toc-0-코사라주-알고리즘'>코사라주 알고리즘</a></li> 
+<li><a href='#타잔-알고리즘' id='markdown-toc-0-타잔-알고리즘'>타잔 알고리즘</a></li> 
+
+</ul></li> 
+</ol>
+<h1 id='알고리즘-전문'>알고리즘 전문</h1>
+
+<h2 id='Array-활용'>Array 활용</h2>
+
+<h3 id='미트-인-더-미들-알고리즘-Meet-in-the-middle-Algorithm'>미트 인 더 미들 알고리즘 (Meet in the middle Algorithm)</h3>
+
+<ul>
+  <li>분할 정복(Divide and Conquer algorithm)과 비슷하게 주어진 input을 2개로 나눈 뒤, 두개의 연산 결과를 이용해 값을 찾아내는 알고리즘</li>
+  <li>예를 들어 n개의 수의 부분집합을 찾아내는 것은 시간 복잡도 O(2^n)의 연산이 필요하지만 20개씩 2개의 부분집합을 찾아낸 뒤 합치는 것으로 O(2^(n/2)) 으로 줄일 수 있다.</li>
+</ul>
+
+<h3 id='투-포인터-알고리즘-Two-Pointers-Algorithm'>투 포인터 알고리즘 (Two Pointers Algorithm)</h3>
+
+<ul>
+  <li>정렬된 배열 내에서 값의 쌍을 탐색하는 알고리즘</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 수의 배열에서 합이 sumX가 되는 수의 쌍의 갯수를 구하기
+# (i, j) 와 (j, i)는 하나로 간주한다.
+</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+<span class="n">listSize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">sumX</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">nums</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">listSize</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">while</span><span class="p">(</span><span class="n">start</span> <span class="o">&amp;</span><span class="c1">#38;#60; end):
+</span>	<span class="n">sumOfPair</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">end</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">sumOfPair</span> <span class="o">&amp;</span><span class="c1">#38;#62; sumX:
+</span>	    <span class="n">end</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">sumOfPair</span> <span class="o">&amp;</span><span class="c1">#38;#60; sumX:
+</span>        <span class="n">start</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">start</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">end</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+
+</code></pre></div></div>
+<ul>
+  <li>주로 배열의 정렬과 두 포인터 인덱스를 기준으로 만든 배열을 이용해 문제를 해결한다.</li>
+</ul>
+
+<h3 id='스위핑'>스위핑</h3>
+
+<ul>
+  <li>
+    <p>배열의 값을 차례대로 처리하면서 만든 값을 비교해가며 다음 값을 구하는 방법</p>
+  </li>
+  <li>
+    <p>동적 계획법(Dynamic Programming, DP)과 비슷하나 보통 먼저 정렬을 한 뒤에 처리를 하는 방법.</p>
+  </li>
+</ul>
+
+<h2 id='기하'>기하</h2>
+
+<h3 id='Convex-Hull'>Convex Hull</h3>
+
+<ul>
+  <li>보통 좌표가 주어지고 해당 좌표로 다각형을 만드는 알고리즘</li>
+</ul>
+
+<h4 id='CCW-Counter-Clock-Wise'>CCW(Counter Clock Wise)</h4>
+
+<ul>
+  <li>벡터의 외적(Cross Product)를 이용해 하나의 정점을 기준으로 다른 점과 점 간의 상대적 위치를 알아낼 수 있음</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>세점 (a, b, c)가 존재할 때
+벡터의 외적 = (b.x-a.x)*(c.y-a.y) - (b.y-a.y)*(c.x-a.x)
+또는
+벡터의 외적 = (a.x * b.y + b.x * c.y + c.y * a.y) - (a.y * b.x + b.y * c.x + c.y * a.x)
+
+</code></pre></div></div>
+<p>벡터의 외적이 양수이면 ABC 순으로 반시계반대 방향으로 벡터가 변화,(ab벡터가 ac벡터보다 더 반시계방향으로 꺾여있음)<br />
+음수이면 ABC 순으로 시계방향으로 벡터가 변화,(ab벡터가 ac벡터보다 더 시계방향으로 꺾여있음)<br />
+0이면 평행임을 의미한다.(ab,ac벡터가 같은 방향임)</p>
+
+<p>B<br />
+C<br />
+    A<br />
+위 예시로 따지면 A,B,C 순서로 시계반대방향 관계(양수), A,C,B 순서로 시계방향(음수) 관계이다.</p>
+
+<ul>
+  <li>두 벡터의 시작점을 맞추고 그 둘의 각도를 통해 두 벡터로 만든 삼각형 넓이 구하기 가능</li>
+  <li>각 꼭지점을 반시계방향으로 점을 향한 벡터를 저장하여 단순 다각형 저장 가능</li>
+  <li>CCW 생성 가능 , sin∂ 방향으로 외적의 음수 양수를 정의해야함 A, B벡터와 B, A벡터는 부호가 다름</li>
+  <li>a,A가 시작점</li>
+  <li>음수 양수 뿐만 아니라 나오는 값의 절대값도 다르지만 이것으로 각도나 위치 등을 판단하지 말자,
+    <ul>
+      <li>좌표가 다름에도 같은 값이 나올 때가 있다.</li>
+      <li>(A:(0,0), B:(0,1) 이 일 때, C:(1,0) 과 C:(1,1)을 넣어보면 똑같이 -1이 나온다. )</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">CCW</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span><span class="n">ay</span><span class="p">,</span><span class="n">bx</span><span class="p">,</span><span class="n">by</span><span class="p">,</span><span class="n">cx</span><span class="p">,</span><span class="n">cy</span><span class="p">)</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">bx</span><span class="o">-</span><span class="n">ax</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">cy</span><span class="o">-</span><span class="n">ay</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">by</span><span class="o">-</span><span class="n">ay</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">cx</span><span class="o">-</span><span class="n">ax</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">62</span><span class="p">;</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="err">반시계</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">60</span><span class="p">;</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="err">시계</span><span class="p">;</span>
+    <span class="k">return</span> <span class="err">일직선</span><span class="p">;</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+
+</code></pre></div></div>
+<h4 id='그라함-스캔-알고리즘'>그라함 스캔 알고리즘</h4>
+
+<ul>
+  <li>시간 복잡도 $O(n \log n)$</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span><span class="p">,</span> <span class="n">functools</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+<span class="k">def</span> <span class="nf">ccw</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="o">&amp;</span><span class="c1">#39;x&amp;#39;]-a[&amp;#39;x&amp;#39;])*(c[&amp;#39;y&amp;#39;]-a[&amp;#39;y&amp;#39;]) - (c[&amp;#39;x&amp;#39;] - a[&amp;#39;x&amp;#39;])*(b[&amp;#39;y&amp;#39;] - a[&amp;#39;y&amp;#39;])
+</span>    <span class="k">if</span> <span class="n">t</span> <span class="o">&amp;</span><span class="c1">#38;#62; 0:
+</span>        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">t</span> <span class="o">&amp;</span><span class="c1">#38;#60; 0:
+</span>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">comp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">firstPoint</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">ccw</span><span class="p">(</span><span class="n">firstPoint</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">comp0</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="o">&amp;</span><span class="c1">#39;y&amp;#39;] == b[&amp;#39;y&amp;#39;]:
+</span>        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="o">&amp;</span><span class="c1">#39;x&amp;#39;] &amp;#38;#62; b[&amp;#39;x&amp;#39;] else -1 
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="o">&amp;</span><span class="c1">#39;y&amp;#39;] &amp;#38;#62; b[&amp;#39;y&amp;#39;] else -1
+# def getFuther(std, a, b):
+#    lenToA = (a[&amp;#39;x&amp;#39;] - std[&amp;#39;x&amp;#39;])**2 + (a[&amp;#39;y&amp;#39;] - std[&amp;#39;y&amp;#39;])**2
+#    lenToB = (b[&amp;#39;x&amp;#39;] - std[&amp;#39;x&amp;#39;])**2 + (b[&amp;#39;y&amp;#39;] - std[&amp;#39;y&amp;#39;])**2
+#    return a if lenToA &amp;#38;#62; lenToB else b
+</span><span class="n">pointNum</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">firstPoint</span> <span class="o">=</span> <span class="o">&amp;</span><span class="c1">#123;&amp;#39;x&amp;#39;:0, &amp;#39;y&amp;#39;:9999099&amp;#125;
+</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pointNum</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">points</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#123;&amp;#39;x&amp;#39;:x,&amp;#39;y&amp;#39;:y&amp;#125;)
+</span><span class="n">points</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">functools</span><span class="p">.</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="n">comp0</span><span class="p">))</span>
+<span class="n">firstPoint</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">points</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">functools</span><span class="p">.</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="n">comp</span><span class="p">))</span> <span class="c1"># cmp to key function to use comparer
+</span><span class="n">st</span> <span class="o">=</span> <span class="p">[</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="p">:]:</span>
+    <span class="k">while</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="p">)</span> <span class="o">&amp;</span><span class="c1">#38;#62;=2):
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">ccw</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">st</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">point</span><span class="p">)</span> <span class="o">&amp;</span><span class="c1">#38;#62; 0):
+</span>	        <span class="k">break</span>
+        <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">st</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+
+</code></pre></div></div>
+<h2 id='기타'>기타</h2>
+
+<h3 id='SCC-Strongly-Connected-Component-강한-연결-요소'>SCC (Strongly Connected Component, 강한 연결 요소)</h3>
+
+<ul>
+  <li>방향 그래프에서 집합 내에서 서로 왕복가능한 정점들의 최대 크기 집합을 의미함.</li>
+  <li>한 SCC 내의 모든 정점은 다른 모든 정점에 들럿다가 다시 돌아올 수 있다.</li>
+  <li>자기 자신으로 돌아올 수 있는 1개짜리 정점도 포함한다.</li>
+</ul>
+
+<blockquote>
+  <p>색칠한 부분이 각각의 SCC이다. https://www.acmicpc.net/problem/2150 (백준 알고리즘)</p>
+</blockquote>
+
+<p><img src="/assets/img/2020-08-23-알고리즘-하/1609399212750.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>그래프가 주어졌을 때 SCC 집합의 존재 여부나 갯수, 소속 집합 정보 등이 필요할 때가 많다.</p>
+  </li>
+  <li>
+    <p>주로 DFS(Depth first search, 깊이 우선 탐색)기반의 알고리즘을 사용한다.</p>
+  </li>
+</ul>
+
+<h3 id='코사라주-알고리즘'>코사라주 알고리즘</h3>
+
+<ul>
+  <li>방향 그래프, 해당 방향그래프의 역방향 그래프, 스택을 이용하여 SCC를 구하는 알고리즘</li>
+  <li>SCC는 한 노드에서, 다른 노드로 어느 방향이로든 갈 수 있으며 역방향으로 바꾸어도 마찬가지인 것을 이용한 알고리즘</li>
+  <li>아래의 타잔 알고리즘 보다 구현과 생각이 쉽지만 메모리를 좀더 먹는다.</li>
+  <li>시간 복잡도는 O(V+E)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">987654321</span><span class="p">)</span>
+<span class="c1"># kosaraju algorithm
+</span><span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+<span class="n">nodeCount</span><span class="p">,</span> <span class="n">edgeCount</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nodeCount</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">revEdges</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nodeCount</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nodeCount</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">st</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">SCCs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">SCCIdx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">edgeCount</span><span class="p">):</span>
+    <span class="n">fr</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">edges</span><span class="p">[</span><span class="n">fr</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+    <span class="n">revEdges</span><span class="p">[</span><span class="n">to</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">fr</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="n">st</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">SccIdx</span><span class="p">):</span>
+    <span class="n">visited</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">SCCs</span><span class="p">[</span><span class="n">SccIdx</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">adj</span> <span class="ow">in</span> <span class="n">revEdges</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">adj</span><span class="p">]:</span>
+            <span class="n">func</span><span class="p">(</span><span class="n">adj</span><span class="p">,</span> <span class="n">SCCIdx</span><span class="p">)</span>
+
+<span class="c1"># 정방향 그래프를 돌며 dfs 함수가 끝날때 스택에 집어넣는다.
+# 결과적으로 가장 처음에 dfs를 실행한 노드가 스택에 마지막으로 들어가고, SCC의 대표노드가 된다.
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nodeCount</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+
+<span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nodeCount</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># 스택에 마지막에 들어간 노드가 제일 먼저 튀어나오며 역방향으로 갈 수 있는 모든 노드를 찾아 SCC로 포함시킨다.
+# 이때 SCC에 포함될 수 없지만 대표노드에 연결되었던 노드는 역방향 그래프로 바뀌었으므로 진입할 수 없어 SCC에 들어가지지 않는다.
+# 역방향이 되어 대표노드에서 갈 수 있게된 노드는 이전 dfs 때 스택에 나중에 들어가 이번에 먼저 튀어나오므로 visited가 True가 되있어 들어가지 않는다.
+</span><span class="k">while</span> <span class="n">st</span><span class="p">:</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">visited</span><span class="p">[</span><span class="n">now</span><span class="p">]:</span>
+        <span class="n">SCCs</span><span class="p">.</span><span class="n">append</span><span class="p">([])</span>
+        <span class="n">func</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">SCCIdx</span><span class="p">)</span>
+        <span class="n">SCCIdx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">SCC</span> <span class="ow">in</span> <span class="n">SCCs</span><span class="p">:</span>
+    <span class="n">SCC</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="n">SCCs</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">SCCs</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">SCC</span> <span class="ow">in</span> <span class="n">SCCs</span><span class="p">:</span>
+    <span class="n">SCC</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">[</span><span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=&amp;</span><span class="c1">#39; &amp;#39;) for i in SCC]
+</span>    <span class="k">print</span><span class="p">()</span>
+
+</code></pre></div></div>
+<h3 id='타잔-알고리즘'>타잔 알고리즘</h3>
+
+<ul>
+  <li>위상정렬을 기반으로 하는 SCC 알고리즘</li>
+  <li>스택에 노드를 집어넣고, 가장 처음 집어넣은 노드를 대표노드로 삼은 뒤, dfs를 돌려 갈 수 있는 노드를 모두 스택에 넣은 후, dfs가 대표노드로 돌아오면 처음 설정한 대표노드가 나올때 까지 pop하여 해당 노드들을 같은 SCC로 묶는 원리.</li>
+  <li>코사라주 알고리즘 보다 메모리적으로 효율적이다.</li>
+  <li>시간 복잡도는 똑같이 O(V+E)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">987654321</span><span class="p">)</span>
+<span class="c1"># tarjan algorithm
+</span><span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+<span class="n">nodeCount</span><span class="p">,</span> <span class="n">edgeCount</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nodeCount</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">discover</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nodeCount</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">SCCs</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nodeCount</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">discoverIdx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">SCCIdx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">st</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">now</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">discoverIdx</span><span class="p">,</span> <span class="n">SCCIdx</span>
+    <span class="n">discover</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">=</span> <span class="n">discoverIdx</span>
+    <span class="n">discoverIdx</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">discoverNow</span> <span class="o">=</span> <span class="n">discover</span><span class="p">[</span><span class="n">now</span><span class="p">]</span>
+    <span class="n">st</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">adj</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">[</span><span class="n">now</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">discover</span><span class="p">[</span><span class="n">adj</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">discoverNow</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">discoverNow</span><span class="p">,</span> <span class="n">dfs</span><span class="p">(</span><span class="n">adj</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">SCCs</span><span class="p">[</span><span class="n">adj</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">discoverNow</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">discoverNow</span><span class="p">,</span> <span class="n">discover</span><span class="p">[</span><span class="n">adj</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">discoverNow</span> <span class="o">==</span> <span class="n">discover</span><span class="p">[</span><span class="n">now</span><span class="p">]:</span>
+        <span class="n">SCC</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">SCCs</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="o">=</span> <span class="n">SCCIdx</span>
+            <span class="n">SCC</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">now</span><span class="p">:</span> <span class="k">break</span>
+        <span class="n">SCC</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">res</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">SCC</span><span class="p">)</span>
+        <span class="n">SCCIdx</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">discoverNow</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">edgeCount</span><span class="p">):</span>
+    <span class="n">fr</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">edges</span><span class="p">[</span><span class="n">fr</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nodeCount</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">discover</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">res</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">SCC</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+    <span class="n">SCC</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">[</span><span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=&amp;</span><span class="c1">#39; &amp;#39;) for i in SCC]
+</span>    <span class="k">print</span><span class="p">()</span>    
+
+</code></pre></div></div>
+<p>avl tree 알아보기</p>
+
+<p>lcp : https://blog.naver.com/dark__nebula/220419358547</p>
+
+<p>suffix array : <a href="https://plzrun.tistory.com/entry/Suffix-Array-ONlogNlgN과-ONlogN-구현-및-설명">https://plzrun.tistory.com/entry/Suffix-Array-ONlogNlgN%EA%B3%BC-ONlogN-%EA%B5%AC%ED%98%84-%EB%B0%8F-%EC%84%A4%EB%AA%85</a></p>
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/2020-08-23-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%95%98.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/2020-08-23-알고리즘-하.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

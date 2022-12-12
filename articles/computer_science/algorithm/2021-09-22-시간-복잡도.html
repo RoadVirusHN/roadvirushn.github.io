@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>시간복잡도 - 알고리즘 정리 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="시간복잡도 - 알고리즘 정리" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="시간 복잡도(Time complexity)" />
+<meta property="og:description" content="시간 복잡도(Time complexity)" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/2021-09-22-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/2021-09-22-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-22T16:53:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="시간복잡도 - 알고리즘 정리" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-09-22T16:53:58+09:00","datePublished":"2021-09-22T16:53:58+09:00","description":"시간 복잡도(Time complexity)","headline":"시간복잡도 - 알고리즘 정리","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/2021-09-22-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/2021-09-22-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/">The Digital garden of Nurgle.</a><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form></div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/blog/">FRONTPAGE</a><a class="page-link" href="/about/">ABOUT ME</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+    <div class="drawer-components">
+      <hr>
+      <div class="categories" style="flex: 2;">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 5)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 26 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OPERATING_SYSTEM/">OPERATING_SYSTEM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 14 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 8 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 3)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 2 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 7 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 5 
+            📂: 1)
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      (📄: 8 
+      )
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view" style="flex: 1;">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin-left: 16px;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            3 <a id="recent-3" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            4 <a id="recent-4" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div style="bottom: 10px; height: 7vh; flex: 1;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">시간복잡도 - 알고리즘 정리</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2021-09-22T16:53:58+09:00" itemprop="datePublished">Sep 22, 2021
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<h1 id='시간-복잡도-Time-complexity'>시간 복잡도(Time complexity)</h1>
+
+<hr />
+
+<p><em>Introduction to Algorithm, 3rd, Cormen을 토대로 정리한 내용입니다.</em></p>
+
+<p>앞서 <span class="preview-wrapper">
+      <a href="" class="wikilink">알고리즘 연산 비용 구하기</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 글을 보고 오는 것을 추천</p>
+
+<h2 id='시간-복잡도-Time-complexity-란'>시간 복잡도(Time complexity)란?</h2>
+<hr />
+
+<p>시간복잡도는 <strong>알고리즘이 문제를 해결하는데 걸리는 시간과 입력의 함수 관계를 점근적인 표기법으로 나타내어 정량화한 것</strong>이다.</p>
+
+<div class="callout callout-note" id="callout-b2e365c8-ca55-40f0-a290-700fed93eba1">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong> 시간 복잡도 표기법의 그래프 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>[Fig 1]<img src="/assets/img/2021-09-22-시간-복잡도/28565d1a09af5859397dc6689802de298ac14f56.png" alt="" /></p>
+
+</div>
+    </div>
+    </div>
+<p>주로 <strong>빅오(big-O) 표기법</strong>으로 표현하며, 이외에도 <strong>빅오메가(big-$\Omega$) 표기법</strong>, <strong>빅세타(big-$\Theta$) 표기법</strong>이 존재한다.</p>
+
+<div class="callout callout-seealso" id="callout-fd33532e-ddd5-4db2-aed6-e2722c45c46b">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>표기법의 오용
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>사실, 여기 설명할 모든 표기법은 엄밀히 말하면 함수들의 집합이고, $f(n)$은 $O(n^2)$의 복잡도를 무한한 수의 함수 중 하나이기 때문 <strong>함수 $f(n)$에 대하여 $f(n)\in O(g(n))$으로 표현하는게 맞지만</strong>, $f(n)=O(g(n))$으로 오용되곤 한다.</p>
+
+<p>또한, 상수 시간을 의미하는 $O(1)$ 또한 오용이며, 정확히는 $O(n^0)$이 옳은 표기 (무한으로 발산할 수 있는 변수 n을 표기해줘야 한다. )</p>
+
+<p>하지만 나는 앞으로 위 두 표기 모두를 정상으로 표기할 것이다.</p>
+
+</div>
+    </div>
+    </div>
+<h3 id='Theta-표기법'>$\Theta-표기법$</h3>
+
+<p>빅세타(big-$\Theta$) 표기법은 <strong>알고리즘 실행 시간에 대한 점근적 상한과 하한을 표기하는 표기법</strong>이다.</p>
+
+<p>주어진 함수 $g(n)$(주로 알고리즘 시간 복잡도의 최고차항)에 대하여 $\Theta(g(n))$은 다음과 같은 함수의 집합으로 정의된다.</p>
+
+<p>$\Theta(g(n))={f(n):모든\ n\geq n_0에\ 대해\ 0\leq c_1g(n)\leq f(n)\leq c_2g(n)를\ 만족하는\ 양의\ 상수\ c_1,c_2,n_0가\ 존재}$<br />
+즉, 우리가 구한 알고리즘의 연산비용 다항식 $f(n)$의 충분히 큰 수 $n_0$부터 그래프는 점근적 표기인 $g(n)$의 서로 다른 정수배 $c_1,c_2$의 그래프에 둘러쌓인 형태가 되야 한다. (Fig 1 좌)</p>
+
+<p>이를 $g(n)$이 $f(n)$의 <strong>asymptotically tight bound(점근적 극한 한계?)</strong>라고 한다.</p>
+
+<p>즉, 빅세타(big-$\Theta$) 표기법은 특정 상수 c를 바꾸는 것으로 최대 예상 비용과 최소 예상 비용을 예측할 수 있는 함수를 의미한다.</p>
+
+<h4 id='Theta-표기법-예시'>$\Theta$-표기법 예시</h4>
+
+\[c_1n^2\leq \frac{1}{2}n^2-3n\leq c_2n^2 \rightarrow divide\ all\ item\ into\  n^2 \\
+=c_1\leq \frac{1}{2}-\frac{3}{n}\leq c_2\]
+
+<p>위의 경우 $c_2$가 $1/2$이상일 경우, $n$은 0 이상부터 성립하게 되므로 $f(n)\in \Theta(n^2)$이다.</p>
+
+\[c_1n^2\leq 6n^3\leq c_2n^2 \rightarrow divide\ all\ item\ into\ n^2 \\=c_1\leq 6n\leq c_2\]
+
+<p>위의 경우 $c_2$가 아무리 크더라도, $c_2$를 넘어서는 양수 $n$이 존재하므로, $f(n) \notin \Theta(n^2)$이다.</p>
+
+<h3 id='O-표기법'>O-표기법</h3>
+
+<p>빅오(big-O) 표기법은 <strong>최악의 상황에서의 점근적 상한을 표기하는 표기법</strong>이며, 가장 널리 사용된다.</p>
+
+<p>$O(g(n))$은 다음과 같은 집합으로 정의된다.</p>
+
+<p>$O(g(n))={f(n): 0\leq f(n) \leq cg(n)을\ 만족하는\ 양의\ 정수\ c, n_0가\ 존재한다.}$</p>
+
+<p>즉, 빅오(big-O) 표기법은 점근적으로 함수의 상한을 알려준다.(Fig 1 중앙)<br />
+앞서 설명한 $\Theta$-표기법이 상한과 하한을 알려주므로, $\Theta(g(n)) \in O(g(n))$이 성립한다.</p>
+
+<div class="callout callout-seealso" id="callout-5a4d29ec-2d49-4a2c-95f2-03ed79bb8832">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><strong>상한과 하한을 모두 알려주는 $\Theta$-표기법과 비교하여 상한만 알려주는 O-표기법을 더 많이 사용하는 이유?</strong>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>$\Theta$ 표기법은 모든 입력에 대해 보장하지 않는다.</p>
+
+<p>예를 들어, 삽입 정렬은 최악의 상황, 보통 상황에서 $\Theta(n^2)$이다.<br />
+하지만 모든 원소가 이미 정렬되어 있는 최적의 상황에서 $\Theta(n)$이다.</p>
+
+<p>따라서  $\Theta$ 표기법으로 “삽입 정렬은 최악과 보통 상황에서 $\Theta(n^2)$, 최적의 상황에서는 $\Theta(n)$이다”라고 두개로 나누어 표기해야 옳은 표현이며 복잡하기 그지없다.</p>
+
+<p>반면에 $O$-표기법은 애초에 성능의 하한을 고려하지 않기 때문에 삽입정렬은 $O(n^2)$이다. 최고차항이 1인 다항식 $an+b$ 또한 $O(n^2)$에 속하기 때문이다.</p>
+
+</div>
+    </div>
+    </div>
+<h3 id='Omega-표기법'>$\Omega$-표기법</h3>
+
+<p>빅오메가(big-Omega) 표기법은 <strong>최적의 상황에서의 점근적 하한을 표기하는 표기법</strong>이다.(Fig 1 우측)</p>
+
+<p>$\Omega(g(n))={f(n): n\geq n_0일\ 때,\ 0\leq cg(n)\leq f(n)를\ 만족하는\ 양의\ 상수\ c와\ n_0가\ 존재한다.}$</p>
+
+<p>이외에도</p>
+
+<ul>
+  <li>
+    <p>빅오 표기법과 비슷하나 점근적으로 근접하지 않은 <strong>o(리틀-오)-표기법</strong></p>
+
+    <ul>
+      <li>
+        <p>즉, 최악의 상황의 연산 비용보다 많은 비용을 표기함. 예를 들어, 식 $f(n)$이 $2n$일 경우, 빅오 표기법으로는 $O(n)$이지만, 리틀오 표기법으로는 $o(n)$이 성립하지 않으며, $o(n^2), o(n^3),\dots$이 가능하다.</p>
+      </li>
+      <li>
+        <p>수학적 정의로는$\lim_{n\rightarrow\infty}=\infty$이 성립할 때, $o(g(n))=f(n)$이 성립.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>빅오메가 표기법과 비슷하나 점근적으로 근접하지 않은<strong>$\omega$(리틀 오메가)-표기법</strong></p>
+
+    <ul>
+      <li>
+        <p>즉, 최적의 상황의 연산 비용보다 적은 비용을 표기함. 예를 들어 식 $f(n)$이 $2n^2$일 경우, 빅오메가 표기법으로는 $\Omega(n^2)$이지만, 리틀 오메가 표기법으로는 $\omega(n^2)$이 성립하지 않으며, $w(n), w(n^0),\dots$이 가능하다.</p>
+      </li>
+      <li>
+        <p>수학적 정의로는 $\lim_{n\rightarrow\infty}=0$이 성립할 때, $\omega(g(n))=f(n)$이 성립.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>이 존재한다.</p>
+
+<h2 id='최악의-상황-big-O-notation-을-기준으로-분석하는-이유'>최악의 상황(=big-O notation)을 기준으로 분석하는 이유</h2>
+
+<p><span class="preview-wrapper">
+      <a href="" class="wikilink">알고리즘 연산 비용 구하기</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>에서 구한 삽입 정렬의 연산비용 다항식은 우리가 익히 들어왔던 시간복잡도 <strong>빅오(big-O) 표기법</strong>에 의하면 $O(n^2)$으로 표기.</p>
+
+<p>빅오 표기법은 이전 최악의 상황에서의 비용값 중 최고차항만 간략표기하여 구함. <br />
+입력값이 충분히 커지면, 같은 최고차항을 가진 식 간의 비용 비교시, 계수와 상수의 영향이 거의 의미가 없어지기 때문.</p>
+
+<ul>
+  <li>
+    <p>예를 들어 상수, 계수가 큰 $100n+200$의 알고리즘 1과 차수가 큰 $n^2$의 알고리즘 2가 존재할 때</p>
+
+    <ul>
+      <li>
+        <p>$n= 100$ 까지는 알고리즘 1이 더욱 효율적.</p>
+      </li>
+      <li>
+        <p>$n = 101$ 부터는 알고리즘 2가 더욱 효율적.</p>
+
+        <p>입력값이 적은 경우, 어느쪽이나 연산속도가 빠름, 입력값이 크다면 연산속도가 더욱 빠른 알고리즘 2를 선호 $\rightarrow$ 결국 최고차항이 작은 알고리즘이 더욱 유리하다.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id='알고리즘을-평가-시-평균적인-상황-최적의-상황이-아니라-최악의-상황을-기준으로-분석하는-이유'>알고리즘을 평가 시, 평균적인 상황, 최적의 상황이 아니라, 최악의 상황을 기준으로 분석하는 이유</h3>
+
+<ul>
+  <li>
+    <p>어떠한 입력값이든지, 필요 시간의 상한을 예상하기 위해. 즉, 연산 완료를 보장받을 수 있는 가장 빠른 시간이기 때문에.</p>
+  </li>
+  <li>
+    <p>의외로 최악의 상황에서의 연산은 실제 업무의 상황에서 평균적인 상황 만큼이나 자주 나타난다.</p>
+
+    <ul>
+      <li>예를 들어, 검색 엔진이나 데이터베이스에서 특정 항목을 색인할 때, 해당 항목이 존재하지 않다면, 모든 항목을 찾아보게 된다.(=최악의 상황에서의 연산)</li>
+    </ul>
+  </li>
+  <li>
+    <p>평균적인 상황에서의 연산 비용은 의외로 최악의 상황에서의 연산 비용과 큰 차이가 나지 않는 경우가 많다.</p>
+
+    <ul>
+      <li>예시를 위해 평균적인 상황에서의 삽입 정렬의 비용은 키값 <code class="language-plaintext highlighter-rouge">A[j]</code>가 미리 정렬된 부분 배열의 중간까지만 비교하며, 연산 횟수 $t_j$는 $j/2$이다.<br />
+삽입 정렬의 총 비용 다항식을 구하면 계수와 상수가 조금 작을 뿐이지 이차 함수인 $O(n^2)$의 성능임.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id='주요-알고리즘들의-시간-복잡도'>주요 알고리즘들의 시간 복잡도</h2>
+
+<div class="callout callout-note" id="callout-20d5efe8-a13c-4eb7-9fa0-25135589d27a">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>Fig 2. 입력 크기 $n$과 함수의 값에 대한 그래프, 빅오 복잡도 그래프 또한 이에 비례한다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Comparison_computational_complexity.svg/1024px-Comparison_computational_complexity.svg.png" alt="" /></p>
+
+</div>
+    </div>
+    </div>
+<h3 id='정렬'>정렬</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>정렬 방법</th>
+      <th>최적</th>
+      <th>평균</th>
+      <th>최악</th>
+      <th>공간 복잡도</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>선택(selection)</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+    </tr>
+    <tr>
+      <td>버블(bubble)</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n)$</td>
+    </tr>
+    <tr>
+      <td>삽입(insert)</td>
+      <td>$O(n)$</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n^2)$</td>
+    </tr>
+    <tr>
+      <td>병합(merge)</td>
+      <td>$O(n\log n)$</td>
+      <td>$O(n\log n)$</td>
+      <td>$O(n\log n)$</td>
+      <td>$O(n\log n)$</td>
+    </tr>
+    <tr>
+      <td>퀵(quick)</td>
+      <td>$O(n\log n)$</td>
+      <td>$O(n\log n)$</td>
+      <td>$O(n^2)$</td>
+      <td>$O(n\log n)$</td>
+    </tr>
+    <tr>
+      <td>힙(heap)</td>
+      <td>$O(n\log n)$</td>
+      <td>$O(n\log n)$</td>
+      <td>$O(n\log n)$</td>
+      <td>$O(n)$</td>
+    </tr>
+    <tr>
+      <td>쉘(shell)</td>
+      <td>$O(n^{1.25})$</td>
+      <td>$O(n^{1.25})$</td>
+      <td>$O(n^{1.25})$</td>
+      <td>$O(n)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id='그래프'>그래프</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>최적</th>
+      <th>평균</th>
+      <th>최악</th>
+      <th>공간</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id='기타'>기타</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>최적</th>
+      <th>평균</th>
+      <th>최악</th>
+      <th>공간</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/2021-09-22-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/2021-09-22-시간-복잡도.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

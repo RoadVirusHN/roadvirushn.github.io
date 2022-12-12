@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Express.Js 학습 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Express.Js 학습" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/2020-03-16-ExpressJs.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/2020-03-16-ExpressJs.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-16T17:21:08+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Express.Js 학습" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-03-16T17:21:08+09:00","datePublished":"2022-03-16T17:21:08+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"Express.Js 학습","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/2020-03-16-ExpressJs.html"},"url":"http://localhost:4000/articles/web/backend/2020-03-16-ExpressJs.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/">The Digital garden of Nurgle.</a><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form></div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/blog/">FRONTPAGE</a><a class="page-link" href="/about/">ABOUT ME</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+    <div class="drawer-components">
+      <hr>
+      <div class="categories" style="flex: 2;">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 5)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 26 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OPERATING_SYSTEM/">OPERATING_SYSTEM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 14 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 8 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 3)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 2 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 7 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 5 
+            📂: 1)
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      (📄: 8 
+      )
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view" style="flex: 1;">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin-left: 16px;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            3 <a id="recent-3" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            4 <a id="recent-4" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div style="bottom: 10px; height: 7vh; flex: 1;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Express.Js 학습</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-03-16T17:21:08+09:00" itemprop="datePublished">Mar 16, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <ol id='markdown-toc-0'>
+<li><a href='#개발-환경-및-기본-구동-설정-Configure-Dev-settings' id='markdown-toc-0-개발-환경-및-기본-구동-설정-Configure-Dev-settings'>개발 환경 및 기본 구동 설정 (Configure Dev settings.)</a><ul><li><a href='#설치-Install' id='markdown-toc-0-설치-Install'>설치(Install)</a></li> 
+<li><a href='#기본-세팅-Default-setting' id='markdown-toc-0-기본-세팅-Default-setting'>기본 세팅(Default setting)</a></li> 
+
+</ul></li> 
+<li><a href='#기능' id='markdown-toc-0-기능'>기능</a><ul><li><a href='#라우팅-routing-설정' id='markdown-toc-0-라우팅-routing-설정'>라우팅(routing) 설정</a><ul>
+</ul></li> 
+<li><a href='#정적-파일-static-file-설정' id='markdown-toc-0-정적-파일-static-file-설정'>정적 파일(static file) 설정</a></li> 
+<li><a href='#DB-연결-DB-Connection' id='markdown-toc-0-DB-연결-DB-Connection'>DB 연결(DB Connection)</a><ul>
+</ul></li> 
+<li><a href='#프록시-설정-Proxy-setting' id='markdown-toc-0-프록시-설정-Proxy-setting'>프록시 설정(Proxy setting)</a></li> 
+
+</ul></li> 
+<li><a href='#미들웨어-Middleware' id='markdown-toc-0-미들웨어-Middleware'>미들웨어(Middleware)</a><ul><li><a href='#미들웨어-함수란-About-middleware-function' id='markdown-toc-0-미들웨어-함수란-About-middleware-function'>미들웨어 함수란?(About middleware function)</a></li> 
+<li><a href='#유용한-미들웨어-Additional-Middleware' id='markdown-toc-0-유용한-미들웨어-Additional-Middleware'>유용한 미들웨어 (Additional Middleware)</a><ul>
+</ul></li> 
+
+</ul></li> 
+</ol>
+<p><img src="/assets/img/2022-03-16-ExpressJs/image-20220113230512386.png" alt="" /></p>
+
+<h1 id="express-js">Express.js</h1>
+
+<hr />
+
+<blockquote>
+  <p>Fast, unopinionated, minimalist web framework for <span class='link-warning'>
+      <a href="https://nodejs.org/en/" class="wikilink externallink">Node.js</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://nodejs.org/en/"</em>로
+        <button onclick="window.open('https://nodejs.org/en/','_blank'); return false;">이동</button>?
+      </span>
+    </span></p>
+</blockquote>
+
+<p><span class="preview-wrapper">
+      <a href="" class="wikilink">Node.js</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 기반의 심플한 웹 프레임워크, 주로 벡엔드 서버를 만드는데 사용한다.</p>
+
+<p>정말 기본적인 서버이고, <span class="preview-wrapper">
+      <a href="" class="wikilink">MIT 라이센스</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>이므로, 좋게 말하면 가볍고 여러 기능을 제약없이 구현하기 쉬우며, 나쁘게 말하면 많은 부분을 직접 구현해야 한다.</p>
+
+<p>더욱 자세한 사항은 <span class='link-warning'>
+      <a href="https://expressjs.com/" class="wikilink externallink">Express.js 공식 문서</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://expressjs.com/"</em>로
+        <button onclick="window.open('https://expressjs.com/','_blank'); return false;">이동</button>?
+      </span>
+    </span> 참조 바람.</p>
+
+<h2 id='개발-환경-및-기본-구동-설정-Configure-Dev-settings'>개발 환경 및 기본 구동 설정 (Configure Dev settings.)</h2>
+
+<hr />
+
+<h3 id='설치-Install'>설치(Install)</h3>
+
+<hr />
+
+<p>기본적으로 최신 버전의 <span class="preview-wrapper">
+      <a href="" class="wikilink">Node.js</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>가 설치가 끝난 상태여야 한다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir </span>myapp <span class="c"># 프로젝트 폴더 생성</span>
+<span class="nv">$ </span><span class="nb">cd </span>myapp <span class="c"># 프로젝트 폴더 이동</span>
+<span class="nv">$ </span>npm init <span class="c"># 기본적인 프로젝트 설정, package.json 생성</span>
+<span class="nv">$ </span>npm <span class="nb">install </span>express <span class="nt">--save</span> <span class="c"># node_modules에 express 설치 및 dependency 설정</span>
+
+</code></pre></div></div>
+<blockquote>
+  <p><strong>🔵 NOTE</strong></p>
+
+  <p>이 글에서는 <code class="language-plaintext highlighter-rouge">package.json</code> 생성 설정의 기본값을 전제로 한다. 추가적인 설정에 따라 일부 용어가 바뀔 수 있다. 예를 들면,</p>
+
+  <ul>
+    <li>
+      <p><code class="language-plaintext highlighter-rouge">main</code> 항목을 <code class="language-plaintext highlighter-rouge">index.js</code> 대신 <code class="language-plaintext highlighter-rouge">app.js</code>로 사용할 경우, <code class="language-plaintext highlighter-rouge">app.js</code>로 생성해야 한다.</p>
+    </li>
+    <li>
+      <p><span class="preview-wrapper">
+      <a href="" class="wikilink">Javascript</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 대신 <span class="preview-wrapper">
+      <a href="" class="wikilink">Typescript</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>를 사용할 수도 있다.</p>
+    </li>
+    <li>
+      <p>자세한 사항은 <span class="preview-wrapper">
+      <a href="" class="wikilink">Node.js</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 참조</p>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id='기본-세팅-Default-setting'>기본 세팅(Default setting)</h3>
+
+<p>이후, <code class="language-plaintext highlighter-rouge">index.js</code> 파일을 형성하여 아래와 같이</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">express</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3000</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/&amp;#39;, </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> =&amp;#38;#62; &amp;#123</span><span class="err">;
+</span>  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">62</span><span class="p">;</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Example app listening at http://localhost:$&amp;#123;port&amp;#125;`</span><span class="p">)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<p>이후 <code class="language-plaintext highlighter-rouge">node index.js</code> 를 콘솔에 입력하면 아래와 같은 메시지가 표시된다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>node index.js
+Example app listening at http://localhost:3000
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">http://localhost:3000</code> 주소를 입력하여 들어가보면 아래와 같은 창이 표기된다.</p>
+
+<p><img src="/assets/img/2022-03-16-ExpressJs/image-20220115082101591.png" alt="" /></p>
+
+<p>추가적으로 <span class="preview-wrapper">
+      <a href="" class="wikilink"><code class="language-plaintext highlighter-rouge">Nodemon</code></a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>이나 <span class="preview-wrapper">
+      <a href="" class="wikilink"><code class="language-plaintext highlighter-rouge">Typescript</code></a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 설정을 해주는 것도 나쁘지 않다.</p>
+
+<h2 id='기능'>기능</h2>
+
+<h3 id='라우팅-routing-설정'>라우팅(routing) 설정</h3>
+
+<hr />
+
+<h4 id='라우팅-기본-Basic-Routing'>라우팅 기본(Basic Routing)</h4>
+
+<p>Express.js는 다음과 같은 구조로 라우팅한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">METHOD</span><span class="p">(</span><span class="nx">PATH</span><span class="p">,</span> <span class="nx">HANDLER</span><span class="p">)</span>
+
+</code></pre></div></div>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">app</code>은 express의 인스턴스이다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">METHOD</code>는 get, post 등의 원하는 HTTP 요청 메소드이다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PATH</code>는 라우팅할 경로이다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">HANDLER</code>는 해당 주소로 라우팅됬을 때 실행되는 함수이다.</p>
+  </li>
+</ul>
+
+<p>이러한 라우팅 설정을 <code class="language-plaintext highlighter-rouge">app.listen(path, [callback])</code> 함수가 실행되기 전에 끝마치면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/&amp;#39;, function </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> &amp;#123</span><span class="err">;
+</span>  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Got</span> <span class="nx">a</span> <span class="nx">POST</span> <span class="nx">request</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span> <span class="c1">// post 요청</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">62</span><span class="p">;</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// backend 실행</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Example app listening at http://localhost:$&amp;#123;port&amp;#125;`</span><span class="p">)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<h4 id='라우팅-인자-Route-parameters'>라우팅 인자 (Route parameters)</h4>
+
+<p>다음과 같이 <code class="language-plaintext highlighter-rouge">:</code>를 이용해 url 인자를 얻어낼 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/users/</span><span class="p">:</span><span class="nx">userId</span><span class="o">/</span><span class="nx">books</span><span class="o">/</span><span class="p">:</span><span class="nx">bookId</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// ex) http://localhst:3000//users/42/books/21</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">)</span> <span class="c1">//&amp;#34;:userId&amp;#34;(=&amp;#34;42&amp;#34;) 부분과 &amp;#34;:bookId&amp;#34;(=&amp;#34;21&amp;#34;) 부분에 존재하는 값들이 string 타입으로 표시.</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<blockquote>
+  <p>🔵 <strong>NOTE</strong></p>
+
+  <p>이때 인자의 이름으로 숫자와 영어 대소문자만 가능하다. 즉, 특수문자가 들어가면 특수문자 이전까지만 인자의 이름으로 인정된다.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">62</span><span class="p">;</span> <span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/flights/</span><span class="p">:</span><span class="nx">to</span><span class="o">-</span><span class="p">:</span><span class="k">from</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// ex) http://localhst:3000/flights/LAX-SFO</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">62</span><span class="p">;</span>   <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">)</span> <span class="c1">//&amp;#34;:to-:from&amp;#34; 전체를 변수명으로 인식하는 것이 아닌 :to&amp;#34;(=&amp;#34;LAX&amp;#34;) 부분과 &amp;#34;:from&amp;#34;(=&amp;#34;SFO&amp;#34;) 부분에 존재하는 값들이 string 타입으로 표시.</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">62</span><span class="p">;</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">62</span><span class="p">;</span> 
+</code></pre></div>  </div>
+  <h4 id='라우팅-Extras-Routing-extras'>라우팅 Extras (Routing extras)</h4>
+</blockquote>
+
+<h5 id='라우팅-정규-표현식-Routing-Regular-Expression'>라우팅 정규 표현식(Routing Regular Expression)</h5>
+
+<p>라우팅에 <span class='link-warning'>
+      <a href="https://regexr.com/" class="wikilink externallink">정규 표현식</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://regexr.com/"</em>로
+        <button onclick="window.open('https://regexr.com/','_blank'); return false;">이동</button>?
+      </span>
+    </span>이나 문자열 패턴을 이용할 수 있다.</p>
+
+<p>문자열 <code class="language-plaintext highlighter-rouge">?</code>,<code class="language-plaintext highlighter-rouge">+</code>,<code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">()</code>,<code class="language-plaintext highlighter-rouge">$</code>은 문자열 패턴으로 이용되며, 특히 <code class="language-plaintext highlighter-rouge">$</code>을 이용하고 싶으면 <code class="language-plaintext highlighter-rouge">[\$]</code>로 대신 입력해야한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">?</code>은 바로 앞 문자 하나를 optional하게 만든다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/ab</span><span class="se">?</span><span class="sr">cd&amp;#39;, function </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> &amp;#123;/</span><span class="o">/</span> <span class="nx">acd</span><span class="p">,</span> <span class="nx">abcd로</span> <span class="nx">연결</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">ab</span><span class="p">?</span><span class="nx">cd</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>  
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">+</code>는 바로 앞 문자 하나를 반복 가능하게 만든다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/ab+cd&amp;#39;, function </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> &amp;#123;/</span><span class="o">/</span> <span class="nx">abcd</span><span class="p">,</span> <span class="nx">abbcd</span><span class="p">,</span> <span class="nx">abb</span><span class="p">..</span><span class="nx">bcd</span> <span class="nx">로</span> <span class="nx">연결</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">ab</span><span class="o">+</span><span class="nx">cd</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">*</code>은 모든 길이의 모든 문자열이 들어갈 수 있음을 의미한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/ab*cd&amp;#39;, function </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> &amp;#123;/</span><span class="o">/</span> <span class="nx">ab와</span> <span class="nx">cd</span> <span class="nx">사이에</span> <span class="nx">무슨</span> <span class="nx">문자가</span> <span class="nx">들어가든</span> <span class="nx">연결</span><span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="nx">ab</span><span class="o">/</span><span class="nx">이것도연결가능</span><span class="o">/</span><span class="nx">cd</span><span class="p">)</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">ab</span><span class="o">*</span><span class="nx">cd</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">()</code>은 앞의 문자열 패턴들과 함께 사용되며, 대상을 문자 하나 대신, <code class="language-plaintext highlighter-rouge">()</code> 사이에 존재하는 문자열을 대상으로 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/ab</span><span class="se">(</span><span class="sr">cd</span><span class="se">)?</span><span class="sr">e&amp;#39;, function </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> &amp;#123;/</span><span class="o">/</span><span class="nx">abcde</span><span class="p">,</span> <span class="nx">abe로</span> <span class="nx">연결</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">ab</span><span class="p">(</span><span class="nx">cd</span><span class="p">)?</span><span class="nx">e</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<p>평범한 정규 표현식 또한 사용 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="sr">/.*fly$/</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span><span class="c1">//fly로 끝나는 주소로 연결</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/.*fly$/</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<h5 id='route-함수-route-function'>route 함수(route function)</h5>
+
+<p>만약에 동일한 주소로 여러 메소드에 따라 동작을 달리하면서, 함수 체이닝을 통해 코드의 중복을 줄이고 싶다면, <code class="language-plaintext highlighter-rouge">route(path)</code> 함수나 <code class="language-plaintext highlighter-rouge">all(path, callback, [,callback ...])</code>을 이용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/book&amp;#39;</span><span class="err">)
+</span>  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// get 요청 시의 동작</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Get</span> <span class="nx">a</span> <span class="nx">random</span> <span class="nx">book</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+  <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// post 요청 시의 동작</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Add</span> <span class="nx">a</span> <span class="nx">book</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+  <span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// put 요청 시의 동작</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Update</span> <span class="nx">the</span> <span class="nx">book</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/user&amp;#39;, function</span><span class="se">(</span><span class="sr">req, res, next</span><span class="se">)</span><span class="sr">&amp;#123</span><span class="err">;
+</span>    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Accessing</span> <span class="nx">the</span> <span class="nx">user</span> <span class="nx">section</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+    <span class="nx">next</span><span class="p">()</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<h5 id='Router-클래스-Router-Class'>Router 클래스(Router Class)</h5>
+
+<p><code class="language-plaintext highlighter-rouge">express.Router</code> 클래스는 라우팅에 활용할 수 있는 미들웨어이다. 추가적인 미들웨어 함수를 적용하여 사용하거나, 라우터를 모듈화, 파일 구조 라우팅 등을 하는데 사용한다.</p>
+
+<p>🔵 파일 구조 라우팅(File-system Routing) : <span class="preview-wrapper">
+      <a href="" class="wikilink">Next.js</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>의 기능처럼 폴더와 파일경로를 url 주소로 이용하여 라우팅 하는 방법.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">express</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">()</span>
+
+<span class="c1">// 라우터가 사용할 미들웨어 함수 정의, 현재 이 라우터 인스턴스로 전달되는 요청마다 실행됨</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span> <span class="nx">timeLog</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nl">Time</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">())</span> <span class="c1">// 현재 시간 출력</span>
+  <span class="nx">next</span><span class="p">()</span> <span class="c1">//next 함수 : 다음 미들웨어 기능(=여기선 라우팅)을 불러옮.</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+<span class="c1">// 홈페이지 경로 설정</span>
+<span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/&amp;#39;, function </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> &amp;#123</span><span class="err">;
+</span>  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Birds</span> <span class="nx">home</span> <span class="nx">page</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+<span class="c1">// /about 경로 설정</span>
+<span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/about&amp;#39;, function </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> &amp;#123</span><span class="err">;
+</span>  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">About</span> <span class="nx">birds</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span>
+
+</code></pre></div></div>
+<p>이후, 해당 라우팅 클래스를 미들웨어로 부른 뒤, 경로를 설정해주면, 함수가 적용된 파일 구조 라우팅이 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">birds</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;.</span><span class="o">/</span><span class="nx">birds</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/birds&amp;#39;, birds</span><span class="err">)
+</span><span class="c1">// &amp;#34;birds/&amp;#34; 경로와 &amp;#34;birds/about/&amp;#34;경로가 이용 가능해짐. </span>
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">router.all(path, callback, [,callback ...])</code> 함수와 콜백 함수들을 이용하면 전역 인증 등을 구현 가능하다, 모듈화가 가능하다는 점을 제외하곤, <code class="language-plaintext highlighter-rouge">app.all(path, callback, [,callback ...])</code>과 다른점 없어보인다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">router</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="o">*&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="nx">requireAuthentication</span><span class="p">,</span> <span class="nx">loadUser</span><span class="p">)</span> <span class="c1">// &amp;#39;*&amp;#39;를 이용한 라우터를 모든 라우터보다 먼저 정의하면 모든 url에 적용되게 할 수 있다.</span>
+<span class="c1">// requireAuthentication : 인증에 관련된 함수</span>
+<span class="c1">// loadUser : 유저 정보를 가져오는 함수</span>
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">router.all(path, callback, [,callback ...])</code>을 포함해 <code class="language-plaintext highlighter-rouge">router.METHOD(path, [callback, ...] callback)</code> 함수들은 첫번째 인자로 url, 두번째부터는 차례대로 <code class="language-plaintext highlighter-rouge">next()</code>를 부를 때마다 실행되는 콜백 함수를 인자로 받는다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 위의 예시 코드와 동일한 동작을 하는 코드</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="o">*&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="nx">requireAuthentication</span><span class="p">)</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="o">*&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="nx">loadUser</span><span class="p">)</span>
+
+</code></pre></div></div>
+<h5 id='응답-방법-Response-methods'>응답 방법(Response methods)</h5>
+
+<p>클라이언트에게 응답을 보낼 때 사용할 수 있는 함수, 이 함수를 부름으로써, 클라이언트는 대기 상태를 끝내고 요청-응답 사이클이 종료된다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">res.send([body])</code> : HTTP 응답을 보냄. 주로 비스트림 응답에 사용됨</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/&amp;#39;, </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> =&amp;#38;#62; &amp;#123</span><span class="err">;
+</span>  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span> <span class="c1">// Hello World! 라는 응답을 되돌림</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/json&amp;#39;, </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> =&amp;#38;#62; &amp;#123</span><span class="err">;
+</span>  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span><span class="nl">messange</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="p">;</span><span class="nx">ok</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span><span class="c1">// Json 형식으로 응답을 되돌림</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/octet&amp;#39;, </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr">=&amp;#38;#62;&amp;#123</span><span class="err">;
+</span>    <span class="nx">res</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Content</span><span class="o">-</span><span class="nx">Type</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">text</span><span class="o">/</span><span class="nx">html</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span><span class="c1">// Content-Type을 text 형태로 강제</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">unavailable</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span> <span class="c1">// 500 코드와 함께 응답</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<p>만약, 응답이 <span class="preview-wrapper">
+      <a href="" class="wikilink"><code class="language-plaintext highlighter-rouge">JSON</code></a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>형식에 맞지 않아 굳이 <code class="language-plaintext highlighter-rouge">res.set(field[, value])</code>형식을 바꿔줘야 한다면, 차라리 <code class="language-plaintext highlighter-rouge">res.json()</code>를 이용하여 코드의 길이를 줄이자.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/&amp;#39;, </span><span class="se">(</span><span class="sr">req, res</span><span class="se">)</span><span class="sr"> =&amp;#38;#62; &amp;#123</span><span class="err">;
+</span>  <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span> <span class="c1">// string임에도 Content-Type은 application/json;</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<hr />
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">res.append(field[, value])</code>: HTTP 응답 헤더의 필드와 값을 추가, <code class="language-plaintext highlighter-rouge">res.set(field[, value])==res.header(field[, value])</code>을 이용하면 <code class="language-plaintext highlighter-rouge">obeject</code>를 주어 여러 값을 동시에 변경이 가능하다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">res</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Link</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="p">[</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">60</span><span class="p">;</span><span class="nl">http</span><span class="p">:</span><span class="c1">//localhost/&amp;#38;#62;&amp;#39;, &amp;#39;&amp;#38;#60;http://localhost:3000/&amp;#38;#62;&amp;#39;])</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nb">Set</span><span class="o">-</span><span class="nx">Cookie</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">foo</span><span class="o">=</span><span class="nx">bar</span><span class="p">;</span> <span class="nx">Path</span><span class="o">=</span><span class="sr">/; HttpOnly&amp;#39;</span><span class="err">)
+</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">res.attachment([filename])</code>을 통하여 <code class="language-plaintext highlighter-rouge">Content-Disposition</code> 헤더를 설정해줄 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">res</span><span class="p">.</span><span class="nx">attachment</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">path</span><span class="o">/</span><span class="nx">to</span><span class="o">/</span><span class="nx">logo</span><span class="p">.</span><span class="nx">png</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="c1">// Content-Disposition: attachment; filename=&amp;#34;logo.png&amp;#34;</span>
+<span class="c1">// Content-Type: image/png</span>
+
+</code></pre></div></div>
+<p>좀 더 쿠키를 세분화하여 정해주려면 <code class="language-plaintext highlighter-rouge">res.cookie(name, value [, options])</code> 함수를 사용할 수 있고, <code class="language-plaintext highlighter-rouge">res.clearCookie(name, value [, options])</code>함수로 지워줄 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">res</span>
+  <span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">201</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">cookie</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">access_token</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Bearer</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span> <span class="o">+</span> <span class="nx">token</span><span class="p">,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="nl">expires</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">3600000</span><span class="p">)</span> <span class="c1">// cookie will be removed after 8 hours</span>
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+  <span class="p">.</span><span class="nx">cookie</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">rememberme</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="mi">1</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="nl">expires</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">900000</span><span class="p">),</span> <span class="nx">httpOnly</span><span class="p">:</span> <span class="kc">true</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+  <span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="mi">301</span><span class="p">,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/admin&amp;#39;</span><span class="err">)
+</span>
+</code></pre></div></div>
+<hr />
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">res.redirect([status,] path)</code> : 다른 URL로 리다이렉트 해준다. 기본 status 코드는 <code class="language-plaintext highlighter-rouge">302 Found</code>이다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="mi">301</span><span class="p">,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nl">http</span><span class="p">:</span><span class="c1">//example.com&amp;#39;)</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;..</span><span class="o">/</span><span class="nx">login</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">back</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span><span class="c1">//이전 referer로 돌림</span>
+
+</code></pre></div></div>
+<hr />
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">res.render(view [, locals] [, callback])</code> : HTML view를 보낸다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">view</code>: html 파일이 존재하는 파일 경로</li>
+      <li><code class="language-plaintext highlighter-rouge">locals</code>: view에서 이용할 로컬 변수들의 <code class="language-plaintext highlighter-rouge">object</code> 형태</li>
+      <li><code class="language-plaintext highlighter-rouge">callback</code>:  에러와 html 파일의 문자열을 인자로 가지고 있는 콜백 함수</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// view에게 로컬 변수 전달하기</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">html</span><span class="o">/</span><span class="nx">user</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="nl">name</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Tobi</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">html</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>  
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">error</span><span class="o">!&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+    <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span> <span class="k">else</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+          <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">html</span><span class="p">)</span>            
+    <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<hr />
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">res.download(path [, filename] [, options] [, fn])</code> : <code class="language-plaintext highlighter-rouge">path</code>에 존재하는 파일을 <code class="language-plaintext highlighter-rouge">attachment</code>로 보내며, 브라우저가 다운로드를 진행한다. <code class="language-plaintext highlighter-rouge">filename</code> 인자는 다운로드 될 파일 명으로, 주어지지 않았다면, <code class="language-plaintext highlighter-rouge">Content-Disposition</code> 필드의 <code class="language-plaintext highlighter-rouge">filename=</code> 인자가 기본값이다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">res</span><span class="p">.</span><span class="nx">download</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/report-12345.pdf&amp;#39;, &amp;#39;report.pdf&amp;#39;, function </span><span class="se">(</span><span class="sr">err</span><span class="se">)</span><span class="sr"> &amp;#123</span><span class="err">;
+</span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+      <span class="c1">// 에러 핸들링</span>
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span> <span class="k">else</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<p>이외의 추가적인 메소드들은 <span class='link-warning'>
+      <a href="https://expressjs.com/en/4x/api.html#res" class="wikilink externallink">여기</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://expressjs.com/en/4x/ap..."</em>로
+        <button onclick="window.open('https://expressjs.com/en/4x/api.html#res','_blank'); return false;">이동</button>?
+      </span>
+    </span> 참조</p>
+
+<h3 id='정적-파일-static-file-설정'>정적 파일(static file) 설정</h3>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">Express.js</code>는 <span class='link-warning'>
+      <a href="http://expressjs.com/en/resources/middleware/serve-static.html" class="wikilink externallink">serve-static</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "http://expressjs.com/en/resour..."</em>로
+        <button onclick="window.open('http://expressjs.com/en/resources/middleware/serve-static.html','_blank'); return false;">이동</button>?
+      </span>
+    </span> 모듈을 기반으로 만든 빌트인 미들웨어(built-in middleware) 함수인 <code class="language-plaintext highlighter-rouge">express.static</code>이 존재한다.</p>
+
+<p>이를 이용해  이미지, CSS 파일, JS 파일 등의 정적 파일을 이용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="p">[</span><span class="nx">options</span><span class="p">])</span>
+
+</code></pre></div></div>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">root</code> 인자는 정적 에셋들이 위치한 경로를 설정한다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">[options]</code> 인자는 <code class="language-plaintext highlighter-rouge">static</code> 함수가 가질 수 있는 옵션이다. 예를 들면</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dotfiles</code> : <code class="language-plaintext highlighter-rouge">.</code>으로 시작하는 파일과 폴더는 어떻게 다룰 것인가? ex) <code class="language-plaintext highlighter-rouge">"ignore"</code> : 없는 걸로 취급. (default : <code class="language-plaintext highlighter-rouge">"allow"</code>, 특별한 조치 취하지 않음)</li>
+      <li><code class="language-plaintext highlighter-rouge">etag</code>: HTTP 응답 헤더에 <span class="preview-wrapper">
+      <a href="" class="wikilink">ETag</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 헤더를 추가한다. (default: <code class="language-plaintext highlighter-rouge">"true"</code>, weak ETag)</li>
+      <li><code class="language-plaintext highlighter-rouge">lastModified</code>:  HTTP 응답 헤더에 <span class="preview-wrapper">
+      <a href="" class="wikilink">Last-Modified</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 헤더를 추가한다. (default: <code class="language-plaintext highlighter-rouge">"true"</code>)</li>
+    </ul>
+
+    <p>등이 존재한다.</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="kr">public</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;))</span>
+
+</code></pre></div></div>
+<p>위와 같은 코드일 경우, 아래와 같은 경로의 <code class="language-plaintext highlighter-rouge">public</code> 폴더의 파일들을 url을 통해 접근 할 수 있다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> |-public/
+ | |-hello.html
+ | |-css/
+ | | |-main.css
+ | |-images/
+ | | |-dog.png
+ | |-js/
+ | | |-SPA.js
+
+</code></pre></div></div>
+<pre><code class="language-url">http://localhost:3000/hello.html
+http://localhost:3000/css/main.css
+http://localhost:3000/images/dog.jpg
+http://localhost:3000/js/SPA.js
+
+</code></pre>
+<p>추가로, 경로 접두어를 이용하고 싶다면 다음과 같은 코드를 이용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/static&amp;#39;, express.static</span><span class="se">(</span><span class="sr">&amp;#39;public&amp;#39;</span><span class="se">)</span><span class="err">)
+</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:3000/static/hello.html
+http://localhost:3000/static/css/main.css
+http://localhost:3000/static/images/dog.jpg
+http://localhost:3000/static/js/SPA.js
+
+</code></pre></div></div>
+<h3 id='DB-연결-DB-Connection'>DB 연결(DB Connection)</h3>
+
+<hr />
+
+<p>DB 연결 방법은 <span class='link-warning'>
+      <a href="https://expressjs.com/en/guide/database-integration.html" class="wikilink externallink">공식 문서</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://expressjs.com/en/guide..."</em>로
+        <button onclick="window.open('https://expressjs.com/en/guide/database-integration.html','_blank'); return false;">이동</button>?
+      </span>
+    </span>에 DB 별로 상세히 설명되어 있다.</p>
+
+<p>각기 DB에서 지원하는 모듈을 이용하는 방식으로 진행되며, 여기서는 <span class="preview-wrapper">
+      <a href="" class="wikilink">MySQL</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>과 <span class="preview-wrapper">
+      <a href="" class="wikilink">MongoDB</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>의 예시를 알아보겠다.</p>
+
+<h4 id='MySQL'>MySQL</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>mysql
+
+</code></pre></div></div>
+<p>mysql에서 지원하는 npm 모듈을 설치한다. <span class='link-warning'>
+      <a href="https://github.com/mysqljs/mysql" class="wikilink externallink">mysqljs github</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://github.com/mysqljs/mys..."</em>로
+        <button onclick="window.open('https://github.com/mysqljs/mysql','_blank'); return false;">이동</button>?
+      </span>
+    </span>에서 좀더 자세한 사항을 알 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">mysql</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="kd">var</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="c1">// 실제로는 env 설정할것!</span>
+  <span class="nl">host</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">localhost</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span>
+  <span class="nx">port</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="mi">3306</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span>
+  <span class="nx">user</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">dbuser</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span>
+  <span class="nx">password</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">s3kreee7</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span>
+  <span class="nx">database</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">my_db</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span>
+  <span class="nx">debug</span><span class="p">:</span> <span class="nx">ENV</span><span class="p">.</span><span class="nx">PRODUCTION</span><span class="p">,</span> <span class="c1">// true 시, 콘솔 창에 SQL 쿼리 진행이 출력됨</span>
+  <span class="nx">supportBigNumbers</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// db의 BIGINT나 DECIMAL 타입은 데이터 크기상 자바스크립트에서 지원하지 않으므로, 문자열 형식으로 바꿔주는 옵션</span>
+  <span class="nx">ssl</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+      <span class="c1">// ssl 연결 설정을 위한 옵션</span>
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">connection</span><span class="p">.</span><span class="nx">connect</span><span class="p">()</span> <span class="c1">// 연결 시작</span>
+
+<span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">SELECT</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="nx">AS</span> <span class="nx">solution</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="nx">fields</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// SQL Mapping, 실제로는 ORM으로 진행하는 것을 추천</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">The</span> <span class="nx">solution</span> <span class="nx">is</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="nx">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">solution</span><span class="p">)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">connection</span><span class="p">.</span><span class="nx">end</span><span class="p">()</span> <span class="c1">// 연결 종료</span>
+
+</code></pre></div></div>
+<h4 id='MongoDB'>MongoDB</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>mongodb
+
+</code></pre></div></div>
+<p>마찬가지로, <span class="preview-wrapper">
+      <a href="" class="wikilink">MongoDB</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>의 NodeJS를 위한 드라이버를 이용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MongoClient</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">mongodb</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;).</span><span class="nx">MongoClient</span>
+
+<span class="nx">MongoClient</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nl">mongodb</span><span class="p">:</span><span class="c1">//localhost:27017/animals&amp;#39;, function (err, client) &amp;#123;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span>
+
+  <span class="kd">var</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">db</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">animals</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+
+  <span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">mammals</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;).</span><span class="nx">find</span><span class="p">().</span><span class="nx">toArray</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<p>Node.js와 MongoDB를 함께 쓸때는, <span class="preview-wrapper">
+      <a href="" class="wikilink">Mongoose</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>와 함께 쓰는 것도 고려해볼만 하다.</p>
+
+<p>Mongoose를 이용하면 관계형 데이터베이스와 달리 자유로운 형식을 가지는 콜렉션(Collection)들의 형식을 정의하고, 제약(Constraint)을 설정해줄 수 있다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>mongoose validator
+
+</code></pre></div></div>
+<p>Mongoose가 대신 MongoDB와 연결을 하므로, MongoDB 연결은 필요없다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">mongoose</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;);</span>
+
+<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="mf">127.0</span><span class="p">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">27017</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;;</span> <span class="c1">// DB 서버 주소</span>
+<span class="kd">const</span> <span class="nx">database</span> <span class="o">=</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">fcc</span><span class="o">-</span><span class="nx">Mail</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;;</span>      <span class="c1">// DB 명</span>
+
+<span class="kd">class</span> <span class="nx">Database</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_connect</span><span class="p">()</span>
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+
+<span class="nx">_connect</span><span class="p">()</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+     <span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s2">`mongodb://$&amp;#123;server&amp;#125;/$&amp;#123;database&amp;#125;`</span><span class="p">)</span>
+       <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">62</span><span class="p">;</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Database</span> <span class="nx">connection</span> <span class="nx">successful</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+       <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+       <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&amp;</span><span class="err">#</span><span class="mi">38</span><span class="p">;</span><span class="err">#</span><span class="mi">62</span><span class="p">;</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">Database</span> <span class="nx">connection</span> <span class="nx">error</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+       <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+  <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Database</span><span class="p">()</span>
+
+</code></pre></div></div>
+<h3 id='프록시-설정-Proxy-setting'>프록시 설정(Proxy setting)</h3>
+
+<hr />
+
+<p>Express.js에서는 <span class="preview-wrapper">
+      <a href="" class="wikilink">리버스 프록시(Reverse Proxy)</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 패키지 기반인 <code class="language-plaintext highlighter-rouge">trust proxy</code> 설정을 해주어야 정상 작동한다.</p>
+
+<p>이를 설정해주지 않는다면, 클라이언트의 IP 주소 대신, 리버스 프록시의 IP 주소를 클라이언트로 착각한다는 듯하다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>X-Forwarded-For: &amp;#38;#60;client&amp;#38;#62;, &amp;#38;#60;proxy1&amp;#38;#62;, &amp;#38;#60;proxy2&amp;#38;#62;
+X-Forwarded-For: 203.0.113.195, 70.41.3.18, 150.172.238.178
+//X-Forwarded-For 헤더의 예시
+
+</code></pre></div></div>
+<p>이때, HTTP 헤더 중 <code class="language-plaintext highlighter-rouge">X-Forwarded-for</code> 헤더를 이용해 클라이언트 주소를 판명하며, 보통 최좌측이 클라이언트 IP 주소이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">trust</span> <span class="nx">proxy</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="kc">true</span><span class="p">)</span>
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">true</code> : HTTP 메시지의 <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> 헤더의 최좌측의 IP 주소를 클라이언트 IP 주소로 설정</p>
+
+<p>🔵 HTTP 메시지의 <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code>, <code class="language-plaintext highlighter-rouge">X-Forwarded-Host</code>, <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code> 헤더를 리버스 프록시가 덮어쓰게 설정 하지 않으면, 클라이언트가 이를 이용해 다른 클라이언트인 척 행세할 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">false</code>: 리버스 프록시가 존재하지 않으며, <code class="language-plaintext highlighter-rouge">req.socket.remoteAddress</code>에 존재하는 IP 주소를 클라이언트로 간주, 기본값</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">trust</span> <span class="nx">proxy</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="p">[</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">loopback</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">linklocal</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">uniquelocal</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="mf">123.123</span><span class="p">.</span><span class="mf">123.123</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;])</span>
+
+</code></pre></div></div>
+<p>리버스 프록시의 IP 주소를 명시해줄 수도 있다. 아래는 미리 정의된 서브넷 문자열 들이다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">loopback</code> - <code class="language-plaintext highlighter-rouge">127.0.0.1/8</code>, <code class="language-plaintext highlighter-rouge">::1/128</code></li>
+  <li><code class="language-plaintext highlighter-rouge">linklocal</code> - <code class="language-plaintext highlighter-rouge">169.254.0.0/16</code>, <code class="language-plaintext highlighter-rouge">fe80::/10</code></li>
+  <li><code class="language-plaintext highlighter-rouge">uniquelocal</code> - <code class="language-plaintext highlighter-rouge">10.0.0.0/8</code>, <code class="language-plaintext highlighter-rouge">172.16.0.0/12</code>, <code class="language-plaintext highlighter-rouge">192.168.0.0/16</code>, <code class="language-plaintext highlighter-rouge">fc00::/7</code></li>
+</ul>
+
+<p>이때 명시된 IP 주소나 서브넷은 클라이언트 IP 주소가 아닌 것으로 판단하며, <code class="language-plaintext highlighter-rouge">req.socket.remoteAddress</code>의 주소가 명시되어 있다면(trusted), 해당 메시지의  <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> 헤더에 명신된 주소에서 최우측부터 좌측 순으로 확인하면서 가장 첫번째로 명시되어 있지 않은(untrusted) 주소를 클라이언트 주소로 결정한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">trust</span> <span class="nx">proxy</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="mi">2</span><span class="p">)</span>
+
+</code></pre></div></div>
+<p>숫자를 명시해줄 경우, 몇 홉의 리버스 프록시 이후에 클라이언트 주소가 나오는지로 결정한다는 의미이다.</p>
+
+<p>예를 들어, <code class="language-plaintext highlighter-rouge">0</code>을 명시하면, 리버스 프록시가 존재하지않으며, <code class="language-plaintext highlighter-rouge">req.socket,remoteAddress</code>가 클라이언트 주소로 판명되며, <code class="language-plaintext highlighter-rouge">1</code>을 명시하면, <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> 헤더의 최우측에서 두번째를 클라이언트 IP 주소로, 나머지만 리버스 프록시 주소로 결정한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">trust</span> <span class="nx">proxy</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ip</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">ip</span> <span class="o">===</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="mf">127.0</span><span class="p">.</span><span class="mf">0.1</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span> <span class="o">||</span> <span class="nx">ip</span> <span class="o">===</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="mf">123.123</span><span class="p">.</span><span class="mf">123.123</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span> <span class="k">return</span> <span class="kc">true</span> <span class="c1">// trusted IPs</span>
+  <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<p>또는, 함수를 정의해주어, 리버스 프록시를 판명할 수 있다. <code class="language-plaintext highlighter-rouge">true</code>일 경우 리버스 프록시 주소이며, <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> 헤더의 다음 주소를 함수에 넣어보게 되고, <code class="language-plaintext highlighter-rouge">false</code>일 경우 해당 IP 주소가 클라이언트의 주소이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">trust proxy</code> 설정 이후, <code class="language-plaintext highlighter-rouge">req.hostname</code>의 값은 <code class="language-plaintext highlighter-rouge">X-Forwarded-Host</code> 헤더에서 가져오게 되며, <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code> 헤더가 리버스 프록시에 의해 변경되어 프로토콜 등을 확인할 수 있게 되며, <code class="language-plaintext highlighter-rouge">req.ip</code>, <code class="language-plaintext highlighter-rouge">req.ips</code> 값이 설정되게 된다.</p>
+
+<h2 id='미들웨어-Middleware'>미들웨어(Middleware)</h2>
+
+<hr />
+
+<h3 id='미들웨어-함수란-About-middleware-function'>미들웨어 함수란?(About middleware function)</h3>
+
+<hr />
+
+<p>미들웨어 함수는 응용프로그램의 요청-응답 사이클의 요청 객체(request object)와 응답 객체(response object), 그리고 <code class="language-plaintext highlighter-rouge">next()</code> 함수를 이용하는 함수이다.</p>
+
+<ul>
+  <li>요청 객체(request object) : 클라이언트가 요청한 HTTP 요청의 요소(쿼리 문자열, 인자, 바디, 헤더 등)를 포함하고 있는 객체</li>
+  <li>응답 객체(response object) : 클라이언트에게 돌려줄 HTTP 응답을 위한 객체, 함수를 통해 응답 메시지를 조성하고 응답할 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">next()</code> 함수 : 실행시 다음 순서의 미들웨어를 불러오는 함수, 해당 미들웨어에서 통신을 종료하지 않고 다음 미들웨어로 넘기려면 이용해야 한다.</li>
+</ul>
+
+<p>미들웨어 함수를 통해, 추가적인 로직을 실행하거나, 요청과 응답에 변형을 가하거나, 통신을 종료하거나 다음 미들웨어 함수를 불러올 수 있다.</p>
+
+<p>예를 들어, 인증, 인가 시스템을 구현하거나, 필터링, 캐쉬 구현 등이 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">express</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">router1</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">()</span> <span class="c1">// router-레벨 미들웨어 생성을 위한 라우터 선언</span>
+<span class="kd">var</span> <span class="nx">router2</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">()</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="c1">// 응용프로그램 레벨 미들웨어 생성</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">middleware</span> <span class="mi">1</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+    <span class="nx">next</span><span class="p">()</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">router1</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">middleware</span> <span class="mi">2</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+    <span class="nx">next</span><span class="p">()</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">router1</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">middleware</span> <span class="mi">3</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+    <span class="nx">next</span><span class="p">()</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">router2</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">middleware</span> <span class="mi">4</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+    <span class="nx">next</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">router</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>  <span class="c1">// 현재 라우터 레벨의 모든 미들웨어를 skip</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">router2</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">middleware</span> <span class="mi">5</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span> <span class="c1">// 상위 미들웨어에서 라우터 레벨 미들웨어들을 skip했기 때문에 실행되지 않는다.</span>
+    <span class="nx">next</span><span class="p">()</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">middleware</span> <span class="mi">6</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+    <span class="nx">next</span><span class="p">()</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/&amp;#39;, router1</span><span class="se">)</span><span class="sr"> /</span><span class="o">/</span> <span class="nx">라우터</span> <span class="nx">미들웨어</span> <span class="nx">선언은</span> <span class="nx">빨랐지만</span><span class="p">,</span> <span class="nx">app에</span> <span class="nx">적용이</span> <span class="nx">느리므로</span> <span class="nx">middleware</span> <span class="mi">6</span><span class="nx">번보다</span> <span class="nx">뒤에</span> <span class="nx">실행된다</span><span class="p">.</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/&amp;#39;, router2</span><span class="err">)
+</span>
+</code></pre></div></div>
+<p>위 코드의 실행결과는 아래와 같다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>middleware 1
+middleware 6
+middleware 2
+middleware 3
+middleware 4
+
+</code></pre></div></div>
+<h3 id='유용한-미들웨어-Additional-Middleware'>유용한 미들웨어 (Additional Middleware)</h3>
+
+<hr />
+
+<h4 id='static'>static</h4>
+
+<p><a href="###정적 파일(static file) 설정">앞서</a> 설명했던 Express.js 빌트인 모듈, 정적 파일을 이용하는데 사용한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="p">[</span><span class="nx">options</span><span class="p">])</span>
+
+</code></pre></div></div>
+<h4 id='cors'>cors</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>cors
+
+</code></pre></div></div>
+<p>CORS는 Express 팀에서 만든 서드 파티 미들웨어이다.</p>
+
+<p><span class='link-warning'>
+      <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/CORS" class="wikilink externallink">CORS(Cross-Origin Resource Sharing, 교차 출처 리소스 공유)</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://developer.mozilla.org/..."</em>로
+        <button onclick="window.open('https://developer.mozilla.org/ko/docs/Web/HTTP/CORS','_blank'); return false;">이동</button>?
+      </span>
+    </span> 설정을 통해 접근 권한을 설정할 수 있게 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">express</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="kd">var</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">cors</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+
+<span class="kd">var</span> <span class="nx">corsOptions</span> <span class="o">=</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="nl">origin</span><span class="p">:</span> <span class="p">[</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nl">http</span><span class="p">:</span><span class="c1">//example.com&amp;#39;, &amp;#39;http://example2.com&amp;#39;], // &amp;#39;*&amp;#39;을 이용하면 모든 요청 CORS 화이트리스트.</span>
+  <span class="nl">optionsSuccessStatus</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="c1">// 오래된 브라우저는 코드 204를 쓰므로 200으로 강제</span>
+  <span class="nx">credentials</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="c1">//&amp;#39;Access-Control-Allow-Credentials&amp;#39; CORS 헤더 설정 여부</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+
+<span class="c1">//일부 route에만 cors 적용 예시</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="sr">/products/</span><span class="p">:</span><span class="nx">id</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="nx">cors</span><span class="p">(</span><span class="nx">corsOptions</span><span class="p">),</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span><span class="nl">msg</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">This</span> <span class="nx">is</span> <span class="nx">CORS</span><span class="o">-</span><span class="nx">enabled</span> <span class="k">for</span> <span class="nx">only</span> <span class="nx">example</span><span class="p">.</span><span class="nx">com</span><span class="p">.</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+<span class="c1">// 모든 route에 cors 적용 예시</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">())</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">CORS</span><span class="o">-</span><span class="nx">enabled</span> <span class="nx">web</span> <span class="nx">server</span> <span class="nx">listening</span> <span class="nx">on</span> <span class="nx">port</span> <span class="mi">80</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;)</span>
+
+</code></pre></div></div>
+<h4 id='express-session'>express-session</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>express-session
+
+</code></pre></div></div>
+<p><span class="preview-wrapper">
+      <a href="" class="wikilink">Session</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 미들웨어를 형성할 수 있게 해주는 Express 팀에서 만든 서드 파티 미들웨어.</p>
+
+<p>Session을 이용하여, 유저의 쿠키를 저장하고, 요청을 유저별로 구분하여, 보안과 유저 특화 서비스 등을 구현할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">sess</span> <span class="o">=</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="nl">secret</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">keyboard</span> <span class="nx">cat</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span>
+  <span class="nx">resave</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">saveUninitialized</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">cookie</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="nl">secure</span><span class="p">:</span> <span class="kc">false</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">env</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span> <span class="o">===</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">production</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;)</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+  <span class="nx">app</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;</span><span class="nx">trust</span> <span class="nx">proxy</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">39</span><span class="p">;,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// trust first proxy</span>
+  <span class="nx">sess</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">secure</span> <span class="o">=</span> <span class="kc">true</span> <span class="c1">// serve secure cookies</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">session</span><span class="p">(</span><span class="nx">sess</span><span class="p">))</span>
+
+</code></pre></div></div>
+<h4 id='helmet'>helmet</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>helmet
+
+</code></pre></div></div>
+<p>HTTP 헤더 설정을 통해 어플레이케이션 보안 향상을 도와주는 서드 파티 미들웨어.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="p">;</span><span class="nx">express</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="p">;);</span>
+<span class="kd">const</span> <span class="nx">helmet</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="p">;</span><span class="nx">helmet</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="p">;);</span>
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">helmet_setting</span> <span class="o">=</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span>
+    <span class="nl">referrerPolicy</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="p">;</span> <span class="nl">policy</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="p">;</span><span class="nx">no</span><span class="o">-</span><span class="nx">referrer</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="p">;</span> <span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;,</span> <span class="c1">// 세부 보안 설정</span>
+   <span class="nx">contentSecurityPolicy</span><span class="p">:</span> <span class="kc">false</span> <span class="c1">// 사용 안함 설정</span>
+<span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="p">;</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">helmet</span><span class="p">(</span><span class="nx">helmet_setting</span><span class="p">));</span>
+
+</code></pre></div></div>
+<p><span class='link-warning'>
+      <a href="https://helmetjs.github.io/" class="wikilink externallink">helmet</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://helmetjs.github.io/"</em>로
+        <button onclick="window.open('https://helmetjs.github.io/','_blank'); return false;">이동</button>?
+      </span>
+    </span>은 15개의 보안 미들웨어를 포함하고 있으며, 각자 설정 및 사용 여부를 조정할 수 있다.</p>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/2020-03-16-ExpressJs.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/2020-03-16-ExpressJs.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

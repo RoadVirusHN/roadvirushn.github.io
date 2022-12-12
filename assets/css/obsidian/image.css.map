@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,GAAI;EACF,OAAO,EAAE,KAAK;EACd,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI",
+"sources": ["../../../_sass/obsidian/image.scss"],
+"names": [],
+"file": "image.css"
+}

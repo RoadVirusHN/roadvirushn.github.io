@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>알고리즘 수학 기본 - Counting | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="알고리즘 수학 기본 - Counting" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/2021-07-06-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-counting.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/2021-07-06-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-counting.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-06T16:53:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="알고리즘 수학 기본 - Counting" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-07-06T16:53:58+09:00","datePublished":"2021-07-06T16:53:58+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"알고리즘 수학 기본 - Counting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/2021-07-06-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-counting.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/2021-07-06-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-counting.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/">The Digital garden of Nurgle.</a><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form></div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <a class="page-link" href="/blog/">FRONTPAGE</a><a class="page-link" href="/about/">ABOUT ME</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+    <div class="drawer-components">
+      <hr>
+      <div class="categories" style="flex: 2;">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 5)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 26 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OPERATING_SYSTEM/">OPERATING_SYSTEM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 14 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 8 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 1 
+            )
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      ( 
+      📂: 3)
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 2 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 7 
+            )
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            (📄: 5 
+            📂: 1)
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      (📄: 8 
+      )
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view" style="flex: 1;">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin-left: 16px;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            3 <a id="recent-3" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            4 <a id="recent-4" style="overflow: hidden;"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div style="bottom: 10px; height: 7vh; flex: 1;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">알고리즘 수학 기본 - Counting</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2021-07-06T16:53:58+09:00" itemprop="datePublished">Jul 6, 2021
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#셈-Counting' id='markdown-toc-0-셈-Counting'>셈(Counting)</a><ul><li><a href='#합과-곱-규칙-Rules-of-sum-and-product' id='markdown-toc-0-합과-곱-규칙-Rules-of-sum-and-product'>합과 곱 규칙(Rules of sum and product)</a><ul>
+</ul></li> 
+<li><a href='#문자열-Strings' id='markdown-toc-0-문자열-Strings'>문자열(Strings)</a></li> 
+<li><a href='#순열-Permutations' id='markdown-toc-0-순열-Permutations'>순열(Permutations)</a></li> 
+<li><a href='#조합-Combinations' id='markdown-toc-0-조합-Combinations'>조합(Combinations)</a></li> 
+<li><a href='#이항-계수-Binomial-coefficients' id='markdown-toc-0-이항-계수-Binomial-coefficients'>이항 계수(Binomial coefficients)</a></li> 
+<li><a href='#이항-한계-Binomial-bounds' id='markdown-toc-0-이항-한계-Binomial-bounds'>이항 한계(Binomial bounds)</a></li> 
+
+</ul></li> 
+</ol>
+<h1 id='알고리즘을-위한-수학-셈-Counting'>알고리즘을 위한 수학 - 셈(Counting)</h1>
+
+<p><em>Introduction to Algorithm, 3rd, Cormen을 토대로 정리한 내용입니다.</em></p>
+
+<p>일부 표기나 개념이 기존의 수학과 다를 수도 있으므로, 여기서 배운 내용은 단순 해당 책(Introduction to Algorithm, 3rd, Cormen)의 부록으로 취급해야한다.</p>
+
+<p>이 장에서는 조합론의 표기법, 정의, 속성 같은 기본적인 것만 배운다.</p>
+
+<p>들어가기에 앞서 집합에 대한 기본적인 이해가 필요하므로 알고리즘을 위한 수학 -집합 편을 보고 오는 것을 추천한다.</p>
+
+<hr />
+
+<h2 id='셈-Counting'>셈(Counting)</h2>
+
+<p><strong>셈 이론</strong>은 예를 들어, “n 개의 원소를 다른 순서대로 나열하는 방법” 같은 “수가 얼마나 되는가?”에 대한 물음을 전부 세보지 않고 알기 위한 이론이다.</p>
+
+<h3 id='합과-곱-규칙-Rules-of-sum-and-product'>합과 곱 규칙(Rules of sum and product)</h3>
+
+<p><strong>조합론(combinatorics)</strong>에서 셈하고 싶은 원소들의 집합을 서로소 집합의 합이나 집합들의 곱집합으로 나타낼 수 있다는 규칙이 합 규칙과 곱 규칙이다.</p>
+
+<h4 id='합-규칙-Rules-of-sum'>합 규칙(Rules of sum)</h4>
+
+<p>합 규칙은 <strong>두 서로소 집합에서 원소를 하나 고르는 경우의 수는 각 집합의 카디널리티의 합이라는 규칙</strong>이다.</p>
+
+<p>쉽게 말해 여러 원소를 가지고 있는 집합들에서 원소를 집합 전체에서 하나 고르는 경우의 수는, 각 집합에서 원소를 하나 고르는 경우의 수를 모두 더한 값, 즉 각 집합의 원소의 수를 모두 더한 값과 같다는 규칙이다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>수학적으로 집합 A, B를 공통되는 원소가 없는 두 유한 집합이라고 가정하면 $</td>
+      <td>A \cup B</td>
+      <td>=</td>
+      <td>A</td>
+      <td>+</td>
+      <td>B</td>
+      <td>$가 되며, 예를 들자면 듣고 싶은 과목의 인강이 A 사이트에 7개, B 사이트에 5개 있다면, 내가 고를 수 있는 인강은 총 8+5 = 12개가 될 것이다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id='곱-규칙-Rules-of-product'>곱 규칙(Rules of product)</h4>
+
+<p>곱 규칙은 <strong>순서쌍을 고르는 경우의 수가 첫번째 원소의 경우의 수와 두번째 원소의 경우의 수의 곱이라는 규칙</strong>이다.</p>
+
+<p>즉, 여러 원소를 가지고 있는 집합들에서 원소를 집합 마다 하나씩 고르는 경우의 수는, 각 집합에서 원소를 하나 고르는 경우의 수를 모두 곱한 값, 즉 각 집합의 원소의 수를 모두 곱한 값과 같다는 규칙이다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>수학적으로 $</td>
+      <td>A\times B</td>
+      <td>=</td>
+      <td>A</td>
+      <td>\cdot</td>
+      <td>B</td>
+      <td>$ 로 나타내며, 예를 들자면, 아이스크림 종류가 4개, 토핑 종류가 3개라면, 총 12개 종류의 색다른 아이스크림을 즐 길 수 있다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id='문자열-Strings'>문자열(Strings)</h3>
+
+<p>유한 집합 S에 대한 <strong>문자열은 S의 원소들의 수열을 의미</strong>한다. 예를 들어, 길이가 3인 이진 문자열(binary string)은 000,001,010,011,100,110,111 총 8개가 존재 가능하다. 이때 n 만큼의 길이를 가진 문자열을 n-문자열이라고도 말한다.</p>
+
+<p>문자열 s의 <strong>부분문자열(substring)</strong> s’은 s의 연속된 원소로 이루어진 순차 수열이다. 예를 들어, 010은 01011110의 부분 문자열일 수 있다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>집합 S에 대한 k-문자열을 k-튜플의 곱집합 $S^k$의 원소로 볼 수 있다. 즉, $</td>
+      <td>S</td>
+      <td>^k$개 만큼의 k 길이 문자열이 존재한다. 에를 들어 이진 k-문자열의 수는 $2^k$이며, 직관적으로, 생각하자면, 선택지 n개를 총 k번 선택하는 가지수를 의미하므로 $n\cdot n\cdots n = n^k$를 통해 경우의 수를 구한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id='순열-Permutations'>순열(Permutations)</h3>
+
+<p>유한 집합 S의 순열(Permutations)은 <strong>중복이 존재하지 않는 S의 원소들의 순서있는 수열</strong>을 의미한다.</p>
+
+<p>예를 들어 $S={a,b,c}$의 순열은 abc, acb, bac, bca ,cab, cba 총 6개의 순열을 가지고 있다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>순열의 경우의 수는 총 $</td>
+      <td>S</td>
+      <td>!$만큼 가지고 있는데, 각각 순서의 경우의 수를 알아보자면, 첫번째 원소의 경우의 수가 $</td>
+      <td>S</td>
+      <td>$개, 두번째는 중복을 허용하지 않으므로 첫번째에 고른 원소를 제외한 $</td>
+      <td>S</td>
+      <td>-1$개, 세번째의 경우의 수는 $</td>
+      <td>S</td>
+      <td>-2$개로, 최종적으로 마지막 순서의 원소가 1개 남을때 까지 점점 줄어드는 방식이기 때문이다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>집합 S에 대한 k-순열은 S의 k개의 원소들의 중복이 존재하지 않는 순서있는 수열인데, 예를 들어 $S={a,b,c}$의 2-순열은 ab, ac, ba, bc, ca, cb 총 6개이다.</p>
+
+<p>n개의 원소를 가진 집합에 대한 k-순열은 다음과 같은 방법으로 구한다.<br />
+\(n(n-1)(n-2)\cdots(n-k+1)=\frac{n!}{(n-k)!}
+\label{eq:kPermuNSet}
+\tag{1}\)<br />
+기본적인 순열과 달리, 1부터 k번째 까지 경우의 수를 구하기 때문이다.</p>
+
+<h3 id='조합-Combinations'>조합(Combinations)</h3>
+
+<p><strong>n개의 조합 S에 대한 k-조합은 집합 S의 k-부분 집합</strong>을 의미한다. 예를 들어 ${a,b,c,d}$의 2-조합은 $ab, ac, ad, bc, bd, cd$, 총 6개이다.</p>
+
+<p>k-조합은 집합 내에서 k개의 구분되는 원소를 고름으로 생성할 수 있으며, n-집합의 k-조합의 경우의 수는 k-수열을 구하는 식으로 표현할 수 있다.</p>
+
+<p>모든 k-조합은 k-순열에, 순서가 다르지만 원소가 동일한 순열은 제외하는 것과 같으므로, 이를 이용해 아래와 같은 식으로 조합의 경우의 수를 나타낼 수 있다.<br />
+\(\frac{n!}{k!(n-k)!}
+\label{eq:kCombNSet}
+\tag{2}\)<br />
+k=0일 때는, 조합의 경우의 수가 1인데, 이를 통해 0!=1임을 알 수 있다.</p>
+
+<h3 id='이항-계수-Binomial-coefficients'>이항 계수(Binomial coefficients)</h3>
+
+<p>$\begin{pmatrix}<br />
+ n\k<br />
+\end{pmatrix}$ 표기는  $x^ay^b$ 같은 이항식을 전개했을 때 각 항의 계수이며, 조합론에서는 n-집합에 대한 k-조합의 경우의 수를 의미한다.</p>
+
+<p>우리가 앞서 배웠던 조합의 식을 이용해 아래와 같은 식이 성립한다.<br />
+\(\begin{pmatrix}
+ n\\k
+\end{pmatrix} = \frac{n!}{k!(n-k)!}\)<br />
+또한, n-k와 k값에 대하여 아래처럼 서로 동일한 값을 가진다.<br />
+\(\begin{pmatrix}
+ n\\k
+\end{pmatrix} = 
+\begin{pmatrix}
+ n\\n-k
+\end{pmatrix}
+\label{eq:symmetericK}
+\tag{3}\)<br />
+이를 <strong>이항 계수(Binomial coefficients)</strong>라고도 부르는데, 이는 이항식을 전개했을 때의 전체 식을 알 수있는 이항 정리(binomial expansion)에서 유래되었다.</p>
+
+<ul>
+  <li>이항 정리는 아래와 같이 두 개의 항으로 되어있는 식이 전개되었을 때 나오는 항들의 계수를 알 수 있는 정리이다. 즉 이항 계수는 여러 항 중에 하나만, 이항 정리는 전체 전개식을 표현한다.</li>
+</ul>
+
+\[(x+y)^n=\sum^n_{k=0}\begin{pmatrix}
+ n\\k
+\end{pmatrix}x^ky^{n-k}
+\label{eq:binomialExpansion}
+\tag{4}\]
+
+<p>이항 정리는 x=y=1일때 특별한 성질을 가지는데, 다음과 같은 꼴로 변한다.<br />
+\(2^n=\sum^n_{k=0}\begin{pmatrix}
+ n\\k
+\end{pmatrix}\)</p>
+
+<p>이 공식은 이진 n-문자열의 경우의 수를 구하는 방법과 같다.</p>
+
+<p>예시로, n=1, 즉 길이 1의 이진 문자열은 0 또는 1 두개이며, n=2일때는 00, 01, 10, 11 총 4개 이다. 이 경우의 수는 위 이항정리에 넣어 구할 수 있음을 알 수 있다.</p>
+
+<p>$\begin{pmatrix}<br />
+ n\k<br />
+\end{pmatrix}$ 이진 n-문자열은 정확히 k개의 1을 포함한다. 왜냐하면 $\begin{pmatrix}<br />
+ n\k<br />
+\end{pmatrix}$가 n개의 위치가 존재할 때 k개를 선택하는 방법(=1의 자리)의 경우의 수이기 때문이다.</p>
+
+<p>예시로, n=3, k=1일때는 1을 한개만 사용하여 만들 수 있는 이진 3-문자열의 경우의 수이다. (001, 010, 100, 총 3개)</p>
+
+<p>이런식으로 이항 계수는 여러 곳에서 사용될 수 있다.</p>
+
+<h3 id='이항-한계-Binomial-bounds'>이항 한계(Binomial bounds)</h3>
+
+<p>유한합의 범위 제한처럼(알고리즘을 위한 수학 유한합편 참조) 이항 계수의 범위를 제한할 때, 하한값의 경우 아래와 같이 구할 수 있다.<br />
+\(\begin{pmatrix}
+ n\\k
+\end{pmatrix}=\frac{n(n-1)\cdots(n-k+1)}{k(k-1)\cdots 1}
+\\=(\frac{n}{k})(\frac{n-1}{k-1})\cdots(\frac{n-k+1}{1})
+\\\geq (\frac{n}{k})^k\)</p>
+
+<p>스털링 근사를 이용해 얻은 $k! \geq (k/e)^k$을 통해 아래와 같은 상한값을 얻을 수 있다.</p>
+
+<ul>
+  <li>스털링 근사는 수학에서 팩토리얼 값을 추정하는 방법이다. $n! \sim \sqrt{2\pi n}(n/e)^n$ 자세한 내용은 추가 예정</li>
+</ul>
+
+\[\begin{pmatrix}
+ n\\k
+\end{pmatrix}=\frac{n(n-1)\cdots(n-k+1)}{k(k-1)\cdots 1} \leq \frac{n^k}{k!} \leq (\frac{en}{k})^k
+\label{eq:upperBound}
+\tag{5}\]
+
+<p>모든 n보다 작은 양의 정수 k에 대해 귀납적 방법으로 다음과 같은 상한 값도 얻을 수 있다.</p>
+
+\[\begin{pmatrix}
+ n\\k
+\end{pmatrix} \leq (\frac{n^n}{k^k(n-k)^{n-k}})
+\label{eq:BinomialBoundByInduction}
+\tag{6}\]
+
+<p>$0^0=1$로 가정하고, $k=\lambda n,\ 0\leq \lambda \leq 1$일때, 다음과 같은 상한값을 얻을 수 있다.<br />
+\(\begin{pmatrix}
+ n\\k
+\end{pmatrix} \leq (\frac{n^n}{(\lambda n)^{\lambda n}((1-\lambda)n)^{(1-\lambda)n}})\\
+=((\frac{1}{\lambda})^\lambda(\frac{1}{1-\lambda})^{1-\lambda})^n=2^{nH(\lambda)}\)</p>
+
+<p>이를 통해 아래와 같은 식을 얻을 수 있는데</p>
+
+<p>\(H(\lambda)=-\lambda \lg \lambda -(1-\lambda)\lg(1-\lambda)
+\label{eq:binaryEntropyFunction}
+\tag{7}\)<br />
+이는 (이진) 엔트로피 함수(bianary entropy function)이라고 하며, $0\log0 = 0$으로 가정하면 $H(0)=H(1)=0$이 된다.</p>
+
+<ul>
+  <li>이진 엔트로피 함수에 대한 내용 추가 예정</li>
+</ul>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/2021-07-06-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%ED%95%99-counting.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/2021-07-06-알고리즘-수학-counting.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>
