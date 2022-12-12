@@ -41,7 +41,7 @@
             {% if article.tags contains "HIDE" %}            
               {% assign color = site.data.json.tags["HIDE"]["color"] %}
               {% assign background = site.data.json.tags["HIDE"]["background-color"] %}
-              {% include list/hidden-article.html color=color background=background %} 
+              <!--{% include list/hidden-article.html color=color background=background %}-->
             {% else %}
               <li>
                 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
