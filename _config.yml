@@ -39,7 +39,7 @@ static_img_dir: "assets/img"
 static_js_dir: "assets/scripts"
 static_css_dir: "assets/css"
 static_etc_dir: "assets/etc"
-list_item_size: 5
+list_item_size: 12
 
 collections: 
   articles:
