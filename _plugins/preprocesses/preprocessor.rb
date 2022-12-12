@@ -4,7 +4,6 @@ require_relative './common/preprocess_common'
 
 module Preprocessor
   class ArticleConverter < Jekyll::Generator
-    safe true
     include PreprocessObsidian
     include PreprocessFrontmatter
     include PreprocessCommon
