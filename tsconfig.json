@@ -13,6 +13,6 @@
     "outDir": "assets/scripts",
     "typeRoots": ["node_modules/@types", "scripts/types"]
   },
-  "include": ["js/**/*"],
+  "include": ["scripts/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

@@ -63,11 +63,10 @@ div.my-description {
   overflow: hidden;
   flex-direction: column;
   justify-content: center;
-  width: calc(22vw - 50px);
-  max-width: 450px;
+  max-width: 300px;
   height: 80vh;
   background-color: white;
-  padding: 10px; }
+  padding: 5px; }
   #drawer hr {
     border: 1px solid #e8e8e8; }
   @media screen and (max-width: 1240px) {
@@ -78,29 +77,48 @@ div.my-description {
     display: flex; }
   #drawer.close {
     display: none; }
-  #drawer .drawer-components ul {
+  #drawer div.categories {
+    height: 45vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Track */
+    /* Handle */
+    /* Handle on hover */ }
+    #drawer div.categories::-webkit-scrollbar {
+      width: 7px; }
+    #drawer div.categories::-webkit-scrollbar-track {
+      background: #f1f1f1; }
+    #drawer div.categories::-webkit-scrollbar-thumb {
+      background: #888; }
+    #drawer div.categories::-webkit-scrollbar-thumb:hover {
+      background: #555; }
+  #drawer ul {
     list-style-type: none; }
-  #drawer .drawer-components ul.category-list {
+  #drawer ul.category-list {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 0px; }
-    #drawer .drawer-components ul.category-list > li h3 {
+    #drawer ul.category-list > li h3 {
       cursor: pointer; }
-    #drawer .drawer-components ul.category-list span.category-drop-down {
+    #drawer ul.category-list span.category-drop-down {
       font-size: xx-small;
       display: table-cell;
       vertical-align: middle;
       padding-right: 5px; }
-    #drawer .drawer-components ul.category-list a.category-link {
+    #drawer ul.category-list a.category-link {
       background-color: lightgray;
       padding: 0px 1px;
       border-radius: 2px; }
-      #drawer .drawer-components ul.category-list a.category-link:hover {
+      #drawer ul.category-list a.category-link:hover {
         text-decoration: none; }
-  #drawer .drawer-components ul.category-list ul.child-category-list {
+  #drawer ul.category-list ul.child-category-list {
     margin: 0; }
-    #drawer .drawer-components ul.category-list ul.child-category-list li h4 {
+    #drawer ul.category-list ul.child-category-list li h4 {
       cursor: pointer; }
+  #drawer div.recent-view {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
 
 .name {
   display: inline-block;

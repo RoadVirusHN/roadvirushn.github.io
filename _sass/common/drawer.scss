@@ -71,11 +71,10 @@ div.my-description {
   overflow: hidden;
   flex-direction: column;
   justify-content: center;
-  width: calc(22vw - 50px);
-  max-width: 450px;
+  max-width: 300px;
   height: 80vh;
   background-color: white;
-  padding: 10px;
+  padding: 5px;
   hr {
     border: 1px solid $grey-color-light;
   }
@@ -89,38 +88,62 @@ div.my-description {
   &.close {
     display: none;
   }
-  & .drawer-components {
-    & ul {
-      list-style-type: none;
+  & div.categories{
+    height: 45vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 7px;
+    }    
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+    }     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888; 
+    }    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555; 
     }
-    & ul.category-list {
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-left: 0px;
-      & > li h3 {
-        cursor: pointer;
-      }
-      span.category-drop-down{
-        font-size: xx-small;
-        display: table-cell;
-        vertical-align: middle;
-        padding-right: 5px;
-      }
-      a.category-link{
-        background-color: lightgray;
-        padding: 0px 1px;
-        border-radius: 2px;
-        &:hover{
-          text-decoration: none;
-        }
+  }
+  & ul {
+    list-style-type: none;
+  }
+  & ul.category-list {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0px;
+    & > li h3 {
+      cursor: pointer;
+    }
+    span.category-drop-down{
+      font-size: xx-small;
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+    a.category-link{
+      background-color: lightgray;
+      padding: 0px 1px;
+      border-radius: 2px;
+      &:hover{
+        text-decoration: none;
       }
     }
-    & ul.category-list ul.child-category-list {
-      margin: 0;
-      & li h4 {
-        cursor: pointer;
-      }
+  }
+  & ul.category-list ul.child-category-list {
+    margin: 0;
+    & li h4 {
+      cursor: pointer;
     }
+  }    
+
+  & div.recent-view{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
