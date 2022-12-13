@@ -68,7 +68,7 @@ function buildTitle(matches, articleTitle, articleURL) {
     for (const match of matches) {
         articleTitle = articleTitle.replaceAll(new RegExp(match.query, "gi"), (str) => `<mark>${str}</mark>`);
     }
-    titleLink.innerHTML = articleTitle;
+    titleLink.innerHTML = "📄 " + articleTitle;
     titleLink.href = articleURL;
     title.appendChild(titleLink);
     return title;

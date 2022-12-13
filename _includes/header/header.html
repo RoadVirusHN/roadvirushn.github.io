@@ -5,7 +5,7 @@
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <div id="header-wrapper">
     <a class="site-title" rel="author" href="{{ "/blog" | relative_url }}">{{ site.title | escape }}</a>
-    {%- include header/searchbar.html -%}
+
     </div>
 
     {%- if page_paths -%}
@@ -20,6 +20,7 @@
         </label>
 
         <div class="trigger">
+          {%- include header/searchbar.html -%}
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}

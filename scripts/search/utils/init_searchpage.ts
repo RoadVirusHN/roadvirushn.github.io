@@ -126,7 +126,7 @@ function buildTitle(
       (str: string) => `<mark>${str}</mark>`
     );
   }
-  titleLink.innerHTML = articleTitle;
+  titleLink.innerHTML = "📄 " + articleTitle;
   titleLink.href = articleURL;
   title.appendChild(titleLink);
   return title;
