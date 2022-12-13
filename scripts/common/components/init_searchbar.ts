@@ -4,6 +4,7 @@ import { TagInfo } from "../../types/search_types";
 
 const tagData = tagJson as TagInfo;
 let queryTags = [] as string[];
+const searchBarPlaceholder = 'Prefix "#" to add Tag.';
 export default function initSearchbar(): void {
   const searchBar = document.getElementById("search-box") as HTMLInputElement;
   const searchWrapper = document.getElementById(
@@ -14,12 +15,16 @@ export default function initSearchbar(): void {
   ) as HTMLInputElement;
   const magnifier = searchWrapper.querySelector(".inner-search") as HTMLElement;
   magnifier.addEventListener("click", () => {
-    form.dispatchEvent(new Event("submit"));
+    if (
+      searchBar.classList.contains("no-query") ||
+      searchBar.classList.contains("inputted")
+    )
+      form.dispatchEvent(new Event("submit"));
   });
   const form = document.getElementById("search-form") as HTMLElement;
   searchBar.addEventListener("focusin", () => {
     if (!searchBar.classList.contains("no-query"))
-      searchBar.placeholder = 'Prefix "#" to add Tag.';
+      searchBar.placeholder = searchBarPlaceholder;
   });
   searchBar.addEventListener("focusout", () => {
     searchBar.placeholder = "";

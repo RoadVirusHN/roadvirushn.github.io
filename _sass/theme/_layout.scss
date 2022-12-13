@@ -23,14 +23,14 @@
   &:visited {
     color: $grey-color-dark;
   }
-  @include media-query($on-palm) {
+  @include media-query(370px) {
     display: none;
   }
 }
 
 .site-nav {
   float: right;
-  line-height: $base-line-height * $base-font-size * 2.25;
+  //line-height: $base-line-height * $base-font-size * 2.25;
 
   .nav-trigger {
     display: none;
@@ -50,7 +50,7 @@
     }
   }
 
-  @include media-query($on-palm) {
+  @include media-query($on-palm + 180px) {
     position: absolute;
     top: 9px;
     right: $spacing-unit / 2;

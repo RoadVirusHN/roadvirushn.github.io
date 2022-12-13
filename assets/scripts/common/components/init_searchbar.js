@@ -1,18 +1,21 @@
 import tagJson from "../../../../_data/json/tags.json";
 const tagData = tagJson;
 let queryTags = [];
+const searchBarPlaceholder = 'Prefix "#" to add Tag.';
 export default function initSearchbar() {
     const searchBar = document.getElementById("search-box");
     const searchWrapper = document.getElementById("search-wrapper");
     const tagHolder = searchWrapper.querySelector("#tag-holder");
     const magnifier = searchWrapper.querySelector(".inner-search");
     magnifier.addEventListener("click", () => {
-        form.dispatchEvent(new Event("submit"));
+        if (searchBar.classList.contains("no-query") ||
+            searchBar.classList.contains("inputted"))
+            form.dispatchEvent(new Event("submit"));
     });
     const form = document.getElementById("search-form");
     searchBar.addEventListener("focusin", () => {
         if (!searchBar.classList.contains("no-query"))
-            searchBar.placeholder = 'Prefix "#" to add Tag.';
+            searchBar.placeholder = searchBarPlaceholder;
     });
     searchBar.addEventListener("focusout", () => {
         searchBar.placeholder = "";
