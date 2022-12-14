@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Git 파일 기록 지우기 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Git 파일 기록 지우기" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/etc/Git%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B0%EB%A1%9D%20%EC%A7%80%EC%9A%B0%EA%B8%B0.html" />
+<meta property="og:url" content="http://localhost:4000/articles/etc/Git%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B0%EB%A1%9D%20%EC%A7%80%EC%9A%B0%EA%B8%B0.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-07-12T17:21:08+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Git 파일 기록 지우기" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-12T17:21:08+09:00","datePublished":"2022-07-12T17:21:08+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"Git 파일 기록 지우기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/etc/Git%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B0%EB%A1%9D%20%EC%A7%80%EC%9A%B0%EA%B8%B0.html"},"url":"http://localhost:4000/articles/etc/Git%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B0%EB%A1%9D%20%EC%A7%80%EC%9A%B0%EA%B8%B0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Git 파일 기록 지우기</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-07-12T17:21:08+09:00" itemprop="datePublished">Jul 12, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#상황별-Git-파일-기록-지우기' id='markdown-toc-0-상황별-Git-파일-기록-지우기'>상황별 Git 파일 기록 지우기</a><ul><li><a href='#공통적인-필요-조치와-팁들' id='markdown-toc-0-공통적인-필요-조치와-팁들'>공통적인 필요 조치와 팁들</a></li> 
+<li><a href='#잘못된-파일을-git-add' id='markdown-toc-0-잘못된-파일을-git-add'>잘못된 파일을 git add</a></li> 
+<li><a href='#잘못된-파일을-git-commit' id='markdown-toc-0-잘못된-파일을-git-commit'>잘못된 파일을 git commit</a><ul>
+</ul></li> 
+<li><a href='#잘못된-파일을-git-push' id='markdown-toc-0-잘못된-파일을-git-push'>잘못된 파일을 git push</a><ul>
+</ul></li> 
+<li><a href='#잘못된-파일을-여러-번의-브랜치-생성-git-push-이후' id='markdown-toc-0-잘못된-파일을-여러-번의-브랜치-생성-git-push-이후'>잘못된 파일을 여러 번의 브랜치 생성, git push 이후</a></li> 
+<li><a href='#누군가가-나의-레포지토리를-Clone-Fork하여-널리-퍼진-이후' id='markdown-toc-0-누군가가-나의-레포지토리를-Clone-Fork하여-널리-퍼진-이후'>누군가가 나의 레포지토리를 Clone, Fork하여 널리 퍼진 이후</a></li> 
+
+</ul></li> 
+</ol>
+<h1 id='Git-파일-기록-지우기'>Git 파일 기록 지우기</h1>
+
+<hr />
+
+<p>Git을 이용할 때 실수로 잘못된 파일이 올라가면 곤란한 경우가 있다.</p>
+
+<p>내가 겪은 경험은 Javascript의 <code class="language-plaintext highlighter-rouge">node_modules</code>폴더가 대표적인데, 이 안에는 프로젝트에서 사용할 패키지들의 수많은 파일과 폴더들이 존재하므로 보통 Git에 올리지 않고, 팀원들이 각자 pull할때마다 <code class="language-plaintext highlighter-rouge">npm install</code> 커맨드를 통해 갱신하는게 일반적인 방법이다. 또 다른 예로, AWS 강의를 들을 때, 개인의 AWS private key이 올라가, 누군가 제 3자가 EC2 인스턴스를 이용해 비트코인 채굴에 악용하여, 금전적 피해를 입은 사례도 있었다.</p>
+
+<p>아무리 개인의 사소한 개인의 저장소여도, 공개 저장소의 키워드 등을 탐지하는 봇을 이용해 공격을 시도하는 해커들이 존재하므로, 방심하면 안된다. 이렇게, 생각보다 중요하고 까다로운 과정이므로 이런식으로 글을 남겨 기록하게 되었다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">확인 명령어</th>
+      <th style="text-align: center">취소 명렁어</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>git add 전</strong></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">git check-ignore &lt;file&gt;</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">.gitignore</code> 파일 작성</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>git add 후</strong></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">git status</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">git restore --staged &lt;file&gt;</code>, <code class="language-plaintext highlighter-rouge">git reset</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>git commit 후</strong></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">git log -p</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">git reset --hard</code>, <code class="language-plaintext highlighter-rouge">git reset --soft</code>, <code class="language-plaintext highlighter-rouge">git reset HEAD~1</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>git push 후</strong></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>git clone, fork 후</strong></td>
+      <td style="text-align: center">😱</td>
+      <td style="text-align: center">😱</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id='상황별-Git-파일-기록-지우기'>상황별 Git 파일 기록 지우기</h2>
+
+<div class="callout callout-warning" id="callout-400fb8b1-449e-4d66-913d-4987d64a5c71">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>warning</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>실무적으로 큰 사고가 났을 때는 대응하기 위해 📄<span class='link-warning'>
+      <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository" class="wikilink externallink">공식적인 정보</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://docs.github.com/en/aut..."</em>로
+        <button onclick="window.open('https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository','_blank'); return false;">이동</button>?
+      </span>
+    </span>를 참조하기 바란다.</p>
+
+</div>
+    </div>
+    </div>
+<h3 id='공통적인-필요-조치와-팁들'>공통적인 필요 조치와 팁들</h3>
+
+<p>알아보기 앞서, 조치를 취하기 전, 중, 후의 공통적인 조치들을 알아보자.</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">.gitignore</code> 파일을 제대로 작성하자.</p>
+
+    <p>🔵 gitignore 파일 작성법, <code class="language-plaintext highlighter-rouge">git check-ignore</code> 명령어, 전역 제외 설정 등의 도움되는 정보는  📝<span class="preview-wrapper">
+      <a href="" class="wikilink">.gitignore 작성법</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 확인</p>
+  </li>
+  <li>
+    <p>프로젝트 시작부터 env 세팅을 하자.</p>
+
+    <ul>
+      <li>env 세팅에 대한 이야기는 나중에 포스트로 업로드 예정</li>
+    </ul>
+  </li>
+  <li>
+    <p>코드 리뷰를 꼼꼼히 하자.</p>
+  </li>
+  <li>
+    <p>공용되는 API 키나 암호화 키들은 언제나 프로젝트 파일 바깥에 보관, 암호는 서비스 별로 다르게 사용하자.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">git add .</code>, <code class="language-plaintext highlighter-rouge">git add *</code> 그리고 <code class="language-plaintext highlighter-rouge">git add -A</code> 사용 금지, 프로젝트에 따라 다르겠지만 보통 파일 별로 코딩 후 커밋하자.</p>
+
+    <p>🔵 GUI GIT 프로그램, <code class="language-plaintext highlighter-rouge">git add --interactive</code> 같이 겉으로 보이는 정보량이 많은 방법을 사용하는 것도 도움이 될 수 있다.</p>
+  </li>
+  <li>
+    <p>가장 중요한 마지막으로, ↩<a href="###잘못된 파일을 git push">git push 이후</a> 조치 이후 부터 <strong>유출된 민감한 정보(암호 등) 등을 꼭 변경하고, Github 고객지원 팀에 연락하여 캐쉬된 데이터와 참조 등을 지워야 한다.</strong></p>
+  </li>
+</ol>
+
+<h3 id='잘못된-파일을-git-add'>잘못된 파일을 git add</h3>
+
+<hr />
+
+<p>민감한 정보가 Staging<sup id="fnref:Staging" role="doc-noteref"><a href="#fn:Staging" class="footnote" rel="footnote">1</a></sup>된 상태이다. <code class="language-plaintext highlighter-rouge">git status</code>를 통하여 먼저 확인해보자.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status
+On branch main
+Changes to be committed:
+  <span class="o">(</span>use &amp;#34<span class="p">;</span>git restore <span class="nt">--staged</span> &amp;#38<span class="p">;</span><span class="c">#60;file&amp;#38;#62;...&amp;#34; to unstage)</span>
+        modified:   .gitignore
+        new file:   can_upload.md
+        new file:   no_upload.md
+        deleted:    test.md
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">.gitignore</code> 파일 설정이 잘못되어 올라가선 안될 파일 <code class="language-plaintext highlighter-rouge">no_upload.md</code>가 올라가버린 상황이다.</p>
+
+<p>이때의 대처는 쉽다. Staging 영역에서 특정 파일을 빼려면, <code class="language-plaintext highlighter-rouge">git restore --stage &lt;file&gt;</code> 또는 <code class="language-plaintext highlighter-rouge">git reset HEAD &lt;file&gt;</code> 명령어를 통해 가능하다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git restore <span class="nt">--staged</span> no_upload.md
+<span class="nv">$ </span>git status
+On branch main
+Changes to be committed:
+  <span class="o">(</span>use &amp;#34<span class="p">;</span>git restore <span class="nt">--staged</span> &amp;#38<span class="p">;</span><span class="c">#60;file&amp;#38;#62;...&amp;#34; to unstage)</span>
+        modified:   .gitignore
+        new file:   can_upload.md
+        deleted:    test.md
+
+Untracked files:
+  <span class="o">(</span>use &amp;#34<span class="p">;</span>git add &amp;#38<span class="p">;</span><span class="c">#60;file&amp;#38;#62;...&amp;#34; to include in what will be committed)</span>
+        no_upload.md
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">no_upload.md</code> 파일이 Staging 영역에서 빠져나와 Untracked files에 추가된 것을 알 수 있다.</p>
+
+<p>참고로, <code class="language-plaintext highlighter-rouge">git reset</code> 명령어를 사용하면 모든 파일들이 전부 빠지게 된다.</p>
+
+<p>이제, <code class="language-plaintext highlighter-rouge">.gitignore</code> 파일을 적절히 설정해준 뒤, 다시 작업을 하면 된다.</p>
+
+<h3 id='잘못된-파일을-git-commit'>잘못된 파일을 git commit</h3>
+
+<hr />
+
+<p>이번에는 Staging됐을 때 조차 눈치채지 못하고, Commit은 했되, 아직 push하지 못한 상태를 알아보자.</p>
+
+<p>다행히 당신의 파일들은 컴퓨터에 존재하는 로컬 저장소에만 존재하고, 아직 원격 저장소에 올라가지 않은 상태이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">git log -p</code>를 이용해 자세한 내용을 알아보자.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git log <span class="nt">-p</span>
+commit aa4bf546e374e8e4bf<span class="k">************</span> <span class="o">(</span>HEAD -&amp;#38<span class="p">;</span><span class="c">#62; main)</span>
+Author: Junseok YUN &amp;#38<span class="p">;</span><span class="c">#60;************@gmail.com&amp;#38;#62;</span>
+Date:   Tue Jan 11 10:40:21 2022 +0900
+
+    wrong commit
+...
+diff <span class="nt">--git</span> a/no_upload.md b/no_upload.md
+new file mode 100644
+index 0000000..388e2d7
+<span class="nt">---</span> /dev/null
++++ b/no_upload.md
+@@ <span class="nt">-0</span>,0 +1 @@
++No! don&amp;#39<span class="p">;</span>t upload it!
+<span class="se">\ </span>No newline at end of file
+
+</code></pre></div></div>
+<p>잘못된 파일인 <code class="language-plaintext highlighter-rouge">no_upload.md</code>가 올라간 것을 알 수 있다.</p>
+
+<p>이 과정 중에 조심해야할 점은, 이때 잘못된 파일이 올라갔다면, <code class="language-plaintext highlighter-rouge">.gitignore</code> 파일을 수정하여도 제외되지 않는다는 점이다. 즉, 최초로 잘못 올라간 commit부터 조치해야 한다.</p>
+
+<h4 id='잘못된-파일을-Commit에서-삭제'>잘못된 파일을 Commit에서 삭제</h4>
+
+<h4 id='바로-이전-commit-제거'>바로 이전 commit 제거</h4>
+
+<p>가장 최신의 commit이 잘못되어 있다면, 간단하게 <code class="language-plaintext highlighter-rouge">git reset HEAD~1</code>[^HEAD~n]로 가능하다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset HEAD~1
+
+</code></pre></div></div>
+<p>이제, 가장 최신의 commit은 지워졌으며, 이후에, 잘못을 고친 뒤, 다시 모든 파일을 commit하면 된다.</p>
+
+<p>추가로, <code class="language-plaintext highlighter-rouge">--hard</code>, <code class="language-plaintext highlighter-rouge">--soft</code> 플래그를 이용할 수 있다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset <span class="nt">--hard</span> HEAD~1
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">--hard</code> 플래그는 해당 commit의 모든 수정과 추가된 파일을 지워버린다. <strong>즉, 방금 당신이 commit 했던 작업한 모든 파일이 날아간다.</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset <span class="nt">--soft</span> HEAD~1
+
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">--soft</code> 플래그를 사용하면 당신이 작업한 파일들은 commit에만 빠지며, 수정한 작업과 파일들은 여전히 존재하며 심지어 staging 되어있는 상태이다.</p>
+
+<p>즉, 그대로 다시 <code class="language-plaintext highlighter-rouge">git commit</code> 명령어를 입력하면, 방금 했던 실수를 재현할 수 있을 것이다. 앞서 설명했던 ↩<a href="###잘못된 파일을 git add">git add 이후</a> 조치가 필요하다.</p>
+
+<h4 id='여러번-이전-commit-제거'>여러번 이전 commit 제거</h4>
+
+<p>여러번 이전 commit을 제거하고 싶다면, 잘못된 commit의 SHA 값을 이용하거나, 해당 commit과 현재 상태의 차이 만큼 뒤의 숫자를 n만큼 늘려 <code class="language-plaintext highlighter-rouge">HEAD~n</code>을 reset 시키면 된다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset HEAD~5
+
+git reset 06b48c9d7880c70f9501611<span class="k">************</span><span class="o">(</span>돌아가고 싶은 commit의 SHA<span class="o">)</span>
+
+</code></pre></div></div>
+<blockquote>
+  <p>❔ 잘못된 파일을 추가한 commit 하나만 지우고 싶은가? 모든 commit들은 이전 commit을 참조하는 형식으로 생성되기 때문에 그건 불가능하다.</p>
+</blockquote>
+
+<h3 id='잘못된-파일을-git-push'>잘못된 파일을 git push</h3>
+
+<hr />
+
+<p>당신이 원하지 않던 파일이 원격 저장소의 기록에 올라가게 되고, 이제부터 문제가 복잡해지기 시작한다.</p>
+
+<p>저장소가 공개 저장소일 경우, 단순히 저장소 뿐만 아니라 Fork, Clone, 웹 아카이브, 웹 캐쉬 등으로 남기 때문에, 결국 가장 확실한 방법은 민감한 정보를 바꾼 뒤, 저장소를 날리는 것이다.</p>
+
+<p>물론, 지금까지의 작업했던 브랜치와 커밋은 날아가게 되며, 이슈, 프로젝트, 마일스톤, PR 등을 옮기는 것도 불가능한 것은 아니지만 많은 시간과 노력이 필요하다.</p>
+
+<hr />
+
+<p>🔵 <strong>NOTE</strong></p>
+
+<p>이슈 이동, 프로젝트 이동은 📄<span class='link-warning'>
+      <a href="https://docs.github.com/" class="wikilink externallink">공식문서</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://docs.github.com/"</em>로
+        <button onclick="window.open('https://docs.github.com/','_blank'); return false;">이동</button>?
+      </span>
+    </span> 참조</p>
+
+<hr />
+
+<h4 id='잘못된-Commit-삭제'>잘못된 Commit 삭제</h4>
+
+<h4 id='잘못된-파일-필터링'>잘못된 파일 필터링</h4>
+
+<h3 id='잘못된-파일을-여러-번의-브랜치-생성-git-push-이후'>잘못된 파일을 여러 번의 브랜치 생성, git push 이후</h3>
+
+<h3 id='누군가가-나의-레포지토리를-Clone-Fork하여-널리-퍼진-이후'>누군가가 나의 레포지토리를 Clone, Fork하여 널리 퍼진 이후</h3>
+
+<p>더이상 막을 수 없다. Clone한 모든 컴퓨터가 본인의 제어 하에 있고, Fork한 모든 저장소가 비공개 + 본인 제어에 존재한 게 아닌 이상, 모두 위에서 말한 조치들을 취하긴 어려우며, 개인용 컴퓨터에 남은 기록은 삭제하여도 복원 가능하다.</p>
+
+<p>그저 유출된 민감한 정보를 곧바로 바꾸는 방법 밖에 없다. 다음에 잘하자!</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:Staging" role="doc-endnote">
+      <p>기존의 SVN과 달리 GIT에는 로컬 저장소와 작업 트리(작업 폴더) 사이에 존재하는 인덱스(Index)라는 가상의 공간이 존재한다. Staging은 <code class="language-plaintext highlighter-rouge">git commit</code> 명령을 통해 인덱스의 파일들(<code class="language-plaintext highlighter-rouge">git add &lt;file&gt;</code>된 파일들)을 로컬 저장소로 파일들을 올리는 과정인데, 이를 통해 여러 파일들을 Staging 한뒤, 한꺼번에 코드를 검사하고, commit할 수 있다. 즉, 이런식으로 잘못된 Commit을 막기위해 만들었다는 의미이다. <a href="#fnref:Staging" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+</div>
+
+  </div><a class="u-url" href="/articles/etc/Git%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B0%EB%A1%9D%20%EC%A7%80%EC%9A%B0%EA%B8%B0.html" hidden></a>
+  <p class="u-path" hidden>_articles/etc/Git 파일 기록 지우기.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

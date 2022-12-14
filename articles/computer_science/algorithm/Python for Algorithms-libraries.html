@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python for algorithms-Libraries | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Python for algorithms-Libraries" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="Python for Algorithms-Libraries" />
+<meta property="og:description" content="Python for Algorithms-Libraries" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/Python%20for%20Algorithms-libraries.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/Python%20for%20Algorithms-libraries.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-19T16:53:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Python for algorithms-Libraries" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-19T16:53:58+09:00","datePublished":"2022-09-19T16:53:58+09:00","description":"Python for Algorithms-Libraries","headline":"Python for algorithms-Libraries","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/Python%20for%20Algorithms-libraries.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/Python%20for%20Algorithms-libraries.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Python for algorithms-Libraries</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-09-19T16:53:58+09:00" itemprop="datePublished">Sep 19, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<h1 id="python-for-algorithms-libraries">Python for Algorithms-Libraries</h1>
+
+<ul id='markdown-toc-0'>
+<li><a href='#Template-py' id='markdown-toc-0-Template-py'>Template.py</a></li> 
+<li><a href='#functools' id='markdown-toc-0-functools'>functools</a><ol><li><a href='#cmp-to-key' id='markdown-toc-0-cmp-to-key'>cmp_to_key()</a></li> 
+<li><a href='#reduce' id='markdown-toc-0-reduce'>reduce()</a></li> 
+<li><a href='#cache' id='markdown-toc-0-cache'>@cache</a></li> 
+
+</ol></li> 
+<li><a href='#itertools' id='markdown-toc-0-itertools'>itertools</a><ol><li><a href='#cycles' id='markdown-toc-0-cycles'>cycles()</a></li> 
+<li><a href='#compress' id='markdown-toc-0-compress'>compress()</a></li> 
+<li><a href='#조합과-순열을-위한-함수들' id='markdown-toc-0-조합과-순열을-위한-함수들'>조합과 순열을 위한 함수들</a></li> 
+
+</ol></li> 
+<li><a href='#bisect' id='markdown-toc-0-bisect'>bisect</a></li> 
+<li><a href='#Collections' id='markdown-toc-0-Collections'>Collections</a><ol><li><a href='#defaultdict' id='markdown-toc-0-defaultdict'>defaultdict</a></li> 
+<li><a href='#OrderedDict' id='markdown-toc-0-OrderedDict'>OrderedDict</a><ol>
+</ol></li> 
+<li><a href='#ChainMap' id='markdown-toc-0-ChainMap'>ChainMap</a></li> 
+
+</ol></li> 
+<li><a href='#중요하고-자주-사용되는-다른-자료-구조들' id='markdown-toc-0-중요하고-자주-사용되는-다른-자료-구조들'>중요하고 자주 사용되는 다른 자료 구조들</a><ol><li><a href='#deque' id='markdown-toc-0-deque'>deque</a></li> 
+<li><a href='#heapq' id='markdown-toc-0-heapq'>heapq</a></li> 
+
+</ol></li> 
+<li><a href='#재귀함수' id='markdown-toc-0-재귀함수'>재귀함수</a></li> 
+</ul>
+<p>간편하게 사용할 수 있는 파이썬 코드들</p>
+
+<h2 id='Template-py'>Template.py</h2>
+<ul>
+  <li>시간 비교, 테스트 케이스 입력과 출력, 정답 비교 등을 한 파일에 담은 template.</li>
+</ul>
+
+<div class="callout callout-note" id="callout-fcbc12d3-4feb-499e-b1a7-2bef6babd129">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>Template.py
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+</span><span class="p">{:</span> <span class="c1">#coding-utf-8}
+# ----------------------------------------------------------------------------
+</span><span class="p">{:</span> <span class="c1">#}
+# Created By  : Junseok Yun(markkorea@naver.com)
+</span><span class="p">{:</span> <span class="c1">#created-by- -junseok-yun-markkorea-naver-com}
+# Created Date: 2022-08-10
+</span><span class="p">{:</span> <span class="c1">#created-date-2022-08-10}
+# ---------------------------------------------------------------------------
+</span><span class="p">{:</span> <span class="c1">#}
+</span><span class="s">""" Python template file for algorithm competition. """</span>
+<span class="c1"># ---------------------------------------------------------------------------
+</span><span class="p">{:</span> <span class="c1">#}
+</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># input = sys.stdin.readline 
+</span><span class="p">{:</span> <span class="c1">#input-sys-stdin-readline}# Change `input` func to `readline` func.
+# print(sys.getrecursionlimit()) 
+</span><span class="p">{:</span> <span class="c1">#print-sys-getrecursionlimit}# Print maximum recursion limit.
+</span><span class="n">sys</span><span class="p">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">987654321</span><span class="p">)</span> <span class="err"> </span> <span class="c1"># Change maximum recursion limit.
+</span>
+<span class="n">arrayOfInput</span> <span class="o">=</span> <span class="p">[</span>
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 입력값 리스트
+</span><span class="p">]</span>
+
+<span class="n">arrayOfAnswer</span> <span class="o">=</span> <span class="p">[</span>
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># 정답 리스트
+</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrayOfInput</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrayOfAnswer</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">raise</span> <span class="nb">Exception</span><span class="p">(</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="sa">f</span><span class="s">"Error: (len(arrayOfInput)=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">arrayOfInput</span><span class="p">)</span><span class="si">}</span><span class="s">) != (len(arrayOfAnswer)=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">arrayOfAnswer</span><span class="p">)</span><span class="si">}</span><span class="s">)"</span><span class="p">)</span>  
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span>
+<span class="err"> </span> <span class="err"> </span> <span class="c1"># your arguments
+</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">result</span>  
+
+<span class="k">print</span><span class="p">(</span><span class="s">"---------------------------------------------------------------------------------------------------------------------------------------"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"|case|               Input               |                correct               |              submitted              | result|time(ms)|"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"======================================================================================================================================="</span><span class="p">)</span>  
+
+<span class="k">for</span> <span class="n">case</span><span class="p">,</span> <span class="p">(</span><span class="n">example_input</span><span class="p">,</span> <span class="n">correct_answer</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">arrayOfInput</span><span class="p">,</span> <span class="n">arrayOfAnswer</span><span class="p">)):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">answer</span> <span class="o">=</span> <span class="n">solution</span><span class="p">(</span><span class="o">*</span><span class="n">example_input</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">responseTime</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">-</span> <span class="n">startTime</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"|</span><span class="si">{</span><span class="n">case</span><span class="si">:</span><span class="o">^</span><span class="mi">4</span><span class="si">}</span><span class="s">|</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">example_input</span><span class="p">)</span><span class="si">:</span><span class="o">^</span><span class="mf">35.35</span><span class="si">}</span><span class="s">|</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">correct_answer</span><span class="p">)</span><span class="si">:</span><span class="o">^</span><span class="mf">37.37</span><span class="si">}</span><span class="s">|</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span><span class="si">:</span><span class="o">^</span><span class="mf">37.37</span><span class="si">}</span><span class="s">|</span><span class="si">{</span><span class="s">'OOO'</span> <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">correct_answer</span> <span class="k">else</span> <span class="s">'XXX'</span><span class="si">:</span><span class="o">*^</span><span class="mi">7</span><span class="si">}</span><span class="s">|</span><span class="si">{</span><span class="n">responseTime</span><span class="si">:</span><span class="o">^</span><span class="mf">8.3</span><span class="n">f</span><span class="si">}</span><span class="s">|"</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">print</span><span class="p">(</span><span class="s">"---------------------------------------------------------------------------------------------------------------------------------------"</span><span class="p">)</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='functools'>functools</h2>
+<p>고차 함수와 콜러블 객체에 대한 연산, 즉 <strong>함수를 입력 값 혹은 출력 값으로 주로 다루는 함수</strong> 들이다.</p>
+
+<p>어렵게 구현해야 할 코드들이 쉽게 쓸 수 있게 되어 있다.</p>
+
+<p>만약 표준 라이브러리를 사용할 수 없는 시험에 대비하여  해당 구현 코드들을 올려놓았다.</p>
+
+<h3 id='cmp-to-key'>cmp_to_key()</h3>
+<p><code class="language-plaintext highlighter-rouge">sorted</code>, <code class="language-plaintext highlighter-rouge">sort</code> 함수를 이용해 정렬 시 비교 기준을 줄 수 있음</p>
+
+<div class="callout callout-example" id="callout-e6d3d44f-82a5-4eb4-b6ea-4d27a71b1a21">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>example</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>title:<code class="language-plaintext highlighter-rouge">cmp_to_key()</code>의 활용 예시<br />
+collapse: true</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cmp_to_key</span>
+
+<span class="n">points</span> <span class="o">=</span> <span class="p">[{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> 
+<span class="c1"># 단순 비교 설정은 lambda를 이용해 가능
+</span><span class="p">{:</span> <span class="c1">#단순-비교-설정은-lambda를-이용해-가능}
+</span><span class="n">points</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">'x'</span><span class="p">])</span> 
+
+<span class="k">def</span> <span class="nf">cmp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+	<span class="c1"># 필요 리턴 값
+</span>	<span class="c1"># 1 : 좌측이 더 큼
+</span>	<span class="c1"># 0 : 두 값이 같음
+</span>	<span class="c1"># -1 : 우측이 더 큼
+</span>	<span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s">'y'</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="s">'x'</span><span class="p">]:</span>
+			<span class="k">return</span> <span class="mi">1</span>
+		<span class="k">elif</span> <span class="n">a</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s">'x'</span><span class="p">]:</span>
+			<span class="k">return</span> <span class="mi">0</span>
+		<span class="k">elif</span> <span class="n">a</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="s">'x'</span><span class="p">]:</span>
+			<span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+	<span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="n">points</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="nb">cmp</span><span class="p">))</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="nb">cmp</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+<span class="c1"># [{'x': 1, 'y': 1}, {'x': 2, 'y': 1}, {'x': 1, 'y': 2}, {'x': 2, 'y': 2}] 'y': 2}]
+</span><span class="p">{:</span> <span class="c1">#x-1-y-1-x-2-y-1-x-1-y-2-x-2-y-2-y-2}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-c502ba1b-05fb-4ac4-8159-39e2b31ae458">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">cmp_to_key()</code>의 구현
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">cmp_to_key</span><span class="p">(</span><span class="n">mycmp</span><span class="p">):</span>
+    <span class="s">'Convert a cmp= function into a key= function'</span>
+    <span class="k">class</span> <span class="nc">K</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span>
+        <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">mycmp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="p">.</span><span class="n">obj</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span>
+        <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">mycmp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="p">.</span><span class="n">obj</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">mycmp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="p">.</span><span class="n">obj</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">mycmp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="p">.</span><span class="n">obj</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+        <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">mycmp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="p">.</span><span class="n">obj</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+        <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">mycmp</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">other</span><span class="p">.</span><span class="n">obj</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">K</span>
+  
+
+<span class="n">points</span> <span class="o">=</span> <span class="p">[{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+
+<span class="k">def</span> <span class="nf">cmp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s">'y'</span><span class="p">]:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="s">'x'</span><span class="p">]:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">elif</span> <span class="n">a</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s">'x'</span><span class="p">]:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="mi">0</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">elif</span> <span class="n">a</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="s">'x'</span><span class="p">]:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>  
+
+<span class="n">points</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="nb">cmp</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-812e2834-5792-4e35-8b7c-d1282387a0f4">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>사용해본 알고리즘 문제
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><span class='link-warning'>
+      <a href="https://www.acmicpc.net/problem/11650" class="wikilink externallink"> 백준 11650번 문제</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.acmicpc.net/proble..."</em>로
+        <button onclick="window.open('https://www.acmicpc.net/problem/11650','_blank'); return false;">이동</button>?
+      </span>
+    </span></p>
+<ul>
+  <li>다른 사람은 x와 y값의 합을 통해 정렬하되, y에 가중치를 적게 주어 (x의 최대값으로 나눈 수준의 가중치) 구별하는 방법으로 빠르게 정렬했다.</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<h3 id='reduce'>reduce()</h3>
+<p>자료 구조 내의 각 요소들을 순서대로 함수를 적용해 누적된 값을 보여준다.</p>
+<ul>
+  <li><span class='link-warning'>
+      <a href="https://www.acmicpc.net/problem/1010" class="wikilink externallink">백준 문제 1010번</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.acmicpc.net/proble..."</em>로
+        <button onclick="window.open('https://www.acmicpc.net/problem/1010','_blank'); return false;">이동</button>?
+      </span>
+    </span></li>
+</ul>
+
+<div class="callout callout-tip" id="callout-5db1b675-11e5-4c00-84a9-7a3a50b1da18">
+      <div class="header">
+        <span class="emoji">💡</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">accumulate</code> 함수와 달리 결과값이 <code class="language-plaintext highlighter-rouge">iterator</code>가 아닌 값이다.
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">accumulate</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">accumulate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">add</span><span class="p">)))</span> <span class="c1"># [1, 3, 6, 10, 15]
+# iterator로 나오므로 list 함수를 통해 list로 바꿈
+</span><span class="p">{:</span> <span class="c1">#iterator로-나오므로-list-함수를-통해-list로-바꿈}
+# add 함수를 만드는 대신 operator로 이용 가능
+</span><span class="p">{:</span> <span class="c1">#add-함수를-만드는-대신-operator로-이용-가능}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-68747700-45cf-4e52-931a-045a7474e365">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">reduce()</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">accumulated</span><span class="p">,</span> <span class="n">element</span><span class="p">:</span> <span class="n">accumulated</span> <span class="o">+</span> <span class="n">element</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span> <span class="c1">#15 
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-080e56d4-3e7b-4ff5-9f82-47551f682a22">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">reduce()</code>와 <code class="language-plaintext highlighter-rouge">accumulate()</code>의 구현
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">initializer</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">initializer</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">initializer</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+<span class="k">def</span> <span class="nf">accumulate</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">operator</span><span class="p">.</span><span class="n">add</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">initial</span>
+    <span class="k">if</span> <span class="n">initial</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+        <span class="k">except</span> <span class="nb">StopIteration</span><span class="p">:</span>
+            <span class="k">return</span>
+    <span class="k">yield</span> <span class="n">total</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">total</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='cache'>@cache</h3>
+<p>함수 위에 데코레이터로 이용하여 손쉽게 <span class="preview-wrapper">
+      <a href="" class="wikilink">Memoization</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>을 구현할 수 있다.</p>
+
+<div class="callout callout-warning" id="callout-5eb34729-0bc0-4824-a502-36b3c744d811">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>최신 버전(3.9++) 파이썬의 함수이므로 지원하지 않는 알고리즘 시험도 많다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<div class="callout callout-example" id="callout-1b101262-44a4-4d33-8f63-419f92dbb6d7">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@cache</code> 데코레이터의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cache</span>
+<span class="n">recursiveCall</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="o">@</span><span class="n">cache</span>
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">global</span> <span class="n">recursiveCall</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">recursiveCall</span> <span class="o">=</span> <span class="n">recursiveCall</span> <span class="o">+</span> <span class="mi">1</span> <span class="err"> </span><span class="c1"># 재귀함수가 실행될 때마다 증가
+</span><span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="k">else</span> <span class="mi">1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"value: "</span><span class="p">,</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="err"> </span><span class="c1"># 3628800
+</span><span class="k">print</span><span class="p">(</span><span class="s">"recursive called : "</span><span class="p">,</span> <span class="n">recursiveCall</span><span class="p">)</span> <span class="err"> </span><span class="c1"># 11
+</span>
+<span class="n">recursiveCall</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"value: "</span><span class="p">,</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="err"> </span><span class="c1"># 120
+</span><span class="k">print</span><span class="p">(</span><span class="s">"recursive called : "</span><span class="p">,</span> <span class="n">recursiveCall</span><span class="p">)</span> <span class="err"> </span><span class="c1"># 0
+# 앞서 실행한 결과가 저장되어 바로 값을 가져옴  
+</span><span class="p">{:</span> <span class="c1">#앞서-실행한-결과가-저장되어-바로-값을-가져옴}
+</span>
+<span class="n">recursiveCall</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"value: "</span><span class="p">,</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span> <span class="err"> </span><span class="c1"># 479001600
+</span><span class="k">print</span><span class="p">(</span><span class="s">"recursive called : "</span><span class="p">,</span> <span class="n">recursiveCall</span><span class="p">)</span> <span class="err"> </span><span class="c1"># 2
+# 앞서 실행한 결과에 추가로 두번만 더 실행해 값을 가져옴
+</span><span class="p">{:</span> <span class="c1">#앞서-실행한-결과에-추가로-두번만-더-실행해-값을-가져옴}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-8be92a91-ef25-475c-ae6a-b947b059830c">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@cache</code> 데코레이터의 구현
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><span class='link-warning'>
+      <a href="https://github.com/python/cpython/blob/main/Lib/functools.py" class="wikilink externallink">코드가 많이 복잡</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://github.com/python/cpyt..."</em>로
+        <button onclick="window.open('https://github.com/python/cpython/blob/main/Lib/functools.py','_blank'); return false;">이동</button>?
+      </span>
+    </span>하므로 구현하여 사용하기 보다는 <span class="preview-wrapper">
+      <a href="" class="wikilink">Memoization</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 구현 파트를 참고하자.</p>
+
+</div>
+    </div>
+    </div>
+<h2 id='itertools'>itertools</h2>
+<p>효율적인 루핑을 위한 이터레이터를 만드는 함수</p>
+
+<h3 id='cycles'>cycles()</h3>
+<p>같은 값을 무한히 반복하여 돌려주는 iterator를 생성</p>
+
+<div class="callout callout-example" id="callout-b7e8abd7-3386-4166-847c-c7d9b14467fa">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">cycles()</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+   
+   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cycle</span><span class="p">(</span><span class="s">"ABCD"</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># ABCD 무한 반복
+</span>   
+   <span class="n">dispenser</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="s">"ABCD"</span><span class="p">)</span>
+   <span class="n">peoples</span> <span class="o">=</span> <span class="mi">10</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">peoples</span><span class="p">):</span>
+       <span class="k">print</span><span class="p">(</span><span class="n">dispenser</span><span class="p">.</span><span class="n">__next__</span><span class="p">())</span>
+   
+   <span class="c1"># A B C D A B C D A B 출력
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-b041657e-2d3e-4493-a5d1-43ad04503aa7">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">cycles()</code>의 구현
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">cycle</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+    <span class="n">saved</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">element</span>
+        <span class="n">saved</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">saved</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">saved</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">element</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cycle</span><span class="p">(</span><span class="s">"ABCD"</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="err"> </span><span class="c1"># ABCD 무한 반복
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='compress'>compress()</h3>
+<p><code class="language-plaintext highlighter-rouge">True</code>로 판명되는 인덱스의 원소만 추출하여 이터레이터로 생성.<br />
+data 리스트나 selector 리스트 둘 중에 하나만 소진되어도 중단됨</p>
+
+<div class="callout callout-example" id="callout-731c1531-3906-47bd-a9e1-8227be411af0">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">compress()</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">compress</span>  
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span>
+<span class="c1"># filter 함수 등을 이용해 생성한 selector 리스트
+</span><span class="p">{:</span> <span class="c1">#filter-함수-등을-이용해-생성한-selector-리스트}
+</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">compress</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)))</span> <span class="err"> </span><span class="c1"># [1, 4, 5]
+# selector 리스트에서 true 였던 값들만 출력됨
+</span><span class="p">{:</span> <span class="c1">#selector-리스트에서-true-였던-값들만-출력됨}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-caa9a750-c8d6-41f5-a5af-b1f89e86e34d">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">compress()</code>의 구현
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compress</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">selectors</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="p">(</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">selectors</span><span class="p">)</span> <span class="k">if</span> <span class="n">s</span><span class="p">)</span>  
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span>  
+
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">compress</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)));</span> <span class="c1"># [1, 4, 5]
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='조합과-순열을-위한-함수들'>조합과 순열을 위한 함수들</h3>
+<p><code class="language-plaintext highlighter-rouge">product, permutations, combinations, combinations_wtih_replacement()</code> 함수들은 알고리즘 문제로 자주 출제되는 조합과 순열을 생성할 수 있는 함수들이다.</p>
+
+<div class="callout callout-example" id="callout-73f9a4ca-7d43-4c77-9634-51a23fe3f9f1">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>조합과 순열 함수들의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span><span class="p">,</span> <span class="n">permutations</span><span class="p">,</span> <span class="n">combinations</span><span class="p">,</span> <span class="n">combinations_with_replacement</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="s">'ABCD'</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">)))</span> <span class="c1"># 중첩된 for 루프, 모든 조합과 순열을 생성하게 됨.
+# [('A', 'A'), ('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'A'), ('B', 'B'), ('B', 'C'), ('B', 'D'), ('C', 'A'), ('C', 'B'), ('C', 'C'), ('C', 'D'), ('D', 'A'), ('D', 'B'), ('D', 'C'), ('D', 'D')]
+</span><span class="p">{:</span> <span class="c1">#a-a-a-b-a-c-a-d-b-a-b-b-b-c-b-d-c-a-c-b-c-c-c-d-d-a-d-b-d-c-d-d}
+</span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">permutations</span><span class="p">(</span><span class="s">'ABCD'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span> <span class="c1"># 순열 생성, 
+# [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'A'), ('B', 'C'), ('B', 'D'), ('C', 'A'), ('C', 'B'), ('C', 'D'), ('D', 'A'), ('D', 'B'), ('D', 'C')]
+</span><span class="p">{:</span> <span class="c1">#a-b-a-c-a-d-b-a-b-c-b-d-c-a-c-b-c-d-d-a-d-b-d-c}
+</span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="s">'ABCD'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span> <span class="c1"># 조합 생성
+# [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')]
+</span><span class="p">{:</span> <span class="c1">#a-b-a-c-a-d-b-c-b-d-c-d}
+</span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="s">'ABCD'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span> <span class="c1"># n번 중복 가능한 조합 생성
+# [('A', 'A'), ('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'B'), ('B', 'C'), ('B', 'D'), ('C', 'C'), ('C', 'D'), ('D', 'D')]
+</span><span class="p">{:</span> <span class="c1">#a-a-a-b-a-c-a-d-b-b-b-c-b-d-c-c-c-d-d-d}
+</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-dfd2a0e6-f250-4f1e-87df-6b9138ad0898">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>조합, 순열 함수들의 구현
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">product</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">pools</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">pool</span><span class="p">)</span> <span class="k">for</span> <span class="n">pool</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span> <span class="o">*</span> <span class="n">repeat</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">result</span> <span class="o">=</span> <span class="p">[](){:</span> <span class="p">.</span><span class="n">wikilink</span><span class="p">}{:</span><span class="n">target</span><span class="o">=</span>\<span class="s">"_blank</span><span class="se">\"</span><span class="s">}
+    for pool in pools:
+        result = [x+[y] for x in result for y in pool]
+    for prod in result:
+        yield tuple(prod)  
+
+def permutations(iterable, r=None):
+    pool = tuple(iterable)
+    n = len(pool)
+    r = n if r is None else r
+    for indices in product(range(n), repeat=r):
+        if len(set(indices)) == r:
+            yield tuple(pool[i] for i in indices)  
+
+def permutations_standalone(iterable, r=None):
+    pool = tuple(iterable)
+    n = len(pool)
+    r = n if r is None else r
+    if r &gt; n:
+        return
+    indices = list(range(n))
+    cycles = list(range(n, n-r, -1))
+    yield tuple(pool[i] for i in indices[:r])
+    while n:
+        for i in reversed(range(r)):
+            cycles[i] -= 1
+            if cycles[i] == 0:
+                indices[i:] = indices[i+1:] + indices[i:i+1]
+                cycles[i] = n - i
+            else:
+                j = cycles[i]
+                indices[i], indices[-j] = indices[-j], indices[i]
+                yield tuple(pool[i] for i in indices[:r])
+                break
+        else:
+            return  
+
+def combinations(iterable, r):
+    pool = tuple(iterable)
+    n = len(pool)
+    for indices in permutations(range(n), r):
+        if sorted(indices) == list(indices):
+            yield tuple(pool[i] for i in indices)  
+
+def combinations_standalone(iterable, r):
+    pool = tuple(iterable)
+    n = len(pool)
+    if r &gt; n:
+        return
+    indices = list(range(r))
+    yield tuple(pool[i] for i in indices)
+    while True:
+        for i in reversed(range(r)):
+            if indices[i] != i + n - r:
+                break
+        else:
+            return
+        indices[i] += 1
+        for j in range(i+1, r):
+            indices[j] = indices[j-1] + 1  
+
+def combinations_with_replacement(iterable, r):
+    pool = tuple(iterable)
+    n = len(pool)
+    for indices in product(range(n), repeat=r):
+        if sorted(indices) == list(indices):
+            yield tuple(pool[i] for i in indices)
+
+def combinations_with_replacement_standalone(iterable, r):
+    pool = tuple(iterable)
+    n = len(pool)
+    if not n and r:
+        return
+    indices = [0] * r
+    yield tuple(pool[i] for i in indices)
+    while True:
+        for i in reversed(range(r)):
+            if indices[i] != n - 1:
+                break
+        else:
+            return
+        indices[i:] = [indices[i] + 1] * (r - i)
+        yield tuple(pool[i] for i in indices)
+        
+print(list(product('ABCD', repeat=2)))
+print(list(permutations('ABCD', 2))) 
+print(list(combinations('ABCD', 2))) 
+print(list(combinations_with_replacement('ABCD', 2)))
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='bisect'>bisect</h2>
+<p>이진 탐색을 이용하여 리스트 내의 원소의 위치를 탐색하거나 삽입하는 함수를 가지고 있다.<br />
+이진 탐색을 직접 구현하지 않고 높은 성능을 낼 수 있다.</p>
+
+<div class="callout callout-example" id="callout-746281ad-9b1a-4229-ac7b-546bdf96a05a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">bisect</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect_left</span><span class="p">,</span> <span class="n">bisect_right</span><span class="p">,</span> <span class="n">insort_left</span><span class="p">,</span> <span class="n">insort_right</span>  
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span> <span class="err"> </span><span class="c1"># 배열은 정렬되있어야 한다.  
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="err"> </span><span class="c1"># 3 [1, 2, 3, #3번 인덱스 자리#, 4]
+</span><span class="k">print</span><span class="p">(</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="err"> </span><span class="c1"># 2 [1, 2, #2번 인덱스 자리#, 3, 4]
+</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">insort_left</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="err"> </span><span class="c1"># 함수 자체는 None을 리턴 # None
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="err"> </span><span class="c1"># 대신 배열에 추가되어 있음 # [1,2,3,3,4]
+</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">insort_right</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="err"> </span><span class="c1"># None
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="err"> </span><span class="c1"># [1,2,3,3,4]
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-66248f34-069a-46da-b25a-ddbd4c462bbe">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">bisect</code>를 이용한 탐색 함수 구현
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="s">'Locate the leftmost value exactly equal to x'</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">and</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">i</span>
+    <span class="k">raise</span> <span class="nb">ValueError</span>
+
+<span class="k">def</span> <span class="nf">find_lt</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="s">'Find rightmost value less than x'</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="nb">ValueError</span>
+
+<span class="k">def</span> <span class="nf">find_le</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="s">'Find rightmost value less than or equal to x'</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="nb">ValueError</span>
+
+<span class="k">def</span> <span class="nf">find_gt</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="s">'Find leftmost value greater than x'</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="nb">ValueError</span>
+
+<span class="k">def</span> <span class="nf">find_ge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="s">'Find leftmost item greater than or equal to x'</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="nb">ValueError</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-04af582e-024d-46c3-a111-ae66158d6983">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">bisect</code> 함수들의 구현
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">insort_right</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">lo</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">lo</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">key</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">a</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  
+
+<span class="k">def</span> <span class="nf">bisect_right</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'lo must be non-negative'</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">hi</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">hi</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">while</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">hi</span> <span class="o">=</span> <span class="n">mid</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">lo</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">while</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">key</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">hi</span> <span class="o">=</span> <span class="n">mid</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">lo</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">lo</span>  
+
+<span class="k">def</span> <span class="nf">insort_left</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">lo</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">lo</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">key</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="n">a</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
+
+<span class="k">def</span> <span class="nf">bisect_left</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'lo must be non-negative'</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">hi</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">hi</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">while</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">lo</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">hi</span> <span class="o">=</span> <span class="n">mid</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">while</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">if</span> <span class="n">key</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">lo</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">else</span><span class="p">:</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="n">hi</span> <span class="o">=</span> <span class="n">mid</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="n">lo</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='Collections'>Collections</h2>
+<p>파이썬의 자료 구조의 특수한 형태의 대안들</p>
+
+<h3 id='defaultdict'>defaultdict</h3>
+<p>초기 값을 설정할 수 있는 dictionary</p>
+
+<div class="callout callout-example" id="callout-e56235cc-af16-4f52-861c-7c302291514d">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">defaultdict</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>  
+
+<span class="n">int_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">int_dict</span><span class="p">[</span><span class="s">'no_value'</span><span class="p">])</span> <span class="err"> </span><span class="c1"># 0
+</span><span class="n">int_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span> <span class="err"> </span><span class="c1"># 기본값 지정
+</span><span class="k">print</span><span class="p">(</span><span class="n">int_dict</span><span class="p">[</span><span class="s">'no_value2'</span><span class="p">])</span> <span class="err"> </span><span class="c1"># 1
+</span><span class="k">print</span><span class="p">(</span><span class="n">int_dict</span><span class="p">[</span><span class="s">'str_value'</span><span class="p">])</span>
+<span class="n">int_dict</span><span class="p">[</span><span class="s">'str_value'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"str"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">int_dict</span><span class="p">)</span> <span class="c1"># 물론 다른 자료형으로 지정 또한 가능
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='OrderedDict'>OrderedDict</h3>
+<p>dictionary의 키,값 페어에 추가로 순서를 적용한 자료구조</p>
+
+<div class="callout callout-example" id="callout-4007d271-972c-4323-8e2c-5b356a219ac1">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">OrderedDict</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="n">ordered_dict</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+<span class="n">ordered_dict</span><span class="p">[</span><span class="s">"1"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"a"</span>
+<span class="n">ordered_dict</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">ordered_dict</span><span class="p">[</span><span class="s">"three"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"3"</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">ordered_dict</span><span class="p">)</span> <span class="c1"># OrderedDict([('1', 'a'), (2, 2), ('three', '3')]
+</span><span class="k">print</span><span class="p">(</span><span class="n">ordered_dict</span><span class="p">.</span><span class="n">popitem</span><span class="p">())</span> <span class="c1"># 맨 뒤의 키 값을 pop # ('three', '3')
+</span><span class="k">print</span><span class="p">(</span><span class="n">ordered_dict</span><span class="p">)</span> <span class="c1"># OrderedDict([('1', 'a'), (2, 2)])
+</span><span class="n">ordered_dict</span><span class="p">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="s">'1'</span><span class="p">)</span> <span class="c1"># 키 1의 값을 맨 뒤로
+</span><span class="k">print</span><span class="p">(</span><span class="n">ordered_dict</span><span class="p">)</span> <span class="c1"># OrderedDict([(2, 2), ('1', 'a')])
+</span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ordered_dict</span><span class="p">.</span><span class="n">items</span><span class="p">())[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 첫번째 값 가져오기 # (2, 2)
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id='namedtuple'>namedtuple</h4>
+<p>튜플 내부에 내부에 키 값의 서브 클래스를 생성하여 접근 가능</p>
+
+<div class="callout callout-example" id="callout-efb82409-1f90-473d-8e6f-0d1e7fb6cb4e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">namedtuple</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>  
+
+<span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Point'</span><span class="p">,</span> <span class="p">[</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">])</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span> <span class="err"> </span><span class="c1"># instantiate with positional or keyword arguments
+</span><span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="err"> </span><span class="c1"># indexing like plain tuple (11, 22)
+# 33
+</span><span class="p">{:</span> <span class="c1">#33}
+</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span> <span class="err"> </span><span class="c1"># unpack like a regular tuple
+</span><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># (11, 22)
+</span><span class="p">{:</span> <span class="c1">#11-22}
+</span><span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="err"> </span><span class="c1"># fields also accessible by name
+# 33
+</span><span class="p">{:</span> <span class="c1">#33}
+</span><span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='ChainMap'>ChainMap</h3>
+<p>두 dictionary를 빠르게 합치는데 사용</p>
+
+<div class="callout callout-example" id="callout-d270a6e7-4e28-4ebf-a2d6-f723fed42059">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">ChainMap</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">ChainMap</span><span class="p">,</span> <span class="n">OrderedDict</span>
+
+<span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s">"x"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"2"</span><span class="p">:</span> <span class="s">"a"</span><span class="p">}</span>
+<span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s">"y"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">"three"</span><span class="p">:</span> <span class="s">"b"</span><span class="p">}</span>
+<span class="n">dict3</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">({</span><span class="s">"z"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">"1"</span><span class="p">:</span> <span class="s">"one"</span><span class="p">})</span>  
+
+<span class="n">chained</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="n">dict2</span><span class="p">,</span> <span class="n">dict3</span><span class="p">)</span>  
+
+<span class="k">print</span><span class="p">(</span><span class="n">chained</span><span class="p">)</span> <span class="c1"># ChainMap({'x': 1, '2': 'a'}, {'y': 3, 'three': 'b'}, OrderedDict([('z', 4), ('1', 'one')]))
+</span><span class="k">print</span><span class="p">(</span><span class="n">chained</span><span class="p">[</span><span class="s">'2'</span><span class="p">])</span> <span class="c1"># a
+</span><span class="k">print</span><span class="p">(</span><span class="n">chained</span><span class="p">[</span><span class="s">'y'</span><span class="p">])</span> <span class="c1"># 3
+</span><span class="k">print</span><span class="p">(</span><span class="n">chained</span><span class="p">[</span><span class="s">'1'</span><span class="p">])</span><span class="c1"># one # 각기 다른 키들에 한꺼번에 접근 가능
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='중요하고-자주-사용되는-다른-자료-구조들'>중요하고 자주 사용되는 다른 자료 구조들</h2>
+<p>단순히 편리한 수준이 아닌 핵심적으로 사용되는 자료 구조들</p>
+
+<h3 id='deque'>deque</h3>
+<p>스택 + 큐 기능이 합쳐진 리스트<br />
+기본 리스트와 달리 <code class="language-plaintext highlighter-rouge">pop()</code>과 <code class="language-plaintext highlighter-rouge">insert()</code> 연산을 상수 시간 만에 끝낼 수 있다.</p>
+
+<div class="callout callout-example" id="callout-a1c7850f-44d3-4e9e-bfd1-f4ae82028f58">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">deque</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="s">'12345'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="err"> </span><span class="c1"># deque(['1', '2', '3', '4', '5'])  
+</span>
+<span class="n">d</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'6'</span><span class="p">)</span>
+<span class="n">d</span><span class="p">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s">'0'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="err"> </span><span class="c1"># deque(['0', '1', '2', '3', '4', '5', '6'])  
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span> <span class="err"> </span><span class="c1"># 6
+</span><span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="err"> </span><span class="c1"># deque(['0', '1', '2', '3', '4', '5'])
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">popleft</span><span class="p">())</span> <span class="err"> </span><span class="c1"># 0
+</span><span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="err"> </span><span class="c1"># deque(['1', '2', '3', '4', '5']) 
+</span>
+<span class="n">d</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="err"> </span><span class="c1"># deque(['1', '2', '3', '4', '5', 'a', 'b', 'c'])
+</span>
+<span class="n">d</span><span class="p">.</span><span class="n">extendleft</span><span class="p">(</span><span class="s">'efg'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="err"> </span><span class="c1"># deque(['g', 'f', 'e', '1', '2', '3', '4', '5', 'a', 'b', 'c'])
+</span>
+<span class="n">d</span><span class="p">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="err"> </span><span class="c1"># deque(['c', 'g', 'f', 'e', '1', '2', '3', '4', '5', 'a', 'b'])
+</span>
+<span class="n">d</span><span class="p">.</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="err"> </span><span class="c1"># deque(['g', 'f', 'e', '1', '2', '3', '4', '5', 'a', 'b', 'c'])  
+</span>
+<span class="c1"># d[0] : 최좌측 peek
+</span><span class="p">{:</span> <span class="c1">#d-0-최좌측-peek}
+# d[-1] : 최우측 peek
+</span><span class="p">{:</span> <span class="c1">#d-1-최우측-peek}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='heapq'>heapq</h3>
+<p>이진 트리를 이용해  최소 힙을 구현, 최대 힙을 구현 하기 위해서는 값에 <code class="language-plaintext highlighter-rouge">-</code>을 붙여 넣어줘야 한다.</p>
+
+<div class="callout callout-example" id="callout-58281280-a8f0-452d-83eb-c8fe1b08da1f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">heapq</code>의 활용 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">heapq</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># heap에 삽입
+</span><span class="p">{:</span> <span class="c1">#heap에-삽입}
+</span><span class="n">heapq</span><span class="p">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="err"> </span><span class="c1"># [2, 3, 6, 4]  
+</span>
+<span class="c1"># 최소값 pop
+</span><span class="p">{:</span> <span class="c1">#최소값-pop}
+</span><span class="k">print</span><span class="p">(</span><span class="n">heapq</span><span class="p">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="err"> </span><span class="c1"># 2
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="err"> </span><span class="c1"># [3, 4, 6]  
+</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">heapq</span><span class="p">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># b를 힙을 이용해 정렬
+</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="err"> </span><span class="c1"># [1, 3, 6]
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-tip" id="callout-db0be376-afed-497f-83e7-6aed18a9c5f4">
+      <div class="header">
+        <span class="emoji">💡</span>
+        <span class="title"><strong>heapq 키값 비교 방법 바꾸기
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<blockquote>
+  <p>출처 <span class='link-warning'>
+      <a href="https://stackoverflow.com/questions/8875706/heapq-with-custom-compare-predicate" class="wikilink externallink">here</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://stackoverflow.com/ques..."</em>로
+        <button onclick="window.open('https://stackoverflow.com/questions/8875706/heapq-with-custom-compare-predicate','_blank'); return false;">이동</button>?
+      </span>
+    </span></p>
+</blockquote>
+
+<p>heapq를 이용하여 우선순위 큐 등을 만들 시 아래와 같이 <code class="language-plaintext highlighter-rouge">__lt__</code> 메소드를 오버라이딩하여 키값의 비교 방법을 정해줄 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">heapq</span>  
+
+<span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="bp">self</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span> 
+
+<span class="err"> </span> <span class="err"> </span> <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="sa">f</span><span class="s">'Node value: </span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">val</span><span class="si">}</span><span class="s">'</span>  
+
+<span class="err"> </span> <span class="err"> </span> <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">val</span>  
+
+<span class="n">heap</span> <span class="o">=</span> <span class="p">[</span><span class="n">Node</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Node</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">Node</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">heapq</span><span class="p">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+
+<span class="c1"># output: [Node value: 0, Node value: 2, Node value: 1, Node value: 4, Node value: 2]
+</span><span class="p">{:</span> <span class="c1">#output-node-value-0-node-value-2-node-value-1-node-value-4-node-value-2}
+</span><span class="k">print</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span> 
+
+<span class="n">heapq</span><span class="p">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+<span class="c1"># output: [Node value: 1, Node value: 2, Node value: 2, Node value: 4]
+</span><span class="p">{:</span> <span class="c1">#output-node-value-1-node-value-2-node-value-2-node-value-4}
+</span><span class="k">print</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='재귀함수'>재귀함수</h2>
+
+<p><span class='link-warning'>
+      <a href="https://www.acmicpc.net/problem/1929" class="wikilink externallink">재귀함수 문제</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.acmicpc.net/proble..."</em>로
+        <button onclick="window.open('https://www.acmicpc.net/problem/1929','_blank'); return false;">이동</button>?
+      </span>
+    </span></p>
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/Python%20for%20Algorithms-libraries.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/Python for Algorithms-libraries.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

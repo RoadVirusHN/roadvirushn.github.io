@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>데이터 시각화 기본 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="데이터 시각화 기본" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true 데이터 시각화 기본" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true 데이터 시각화 기본" />
+<link rel="canonical" href="http://localhost:4000/articles/AI/Data_Vis/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%8B%9C%EA%B0%81%ED%99%94%20%EA%B8%B0%EB%B3%B8.html" />
+<meta property="og:url" content="http://localhost:4000/articles/AI/Data_Vis/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%8B%9C%EA%B0%81%ED%99%94%20%EA%B8%B0%EB%B3%B8.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-14T13:41:08+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="데이터 시각화 기본" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-14T13:41:08+09:00","datePublished":"2022-12-14T13:41:08+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true 데이터 시각화 기본","headline":"데이터 시각화 기본","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/AI/Data_Vis/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%8B%9C%EA%B0%81%ED%99%94%20%EA%B8%B0%EB%B3%B8.html"},"url":"http://localhost:4000/articles/AI/Data_Vis/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%8B%9C%EA%B0%81%ED%99%94%20%EA%B8%B0%EB%B3%B8.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">데이터 시각화 기본</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-12-14T13:41:08+09:00" itemprop="datePublished">Dec 14, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#시각화의-요소' id='markdown-toc-0-시각화의-요소'>시각화의 요소</a><ul><li><a href='#데이터셋-데이터의-종류' id='markdown-toc-0-데이터셋-데이터의-종류'>데이터셋, 데이터의 종류</a></li> 
+<li><a href='#시각화의-이해' id='markdown-toc-0-시각화의-이해'>시각화의 이해</a></li> 
+
+</ul></li> 
+<li><a href='#기본적인-차트의-사용' id='markdown-toc-0-기본적인-차트의-사용'>기본적인 차트의 사용</a><ul><li><a href='#기본-Bar-Plot' id='markdown-toc-0-기본-Bar-Plot'>기본 Bar Plot</a><ul>
+</ul></li> 
+<li><a href='#Line-Plot' id='markdown-toc-0-Line-Plot'>Line Plot</a><ul>
+</ul></li> 
+<li><a href='#Scatter-Plot' id='markdown-toc-0-Scatter-Plot'>Scatter Plot</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#차트의-요소' id='markdown-toc-0-차트의-요소'>차트의 요소</a><ul><li><a href='#Text-사용하기' id='markdown-toc-0-Text-사용하기'>Text 사용하기</a><ul>
+</ul></li> 
+<li><a href='#Color-사용하기' id='markdown-toc-0-Color-사용하기'>Color 사용하기</a><ul>
+</ul></li> 
+<li><a href='#Facet' id='markdown-toc-0-Facet'>Facet</a><ul>
+</ul></li> 
+<li><a href='#More-Tips' id='markdown-toc-0-More-Tips'>More Tips</a><ul>
+</ul></li> 
+
+</ul></li> 
+</ol>
+<h1 id='데이터-시각화-기본'>데이터 시각화 기본</h1>
+
+<p>데이터를 그래픽 요소로 매핑하여 시각적으로 표현하는 것</p>
+
+<p>시각화의 다양한 고려 요소</p>
+
+<ol>
+  <li>목적 : 왜 시각화 하는가?</li>
+  <li>독자 : 시각화 결과는 누구를 위한 것인가?</li>
+  <li>데이터 : 어떤 데이터를 시각화할 것인가?</li>
+  <li>스토리 : 어떤 흐름으로 인사이트를 전달할 것인가?</li>
+  <li>방법 : 전달하고자 하는 내용에 맞게 효과적인 방법을 사용하고 있는가?</li>
+  <li>디자인 : UI에서 만족스러운 디자인을 가지고 있는가?</li>
+</ol>
+
+<h2 id='시각화의-요소'>시각화의 요소</h2>
+
+<p>시각화를 위해서 데이터의 관점을 먼저 생각해봐야한다.</p>
+
+<p>크게 1. 데이터셋 관점 (global)과</p>
+
+<ol>
+  <li>개별 데이터의 관점 (local) 관점이 존재한다.</li>
+</ol>
+
+<h3 id='데이터셋-데이터의-종류'>데이터셋, 데이터의 종류</h3>
+
+<p>정형 데이터, 시계열 데이터, 지리 데이터, 관계형(네트워크) 데이터, 계층적 데이터, 다양한 비정형 데이터 등이 존재한다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210405120038345.png" alt="" /></p>
+
+<p>이때, 정형 데이터는 테이블 형태로 제공되는 데이터로 csv, tsv 파일 등으로 제공됨.</p>
+
+<p>Row가 데이터 1개 item, Column은 attribute(feature)를 의미하며, 시각화가 비교적 쉽다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210405120144753.png" alt="" /></p>
+
+<p>시간 흐름에 따른 데이터를 Time-Series 데이터</p>
+
+<p>기온, 주가 등의 정형 데이터와 음성, 비디오 같은 비정형 데이터가 존재</p>
+
+<p>추세(Trend), 계절성(Seasonality), 주기성(Cycle) 등을 살핌</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210405120235991.png" alt="" /></p>
+
+<p>지리/ 지도 데이터의 경우, 지도 정보와 보고자 하는 정보간의 조화 중요 + 지도 정보를 단순화 시킨 경우가 중요하며, 거리 경로, 분포 등을 Visualization</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210405120345446.png" alt="" /></p>
+
+<p>관계 데이터(Graph, Network Visualization)의 경우 객체와 객체 간의 관계를 시각화,</p>
+
+<p>객체를 Node, 관계를 Link라고 하며, 크기, 색, 수 등으로 객체와 관계의 가중치 표현</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210405120504372.png" alt="" /></p>
+
+<p>계층적 데이터의 경우, 관계 중에서도 포함관계가 분명한 데이터, Tree, Treemap, Sunburst 등이 대표적</p>
+
+<p>데이터의 종류는 4가지로 분류 가능</p>
+
+<p>수치형(numerical): 수로 표현 가능한 데이터</p>
+
+<ul>
+  <li>연속형(continuous) : 실수값으로 표현 가능한 연속적인 데이터
+    <ul>
+      <li>길이, 무게, 온도 등</li>
+    </ul>
+  </li>
+  <li>이산형(discrete) : 정수값으로 표현 가능한 데이터
+    <ul>
+      <li>주사위 눈금, 사람 수 등</li>
+    </ul>
+  </li>
+</ul>
+
+<p>범주형(categorical): class로 표현 가능한 데이터</p>
+
+<ul>
+  <li>명목형(norminal) : 순서나 대소 관계, 우열관계가 존재하지 않음
+    <ul>
+      <li>혈액형, 종교 등</li>
+    </ul>
+  </li>
+  <li>순서형(ordinal) : 순서, 대소관계, 우열 관계가 존재
+    <ul>
+      <li>학년, 별점, 등급 등</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id='시각화의-이해'>시각화의 이해</h3>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210405121229051.png" alt="" /></p>
+
+<p>Mark는 기본적인 시각적 요소로, 점, 선, 면으로 이루어진 시각화 방법이다.</p>
+
+<p>질의 데이터, 시계열 데이터 등이 표현 가능</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210405121257051.png" alt="" /></p>
+
+<p>위의 기본적인 점선면 Mark에 다양성을 줄 수 있는 요소이다, 크기, shape, color 등을 바꾸어 다차원적인 요소를 표현 가능하다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210405121312065.png" alt="" /></p>
+
+<p>전주의적 속성(Pre-attentive Attribute)는 시작적인 주의를 주지 않아도 인지하게 되는 요소를 의미한다.</p>
+
+<p>동시에 사용하면 인지하기 어려우므로 적절하게 사용할 때, 시각적 분리(visual pop-out)이 필요하다.</p>
+<h2 id='기본적인-차트의-사용'>기본적인 차트의 사용</h2>
+<h3 id='기본-Bar-Plot'>기본 Bar Plot</h3>
+
+<p>Bar plot이란 직사각형 막대를 사용하여 데이터의 값을 표현하는 차트/그래프를 의미하며, 범주(category)에 따른 수치 값을 개별 또는 그룹 별로 비교하기에 적합하다.</p>
+
+<p>막대의 방향에 따라 <strong>.bar()  / .barh()</strong>으로 수직과 수평형 그래프를 만들 수 있다.</p>
+
+<ul>
+  <li>수평은 범주가 많을 때 적합하다.</li>
+</ul>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425225339626.png" alt="" /></p>
+
+<h4 id='여러-Bar-plot'>여러 Bar plot</h4>
+
+<p>범주형 A, B, C, D, E column을 가진 두 그룹 파랑 = [1,2,3,4,3], 분홍 = [4,3,2,5,1]이 있을 때,</p>
+
+<ol>
+  <li><strong>플롯을 여러 개 그리는 방법</strong></li>
+</ol>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425232444487.png" alt="" /></p>
+
+<ol>
+  <li><strong>한 개의 플롯에 동시에 나타내는 방법</strong></li>
+</ol>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425232839799.png" alt="" /></p>
+
+<p>1)  Stacked Bar Plot : 위에 쌓여있는 bar의 분포는 파악하기 쉬움, 2개의 그룹이면 y axis = 0를 중심으로 +, - 로 축조절로 극복 가능</p>
+
+<ul>
+  <li>.bar()에서는 bottom 파라미터로 사용, .barh()에서는 left 파라미터로 사용</li>
+</ul>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425233005642.png" alt="" /></p>
+
+<p>1-1) Percentage Stacked Bar Chart : Stacked Bar Plot의 응용 형태</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425233142292.png" alt="" /></p>
+
+<p>2) Overlapped Bar Plot : 3개 미만의 급룸 비교는 겹쳐서 표현 가능, 투명도(alpha)를 조정해 겹치는 부분 파악, Area plot에 효과적</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425233447775.png" alt="" /></p>
+
+<p>3) Grouped Bar Plot: 구현이 까다로움, 그룹이 5~7개 이하일때 효과적 그 이상은 etc로 처리할 것</p>
+
+<ul>
+  <li>(.set_xticks(), .set_xticklabels())로 구현</li>
+</ul>
+
+<h4 id='정확한-Bar-plot'>정확한 Bar plot</h4>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425233831294.png" alt="" /></p>
+
+<p>Principle of Proportion Ink : x축의 시작은 zero(0)부터이며, 실제 값과 그래픽으로 표현 되는 잉크양은 비례해야 한다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425234257251.png" alt="" /></p>
+
+<p>데이터의 정렬을 통해 데이터의 패턴을 발견할 수 있다.</p>
+
+<p>시게열(시간순), 수치형(크기순), 순서형(범주의 순서), 명목형(범주의 값)에 따라 정렬이 가능하며, 대시보드에서는 Interactive 하게 제공하는 것이 유용하다.</p>
+
+<p>pandas에서는 sort_values(), sort_index()를 사용하여 정렬 가능</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425234744834.png" alt="" /></p>
+
+<p>여백과 공간을 조정해서 가독성을 높일 수 있다</p>
+
+<ul>
+  <li>
+    <p>X/Y axis Limit (.xset_xlim(), .set_ylim())</p>
+  </li>
+  <li>Spines(.spines[spine].set_visible())</li>
+  <li>Gap(width)</li>
+  <li>Legend(.legend())</li>
+  <li>Margins.(.margins())</li>
+</ul>
+
+<p>등으로 조절 가능하다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210425235714942.png" alt="" /></p>
+
+<p>무의미한 3D, 직사각형 의외의 bar 형태 지양</p>
+
+<ul>
+  <li>
+    <p>Grid(.grid())</p>
+  </li>
+  <li>Ticklabels(.set_ticklabels())
+    <ul>
+      <li>Major &amp; Minor</li>
+    </ul>
+  </li>
+  <li>Text 추가 장소 (.text(), .annotate())
+    <ul>
+      <li>Bar의 middle/ upper</li>
+      <li>제목 (.set_titile())</li>
+      <li>라벨 (.set_xlabel(), .set_ylabel())</li>
+    </ul>
+  </li>
+</ul>
+
+<p>오차 막대 (error bar)로 Uncertainty 정보 추가 가능</p>
+
+<p>Bar 사이의 Gap이 없으면 히스토그램(Histogram)이 되며, 연속된 느낌이며, .hist()를 통해 사용 가능</p>
+
+<h3 id='Line-Plot'>Line Plot</h3>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426001044039.png" alt="" /></p>
+
+<p>연속적으로 변화하는 값을 순서대로 점으로 나타내고, 이를 선으로 연결한 그래프</p>
+<h4 id='Line-Plot의-기본'>Line Plot의 기본</h4>
+<p>Line plot은 꺾은선 그래프, 선 그래프, line chart, line graph 등의 이름으로도 불리며, 시간/순서에 대한 변화에 적합하여 추세(시계열 분석)를 살피기 위해 사용함.(.plot()으로 사용)</p>
+
+<p>가독성을 위해 5개 이하의 선을 여러 요소로 구별하며 사용하는 것이 좋다.</p>
+
+<ol>
+  <li>색상(color)</li>
+  <li>마커(marker, markersize)</li>
+  <li>선의 종류(linestyle, linewidhth)</li>
+</ol>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426001552666.png" alt="" /></p>
+
+<p>또한, Noise로 인하여 패턴 및 추세 파악이 힘들 경우 smoothing을 통해 가독성을 늘릴 수 있다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426001821085.png" alt="" /></p>
+
+<h4 id='정확한-Line-plot'>정확한 Line plot</h4>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426003104044.png" alt="" /></p>
+
+<ol>
+  <li><strong>추세에 집중하기</strong></li>
+</ol>
+
+<ul>
+  <li>
+    <p>추세가 목적이므로 굳이 0을 시작점으로 두지 않아도 된다.</p>
+  </li>
+  <li>
+    <p>Grid, Annotate 등을 제거한 뒤, 디테일한 정보는 표로 제공하자.</p>
+  </li>
+  <li>
+    <p>생략되지 않는 성에서 범위를 조정해 변화율 관찰 (.set_ylim())</p>
+  </li>
+</ul>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426003320621.png" alt="" /></p>
+
+<ol>
+  <li><strong>간격 조정</strong></li>
+</ol>
+
+<ul>
+  <li>규칙적인 간격이 아닐 경우 점을 추가하여 데이터가 있는 부분만 표시하자.</li>
+</ul>
+
+<ol>
+  <li><strong>보간</strong></li>
+</ol>
+
+<ul>
+  <li>Line은 점을 이어 만드는 요소이므로 데이터가 없어도 이를 이어서 만드는 보간을 하게 된다.</li>
+  <li>데이터의 이해를 도울 수 있지만, 없는 데이터를 있다고 생각하거나 적은 차이를 못보게 할 수 있으므로 일반적인 분석에서는 지향 하자.
+    <ul>
+      <li>특히 곡선 보간은 조심하자</li>
+    </ul>
+  </li>
+  <li>데이터의 error나 noise가 포함되어 있는 경우, Moving Average 방법, Smooth Curve with Scipy(scipy의 interpolate 내부의 make_interp_spline(), interp1d() 또는 scipy의 ndimage.gaussian_filter1d() 등을 사용 가능)</li>
+</ul>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426004152188.png" alt="" /></p>
+
+<ol>
+  <li><strong>이중 축 사용</strong></li>
+</ol>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426004221912.png" alt="" /></p>
+
+<ul>
+  <li>한 plot에 대해 2개의 축을 사용하는 것을 이중 축(dual axis)라고 함, 왠만하면 이중 축보단 다중 plot으로 해결하는 게 좋다.
+    <ul>
+      <li>상관관계가 있어보이는 착시를 일으킨다.</li>
+    </ul>
+  </li>
+  <li>같은 시간 축에 대해 서로 다른 종류의 데이터를 표현하기 위해 축이 2개 필요 (.twinx() 사용)</li>
+  <li>한 데이터에 대해 단위가 다른 경우, .secondary_xaxis(), .secondary_yaxis()를 사용해 보자.</li>
+</ul>
+
+<ol>
+  <li><strong>기타</strong></li>
+</ol>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426004318619.png" alt="" /></p>
+
+<ul>
+  <li>범례 대신 라인 주위에 레이블을 추가하면 가독성이 좋다.</li>
+</ul>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426004419061.png" alt="" /></p>
+
+<ul>
+  <li>Min/Max 정보(또는 특정 포인트)를 추가(annotation)로 가독성 증가</li>
+</ul>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426004517987.png" alt="" /></p>
+
+<ul>
+  <li>보다 연한 색을 사용하여 uncertainty 표현 가능 (신뢰구간, 분산 등)</li>
+</ul>
+
+<h3 id='Scatter-Plot'>Scatter Plot</h3>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426005150349.png" alt="" /></p>
+
+<h4 id='기본-Scatter-plot'>기본 Scatter plot</h4>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426010247769.png" alt="" /></p>
+
+<p>점을 사용하여 두 feature 간의 관계를 알기 위해 사용하는 그래프, 산점도라고도 말함</p>
+
+<p>직교 좌표계에서 x축/y축에 feature r값을 매핑해서 사용, .scatter()로 사용</p>
+
+<p>색, 모양, 크기 등을 바꾸어 다양한 차원의 데이터 표현 가능</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426010716264.png" alt="" /></p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426010727232.png" alt="" /></p>
+
+<p>Scatter plot을 통해 상관관계(양, 음의 상관 관계, 상관 없음), 군집, 값 사이의 차이, 이상치 등을 알 수 있다.</p>
+
+<h4 id='정확한-Scatter-plot'>정확한 Scatter plot</h4>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426011708647.png" alt="" /></p>
+
+<ol>
+  <li><strong>Overplotting 방지</strong></li>
+</ol>
+
+<ul>
+  <li>점이 너무 많으면 분포 파악이 힘드므로, 투명도 조정, 지터링(jittering, 점의 위치 약간 변경, 효율성이 조금 떨어짐), 2차원 히스토그램(히트맵을 사용하여 깔끔한 시각화), Contour plot(분포를 등고선을 사용해 표현) 등으로 표현하면 좋다.
+    <ul>
+      <li>이외에도 joint plot 등이 있음</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426012238441.png" alt="" /></p>
+
+<ol>
+  <li><strong>점의 요소와 인지</strong></li>
+</ol>
+
+<ul>
+  <li>색 : 연속은 gradient, 이산은 개별 색상으로 표시</li>
+  <li>마커 : 거의 구별하기 힘들고, 크기가 달라 보이므로 사용 유의</li>
+  <li>크기 : 흔히 버블 차트(bubble chart)라고 부름, 오용이 잦으며, 관계 보다는 각 점간의 비율에 초점을 두자, SWOT 분석등에 자주 사용</li>
+</ul>
+
+<ol>
+  <li><strong>인과 관계와 상관 관계</strong></li>
+</ol>
+
+<ul>
+  <li>인과 관계(causal relation, x축 때문에 y축이 변한다)과 상관 관계(correlation, x축과 y축이 동시에 어떠한 요인에 의해 변하는 관계이다.)을 잘 구별하자</li>
+  <li>인과 관계는 사전 정보와 함께 가정으로 제시</li>
+</ul>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210426012304744.png" alt="" /></p>
+
+<ol>
+  <li><strong>추세선</strong></li>
+</ol>
+
+<ul>
+  <li>추세선을 이용하면 scatter의 패턴을 유추할 수 있지만, 2개 이상 사용하면 가독성이 떨어진다.</li>
+</ul>
+
+<ol>
+  <li>기타</li>
+</ol>
+
+<ul>
+  <li>Grid는 왠만하면 사용하지 않으며 무채색을 활용하자</li>
+  <li>범주형이 포함되어 있으면 heatmap 또는 bubble chart 추천</li>
+</ul>
+
+<h2 id='차트의-요소'>차트의 요소</h2>
+
+<h3 id='Text-사용하기'>Text 사용하기</h3>
+
+<h4 id='Matplotlib에서-Text'>Matplotlib에서 Text</h4>
+
+<p>Text는 Data Visualization에서 명확하고 오해를 방지할 수 있는 수단이지만 과용하면 가독성을 떨어뜨리고 오히려 이해를 방해할 수 도 있다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429013253277.png" alt="" /></p>
+
+<p><strong>Title</strong> : 가장 큰 주제를 설명</p>
+
+<p><strong>Label</strong> : 축에 해당하는 데이터 정보를 제공</p>
+
+<p><strong>Tick Label</strong> : 축에 눈금을 사용하여 스케일 정보를 추가</p>
+
+<p><strong>Legend</strong> : 한 그래프에서 2개 이상의 서로 다른 데이터를 분류하기 위해서 사용하는 보조 정보</p>
+
+<p><strong>Annotation(Text)</strong> : 그 외의 시각화에 대한 설명을 추가</p>
+
+<p><strong>Text 원하는 대로 사용하기</strong></p>
+
+<p>[Data_Visualization_3]3_1_Text.ipynb</p>
+
+<h3 id='Color-사용하기'>Color 사용하기</h3>
+
+<h4 id='Color에-대한-이해'>Color에 대한 이해</h4>
+
+<p>Visualization에 있어서 위치와 색은 가장 효과적인 채널 구분 방법</p>
+
+<p>특히, 위치와 달리 사람이 직접 개입하여 골라야 하며, 심미성을 가진다.</p>
+
+<ul>
+  <li>하지만 심미성보다는 정보 전달에 좀 더 신경쓰자.</li>
+</ul>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429013759543.png" alt="" /></p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429014213984.png" alt="" /></p>
+
+<p>일부 색의 사용 장소는 사회적인 약속, 색이 주는 공통적인  느낌 그리고 자연에 대한 모방 등에 의해 이미 결정되어 있다.</p>
+
+<ul>
+  <li>
+    <p><img src="/assets/img/데이터 시각화 기본/image-20210429015011430.png" alt="" /></p>
+  </li>
+  <li>무지개 빛을 응용한 수치 표현</li>
+  <li>파랑과 빨강을 이용한 온도 표현 등</li>
+</ul>
+
+<h4 id='Color-Palette의-종류'>Color Palette의 종류</h4>
+
+<p><strong>범주형(Categorical, Discrete, Qualitative) Color Palette</strong></p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429020021691.png" alt="" /></p>
+
+<p>범주형 변수에는 독립되고 구별하기 쉬운 색상을 사용한다.</p>
+
+<ul>
+  <li>즉 채도, 명도로 구분하지 않고, 색상의 차이로 구분한다.</li>
+</ul>
+
+<p>최대 10개의 색상까지 사용하며, 그외에는 기타로 묶는다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429020845573.png" alt="" /></p>
+
+<p><strong>연속형 (Sequential) Color Palette</strong></p>
+
+<p>정렬된 값을 가지는 순서형, 연속형 변수에 적합하며, 연속적인 색상 (주로 명도를 조절)을 통해 값을 표현한다.</p>
+
+<p>단일 색조로 표현하는 것이 좋고, 균일한 색상 변화가 중요하다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429021606042.png" alt="" /></p>
+
+<p><strong>발산형(Diverge) Color Palette</strong></p>
+
+<p>연속형과 유사하지만 중앙을 기준으로 발산하며, 상반된 값, binary 값을 표현하는데 적합</p>
+
+<p>양 끝으로 갈수록 색이 진해지며, 중앙의 색은 양쪽의 점에서 편향되지 않아야 함</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429023609526.png" alt="" /></p>
+
+<h4 id='그-외-색-Tips'>그 외 색 Tips</h4>
+
+<p>색상 대비(Color Constrast)</p>
+
+<ul>
+  <li>가까운 색은 차이가 더 크게 보임(파랑보라, 빨강보라)</li>
+</ul>
+
+<p>명도 대비</p>
+
+<ul>
+  <li>밝은 색과 어두운 색을 배치하면 밝은 색은 더 밝게, 어두운 색은 더 어둡게 보임 (회색검정)</li>
+</ul>
+
+<p>채도 대비</p>
+
+<ul>
+  <li>채도의 차이, 채도가 더 높아보임 (회색주황)</li>
+  <li>더 선명해보여서 주로 사용함</li>
+</ul>
+
+<p>보색 대비</p>
+
+<ul>
+  <li>정반대 색상을 사용하면 더 선명해 보인다.(빨강초록)</li>
+</ul>
+
+<p>를 통하여 강조(Highlighting)할 수 있다.</p>
+
+<p>삼원색 (빨파노) 중 특정 색을 감지 못하면 <strong>색맹</strong>이라 하며, 부분적 인지 이상이 있다면 <strong>색약</strong>이라 한다.</p>
+
+<p>색인지가 중요한 분야에서는 필수적으로 고려하자.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429091219506.png" alt="" /></p>
+
+<h3 id='Facet'>Facet</h3>
+
+<p>Facet은 분할이라는 의미로, 화면 상에 View를 분할 및 추가하여 다양한 관점을 전달함.</p>
+
+<ul>
+  <li>같은 데이터셋에 서로 다른 인코딩을 통해 다른 인사이트</li>
+  <li>같은 방법으로 동시에 여러 feature 보거나 큰 틀에서 볼 수 없는 부분 집합을 세세하게 보여줌.</li>
+</ul>
+
+<h4 id='Matplotlib에서-구현'>Matplotlib에서 구현</h4>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429091738846.png" alt="" /></p>
+
+<p>Figure는 큰 틀, Ax는 각 플롯이 들어가는 공간, Figure는 언제나 1개, 플롯은 N개</p>
+
+<p>주로</p>
+
+<ul>
+  <li>plt.subplot()</li>
+  <li>plt.figure() + fig.add_subplot()</li>
+  <li>plt.subplots()</li>
+</ul>
+
+<p>으로 subplot을 더하며,</p>
+
+<p>figuresize, dpi, sharex, sharey, squeeze, aspect 등의 argument를 조정할 수 있다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210502155016443.png" alt="" /></p>
+
+<p>가장 가본적인 형태로 subplot을 추가하면 위와 같다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210502155039582.png" alt="" /></p>
+
+<p>위 subplot을 표현하기 위해 Slicing 또는 x, y, dx, dy를 사용하며,</p>
+
+<p>Slicing 방법의 경우 fig.add_spec() 함수를 통해 자세하게 구현할 수 있다.</p>
+
+<p>위의 예시의 경우, <img src="/assets/img/데이터 시각화 기본/image-20210502155134552.png" alt="" />처럼 slicing한 모양이라 할 수 있다.</p>
+
+<p>같은 모양일 경우, (x,y), dx, dy로 작성하려면, fig.subplot2grid() 함수를 통해 구현할 수 있으며, <img src="/assets/img/데이터 시각화 기본/image-20210502155324278.png" alt="" />의 비율을 통해 구현할 수 있다.</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210502155356077.png" alt="" /><img src="/assets/img/데이터 시각화 기본/image-20210502155422717.png" alt="" /></p>
+
+<p>ax.inset_axes()(좌)를 통하여 Ax 내부에 서브플롯을 추가하여 외부 정보나 미니맵 같은 형태를 추가할 수 있으며, make_axes_locatable(ax)(우) 함수를 통하여 그리드 외부에 사이드 subplot을 추가하여 제목, 통계 정보등을 제공할 수 있다.</p>
+
+<h3 id='More-Tips'>More Tips</h3>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429205756422.png" alt="" /></p>
+
+<h4 id='Grid-이해하기'>Grid 이해하기</h4>
+
+<p>기본적인 Grid는 축과 평행한 선을 사용하여 거리 및 값 정보를 보조적으로 제공</p>
+
+<p>색은 다른 표현들을 방해하지 않도록 무채색(color)이며,</p>
+
+<p>항상 Layer 순서 상 맨 밑에 오도록 조정(zorder),</p>
+
+<p>큰 격자/ 세부 격자(which=’major’, ‘minor’, ‘both’)</p>
+
+<p>X축, Y축 또는 동시에(axis=’x’, ‘y’, ‘both’)</p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429211149665.png" alt="" /></p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429211219611.png" alt="" /></p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429211249637.png" alt="" /></p>
+
+<p>또한 numpy + matplotlib를 통하여 x+y=c, y=cx, xy=c, 2차 함수등 여러가지 형태로 구현이 가능하다.</p>
+
+<h4 id='심플한-처리'>심플한 처리</h4>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429211355830.png" alt="" /></p>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429211418429.png" alt="" /></p>
+
+<h4 id='Setting-바꾸기'>Setting 바꾸기</h4>
+
+<p><img src="/assets/img/데이터 시각화 기본/image-20210429210259601.png" alt="" /></p>
+
+<p>여러가지 미리 정의된 테마로 바꿀 수 있다.</p>
+
+<p>ggplot, fivethirtyeight 이 대표적으로 많이 사용됨</p>
+
+<p><strong>실습</strong></p>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/AI/Data_Vis/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%8B%9C%EA%B0%81%ED%99%94%20%EA%B8%B0%EB%B3%B8.html" hidden></a>
+  <p class="u-path" hidden>_articles/AI/Data_Vis/데이터 시각화 기본.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

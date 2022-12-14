@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>알고리즘 성능 분석 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="알고리즘 성능 분석" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="알고리즘 성능 분석" />
+<meta property="og:description" content="알고리즘 성능 분석" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%84%B1%EB%8A%A5%20%EB%B6%84%EC%84%9D.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%84%B1%EB%8A%A5%20%EB%B6%84%EC%84%9D.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-20T16:53:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="알고리즘 성능 분석" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-09-20T16:53:58+09:00","datePublished":"2021-09-20T16:53:58+09:00","description":"알고리즘 성능 분석","headline":"알고리즘 성능 분석","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%84%B1%EB%8A%A5%20%EB%B6%84%EC%84%9D.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%84%B1%EB%8A%A5%20%EB%B6%84%EC%84%9D.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">알고리즘 성능 분석</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2021-09-20T16:53:58+09:00" itemprop="datePublished">Sep 20, 2021
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<h1 id='알고리즘-성능-분석'>알고리즘 성능 분석</h1>
+
+<div class="callout callout-quote" id="callout-b0ea1e10-a091-4de3-b784-f3494fd671ce">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<blockquote>
+  <p><em>Introduction to Algorithm, 3rd, Cormen을 토대로 정리한 내용입니다.</em></p>
+</blockquote>
+
+</div>
+    </div>
+    </div>
+<p>알고리즘 비용에는 메모리, 통신 대역폭, 필요 하드웨어 등이 있겠지만, 가장 중요시 여기는 자원 기준은 역시 연산 시간이다.</p>
+
+<p>사실, 알고리즘의 성능은 입력 값, 컴퓨터의 구조, 사용자의 목적에 따라 다르게 평가될 수 있지만, 일반적인 RAM 구조의 컴퓨터를 대상으로 한다.</p>
+
+<h2 id='알고리즘-성능-자세히-분석하기-삽입-정렬'>알고리즘 성능 자세히 분석하기 : 삽입 정렬</h2>
+
+<p>다음과 같은 삽입 정렬 알고리즘을 예시로 분석해보겠다.</p>
+
+<pre><code class="language-pseudocode">// 삽입 정렬 예시 코드
+for j = 2 to A.length
+    key = A[j]
+    i = j - 1
+    while i &amp;#38;#62; 0 and A[i] &amp;#38;#62; key
+        A[i+1] = A[i]
+        i = i - 1
+    A[i+1] = key
+
+</code></pre>
+<h3 id='각-코드의-연산-비용-합산-구하기'>각 코드의 연산 비용 합산 구하기</h3>
+
+<p>입력 크기를 n으로 설정한 뒤, 각 코드의 한번의 기본적인 연산이나 명령 수행의 시간적 비용을 $c_i$로 가정하고, 이를 연산 횟수와 곱하여 구해보자. (주석의 경우, 무시됨.)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">순서</th>
+      <th style="text-align: center">코드</th>
+      <th style="text-align: center">비용</th>
+      <th style="text-align: center">연산 횟수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">for j = 2 to A.length</code></td>
+      <td style="text-align: center">$c_1$</td>
+      <td style="text-align: center">$n$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">key = A[j]</code></td>
+      <td style="text-align: center">$c_2$</td>
+      <td style="text-align: center">$n-1$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">i = j - 1</code></td>
+      <td style="text-align: center">$c_3$</td>
+      <td style="text-align: center">$n-1$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">while i &gt; 0 and A[i] &gt; key</code></td>
+      <td style="text-align: center">$c_4$</td>
+      <td style="text-align: center">$\sum^n_{j=2}t_j$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A[i+1] = A[i]</code></td>
+      <td style="text-align: center">$c_5$</td>
+      <td style="text-align: center">$\sum^n_{j=2}(t_j-1)$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">i = i - 1</code></td>
+      <td style="text-align: center">$c_6$</td>
+      <td style="text-align: center">$\sum^n_{j=2}(t_j-1)$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">A[i+1] = key</code></td>
+      <td style="text-align: center">$c_7$</td>
+      <td style="text-align: center">$n-1$</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>첫번째 줄 코드 : 두번째 원소부터 연산을 시작하여, 입력 크기를 1 넘어가는 순간에 종료 조건이 만족되어 종료되므로, $n-1$이 아니라 $n$번 연산이다.</p>
+  </li>
+  <li>
+    <p>2, 3, 7번째 줄 코드: 첫번째 줄 코드가 종료 조건이 만족되는 순간을 제외하고 모두 연산되므로 $n-1$번 연산이다.</p>
+  </li>
+  <li>
+    <p>4, 5, 6번째 줄 코드: 마찬가지로 j가 2부터 $n$까지 $n-1$번의 연산을 거치겠지만, 각각의 연산은 미리 정렬된 부분배열의 원소들의 크기와 현재 <code class="language-plaintext highlighter-rouge">A[j]</code>의 비교 결과에 따라 달라지므로, $t_j$로 둘 것이다.</p>
+
+    <ul>
+      <li>
+        <p>연산 결과의 달라짐을 알아보기 위해, 오름차순으로 정렬의 극단적인 예 두가지를 들어보자.</p>
+
+        <ul>
+          <li>
+            <p><code class="language-plaintext highlighter-rouge">A[j]</code> 값이 5이고, 부분배열 <code class="language-plaintext highlighter-rouge">A[1...j-1]</code>이 <code class="language-plaintext highlighter-rouge">[1,2,3,4]</code>일 때 $\rightarrow$ 첫 번째 연산에서 종료조건이 만족되어 연산이 종료되므로 연산 횟수 $t_j$는 단 1번만 이루어진다.</p>
+          </li>
+          <li>
+            <p><code class="language-plaintext highlighter-rouge">A[j]</code> 값이 0이고, 부분배열 <code class="language-plaintext highlighter-rouge">A[1...j-1]</code>이 <code class="language-plaintext highlighter-rouge">[1,2,3,4]</code>일 때 $\rightarrow$ <code class="language-plaintext highlighter-rouge">A[j]</code>는 맨 앞에 위치해야하므로, 연산은 부분 배열의 크기인 4번에 종료조건 확인을 위한 1번을 추가해  $t_j$는 총 5가 될 것이다.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>5, 6번째 줄 코드 : 4번의 <code class="language-plaintext highlighter-rouge">while문</code>의 종료 조건이 만족될 때는 실행되지 않으므로 $t_j-1$번 수행된다.</p>
+  </li>
+</ul>
+
+<p>이러한 연산들의 비용과 연산 횟수를 곱해서 모두 더하면 알고리즘의 총 비용, $T(n)$을 계산 할 수 있다.</p>
+
+\[T(n)=c_1n+c_2(n-1)+c_3(n-1)+c_4\sum^n_{j=2}t_j+c_5\sum^n_{j=2}(t_j-1)+c_6\sum^n_{j=2}(t_j-1)+c_7(n-1)\]
+
+<p>이러한 방법을 이용해 연산 비용 뿐만 아니라 메모리 사용량 등 또한 계산할 수 있다.</p>
+
+<h3 id='이상적인-상황과-최악의-상황에서의-삽입-정렬'>이상적인 상황과 최악의 상황에서의 삽입 정렬</h3>
+
+<p>$t_j$를 설명할 때 사용했던 이상적인 상황과 최악의 상황에 따른 성능을 알아보자.</p>
+
+<p>이상적인 상황에서는 첫번째 연산에서 종료조건을 만족하므로 $t_j=1$일 때, 순서 5, 6 코드의 연산 횟수는 $\sum^n_{j=2}(1-1)$은 0이 되며, 나머지는 다음과 같이 계산 된다.</p>
+
+\[\displaylines{
+T(n)=c_1n+c_2(n-1)+c_3(n-1)+c_4(n-1)+c_7(n-1)\\=(c_1+c_2+c_3+c_4+c_7)n-(c_2+c_3+c_4+c_7)
+}\]
+
+<p>이상적인 상황에서 삽입정렬은 다항식 $an+b$ 형태로, n에 대한 선형 함수가 된다.</p>
+
+<p>최악의 상황에서의 삽입 정렬의 경우, 정렬된 부분 배열의 모든 원소에 대해 연산이 진행되므로 <code class="language-plaintext highlighter-rouge">A[1...j-1]</code>의 길이, 즉 <code class="language-plaintext highlighter-rouge">j-1</code>번의 자리 바꿈 연산과, 마지막 종료조건 확인 연산이 합해져, $t_j=j$가 되게 된다.</p>
+
+<p>시그마 값들에 대입해 연산해보면,</p>
+
+\[\sum^n_{j=2}j=(\sum^n_{j=1}j)-1=\frac{n(n+1)}{2}-1\\
+\sum^n_{j=2}(j-1)=\sum^{n-1}_{j=1}j=\frac{n(n-1)}{2}\]
+
+<p>알고리즘의 총 비용은 다음과 같이 된다.</p>
+
+\[\displaylines{
+T(n)=\\c_1n+c_2(n-1)+c_3(n-1)+c_4 \left(\frac{n(n+1)}{2}-1\right)+c_5\left(\frac{n(n-1)}{2}\right)+c_6\left(\frac{n(n-1)}{2}\right)+c_7(n-1)\\=\left(\frac{c_4}{2}+\frac{c_5}{2}+\frac{c_6}{2}\right)n^2+\left(c_1+c_2+c_3+\frac{c_4}{2}-\frac{c_5}{2}-\frac{c_6}{2}+c_7\right)n -(c_2+c_4+c_5+c_8)
+}\]
+
+<p>최악의 상황에서 삽입정렬은 다항식 $an^2+bn+c$ 형태로, n에 대한 이차 함수(quadratic function)가 된다.</p>
+
+<p>이러한 표기는 성능을 표기하는데 복잡하고, 정수의 입력값만 받기 때문에 사용되지 않고, 주로 점근적인 표기법인 <strong>시간복잡도</strong>를 이용해 표기한다.</p>
+
+<h2 id='현실적인-대회에서의-알고리즘-분석'>현실적인 대회에서의 알고리즘 분석</h2>
+
+<p>대회의 성능 합격 기준은</p>
+<ul>
+  <li>연산 시간</li>
+  <li>메모리 사용량<br />
+즉, 입력값의 양 $N$과 성능 제한을 비교하여 알고리즘의 합격 여부를 구현 이전에 예측 가능</li>
+</ul>
+
+<h3 id='시간-복잡도'>시간 복잡도</h3>
+
+<p>보통의 CPU 구조의 개인 PC나 채점용 서버, C, C++ 언어 기준으로 대략 10억번의 연산에 1초 이상의 시간이 걸림.</p>
+
+<div class="callout callout-warning" id="callout-54bd0fcf-e2f8-4d97-9575-99f7f64670e6">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>warning</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>다만, 컴파일러, CPU, 세부 구현 등에 따라 성능이 수십배 차이 날 수 있으므로, 절대 맹신하지 말자</p>
+
+</div>
+    </div>
+    </div>
+<h4 id='예시'>예시</h4>
+
+<p>만약 입력값의 양 $N$이 최대 2,000이고, 시간 제한이 1초 이내인 문제에서 시간 복잡도 $O(n^3)$인 알고리즘을 구현했다면, 대략적인 연산량과 예상 연산 시간은 다음과 같다.</p>
+
+\[\displaylines{
+operations\ = 2000^3 = 8,000,000,000\\
+estimated\ operation\ time =  8,000,000,000 \times \frac{1s}{1,000,000,000}\approx8s
+}\]
+
+<p>시간 복잡도 $O(n^3)$의 알고리즘은 제한을 통과하지 못할 것이다.</p>
+
+<p>따라서, 시간 복잡도가 $O(\log{n} \cdot n^2)$ 이하인 알고리즘을 구현해야할 것이다.<br />
+\(\displaylines{
+operations\ = \log{2000} \cdot 2000^2 \approx 4.386\times 10^7 = 43,860,000\\
+estimated\ operation\ time =  43,860,000 \times \frac{1s}{1,000,000,000}\approx0.44s
+}\)</p>
+
+<p>평소에 알고리즘들의 시간복잡도를 미리 파악하고 정리를 통해 구현 시, 이를 기준으로 알고리즘을 바꾸거나 프루닝 등의 최적화를 고려하여 시간 절약 가능</p>
+
+<h4 id='시간의-측정'>시간의 측정</h4>
+
+<p>파이썬의 경우 다음과 같은 방식으로 수행 시간을 측정할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="c1"># 측정 시
+# 
+# 당신의 알고리즘 코드
+# 
+</span><span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="c1"># 측정 종료
+</span><span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#34;time:&amp;#34;, end_time - start_time) # 수행 시간 출력(초 단위)
+</span>
+</code></pre></div></div>
+<p>파이썬은 C 계열 언어보다 느리므로 1초에 2000만 연산 정도, pypy3는 초당 1억번 연산으로 계산해도 된다.</p>
+
+<h3 id='공간-복잡도'>공간 복잡도</h3>
+
+<p>메모리 사용량의 경우 <code class="language-plaintext highlighter-rouge">MB</code> 단위로 제시되는 경우가 많음. ex) 메모리 제한 128MB</p>
+
+<p>대부분 문제는 정수형 자료형인 <code class="language-plaintext highlighter-rouge">int</code>의 배열을 이용하며 하나에 <code class="language-plaintext highlighter-rouge">4byte</code>임.</p>
+
+<h4 id='자료형-크기-파악'>자료형 크기 파악</h4>
+
+<p>단, 컴파일러에 따라 자료형의 크기는 달라질 수 있으므로, 사용하는 기술의 자료형 크기를 미리 파악하자.</p>
+
+<ul>
+  <li>Java, C 계열 <code class="language-plaintext highlighter-rouge">int</code> : 4 Bytes  <br />
+범위 : -2,147,483,648 ~ 2,147,483,647 ($-2^{31} \sim 2^{31}-1$)</li>
+  <li>Java, C 계열 <code class="language-plaintext highlighter-rouge">long long</code> : 8 Byte  <br />
+범위 : -9223372036854775808 ~ 9223372036854775807 ($-2^{63} \sim 2^{63}-1$)</li>
+</ul>
+
+<div class="callout callout-tip" id="callout-9ea0c82b-e5d9-40f8-9fb0-f41eaf8837f6">
+      <div class="header">
+        <span class="emoji">💡</span>
+        <span class="title"><strong>tip</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>Java의 표준 혹은 C 계열의 외부 라이브러리인 BigInter 클래스를 이용하면 무제한의 범위를 가질 수 있다.</p>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>
+    <p>C 계열 <code class="language-plaintext highlighter-rouge">char</code> : 1 Byte  <br />
+범위 : $-128 \sim 127$</p>
+  </li>
+  <li>
+    <p>Java 계열 <code class="language-plaintext highlighter-rouge">char</code> : 2 Byte  <br />
+범위 : 0 ~ 65535</p>
+  </li>
+  <li>
+    <p>Python 계열 <code class="language-plaintext highlighter-rouge">int</code> : 정수형의 제한 범위가 존재하지 않아 엄밀히 말하면 무제한 이지만, python3의 <code class="language-plaintext highlighter-rouge">list</code> 기준으로 정수 하나는 8 byte를 차지한다.</p>
+
+    <p>즉 일반적으로 2배 정도 사용하지만, $O(n)$으로 비례하는 것은 같으므로 점근적으로 4byte로 보아도 무방하다.</p>
+
+    <p>```python<br />
+import sys<br />
+print(sys.getsizeof([0])) # 64<br />
+print(sys.getsizeof([0 for i in range(10)])) # 184<br />
+print(sys.getsizeof([0 for i in range(100)])) # 920<br />
+print(sys.getsizeof([0 for i in range(1000)])) # 8856<br />
+lst = []<br />
+print(sys.getsizeof(lst)) # 56<br />
+lst.append(1)<br />
+print(sys.getsizeof(lst)) # 88 # 32만큼 증가<br />
+lst.append(1)<br />
+print(sys.getsizeof(lst)) # 88<br />
+lst.append(2)<br />
+print(sys.getsizeof(lst)) # 88<br />
+lst.append(2)<br />
+print(sys.getsizeof(lst)) # 88, 32만큼 증가<br />
+lst.append(2)<br />
+print(sys.getsizeof(lst)) # 120<br />
+lst.append(2)<br />
+print(sys.getsizeof(lst)) # 120<br />
+lst.append(2)<br />
+print(sys.getsizeof(lst)) # 120<br />
+lst.append(2)<br />
+print(sys.getsizeof(lst)) # 120<br />
+lst.append(2)<br />
+print(sys.getsizeof(lst)) # 184, 64 만큼 증가</p>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  python의 `list`는 C++의 `Vector` 처럼 `list`의 크기를 미리 크게 잡아놓고, 사이즈 한도가 커질 때 마다 사이즈 증가량을 2배로 키우는 방식으로 증가한다.
+- Python 계열 `str` : 무제한
+만약, 기억나지 않거나 컴파일러가 생소한 경우 다음과 같이 직접 코드로 알 수 있다.
+
+```c
+#include &amp;#38;#60;stdio.h&amp;#38;#62;
+
+int main()
+&amp;#123;
+    printf(&amp;#34;char: &amp;#37;d, short: &amp;#37;d, int: &amp;#37;d, long: &amp;#37;d, long long: &amp;#37;d\n&amp;#34;, 
+        sizeof(char), 
+        sizeof(short),
+        sizeof(int),
+        sizeof(long),
+        sizeof(long long)
+    );
+    // char: 1, short: 2, int: 4, long: 4, long long: 8
+
+    return 0;
+&amp;#125;
+
+</code></pre></div></div>
+<h4 id='예시'>예시</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">int a[1000];</code>: 4KB</li>
+  <li><code class="language-plaintext highlighter-rouge">int a[1000000];</code>: 4MB</li>
+  <li><code class="language-plaintext highlighter-rouge">int a[2000][2000];</code>: 16MB</li>
+</ul>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%84%B1%EB%8A%A5%20%EB%B6%84%EC%84%9D.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/알고리즘 성능 분석.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

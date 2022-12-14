@@ -1,2 +1,0 @@
-# DKT Wrap up
-

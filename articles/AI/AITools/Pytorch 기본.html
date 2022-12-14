@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Pytorch 기본 배우기 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Pytorch 기본 배우기" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true PyTorch 기본 배우기" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true PyTorch 기본 배우기" />
+<link rel="canonical" href="http://localhost:4000/articles/AI/AITools/Pytorch%20%EA%B8%B0%EB%B3%B8.html" />
+<meta property="og:url" content="http://localhost:4000/articles/AI/AITools/Pytorch%20%EA%B8%B0%EB%B3%B8.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-14T13:41:08+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Pytorch 기본 배우기" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-14T13:41:08+09:00","datePublished":"2022-12-14T13:41:08+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true PyTorch 기본 배우기","headline":"Pytorch 기본 배우기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/AI/AITools/Pytorch%20%EA%B8%B0%EB%B3%B8.html"},"url":"http://localhost:4000/articles/AI/AITools/Pytorch%20%EA%B8%B0%EB%B3%B8.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Pytorch 기본 배우기</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-12-14T13:41:08+09:00" itemprop="datePublished">Dec 14, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#PyTorch-시작' id='markdown-toc-0-PyTorch-시작'>PyTorch 시작</a><ul><li><a href='#개발-환경-설정' id='markdown-toc-0-개발-환경-설정'>개발 환경 설정</a><ul>
+</ul></li> 
+<li><a href='#pytorch-basic' id='markdown-toc-0-pytorch-basic'>pytorch basic</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#PyTorch-Dataset' id='markdown-toc-0-PyTorch-Dataset'>PyTorch Dataset</a></li> 
+<li><a href='#torch-autograd' id='markdown-toc-0-torch-autograd'>torch.autograd</a></li> 
+</ol>
+<h1 id='PyTorch-기본-배우기'>PyTorch 기본 배우기</h1>
+
+<blockquote>
+  <p>본 자료는 Naver BoostAI camp의 강의를 정리한 내용입니다</p>
+</blockquote>
+
+<h2 id='PyTorch-시작'>PyTorch 시작</h2>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201124432465.png" alt="" /></p>
+
+<p><strong>[img 0. PyTorch logo]</strong></p>
+
+<ul>
+  <li>PyTorch : Keras + Tensorflow 와 경쟁하는 facebook 진영의 딥러닝 프레임워크</li>
+  <li>비교적 쉽고 빠르고 여러 기능을 가지고 있다.</li>
+  <li>
+    <p>Numpy의 array 구조 Tensor, AutoGrad(자동 미분) 지원,  다양한 딥러닝 함수와 모델 지원</p>
+  </li>
+  <li>PyTorch 튜토리얼과 PyTorch로 시작하는 딥 러닝 입문 추천</li>
+</ul>
+
+<h3 id='개발-환경-설정'>개발 환경 설정</h3>
+
+<h4 id='구글-Colab'>구글 Colab</h4>
+
+<ul>
+  <li>구글 로그인 후 구글 Colab 활용, 구글 드라이브 연동 추천</li>
+</ul>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201124131115.png" alt="" /></p>
+
+<p><strong>[img 1. 구글 드라이브 연동방법]</strong></p>
+
+<ul>
+  <li>새 노트를 생성한 뒤, 노란 표시의 폴더를 클릭하면 구글 드라이브와 연동 가능
+    <ul>
+      <li>대용량, 고성능의 컴퓨팅이 필요하므로 추천</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201124309487.png" alt="" /></p>
+
+<p><strong>[img 1-1. 구글 드라이브 내부에 이러한 폴더가 생성된다.]</strong></p>
+
+<ul>
+  <li>해당 폴더가 default directory로 되어있다.</li>
+</ul>
+
+<h4 id='VScode와-연결'>VScode와 연결</h4>
+
+<ul>
+  <li>https://github.com/BoostcampAITech/lecture-note-python-basics-for-ai/blob/main/codes/pytorch/00_utils/colab%20on%20VSCode.md 참조</li>
+</ul>
+
+<ol>
+  <li>
+    <p>google colab 설정</p>
+  </li>
+  <li>
+    <p>VScode 설치</p>
+  </li>
+  <li>
+    <p>ngrok 가입 및 다운로드, 토큰 값 확인</p>
+
+    <p><img src="/assets/img/Pytorch 기본/image-20210201125327940.png" alt="" /></p>
+
+    <ul>
+      <li>노란 형광펜 : 다운로드</li>
+      <li>빨간 줄: 토큰</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>[img 2. ngrok 결과]</strong></p>
+
+<ol>
+  <li>colab 하드웨어 GPU로 변경</li>
+</ol>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201125004514.png" alt="" /><img src="/assets/img/Pytorch 기본/image-20210201125020083.png" alt="" /></p>
+
+<p><strong>[img 2-1. colab 노트설정 변경]</strong></p>
+
+<ul>
+  <li>colab 파일 생성 시마다 해줘야 한다.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>구글 colab에서 해당 코드 실행</p>
+
+    <p>```python<br />
+!pip install colab-ssh<br />
+NGROK_TOKEN = '토큰' # ngrok 토큰<br />
+PASSWORD = '접속할 비밀번호' # 비밀번호 설정<br />
+from colab_ssh import launch_ssh<br />
+launch_ssh(NGROK_TOKEN, PASSWORD)</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   안될시
+
+   ```python
+   !pip install colab-ssh --upgrade
+   from colab_ssh import launch_ssh_cloudflared
+   PASSWORD = &amp;#39;접속할 비밀번호&amp;#39; # 비밀번호 설정
+   launch_ssh_cloudflared(password=PASSWORD)
+   # 이후 cloudflare 설치, 실행 해야함.
+   
+</code></pre></div></div>
+<p><strong>[code 2. ngrok 혹은 coludflared 활용 vscode 연결]</strong></p>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201130242938.png" alt="" /></p>
+
+<p><strong>[img 2-2. 초기 지시 사항]</strong></p>
+
+<ol>
+  <li>terminal에 <code class="language-plaintext highlighter-rouge">code ~/.ssh/config</code>로 연 뒤 다음과 같은 코드 입력</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host *.trycloudflare.com
+	HostName &amp;#37;h
+	User root
+	Port 22
+	ProxyCommand &amp;#38;#60;PUT_THE_ABSOLUTE_CLOUDFLARE_PATH_HERE&amp;#38;#62; access ssh --hostname &amp;#37;h
+
+</code></pre></div></div>
+<p><strong>[code 2-1. config 파일 내용]</strong></p>
+
+<ul>
+  <li>
+    <PUT_THE_ABSOLUTE_CLOUDFLARE_PATH_HERE> 의 경우, window의 경우 cloudflared.exe가 있는 장소 
+</PUT_THE_ABSOLUTE_CLOUDFLARE_PATH_HERE>
+  </li>
+  <li>\대신 \\를 넣어야 작동한다.</li>
+</ul>
+
+<ol>
+  <li>VScode에 <code class="language-plaintext highlighter-rouge">Remote-SSH</code> Extension 설치</li>
+</ol>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201131421215.png" alt="" /></p>
+
+<p><strong>[img 2-3. 2개를 설치해야하지만 맨위의 익스텐션을 설치하면 자동 설치된다.]</strong></p>
+
+<ol>
+  <li>SSH 연결</li>
+</ol>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201131532694.png" alt="" /></p>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201131618194.png" alt="" /></p>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201131605844.png" alt="" /></p>
+
+<ul>
+  <li>이후 <strong>Linux</strong>를 선택한 후, yes, colab에서 설정한 비밀번호 입력 후, Open Folder를 통하여</li>
+</ul>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201134254592.png" alt="" /></p>
+
+<ul>
+  <li>해당 디렉토리로 들어가면 내 구글 드라이브로 들어갈 수 있다.</li>
+</ul>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201134356896.png" alt="" /></p>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210201134431330.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Terminal: Create New Integrated Terminal</code>을 통해 google colab의 terminal 환경을 열 수 있다.</p>
+  </li>
+  <li>
+    <p>이런식으로 연 colab 파일은 작업하는 동안 닫지 말자.</p>
+  </li>
+</ul>
+
+<h3 id='pytorch-basic'>pytorch basic</h3>
+
+<h4 id='PyTorch-Tensor-연산'>PyTorch Tensor 연산</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">torch</span> <span class="c1"># 보통 alias 사용하지 않음
+</span><span class="n">n_array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arrange</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">t_array</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t_array</span><span class="p">)</span> <span class="c1"># tensor([[0., 1., 2., 3., 4.],[5., 6., 7., 8., 9.]])
+</span><span class="k">print</span><span class="p">(</span><span class="n">t_array</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># torch.Size([2, 5])
+</span><span class="k">print</span><span class="p">(</span><span class="n">t_array</span><span class="p">.</span><span class="n">ndim</span><span class="p">)</span> <span class="c1"># 2
+</span><span class="k">print</span><span class="p">(</span><span class="n">t_array</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="c1"># torch.Size([2, 5]), element 갯수인 numpy와 달리 shape가 나옴
+</span><span class="n">t_array</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># tensor([[0., 1., 2.],[5., 6., 7.]]) 슬라이싱 가능
+</span>
+</code></pre></div></div>
+<p><strong>[code 3. 모듈 import 및 array to tensor]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span> <span class="c1"># tensor([[ 60., 70.],[160., 195.]]) numpy와 달리 좀더 직관적이다.
+# n1.dot(n2) : numpy의 dot product, 같은 결과, 
+</span>
+</code></pre></div></div>
+<p><strong>[code 3-1. 기초 tensor operation - 행렬곱셈]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span> <span class="o">*</span> <span class="n">t2</span><span class="p">)</span> <span class="c1"># tensor([[0., 1.],[4., 9.]])
+# t1.mul(t2) : 같은 결과 
+# t1 * 5 : tensor([[ 0.,  5.], [10., 15.]]), 원소들에게 적용되는 곱셈 
+</span>
+</code></pre></div></div>
+<p><strong>[code 3-2. 기초 tensor operation - 행렬 원소간 곱셈]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1"># tensor(4.5000) # 전체 평균
+</span><span class="n">n1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">t1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># tensor([4., 5.]) # 0차원 평균
+</span><span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># tensor([0.5000, 2.5000, 4.5000, 6.5000, 8.5000]) # 1차원 평균
+</span>
+</code></pre></div></div>
+<p><strong>[code 3-2. 기초 tensor operation - tensor 평균]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># tensor([[0., 1.], [2., 3.], [4., 5.], [6., 7.], [8., 9.]])
+# numpy의 reshape 기능
+</span><span class="k">print</span><span class="p">(</span><span class="n">n1</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="c1"># 같은 결과
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="n">squeeze</span><span class="p">())</span><span class="c1"># tensor([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
+# rank를 줄인다, 자주쓰는 기능
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">).</span><span class="n">squeeze</span><span class="p">().</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="c1"># tensor([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
+# rank를 반대로 늘린다. 
+</span>
+</code></pre></div></div>
+<p><strong>[code 3-2. 기초 tensor operation - tensor reshape와 squeeze]</strong></p>
+
+<h4 id='Tensor-operations-for-ML-DL-formula'>Tensor operations for ML/DL formula</h4>
+
+<ul>
+  <li>여러가지 ML 내장 함수로 쉽게 사용할 수 있는 것이 pytorch의 장점이다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="n">F</span>
+<span class="n">tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span> <span class="c1"># 앞으로 쓸 tensor 정의 
+</span>
+</code></pre></div></div>
+<p><strong>[code 4. 함수를 사용하기 위해 functional을 import 해야한다.]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">h_tensor</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">h_tensor</span><span class="p">)</span> <span class="c1"># tensor([0.3458, 0.4224, 0.2318]) 
+# softmax : classify 문제에서 자주 사용하는 합해서 1인 벡터 생성 
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="c1"># 0~4 범위의 5개의 랜덤 숫자를 가진 배열 10개를 생성   
+</span><span class="n">y_label</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 각 배열의 가장 높은 값의 인덱스로 이뤄진 1차원 배열 생성
+</span><span class="k">print</span><span class="p">(</span><span class="n">y_label</span><span class="p">)</span> <span class="c1"># tensor([0, 3, 1, 2, 0, 2, 1, 3, 1, 4]), label 생성
+</span><span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">functional</span><span class="p">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">y_label</span><span class="p">))</span> <span class="c1"># onehot : label 데이터를 이용해 해당 벡터를 가장 가능성이 높은 1 길이의 벡터로 바꿔줌  
+# tensor([[1, 0, 0, 0, 0],
+#         [0, 0, 0, 1, 0],
+#         [0, 1, 0, 0, 0],
+#         [0, 0, 1, 0, 0],
+#         [1, 0, 0, 0, 0],
+#         [0, 0, 1, 0, 0],
+#         [0, 1, 0, 0, 0],
+#         [0, 0, 0, 1, 0],
+#         [0, 1, 0, 0, 0],
+#         [0, 0, 0, 0, 1]])
+</span>
+</code></pre></div></div>
+<p><strong>[code 4-1. 여러가지 내장 함수]</strong></p>
+
+<h4 id='torch-autograd'>torch autograd</h4>
+
+<ul>
+  <li>torch의 강력한 기능 중 하나,  자동으로 미분하여 gradient를 구해준다.</li>
+</ul>
+
+\[y=w^2\\
+z=2*y+5\\
+z=2*w^2+5\]
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># True를 주어야 gradient가 자동으로 업데이트 된다.
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">w</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="n">z</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span> <span class="c1"># backpropagation 알고리즘, 자동으로 gradient를 업데이트 해줌
+</span><span class="n">w</span><span class="p">.</span><span class="n">grad</span> <span class="c1"># tensor(8. ), 4(2w^2의 미분값) * w(tensor(2.0))의 결과
+# Q.backward(gradient=external_grad), 벡터 형태의 미분또한 가능
+</span>
+</code></pre></div></div>
+<ul>
+  <li>https://towardsdatascience.com/linear-regression-with-pytorch-eb6dedead817 추가로 참조</li>
+</ul>
+
+<h2 id='PyTorch-Dataset'>PyTorch Dataset</h2>
+
+<h2 id='torch-autograd'>torch.autograd</h2>
+<p>Automatic gradient의 약자, pytorch의 gradient calculating API</p>
+
+<ul>
+  <li>Automatic gradent == Automatic differentiation</li>
+  <li>forward와 backward passe가 가능, 보통의 행렬 계산 Library와 딥러닝 Library의 차이가 됨</li>
+</ul>
+
+<p>일일이 수작업으로 gradient를 구했던 과거와 달리 Computational graph를 기반으로 자동으로 구함</p>
+
+<p>딥러닝의 접근성을 크게 늘려줌</p>
+
+<p><img src="/assets/img/Pytorch 기본/image-20210310234552951.png" alt="" /></p>
+
+<p><strong>[img. Autograd의 원리]</strong></p>
+
+<p>Backpropagation을 진행하면서 Chain rule을 위해 gradient 값들의 graph을 저장함</p>
+
+<p>실습은 torch.autograd.ipynb 파일 참조</p>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/AI/AITools/Pytorch%20%EA%B8%B0%EB%B3%B8.html" hidden></a>
+  <p class="u-path" hidden>_articles/AI/AITools/Pytorch 기본.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

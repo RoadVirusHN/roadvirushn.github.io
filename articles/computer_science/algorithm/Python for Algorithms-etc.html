@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python for Algorithms-etc | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Python for Algorithms-etc" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/Python%20for%20Algorithms-etc.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/Python%20for%20Algorithms-etc.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-23T13:39:43+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Python for Algorithms-etc" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-23T13:39:43+09:00","datePublished":"2022-09-23T13:39:43+09:00","description":"min_depth: 2 max_depth: 3 varied_style: true","headline":"Python for Algorithms-etc","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/Python%20for%20Algorithms-etc.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/Python%20for%20Algorithms-etc.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Python for Algorithms-etc</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-09-23T13:39:43+09:00" itemprop="datePublished">Sep 23, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ul id='markdown-toc-0'>
+<li><a href='#스위핑' id='markdown-toc-0-스위핑'>스위핑</a></li> 
+<li><a href='#컨벡스-헐' id='markdown-toc-0-컨벡스-헐'>컨벡스 헐</a><ol><li><a href='#CCW-Counter-Clock-Wise' id='markdown-toc-0-CCW-Counter-Clock-Wise'>CCW(Counter Clock Wise)</a></li> 
+<li><a href='#그라함-스캔' id='markdown-toc-0-그라함-스캔'>그라함 스캔</a></li> 
+
+</ol></li> 
+<li><a href='#누적합' id='markdown-toc-0-누적합'>누적합</a><ol><li><a href='#일반-누적합' id='markdown-toc-0-일반-누적합'>일반 누적합</a></li> 
+<li><a href='#2차원-누적합' id='markdown-toc-0-2차원-누적합'>2차원 누적합</a></li> 
+
+</ol></li> 
+</ul>
+<h1 id="python-for-algorithms-etc">Python for Algorithms-etc</h1>
+
+<h2 id='스위핑'>스위핑</h2>
+
+<div class="callout callout-example" id="callout-f185c785-15e0-467d-bec6-3d2f861e5276">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>스위핑 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='컨벡스-헐'>컨벡스 헐</h2>
+<h3 id='CCW-Counter-Clock-Wise'>CCW(Counter Clock Wise)</h3>
+<p>벡터의 외적(Cross Product)를 이용해 점의 쌍을 기준으로 다른 점의 상대적 위치를 알아냄</p>
+
+<div class="callout callout-example" id="callout-73acb13c-ac9e-48ee-8278-6075a7abc395">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>CCW 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">ccw</span><span class="p">(</span><span class="n">fr_point</span><span class="p">,</span> <span class="n">to_point</span><span class="p">,</span> <span class="n">target_point</span><span class="p">):</span>
+    <span class="n">fr_x</span><span class="p">,</span> <span class="n">fr_y</span> <span class="o">=</span> <span class="n">fr_point</span>
+    <span class="n">to_x</span><span class="p">,</span> <span class="n">to_y</span> <span class="o">=</span> <span class="n">to_point</span>
+    <span class="n">tg_x</span><span class="p">,</span> <span class="n">tg_y</span> <span class="o">=</span> <span class="n">target_point</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">to_x</span> <span class="o">-</span> <span class="n">fr_x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">tg_y</span> <span class="o">-</span> <span class="n">fr_y</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">tg_x</span> <span class="o">-</span> <span class="n">fr_x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">to_y</span> <span class="o">-</span> <span class="n">fr_y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="c1"># 반시계 방향
+</span>    <span class="k">elif</span> <span class="n">result</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># 시계 방향
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span> <span class="c1"># 평행
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='그라함-스캔'>그라함 스캔</h3>
+
+<div class="callout callout-example" id="callout-8ce4421e-98cc-43da-be4a-42b7c0061dc0">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>그라함 스캔 $O(n\log n)$ 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">ccw</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="s">'x'</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="s">'y'</span><span class="p">])</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="s">'x'</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="s">'y'</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">comp_by_ccw</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">firstPoint</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">ccw</span><span class="p">(</span><span class="n">firstPoint</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">comp_by_pos</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s">'y'</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="s">'y'</span><span class="p">]</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="n">firstPoint</span> <span class="o">=</span> <span class="p">{</span><span class="s">'x'</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s">'y'</span><span class="p">:</span><span class="mi">9999099</span><span class="p">}</span> <span class="c1"># 정렬을 위한 기준
+</span><span class="n">points</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">functools</span><span class="p">.</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="n">comp_by_pos</span><span class="p">))</span> <span class="c1"># 맨 왼쪽 위 지점부터 작 위한 정렬
+</span><span class="n">points</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">functools</span><span class="p">.</span><span class="n">cmp_to_key</span><span class="p">(</span><span class="n">comp_by_ccw</span><span class="p">))</span> <span class="c1"># 기준에서 외부 껍질 우선으로 정렬 
+</span><span class="n">st</span> <span class="o">=</span> <span class="p">[</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># 첫 두 시작 지점 입력
+</span><span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="p">:]:</span> <span class="c1"># 모든 지점에서
+</span>    <span class="k">while</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="p">)</span> <span class="o">&gt;=</span><span class="mi">2</span><span class="p">):</span> 
+        <span class="k">if</span> <span class="p">(</span><span class="n">ccw</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">st</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">point</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span> <span class="c1"># 다음 점이 더 외부 껍질 부분에 있는지 확인
+</span>            <span class="k">break</span> <span class="c1"># while 문이므로 스택 내의 모든 점에 대해서 검사함 
+</span>        <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># 만약 더 외부 껍질이면 2번째 기준점을 내보냄
+</span>    <span class="n">st</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="p">)</span> <span class="c1"># 새로운 기준점 집어 넣음
+</span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id='누적합'>누적합</h2>
+<p>배열의 크기를 $N$, 구간 합의 갯수를 $M$이라고 할때, 기존의 시간 복잡도 $O(M\times N)$에서 $O(M+N)$으로 바꿀 수 있다.</p>
+<h3 id='일반-누적합'>일반 누적합</h3>
+
+<div class="callout callout-example" id="callout-b871432a-69fa-43ca-aeae-0693f990a8cf">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>누적합 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">sums</span><span class="p">):</span>
+	<span class="c1"># 누적합은 마지막 인덱스 + 1에 변화값의 항등원을 더하기 때문에
+</span>	<span class="c1"># 기존 배열보다 크기가 1커야 한다.
+</span>    <span class="n">new_board</span> <span class="o">=</span> <span class="n">board</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">props</span> <span class="ow">in</span> <span class="n">sums</span><span class="p">:</span>
+        <span class="c1"># x1 ~ x2까지 degree 값만큼 변화시킨다.
+</span>        <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="n">props</span>
+
+		<span class="c1"># 누적합은 첫 인데스와 마지막 인덱스 + 1 부분을 각각 변화되야할 값과 그 값의 항등원을 더해야 한다. 
+</span>		<span class="c1"># 예를 들어 인덱스 0 ~ 2까지 값을 X 만큼 변화시킨다면 다음과 같이 설정한다.
+</span>		<span class="c1">#     0  1  2  3 
+</span>		<span class="c1">#   [+X, 0, 0, -X]
+</span>		<span class="n">new_board</span><span class="p">[</span><span class="n">x1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">degree</span>
+		<span class="n">new_board</span><span class="p">[</span><span class="n">x2</span><span class="p">]</span> <span class="o">-=</span> <span class="n">degree</span>
+            
+	<span class="c1"># 이후 각 가로 줄 먼저 가로 방향 누적합을 구한다. 인덱스 0를 제외하고 이전 인덱스 값을 순차적으로 더해주면 된다.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_board</span><span class="p">)):</span>
+        <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        
+
+	<span class="c1"># 해당 누적합을 원래 2차원 배열에 적용시키기
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">)):</span>
+        <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            
+    <span class="k">return</span> <span class="n">board</span> 
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='2차원-누적합'>2차원 누적합</h3>
+
+<div class="callout callout-example" id="callout-b7710687-67b3-40d2-b947-2bf941698a81">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>2차원 누적합 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">sums</span><span class="p">):</span>
+	<span class="c1"># 누적합은 마지막 인덱스 + 1에 변화값의 항등원을 더하기 때문에
+</span>	<span class="c1"># 기존 배열보다 가로 세로 크기가 1커야 한다.
+</span>    <span class="n">new_board</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">board</span><span class="p">]</span> <span class="o">+</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">props</span> <span class="ow">in</span> <span class="n">sums</span><span class="p">:</span>
+        <span class="c1"># (x1, y1) ~ (x2, y2)까지 degree 값만큼 변화시킨다.
+</span>        <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="n">props</span>
+
+		<span class="c1"># 2차원 누적합은 1차원과 달리 두 방향으로 인덱스를 누적합을 설정해야 한다.
+</span>		<span class="c1"># 예를 들어 (0,0) ~ (2,2)까지 값을 X 만큼 변화시킨다면 다음과 같이 설정한다.
+</span>		<span class="c1"># /   0  1  2  3 
+</span>		<span class="c1"># 0 (+X, 0, 0, -X)
+</span>		<span class="c1"># 1 ( 0, 0, 0,  0)
+</span>		<span class="c1"># 2 ( 0, 0, 0,  0)
+</span>		<span class="c1"># 3 (-X, 0, 0, +X)
+</span>		<span class="c1"># 참고로, (0,0) ~ (0, 2)처럼 한줄의 누적합 또한 
+</span>		<span class="c1"># 예외 없이 다음과 같이 다음 줄에 인덱스를 설정해야 한다.
+</span>		<span class="c1"># /   0  1  2  3 
+</span>		<span class="c1"># 0 (+X, 0, 0, -X)
+</span>		<span class="c1"># 1 (-X, 0, 0, +X)
+</span>		<span class="c1"># 2 ( 0, 0, 0,  0)
+</span>		<span class="c1"># 3 ( 0, 0, 0,  0)
+</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[[</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">],</span> <span class="p">[</span><span class="n">x2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">y2</span><span class="o">+</span><span class="mi">1</span><span class="p">]]:</span> 
+            <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">degree</span>
+        
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[[</span><span class="n">x2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">y1</span><span class="p">],</span> <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">y2</span><span class="o">+</span><span class="mi">1</span><span class="p">]]:</span>
+            <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-=</span> <span class="n">degree</span>
+            
+	<span class="c1"># 이후 각 가로 줄 먼저 가로 방향 누적합을 구하고
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_board</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">new_board</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span> <span class="c1"># 이때, 가로줄은 인덱스가 1부터 시작해야한다.
+</span>            <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        
+	<span class="c1"># 이후 각 세로 줄의 세로 방향 누적합을 더하면 된다.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">new_board</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_board</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span> <span class="c1"># 이때, 세로줄은 인덱스가 1부터 시작해야한다.
+</span>            <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+
+	<span class="c1"># 해당 누적합을 원래 2차원 배열에 적용시키기
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+            
+    <span class="k">return</span> <span class="n">board</span> 
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/Python%20for%20Algorithms-etc.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/Python for Algorithms-etc.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

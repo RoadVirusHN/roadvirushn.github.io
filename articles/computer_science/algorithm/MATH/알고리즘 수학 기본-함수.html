@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>알고리즘 수학 기본-함수 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="알고리즘 수학 기본-함수" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%ED%95%A8%EC%88%98.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%ED%95%A8%EC%88%98.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-06T19:53:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="알고리즘 수학 기본-함수" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-07-06T19:53:58+09:00","datePublished":"2021-07-06T19:53:58+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"알고리즘 수학 기본-함수","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%ED%95%A8%EC%88%98.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%ED%95%A8%EC%88%98.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">알고리즘 수학 기본-함수</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2021-07-06T19:53:58+09:00" itemprop="datePublished">Jul 6, 2021
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#함수-functions' id='markdown-toc-0-함수-functions'>함수(functions)</a></li> 
+<li><a href='#전사함수-Surjection-단사함수-Injection-그리고-전단사함수-Bijection' id='markdown-toc-0-전사함수-Surjection-단사함수-Injection-그리고-전단사함수-Bijection'>전사함수(Surjection), 단사함수(Injection) 그리고 전단사함수(Bijection)</a></li> 
+</ol>
+<h1 id='알고리즘을-위한-수학-함수-functions'>알고리즘을 위한 수학 - 함수(functions)</h1>
+
+<p><em>Introduction to Algorithm, 3rd, Cormen을 토대로 정리한 내용입니다.</em></p>
+
+<p>일부 표기나 개념이 기존의 수학과 다를 수도 있으므로, 여기서 배운 내용은 단순 해당 책(Introduction to Algorithm, 3rd, Cormen)의 부록으로 취급해야한다.</p>
+
+<p>이 장에서는 함수의 표기법, 정의, 속성 같은 기본적인 것만 배운다.</p>
+
+<p>앞선 알고리즘을 위한 수학 - 집합(Sets)편을 먼저 보고 오는 것을 추천한다.</p>
+
+<h2 id='함수-functions'>함수(functions)</h2>
+
+<p>함수 $f$는 두 집합 A, B의 원소 a, b에 대하여, a에 대한 b의 값이 정확히 하나씩만 대응되는 이항관계이다.</p>
+
+<p>이때 집합 A를 함수 $f$의 정의역(domain, 도메인), 집합 B를 함수 $f$의 공역(codomain, 부도메인)이라 하며, $f:A\rightarrow B$로 표현한다.</p>
+
+<p>이때 정의역의 원소 a와 공역의 원소 b의 관계가 성립된다면$(a,b)\in f$, $b=f(a)$로 표기하며, 이때 b의 값은 오직 원소 a의 값에 의해서만 결정된다.</p>
+
+<ul>
+  <li>
+    <p>$b=f(a)$에서 정의역의 원소 a는 함수 f의 인자(argument)이며, 정의역이 원소 b는 함수 f의 값(value)이다.</p>
+
+    <p>만약, 정의역이 곱집합으로 되어있는 경우에는 괄호를 활용해 인자를 표현한다. 예를 들어 $f:A_1\times A_2 \times \cdots \times A_n \rightarrow B$는 $f(a_1,a_2,\cdots,a_n)$으로 표현된다.</p>
+
+    <p>사실, 엄밀히 말하면 $(a_1,a_2,\cdots,a_n)$ 형태의 n-튜플이 통째로 하나의 인자이며, $f((a_1,a_2,\cdots,a_3))$가 옳은 표현이지만, 각 $a_i$를 하나의 인자로 보고, 여러개의 인자가 들어가 있는 것으로 표현한다.</p>
+  </li>
+</ul>
+
+<p>앞서 언급했듯이,인자 a는 오직 한 값 b에 대응되지만, b은 여러 인자 a값에 대응될 수 있다.</p>
+
+<p>예시로, 함수 $f={(a,b):a,b\in \N\ and\ b=a\mod2}$의 경우, $f:\N \rightarrow {0,1}$로 표현하며, a 값은 b값으로 0 또는 1만 가질 수 있고, b는 많은 수의 a를 가진다.</p>
+
+<p>반대로 이항관계 $g={(a,b):a,b\in \N\ and\ a+b는\ 짝수}$에서는 예를 들어 a가 홀수이면, 나머지 모든 홀수들이 전부 b가 될 수 있으며, 함수의 정의 중, 정의역의 원소가 여러 공역의 원소에 대응되서는 안되므로, 함수가 될 수 없다.</p>
+
+<p>그러므로 함수는 각 값에 대해 하나의 인자, 즉, 하나의 정의역의 원소를 대응시켜 주어 정의할 수 있으며, 만약 두 함수 $f$와 $g$의 정의역과 공역이 같다면, 두 함수는 같은 걸로 정의한다.</p>
+
+<h2 id='전사함수-Surjection-단사함수-Injection-그리고-전단사함수-Bijection'>전사함수(Surjection), 단사함수(Injection) 그리고 전단사함수(Bijection)</h2>
+
+<p>수학에서 상(image)은 어떤 함수에 대한 정의역의 원소들에 대응하는 공역의 원소들이며, $b=f(a)$에서 b를 의미한다. 이를 이용해 부분집합 $A’$를 다음과 같이 표현할 수 있다.</p>
+
+<p>$f(A’)={b\in B:b=f(a)\ for\ some\ a \in A’}$</p>
+
+<p>또한, 함수의 치역(range)은 정의역의 상(image), 즉 함수의 출력값들의 집합을 의미하며, 정의역 집합 A에 대해 $f(A)$로 표현된다.</p>
+
+<p>예를 들면 $f(n)=2n$에서 치역은 $f(\N)={m:m=2n\ for\ some\ n \in \N}$, 즉, 양수의 짝수 정수로 이루어진다.</p>
+
+<p><img src="/assets/img/알고리즘 수학 기본-함수/image-20211224123955495.png" alt="" /></p>
+
+<p>전사함수(surjection, surjective funtion) 또는 A 위로의 B 함수( A onto B)은 이러한 치역(range)와 공역(codomain)이 같은 함수를 의미한다.</p>
+
+<p>즉, 공역의 모든 원소들이 어떤 정의역 원소들에 의해 하나도 빠짐없이 대응되고 있어야 한다. 이때, 정의역 원소의 중복을 허용한다.</p>
+
+<p>함수 $f(n)=\left \lfloor n/2  \right \rfloor$의 경우, n의 값이 바뀌면서 모든 정수를 $\N$의 모든 값이 함수의 결과값으로 나오므로 전사함수이다.</p>
+
+<p>하지만, 함수 $f(n)=2n$의 경우, 함수의 결과값은 언제나 짝수로 나오므로, 홀수 정수는 대응되는 정의역 원소가 없으므로 전사함수가 아니다.</p>
+
+<p><img src="/assets/img/알고리즘 수학 기본-함수/image-20211224124055511.png" alt="" /></p>
+
+<p>단사함수(injection, injective function), 또는 일대일(one-to-one) 함수는 각기 다른 정의역의 원소가 각기 다른 공역의 원소에 대응 되는 함수를 의미한다.</p>
+
+<p>즉, $a\neq a’$은 곧 $f(a)\neq f’(a)$를 의미한다.</p>
+
+<p>전사함수의 예시와 반대로 함수 $f(n)=\left \lfloor n/2  \right \rfloor$의 경우, n의 값이 바뀌어도 같은 결과값이 나올 수 있으므로, 단사함수가 아니다.(n이 2,3 이 전부 같은 1이 나온다.)</p>
+
+<p>하지만, 함수 $f(n)=2n$의 경우, 함수의 결과값은 n의 2배인 짝수가 나오므로, 중복되는 결과값이 없어 단사 함수이다.</p>
+
+<p><img src="/assets/img/알고리즘 수학 기본-함수/image-20211224125130541.png" alt="" /></p>
+
+<p>전단사함수(bijection, bijective function) 또는 일대일 대응(one-to-one correspondence) 함수(일대일 함수와 다르다)는 전사함수와 단사함수가 합쳐진 것으로, 즉 정의역과 공역의 원소들이 하나도 빠짐없고 중복없이 모두 일대일 대응되는 함수이다.</p>
+
+<p>예를 들어 함수 $f(n)=(-1)^n \left \lceil n/2 \right \rceil$의 경우 정의역 $(0, 1, 2, 3, 4)$에 대해 순서대로 $(0,-1,1,-2,2)$가 생성되므로 전단사함수이다.</p>
+
+<p>집합 A가 정의역이자 공역이 같은 전단사 함수, 즉 자기자신과 일대일 대응되는 전단사함수는 순열(permutation)이라고도 부른다.</p>
+
+<ul>
+  <li>집합 A의 원소가 함수에 대입되 집합 A의 다른 원소가 나오는 꼴이 마치 자리가 바뀌는 것 처럼 보이므로. 물론, 자리가 바뀌지 않고 같은 값이 나와도 전단사 함수이며, 순열의 경우의 수중 하나이다.</li>
+</ul>
+
+<p>또한 전단사 함수의 성질로, 정의역과 공역이 반전되어 있는 형태의 역함수 $f^{-1}(b)=a$로 표현될 수 있으며, 위에서 언급한  함수$ f(n)=(-1)^n \left \lceil n/2 \right \rceil$ 의 역함수를 예시로 들자면<br />
+\(f^{-1}(m)=\left\{\begin{matrix}
+2m\ &amp; if \ m\geq0
+\\ -2m-1 &amp; if\ m &lt; 0
+\end{matrix}\right.\)</p>
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%ED%95%A8%EC%88%98.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/MATH/알고리즘 수학 기본-함수.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

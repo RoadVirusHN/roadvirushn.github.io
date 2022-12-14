@@ -1,0 +1,2402 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>딥러닝 기본 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="딥러닝 기본" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true 딥러닝 기본(Deep learning Basic)" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true 딥러닝 기본(Deep learning Basic)" />
+<link rel="canonical" href="http://localhost:4000/articles/AI/DEEP_LEARNING/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EA%B8%B0%EB%B3%B8.html" />
+<meta property="og:url" content="http://localhost:4000/articles/AI/DEEP_LEARNING/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EA%B8%B0%EB%B3%B8.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-14T13:41:08+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="딥러닝 기본" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-14T13:41:08+09:00","datePublished":"2022-12-14T13:41:08+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true 딥러닝 기본(Deep learning Basic)","headline":"딥러닝 기본","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/AI/DEEP_LEARNING/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EA%B8%B0%EB%B3%B8.html"},"url":"http://localhost:4000/articles/AI/DEEP_LEARNING/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EA%B8%B0%EB%B3%B8.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">딥러닝 기본</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-12-14T13:41:08+09:00" itemprop="datePublished">Dec 14, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#Historical-Review' id='markdown-toc-0-Historical-Review'>Historical Review</a><ul><li><a href='#소개' id='markdown-toc-0-소개'>소개</a></li> 
+<li><a href='#딥러닝의-역사' id='markdown-toc-0-딥러닝의-역사'>딥러닝의 역사</a></li> 
+
+</ul></li> 
+<li><a href='#뉴럴-네트워크-Neural-Networks-MLP' id='markdown-toc-0-뉴럴-네트워크-Neural-Networks-MLP'>뉴럴 네트워크(Neural Networks) - MLP</a><ul><li><a href='#Neural-Networks' id='markdown-toc-0-Neural-Networks'>Neural Networks</a></li> 
+<li><a href='#Linear-Neural-Networks' id='markdown-toc-0-Linear-Neural-Networks'>Linear Neural Networks</a></li> 
+<li><a href='#Activation-function-and-Multi-layer-Perceptron' id='markdown-toc-0-Activation-function-and-Multi-layer-Perceptron'>Activation function and Multi-layer Perceptron</a></li> 
+<li><a href='#Optimization' id='markdown-toc-0-Optimization'>Optimization</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#Convolutional-Neural-Networks' id='markdown-toc-0-Convolutional-Neural-Networks'>Convolutional Neural Networks</a><ul><li><a href='#Convolution-연산' id='markdown-toc-0-Convolution-연산'>Convolution 연산</a><ul>
+</ul></li> 
+<li><a href='#CNN-구조와-용어' id='markdown-toc-0-CNN-구조와-용어'>CNN 구조와 용어</a></li> 
+<li><a href='#Convolution-Arithmetic' id='markdown-toc-0-Convolution-Arithmetic'>Convolution Arithmetic</a></li> 
+<li><a href='#1x1-convolution를-활용한-최적화' id='markdown-toc-0-1x1-convolution를-활용한-최적화'>1x1 convolution를 활용한 최적화</a></li> 
+
+</ul></li> 
+<li><a href='#Modern-CNN' id='markdown-toc-0-Modern-CNN'>Modern CNN</a></li> 
+<li><a href='#Computer-Vision-Applications' id='markdown-toc-0-Computer-Vision-Applications'>Computer Vision Applications</a><ul><li><a href='#Semantic-Segmentation' id='markdown-toc-0-Semantic-Segmentation'>Semantic Segmentation</a><ul>
+</ul></li> 
+<li><a href='#Detection' id='markdown-toc-0-Detection'>Detection</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#Sequential-Models-RNN' id='markdown-toc-0-Sequential-Models-RNN'>Sequential Models - RNN</a><ul><li><a href='#Sequential-Model' id='markdown-toc-0-Sequential-Model'>Sequential Model</a></li> 
+<li><a href='#Recurrent-Neural-Network-RNN' id='markdown-toc-0-Recurrent-Neural-Network-RNN'>Recurrent Neural Network(RNN)</a></li> 
+<li><a href='#Long-Short-Term-Memory-LSTM' id='markdown-toc-0-Long-Short-Term-Memory-LSTM'>Long Short Term Memory(LSTM)</a><ul>
+</ul></li> 
+<li><a href='#Gated-Recurrent-Unit-GRU' id='markdown-toc-0-Gated-Recurrent-Unit-GRU'>Gated Recurrent Unit(GRU)</a></li> 
+
+</ul></li> 
+<li><a href='#Transformer-모델' id='markdown-toc-0-Transformer-모델'>Transformer 모델</a><ul><li><a href='#Transformer' id='markdown-toc-0-Transformer'>Transformer</a><ul>
+</ul></li> 
+<li><a href='#Transform-모델의-근황' id='markdown-toc-0-Transform-모델의-근황'>Transform 모델의 근황</a></li> 
+
+</ul></li> 
+<li><a href='#Generative-Models-생성-모델' id='markdown-toc-0-Generative-Models-생성-모델'>Generative Models(생성 모델)</a><ul><li><a href='#Introduction' id='markdown-toc-0-Introduction'>Introduction</a></li> 
+<li><a href='#Basic-Discrete-Distributions' id='markdown-toc-0-Basic-Discrete-Distributions'>Basic Discrete Distributions</a></li> 
+<li><a href='#Structure-Through-Independence-amp-Conditional-Independence' id='markdown-toc-0-Structure-Through-Independence-amp-Conditional-Independence'>Structure Through Independence &amp; Conditional Independence</a></li> 
+<li><a href='#Auto-regressive-Model' id='markdown-toc-0-Auto-regressive-Model'>Auto-regressive Model</a></li> 
+<li><a href='#img-src-assets-img-딥러닝-기본-image-20210214123411474-png-alt' id='markdown-toc-0-img-src-assets-img-딥러닝-기본-image-20210214123411474-png-alt'><img src="/assets/img/딥러닝 기본/image-20210214123411474.png" alt="" /></a></li> 
+<li><a href='#Latent-Variable-Models' id='markdown-toc-0-Latent-Variable-Models'>Latent Variable Models</a><ul>
+</ul></li> 
+<li><a href='#Generative-Adversarial-Network-GAN' id='markdown-toc-0-Generative-Adversarial-Network-GAN'>Generative Adversarial Network(GAN)</a><ul>
+</ul></li> 
+
+</ul></li> 
+</ol>
+<h1 id='딥러닝-기본-Deep-learning-Basic'>딥러닝 기본(Deep learning Basic)</h1>
+
+<blockquote>
+  <p>본 자료는 Naver BoostAI camp의 강의를 정리한 내용입니다</p>
+</blockquote>
+
+<h2 id='Historical-Review'>Historical Review</h2>
+
+<h3 id='소개'>소개</h3>
+
+<ul>
+  <li>구현(코딩) 실력, 수학 스킬, 최신 논문 기술 등의 능력이 중요하다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210201114543323.png" alt="" /></p>
+
+<p><strong>[img 0. 인공지능의 대분류]</strong></p>
+
+<ul>
+  <li>인공지능 : 인간의 지능을 흉내</li>
+  <li>머신러닝 : 데이터를 통해 인공지능을 학습</li>
+  <li>
+    <p>딥 러닝 : 심층 신경망을 활용한 모델 이용하는 머신러닝, network를 깊게 쌓음</p>
+  </li>
+  <li>딥러닝에 필요한 4가지 요소
+    <ul>
+      <li>모델이 학습할 데이터 : 풀고자할 문제에 따라 필요한 데이터가 다르다.
+        <ul>
+          <li>Detection, Classification, Visual QnA 등</li>
+        </ul>
+      </li>
+      <li>데이터로 학습, 판단할 모델 : 데이터를 필요한 데이터로 바꿔주는 것
+        <ul>
+          <li>AlexNet, GoogLeNet, GAN 등</li>
+        </ul>
+      </li>
+      <li>모델 학습 방법인 loss 함수 : 모델을 학습하는 방법
+        <ul>
+          <li>단순히 줄이는 것이 아니라 학습하지않은 데이터등에도 동작해야함.</li>
+          <li>MSE, CE, MLE 등</li>
+        </ul>
+      </li>
+      <li>loss 함수를 최소화할 알고리즘 : loss 를 어떻게 줄일 것인가?
+        <ul>
+          <li>SGD, Adagrad 등이 있음</li>
+          <li>추가로 Ensemble, MixUp, Dropout 등 테크닉이 있음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id='딥러닝의-역사'>딥러닝의 역사</h3>
+
+<blockquote>
+  <p>Denny Britz의 Deep Learning’s Most Importat Ideas - A Bref Historical Review를 참조함</p>
+</blockquote>
+
+<ul>
+  <li>2012 - AlexNet: 최초로 인공지능 대회에서 1등을 한 DeepLearning 방법론. 시초</li>
+  <li>2013 - DQN : 강화학습에 쓰인 방법론, Q Learning 접목, Deepmind의 작품</li>
+  <li>2014 - Encoder/Decorder : 인공지능 번역에 쓰이는 방법론, 다른 언어의 연속으로 번역</li>
+  <li>2014 - Adam Optimizer :  효과 좋은 optimizer, 왠만하면 잘된다라는 뜻이라고 함.</li>
+  <li>2015 - Generative Adversarial Network(GAN) : 새로운 것을 생성하는 데 많이 사용하는 AI</li>
+  <li>2015 - Residual Networks(ResNet) :  너무 깊어진 Network layer의 성능 저하를 막아줌
+    <ul>
+      <li>input을 추가로 넣어주는 것</li>
+    </ul>
+  </li>
+  <li>2017 - Transformer : attention 구조를 이용한 google의 방법론</li>
+  <li>2018 - BERT(fine-tuned NLP models) : Transformer + bidirection 구조를 활용한 모델
+    <ul>
+      <li>Bidirectional Encoder Representations from Transformers의 약자</li>
+    </ul>
+  </li>
+  <li>2019 - Big Language Models(GPT-X) : OpenAI에서 만든 BERT의 Language 모델, 굉장히 많은 parameter로 이루어짐</li>
+  <li>2020 - Self-Supervised Learning: SimCLR( a simple framework for contrastive learning of visual representations)의 줄인말, 학습 데이터 외의 라벨을 모르는 데이터를 활용, 지도 학습 + 비지도 학습
+    <ul>
+      <li>시뮬레이터, 도메인 지식을 활용해 학습 데이터를 추가로 만드는 연구도 활발히 이뤄지는 중</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id='뉴럴-네트워크-Neural-Networks-MLP'>뉴럴 네트워크(Neural Networks) - MLP</h2>
+
+<h3 id='Neural-Networks'>Neural Networks</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210201235023750.png" alt="" /></p>
+
+<p><strong>[img 1. 두뇌 속의 신경망]</strong></p>
+
+<blockquote>
+  <p><em>동물의 생물학적 신경망에서 영감을 받은 컴퓨팅 시스템</em> - wikipedia</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>생물학적 구조만 비슷할 뿐, 실제 작동원리와는 관계없음.</p>
+  </li>
+  <li>
+    <p>행렬의 곱과 비선형 연산의 반복을 통하여 함수(논리)를 근사추정하는 것.</p>
+    <ul>
+      <li>neural networks are function approximators that stack affine transformations followed by nonlinear transformations.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id='Linear-Neural-Networks'>Linear Neural Networks</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202001255581.png" alt="" /></p>
+
+<p><strong>[img 2. 선형 모델 그래프]</strong></p>
+
+<ul>
+  <li>Data: $\mathcal{D} = {(x_i,y_i)}^N_{i=1}$ : input 값과 output 값이 각각 하나</li>
+  <li>
+    <p>Model: $\hat{y} = wx+b,\ \hat{y} : 모델의\ 예상치$ : 선형 그래프로 이루어짐</p>
+  </li>
+  <li>Loss: $loss =\frac{1}{N}\sum^N_{i=1}(y_i-\hat{y_i})^2$ : 실제 값과 얼마나 다른가에 대한 척도, 보통 MSE loss 함수로 loss 측정</li>
+</ul>
+
+\[\frac{\partial loss}{\partial w} = \frac{\partial}{\partial w} \frac{1}{N}\sum^N_{i=1}(y_i - \hat{y_i})^2 = \frac{\partial}{\partial w} \frac{1}{N}\sum^N_{i=1}(y_i - wx_i-b)^2 =-\frac{1}{N}\sum^N_{i=1}-2(y_i-wx_i-b)x_i \\
+\frac{\partial loss}{\partial b} = \frac{\partial}{\partial b} \frac{1}{N}\sum^N_{i=1}(y_i - \hat{y_i})^2 = \frac{\partial}{\partial b} \frac{1}{N}\sum^N_{i=1}(y_i - wx_i-b)^2 =-\frac{1}{N}\sum^N_{i=1}-2(y_i-wx_i-b)\]
+
+<p><strong>[math 2. backprogation을 이용한 w와 b의 편미분값 구하기]</strong><br />
+\(w = w - \eta\frac{\partial loss}{\partial w},\ b = b-\eta \frac{\partial loss}{\partial b}\)<br />
+<strong>[math 2-1. loss 값을 줄이기 위한 새로운 w와 b 업데이트]</strong></p>
+
+<ul>
+  <li>
+    <p>이러한 방식으로 최적값을 구하는 것을 gradient descent라고 한다.</p>
+  </li>
+  <li>
+    <p>matrix 연산을 통하여 여러 차원의 input과 output 또한 해결 가능</p>
+    <ul>
+      <li>matrix 연산은 두 벡터 공간 상의 변환을 의미함</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id='Activation-function-and-Multi-layer-Perceptron'>Activation function and Multi-layer Perceptron</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202005745910.png" alt="" /></p>
+
+<p><strong>[math 3. Activation fucntion의 종류와 그래프 모양]</strong></p>
+
+<ul>
+  <li>각 문제, 데이터마다 사용해야할 Activation function이 다르다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202010053005.png" alt="" /></p>
+
+<p><strong>[img 3. Multi-Layer Perceptron]</strong></p>
+
+<ul>
+  <li>
+    <p>이러한 여러 matrix 연산과 matrix 연산 사이의 activation function에 의해 nonlenar transform을 거쳐서 여러 층의 neural network가 된다.</p>
+  </li>
+  <li>
+    <p>각 문제마다 loss function을 다르게 하게 된다.</p>
+
+    <p><img src="/assets/img/딥러닝 기본/image-20210202010517717.png" alt="" /></p>
+
+    <ul>
+      <li>Regression Task : 선형 문제 (집 크기 vs 집 가격) 같은 문제에서는 MSE 등을 사용</li>
+      <li>Classification Task : 분류 문제(손글씨 숫자 구분) 같은 문제는 CE 등을 사용(가장 높은 확률의 class를 선택)</li>
+      <li>Probabilistic Task : 확률 문제(나이 맞추기 ) 같은 문제에는 MLE를 사용.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>[img 3. Multi-Layer Perceptron]</strong></p>
+
+<ul>
+  <li>실습은 https://colab.research.google.com/drive/14lEFtnt3kEn-LiwTKTwpUB-3VQ0Xx84W#scrollTo=3AS5BdrMw1E9 또는 mlp.ipynb 파일 참조</li>
+</ul>
+
+<h3 id='Optimization'>Optimization</h3>
+
+<p>관련 실습 : https://colab.research.google.com/drive/1p4H1mZpa41n3C8fQCtknQ0NfJGtEUIl6#scrollTo=B-uu6x8DFwZ9 혹은 optm.ipynb 참조</p>
+
+<h4 id='용어의-정의'>용어의 정의</h4>
+
+<ul>
+  <li>
+    <p>Gradient Descent(경사 하강): 반복 1차 미분을 통하여 loss의 국소 최소점을 찾는 알고리즘</p>
+  </li>
+  <li>
+    <p>First-order iterative optimization algorithm for finding a local minimum of a differntiable function.</p>
+  </li>
+  <li>
+    <p>Generalization(일반화): training error와 test error의 차이가 적음을 의미.</p>
+
+    <p><img src="/assets/img/딥러닝 기본/image-20210202102047493.png" alt="" /></p>
+
+    <p><strong>[img 4. generalization의 그래프]</strong></p>
+
+    <p><img src="/assets/img/딥러닝 기본/image-20210202102119698.png" alt="" /></p>
+
+    <p><strong>[img 4-1. fitting의 도식화]</strong></p>
+
+    <ul>
+      <li>underfitting은 너무 training을 안해서 그래프가 적절하지 않음</li>
+      <li>overfitting은 너무 training을 많이해서 유연성이 없고, 해당 데이터 이외의 데이터에 부적합</li>
+    </ul>
+  </li>
+  <li>
+    <p>Cross-validation(교차 검증, 또는 k-fold validation)</p>
+
+    <ul>
+      <li>데이터를 k개로 나눈 뒤 학습 데이터와 검증(validation) 데이터를 바꿔가며 hyper parametr를 정하는 모델 검증 기술</li>
+      <li>
+        <p>training, validation, test 데이터로 나누게 된다.</p>
+      </li>
+      <li>parameter : 최적해에서 찾는 값(weight, bias 등)</li>
+      <li>hyper-parameter: 내가 시작할 때 주는 값(loss function, learning rate 등)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Bias(편향) and Variance(분산도):  분산이 적은 것이 좋다.</p>
+    <ul>
+      <li>우리가 줄이는 cost는 사실 여러 부분으로 나뉘며 무엇을 줄일 지 생각해봐야한다.</li>
+      <li>noise가 많은 데이터면 bias와 variance를 둘다 줄이는 것이 힘드므로 골라야함</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202102906498.png" alt="" /></p>
+
+<p><strong>[img 4-2. bias, variance 그림]</strong><br />
+\(Given\ \mathcal{D} = \{(x_i,t_i)\}^N_{i=1},\ where t = f(x)+ \epsilon\ and\ \epsilon \sim \mathcal{N}(0, \sigma^2)\\
+\stackrel {\mathbb{E}\left[(t-\hat{f})^2\right]}{cost} = \mathbb{E}\left[(t-f +f-\hat{f})^2\right]=\dots=\stackrel {\mathbb{E}\left[(f-\mathbb{E}[\hat{f}]^2)^2\right]}{bias^2}+\stackrel {\mathbb{E}[(\mathbb{E}[\hat{f}]-\hat{f})^2]}{variance}+\stackrel {\mathbb{E}[\epsilon]}{noise}\)<br />
+<strong>[math 4. cost(loss)의 구성]</strong></p>
+
+<ul>
+  <li>bootstrapping : 학습 데이터를 일부만(예를 들어 80%만) 쓴 데이터를 각기 달리하여 여러개 만들어 랜덤 샘플링하여 학습시켜 보는것
+    <ul>
+      <li>학습결과가 일정하면 데이터가 일정한 것이고, 결과가 각양각색이면 편차가 큰 것이다.</li>
+      <li>이렇게 만든 여러 학습 데이터의 여러 모델의 평균이나 voting을 취하기도 함.(앙상블)</li>
+    </ul>
+  </li>
+  <li>bagging(Bootstrapping aggregating) vs boosting
+    <ul>
+      <li>bagging : bootstraping으로 만들어진 여러개의 모델 (앙상블 기법)</li>
+      <li>boosting : 전체 데이터로 학습 해본 뒤, 해당 모델로 결과를 측정해 잘 예측못하는 데이터만 모아서 가중치를 더 크게 준 뒤, (랜덤 뽑기에 더 많이 할당?) 새로운 모델로 만든 뒤 이전 모델과 합치는 형식으로 진행 (앙상블 기법의 한 종류)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202110400607.png" alt="" /></p>
+
+<p><strong>[img 4-3. bagging boosting 그림]</strong></p>
+
+<h4 id='Practical-Gradient-Descent-Methods'>Practical Gradient Descent Methods</h4>
+
+<h5 id='Gradient-Descent-Methods'>Gradient Descent Methods</h5>
+
+<ul>
+  <li>Stochastic gradient descent
+    <ul>
+      <li>update with the gradient computed from a single sample</li>
+      <li>하나의 샘플마다  경사를 계산</li>
+    </ul>
+  </li>
+  <li>Mini-batch gradient descent
+    <ul>
+      <li>update with the gradient computed from a subset of data</li>
+      <li>batch 크기의 샘플마다 경사를 계산</li>
+      <li>가장 자주 사용함</li>
+    </ul>
+  </li>
+  <li>Batch gradient descent
+    <ul>
+      <li>update with the gradient computed from the whole data</li>
+      <li>한번에 모든 샘플을 활용하여 경사를 계산</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id='Batch-size-Matters'>Batch-size Matters</h5>
+
+<ul>
+  <li>일반적으로 batch size가 너무 작으면 너무 오래걸리고, 크면 계산량이 너무 많다.</li>
+  <li>연구 결과 batch-size가 작을 수록 유리하다는 것이 실험적으로 증명됨</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202111631170.png" alt="" /></p>
+
+<p><strong>[img 5. batch size가 작을 수록 좋은 이유]</strong></p>
+
+<ul>
+  <li>batch size가 작으면 Flat Minimum, 크면 Sharp Minimum으로 도착하는 경향이 크다.</li>
+  <li>Flat Minimum은 test data 에서도 generalization이 잘되있지만 sharp minimu에서는 실제 testing 데이터와 갭이 크다.</li>
+</ul>
+
+<h4 id='optimizer'>optimizer</h4>
+
+<ul>
+  <li>특성을 확인하고 상황에 따라 골라서 사용해야함</li>
+</ul>
+
+<h5 id='Gradient-Descent'>Gradient Descent</h5>
+
+<p>$W_{t+1} \leftarrow W_t - \eta g_t,\ \eta:learning\ rate,\ g_t:Gradient$</p>
+
+<p><strong>[math 6. 경사하강법 ]</strong></p>
+
+<ul>
+  <li>가장 기본적인 방법</li>
+  <li>적절한 learning rate를 잡는 것이 힘듦</li>
+</ul>
+
+<h5 id='Momentum'>Momentum</h5>
+
+\[a_{t+1} \leftarrow \beta a_t + g_t\\ a_{t+1}:accumulation,\ \beta: momentum \\
+W_{t+1} \leftarrow W_t - \eta a_{t+1}\\ \eta:learning\ rate\]
+
+<p><strong>[math 6-1. 모멘텀 개념]</strong></p>
+
+<ul>
+  <li>이전 gradient의 값이 영향을 조금 받은 gradient로 업데이트</li>
+  <li>기본버전보다 조금 낫다.</li>
+</ul>
+
+<h5 id='Nestrerov-Accelerated-Gradient'>Nestrerov Accelerated Gradient</h5>
+
+\[a_{t+1} \leftarrow \beta a_t + \nabla \mathcal{L}(W_t-\eta \beta a_t)  \\ \nabla \mathcal{L}(W_t-\eta \beta a_t):Lookahead\ gradient,\ \beta: momentum \\
+W_{t+1} \leftarrow W_t - \eta a_{t+1}\\ \eta:learning\ rate,\ g_t:Gradient\]
+
+<p><strong>[math 6-2. NAG]</strong></p>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202122304219.png" alt="" /></p>
+
+<p><strong>[img 6. NAG와 Momentum 차이점]</strong></p>
+
+<ul>
+  <li>momentum을 계량함</li>
+  <li>최소 지점에 도달하는 것이 증명됨</li>
+  <li>이전 gradient와 현재 그레디언트로 구하는 방법과 달리 이전 momentum gradient 벡터에서 현재 벡터로 이동한다는 다른점이 있음</li>
+</ul>
+
+<h5 id='Adagrad'>Adagrad</h5>
+
+\[W_{t+1} = W_t - \frac{\eta}{\sqrt {Gt+\epsilon}}g_t\\
+G_t : Sum\ of\ gradient\ squares,\ \epsilon:for\ numerical\ stability\]
+
+<p><strong>[math 6-3. Adagrad 개념]</strong></p>
+
+<ul>
+  <li>파라미터의 변화량이 너무 적게 변하면 크게, 많이 변화해온 파라미터는 적게 learning rate를 잡아주어 조정해줌</li>
+  <li>뒤로 가면 갈수록 G~t~가 커져서 무한대로 가까이 변해 거의 learning rate가 0으로 수렴되는 단점</li>
+  <li>$\epsilon$은 분모가 0이 되는 것을 막기 위해 주는 아주 작은 값.</li>
+</ul>
+
+<h5 id='Adadelta'>Adadelta</h5>
+
+\[G_t = \gamma G_{t-1} + (1-\gamma)g_t^2\\
+W_{t+1} = W_t - \frac{\sqrt{H_{t-1}+\epsilon}}{\sqrt {G_t+\epsilon}}g_t\\
+H_t=\gamma H_{t-1}+ (1-\gamma)(\Delta W_t)^2\\
+G_t:EMA\ of\ gradient\ squares,\ H_t: EMA\ of\ difference\ squares\]
+
+<p><strong>[math 6-4. Adadelta 개념]</strong></p>
+
+<ul>
+  <li>learning rate를 사용하지 않음.</li>
+  <li>window size를 정하고 해당 size step 만큼만 learning rate에 영향을 주게하여 무한대로 수렴하는 것을 막음
+    <ul>
+      <li>예를 들어 윈도우 사이즈 10이번 11번 바뀌면 첫번째 파라미터 변화는 영향을 안주게 하고 11번째를 대신 추가.</li>
+    </ul>
+  </li>
+  <li>최근 100개의 값들을 모두 저장하면 메모리가 터지므로, exponential을 이용해서 구함</li>
+</ul>
+
+<h5 id='RMSprop'>RMSprop</h5>
+
+\[G_t = \gamma G_{t-1} + (1-\gamma)g_t^2\\
+W_{t+1} = W_t - \frac{\eta}{\sqrt {G_t+\epsilon}}g_t\\
+G_t:EMA\ of\ gradient\ squares,\ \eta: stepsize\]
+
+<p><strong>[math 6-5. RMSprop 개념]</strong></p>
+
+<ul>
+  <li>adadelta에 stepsize만 추가, 그냥 경험적, 실험적으로 깨달은 식</li>
+</ul>
+
+<h5 id='Adam'>Adam</h5>
+
+\[m_t = \beta_1 m_{t=1} + (1-\beta_1)g_t\\
+v_t = \beta_2v_{t-1} - (1-\beta_2)g_t^2\\
+W_{t+1} = W_t - \frac{\eta}{\sqrt {v_t+\epsilon}}\frac{\sqrt{1-\beta_2^t}}{1-\beta_1^t}m_t\\
+M_t:Momentum,\ v_t: EMA\ of\ gradient\ squares,\ \eta: Step\ size\]
+
+<p><strong>[math 6-6. Adam 개념]</strong></p>
+
+<ul>
+  <li>RMSdrop에 momenturm을 합친 개념</li>
+  <li>무난하고 좋은 성능을 보인다.</li>
+</ul>
+
+<h4 id='Regularization'>Regularization</h4>
+
+<ul>
+  <li>generalization을 위해 학습에 제한을 거는 방법</li>
+</ul>
+
+<h5 id='Early-Stopping'>Early Stopping</h5>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202152349645.png" alt="" /></p>
+
+<p><strong>[img 7. early stopping]</strong></p>
+
+<ul>
+  <li>validation error와 training error를 비교하며 generalization gap이 가장 적을 때 stop하는 방법</li>
+</ul>
+
+<h5 id='Parameter-Norm-Penalty'>Parameter Norm Penalty</h5>
+
+\[total\ cost = loss(\mathcal{D;W}) + \frac \alpha 2 \left \| W \right \|^2_2\\
+\frac \alpha 2 \left \| W \right \|^2_2:Parameter\ Norm\ Penalty\]
+
+<p><strong>[math 7. parameter Norm Penalty에 의한 cost 계산]</strong></p>
+
+<ul>
+  <li>parameter들의 합이 너무 커지는 것을 방지</li>
+  <li>부드러운 parameter일 수록 generalization이 좋은 경향이 있음</li>
+</ul>
+
+<h5 id='Data-Augmentation'>Data Augmentation</h5>
+
+<ul>
+  <li>데이터가 적을 때는 오히려 전통적인 머신러닝이 성능이 좋지만, 데이터가 크면 클수록 최신 딥러닝이 좋다.</li>
+  <li>문제는 데이터가 적으므로, 기존의 데이터를 여러가지 방법으로 바꾸어서 늘리는것</li>
+  <li>이미지 데이터로 예시를 들면, 흑백, 일부 가림, 이미지 방향 반전 등이 있다.</li>
+</ul>
+
+<h5 id='Noise-Robustness'>Noise Robustness</h5>
+
+<ul>
+  <li>data Augmentation과 비슷하지만, 데이터 뿐만 아니라 weights에도 노이즈를 주어서 성능 향상</li>
+</ul>
+
+<h5 id='Label-Smoothing'>Label Smoothing</h5>
+
+<ul>
+  <li>데이터 2개를 뽑아서 섞어 decision boundary를 부드럽게 해줌</li>
+  <li>mix-up 방법, cumMix 방법 등이 있음</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202153033122.png" alt="" /></p>
+
+<p><strong>[img 7-1. Label Smoothing의 그림예시]</strong></p>
+
+<ul>
+  <li>성능이 되게 좋다.</li>
+</ul>
+
+<h5 id='Dropout'>Dropout</h5>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210206075343145.png" alt="" /></p>
+
+<p><strong>[img 7-1. Label Smoothing의 그림예시]</strong></p>
+
+<ul>
+  <li>랜덤하게 neuron을 버린다.</li>
+  <li>성능은 좋아지지만 수학적으로 증명이 되진 않음</li>
+</ul>
+
+<h5 id='Batch-Normalization'>Batch Normalization</h5>
+
+\[\mu_B = \frac 1 m \sum_{i=1}^m x_i\\
+\sigma^2_B = \frac 1 m \sum^m_{i=1}(x_i-\mu_B)^2\\
+\hat{x}_i =\frac {x_i - \mu_B}{\sqrt{\sigma^2_B+\epsilon}}\]
+
+<p><strong>[math 7-1. Batch Normalization 계산]</strong></p>
+
+<ul>
+  <li>논란이 크지만 성능이 좋아짐.</li>
+  <li>layer들의 parameter들의 값을 평균과 분산을 이용하여 같은 값으로 바꿈.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210202153306844.png" alt="" /></p>
+
+<p><strong>[img 7-2. 다른 normalization의 종류]</strong></p>
+
+<h2 id='Convolutional-Neural-Networks'>Convolutional Neural Networks</h2>
+
+<h3 id='Convolution-연산'>Convolution 연산</h3>
+
+<ul>
+  <li>2개의 함수가 있을때 2개의 함수를 섞는 operator</li>
+  <li>연속 공간, 이상 공간에 따라 수식 다름</li>
+  <li>I는 전체 공간, K는 필터</li>
+</ul>
+
+<p>\(\cdot Coninuous\ convolution:\ (f*g)(t) = \int f(\tau)g(t-\tau)d\tau=\int f(t-\tau)g(t)d\tau\\
+\cdot Discrete\ convolution:\ (f*g)(t) = \sum^\infty_{i=-\infty} f(i)g(t-i)=\sum^\infty_{i=-\infty} f(t-i)g(i)\\
+\cdot 2D\ image\ convolution:\ (I*K)(i,j) = \sum_m\sum_n I(m,n)K(i-m,j-n)=\sum_m\sum_n I(i-m,i-n)K(m,n)\\\)<br />
+<strong>[math 8. Convolution operator]</strong></p>
+
+<ul>
+  <li>2차원 콘볼루션 연산의 예시.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210204153947830.png" alt="" /></p>
+
+<p><strong>[img 8. 2D image Convolution 그림]</strong><br />
+\(O_{11}=I_{11}K_{11}+I_{12}K_{12}+I_{13}K_{13}+I_{21}K_{21}+I_{22}K_{22}+I_{23}K_{23}+I_{31}K_{31}+I_{32}K_{32}+I_{33}K_{33}+bias\\
+O_{12}=I_{12}K_{11}+I_{13}K_{12}+I_{14}K_{13}+I_{22}K_{21}+I_{23}K_{22}+I_{24}K_{23}+I_{32}K_{31}+I_{33}K_{32}+I_{34}K_{33}+bias\\
+O_{13}=I_{13}K_{11}+I_{14}K_{12}+I_{15}K_{13}+I_{23}K_{21}+I_{24}K_{22}+I_{25}K_{23}+I_{33}K_{31}+I_{34}K_{32}+I_{35}K_{33}+bias\\
+O_{14}=I_{14}K_{11}+I_{15}K_{12}+I_{16}K_{13}+I_{24}K_{21}+I_{25}K_{22}+I_{26}K_{23}+I_{34}K_{31}+I_{35}K_{32}+I_{36}K_{33}+bias\)<br />
+<strong>[math 8-1. 2D image Convolution operation]</strong></p>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210204155235797.png" alt="" /></p>
+
+<p><strong>[img 8-2. 2D image Convolution filter operation]</strong></p>
+
+<ul>
+  <li>2차원 이미지의 경우 tensor로 표현되며, 보통 rgb로 계산 시 뒤의 X3(R,G,B)은 생략이 된다.</li>
+  <li>즉 5X5 convolution 연산은 기본적으로 5x5x3에서 x3이 생략된 것이다.</li>
+  <li>계산 결과는 x1이 된다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210204155415463.png" alt="" /></p>
+
+<p><strong>[img 8-3. 2D image Convolution featuremap]</strong></p>
+
+<ul>
+  <li>feature map을 연산할 때 여러 층의 feature가 나오는 방법은 여러겹의 필터를 곱하여 만드는 것이다.</li>
+</ul>
+
+<h4 id='maxpool2d층-원리'>maxpool2d층 원리</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208011810873.png" alt="" /></p>
+
+<p><strong>[img. Maxpool 2d층 예시]</strong></p>
+
+<ul>
+  <li>각 구역을 kenelsize와 stride 만큼 나누어 가장 큰값을 취함</li>
+  <li>Max값을 취하는 Maxpool이외에도 평균값을 취하는 averagepool등도 있다.</li>
+  <li>featureamp의 크기가 줄어들어 성능을 줄이고 특징을 두드러지게 할 수 있다.</li>
+  <li>다만, 공간 정보(위치, 방향, 비율)등이 모호해 지기도 한다.</li>
+</ul>
+
+<h3 id='CNN-구조와-용어'>CNN 구조와 용어</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210204160439761.png" alt="" /></p>
+
+<p><strong>[img 8-4. CNN 구조]</strong></p>
+
+<ul>
+  <li>Convolution과 pooling layer는 feature extraction을 하는 역할</li>
+  <li>Fully connected Layer는 decision making(ex) classification)을 위한 층
+    <ul>
+      <li>고전적인 CNN와 달리 최근에는 파라미터 수를 줄이기 +  generalization 성능 향상을 위해 FCL을 줄이는 추세</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>Stride</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210206163938570.png" alt="" /></p>
+
+<p><strong>[img. Stride 1과 2의 차이 그림]</strong></p>
+
+<ul>
+  <li>pixel을 뛰어넘는 수,  filter의 밀도,</li>
+  <li>filter가 stride 수 만큼 pixel을 넘어가며 생성한다.</li>
+  <li>2차원의 경우 x,y 2개로 설정 가능</li>
+</ul>
+
+<ol>
+  <li>Padding</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210206172007377.png" alt="" /></p>
+
+<p><strong>[img. padding의 유무 차이 그림]</strong></p>
+
+<ul>
+  <li>Stride 등으로 인해 외부로 나가는 픽셀을 padding으로 추가함</li>
+  <li>zero padding은 0을 넣는다는 의미, 이로써 input과 output의 space dimension이 같아짐</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210206173139477.png" alt="" /></p>
+
+<p><strong>[img. stride, padding의 예시]</strong></p>
+
+<h3 id='Convolution-Arithmetic'>Convolution Arithmetic</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210207221941702.png" alt="" /></p>
+
+<p><strong>[img. $3 \times 3$  kernel, Padding 1, Stride 1 의 연산  parameter 계산 예시]</strong></p>
+
+<ul>
+  <li>parameter의 수는 가중치의 수</li>
+  <li>
+    <p>convolution layer의 학습 파라미터 수는 <em>(필터 폭  X 필터 높이  X 입력 채널 수 X 출력 채널 수)</em>로 계산</p>
+  </li>
+  <li>
+    <p>위 예시는 $3 \times 3 \times 128 \times 64 = 73,728 $ 개의 학습 파라미터 수</p>
+  </li>
+  <li>Max pooling layer는 parameter output이 없다.
+    <ul>
+      <li>메모리 성능 제한 때문에 2개로 나누어 trainig 하는 layer?</li>
+      <li>그러므로 나뉜 수만큼 곱해주면 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210207232952600.png" alt="" /></p>
+
+<p><strong>[img. convolution 연산 추가 예시]</strong></p>
+
+<ul>
+  <li>$5 \times 5 \times 48 \times 128*2 \approx 307k$</li>
+  <li>굳이 정확히 숫자를 세는 것이 아니라 대략적인 양(마치 알고리즘의 big O 표기처럼) 성능을 측정할 수 있어야 한다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210207234905710.png" alt="" /></p>
+
+<p><strong>[img. dense layer (fully connected layer) 연산 예시]</strong></p>
+
+<ul>
+  <li>
+    <p>input의 neuron과 output의 neuron의 수를 곱한 만큼이다.</p>
+  </li>
+  <li>
+    <p>$13 * 13 * 128 * 2 \times 2048 *2 \approx 177M$</p>
+  </li>
+  <li>$2048 * 2 \times 2048 *2 \approx 16M$</li>
+  <li>$2048*2 \times 1000 \approx 4M$</li>
+  <li>Convolution operator는 같은 kernel을 연산에 쓰면서 parameter가 공유되므로 비교적 적다.</li>
+  <li>1000배 이상의 parameter가  fully connected layer에 쓰이므로 이 부분을 줄이는 추세이다.</li>
+</ul>
+
+<h3 id='1x1-convolution를-활용한-최적화'>1x1 convolution를 활용한 최적화</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208001104816.png" alt="" /></p>
+
+<p><strong>[img. 1x1 convolution 적용에 의한 차원(filter)의 감소 효과]</strong></p>
+
+<ul>
+  <li>1x1 convolution layer 연산을 통하여 차원(filter)를 감소시켜 parameter 수를 줄이며, 층 수는 늘릴 수 있다.</li>
+  <li>bottleneck 구조의 원리</li>
+</ul>
+
+<h2 id='Modern-CNN'>Modern CNN</h2>
+
+<ul>
+  <li>~2018년 까지의 CNN 기술</li>
+  <li>ImageNet Large-Scale Visual Recognition Challenge 위주
+    <ul>
+      <li>Classification, Detection, Localization, Segmentation 등의 부문이 있음</li>
+    </ul>
+  </li>
+  <li>딥러닝의 최근 Error rate는 3.5% 이하로 인간의 5.1% 보다 에러가 적다.</li>
+</ul>
+
+<ol>
+  <li>AlexNet</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208080644909.png" alt="" /></p>
+
+<p><strong>[img. AlexNet 구조]</strong></p>
+
+<ul>
+  <li>
+    <p>컴퓨터 성능의 한계를 극복하기 위해 네트워크를 2개의 길로 나눈 8단의 layer.</p>
+  </li>
+  <li>11x11x3 filter 사용
+    <ul>
+      <li>fitler의 크기가 클수록 convolution 연산 시, 고려되는 input의 크기(receptive field)가 커짐</li>
+      <li>receptive field : feature map 추출시 고려 가능한 입력의 spacial dimension.</li>
+      <li>단, parameter의 수가 커짐</li>
+    </ul>
+  </li>
+  <li>ReLU 활성 함수 사용.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208081912800.png" alt="" /></p>
+
+<ul>
+  <li><strong>[img. Relu 함수, 0 이하는 0으로 바꾼다.]</strong>
+    <ul>
+      <li>선형 모델의 장점, 학습이 용이, generalization 효과가 좋고, Vanishing gradient problem 극복</li>
+    </ul>
+  </li>
+  <li>2개 GPU 사용, Data augmentation, Dropout 활용
+    <ul>
+      <li>그 외에도 Local Response normalization, Overlapping pooling 활용</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>VGGNet</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208082150147.png" alt="" /></p>
+
+<p><strong>[img.VGGNet 구조]</strong></p>
+
+<ul>
+  <li>
+    <p>3x3 convolution filter를 활용하여 파라미터 수 줄임</p>
+  </li>
+  <li>
+    <p><img src="/assets/img/딥러닝 기본/image-20210208090026567.png" alt="" /></p>
+
+    <p><strong>[img. 3x3 filter 두번 사용 vs 5x5 filter 한번 사용 파라미터 수 비교]</strong></p>
+
+    <ul>
+      <li>필터를 통해 보는 input field의 크기는 같으나 2번 걸침으로 써 파라미터의 수는 줄일 수 있다.</li>
+      <li>이 방법을 통해 보통 최대 7x7 필터를 넘지 않는다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Dropout과 1x1 convolution을 dense layer에 활용</p>
+  </li>
+  <li>
+    <p>16층 버전(VGG16), 19층 버전(VGG19)이 있음</p>
+  </li>
+</ul>
+
+<ol>
+  <li>GoogleNet</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208090439348.png" alt="" /></p>
+
+<p><strong>[img. googlenet 구조]</strong></p>
+
+<ul>
+  <li>
+    <p>NIN 구조(Network in Network) : 네트워크 내부에 모듈 형식의 작은 네트워크들의 반복이 존재</p>
+  </li>
+  <li>
+    <p>Inception blocks: 여러개로 퍼졌다고 다시 합쳐지는 블록</p>
+
+    <ul>
+      <li><img src="/assets/img/딥러닝 기본/image-20210208090603118.png" alt="" /></li>
+    </ul>
+
+    <p><strong>[img. inception 모듈]</strong></p>
+
+    <ul>
+      <li>
+        <p>여러 개의 responsed를 추출 가능</p>
+      </li>
+      <li>
+        <p>1x1 Conv layer에 의해 파라미터의 수 감소.</p>
+      </li>
+      <li>
+        <p>채널 방향의 차원을 줄이는 효과가 있음</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/딥러닝 기본/image-20210208092105983.png" alt="" /></p>
+
+    <p><strong>[img. 1x1 convolution의 채널 감소 효과에 의한 파라미터 수 감소]</strong></p>
+  </li>
+  <li>
+    <p>VGGNet, AlexNet에 비해 layer는 깊지만 파라미터 수는 오히려 적음</p>
+  </li>
+</ul>
+
+<ol>
+  <li>ResNet</li>
+</ol>
+
+<ul>
+  <li>
+    <p>깊은 층을 가진 DNN의 training error와 test error의 갭을 줄이고 학습을 용이하게 함.</p>
+  </li>
+  <li>
+    <p>이를 통해 깊은 층의 DNN을 활용할 수 있게 해줌.</p>
+  </li>
+  <li>
+    <p>parameter  수는 줄고, 성능을 늘어나기 시작함</p>
+  </li>
+  <li>
+    <p>Residual connection (or Identity map)</p>
+
+    <ul>
+      <li>
+        <p><img src="/assets/img/딥러닝 기본/image-20210208093731195.png" alt="" /></p>
+
+        <p><strong>[img. identity map(residual map) 비교]</strong></p>
+      </li>
+      <li>
+        <p>출력 값을 일부 layer 너머의 출력에 더해 줌(skip connection)</p>
+      </li>
+      <li>위 처럼 더해주는 simp shortcut 방식과 1x1 conv layer를 거쳐서 더해주는 Projected shortcut 방식(차원을 맞춰줘야 더 해지므로)이 있다.</li>
+      <li>
+        <p>일반적으로 convolution layer 다음에 batch Norm, activation 함수 순으로 배치되며, Residual 합산은 batch Norm 뒤에, activation 앞에서 이루어진다.</p>
+
+        <ul>
+          <li>논란이 있으며, 순서가 바뀌어야 성능이 좋아질 때도 잇다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Bottleneck architecture</p>
+
+    <ul>
+      <li>1x1 conv layer을 통해 input channel을 줄여서 parameter 수를 줄이고,  다시 채널을 늘려서 값을 더할 수 있게 함.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208095358891.png" alt="" /></p>
+
+<p><strong>[img. bottleneck architecture 그림]</strong></p>
+
+<ol>
+  <li>DenseNet</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208103813747.png" alt="" /></p>
+
+<p><strong>[img. Resnet과 DenseNet 차이]</strong></p>
+
+<ul>
+  <li>Resnet과 달리 결과값을 더하는 것이 아닌 concatenation 하는 방식</li>
+  <li>채널이 점점 기하 급수적으로 커지므로, 중간에 한번씩 채널을 줄여줌
+    <ul>
+      <li>Dense Block : layer결과를 concatenate하여 채널을 늘림</li>
+      <li>Transition Block : batchnorm과 1x1 conv, 2x2 avgPooling을 통하여 채널 수 줄임</li>
+      <li>위 두 block의 반복</li>
+    </ul>
+  </li>
+  <li>간단하고 성능이 좋다.</li>
+</ul>
+
+<h2 id='Computer-Vision-Applications'>Computer Vision Applications</h2>
+
+<h3 id='Semantic-Segmentation'>Semantic Segmentation</h3>
+
+<ul>
+  <li>이미지 내부의 일부(픽셀)를 물체로써 식별하는 문제</li>
+  <li>자율 주행에서 사람, 인도, 자동차 등을 식별하는 등에 사용</li>
+</ul>
+
+<h4 id='Fully-Convolutional-Network-FCN'>Fully Convolutional Network(FCN)</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208195212790.png" alt="" /></p>
+
+<p><strong>[img. 기존의 CNN vs Fully Convolutional Network]</strong></p>
+
+<ul>
+  <li>
+    <p>dense layer을 거치지 않고, convolution layer로 바꾸어 결과의 크기를 10이 아닌 차원의 수를 10으로 만드는 것을 convolutionalization이라고 한다.</p>
+  </li>
+  <li>
+    <p>양쪽 다 parameter 수는 똑같이 4x4x16x10 = 2560으로 같다.</p>
+  </li>
+  <li>
+    <p>하지만 이를 통하여 원본보다 size가 줄어든 heat map을 구할 수 있다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208210608453.png" alt="" /></p>
+
+<p><strong>[img. convolutionalize 를 통한 heat map 생성, 고양이의 추정위치 확인이 가능해짐. ]</strong></p>
+
+<h4 id='Deconvolution-conv-transpose'>Deconvolution(conv transpose)</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208212617919.png" alt="" /></p>
+
+<p><strong>[img. Deconvolution 개념]</strong></p>
+
+<ul>
+  <li>위의 줄어든 size를 원래대로 돌리기 위해 Deconvolution을 진행할 수 있다.</li>
+  <li>원래 픽셀을 그대로 돌려주진 않으나 원본 크기로 돌아가게 된다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208212709296.png" alt="" /></p>
+
+<p><strong>[img. Deconvolution의 도식화]</strong></p>
+
+<h3 id='Detection'>Detection</h3>
+
+<ul>
+  <li>이미지 내 물체의 바운딩 박스를 찾는 문제</li>
+</ul>
+
+<h4 id='R-CNN'>R-CNN</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208213527247.png" alt="" /><img src="/assets/img/딥러닝 기본/image-20210208214004374.png" alt="" /></p>
+
+<p><strong>[img. R-CNN의 절차와 예시]</strong></p>
+
+<ol>
+  <li>이미지에서 Selective search를 통해 물체로 추정되는 부분의 bounding box를 bounding box regression을 통하여 전부 뽑는다.</li>
+  <li>해당 bounding box를 같은 크기로 바꾼 뒤, CNN(여기서는 AlexNet)을 통하여 feature를 뽑는다.</li>
+  <li>features를 SVM(support vector machine)을 통하여 classification한다.</li>
+</ol>
+
+<ul>
+  <li>1번의 물체를 추정되는 부분의 bounding box를 전부 뽑는 부분이 엄청나게 느리다.</li>
+</ul>
+
+<h4 id='SPPNet'>SPPNet</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208214203081.png" alt="" /></p>
+
+<p><strong>[img. SPPNet의 구조]</strong></p>
+
+<ul>
+  <li>CNN을 한번만 돌린 뒤, 해당 바운딩 박스 하나에서 feature를 뽑고 나서 그것을 spatial pyramid pooling을 통하여 classification함.</li>
+</ul>
+
+<h4 id='Fast-R-CNN'>Fast R-CNN</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208221610071.png" alt="" /></p>
+
+<p><strong>[img. fasc R-CNN]</strong></p>
+
+<ul>
+  <li>SPPNet과 비슷하다.</li>
+</ul>
+
+<ol>
+  <li>인풋 이미지의 바운딩 박스를 여러개 뽑는다.</li>
+  <li>CNN feature map을 만든다.</li>
+  <li>ROI(region of interest) pooling을 통하여 feature map을 뽑고, classification과 bounding-box regressor를 뽑는다.</li>
+</ol>
+
+<h4 id='Faster-R-CNN'>Faster R-CNN</h4>
+
+<ul>
+  <li>
+    <p>Fast R-CNN + Region Proposal Network</p>
+  </li>
+  <li>
+    <p>Region Proposal Network(RPN)</p>
+  </li>
+  <li>
+    <p><img src="/assets/img/딥러닝 기본/image-20210208222331311.png" alt="" /></p>
+
+    <p><strong>[img. RPN 예시]</strong></p>
+
+    <ul>
+      <li>바운딩 박스를 찾는 알고리즘 또한 교육함, classification은 하지 않음.</li>
+      <li>Anchor Boxes: 미리 정의한 물체 크기로 이루어진 kernel</li>
+    </ul>
+  </li>
+  <li>
+    <p><img src="/assets/img/딥러닝 기본/image-20210208222455115.png" alt="" /></p>
+
+    <p><strong>[img. RPN 차원]</strong></p>
+
+    <ul>
+      <li>RPN의 Fully Conv에 의해 해당 공간이 원하는 물체를 가지고 있는지 판단</li>
+      <li>3개의 region 크기(128, 256,512)와 3개의 비율(1:1, 1:2, 2:1)을 가진 총 9개의 anchor boxes를 가짐</li>
+      <li>각 bouding box가 조정되어야할 크기 (width 크기, height 크기, x offset, y offest) 4개</li>
+      <li>해당 bounding box가 classification에 쓸모 있는가?(use it or not) 2개</li>
+      <li>총 9*(4+2) = 54개의 채널을 가진 Fully Conv를 가진다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>좀 더 좋은 성능의 detection 가능</p>
+  </li>
+</ul>
+
+<h4 id='YOLO-You-only-look-once'>YOLO(You only look once)</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210208224922143.png" alt="" /></p>
+
+<p><strong>[img. yolo 예시]</strong></p>
+
+<ul>
+  <li>
+    <p>v5 까지 나왔음, 아주 빠름, 리얼 타임을 유지할 수 있다.</p>
+  </li>
+  <li>
+    <p>추출한 bounding box들의 feature를 통해 각각 classification 하는 방식이 아니라, 한꺼번에 모든 bounding box를 classification 함</p>
+  </li>
+  <li>
+    <p>여러 bounding box를 동시에 한번만 하므로 YOLO라고 한다.</p>
+
+    <p><img src="/assets/img/딥러닝 기본/image-20210208231334933.png" alt="" /></p>
+
+    <p><strong>[img. YOLO 절차]</strong></p>
+
+    <ol>
+      <li>먼저 주어진 이미지를 SxS 그리드로 나눈다.
+        <ul>
+          <li>찾고 싶은 물체의 중앙점이 속해있는 그리드에서 bouding box와 classification을 진행한다.</li>
+        </ul>
+      </li>
+      <li>무언가 물체의 중앙점을 갖는 여러개의 bounding box의 x,y 위치와 w,h 크기 그리고 쓸모 여부를 예측한다 ( 이 정보 5개를 B 라고 하자.).</li>
+      <li>위 2번과 동시에 각 그리드가 속한 물체의 classification(C개의 class가 있다고 가정하자)을 진행한다.</li>
+      <li>해당 정보를 취합한 뒤, SxSx(B*5+C) 사이즈를 가진 tensor가 된다.</li>
+    </ol>
+  </li>
+  <li>
+    <p>v2의 경우 ROI 처럼 미리 정의된 크기의 bounding box를 이용하기도 하고, 다른 모델들 또한 yolo의 방법을 사용하는 등의 상호의 장점을 이용한 발전을 한다.</p>
+  </li>
+</ul>
+
+<h2 id='Sequential-Models-RNN'>Sequential Models - RNN</h2>
+
+<h3 id='Sequential-Model'>Sequential Model</h3>
+
+<ul>
+  <li>sequential data란 순서 관계가 중요한 연속형 데이터로, 입력의 차원의 크기를 정확히 알 수 없다는 문제가 있다.(언제 부터 언제까지의 데이터를 사용해야하는가? 언제 데이터는 끝이 나는가?)</li>
+  <li>이러한 문제 때문에 CNN이나 Fully connected layer는 사용 못한다.</li>
+</ul>
+
+<ol>
+  <li>Naive sequence Model</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213145729813.png" alt="" /></p>
+
+<p><strong>[img. Naive sequence Model]</strong></p>
+
+<ul>
+  <li>과거의 정보들을 모두 고려하는 모델</li>
+</ul>
+
+<ol>
+  <li>Autoregressive model(AR model)</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213145749117.png" alt="" /></p>
+
+<p><strong>[img. Autoregressive model]</strong></p>
+
+<ul>
+  <li>fixed timespan $\tau$만큼 만을 고려하는 모델</li>
+</ul>
+
+<ol>
+  <li>Markov model(first-order autoregressive model)</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213145807612.png" alt="" /></p>
+
+<p><strong>[img. Markov model]</strong></p>
+
+<ul>
+  <li>바로 전 정보만을 이용하는 모델, joint distribution 표현이 쉬움</li>
+</ul>
+
+<ol>
+  <li>Latent autoregressive model</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213145826876.png" alt="" /><br />
+<strong>[img. Latent autoregressive model]</strong></p>
+
+<ul>
+  <li>중간의 과거 정보들을 요약하는 Hidden state를 생성하여 해당 정보를 이용하는 모델</li>
+</ul>
+
+<h3 id='Recurrent-Neural-Network-RNN'>Recurrent Neural Network(RNN)</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213153323143.png" alt="" /></p>
+
+<p><strong>[img. RNN 그림]</strong></p>
+
+<ul>
+  <li>RNN은 AR model들을 구현한 신경망,</li>
+  <li>Short-term dependecies : RNN의 단점, 과거 시점의 정보가 미래에 영향을 끼치기 힘듦, 이를 해결하기 위해 밑의 LSTM이 나타남.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213155738322.png" alt="" /></p>
+
+<p><strong>[img.  RNN hidden state의 gradient 문제의 원인]</strong></p>
+
+<ul>
+  <li>또한 Activation function의 종류에 따라 Vanishing/exploding gradient 문제가 생길 수 있다.
+    <ul>
+      <li>RNN에서 ReLU를 잘 안쓰는 이유</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id='Long-Short-Term-Memory-LSTM'>Long Short Term Memory(LSTM)</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213160223994.png" alt="" /></p>
+
+<p><strong>[img. Vanilla RNN Unit]</strong></p>
+
+<ul>
+  <li>tanh(hyperparabolic) 함수를 activation 함수로 활용하는 기본 유닛이다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213160255147.png" alt="" /></p>
+
+<p><strong>[img. LSTM Unit]</strong></p>
+
+<ul>
+  <li>Long Term dependency 문제를 해결하는데 좋은 LSTM 유닛</li>
+  <li>이전 LSTM Unit에서 이후 LSTM Unit으로 cell state와 hidden state 를 넘겨주게 된다.</li>
+  <li>cell state는 hidden state와 달리 output으로 나오지 않으며, 일종의 이전 정보들을 summary를 해주는 정보, LSTM의 Core idea</li>
+</ul>
+
+<h4 id='Gate'>Gate</h4>
+
+<ul>
+  <li>LSTM을 이루는 3개의 게이트가 존재, LSTM의 데이터를 조작</li>
+</ul>
+
+<ol>
+  <li>Forget Gate</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213162034756.png" alt="" /></p>
+
+<p><strong>[img. Forget gate 구조]</strong></p>
+
+<ul>
+  <li>어떤 정보를 잊어버릴지 결정.</li>
+  <li>f~t~는 sigmoid를 사용하여 0 에서 1 사이 값으로 나오며,  이전 cell state 정보의 일부를 버리거나 살린다.</li>
+</ul>
+
+<ol>
+  <li>Input Gate</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213162053068.png" alt="" /></p>
+
+<p><strong>[img. Input Gate 구조]</strong></p>
+
+<ul>
+  <li>어떤 정보를 cell state에 올릴지 결정</li>
+  <li>i~t~는 이전 Hidden state와 X~t~를 통하여 어떤 정보를 올릴지 말지 결정한 결과인 i~t~를 만든다.</li>
+  <li>또 한 마찬가지로 이전 Hidden state와 X~t~를 통하여 올릴 정보인 $C_t^{\sim}$(C 틸다)를 만든다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213162709154.png" alt="" /></p>
+
+<p><strong>[img. 새로 통과시킬 Cell State 형성]</strong></p>
+
+<ul>
+  <li>$C_t^{\sim}$와 i~t~,f~t~ 를 이용해 업데이트할 Cell을 만들게 된다.</li>
+</ul>
+
+<ol>
+  <li>Ouput Gate</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213162821444.png" alt="" /></p>
+
+<p><strong>[img. Oupt Gate 구조]</strong></p>
+
+<ul>
+  <li>위에서 만든 Update cell state와 input 을 이용해 output값을 만든다.</li>
+</ul>
+
+<h3 id='Gated-Recurrent-Unit-GRU'>Gated Recurrent Unit(GRU)</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213165320497.png" alt="" /></p>
+
+<p><strong>[img. GRU unit 구조]</strong></p>
+
+<ul>
+  <li>reset gate와 update gate만 존재하며 cell state가 존재 하지 않다.
+    <ul>
+      <li>forget gate와 비슷한 reset gate와 비슷한 update gate가 존재한다.</li>
+    </ul>
+  </li>
+  <li>LSTM에 비해 구조가 단순하여 parameter 수가 적어 generalization performance가 좋으며, 성능이 좋은 편이다</li>
+  <li>하지만 최근에는 위 세가지 구조 전부를 transfromer 구조로 대체되는 추세이다.</li>
+</ul>
+
+<h2 id='Transformer-모델'>Transformer 모델</h2>
+
+<ul>
+  <li>
+    <p>Jay Alammar의 블로그에서 가져온 그림들임(http://jalammar.github.io/illustrated-transformer/)</p>
+  </li>
+  <li>
+    <p>불규칙적이고 예상하기 힘든 sequential 데이터의 문제점을 해결한 모델</p>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213192304126.png" alt="" /></p>
+
+<p><strong>[img. sequential data의 대표 오류]</strong></p>
+
+<h3 id='Transformer'>Transformer</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213192519328.png" alt="" /></p>
+
+<p><strong>[img. Transformer 모델 예시]</strong></p>
+
+<ul>
+  <li>
+    <p>재귀적 구조가 없는 대신, attention이란 구조를 활용한 sequence model</p>
+  </li>
+  <li>
+    <p>기계어 번역 문제를 해결하기 위해 시작했지만 여러 문제를 해결 할 수 있다.</p>
+  </li>
+  <li>
+    <p>Encoder와 Decoder 구조로 이루어져 잇다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213213040186.png" alt="" /></p>
+
+<p><strong>[img. NMT 문제에서 encoder, decoder 구조]</strong></p>
+
+<ul>
+  <li>동일한 구조, 다른 파라미터를 받는 encoder, decoder가 쌓여있는 구조</li>
+  <li>하나의 모델에 입력과 출력 값이 각각 도메인, 입력의 숫자 등을 다르게 줄 수 있다.</li>
+  <li>즉 encoder-decoder 모델의 경우, encoder가 하나씩이 아닌 한번에 입력을 처리한다.</li>
+</ul>
+
+<h4 id='어떻게-encoder는-한번에-n개의-입력을-동시에-처리하는가'>어떻게 encoder는 한번에 n개의 입력을 동시에 처리하는가?</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210213221542564.png" alt="" /></p>
+
+<p><strong>[img. encoder 구조]</strong></p>
+
+<ul>
+  <li>
+    <p>Feed Forward Neural Network: MLP때와 동일</p>
+  </li>
+  <li>
+    <p>Self-Attention: encoder와 decorder 구조의 핵심, Attention이란 해당 단어를 처리할 때 다른 단어에 얼마나 관계성을 할당하는 가?이다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214004658258.png" alt="" /></p>
+
+<p><strong>[img. 단계1, 2 ]</strong></p>
+
+<ol>
+  <li>먼저 각 단어들을 embedding vector로 바꾼 뒤, self attention 층에서 입력된 n개의 단어들을 모두 고려하여 새로운 z벡터를 생성한다.</li>
+  <li>그 후 Feed Forward에서는 동일한 조건의 Feed-forward 층을 각 단어 독립적으로 통과 시킨다.</li>
+</ol>
+
+<h5 id='좀-더-자세한-벡터-처리-예시'>좀 더 자세한 벡터 처리 예시</h5>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214004934458.png" alt="" /></p>
+
+<p><strong>[img. 단어가 2개 주어졌을 시 예시]</strong></p>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214010304363.png" alt="" /></p>
+
+<p><strong>[img. 세 벡터 생성]</strong></p>
+
+<ul>
+  <li>Self attention 구조는 embedding된 벡터 형태로 단어가 주어지면, 각 단어 마다 Neutral network를 이용해 Queries, Keys, Values 라는 세개의 벡터(Q,K,V 벡터)를 생성한다.
+    <ul>
+      <li>이 세 벡터를 통해 embedding vector를 새로운 벡터로 바꿔준다.(=encoding)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214010645549.png" alt="" /></p>
+
+<p><strong>[img. Thinking 단어의 Score 생성]</strong></p>
+
+<ul>
+  <li>Thinking의 Queries 벡터와 모든 단어들의 Keys 벡터를 내적(inner product)하여 Score를 생성
+    <ul>
+      <li>Score를 통해 다른 단어와의 관계성, 유사성 등(=attention)을 구할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214012722424.png" alt="" /></p>
+
+<p><strong>[img. Score의 normalize 및 z1 벡터 생성]</strong></p>
+
+<ul>
+  <li>Score 값을 8(키 벡터의 차원(여기서는 64)의 루트,$\sqrt d_k$)로 나눠 주어 Normalize(일정 범위에만 머무르게 하기 위해서)한다.</li>
+  <li>이 후, softmax 함수로 0~1 사이로 만들어 Attention weights를 만든다.</li>
+  <li>Attention Weights를 Value vector로 Weighted Sum을 하여 한 단어의 z(인코딩 벡터) 벡터를 생성한다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214013256771.png" alt="" /></p>
+
+<p><strong>[img. Key, Query, Value vector 생성]</strong></p>
+
+<ul>
+  <li>W^Q^,W^K^,W^V^는 모든 단어가 공유한다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214013749122.png" alt="" /></p>
+
+<p><strong>[img. 인코딩 벡터 생성]</strong></p>
+
+<ul>
+  <li>Value vector의 차원은 엄밀히 말해 weighted sum만 하므로 Query vector, Key vector와 달라도 된다.</li>
+</ul>
+
+<h4 id='Transformer-구조의-장단점'>Transformer 구조의 장단점</h4>
+
+<ul>
+  <li>이런식으로 모든 단어들이 서로 영향을 주므로, 같은 단어라도 다른 단어가 들어가면 결과값이 달라지므로, 변화에 용이한 모델이 나온다..</li>
+  <li>대신 모든 단어를 고려해야하므로 많은 컴퓨팅 자원이 필요하다.</li>
+</ul>
+
+<h4 id='Multi-headed-attention-MHA'>Multi-headed attention(MHA)</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214014450983.png" alt="" /></p>
+
+<p><strong>[img. attention이 2번 실행된 단어]</strong></p>
+
+<ul>
+  <li>attention 과정을 여러번 실행함, 단어마다 Query, Key, Value 벡터가 여러개 생성된다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214014729085.png" alt="" /></p>
+
+<p><strong>[img. 여럿 생성된 인코딩 벡터]</strong></p>
+
+<ul>
+  <li>이를 통해 여러개(예시에선 8개)의 인코딩 벡터(z0~z7)를 생성하게 된다</li>
+  <li>이 8개를 합쳐서 다음 layer에 input 되어야 한다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214014854687.png" alt="" /></p>
+
+<p><strong>[img. learnable linear map을 통해 통합된 차원의 벡터(Z)로 생성]</strong></p>
+
+<ul>
+  <li>input된 단어, embedding vector와 output 인코딩 벡터(z)들의 차원이 같아야한다.</li>
+  <li>그러므로 Learnable Linear amp을 이용해 교육시킨 W^o^값을 곱해서 차원을 맞춰준다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214015143739.png" alt="" /></p>
+
+<p><strong>[img. 전체적인 MHA의 동작]</strong></p>
+
+<ul>
+  <li>실제로는 위의 방법보다는 input의 embdding vector를 n개로 나눈 뒤, 나눠진 일부들로 attention을 만든 뒤, 다시 concatenate 한다.
+    <ul>
+      <li>ex) 100차원 input -&gt; 10개로 나누어 10차원 z0~z10 10개 생성 -&gt; 100차원 output<br />
+(Z)으로 합침</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>(위의 n개의 동시 처리 예제에서 output을 구한 뒤 부터 이어짐) attention을 하기 이전에 embedding vector에 POSITIONAL ENCODDING 이라는 벡터를 더해준다.</p>
+
+    <p><img src="/assets/img/딥러닝 기본/image-20210214015901821.png" alt="" /></p>
+
+    <p><strong>[img. positional encdoding의 합]</strong></p>
+
+    <ul>
+      <li>일종의 bias와 비슷하며, 위 attention 과정을 보면 data의 sequence와 independent 하기 때문에(즉, 단어의 순서가 뒤바껴도 같은 값이 나오게 되어있다.) 이를 방지하기 위해 더해준다.</li>
+    </ul>
+
+    <p><img src="/assets/img/딥러닝 기본/image-20210214020050099.png" alt="" /></p>
+  </li>
+</ol>
+
+<p><strong>[img. 512-dimensional 일시, positioinal encoding 벡터 구하는 법1]</strong></p>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214020449236.png" alt="" /></p>
+
+<p><strong>[img. 최신 방법의 Positional encoding 구하는 법 2]</strong></p>
+
+<ul>
+  <li>포지션별로 특정 그래프의 값을 가져와 더해주면 된다.(predefined)</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214021139815.png" alt="" /></p>
+
+<p><strong>[전체적인 encoder의 과정]</strong></p>
+
+<h4 id='decoder와-encoder-사이에는-어떤-정보가-교환되는가'>decoder와 encoder 사이에는 어떤 정보가 교환되는가?</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214023616878.png" alt="" /></p>
+
+<p><strong>[img. encoder와 decoder 사이의 정보교환 그림]</strong></p>
+
+<ul>
+  <li>decoder에서는 주어진 vector로 유의미한 결과를 만드는 역할을 한다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/transformer_decoding_1.gif" alt="" /></p>
+
+<p><strong>[gif. encoder decoder 통신 애니메이션1]</strong></p>
+
+<p><img src="/assets/img/딥러닝 기본/transformer_decoding_2.gif" alt="" /></p>
+
+<p><strong>[gif. encoder decoder 통신 애니메이션2]</strong></p>
+
+<ul>
+  <li>가장 상위 layer의 encoder의 결과값(z) 벡터의  key와 value, 두 벡터를  decoder layer들로 보낸다.</li>
+</ul>
+
+<h4 id='decoder는-어떻게-결과값을-만들어-내는가'>decoder는 어떻게 결과값을 만들어 내는가?</h4>
+<ul>
+  <li>이후 decoder에 들어가는 Query vector와 k, v 벡터로 auto regressive 하게 결과물을 출력한다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214024918909.png" alt="" /><img src="/assets/img/딥러닝 기본/image-20210214024933899.png" alt="" /></p>
+
+<p><strong>[img. decoder 학습 과정]</strong></p>
+
+<ul>
+  <li>이후,  decoder의 slef-attention layer에서 masking을 통하여 생성하려는 단어와 그 뒤 생성해야할 단어들을 가린 뒤, 앞에서 이미 생성한 단어에 의존해서 학습하게 만든다.</li>
+  <li>또, Encoder-Decoder attention layer에서 encoder에서 준 벡터 둘을 받아서 학습시킨다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214031228131.png" alt="" /></p>
+
+<p><strong>[img. decoder 학습의 최종 과정]</strong></p>
+
+<ul>
+  <li>마지막 층에서는 단어들의 배열에서 단어를 샘플링해서 결과 값을 낸다.</li>
+</ul>
+
+<h3 id='Transform-모델의-근황'>Transform 모델의 근황</h3>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214032425814.png" alt="" /></p>
+
+<p><strong>[img. encoder만 활용하여 이미지 class 구분하는 모델]</strong></p>
+
+<ul>
+  <li>단순히 단어나 다른 sequential data 뿐만아니라 vision 영역에도 활용되고 있다.</li>
+  <li>openAI의 DALL-E에서 문장을 통해 이미지를 생성하는 연구 또한 Transformer의 decoder를 활용하여 진행했다.</li>
+</ul>
+
+<h2 id='Generative-Models-생성-모델'>Generative Models(생성 모델)</h2>
+
+<h3 id='Introduction'>Introduction</h3>
+
+<ul>
+  <li>Generative Model이란, 이미지 등을 생성하거나, 확률 밀도를 탐색하거나 비지도 특색 학습에 사용되는 모델을 의미한다.
+    <ul>
+      <li>Generation: 이미지 생성 등(sampling)</li>
+      <li>Density estimation: 이미지가 강아지 같은가? 고양이 같은가? (anomaly detection), classify 모델을 포함하고 있음. (explicit 모델, &lt;=&gt; inplicit model: 생성 위주가 가능한 모델)</li>
+      <li>Unsupervised representation learning:  이미지 내부의 특색 탐색 (feature learning)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id='Basic-Discrete-Distributions'>Basic Discrete Distributions</h3>
+
+<ol>
+  <li>Bernoulli distribution : 동전 던지기 처럼 0 또는 1이 나오는 형태
+    <ul>
+      <li>$D={Heads, Tails}$</li>
+      <li>Specify P(X = Heads)=p. Then P(X=Tails) = 1-p.
+        <ul>
+          <li>예를 들어 앞면이 p 면 뒷면이 나올 확률은 1-p다.</li>
+        </ul>
+      </li>
+      <li>Write: X ~ Ber(p).</li>
+    </ul>
+  </li>
+  <li>Categorical distribution: 주사위 던지기 같이 구분되는(discrete) 여러 결과값이 나오는 형태(1~6)</li>
+</ol>
+
+<ul>
+  <li>$D={1,\dots,m}$</li>
+  <li>Specify P(Y = i) = pi, such that $\sum^m_{i=1}p_i=1$.
+    <ul>
+      <li>모든 확률을 합해서 1</li>
+    </ul>
+  </li>
+  <li>Write: Y ~ Cat(p~1~, …, p~m~)</li>
+</ul>
+
+<ol>
+  <li>예시</li>
+</ol>
+
+<ul>
+  <li>RGB pixel이 가지는 경우의 수는 256 * 256 *256이며, 필요한 파라미터의 수는 255*255*255.</li>
+</ul>
+
+<h3 id='Structure-Through-Independence-amp-Conditional-Independence'>Structure Through Independence &amp; Conditional Independence</h3>
+
+<ul>
+  <li>
+    <p>binary pixel의 수가 100개 라고하면 가능한 파라미터는 2^100^-1개가 되고, 이는 너무 많다.</p>
+  </li>
+  <li>
+    <p>만약 모든 Pixel이 서로 independent 한다고 가정하면 경우의 수는 같지만, 파라미터의 수는 n(=100)개로 줄일 수 있다.</p>
+  </li>
+  <li>하지만 실제로 independent 하지 않으므로 너무 말이 안되는 가정이다.</li>
+  <li>이 둘 사이의 타협점을 찾기위한 것이 Conditional independence 이다.</li>
+</ul>
+
+\[Chain\ Rule:\ p(x_1,\dots,x_n)=p(x_1)p(x_2|x_1)p(x_3|x_1,x_2)\dots p(x_n|x_1,\dots,x_{n-1})\\
+Bayes'\ rule:\ p(x|y)=\frac {p(x,y)}{p(y)}=\frac {p(y|x)p(x)}{p(y)}\\
+Conditional\ independence:\ if\ x\perp y | z,\ then\ p(x|y,z)=p(x|z)\]
+
+<p><strong>[math. Conditional independence의 세가지 룰]</strong></p>
+
+<ul>
+  <li>conditional independence: z가 주워 졌을때, x,y가 independence라고 가정하면 성립, 이를 chain rule과 섞으면 좋은 타협점을 가진 모델을 생성할 수 있다.</li>
+</ul>
+
+\[Chain\ Rule:\ p(x_1,\dots,x_n)=p(x_1)p(x_2|x_1)p(x_3|x_1,x_2)\dots p(x_n|x_1,\dots,x_{n-1})\\\\
+if\ assume\ \ X_{i+1}\perp X_1,\dots,X_{i-1}|X_i (Markov\ assumption)\\
+become\ \ \ p(x_1,\dots,x_n) =p(x_1)p(x_2|x_1)p(x_3|x_2)\dots p(x_n|x_{n-1})\]
+
+<p><strong>[math. chain rule과 conditional indepence의 조합]</strong></p>
+
+<ul>
+  <li>Markov assumption을 이용하면 parameter 수가 기존의 2^n^-1 에서 2n -1로 변한다.</li>
+  <li>이러한 conditional indepency 방법으로 생성한 모델을 Auto-regressive model이라고 한다.</li>
+</ul>
+
+<h3 id='Auto-regressive-Model'>Auto-regressive Model</h3>
+
+<ul>
+  <li>28 X 28 binary pixel 이미지의 경우 우리는 p(x)를 구하기 위해 autoregressive model로 만들 수 있다.</li>
+  <li>pixel의 order 순서에 따라 모델과 방법론이 달라지기도 한다.(아래 Pixel RNN 참조)</li>
+</ul>
+
+<ol>
+  <li>NADE(Neural Autoregressive Density Estimator) 모델</li>
+</ol>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214121944653.png" alt="" /></p>
+
+<p><strong>[img. NADE 모델]</strong></p>
+
+<ul>
+  <li>i 번째 픽셀을 첫번째 부터 i-1번째 픽셀에 dependent하게 생성(dense layer)
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>즉, $p(x_i</td>
+              <td>x_{1:i-1}) = \sigma(\alpha_ih_i+b_i)\ where\ h_i=\sigma(W_{&lt;i}x_{1:i-1}+c)$ 이다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>입력 차원이 점점 더 커지게 된다.</li>
+  <li>explicit 모델이며 확률분포를 구할 수 있다.</li>
+</ul>
+
+\[p(x_1,\dots,x_{784})=p(x_1)p(x_2|x_1)\dots p(x_{784}|x_{1:783}) \\
+where\ each\ conditional\ probability\ p(x_i|x_{1:i-1})\ is\ computed\ independently\]
+
+<p><strong>[math. chaine rule을 통한 joint probability ]</strong></p>
+
+<ul>
+  <li>연속적인 분포(continuous random variables)일 경우 a mixture of gaussian을 사용해 표현 가능</li>
+</ul>
+
+<ol>
+  <li>Pixel RNN</li>
+</ol>
+
+<ul>
+  <li>이미지 내의 pixel 생성하는 auto-regressive 모델</li>
+</ul>
+
+\[p(x)=\prod^{n^2}_{i=1}p(x_{i,R}|x_{&lt;i})p(x_{i,G}|x_{&lt;i},x_{i,R})p(x_{i,B}|x_{&lt;i},x_{i,R},X_{i,G})\]
+
+<p><strong>[math.nXn RGB image 생성]</strong></p>
+
+<ul>
+  <li>ordering에 따라 Row LSTM, Diagonal BiLSTM으로 나눠짐</li>
+</ul>
+
+<h3 id='img-src-assets-img-딥러닝-기본-image-20210214123411474-png-alt'><img src="/assets/img/딥러닝 기본/image-20210214123411474.png" alt="" /></h3>
+
+<p><strong>[img. 빨간 색이 생성할 pixel, 파란 색이 참조할 pixel이다.]</strong></p>
+
+<h3 id='Latent-Variable-Models'>Latent Variable Models</h3>
+
+<h4 id='Variational-Auto-encoder'>Variational Auto-encoder</h4>
+
+<ul>
+  <li>
+    <p>Variational inference(VI, 변분 추론)</p>
+
+    <ul>
+      <li>VI의 목적은 복잡한 posterior distribution(사후확률 분포)을 variational distribution(변분 분포)으로 최적화하는 것이다.
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Posterior distribution($p_\theta(z</td>
+                  <td>x)$):  관심있는 random variable의 확률 분포, 이것의 반대, $p_\theta(x</td>
+                  <td>z)$는 likelihood라고 한다. z는 latent vector를 의미한다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Variational distribution($q_\theta(z</td>
+                  <td>x)$): Posterior distribution을 알기 쉽게 근사하는 분포.</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>KL divergence를 loss처럼 이용하여 Variational distribution과 Posterior distribution의 차이를 줄인다.</li>
+    </ul>
+
+    <p><img src="/assets/img/딥러닝 기본/image-20210214163504048.png" alt="" /></p>
+
+    <p><strong>[img. VI의 그림화]</strong></p>
+  </li>
+  <li>
+    <p>하지만 우리는 posterior distribution에 근접한 variational distribution을 구하기 이전에, posterior distribution 자체를 모른다.</p>
+  </li>
+  <li>
+    <p>이를 구하기 위해 ELBO(Evidence lower bound)를 최대로 키우면 반대로 objective 구간은 줄어들게 된다.</p>
+
+    <ul>
+      <li>objective 구간은 KL divegence를 포함하므로 작아질수록 loss가 작아지는 효과와 비슷하다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214163659637.png" alt="" /></p>
+
+<p><strong>[img.이 방법을 Sandwitch method라고도 부른다.]</strong></p>
+
+<ul>
+  <li>Posterio distribution은 알 수 없지만, ELBO는 계산할 수 있다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214164115555.png" alt="" /></p>
+
+<p><strong>[img. ELBO가 가지고 있는 두개의 텀]</strong></p>
+
+<ul>
+  <li>ELBO는 두개의 텀을 가지고 있는데, 각각 Reconstruction Term과 Prior Fitting Term로 이루어져 있다.
+    <ul>
+      <li>Reconstruction Term : encoder와 latent space를 거쳐 decoder로 돌아오는 reconstruction loss를 줄이는 부분</li>
+      <li>Prior Fitting Term : latent space의 점들의 분포가 Prior distribution(사전 분포)와 비슷하게 만들어 줌</li>
+    </ul>
+  </li>
+  <li>위의 두 텀 때문에 Variational Auto-encoder는 generative model이 된다.
+    <ul>
+      <li>입력 -&gt; latent space -&gt; 분포 찾아서 샘플링-&gt; decoder -&gt; output image 생성</li>
+      <li>그냥 Auto-encoder에는 존재하지 않으므로 generative model이 아니다.</li>
+    </ul>
+  </li>
+  <li>Variational Auto-encoder는 다음과 같은 단점을 가지고 있다.
+    <ul>
+      <li>likelihood를 측정하기 힘듬(intractable model)</li>
+      <li>prior fitting term의 KL divergence을 loss 처럼 사용하려면 SGD, Adam 등으로 최적화가 되어야하므로 미분 가능해야 함.</li>
+      <li>따라서 보통 isotropic Gaussian을 loss funtion에 넣어서 이용함
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>isotropic Gaussian: $D_{KL}(q_\phi(z</td>
+                  <td>x)</td>
+                  <td> </td>
+                  <td>\mathcal N(0,I))=\frac{1}{2}\sum^D_{i=1}(\sigma^2<em>{z_i}+\mu^2</em>{z_i}-ln(\sigma^2_{z_i})-1)$</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>모든 output dimension이 independent한 gaussian distribution을 의미함</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id='Adversarial-Auto-encoder-AAE'>Adversarial Auto-encoder(AAE)</h5>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214190444468.png" alt="" /></p>
+
+<p><strong>[img. AAE 구조]</strong></p>
+
+<ul>
+  <li>KL divergence라는 약점이있는 prior fitting term 대신에 GAN을 활용하여 latent distribution 사이의 분포를 맞춰줌</li>
+  <li>샘플링 가능한 distribution 이라면 latent prior distribution으로 활용 가능하다.</li>
+  <li>성능 또한 비교적 좋은 경우가 많다</li>
+</ul>
+
+<h3 id='Generative-Adversarial-Network-GAN'>Generative Adversarial Network(GAN)</h3>
+
+<h4 id='GAN-소개'>GAN 소개</h4>
+
+<ul>
+  <li>GAN은 대략 2가지 단계로 이루어져 있는데, 샘플을 생성하는 모델(Generator)과, 샘플을 구별하는 모델(discriminator)로 되어있다.</li>
+  <li>새로운 샘플을 생성해서 구별 모델에 전달 :arrow_right: 실제 정보와 비교하여 샘플을 구별하여 생성 모델에 전달하고 학습 :arrow_right: 구별한 결과를 학습하여 더 나은 샘플을 생성해서 전달 :arrow_right: 무한 반복</li>
+  <li>마치 두 모델이 서로 싸우는 형식의 모델이다.</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214211140677.png" alt="" /></p>
+
+<p><strong>[img. VA vs GAN 비교]</strong></p>
+
+<ul>
+  <li>VA의 경우, X의 이미지가 들어오면 인코더, latent vector(z), 디코더를 통과하는 학습을 거친 뒤, generation 단계에서는 p(z)(latent distribution)에서 샘플링한 z를 decoder에 통과시킨 뒤, 그 결과값이 생성된 샘플이다.</li>
+  <li>
+    <p>GAN의 경우, z(latent distribution)을 통해서 Generator에서 Fake 이미지를 만들고, Real 이미지와 Fake 이미지를 Discriminator가 구별,학습해서 그 결과를 Generator에게 보내 학습 시킨다.</p>
+  </li>
+  <li>이를 수학적으로 표현하면 이와 같다.   (implicity 모델이다.)
+    <ul>
+      <li>Discriminator 입장<br />
+\(\stackrel {max}{D}\ V(D,G)=\mathbb E_{x\sim p_{data}(x)}[logD(x)] + 	\mathbb E_{z\sim p_z(z)}[log(1-D(G(z)))]\\
+where\ optimal\ discriminator\ is\ D^*_G(x)=\frac{p_{data}(x)}{p_{data}(x)+p_G(x)}\)</li>
+      <li>Generator 입장</li>
+    </ul>
+
+\[\stackrel {min}{G}\ V(D,G)=\mathbb E_{x\sim p_{data}(x)}[logD(x)] + \mathbb E_{z\sim p_z(z)}[log(1-D(G(z)))]\]
+
+    <ul>
+      <li>optimal discriminator(=최적의 discriminator  일시 값) 적용시</li>
+    </ul>
+
+\[V(G,D^*_G(x)) = E_{x\sim p_{data}}\left[log\frac{p_{data}(x)}{p_{data}(x)+p_G(x)}\right]+E_{x\sim p_G}\left[log\frac{p_G(x)}{p_{data}(x)+p_G(x)}\right] \\= E_{x\sim p_{data}}\left[log\frac{p_{data}(x)}{\frac{p_{data}(x)+p_G(x)}{2}}\right]+E_{x\sim p_G}\left[log\frac{p_G(x)}{\frac{p_{data}(x)+p_G(x)}{2}}\right] - log4 \\
+ = D_{KL}\left[p_{data},\frac{p_{data}+p_G}{2}\right]+D_{KL}\left[P_G,\frac {p_{data}+p_G}{2}\right]-log4\]
+
+    <ul>
+      <li>여기서,</li>
+    </ul>
+
+\[D_{KL}\left[p_{data},\frac{p_{data}+p_G}{2}\right]+D_{KL}\left[P_G,\frac {p_{data}+p_G}{2}\right] = \\ 2 \times Jenson-Shannon\ Divergence\ (JSD) = 2D_{JSD}[p_{data},p_{G}]\]
+
+    <ul>
+      <li>이며, 최종적으로</li>
+    </ul>
+
+\[V(G,D^*_G(x)) = 2D_{JSD}[p_{data},p_{G}] - log4\]
+
+    <ul>
+      <li>이는 이론상 최적의 discrimniator 일시, 최소화 해야할 generator 값이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id='여러-GAN-모델들'>여러 GAN 모델들</h4>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214231701051.png" alt="" /></p>
+
+<p><strong>[img. DCGAN 모델]</strong></p>
+
+<ul>
+  <li>이미지 생성하는 GAN 모델</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214231738609.png" alt="" /></p>
+
+<p><strong>[img. Info-GAN]</strong></p>
+
+<ul>
+  <li>class를 추가로 인풋으로 넣어줌</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214231937794.png" alt="" /></p>
+
+<p><strong>[img. 주어진 문장에 맞는 이미지를 만들어주는 Text2Image]</strong></p>
+
+<ul>
+  <li>DALL-E와 비슷함</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214232019681.png" alt="" /></p>
+
+<p><strong>[img. Puzzle-GAN]</strong></p>
+
+<ul>
+  <li>원래 이미지를 복원하는 모델</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214232103984.png" alt="" /></p>
+
+<p><strong>[img. CycleGAN]</strong></p>
+
+<ul>
+  <li>이미지 내부의 도메인을 바꿔주는 모델</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214232150633.png" alt="" /></p>
+
+<p><strong>[img. Cycle-consistency loss]</strong></p>
+
+<ul>
+  <li>GAN 구조가 2개 들어있는 형식</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214232229519.png" alt="" /></p>
+
+<p><strong>[img. Star-GAN]</strong></p>
+
+<ul>
+  <li>이미지를 컨트롤할 수 있게 해줌</li>
+</ul>
+
+<p><img src="/assets/img/딥러닝 기본/image-20210214232421048.png" alt="" /></p>
+
+<p><strong>[img. Progressive-GAN]</strong></p>
+
+<ul>
+  <li>고해상도의 이미지 생성하는 모델</li>
+</ul>
+
+</div>
+
+  </div><a class="u-url" href="/articles/AI/DEEP_LEARNING/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EA%B8%B0%EB%B3%B8.html" hidden></a>
+  <p class="u-path" hidden>_articles/AI/DEEP_LEARNING/딥러닝 기본.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

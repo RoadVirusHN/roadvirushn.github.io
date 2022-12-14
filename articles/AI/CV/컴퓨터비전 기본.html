@@ -1,0 +1,3967 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>컴퓨터비전 기본 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="컴퓨터비전 기본" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/AI/CV/%EC%BB%B4%ED%93%A8%ED%84%B0%EB%B9%84%EC%A0%84%20%EA%B8%B0%EB%B3%B8.html" />
+<meta property="og:url" content="http://localhost:4000/articles/AI/CV/%EC%BB%B4%ED%93%A8%ED%84%B0%EB%B9%84%EC%A0%84%20%EA%B8%B0%EB%B3%B8.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-14T13:41:08+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="컴퓨터비전 기본" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-14T13:41:08+09:00","datePublished":"2022-12-14T13:41:08+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"컴퓨터비전 기본","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/AI/CV/%EC%BB%B4%ED%93%A8%ED%84%B0%EB%B9%84%EC%A0%84%20%EA%B8%B0%EB%B3%B8.html"},"url":"http://localhost:4000/articles/AI/CV/%EC%BB%B4%ED%93%A8%ED%84%B0%EB%B9%84%EC%A0%84%20%EA%B8%B0%EB%B3%B8.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">컴퓨터비전 기본</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-12-14T13:41:08+09:00" itemprop="datePublished">Dec 14, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#Image-Classification-1' id='markdown-toc-0-Image-Classification-1'>Image Classification 1</a><ul><li><a href='#Course-overview' id='markdown-toc-0-Course-overview'>Course overview</a></li> 
+<li><a href='#Image-classification-영상-분류' id='markdown-toc-0-Image-classification-영상-분류'>Image classification(영상 분류)</a></li> 
+<li><a href='#CNN-architectures-for-image-classification-1' id='markdown-toc-0-CNN-architectures-for-image-classification-1'>CNN architectures for image classification 1</a></li> 
+
+</ul></li> 
+<li><a href='#Annotation-data-efficient-learning' id='markdown-toc-0-Annotation-data-efficient-learning'>Annotation data efficient learning</a><ul><li><a href='#Data-augmentation' id='markdown-toc-0-Data-augmentation'>Data augmentation</a></li> 
+<li><a href='#Leveraging-pre-trained-information' id='markdown-toc-0-Leveraging-pre-trained-information'>Leveraging pre-trained information</a><ul>
+</ul></li> 
+<li><a href='#Leveraging-unlabled-dataset-for-training' id='markdown-toc-0-Leveraging-unlabled-dataset-for-training'>Leveraging unlabled dataset for training</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#Image-classification-2' id='markdown-toc-0-Image-classification-2'>Image classification 2</a><ul><li><a href='#Problems-with-deeper-layers' id='markdown-toc-0-Problems-with-deeper-layers'>Problems with deeper layers</a></li> 
+<li><a href='#CNN-architectures-for-image-classification-2' id='markdown-toc-0-CNN-architectures-for-image-classification-2'>CNN architectures for image classification 2</a><ul>
+</ul></li> 
+<li><a href='#Summary-of-image-classification' id='markdown-toc-0-Summary-of-image-classification'>Summary of image classification</a></li> 
+
+</ul></li> 
+<li><a href='#Semantic-segmentation' id='markdown-toc-0-Semantic-segmentation'>Semantic segmentation</a><ul><li><a href='#Semantic-segmentation' id='markdown-toc-0-Semantic-segmentation'>Semantic segmentation</a></li> 
+<li><a href='#Semantic-segmentation-architectures' id='markdown-toc-0-Semantic-segmentation-architectures'>Semantic segmentation architectures</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#Object-detection' id='markdown-toc-0-Object-detection'>Object detection</a><ul><li><a href='#Object-detection' id='markdown-toc-0-Object-detection'>Object detection</a></li> 
+<li><a href='#Two-stage-detector-R-CNN-family' id='markdown-toc-0-Two-stage-detector-R-CNN-family'>Two-stage detector(R-CNN family)</a><ul>
+</ul></li> 
+<li><a href='#Single-stage-detector' id='markdown-toc-0-Single-stage-detector'>Single-stage detector</a><ul>
+</ul></li> 
+<li><a href='#Single-stage-detector-vs-two-stage-detector' id='markdown-toc-0-Single-stage-detector-vs-two-stage-detector'>Single-stage detector vs. two-stage detector</a></li> 
+<li><a href='#Detection-with-Transformer' id='markdown-toc-0-Detection-with-Transformer'>Detection with Transformer</a></li> 
+
+</ul></li> 
+<li><a href='#CNN-Visualization' id='markdown-toc-0-CNN-Visualization'>CNN Visualization</a><ul><li><a href='#Visualizing-CNN' id='markdown-toc-0-Visualizing-CNN'>Visualizing CNN</a></li> 
+<li><a href='#Analysis-of-model-behaviors' id='markdown-toc-0-Analysis-of-model-behaviors'>Analysis of model behaviors</a></li> 
+<li><a href='#Model-decision-explanation' id='markdown-toc-0-Model-decision-explanation'>Model decision explanation</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#Instance-panoptic-segmentation-and-landmark-localization' id='markdown-toc-0-Instance-panoptic-segmentation-and-landmark-localization'>Instance/panoptic segmentation and landmark localization</a><ul><li><a href='#Instance-segmentation' id='markdown-toc-0-Instance-segmentation'>Instance segmentation</a><ul>
+</ul></li> 
+<li><a href='#Panoptic-segmentation' id='markdown-toc-0-Panoptic-segmentation'>Panoptic segmentation</a><ul>
+</ul></li> 
+<li><a href='#Landmark-localization' id='markdown-toc-0-Landmark-localization'>Landmark localization</a><ul>
+</ul></li> 
+<li><a href='#Detecting-objects-as-keypoints' id='markdown-toc-0-Detecting-objects-as-keypoints'>Detecting objects as keypoints</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#Conditional-Generative-Model-cGAN' id='markdown-toc-0-Conditional-Generative-Model-cGAN'>Conditional Generative Model(cGAN)</a><ul><li><a href='#Conditional-generative-model-cGAN' id='markdown-toc-0-Conditional-generative-model-cGAN'>Conditional generative model(cGAN)</a></li> 
+<li><a href='#Image-translation-GANs' id='markdown-toc-0-Image-translation-GANs'>Image translation GANs</a><ul>
+</ul></li> 
+<li><a href='#Various-GAN-applications' id='markdown-toc-0-Various-GAN-applications'>Various GAN applications</a></li> 
+
+</ul></li> 
+<li><a href='#Multi-modal-learning-Captioning-and-Speaking' id='markdown-toc-0-Multi-modal-learning-Captioning-and-Speaking'>Multi-modal learning: Captioning and Speaking</a><ul><li><a href='#Overview-of-multi-modal-learning' id='markdown-toc-0-Overview-of-multi-modal-learning'>Overview of multi-modal learning</a></li> 
+<li><a href='#Multi-modal-tasks-1-Visual-data-amp-Text' id='markdown-toc-0-Multi-modal-tasks-1-Visual-data-amp-Text'>Multi-modal tasks (1) - Visual data &amp; Text</a><ul>
+</ul></li> 
+<li><a href='#Multi-modla-tasks-2-Visual-data-amp-Audio' id='markdown-toc-0-Multi-modla-tasks-2-Visual-data-amp-Audio'>Multi-modla tasks(2) - Visual data &amp; Audio</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#3D-undersanding' id='markdown-toc-0-3D-undersanding'>3D undersanding</a><ul><li><a href='#Seeing-the-world-in-3D-perspective' id='markdown-toc-0-Seeing-the-world-in-3D-perspective'>Seeing the world in 3D perspective</a><ul>
+</ul></li> 
+<li><a href='#3D-tasks' id='markdown-toc-0-3D-tasks'>3D tasks</a></li> 
+<li><a href='#3D-application-example-Photo-refocusing' id='markdown-toc-0-3D-application-example-Photo-refocusing'>3D application example- Photo refocusing</a></li> 
+
+</ul></li> 
+</ol>
+<h1 id='컴퓨터비전-Computer-Vision-CV-기본'>컴퓨터비전(Computer Vision, CV) 기본</h1>
+
+<blockquote>
+  <p>네이버 AI 부스트 캠프의 CV 강의를 정리한 내용입니다.</p>
+</blockquote>
+
+<h2 id='Image-Classification-1'>Image Classification 1</h2>
+
+<h3 id='Course-overview'>Course overview</h3>
+
+<p>Artificial Intelligence(AI) : 사람의 지능을 컴퓨터 시스템으로 구현하는 것</p>
+
+<p>사람의 학습은 오감을 조합해서 사용하는 multi-modal perception과 비슷하다.</p>
+
+<p>뿐만 아니라 사회적 감각(표정 살피기, 관계 맺기, 의도 파악하기) 등의 복합적 감각이 존재</p>
+
+<p>이중 시각적 능력이 기초적이고 중요한 능력이다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308093803218.png" alt="" /></p>
+
+<p><strong>[img. 복잡한 인간의 인지]</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">인간의 시각적 처리 VS 컴퓨터의 시각적 처리</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308093956611.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308093950605.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[fig. 사진의 representation(자료구조, 여기서는 처리 결과) 구하기]</strong></p>
+
+<p>또한, 우리의 시각적 능력 또한 이런 머신러닝 구조의 CV와 비슷하다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308094608496.png" alt="" /></p>
+
+<p><strong>[img. 대처 환각, 거꾸로 된 사람은 많이 보지 못하기 때문(= 학습 편향)에 어색함을 느끼지 못한다.]</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Machine Learning vs Deep Learning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308094749066.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308094810716.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[img. 특징 추출까지 처리가 가능해진 Deep Learning 분야]</strong></p>
+
+<p>특징 추출을 사람이 설계하지않고 Gradient-Descend를 통해 End-to-End로 학습함으로, 편향과 오류를 줄여 최근 CV기술이 고도화 됨</p>
+
+<p>이번 강의에서</p>
+
+<ul>
+  <li>기본적인 CV Task</li>
+  <li>CV의 딥러닝 기술</li>
+  <li>시각 정보 + 다른 감각 데이터의 융합</li>
+  <li>Conditional generative model</li>
+  <li>Visualization Tool</li>
+</ul>
+
+<p>등을 배울 것이다.</p>
+
+<h3 id='Image-classification-영상-분류'>Image classification(영상 분류)</h3>
+
+<p>Classifier (분류기) 업무는 입력된 영상의 카테고리, 클래스를 분류하는 mapping 업무이다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308095502653.png" alt="" /></p>
+
+<p><strong>[img. Classifier 예시]</strong></p>
+
+<p>만약, 대량의 이미지 데이터가 있다면, 비슷한 사진끼리 모아 구별하는 <em>k-Nearest Neighbors(k-NN)</em>를 통하여 구별할 수 있다.</p>
+
+<ul>
+  <li>query data point의 주변 reference point를 이용해 구분하는 방법</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308100000964.png" alt="" /></p>
+
+<p><strong>[img. K-NN 예시 이미지]</strong></p>
+
+<p>하지만, 데이터 수가 너무 많으면 많은 만큼 시간과 메모리가 부족하게 된다.</p>
+
+<p>이를 방지하기 위해 Neural Networks를 이용해 Compress 된 모델을 통해 구별하게 된다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308100345559.png" alt="" /></p>
+
+<p><strong>[img. 1층의 fully-connected layer을 이용한 구분]</strong></p>
+
+<p>영상의 모든 픽셀을 Input으로 넣어 구분할 수도 있지만, 이 역시 성능과 메모리 소모가 크다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308101409313.png" alt="" /></p>
+
+<p><strong>[img. FCN과 CNN의 비교]</strong></p>
+
+<p>CNN은 전체 pixel이 아닌 이미지의 일부를 지역적으로 Window Sliding 방식으로 하나의 feature로 추출하고(Local feature learning), 파라미터 공유를 통하여</p>
+
+<ol>
+  <li>성능과 메모리의 요구를 줄이고</li>
+  <li>오버피팅을 줄일고</li>
+  <li>사진 일부만으로도 사진을 구별할 수 있게 됬다.</li>
+</ol>
+
+<p>이러한 장점 덕분에 많은 Computer Vision 업무에 기본이 됨.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308102242021.png" alt="" /></p>
+
+<p><strong>[img. CNN의 여러 사용]</strong></p>
+
+<h3 id='CNN-architectures-for-image-classification-1'>CNN architectures for image classification 1</h3>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308104319839.png" alt="" /></p>
+
+<p><strong>[img. AlexNet과 VGGNet의 등장]</strong></p>
+
+<ul>
+  <li>딥러닝 CV의 등장을 알린 두 모델</li>
+</ul>
+
+<ol>
+  <li>AlexNet</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308104438510.png" alt="" /></p>
+
+<p><strong>[img. AlexNet의 구조]</strong></p>
+
+<ul>
+  <li>최초의 심플한 CNN 구조인 LeNet-5의 구조에서 더 깊은 층, 더 많은 데이터셋, ReLU 활성 함수와 drop out과 같은 regularization 기술을 이용한 모델</li>
+  <li>당시 GPU 메모리의 한계로 인해 2갈래로 나누어 학습한 뒤 중간에 Activation map으로 Cross Communication 해줌</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nn</span><span class="p">.</span><span class="n">conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 11x11 Conv(96), stride 4 Layer
+# 이미지 크기가 커지면서, Receptive field를 크게 만들어주기 위해 11x11로 시작, 최근에는 더이상 사용 안함
+</span><span class="n">nn</span><span class="p">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">nn</span><span class="p">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="c1"># 3x3 MaxPool, stride 2 Layer
+</span>
+<span class="n">nn</span><span class="p">.</span><span class="n">conv2d</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 5x5 Conv(256), stride 2 Layer
+</span><span class="n">nn</span><span class="p">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">nn</span><span class="p">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">nn</span><span class="p">.</span><span class="n">conv2d</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">384</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="c1"># 3x3 Conv(384), pad 1 Layer
+</span><span class="n">nn</span><span class="p">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">nn</span><span class="p">.</span><span class="n">conv2d</span><span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="mi">384</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">nn</span><span class="p">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">nn</span><span class="p">.</span><span class="n">conv2d</span><span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">nn</span><span class="p">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">nn</span><span class="p">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">torch</span><span class="p">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Fully connected Layer에 넣기 전에 다차원의 Tensor를 1차원 Tensor으로 길이를 길게 늘어 뜨리기(벡터화)
+# AlexNet에서 사용한 방법
+</span>
+<span class="c1"># nn.AdaptiveAvgPool2d((6,6))
+# 비슷한 방법이지만, 길게 늘어뜨리지 않고 평균을 내어 같은 길이의 1차원으로 바꿈
+</span>
+<span class="n">nn</span><span class="p">.</span><span class="n">Dropout</span><span class="p">()</span> <span class="c1"># Dense(4096)
+</span><span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">256</span><span class="o">*</span><span class="mi">6</span><span class="o">*</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4096</span><span class="p">)</span> <span class="c1"># 2stream 구조가 아니라 1개로 통합했으므로 2048 *2 = 4096
+</span><span class="n">nn</span><span class="p">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">nn</span><span class="p">.</span><span class="n">Dropout</span><span class="p">()</span>
+<span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">4096</span><span class="p">,</span> <span class="mi">4096</span><span class="p">)</span>
+<span class="n">nn</span><span class="p">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">4096</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+</code></pre></div></div>
+<p><strong>[code. AlexNet의 코드구현]</strong></p>
+
+<ul>
+  <li>시간이 흘러 GPU 메모리가 늘어나 2 stream 구조로 구현하지 않음</li>
+  <li>LRN(Local Response Normalization) 구현 안함
+    <ul>
+      <li>더이상 사용하지 않는 방법, Batch normalization으로 대체됨</li>
+      <li>Activation map 이후, 명암을 normalization 해주는 역할</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Receptive field란?</p>
+
+<p>layer output 값을 만들기위해 Input image에서 CNN layer가 참조한 공간, 클 수록 이미지의 많은 부분을 참조한 것이다.</p>
+
+<p>여러 층이 중첩되도 처음 image에서 확인한 부분이 Receptive field이다.</p>
+
+<p>위 구조에서는 전체를 11x11 conv로 Input 이미지 전부를 Receptive field로 삼았다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308111832639.png" alt="" /></p>
+
+<p><strong>[img. Receptive Field 도식화]</strong></p>
+
+<p>KxK conv stride 1 layer와 PxP pooling layer를 통과한 경우의 Receptive field의 크기는</p>
+
+<p>(P+K-1)x(P+K-1)이다.</p>
+
+<ol>
+  <li>VGGNet</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308112229605.png" alt="" /></p>
+
+<p><strong>[img. VGGNet의 구조]</strong></p>
+
+<ul>
+  <li>AlexNet보다 깊고(16, 19Layer)</li>
+  <li>더욱 심플한 구조이며
+    <ul>
+      <li>Loca Response Normalization(LRN) 사용 안함</li>
+      <li>conv filter layer와 max pooling layer의 크기를 각각 3x3, 2x2만 한하여 사용(가장 큰 특징)
+        <ul>
+          <li>이를 stack하여 큰 Receptive Size를 얻으면서 더 깊고 복잡하면서 파라미터 수는 줄여 성능과 정확도를 동시에 잡을 수 있다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>더욱 좋은 성능과 일반화(Generlization)을 내는 모델</li>
+</ul>
+
+<p>이외에는 AlexNet과 비슷하다.</p>
+
+<ul>
+  <li>ReLU 사용,  Input에서 224x224 RGB 이미지를 Normalization(RGB 평균값을 RGB 값에서 빼줌)하여 넣어줌</li>
+</ul>
+
+<h2 id='Annotation-data-efficient-learning'>Annotation data efficient learning</h2>
+
+<ul>
+  <li>질좋은 데이터셋은 성능에 큰 영향을 미치지만 확보하거나 만드는데 큰 어려움이 따른다.</li>
+  <li>CV에서의 데이터 부족 완화 방법을 알아보자.</li>
+</ul>
+
+<h3 id='Data-augmentation'>Data augmentation</h3>
+
+<p>손쉽게 데이터셋을 늘릴 수 있는 방법</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center">여러 물체</th>
+      <th style="text-align: center">장소</th>
+      <th style="text-align: center">공원</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>그림</td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308133559123.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308133608690.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308133615833.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td>편향</td>
+      <td style="text-align: center">겹쳐 보면 정면에 특정 각도로 물체들이 위치</td>
+      <td style="text-align: center">장소 사진들을 겹쳐보면 해안선, 물체, 건물 등의 위치가 겹침</td>
+      <td style="text-align: center">사람을 위주로 찍게 되어 중앙에 사람이 위치</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[fig. 편향의 예시]</strong></p>
+
+<p>Dataset들은 인간의 필요에 의해 편향된 채로 촬영되게 되며, 이는 현실의 데이터와 괴리를 준다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Samples in the training set</th>
+      <th>Real data distribution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210308133924729.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210308133920291.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>애매한 데이터들이 여러 class와 겹치는 방식인 현실 데이터와 달리 sample data들은 확실하고 명확한 경우가 많으므로 이로 인해 모델에 혼란이 올 수 있다.</p>
+
+<p>예를 들면, 많은 사람들이 밝은 조명 아래에서 사진을 찍는다, 그리고 달은 어두운 밤하늘에만 찍힌다. 만약 이를 데이터셋으로 학습한 모델이 어두운 곳에 찍힌 사람을 보면, 달로 착각할 수도 있다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308134801650.png" alt="" /></p>
+
+<p><strong>[img. Augmenation의 예시]</strong></p>
+
+<p>이를 막기위해, 밝기 바꾸기, 회전, crop, 일부 가리기, 채도 변경 등의 방법으로 이미지를 바꾸어 현실 데이터와 비슷하게 만들면서 데이터셋 크기를 늘릴 수 있다.</p>
+
+<p>OpenCV, NumPy 등에서 library로 활용할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308140744851.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308140858344.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308140807904.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Rotate, Flip</td>
+      <td style="text-align: center">Brightness adjustment</td>
+      <td style="text-align: center">Crop</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308140751671.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308140824819.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210308140830735.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Rotate, Flip</td>
+      <td style="text-align: center">Affine transformation</td>
+      <td style="text-align: center">CutMix</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. 여러 종류의 augmentation 종류]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">brightness_augmentation</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="c1"># numpy array img has RGB value(0~255) for each pixel
+</span>    <span class="n">img</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">100</span> <span class="c1"># add 100 to R value
+</span>    <span class="n">img</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">100</span> <span class="c1"># add 100 to G value
+</span>    <span class="n">img</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">100</span> <span class="c1"># add 100 to B value
+</span>    
+    <span class="n">img</span><span class="p">:[:,:,</span><span class="mi">0</span><span class="p">][</span><span class="n">img</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&amp;</span><span class="c1">#38;#62;255] = 255 # clip R values over 255
+</span>    <span class="n">img</span><span class="p">:[:,:,</span><span class="mi">1</span><span class="p">][</span><span class="n">img</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span><span class="o">&amp;</span><span class="c1">#38;#62;255] = 255 # clip G values over 255
+</span>    <span class="n">img</span><span class="p">:[:,:,</span><span class="mi">2</span><span class="p">][</span><span class="n">img</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span><span class="o">&amp;</span><span class="c1">#38;#62;255] = 255 # clip B values over 255
+</span>    <span class="k">return</span> <span class="n">img</span>
+
+</code></pre></div></div>
+<p><strong>[code. 밝기 조절 Augmentation 코드]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">img_rotated</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">ROTATE_90_CLOCKWISE</span><span class="p">)</span>
+<span class="n">img_flipped</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">ROTATE_180</span><span class="p">)</span>
+
+</code></pre></div></div>
+<p><strong>[code. 회전, 뒤집기 Augmentation 코드]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y_start</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># y pixel to start cropping
+</span><span class="n">crop_y_size</span> <span class="o">=</span> <span class="mi">400</span> <span class="c1"># cropped image&amp;#39;s height
+</span><span class="n">x_start</span> <span class="o">=</span> <span class="mi">300</span> <span class="c1"># x_pixel to start cropping
+</span><span class="n">crop_x_size</span> <span class="o">=</span> <span class="mi">800</span> <span class="c1"># cropped image&amp;#39;s width
+</span><span class="n">img_cropped</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">y_start</span><span class="p">:</span><span class="n">y_start</span><span class="o">+</span><span class="n">crop_y_size</span><span class="p">,</span> <span class="n">x_start</span> <span class="p">:</span> <span class="n">x_start</span> <span class="o">+</span> <span class="n">crop_x_size</span><span class="p">,</span> <span class="p">:]</span>
+
+</code></pre></div></div>
+<p><strong>[code. Crop Augmentation 코드]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">shape</span>
+<span class="n">pts1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">([[</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">],[</span><span class="mi">200</span><span class="p">,</span><span class="mi">50</span><span class="p">],[</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">]])</span>
+<span class="n">pts2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">],[</span><span class="mi">200</span><span class="p">,</span><span class="mi">50</span><span class="p">],[</span><span class="mi">100</span><span class="p">,</span><span class="mi">250</span><span class="p">]])</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">getAffineTransform</span><span class="p">(</span><span class="n">pts1</span><span class="p">,</span> <span class="n">pts2</span><span class="p">)</span>
+<span class="n">shear_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">warpAffine</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="p">(</span><span class="n">cols</span><span class="p">,</span><span class="n">rows</span><span class="p">))</span>
+
+</code></pre></div></div>
+<p><strong>[code. Affine Transformation Augmentation]</strong></p>
+
+<p>Affine Transformation : 사각형 이미지를, 기울어진 평행 사변형(parallelogram)의 형태로 바꿈 + rotation 함</p>
+
+<ul>
+  <li>shear transformation 이라고도 함</li>
+</ul>
+
+<p>RandAugment</p>
+
+<ul>
+  <li>Augmenation의 종류, 강도(얼마나 밝은가, 얼마나 기울어졌는가 등)에 따라 모델 성능이 달라지므로, 이를 parameter로 사용할 수 있다.</li>
+  <li>랜덤으로 Augmentation을 적용한 뒤, 평가하는 과정을 거침</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308144014875.png" alt="" /></p>
+
+<p><strong>[img. ShearX &amp; AutoContrast 9 Randaug 예시]</strong></p>
+
+<ul>
+  <li>적용할 Augmentation, 적용 강도, 2가지가 Parameter로 적용</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308144310891.png" alt="" /></p>
+
+<p><strong>[img. RandAugmentation 사용에 의한 성능 향상]</strong></p>
+
+<h3 id='Leveraging-pre-trained-information'>Leveraging pre-trained information</h3>
+<p>pre-trained 된 모델을 활용하는 방법</p>
+
+<h4 id='Transfer-learning'>Transfer learning</h4>
+
+<p>Transfer learning: 한 데이터셋에서 배운 지식을 다른 데이터셋, 다른 Task에서 활용하는 기술</p>
+
+<ul>
+  <li>이를 통하여 작은 데이터셋으로도 높은 정확도를 자랑한다.</li>
+</ul>
+
+<ol>
+  <li>Transfer knowledge from a pre-trained task to a new task(같은 Layer, 다른 Task에 활용)</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308153411813.png" alt="" /></p>
+
+<p><strong>[img. Transfer model(좌)를 원하는 업무에 맞게 FCL을 변경]</strong></p>
+
+<ul>
+  <li>마지막 Fully connected Layer만 바꾼 뒤, 이전 Convolution Layer의 Weight는 그대로 둔채 바꾼 층만 학습 시켜 활용하는 방법</li>
+  <li>pre-trained 모델의 feature가 그대로 유지됨</li>
+</ul>
+
+<ol>
+  <li>Fine-tuning the whole model</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308153626775.png" alt="" /></p>
+
+<p><strong>[img. FCL을 변경 후 Convolution Layer도 Low lr로 학습]</strong></p>
+
+<ul>
+  <li>마지막 층을 바꾼 뒤, 기존 층은 낮은 Learnig rate, 새로운 층은 High learning rate를 유지하며 학습</li>
+  <li>자신의 Task에 맞게 기존 모델을 조금 수정가능</li>
+</ul>
+
+<h4 id='Knowledge-distillation'>Knowledge distillation</h4>
+
+<p>pre-trained 모델의 예측값을 활용해 다른 모델을 학습시키는 방법</p>
+
+<p>Teacher-student learning</p>
+
+<p>보통 두가지 목적으로 쓰임</p>
+
+<ol>
+  <li>더 경량화된 모델을 만들어, 기존 모델 보다 경량화에 사용</li>
+  <li>unlabeld dataset의 pseudo-labelling에 사용(레이블링 안된 데이터셋에 라벨링)</li>
+</ol>
+
+<p>학습 구조에 따라 2가지로 나뉜다.</p>
+
+<ol>
+  <li>Teacher-student network structure</li>
+</ol>
+
+<ul>
+  <li>student 모델(보통, Teacher Model보다 경량화되어 있다.)이 Teacher 모델의 output을 따라하게끔 학습시킴</li>
+  <li>Unsupervised learning으로, label 되지 않은 dataset을 사용한다.</li>
+  <li>두 결과를 비교하여 KL divergence Loss를 통해 Loss 값을 구한뒤, student model로만 backpropagation이 진행되게 된다.
+    <ul>
+      <li>KL div Loss: 2개의 분포의 거리(=얼마나 비슷한가)를 측정</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308155338677.png" alt="" /></p>
+
+<p><strong>[img. Teacher-student network structure]</strong></p>
+
+<ol>
+  <li>Knowledge distillation</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308155357681.png" alt="" /></p>
+
+<p><strong>[img. Knowledge distillation structure]</strong></p>
+
+<ul>
+  <li>Labeled된 데이터셋을 사용할 때 사용하는 구조</li>
+  <li>Student Model과 Teacher Model의 차이를 Distillation Loss, Student Model과 Ground Truth(Label)과의 차이를 Student  Loss라 정의 한다.</li>
+  <li>이때 Student 모델은 Soft label을 이용한 Soft Prediction을 이용한다.
+    <ul>
+      <li>Hard label(One-hot vector) : dataset의 label값처럼, 하나의 명확한 정답을 가짐</li>
+      <li>Soft label: model의 softmax를 통과한 뒤 기본 출력값, 여러 정답에 float 값을 가지는 가중치같은 형태</li>
+      <li>이를 이용해 단순 정답이 아닌, 어느 정도로 정답에 근접했는가 등의 추가적인 정보를 사용하여 학습할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>\(Hard\ label:\begin{pmatrix}Bear\\Cat\\Dog\end{pmatrix}=\begin{pmatrix}0\\1\\0\end{pmatrix}\\
+Soft\ label:\begin{pmatrix}Bear\\Cat\\Dog\end{pmatrix}=\begin{pmatrix}0.14\\0.8\\0.06\end{pmatrix}\)<br />
+<strong>[math. Hard label과 Soft label의 예시]</strong></p>
+
+<ul>
+  <li>또한 Knowledge distilation에서의 Distillation Loss를 구할 때, Softmax 함수에 temperature(T)를 이용하여 기존의 output보다 Smoothing한 결과를 사용할 수 있다.
+    <ul>
+      <li>이를 이용해 좀더 결과값에 많은 정보를 포함할 수 있다.</li>
+      <li>예를 들어 기존의 softmax(5,10) = (0.0067, 0.9933)이라면</li>
+      <li>t=100인 softmax(5,10) = ( 0.4875, 0.5125)로 비슷한 값을 smoothing 된다.</li>
+      <li>전자의 결과의 0,0067은 무시될 정도로 작은 정보지만 후자의 경우는 무시못할 정보가 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>\(Normal\ Softmax(=Hard\ Prediction):\frac{\exp(z_i)}{\sum_j\exp(z_j)}\\
+Softmax\ with\ temperature\ T(=Soft\ Prediction):\frac{\exp(z_i/T)}{\sum_j\exp(z_j/T)}\)<br />
+<strong>[math. softmax with temperature]</strong></p>
+
+<ul>
+  <li>Distillation Loss를 구할 때, Teacher Model의 soft Label의 세부정보(Semantic information)은 고려하지 않는다.
+    <ul>
+      <li>교육받고 바꿔야할 모델은 Student Model 이기 때문에</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Distillation Loss의 경우, Teacher model vs Student model의 차이를 의미</p>
+
+<ul>
+  <li>KL divergence loss 사용: 비교 하는 두 값이 0~1사이의 값들의 분포이므로</li>
+</ul>
+
+<p>Student Loss의 경우, 실제 답과 student model의 정답을 비교</p>
+
+<ul>
+  <li>CrossEntropy 사용: True label의 경우 one-hot vector 형태이므로</li>
+</ul>
+
+<p>마지막으로 위에서 구한 두 loss들의 가중치 합을 통해 loss를 구한 뒤, student model만, Backpropation을 한다.</p>
+
+<h3 id='Leveraging-unlabled-dataset-for-training'>Leveraging unlabled dataset for training</h3>
+
+<h4 id='Semi-supervised-learning'>Semi-supervised learning</h4>
+
+<ul>
+  <li>labeled된 적은 수의 데이터와, label되지 않은 많은 양의 데이터를 활용하는 방법
+    <ul>
+      <li>즉 unsupervised + Fully supervised = semi-supervised</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308224613244.png" alt="" /></p>
+
+<p>1) 레이블링된 데이터셋으로 모델 형성</p>
+
+<p>2) 형성된 모델로 레이블링되지 않은 데이터셋 레이블링</p>
+
+<p>3) 그렇게 레이블링된 데이터셋과 기존의 라벨링된 데이터셋으로 새로운 모델 형성</p>
+
+<h4 id='Self-training'>Self-training</h4>
+
+<p>앞서 배웠던 Data Augmentation, Knowledge distillation, Semi-supervised learning을 이용한 방법</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308224943394.png" alt="" /></p>
+
+<p><strong>[img. self-training의 단계]</strong></p>
+
+<ol>
+  <li>lable된 데이터셋으로 Teacher model을 형성한다.</li>
+  <li>해당 Teacher model로 unlabled된 model을 Pseudo-labeled data로 만든다.</li>
+  <li>lable된 데이터셋 + pseudo-lable된 데이터셋을 augmentation 한 것을 통하여 새로운 Teacher model을 형성한다
+    <ul>
+      <li>이때 주로 사용하는 augmentation  방법이 RandAugment</li>
+    </ul>
+  </li>
+  <li>새로 형성된 Teacher 모델로 2번부터 4번까지 반복한다.</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210308225809995.png" alt="" /></p>
+
+<p><strong>[img. 압도적인 성능을 자랑하는 self-training 모델(빨간색)]</strong></p>
+
+<h2 id='Image-classification-2'>Image classification 2</h2>
+
+<h3 id='Problems-with-deeper-layers'>Problems with deeper layers</h3>
+
+<p>성능 향상을 위해 딥러닝 layer의 층을 높게 쌓으면서 다음과 같은 문제가 생겼다</p>
+
+<ol>
+  <li>Gradient vanishing/exploding 문제</li>
+  <li>Computationaly complex</li>
+  <li>한때 overfitting 문제로 착각했던 Degradation problem</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309100228831.png" alt="" /></p>
+
+<p><strong>[img. Vanishing gradient 문제의 도식]</strong></p>
+
+<h3 id='CNN-architectures-for-image-classification-2'>CNN architectures for image classification 2</h3>
+
+<h4 id='GoogLeNet'>GoogLeNet</h4>
+
+<p>2015년에 발표된 Inception 모듈을 활용한 CV 모델</p>
+
+<p>Inception module이란?</p>
+
+<ul>
+  <li>
+    <p>이전 층에서의 결과값에 여러개의 필터를 적용한 뒤, Concatenate하는 layer</p>
+
+    <ul>
+      <li>1x1, 3x3, 5x5 Convolution filter, 3x3 max pooling layer를 적용</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309112126930.png" alt="" /></p>
+
+<p><strong>[img. Inception module의 예시]</strong></p>
+
+<p>이때, 여러 필터의 적용에 의해 parameter수가 증가하자, 1x1 convolution layer(Bottleneck layer)을 추가하여 파라미터 수를 줄이는 시도를 함</p>
+
+<ul>
+  <li>우측의 Dimension Reduced version에 추가된 1x1 convolution layer를 의미</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309112308655.png" alt="" /></p>
+
+<p><strong>[img. 1x1 convolution layer의 연산 결과]</strong></p>
+
+<p>GoogLeNet의 전체적인 구조를 살펴보면 다음과 같다.</p>
+
+<ol>
+  <li>Stem network: 기본적인 convolution network</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309115934238.png" alt="" /></p>
+
+<p><strong>[img. Stem network 부분]</strong></p>
+
+<ol>
+  <li>Stacked inception modules: 위에 설명한 Inception 모듈을 쌓아놓은 부분</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309120018533.png" alt="" /></p>
+
+<p><strong>[img. Stacked inception modules 부분]</strong></p>
+
+<ol>
+  <li>Auxiliary classifiers</li>
+</ol>
+
+<ul>
+  <li>Vanishing gradient 문제를 해결하기 위한 부분</li>
+  <li>중간의 결과값을 한번 예측값으로 삼고, loss 값을 계산하여 중간부터 backpropagation을 진행한다</li>
+  <li>training에서만 사용하고 testing 단계에서는 사용하지 않는다.</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309120037565.png" alt="" /></p>
+
+<p><strong>[img. Auxiliary classifiers 부분]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309120621091.png" alt="" /></p>
+
+<p><strong>[img. 더욱 자세한 Auxiliary classifier]</strong></p>
+
+<h4 id='ResNet'>ResNet</h4>
+
+<p>현재까지 기본 backbone으로 쓰이곤 하는 좋은 모델</p>
+
+<ul>
+  <li>최초로 인간 보다 나은 성능을 달성(에러율 기준)</li>
+  <li>기존의 모델보다 압도적으로 깊은 층의 갯수(152 Layer)</li>
+</ul>
+
+<p>기존의 연구에서는 층이 깊을 수록 오히려 성능이 떨어지는 문제를 Overfitting 문제라고 오판하였다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309122016623.png" alt="" /></p>
+
+<p><strong>[img. 층의 갯수에 따른 에러율, 높을 수록 안좋음]</strong></p>
+
+<p>Overfitting의 문제였다면, training error는 점점 나아져야하고, test error가 나빠져야 하지만, 둘다 성능이 나빠졌기 때문이다.</p>
+
+<p>따라서 Resnet에서는 이를 Overfitting이 아닌 Optimization(최적화)의 문제라고 보았다.</p>
+
+<p>ResNet의 연구 가설은 다음과 같다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309123313947.png" alt="" /></p>
+
+<p><strong>[img. Residual block과 Plain layer의 차이]</strong></p>
+
+<p>기존의 Plain layer의 경우 층이 깊어질 수록 복잡해진 H(x)에 X를 보존하면서 학습하기 힘들었다.</p>
+
+<p>하지만 Residual block에서는 identity X를 F(X)에 더한 것을 H(X)로 삼으면서, X의 정체성이 뚜렷히 남은 상태에서, 분할정복 통해 최적화된 학습을 할 수 있다.</p>
+
+<ul>
+  <li>분할정복-&gt; (F(x), X의 weight를 따로 구해서 더하면 되니까?)</li>
+  <li>Target function : $H(x)=F(x)+x$</li>
+  <li>Residual function : $F(x)=H(x)-x$</li>
+</ul>
+
+<p>이를 위해 <em>Shortcut connection 또는 Skip connection</em>을 통해 x를 layer을 넘어 더해주어 Backpropagation 시 뛰어넘어 gradeint를 구할 수 있게 하였다.</p>
+
+<ul>
+  <li>이를 통해 Gradient vanishing 문제를 해결함</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Residual 구조</th>
+      <th style="text-align: center">경로를 풀어본 구조</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210309124015987.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210309124032924.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[img. 같은 Residual 구조의 경로 풀이]</strong></p>
+
+<p>이론상, Residual 구조를 통하여 생기는 경로는 층이 깊이 n에 따라 $O(2^n)$개 만큼 증가한다.</p>
+
+<p>이 경로를 통해 backpropagation이 가능하므로 복잡한 학습을 해결 가능하다.</p>
+
+<p>ResNet의 전체적인 구조는 다음과 같다.</p>
+
+<ol>
+  <li>He initialization conv layer</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309130058413.png" alt="" /></p>
+
+<p><strong>[img. Resnet의 첫 시작 부분]</strong></p>
+
+<ul>
+  <li>첫 layer의 output은 앞으로 계속 identity connection을 통하여 더해질 것이므로, 최적화를 위해 단순하고 작은 크기의 output을 내놓아야 한다.</li>
+  <li>따라서 He initialization이라는 간단하고 ResNet을 위해 고안된 initialization을 이용한다.</li>
+</ul>
+
+<ol>
+  <li>Stacked residual blocks 부분</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309130304826.png" alt="" /></p>
+
+<p><strong>[img. Stack residual blocks]</strong></p>
+
+<ul>
+  <li>모두 3x3 conv layer로 이루어져 있으며, Batch normalization이 매 layer 끝에 이루어진다</li>
+  <li>일정 블록 이후(색이 바뀌는 부분), 채널 수는 2배로 늘리고, 채널 해상도는 stride를 2로 잡아 줄이는 구간이 존재함</li>
+</ul>
+
+<ol>
+  <li>Output FC layer</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309130815026.png" alt="" /></p>
+
+<p><strong>[img. Sing FC layer]</strong></p>
+
+<ul>
+  <li>하나의 average pooling과  Fully connected layer을 통하여 classfication을 진행</li>
+</ul>
+
+<p><strong>ResNet 코드</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309214256499.png" alt="" /></p>
+
+<p><strong>[img. ResNet code stack 수 정의 부분 ]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309214240250.png" alt="" /></p>
+
+<p><strong>[img. ResNet code 첫시작, He initialization 부분 ]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309214221377.png" alt="" /></p>
+
+<p><strong>[img. ResNet code, stacked residual 부분 ]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309214208739.png" alt="" /></p>
+
+<p><strong>[img. ResNet code, Layer 생성 코드]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309214151827.png" alt="" /></p>
+
+<p><strong>[img. ResNet code, 마지막 FC층 부분]</strong></p>
+
+<h4 id='Beyond-ResNets'>Beyond ResNets</h4>
+
+<ol>
+  <li>DenseNet</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309135815464.png" alt="" /></p>
+
+<p><strong>[img. DenseNet 이미지]</strong></p>
+
+<ul>
+  <li>ResNet과 달리 layer의 output이 이후의 모든 layer의 결과값에 Channel 축을 중심으로 Concatenate되서 합해진다.</li>
+  <li>Cocatenate하므로 기존의 값들이 보존된다
+    <ol>
+      <li>SENet</li>
+    </ol>
+  </li>
+  <li>Activation의 결과가 명확해지도록 ouput의 채널축에 가중치를 주는 Attention across channel 방식</li>
+  <li>feature의 중요도와 관계가 명확해짐</li>
+  <li>Squeeze: global average pooling을 통하여 채널의 공간정보를 없애고(축의 정보 등) 분포를 구함</li>
+  <li>Excitation: FC layer 하나로 채널간의 연관성(Weight=attention score)를 구함</li>
+  <li>중요도가 떨어지면 0에 가깝게 중요한 것은 크게 하여 feature의 강조와 무시를 함
+    <ol>
+      <li>EfficientNet</li>
+    </ol>
+  </li>
+  <li>기존의 Network 알고리즘을 정리함</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>기본 Network</th>
+      <th>Width Scailing</th>
+      <th>Depth Scailing</th>
+      <th>Resolution Scaling</th>
+      <th>Compound Scailing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210309140728124.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210309140741008.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210309140753841.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210309140806358.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210309140821739.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td>기준</td>
+      <td>채널의 수를 늘리는 방식</td>
+      <td>층의 수를 늘리는 방식</td>
+      <td>Input의 해상도를 높게 주는 방식</td>
+      <td>앞의 방법들을 복합한 방식</td>
+    </tr>
+    <tr>
+      <td>_</td>
+      <td>GoogLeNet 등</td>
+      <td>DenseNet 등</td>
+      <td>_</td>
+      <td>EfficientNet</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. 기존의 Network의 분류]</strong></p>
+
+<ul>
+  <li>
+    <p>각 Scailing들은 파라미터 수, 학습 epoch, 데이터셋의 수에 따라 성능이 오르지않는 구간이 나오는데(saturation), 이를 모두 팩터(어느 정도 비율로 복합하는가)를 주고 복합하여 성능을 크게 상승시킴</p>
+  </li>
+  <li>
+    <p>사람이 찾은 효율적인 다른 구조들, NAS 알고리즘 구조(Neural Architecture Search, 컴퓨터가 효율적인 구조를 찾는 알고리즘)보다 성능이 압도적으로 좋다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309141007253.png" alt="" /></p>
+
+<ul>
+  <li>적은 연산으로도 성능이 크게 올라 EfficientNet이다.</li>
+</ul>
+
+<ol>
+  <li>Deformable convolution</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309141016999.png" alt="" /></p>
+
+<ul>
+  <li>동물, 사람, 등의 형태가 변할 수 있는 사물에 효율적인 구조</li>
+  <li>feature를 나타내는 weight와, 이 weight의 위치를 어떠한 방향으로, 어떻게 변형시킬 지 결정하는 offsets를 학습하는 형식</li>
+  <li>기존의 정사각형 형태의 Receptive field와 달리 물체의 형태에 따라서 Receptive field 모양이 변함</li>
+</ul>
+
+<h3 id='Summary-of-image-classification'>Summary of image classification</h3>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309142638948.png" alt="" /></p>
+
+<p><strong>[img. 앞서 배운 모델들의 비교, 면적은 모델의 크기]</strong></p>
+
+<ul>
+  <li>AlexNet은 심플하지만 메모리 사용량이 크고 성능이 좋지 않다</li>
+  <li>VGGNet은 성능이 낫지만 메모리와 연산을 많이 잡아 먹는다</li>
+  <li>GoogLeNet의 최신 구조는 크기도 적고 성능도 좋지만, 구조가 복잡하다</li>
+  <li>ResNet은 특출난 것이 없다</li>
+  <li>GoogLeNet이 여러모로 좋지만 구조가 너무 복잡하여 VGGNet, ResNet을 기본 모델로 많이 사용한다.</li>
+</ul>
+
+<h2 id='Semantic-segmentation'>Semantic segmentation</h2>
+
+<h3 id='Semantic-segmentation'>Semantic segmentation</h3>
+
+<p>이미지 각 픽셀의 어떠한 category에 속하는지 구분하는 문제(ex) 사람 영역, 자동차 영역)</p>
+
+<p>같은 class의 다른 instance에는 관계가 없으며 이를 위한 instance segmentation가 있다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309155939051.png" alt="" /><br />
+<strong>[img. Semantic segmentation의 예시]</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210309155947015.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210309155953911.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. 의료 사진, 자율 주행, 영상 합성 등에서 활용]</strong></p>
+
+<h3 id='Semantic-segmentation-architectures'>Semantic segmentation architectures</h3>
+
+<h4 id='Fully-Convolutional-Networks-FCN'>Fully Convolutional Networks(FCN)</h4>
+
+<p>Semantic segmentation을 위한 첫 End-to-End architecture</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309160418715.png" alt="" /></p>
+
+<p><strong>[img. FCN 구조]</strong></p>
+
+<ul>
+  <li>End-to-End 구조: 입력층부터 출력층까지 모두 미분가능하여 입력과 출력 pair만 있으면 모델을 학습할 수 있는 구조를 의미. 입력 사이즈 등의 제한이 없음</li>
+  <li>이전에는 완전학습 하기에 제한이 있었음
+    <ul>
+      <li>ex) AlexNet을 이용한 semantic segmentation의 경우, 학습 시의 이미지 해상도와 test 시의 이미지 해상도가 다르면 안됬음.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309200905809.png" alt="" /></p>
+
+<p><strong>[img. Fully connected layer vs Fully convolutional layer 구조 비교]</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fully connected layer(FCL)</th>
+      <th>Fully convolutional layer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210309201512441.png" alt="" /><br />공간 정보를 고려하지 않는 모습</td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210309201522327.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td>fixed dimensional vector를 받아 fixed dimensional vector 출력, 보통 하나로 정해진 feature vector를 출력</td>
+      <td>activation map을 받아 activation map 출력, 보통 1x1 conv layer로 구현하며, feature vector들이 포함된 convolutional feature map 출력</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. Fully connected layer vs Fully convolutional layer 세부 비교]</strong></p>
+
+<p>다만 Receptive field를 살핀 뒤 feature를 찾아 작은 크기의 결과를 내는 conv layer와 pooling layer로 인해 출력 이미지의 해상도가 작아짐 =&gt; 이를 해결하기 위해 Upsampling layer가 나타남</p>
+
+<p>Upsampling layer이란?</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309202323525.png" alt="" /></p>
+
+<p><strong>[img Upsampling이 추가된 FCN]</strong></p>
+
+<p>작아진 결과물을 크게 만들어주기 위해 Upsampling layer을 사용</p>
+
+<p>3가지 방법 중 Unpooling 방법을 제외하고 2가지 방법이 이용됨</p>
+
+<ol>
+  <li>Transposed convolution</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309202812424.png" alt="" /></p>
+
+<p><strong>[img. Transpose convolution의 원리]</strong></p>
+
+<p>줄어든 이미지의 픽셀을 필터만큼 곱한 뒤, kernel 사이즈와 strider 크기에 따라 곱연산하여 더한다, 중첩 되는 부분은 덧셈연산이 일어난다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309203617778.png" alt="" /></p>
+
+<p><strong>[img. Transpose convolution의 문제점]</strong></p>
+
+<p>kernel 사이즈와 strider 크기에 주의하지 않으면, 겹쳐서 덧셈이 일어나는 부분에 의해 checker 무늬가 나타나게 된다.</p>
+
+<ol>
+  <li>Upsample and convolution</li>
+</ol>
+
+<p>위 문제를 해결하기 위해 upsampling과 convolution을 같이 사용하여 중첩하는 부분뿐만 아니라 골고루 영향을 받게 해준다.</p>
+
+<p>Transpose와 달리 layer을 하나가 아닌 2개로 분리하여 주로 영상처리에 사용하는interpolation 알고리즘(Nearest-neighbor(NN), Bilinear 등)을 사용하고 convolution을 이용하여 학습 가능하게 만든다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309202959708.png" alt="" /></p>
+
+<p><strong>[img. 개선된 convolution]</strong></p>
+
+<p>해상도를 낮추며 진행되는 conv layer 특성상, 층의 깊에 따른 특성은 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">낮은 레이어층, 해상도 높음, Receptive field 작음 &lt;====&gt; 높은 레이어층, 해상도 낮음, Receptive field 큼</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210309204744193.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>디테일, 로컬 변화에 민감&lt;====&gt;전반적 의미적 정보를 포함</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. 층의 깊이에 따른 output 값의 특징]</strong></p>
+
+<p>결국 우리가 필요한건 구조의 깊은 부분의 의미적 부분(classify 해야하므로)과 구조의 얕은 부분의 디테일한 부분(고해상도로 픽셀을 선정해야 하므로)이 둘다 필요하므로 다음과 같은 방법으로 해결하였다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309211324579.png" alt="" /></p>
+
+<p><strong>[img. FCN-Ns 모델들의 비교]</strong></p>
+
+<p>마치 DenseNet이나 ResNet 처럼,</p>
+
+<ol>
+  <li>중간의 결과 값을 upsampling 한 뒤,</li>
+  <li>최종결과물을 upsampling한 것들을</li>
+  <li>Concatenate하여 출력하면 좋은 결과가 나오며,</li>
+</ol>
+
+<p>얼마나 많은 층에서 결과값을 가져오느냐에 따라 FCN-32s, FCN-16s, FCN-8s 모델로 나누어진다.</p>
+
+<ul>
+  <li>숫자가 작아질 수록 더 많은 층의 결과값을 가져온 모델</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309211534377.png" alt="" /></p>
+
+<p><strong>[img. FCN-Ns 모델들의 비교, 중간값을 많이 가져온 모델일 수록 정확한 결과가 나옴]</strong></p>
+
+<h4 id='Hypercolumns-for-object-segmentation'>Hypercolumns for object segmentation</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="/assets/img/컴퓨터비전 기본/image-20210309211717755.png" alt="" /></th>
+      <th><img src="/assets/img/컴퓨터비전 기본/image-20210309211729381.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HyperColumn이라는 모든 Conv layer의 결과값을 각 픽셀 별로 쌓아 만든 vecotr를 이용함</td>
+      <td>물체의 bounding box를 추출하고 사용한다는 점이 다름</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. FCN과 비슷한 내용을 담은 HyperColumn 논문]</strong></p>
+
+<h4 id='U-Net'>U-Net</h4>
+
+<p>영상의 일부분만 쓰는 관련된 TASK의 경우 아직도 많이 활용되는 network</p>
+
+<p>Fullay convolutional network가 기반이며, skip connection을 통하여 앞선 network 보다 더욱 정교한 결과를 만들 수 있음</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309212400739.png" alt="" /></p>
+
+<p><strong>[img. U자 모양이라 U-Net]</strong></p>
+
+<p>크게 2가지 부분으로 나뉜다.</p>
+
+<ol>
+  <li>Contracting path 부분</li>
+</ol>
+
+<ul>
+  <li>입력 영상을 3x3 convolution을 이용해 max pool을 이용해 해상도를 낮추고 대신 2배씩 feature channel을 늘림</li>
+  <li>이를 통해 전체적인 의미, 문맥(holistic context)를 확보하는 부분이며 일반적인 FCN과 다를바 없음</li>
+</ul>
+
+<ol>
+  <li>Expanding(Upsampling, decoding) path 부분</li>
+</ol>
+
+<ul>
+  <li>
+    <p>2x2 up-convolution을 통하여 반대로 점진적으로 채널 수는 절반으로, 해상도는 2배로 늘림</p>
+  </li>
+  <li>
+    <p>추가로 이전 낮은 층의 layer의 activation map을 Skip connection으로 가져와 concatenating하여 사용함</p>
+
+    <ul>
+      <li>
+        <p>이를 통해 detail하고 local한 feature map을 받아 사용할 수 있음</p>
+      </li>
+      <li>
+        <p>이때 concatenate하려면 해상도가 맞아야 하는데, 홀수이면, Downsample시, 일부 값을 버리게 되며, 다시 Upsample시 해상도가 달라지므로 해상도 크기가 홀수가 안되게 해야함.</p>
+        <ul>
+          <li>ex) 7x7 =DownSample(divide 2)=&gt; 3x3 (1은 버림) =UpSample(multiple 2)=&gt; 6x6</li>
+          <li>7x7과 6x6 해상도가 맞지 않아 Concatenate 불가</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>U-Net Pytorch 코드</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309213848432.png" alt="" /></p>
+
+<p><strong>[img. U-Net Contracting Path code]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309213905013.png" alt="" /></p>
+
+<p><strong>[img. U-Net Expanding Path code]</strong></p>
+
+<h4 id='DeepLab'>DeepLab</h4>
+
+<p>널리 사용되는 CRFs, Atrous Convolution의 사용이 특징인 network, Deeplab v3+가 최신.</p>
+
+<p><strong>CRFs(Conditional Random Fields)</strong></p>
+
+<p>후처리로 사용됨, 픽셀 간의 관계를 그래프로 표현한 뒤, 최적화하여 경계를 찾는 원리</p>
+
+<p>score map과 경계선이 맞도록 경계선 내외부의 확산을 반복한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309221417567.png" alt="" /></p>
+
+<p><strong>[img. CRFs 예시]</strong></p>
+
+<p><strong>Atrous convolution(또는 Dilated convolution)</strong></p>
+
+<p>커널크기를 정하고, 정의한 Dilation factor 만큼 커널을 띄어 계산하는 Convolution 방법</p>
+
+<p>같은 parameter 수와 연산량으로 더욱 큰 Receptive size를 얻을 수 있다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309221856422.png" alt="" /></p>
+
+<p><strong>[img. 좌측이 기존의 conv, 우측이 astrous conv]</strong></p>
+
+<p><strong>Depthwise separable convolution</strong></p>
+
+<p>입력 이미지 해상도가 클 경우, 너무 처리가 오래 걸리자, Dilated convolution + Depthwise separable convolution = Astrous separable convolution을 이용한다.</p>
+
+<p>Depthwise separable convolution는 일반 convoution을 2개의 절차로 나누어 진행한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309223426502.png" alt="" /></p>
+
+<p><strong>[img.Standard vs Depthwise separable convolution의 차이]</strong></p>
+
+<p>이로 인해 파라미터 수가 $D_k^2MND_F^2$에서 $D_k^2MD_F^2+ MND_F^2$로 감소하였다.</p>
+
+<p><strong>DeepLab v3+의 구조</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210309223952659.png" alt="" /></p>
+
+<p><strong>[img. 최신 DeepLab v3+의 구조 ]</strong></p>
+
+<ol>
+  <li>DCNN 부분에서 Dilated convolution을 통하여 feature map을 구함</li>
+  <li>Encdoer 중간 부분에 있는 Astrous spatial pyramid pooling을 이용해 다양한 scale의 정보를 Dilated conv로 여러 feature를 추출한 후 하나로 합쳐 1x1convolution으로 하나로 합친다.</li>
+  <li>Decoder 부분에서 Low-Level Features와 Upsampling한 Pyramid pooling feature를 Concat한 뒤, 결과값을 낸다.</li>
+</ol>
+
+<p>Semantic segmentation 뿐만 아니라, instance segmentation(Class 뿐만 아니라 객체 또한 탐지), panoptic segmentation(배경 정보+ instance segmentation)으로 성장하고 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310094300040.png" alt="" /><br />Original Image</th>
+      <th style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310094309340.png" alt="" /><br />Semantic segmentation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310094320216.png" alt="" /><br /><strong>Instance segmentation</strong></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310094328026.png" alt="" /><br /><strong>Panoptic segmentation</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. Image 인식 Tasks]</strong></p>
+
+<h2 id='Object-detection'>Object detection</h2>
+
+<h3 id='Object-detection'>Object detection</h3>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310095403945.png" alt="" /></p>
+
+<p><strong>[img. Object detection의 예시]</strong></p>
+
+<p>Classification + Box localization의 Task</p>
+
+<p>즉, 바운딩 박스의 위치 + 물체의 소속까지 예측해야함, 고수준의 문제</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310095559874.png" alt="" /></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310095638069.png" alt="" /></p>
+
+<p><strong>[imgs. 자율 주행, OCR 등의 산업에 사용됨]</strong></p>
+
+<h3 id='Two-stage-detector-R-CNN-family'>Two-stage detector(R-CNN family)</h3>
+
+<h4 id='Traditional-methods-hand-crafted-techniques-1-Gradient-based-detector'>Traditional methods- hand-crafted techniques 1. Gradient-based detector</h4>
+
+<p>과거에는 경계선의 특징으로 사람의 직관과 직접 설계한 알고리즘으로 Object Detection을 함</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Average Gradient</th>
+      <th>max (+) SVM weight</th>
+      <th>max (-) SVM weight</th>
+      <th>Original Image</th>
+      <th>R-HOG descriptor</th>
+      <th>R-HOG w/ (+) SVM</th>
+      <th>R-HOG w/ (-) SVM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210310095939961.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210310095949507.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210310095956434.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210310100003591.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210310100009439.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210310100015857.png" alt="" /></td>
+      <td><img src="/assets/img/컴퓨터비전 기본/image-20210310100022937.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[img. Gradient-based detector]</strong></p>
+
+<ul>
+  <li>HOG : histogram of Oriented Gradients</li>
+  <li>SVM : Support Vector Machine, 심플한 Linear 모델
+    <ul>
+      <li>결정 경계, 즉 그래프 내에 분류를 위한 기준선을 정의하는 모델</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id='Traditional-methods-hand-crafted-techniques-2-Selective-search-Box-proposal-algorithm'>Traditional methods- hand-crafted techniques 2. Selective search(Box-proposal algorithm)</h4>
+
+<p>최근의 초기 Object Detection에서 자주 사용한 기술로, 다양한 물체 후보군에 대해서 영역을 특정하여 Bounding-box를 제안해줌</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">순번</th>
+      <th style="text-align: center">1</th>
+      <th style="text-align: center">2</th>
+      <th style="text-align: center">3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">구분</td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310100639654.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310100646430.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310100654360.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">예시</td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310100702507.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310100708780.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310100716265.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">설명</td>
+      <td style="text-align: center">Over-segmentation<br />(비슷한 색, 분포끼리 영역 나눔)</td>
+      <td style="text-align: center">비슷한 영역끼리 합침</td>
+      <td style="text-align: center">Bounding box를 추출</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. Selective search 예시]</strong></p>
+
+<h4 id='R-CNN'>R-CNN</h4>
+
+<p>딥러닝 기반, Alex Net 보다 압도적인 성능</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310101110334.png" alt="" /></p>
+
+<p><strong>[img. R-CNN의 과정]</strong></p>
+
+<ol>
+  <li>이미지 입력</li>
+  <li>위의 Selective search 등의 bounding box 알고리즘으로 Region Proposal(최대 2천개까지)을 구함</li>
+  <li>이미지 사이즈를 늘려서 해상도를 맞추고 미리 학습된(Pre-trained) CNN에 입력</li>
+  <li>SVM을 이용해 Classification</li>
+</ol>
+
+<p>bounding box detection의 성능의 한계와 각각 bounding box 일일이 Classification 하므로 속도가 느림</p>
+
+<h4 id='Fast-R-CNN'>Fast R-CNN</h4>
+
+<p>R-CNN과 달리 이미지의 학습된 feature를 재활용해서 속도를 향상(최대 ~18배 빠름)</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310101542959.png" alt="" /></p>
+
+<p><strong>[img. Fast R-CNN의 과정]</strong></p>
+
+<ol>
+  <li>CNN을 통하여 feature map을 미리 뽑아냄
+    <ul>
+      <li>Fully Convolutional Network를 이용해 해상도 고정 문제를 해결했으므로 warping 안함</li>
+    </ul>
+  </li>
+  <li>이렇게 뽑은 feature map을 RoI pooling layer에서 관심영역(RoI, Region of Interest)만 뽑아 resize함</li>
+  <li>FC layer와 함께 결합된 bbox regressor와 softmax를 통해 각각 더욱 정교한 바운딩박스와 classification을 함</li>
+</ol>
+
+<p>여전히 바운딩 박스 검출(Region Proposal) 성능에 한계를 가짐.</p>
+
+<h4 id='Faster-R-CNN'>Faster R-CNN</h4>
+
+<p>Region Proposal 또한 딥러닝 기반으로 바꾼 최초의 End-to-End Object Detection 모델, 즉 모두 학습 가능함</p>
+
+<p><strong>Intersection over Union(IoU)</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310102211024.png" alt="" /></p>
+
+<p><strong>[img. IoU의 정의]</strong></p>
+
+<p>IoU (Intersection over Union) : 얼마나 bounding box가 잘 정합되어있는가를 정의</p>
+
+<p><strong>Anchor Box</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310102328817.png" alt="" /></p>
+
+<p><strong>[img. Anchor Box 예시]</strong></p>
+
+<p>각 위치에서 발생할 만한 박스 후보군들을 크기와 비율 별로 미리 정의해놓으며 이를 Anchor Box라고 함</p>
+
+<p>Faster R-CNN에서는 보통 9개로 정의 해놓고, 더 많이 정의도 가능</p>
+
+<p>각각 Anchoer box와 실제 값(Ground-Truth)의 IoU를 비교하여 정답인 Positive sample과 negative sample을 정의하여 학습시킴</p>
+
+<ul>
+  <li>보통 IoU가 0.7 이상이면 +, 0.3 이하면 -</li>
+</ul>
+
+<p><strong>Region Proposal Network(RPN)</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310104207161.png" alt="" /></p>
+
+<p><strong>[img. Region Proposal Network(RPN)]</strong></p>
+
+<p>특히, 기존의 느린 Region proposal 알고리즘을 딥러닝 기반 RPN으로 바꿨음</p>
+
+<p>그 이외에는 기존의 Fast R-CNN과 비슷함</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310104334050.png" alt="" /></p>
+
+<p><strong>[img. 자세한 RPN 과정]</strong></p>
+
+<ol>
+  <li>Sliding Door 방식으로 Window 마다 k 개의 anchor box 고려</li>
+  <li>256 차원 feature map 추출</li>
+  <li>feature map에서 Classification을 위해 2k개의 score 를 추출, 동시에 바운딩 박스의 크기, 위치를 위해 4k개의 값을 추출
+    <ul>
+      <li>계산속도를 늘리기 위해 Anchor box로 rough하게 정의한 후, 정교하게 바운딩박스 추출</li>
+      <li>Classification에서는 Cross Entropy loss, 바운딩 박스 추출은 Regression loss 사용</li>
+      <li>Anchor box 종류에 따른 Loss도 따로 있음</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Non-Maximum Suppressions (NMS)</strong></p>
+
+<p>RPN에 의해 많은 Bounding box가 제안되며, 이후 NMS를 통해 최적의 Bounding box만 필터링한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310105725056.png" alt="" /></p>
+
+<p><strong>[img. NMS steps]</strong></p>
+
+<ol>
+  <li>가장 높은 점수의 box를 선택</li>
+  <li>IoU를 다른 박스와 비교</li>
+  <li>IoU가 50 이상인 박스들 제거</li>
+  <li>그다음 높은 점수의 box를 선택</li>
+  <li>2~4 반복</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">R-CNN</th>
+      <th style="text-align: center">Fast R-CNN</th>
+      <th style="text-align: center">Faster R-CNN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310105930699.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310105945570.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310105958162.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. R-CNN Family 구조 비교]</strong></p>
+
+<p>R-CNN Family은 Two-stage Detector의 대표 모델들이다.</p>
+
+<h3 id='Single-stage-detector'>Single-stage detector</h3>
+
+<p>Single-stage detector은</p>
+
+<p>정확도가 조금 뒤떨어지지만 리얼 타임 Detection 가능할 정도로 높은 속도에 중점을 둠</p>
+
+<p>RoI pooling layer를 사용하지 않고, 간단한 구조와  빠른 속도를 자랑하는 경우가 많음</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">One-stage detector</th>
+      <th style="text-align: center">Two-stage detector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310110424184.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310110436986.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[tables. one-stage vs two-stage]</strong></p>
+
+<h4 id='YOLO-You-only-look-once'>YOLO(You only look once)</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310110958657.png" alt="" /></p>
+
+<p><strong>[img. YOLO 과정]</strong></p>
+
+<ol>
+  <li>Input을 S 크기의 그리드로 나눔</li>
+  <li>각 박스에 대하여 Boundig box와 Confidence를 예측
+    <ul>
+      <li>이때, Ground truth와 IoU를 비교하여 학습함</li>
+    </ul>
+  </li>
+  <li>동시에 각 위치에서의 Class Score를 추가로 예측</li>
+  <li>NMS를 통해 Bounding box 추출</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310111451684.png" alt="" /></p>
+
+<p><strong>[img. YOLO의 구조]</strong></p>
+
+<p>일반 CNN 구조와 비슷하며 SxSx30의 아웃풋이 나옴</p>
+
+<p>(채널수 30 = class probability 20 + x,y,w,h 각각 2채널)</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310112122090.png" alt="" /></p>
+
+<p><strong>[img. YOLO 성능비교]</strong></p>
+
+<p>Two-stage에 비해 성능은 떨어지지만 훨씬 빠르다.</p>
+
+<ul>
+  <li>성능이 떨어지는 이유는 맨 마지막 Layer에서 한번만 Prediction 하므로</li>
+</ul>
+
+<p><strong>Single Shot Multibox Detector(SSD)</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310112652356.png" alt="" /></p>
+
+<p><strong>[img. SSD 예시]</strong></p>
+
+<p>feature map들의 다른 해상도마다 적절한 크기의 Bounding box를 설정하게 해줌</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310112951617.png" alt="" /></p>
+
+<p><strong>[img. SSD의 구조]</strong></p>
+
+<p>VGG-16을 backbone으로, 다양한 Scale의 conv를 통과시켜 여러 해상도에 대응함</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310113138212.png" alt="" /></p>
+
+<p><strong>[img. SSD 전체 anchor box 갯수 계산]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310113242498.png" alt="" /></p>
+
+<p><strong>[img. SSD 성능 비교]</strong></p>
+
+<p>속도와 성능이 YOLO 뿐만 아니라 R-CNN 계열 보다도 좋다.</p>
+
+<h3 id='Single-stage-detector-vs-two-stage-detector'>Single-stage detector vs. two-stage detector</h3>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310113446418.png" alt="" /></p>
+
+<p><strong>[img. Class imbalance Problem 예시]</strong></p>
+
+<p>Class Imbalance Problem : Single stage detector의 문제, 결과값에 필요없는 negative anchor box가 positive anchor box보다 훨씬 많은 문제</p>
+
+<p><strong>Focal Loss</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310113638609.png" alt="" /></p>
+
+<p><strong>[img. Focal loss 그래프]</strong></p>
+
+<p>위의 Class Imbalance Problem를 해결하기 위해 제안됨</p>
+
+<p>cross entropy loss의 연장선으로, 추가적인 확률 텀이 붙게 된다.</p>
+
+<p>CE와 비교하여 $\gamma$값에 따라 정답의 경우 Loss를 더욱 낮게, 오답의 경우 Loss에 더욱 가중을 주게  된다.<br />
+\(Cross\ Entropy\ Loss:CE(p_t)=-log(p_t)\\
+Focal\ Loss:FL(p_t)=(1-p_t)^\gamma CE(p_t)=-(1-p_t)^\gamma\)<br />
+<strong>[math. Focal loss의 수식]</strong></p>
+
+<p><strong>RetinaNet과 Feature Pyramid Networks(FPN)</strong></p>
+
+<p>RetinaNet = FPN + class/box subnet</p>
+
+<p>U-Net과 비슷한 구조로, low level의 feature와 high level의 feature를 합하여 class와 box_bounding을 각 위치에서 수행</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310114744367.png" alt="" /></p>
+
+<p><strong>[img. RetinaNet 구조]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310115153737.png" alt="" /></p>
+
+<p><strong>[img. RetinaNet 성능]</strong></p>
+
+<p>비슷한 속도에 높은 성능을 보이며, 속도를 희생시키면 성능을 더 올릴 수 있음</p>
+
+<h3 id='Detection-with-Transformer'>Detection with Transformer</h3>
+
+<p><strong>DETR</strong>(DEtection TRansformer)</p>
+
+<p>NLP에서 큰 혁신을 보여준 Transformer 구조를 Object Detection에 활용한 구조,</p>
+
+<p>DETR은 facebook에서 개발</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310115306667.png" alt="" /></p>
+
+<p><strong>[img. Transformer 구조]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310115459259.png" alt="" /></p>
+
+<p><strong>[img. DETR 구조]</strong></p>
+
+<p>CNN의 feature와 pixel의 positional encoding을 합하여 encoder에 넣어준 후, N개의 Object queries와 함께 decoder에 넣어준 후, 각 픽셀의 class, bounding box를 출력해주는 구조</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310115803248.png" alt="" /></p>
+
+<p><strong>[img. bounding box 이외의 방법들]</strong></p>
+
+<p>이외에도 CornerNet, CenterNet 등 Bounding box 대신 중심점, 양 끝점을 찾는 연구 등이 진행되는 중</p>
+
+<h2 id='CNN-Visualization'>CNN Visualization</h2>
+
+<p>CNN을 시각화하는 것</p>
+
+<h3 id='Visualizing-CNN'>Visualizing CNN</h3>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310120152420.png" alt="" /></p>
+
+<p><strong>[img. CNN is a black box]</strong></p>
+
+<p>많은 경우 CNN의 내부 로직 등을 알 수 없거나, 신경쓰지 않고 개발하는 경우가 많다.</p>
+
+<p>어째서 이러한 결과가 나왔는가? 무엇이 문제인가? 어떻게 하면 개선 가능한가? 등을 알아보기 위해 Black box 상태이 CNN 내부를 알아볼 필요가 있다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310120939768.png" alt="" /></p>
+
+<p><strong>[img. ZFNet 예제]</strong></p>
+
+<p>ZFNet 등에서는 각 level의 feature를 확인하여 학습을 파악할 수 있어서 이를 통해 성능을 개선시킬 수 있었다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310121352942.png" alt="" /></p>
+
+<p><strong>[img. 간단한 Filter weight visualization]</strong></p>
+
+<p>저차원인 1번째 conv layer의 경우 3채널 또는 1채널로 이루어져있어 상단과 같이 직관적으로 Visualization이 가능하지만, layer가 깊어지면(고차원이 되면) 채널 수가 늘어나면서 인간이 이해 가능한 형태의 visualization이 불가능하다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310122007325.png" alt="" /></p>
+
+<p><strong>[img. Types of neural network visualization]</strong></p>
+
+<p>왼쪽으로 갈수록 모델에 대한 이해, 오른쪽을 갈수록 데이터 분석</p>
+
+<h3 id='Analysis-of-model-behaviors'>Analysis of model behaviors</h3>
+
+<p>고차원 layer의 feature들을 분석하는 방법을 알아보자</p>
+
+<p><strong>고차원 Embedding feature analysis 1번째 방법 - 예제 검색 방법</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310122418084.png" alt="" /></p>
+
+<p><strong>[img. Nearest neighbors (NN) in a feature space]</strong></p>
+
+<p>NN-search의 경우 feature space에서 가장 가까운 사진들을 비교(예제 검색)함으로써 분석이 가능하다.</p>
+
+<p>상단의 코끼리 사진들을 보아, 잘 clustering 된걸 알 수 있으며, 하단의 강아지 사진으로 pixel 위치(강아지 형태, 위치)가 바뀌어도 모델이 잘 찾아낸다는 것을 알 수 있다.</p>
+
+<p>이러한 예제 검색 방법의 Step은 다음과 같다.</p>
+
+<ol>
+  <li>신경망을 통하여 Database에서 각 Input의 고차원 feature를 뽑아내 High dimensional feature space에 위치시킨다.</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310123615524.png" alt="" /></p>
+
+<p><strong>[img. feature 추출 및 DB 위치]</strong></p>
+
+<ol>
+  <li>검색하고 싶은 Input의 고차원 feature를 뽑아 낸 뒤 마찬가지로 High dimensional feature space에 위치시킨다.</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310123644222.png" alt="" /></p>
+
+<p><strong>[img. Input 사진들의 feature의 위치]</strong></p>
+
+<ol>
+  <li>가장 가까운 이웃의 feature를 가져온 뒤, 매칭되는 Input을 가져온다.</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310123531547.png" alt="" /></p>
+
+<p><strong>[img. 사진과 가장 가까운 이웃들]</strong></p>
+
+<ol>
+  <li>그 Input들과 비교하여 Visualization 한다.</li>
+</ol>
+
+<p>단, 이 방법은 전체적인 형태가 아닌 일부 예제만 파악한다는 단점이 있음</p>
+
+<p><strong>고차원 Embedding feature analysis 2번째 방법 - Dimensionality reduction(차원 축소)</strong></p>
+
+<p>우리가 사는 3차원(시간을 포함하면 4차원) 공간에 맞게 고차원 공간을 낮추는 방법</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310123901553.png" alt="" /></p>
+
+<p><strong>[img. 고차원 공간을 저차원 공간으로 변형]</strong></p>
+
+<p>대표적인 방법으로 t-SNE가 있다</p>
+
+<p>t-distributed stochastic neighbor embedding(t-SNE)</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310124022837.png" alt="" /></p>
+
+<p><strong>[img. t-SNE를 통한 숫자 손글씨 구분(MNIST) feature space의 visualization]</strong></p>
+
+<ul>
+  <li>
+    <p>고차원 데이터를 2차원으로 매핑한 결과</p>
+  </li>
+  <li>
+    <p>3,5,8의 cluster가 한껏 뭉쳐있는 걸로 보아 CNN이 비슷하다고 느낀다는 것을 알 수 있다.</p>
+  </li>
+</ul>
+
+<p><strong>중, 고차원 해석: Activation investigation 1-Layer activation</strong></p>
+
+<p>Layer의 Activation을 분석하여 모델의 특성을 파악하는 방법</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310125246083.png" alt="" /></p>
+
+<p><strong>[img. AlexNet의 Activation 분석]</strong></p>
+
+<p>특정 Activation의 채널(hidden node)을 masking 한뒤 overlay하여 무슨 일을 하는 노드인가 알아볼 수 있다.</p>
+
+<p><strong>중차원 해석: Activation investigation 2-Maximally activating patches</strong></p>
+
+<p>각 채널의 hidden node의 가장 큰 값을 가지는 patch(activation)를 가져와 나열하는 것</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310125802162.png" alt="" /></p>
+
+<p><strong>[img. hidden node 별 image patch]</strong></p>
+
+<p>이를 통해 각 히든 노드가 찾는 부분(=하는 일)을 알 수 있다.</p>
+
+<p>국부적이므로 중차원 정도 해석에 어울린다.</p>
+
+<p>1) 특정 layer의 특정 channel을 고른다.</p>
+
+<p>2) input 이미지를 집어 넣은 후 선택한 채널의 activation 값을 저장한다</p>
+
+<p>3) 최대 activation value의 Receptive field를 Input에서 crop하여 image patch로 만든다.</p>
+
+<p><strong>결과 해석: Activation investigation 3-Class visualization</strong></p>
+
+<p>예제 데이터 사용없이 네트워크가 기억하는 이미지가 무엇인지 판단</p>
+
+<p>ex)이 CNN은 특정 클래스의 이미지를 대략 어떻게 생겼다고 기억하고 있는가?</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310132627390.png" alt="" /></p>
+
+<p><strong>[img. CNN이 기억하고 있는 개와 강아지의 모습]</strong></p>
+
+<p>편향 등을 알아볼 수도 있다. (ex) 위 새 사진은 많은 데이터가 나무와 함께 찍힘)</p>
+
+<p>\(I^*=\underset{I}{argmaxf(I)}-Reg(I) =\\
+I^*=\underset{I}{argmaxf(I)}-\lambda \left\|I\right\|^2_2\\
+\lambda \left\|I\right\|^2_2, Reg(I):Regularizaion\ term\\
+I: 영상\ 입력, f(I):CNN\ 모델\)<br />
+<strong>[math. Gradient ascent, 일종의 Loss]</strong></p>
+
+<p>Gradient ascent를 통하여 Visualization을 위한 이미지를 합성하게 된다.</p>
+
+<p>$argmaxf(I)$를 통하여 Input image I를 돌며 각 클래스의 가장 높은 스코어를 얻는다.</p>
+
+<p>너무 큰 스코어 값이 나오는 것을 막고, 이해할 수 있는 형태로 바꾸기 위해 Regularizaion term 추가</p>
+
+<p>최대 스코어값을 찾으려는 과정이므로 Gradient ascent이며, 부호만 바꾸면 Gradient descent이므로 해당 알고리즘을 그대로 사용할 수 있다.</p>
+
+<p>1) 임의의 영상(검정, 하양, 회색 혹은 랜덤한 이미지)을 CNN에 넣어 관심 class의 prediction score를 추출</p>
+
+<p>​	- 처음 주는 영상부터 바뀌기 시작하므로 초기값의 설정에 따라 완성 이미지가 바뀐다.</p>
+
+<p>2) Backpropagation으로 gradient maximizing하여 관심 class의 prediction score가 높아지는 방향으로 입력단의 이미지를 업데이트해준다.</p>
+
+<p>3)  업데이트된 영상으로 1~2를 계속 반복한다</p>
+
+<h3 id='Model-decision-explanation'>Model decision explanation</h3>
+
+<p>모델이 특정 입력을 어떤 각도로 해석하는 가에 대한 설명</p>
+
+<h4 id='Saliency-test-계열'>Saliency test 계열</h4>
+
+<p>주어진 영상의 제대로 판정되기 위한 각 영역의 중요도를 판별</p>
+
+<p>이때 중요도가 표시된 그림을 Saliency map이라고 한다.</p>
+
+<p><strong>Occlusion map</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310141629430.png" alt="" /></p>
+
+<p><strong>[img. Occlusion map 예시]</strong></p>
+
+<p>특정 픽셀을 가려서 바뀌는 Predicdtion score 값을 Heatmap 형식으로 표현한 것</p>
+
+<p>영상의 가린 부분에 따라, 많이 떨어지면 중요한 영역이며 적게 떨어지면 덜 중요한 부분이다.</p>
+
+<p>이 떨어진 정도를 표시하여 표현할 수 있다.</p>
+
+<p><strong>via backpropagtion</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310141852568.png" alt="" /></p>
+
+<p><strong>[img. backpropagation을 이용한 saliency map 예시, 밝은 부분이 판단에 중요한 영역]</strong></p>
+
+<p>앞서 했었던 Class visualization의 Gradient ascent와 비슷</p>
+
+<p>랜덤 이미지가 아닌 특정 이미지를 classification을 한 뒤, class score에 대한 backpropagation으로 관심 영역의 점수를 표시하는 방법</p>
+
+<p>1) 입력 영상을 넣어 특정 class의 score를 얻어낸다</p>
+
+<p>2) Backpropagation으로 Input까지 진행해 gradient를 얻어낸다.</p>
+
+<p>3) gradient의 절대값 또는 제곱값을 하여 얻어낸 gradient의 크기를 이미지형태로 얻는다</p>
+
+<ul>
+  <li>이를 gradient magnitude map이라고 한다.</li>
+  <li>이를 여러번 반복하여 더욱 정확한 Saliency map를 얻어낼 수 있다.</li>
+</ul>
+
+<p>backpropagation을 이용한 더 진보적인 visualization 방법으로 <em>Deconvolution</em>이 있다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310205954715.png" alt="" /></p>
+
+<p><strong>[img. Dconvolution의 결과물]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310205930822.png" alt="" /></p>
+
+<p><strong>[img. ReLU의 작용과 deconvnet의 차이]</strong></p>
+
+<p>보통 CNN의 경우 Forward pass 시 음수는 ReLU 함수를 통과하며 0으로 마스킹되며,</p>
+
+<p>Backward pass 시 이를 기억하여, 해당 픽셀을 다시 0으로 마스킹한다.</p>
+
+<p>하지만 deconvnet은 backward 시 Forward pass때 처럼 음수가 0으로 마스킹된다.<br />
+\(ReLU:h^{l+1}=max(0,h^l)\\
+backpropagation:\frac{\partial L}{\partial h^l}=[(h^l&gt;0)]\frac{\partial L}{\partial h^{l+1}}\\
+deconvnet:\frac{\partial L}{\partial h^l}=[(h^{l+1}&gt;0)]\frac{\partial L}{\partial h^{l+1}}\)<br />
+<strong>[math. 기존의 pass와 deconvnet의 pass의 수식화]</strong></p>
+
+<p>또한, 기존의 방법과 deconvnet의 And 연산하여 만든 Guided Backpropagation 또한 가능하다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310212138122.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$\frac{\partial L}{\partial h^l}=[(h^{l+1}&gt;0)\&amp;(h^{l+1}&gt;0)]\frac{\partial L}{\partial h^{l+1}}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. Guided backpropagation]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310212829292.png" alt="" /></p>
+
+<p><strong>[img. Guided backpropagation과 다른 방법들 비교]</strong></p>
+
+<p>수학적으로 구한 것이 아니라 경험적으로 구했지만 결과는 괜찮게 나온다고 한다.</p>
+
+<p>forward 시 결과를 미친 양수 pixel과 backward 시 ‘이 부분은 증폭하라’의 의미를 가진 양수 pixel만 받아들인 결과 =&gt; 즉 classification에 긍정적 영향을 끼친 pixel만 표시되게 됨</p>
+
+<p><strong>Class activation mapping(CAM)</strong></p>
+
+<p>어떤 부분을 참조하여 결과가 나왔는지 보여줌.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310214251783.png" alt="" /></p>
+
+<p><strong>[img. CAM 예시]</strong></p>
+
+<p>기존의 CNN 구조를 조금 바꾸어야 한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310220029775.png" alt="" /></p>
+
+<p><strong>[img. CAM을 쓸 수 있게 개조된 CNN]</strong></p>
+
+<p>기존의 출력 이전의 FC Layer 대신 Conv Layer 이후에 Global average pooling (GAP) Layer와 FC layer 한 층이 삽입된다.</p>
+
+<p>이후 Classification에 대해 재학습된다.<br />
+\(S_c=\overset{Channels}{\sum_k}w_k^c\overset{GAP\ feature}{F_k}\overset{GAP}{=}\sum_kw_k^c\sum_{(x,y)}\overset{Feature\ map\\before\ Gap}{f_k(x,y)}=\\
+\sum_{(x,y)}\ \ \overset{CAM_c(x,y)}{\sum_kw_k^cf_k(x,y)}\\
+S_c:Score\ of\ the\ class\ c\\
+k: 마지막\ conv\ layer\ channel\ 수\)<br />
+<strong>[math. CAM이 포함된 CNN 구조 유도]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310221704489.png" alt="" /></p>
+
+<p><strong>[img. GAP layer 부분의 작용]</strong></p>
+
+<p>(+) 성능이 좋아 가장 많이 사용되는 Visualization 방법</p>
+
+<p>(+) 공간 정보를 주지(supervision?) 않아도 공간에 대한 정보가 나타남</p>
+
+<p>이를 통해 bounding box를 쳐주면 object detection으로 사용 가능</p>
+
+<ul>
+  <li>Weakly supervised learning이라고 함</li>
+</ul>
+
+<p>(-) 구조를 바꾸고 재학습을 해야하며, 이 과정에서 성능이 바뀔 수 있다는 점이 단점</p>
+
+<p><strong>Grad-CAM</strong></p>
+
+<p>구조를 바꾸지 않아도 활용할 수 있는 CAM 구조</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310222311528.png" alt="" /></p>
+
+<p><strong>[img. Grad-CAM의 예시]</strong></p>
+
+<p>(+) CAM과 비슷한 성능, 구조를 바꾸지 않아도 됨</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310222717615.png" alt="" /></p>
+
+<p><strong>[img. Grad-CAM의 구조]</strong></p>
+
+<p>$\overset{CAM_c(x,y)}{\sum_kw_k^cf_k(x,y)}$ 부분에서 $w_k^c$(importance wieghts)만 구하면 맵을 그릴 수 있다.</p>
+
+<p>Backpropagation을 Input 이미지가 아닌 관심을 가지는 activation map까지만 진행하며, 그렇게 구한 importance weight ($\alpha_k^c$)와 activation map($A^k$)를 선형결합하여 ReLU를 씌워 양수값만 사용<br />
+\(\overset{Global\ average\ pooling}{\alpha^c_k=\frac{1}{Z}\sum_i \sum_j \frac{\partial y^c}{\partial A_{ij}^k}}\\
+L^c_{Grad-CAM}=ReLU(\sum_k\alpha^c_kA^k)\\
+\alpha^c_k: importance\ weight\ of\ the\ k-th\ feature\ map\ w.r.t\ the\ class\ c\\
+\frac{\partial y^c}{\partial A_{ij}^k} : Gradients\ via\ backprop\)<br />
+<strong>[math. Grad-CAM 수식]</strong></p>
+
+<p>영상 인식 뿐만 아니라 CNN 구조만 존재하면 어떤 Task에도 활용 가능</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310224715849.png" alt="" /></p>
+
+<p><strong>[img. Grad-CAM 활용 예시와 Guided Grad-CAM]</strong></p>
+
+<p>추가로 Guided Backprop을 추가하고, Grad-CAM을 내적하여 Guided Grad-CAM을 구하는 것이 일반화 되어있다.</p>
+
+<ul>
+  <li>Guided Backprop(sharp 하지만 class 구분 불가) + Grad-CAM (Rough하고 smooth하지만 class 구분 가능) = Guided Grad-CAM (서로 단점 보완)</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310225109232.png" alt="" /></p>
+
+<p><strong>[img. SCOUTER 예시]</strong></p>
+
+<p>최근에는 해석 결과에 대한 질문에 대해 답을 줄 수 있는 Visualization 방법(SCOUTER)도 등장함</p>
+
+<p>Visualization 기술을 응용해 GAN에 이용하여 명령을 내릴 수 있음(GAN dissection)</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210310225451782.png" alt="" /></p>
+
+<p><strong>[img. 표시한 부분에 문을 생성하는 예시]</strong></p>
+
+<h2 id='Instance-panoptic-segmentation-and-landmark-localization'>Instance/panoptic segmentation and landmark localization</h2>
+
+<p>Semantic segmentation, Object Detection은 더욱 어려운 Task로 고도화되면서 연구가 줄어듦</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310094300040.png" alt="" /><br />Original Image</th>
+      <th style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310094309340.png" alt="" /><br />Semantic segmentation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310094320216.png" alt="" /><br /><strong>Instance segmentation</strong></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210310094328026.png" alt="" /><br /><strong>Panoptic segmentation</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. Image 인식 Tasks]</strong></p>
+
+<p>Instance segmentation, Panoptic segmentation은 자율주행 등, 산업 등에서 많이 쓰임</p>
+
+<h3 id='Instance-segmentation'>Instance segmentation</h3>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311123630521.png" alt="" /></p>
+
+<p><strong>[img. Instance segmentation vs Semantic segmentation]</strong></p>
+
+<p>같은 물체 class 라도 Instance가 다르면 구분해야하는 문제, 실제 응용사례 많이 사용됨</p>
+
+<p>Object Detection 모델들의 연장해서 많이 사용 됨.</p>
+
+<h4 id='Mask-R-CNN'>Mask R-CNN</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311124009152.png" alt="" /></p>
+
+<p><strong>[img. Mask R-CNN = Faster R-CNN + Mask branch]</strong></p>
+
+<p>Faster R-CNN과 여러 모로 비슷하지만 개선을 많이 시킴</p>
+
+<ol>
+  <li>RoI pooling 대신, 정교한 소수점 좌표도 가져올 수 있는 RoIAlign pooling layer 사용</li>
+  <li>마지막 layer에 병렬로 mask branch라는 Fully convolutional Network가 추가되어 Output을 Upsampling 뒤, class 수만큼의 채널(여기서는 80개)에 Binary classification
+    <ul>
+      <li>class 예측결과를 가져와 참조할 mask를 정함</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311124414989.png" alt="" /></p>
+
+<p><strong>[img. R-CNN family의 추가]</strong></p>
+
+<p>그림의 예시 branch 대신, Key point branch 라는 것을 추가하면 사람의 자세를 추정하는 Task도 가능</p>
+
+<h4 id='YOLACT-You-Only-Look-At-CoefficienTs'>YOLACT(You Only Look At CoefficienTs)</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311124722607.png" alt="" /></p>
+
+<p><strong>[img. YOLACT 구조]</strong></p>
+
+<p>실시간 Instance segmentation model</p>
+
+<ol>
+  <li>Feature Pyramid 구조를 이용해 고해상도이며,</li>
+  <li>Protonet 부분에서 Mask의 저해상도의 Prototype Soft segmentation component를 추출한 뒤,</li>
+  <li>Prediction Head에서 각 Class 간의 Mask Coefficients를 구하여 이를 이용해 2번의 prototype와 선형결합(Weighted Sum)하여 detection에 적합한 Class별 Mask Map을 만들어준다.</li>
+  <li>이후 Crop과 Threshhold를 통해 결과를 도출</li>
+</ol>
+
+<h4 id='YolactEdge'>YolactEdge</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311125500858.png" alt="" /></p>
+
+<p><strong>[img. YolactEdge 구조]</strong></p>
+
+<p>위의 YOLACT를 더욱 경량화하여 영상 처리를 소형기기들에 사용가능한 모델</p>
+
+<p>이전 frame의 feature를 다음 keyframe에 활용하여 연산량 줄임 (성능 비슷, 속도 빠름)</p>
+
+<p>아직은 현실에 사용하기 힘든 성능</p>
+
+<h3 id='Panoptic-segmentation'>Panoptic segmentation</h3>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311125730327.png" alt="" /></p>
+
+<p><strong>[img. Panoptic segmentation vs Semantic segmentation]</strong></p>
+
+<p>배경정보 + instnace 구분 가능</p>
+
+<h4 id='UPSNet'>UPSNet</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311125929668.png" alt="" /></p>
+
+<p><strong>[img. UPSNet 예시]</strong></p>
+
+<p>FPN(feature pyrmid network) 구조에 병렬로 구성된 semeantic Head와 Instance head 그리고 이를 병합하는 Panoptic Head로 구성된 구조</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311130255661.png" alt="" /></p>
+
+<p><strong>[img. Panoptic Head의 자세한 구조]</strong></p>
+
+<p>Instance head의 Instance Mask Output의 경우 리사이징과 패딩을 거친 후 Semnatic head의 물체 mask와 합해진 뒤, output 채널로 concat</p>
+
+<ul>
+  <li>이를 통해 위치를 알 수 있음</li>
+</ul>
+
+<p>Semantic head의 물체 mask Output의 경우, 위의 Instance mask와 사용된 결과들은 Max된 뒤 기존 물체 mask에서 빠진 뒤 1채널로 output에 추가됨</p>
+
+<ul>
+  <li>모두 빠지고 남은 물체 mask는 Unknown mask가 된다.(class에 정의되지 않은 물체)</li>
+</ul>
+
+<p>Semantic head의 배경정보 Mask Output은 그대로 Output 채널에 추가됨</p>
+
+<h4 id='VPSNet'>VPSNet</h4>
+
+<p>영상에 사용가능한 Panoptic segmetnation 모델</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311131747338.png" alt="" /></p>
+
+<p><strong>[img. VPSNet 구조]</strong></p>
+
+<ol>
+  <li>
+    <p>두 프레임간의 모션맵(해당 픽셀이 다음 프레임에 어디로 위치가 바뀌었는가?)를 이전 프레임 feature map에 적용하여 feature의 움직임을 tracking한 뒤, FPN을 통해 뽑은 해당 featrue map에 합쳐서 사용</p>
+  </li>
+  <li>
+    <p>Track head를 통해 이전 프레임과  현재 프레임 간의  RoI feature 연관성을 찾아낸다.</p>
+  </li>
+  <li>
+    <p>이후 UPS Net과 비슷함</p>
+  </li>
+</ol>
+
+<h3 id='Landmark-localization'>Landmark localization</h3>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311133106112.png" alt="" /></p>
+
+<p><strong>[img. Landmark localization 예시]</strong></p>
+
+<p>key point 혹은 landmark 라고 불리우는 영상에서 중요한 부분을 정의하여 위치와 class를 추적하는 것</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311133426838.png" alt="" /></p>
+
+<p><strong>[img. Coordinate regression vs Heatmap classification]</strong></p>
+
+<p>기존의 box bounding 찾던 방법(Coordinate regression)으로 keypoint를 찾으려고 하니 문제가 있었고 Heatmap classification이 좀더 정확하지만 계산량이 큼</p>
+
+<ul>
+  <li>각 채널에 keypoint를 할당하고 class로 생각함</li>
+</ul>
+
+<p>Gaussian Heat map을 형성하기 위해 Landmark location을 다음과 같이 변형한다. <br />
+\(G_\sigma(x,y) = \exp\left(-\frac{(x-x_c)^2+(y-y_c)^2}{2\sigma^2}\right)\\
+(x_c, y_c):center\ location\)<br />
+<strong>[math. points to Gaussian 수식]</strong></p>
+
+<p>쉽게 말해 해당 location 좌표를 평균점으로 삼고 주변에 Gaussian을 씌운다.</p>
+
+<p>Heatmap 형식을 사용하면 generalization 성능이 좋아짐.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311135139848.png" alt="" /></p>
+
+<p><strong>[img. Gaussian 도식]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Generate gaussian
+</span><span class="n">size</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># 출력 해상도 크기
+# 모든 영상 좌표의 배열
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">np</span><span class="p">.</span><span class="n">newaxis</span><span class="p">]</span> 
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">size</span> <span class="o">//</span> <span class="mi">2</span> <span class="c1"># 중간이 평균점이라고 가정
+# numpy의 행렬 덧셈의 경우 sx1, 1Xs가 더해지면 sxs 행렬이 나옴 
+</span>
+<span class="c1"># The gaussian is not normalized, we want the center value to equal 1
+</span><span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="o">&amp;</span><span class="c1">#39;Gaussain&amp;#39;:
+</span>    <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="o">&amp;</span><span class="c1">#39;Cauchy&amp;#39;:
+</span>    <span class="n">g</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">/</span> <span class="p">(((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">sigma</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">1.5</span><span class="p">)</span>
+
+</code></pre></div></div>
+<p><strong>[code. Gaussian 코드 구현 ]</strong></p>
+
+<p>반대로 가우시안의 결과값을 좌표평면으로 바꾸어서 결과값을 보여주는 수식도 필요하다.</p>
+
+<h4 id='Hourglass-network'>Hourglass network</h4>
+
+<p>Landmark를 위한 특별한 구조</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311142756433.png" alt="" /></p>
+
+<p><strong>[img. Stacked hourglass 구조]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311143026096.png" alt="" /></p>
+
+<p><strong>[img. 확대한 hourglass 구조]</strong></p>
+
+<p>UNet 구조를 여러 스택 쌓은것과 비슷한 구조</p>
+
+<ul>
+  <li>다만 Concat이 아니라 합으로 되어있으며, 그냥 skip해서 주어지는 것이 아니라 convolution layer를 하나 통과함</li>
+  <li>UNet보다 FPN구조와 좀더 유사함</li>
+</ul>
+
+<p>크기를 줄여 Receptive field를 늘린 구조</p>
+
+<h4 id='DensePose'>DensePose</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311143258133.png" alt="" /></p>
+
+<p><strong>[img. image의 UV Map 표현]</strong></p>
+
+<p>몇 개 픽셀이 아닌 신체 전부 같은 아주 Dense한 landmark를 구하여 3D UV map 생성 가능</p>
+
+<ul>
+  <li>3D 모델을 만드는 방법은 다른 방법임.</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311143422824.png" alt="" /></p>
+
+<p><strong>[img. UVMap 예시]</strong></p>
+
+<p>UV map : 3D 매쉬의 평면 표현</p>
+
+<p>각 pixel의 점의 정체성이 영상 내부에서 유지되면서 위치만 바뀐다.</p>
+
+<p>즉 아주 많은 Landmark 검출은 곧, UV map 생성이다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311145459415.png" alt="" /></p>
+
+<p><strong>[img. DensePose의 구조]</strong></p>
+
+<p>DensePose R-CNN = Faster R-CNN + 3D surface regression branch</p>
+
+<ul>
+  <li>Patch: 각 body part의 sementation map(팔,다리,머리)</li>
+</ul>
+
+<p>Mask R-CNN과도 비슷하다.</p>
+
+<p>데이터 표현방법과 데이터셋을 제공한 논문</p>
+
+<h4 id='RetinaFace'>RetinaFace</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311150521526.png" alt="" /></p>
+
+<p><strong>[img. RetinaFace의 구조]</strong></p>
+
+<p>FPN 구조에 다양한 branch 도입해 Multi task가 가능하게 한 모델</p>
+
+<p>여러 Task로 학습 시, 적은 데이터로도 Backbone 네트워크 학습이 강하고 성능좋게 잘 학습된다.</p>
+
+<p>Extension pattern : CV에서의 디자인 패턴 중 하나, 다른 구조도 branch를 추가하여 여러 Task에 활용 가능</p>
+
+<h3 id='Detecting-objects-as-keypoints'>Detecting objects as keypoints</h3>
+
+<p>Bounding box를 찾을 때, keypoint(중앙, 코너)를 시작점으로 찾는 구조들</p>
+
+<h4 id='CornerNet'>CornerNet</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311151003579.png" alt="" /></p>
+
+<p><strong>[img. CornerNet 구조]</strong></p>
+
+<p>좌측 상단, 우측 하단의 점 2개를 찾아 Bounding box로 삼는 구조</p>
+
+<p>병렬적으로 2개로 나눈 뒤, 먼저 Heatmap에서 점의 위치를 찾고, 그 점의 class을 의미하는 Embedding을 찾은 뒤 결합한다.</p>
+
+<p>single-stage 구조이며, 성능은 조금 떨어지지만 속도가 빠르다.</p>
+
+<h4 id='CenterNet'>CenterNet</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311151752192.png" alt="" /></p>
+
+<p><strong>[img. Centernet 1 예시]</strong></p>
+
+<p>성능을 개선하기위해 중앙점 또한 검출함</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311151845802.png" alt="" /></p>
+
+<p><strong>[img. CenterNet 2 예시]</strong></p>
+
+<p>어차피 중앙점까지 3개를 구할 꺼면 width, height, center point로 검출 정보를 바꾼 모델</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311152058073.png" alt="" /></p>
+
+<p><strong>[img. 성능 비교]</strong></p>
+
+<p>CenterNet이 성능과 속도면에서 우위를 보인다.</p>
+
+<h2 id='Conditional-Generative-Model-cGAN'>Conditional Generative Model(cGAN)</h2>
+
+<p>사용자가 컨트롤 가능한 Generative Model을 의미</p>
+
+<h3 id='Conditional-generative-model-cGAN'>Conditional generative model(cGAN)</h3>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311153324899.png" alt="" /></p>
+
+<p><strong>[img. Generative Model VS Conditional Generative Model]</strong></p>
+
+<p>랜덤한 결과를 생성하는 Generative Model과 달리 Conditional Generative Model은 주어진 조건에 따라 생성한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311153608344.png" alt="" /></p>
+
+<p><strong>[img. Low quality audio -&gt; high quality audio]</strong></p>
+
+<p>오디오 음질 향상, 인공지능 뉴스 등 여러 방면에 활용 가능</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311153921357.png" alt="" /></p>
+
+<p><strong>[img. GAN의 원리]</strong></p>
+
+<p>보통 위조 지폐범(Generator)과 지폐 감별자(Discriminator)로 비유하며, Generator는 실제 데이터와 비교하여 가짜 데이터를 생성하고 Discriminator는 이를 가짜인지 진짜인지 구별해본다.</p>
+
+<p>Discriminator가 감별해내면 해당 loss가 Generator를 학습시키고, Generator가 Discriminator를 속이면 Discriminator가 해당 Loss로 학습되는 상호 보완적인 모델이다. (Adversarial Training, 적대적 학습법)</p>
+
+<p>이러한 Adversarial Training을 이용하는 Generative model을 Generative Adversarial Network 즉, GAN이라고 부른다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311155857602.png" alt="" /></p>
+
+<p><strong>[img. Basic GAN vs Conditional GAN(cGAN)]</strong></p>
+
+<p>기본 GAN의 경우 Generator에 랜덤한 z를 넣고 생성한 결과를 Discrminator가 판별하는 구조</p>
+
+<p>Conditional GAN은 z는 옵션으로 넣고 C라는 조건을 넣어주는 부분이 다르다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210311182255485.png" alt="" /></p>
+
+<p><strong>[img. Conditional GAN를 이용한 이미지의 화풍 바꾸기]</strong></p>
+
+<p>이외에도 그림의 화질을 좋게 바꾸는 Super resolution, 흑백이나 채색 되지 않은 그림 채색 등의 일에 사용된다.</p>
+
+<p>예를 들어 저해상도 이미지를 고해상도로 바꾸는 Super resolution이 대표적인 cGAN 활용의 예시이다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312123342201.png" alt="" /></p>
+
+<p><strong>[img. Super Resoultion에 사용되던 과거 구조(Naive Regression Model)와 GAN 구조]</strong></p>
+
+<p>Low Resolution 이미지를 GAN에서는 High Resolution 이미지로 바꾸고 이를 Discriminator가 학습하면서 이루어진다.</p>
+
+<p>과거에는 Naive Regression model이라는 좀더 단순한 Loss를 Discriminator 대신 사용한 구조를 사용했다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">MSE VS GAN 결과물 비교</th>
+      <th style="text-align: center">MAE/MSE loss</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210312122128991.png" alt="" /></td>
+      <td style="text-align: center">$MAE = \frac{1}{n}\sum^n_{i=1}</td>
+      <td>y_i-\hat{y}_i</td>
+      <td>\MSE=\frac{1}{n}\sum^n_{i=1}(y_i-\hat{y}_i)^2$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[tables. GAN loss vs MAE/MSE loss]</strong></p>
+
+<p>MAE는 결과와의 차이의 크기를 loss로, MSE는 결과와의 차이의 제곱을 loss로 사용한다.</p>
+
+<p>MAE/MSE 같은 Regression의 결과물은 blurry한 결과가 나오는데, 두 loss 모두 이미지의 픽셀들의 평균을 포함하는 loss 이기 때문이다.</p>
+
+<p>GAN은 Discriminator를 속이기 위해 에러가 치우쳐도 현실에 가깝게 만든다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312122105022.png" alt="" /></p>
+
+<p><strong>[img. 채색을 예시로든 loss의 차이]</strong></p>
+
+<p>진짜 이미지가 흰색 아니면 검은색이 정답이라면 L1 loss는 그 사이 평균 값이면서, 존재하지 않은 회색 이미지를, GAN loss는 그 둘중에 하나인 검정 아니면 흰 이미지를 만든다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312122047864.png" alt="" /></p>
+
+<p><strong>[img. MSE loss를 쓴 SRResNet과 GAN loss를 SRGAN의 차이에 주목]</strong></p>
+
+<h3 id='Image-translation-GANs'>Image translation GANs</h3>
+
+<p>Image translation이란, 한 이미지 스타일을 다른 이미지 도메인 혹은 다른 스타일로 변화시키는 문제.</p>
+
+<p>크게 보자면 위의 Super resolution 또한 Image translation의 한 종류</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312122407888.png" alt="" /></p>
+
+<p><strong>[img. Image Translation 예시]</strong></p>
+
+<h4 id='Pix2Pix'>Pix2Pix</h4>
+
+<p>Image translation을 CNN Laeyr가 포함된 학습 구조로 처음 정리한 연구 <br />
+\(G^* = arg\ \underset{G}{min}\ \underset{D}{max}\ \mathcal{L}_{cGAN}(G,D)+\lambda\mathcal{L}_{L1}(G)\\
+where\ \mathcal{L}_{cGAN}(G,D)=\mathbb{E}_{x,y}[\log D(x,y)]+\mathbb{E}_{(x,y)}[\log(1-D(x,G(x,z))]\\
+and\ \mathcal{L}_{L1}(G)=\mathbb{E}_{x,y,z}[\left\|y-G(x,y)\right\|_1]\\
+x:ground-truth,\ y: output,\ z:random\ factor\)<br />
+<strong>[math. Pix2Pix의 Loss, Total loss(GAN loss + L1 loss)]</strong></p>
+
+<p>L1 Loss를 적당한 조건으로, GAN loss를 더해 Realistic한 출력을 만들도록 바꾼 Total loss를 사용함</p>
+
+<ul>
+  <li>MAE L1 Loss는 y-G(x,y)로 결과와 실제 이미지를 직접 비교하지만 GAN loss는 Discriminator를 통해 간접적으로 비교한다.</li>
+  <li>그러므로 GAN로 Realistic하고  L1 Loss으로 의도와 비슷한 이미지를 만들 수 있다.</li>
+  <li>또한, 당시에는 GAN의 연구가 많이 진행되지 않아서 학습이 안정적이지 않았다.</li>
+</ul>
+
+<p>또한 GAN Loss 부분은 cGAN이므로 z 뿐만 아니라 조건인 x가 같이 들어감</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312132131634.png" alt="" /></p>
+
+<p><strong>[img. loss 종류에 따른 결과 비교]</strong></p>
+
+<h4 id='CycleGAN'>CycleGAN</h4>
+
+<p>위의 Pix2Pix는 Supervised learning 방법을 사용해서 pairwise data가 필요하지만 이러한 데이터셋을 얻는 것이 어려워서 CycleGAN이 등장했다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312132419560.png" alt="" /></p>
+
+<p><strong>[img. paired vs unpaired data]</strong></p>
+
+<p>CycleCAN을 이용하면 도메인 간의 관계가 없어보이고, 1:1 대응하는 pair가 없는 두 데이터셋으로도 image translation을 할 수 있다.</p>
+
+<ul>
+  <li>응용범위와 데이터셋 확보방법이 늘어남</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312132703158.png" alt="" /></p>
+
+<p><strong>[img. CycleGAN 결과물 예시]</strong></p>
+
+<p>Cycle이라는 이름에서 알 수 있듯이, CycleGAN의 Loss는 데이터셋 X,Y에 대하여, X -&gt; Y로 가는 방향의 Loss와 Y -&gt; X로 가는 방향의 Loss를 Cycle 돌듯이 동시에 학습 시킨다.</p>
+
+<p>추가로 Cycle-consistency loss 텀은 X-&gt;Y-&gt;X로 돌아왔을 때, 변한 X가 원본 X와 비슷하게 만들도록 하는 Loss이다.<br />
+\(L_{GAN}(X\rightarrow Y)+L_{GAN}(Y\rightarrow X) + L_{cycle}(G,F)\\
+where\ G/F\ are\ generators\)<br />
+<strong>[math. CycleGAN loss = GAN loss (in bot direction) + Cycle-consistency loss]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312134522568.png" alt="" /></p>
+
+<p><strong>[img. Cycle-consistency loss 텀이 존재 하지 않을 시의 CycleGAN Loss 설명]</strong></p>
+
+<p>Cycle-consistency loss 텀이 존재 하지 않을 시의 구조이다.</p>
+
+<ul>
+  <li>G, F: generator</li>
+  <li>$D_x, D_y$: discriminator</li>
+  <li>GAN loss : $L(D_x)+L(D_Y)+L(G)+L(F)$</li>
+  <li>일종의 2개의 GAN이다.</li>
+</ul>
+
+<p>하지만 이런 GAN loss만 사용시 Mode Collapse 문제가 발생한다.</p>
+
+<ul>
+  <li>Input의 상관없이 하나의 Output만 계속 출력하는 문제</li>
+  <li>즉 Input과 Output이 서로 영향을 미치지 않음(양방향 모델이기 때문에)</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312135638222.png" alt="" /></p>
+
+<p><strong>[img. Mode Collapse 문제]</strong></p>
+
+<p>이를 해결하기 위해 Cycle-consistency loss가 등장하였다.</p>
+
+<ul>
+  <li>Style 결과 뿐만아니라 content도 유지시켜 줌</li>
+</ul>
+
+<p>X에서 Y, 그리고 다시 X로 돌아왔을 때 원본 X와 같아야 한다(contents 유지).</p>
+
+<p>supervision이 없는 self-supervision 방법(레이블링 필요 없음)</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312134547495.png" alt="" /></p>
+
+<p><strong>[img. X-&gt;Y-&gt;X와 Y-&gt;X-&gt;Y 처럼 돌아왔을 때의 Cycle-consistency loss]</strong></p>
+
+<h4 id='Perceptual-loss'>Perceptual loss</h4>
+
+<p>GAN은 Discriminator, Generative 모델이 번갈아가며 학습되어야 하므로 학습하기 쉽지 않다.</p>
+
+<p>더 쉬운 방법을 알아보기 위해 Perceptual loss가 나타났다.</p>
+
+<p>Peceptual loss는 높은 질의 결과를 얻기위해 제안된 방법이다.</p>
+
+<p>GAN loss(Adversarial loss)의 경우,</p>
+
+<ul>
+  <li>트레이닝과 코딩이 힘듬(두 모델을 반복, 왕복 학습해야하므로)</li>
+  <li>대신, pre-training network 필요 없어, 데이터만 있으면 다양한 상황에 활용 가능</li>
+</ul>
+
+<p>Peceptual loss의 경우,</p>
+
+<ul>
+  <li>학습과 코딩이 편함(평범한 foward &amp; backward computation), 따라서 더 빠름</li>
+  <li>대신 learned loss를 위해 pre-trained network가 필요</li>
+</ul>
+
+<p>pretrained-network의 filter를 visualization 해보면, 사람의 visual perception 과 비슷하다.</p>
+
+<p>이미지에서 filter들이 방향성, edge, 색깔 등을 찾아 peceptual space로 변환한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312142140216.png" alt="" /></p>
+
+<p><strong>[img. pretraine된 network의 low level layer에서의 filter]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312134625327.png" alt="" /></p>
+
+<p><strong>[img. perceptual loss의 결과물 예시]</strong></p>
+
+<p>Perceptual loss를 활용해 Input 이미지를 원하는 Style로 바꾸는 Image Transform Net의 예시를 보면,</p>
+
+<p>여기서는 VGG-16을 Loss Network로 사용하며, 이를 이용해 feature를 activation map 형태로 뽑아낸다.</p>
+
+<p>이때 Loss Network는 Pretrained-Network이므로 고정되어 업데이트 되지 않으며, 그 앞단에 있는 Image Transform Net을 업데이트하기 위해 Backpropagation을 진행하여 업데이트한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312134645479.png" alt="" /></p>
+
+<p><strong>[img. Perceptual loss를 활용하는 Image Transform Net 구조]</strong></p>
+
+<p>이 때, Style Target과 Content Target 2개에 관한 Loss를 구하게 되는데, 각각 Feature Reconstruction loss, Style Reconstruction loss라고 한다.</p>
+
+<ol>
+  <li>Feature Reconstruction loss</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312143846321.png" alt="" /></p>
+
+<p><strong>[img. Feature Reconstruction loss의 원리]</strong></p>
+
+<p>중간 레이어에 feature 1개를 뽑는다.</p>
+
+<p>Transformed Image net의 결과물인 $\hat{y}$가 Content Target과 얼마나 일치하는지 측정하는 Loss로,   일반적으로 원본 이미지 x를 Input으로 loss network에 넣어얻어낸 feature와 loss network에서 얻어낸 $\hat{y}$의 feature를 비교하여 L2 Loss로 계산한다.</p>
+
+<p>이후 , 이 값으로 Backpropgation을 하여 Transformed Image Net을 학습시킨다.</p>
+
+<ol>
+  <li>Style Reconstruction loss</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312134711159.png" alt="" /></p>
+
+<p><strong>[img. Style Reconstruction loss의 원리]</strong></p>
+
+<p>Feature Reconstruction loss와 비슷하게, Style Target과  $\hat{y}$의 Feature를 뽑아낸다.</p>
+
+<p>다른 점은 이때, Feature를 직접 비교하는게 아니라, 전체적인 Style을 비교하기 위해, Gram matrices라는 feature map의 통계적 특징을 담아낸 feature의 channel size X channel size의 tensor를 비교하여 L2 Loss를 계산한다.</p>
+
+<p>Gram matrices란?</p>
+
+<ul>
+  <li>Gram matrices는 Feature의 공간적 정보를 없애기 위해 pooling을 이용하며, Feature 채널들을  channel X (Height*Width) 형태로 바꾼 뒤,  내적하여 곱해서 얻는다.</li>
+  <li>diagonal component(행렬의 행좌표와 열좌표가 같은 부분)은 자기자신의 통계적 특성을 의미하며, 그 이외에는 해당 채널과 다른 채널의 연관성을 의미한다.
+    <ul>
+      <li>공분산 행렬 구하기</li>
+    </ul>
+  </li>
+  <li>즉 Gram Matrices는 채널간의 관계와 통계적 특성이 포함된 정보임</li>
+  <li>각 feature의 채널은 일종의 detection 역할을 하기 때문에, Gram Matrices는 이 스타일은 어떤 detection들이 많이 나타나는 가?를 분석한 것이다.</li>
+</ul>
+
+<p>Task에 따라 스타일과 관계없는 일이라면, Style reconstruction loss 대신 Feature reconstuction loss를 사용하지 않은 경우를 사용하지 않을 수도 있다.</p>
+
+<h3 id='Various-GAN-applications'>Various GAN applications</h3>
+
+<p>GAN의 예시를 알아보자.</p>
+
+<ol>
+  <li>Deepfake</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312134759092.png" alt="" /></p>
+
+<p><strong>[img. 사람 얼굴 생성기, 가짜 연설 생성기]</strong></p>
+
+<p>이를 오남용할 수 있으므로, 이러한 Deepfake를 방어하기 위해 여러 시도 또한 이루어지고 있다.</p>
+
+<p><strong>Face de-identification</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312134923519.png" alt="" /></p>
+
+<p><strong>[img. Face de-identification]</strong></p>
+
+<p>프라이버시 침해 방지를 위해 인간은 차이를 알지 못하지만 컴퓨터는 혼돈을 가질 수 있게끔, 조금의 변경을 하는 연구도 진행중</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210312134900295.png" alt="" /></p>
+
+<p><strong>[img. password를 이용해 침해 방지 예시]</strong></p>
+
+<p>기타 비디오를 통해 포즈를 따라하게 만드거나,  CG 생성, 게임 등에도 사용 가능</p>
+
+<h2 id='Multi-modal-learning-Captioning-and-Speaking'>Multi-modal learning: Captioning and Speaking</h2>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313165726962.png" alt="" /></p>
+
+<p><strong>[img. Unimodal vs Multi-modal]</strong></p>
+
+<p>Multi-modal learning : 다른 특성을 가진 데이터들을 함께 활용하는 학습(ex) Text + Sound)</p>
+
+<h3 id='Overview-of-multi-modal-learning'>Overview of multi-modal learning</h3>
+
+<p><strong>multi-modal learning의 어려움</strong></p>
+
+<ol>
+  <li>데이터의 표현 방법이 모두 다름</li>
+</ol>
+
+<ul>
+  <li>이미지 : H X W X 3 배열, Text : Word Embedding + Positional Encoding 등</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313171140286.png" alt="" /></p>
+
+<p><strong>[img. 데이터 표현 차이]</strong></p>
+
+<ol>
+  <li>정보량의 불균형, feature space의 불균형.</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313171157797.png" alt="" /></p>
+
+<p><strong>[img. 아보카도 모양 가구에 대한 글 하나는 여러 이미지를 포함할 수 있다]</strong></p>
+
+<ol>
+  <li>특정 modality에 편향된 모델이 생성될 수 있음</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313171544052.png" alt="" /></p>
+
+<p><strong>[img. 주어진 데이터가 동일해도 참조하는 modality의 비율은 달라질 수 있음]</strong></p>
+
+<ul>
+  <li>예를 들어, 동물 Classification Task에서 사진과 울음소리, 동물에 대한 설명이 적혀있는 글을 줘도, 사진만 보고 동물 Class를 결정할 수 있음</li>
+  <li>딥러닝은 쉬운 길만 선택하려하기 때문</li>
+</ul>
+
+<p><strong>Multi modal learning의 여러 패턴</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313172559574.png" alt="" /></p>
+
+<p><strong>[img. Multi modal learning의 여러 패턴]</strong></p>
+
+<ol>
+  <li>Matching</li>
+</ol>
+
+<ul>
+  <li>서로 다른 Modality를 같은 Space로 보내어 서로 Matching</li>
+</ul>
+
+<ol>
+  <li>Translating</li>
+</ol>
+
+<ul>
+  <li>서로 다른 Modality를 다른 Modality로 변환</li>
+</ul>
+
+<ol>
+  <li>Referencing</li>
+</ol>
+
+<ul>
+  <li>어떤 Modality 정보를 Input으로 같은 Modality의 결과물로 변환할 때, 다른 Modality를 참조하여 성능을 향상</li>
+</ul>
+
+<h3 id='Multi-modal-tasks-1-Visual-data-amp-Text'>Multi-modal tasks (1) - Visual data &amp; Text</h3>
+
+<h4 id='Text-embedding'>Text embedding</h4>
+
+<p>Ascii 코드를 사용하는 Character 관점에서는 사용하기 힘들고, Word 레벨의 embedding을 Input으로 이용함.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313173716047.png" alt="" /></p>
+
+<p><strong>[img. Word embedding 예시]</strong></p>
+
+<p>각 Word embedding은 단어의 대략적인 의미와 연관성을 가진 feature를 표현한는 Vector의 형태이다.</p>
+
+<p>이를 차원공간에 표현하면 비슷한 의미를 가진 단어는 비슷한 곳에 위치하며, 비슷한 관계를 가진 단어쌍 벡터 둘의 방향(차이 벡터) 또한 비슷한 방향을 가지게 된다. (일반화가 되어 있음)</p>
+
+<p><strong>Word embedding 생성 방법 : word2vec</strong></p>
+
+<p>대표적으로 <em>Skip-gram model</em>이라는 방법이 있다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313174938346.png" alt="" /><img src="/assets/img/컴퓨터비전 기본/image-20210313174953023.png" alt="" /></p>
+
+<p><strong>[img. Skip-gram model의 예시]</strong></p>
+
+<p>Input으로 단어의 one hot vector(V차원)를 의미하며, 이를 W와 곱하여 N-차원의 embedding vector가 나오게 된다.</p>
+
+<ul>
+  <li>이때 one-hot vector에 의해 W의 한 Row만 slicing 되게 된다. 즉 W는 embedding vecotr의 Row들의 집합이다.</li>
+</ul>
+
+<p>이후 그 Embedding vector를 이용해 해당 단어의 주변에 나타난 n개의 단어들을 예측하는 Task로 학습한다.</p>
+
+<ul>
+  <li>나타나는 주변 단어를 통하여 관계성을 학습할 수 있다.</li>
+</ul>
+
+<h4 id='Joint-embedding'>Joint embedding</h4>
+
+<p>서로 다른 Modality의 Matching을 하기 위한 공통된 Embedding 벡터를 학습하기 위한 방법</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313184519681.png" alt="" /></p>
+
+<p><strong>[img. Joint embedding은 Multi-Modality learning에서 Matcing 패턴을 위해 사용 ]</strong></p>
+
+<p><strong>Image tagging</strong></p>
+
+<p>Image tagging은 사진에 tag를 지정하거나, 반대로 tag를 통해 사진을 가져오는 Task이다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313184903379.png" alt="" /></p>
+
+<p><strong>[img. Image Taggin의 예시]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313193522529.png" alt="" /></p>
+
+<p><strong>[img. Text와 Image의 matching 예시]</strong></p>
+
+<p>위의 예시의 경우 각각 Text와 Image를 feature vector와 한 후,  그 이후 서로 다른 모델을 통하여 같은 차원의 (d-dimension) vector로 바꾼 뒤, 그 둘을 통하여 Joint embedding  vector를 학습한다.</p>
+
+<p>이때 Joint embedding Vector는 두 다른 Modality 데이터의 연관성, 거리를 의미한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313193932616.png" alt="" /></p>
+
+<p><strong>[img.  joint visual-semantic embedding space 내부]</strong></p>
+
+<p>이렇게 구한 joint embedding vector 둘의 두 차원 상의 거리를 관련이 있는 Label은 가깝게, 관련 없으면 멀게 되도록 학습한다.</p>
+
+<ul>
+  <li>이런 Distance 기반으로 학습하는 것을 Metric learning이라고 한다.</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313195855010.png" alt="" /></p>
+
+<p><strong>[img. Multi-modal analogy]</strong></p>
+
+<p>또한, 이렇게 학습된 embedding을 이용하여 Multi-modal analogy라는 property 생겨난다.</p>
+
+<ul>
+  <li>서로 다른 Modality embedding를 포함하여, embedding 더하거나 빼서 가장 가까운 embedding을 데이터 형태로 가져올 수 있다.</li>
+  <li>예를 들어 위의 이미지처럼 개 사진에 개 단어를 빼고 고양이 단어를 추가하면, 고양이 사진들이 나타난다.
+    <ul>
+      <li>심지어, 각 첫번째 사진들의 입력한 사진의 배경과 비슷하다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313201642274.png" alt="" /></p>
+
+<p><strong>[img. 레시피를 통해 사진을 예상하는 application 예시]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313202403238.png" alt="" /></p>
+
+<p><strong>[img. 위 어플리케이션의 구조]</strong></p>
+
+<ol>
+  <li>
+    <p>Text는 encoder를 통하여 instruction과 Ingredient를 하나의 output으로 concat 한 뒤, FCL을 통하여 d 차원의 vector로 만든다.</p>
+  </li>
+  <li>Image는 conv layer을 통하여 feature를 뽑아낸 결과를 FCL을 통하여 d0 차원의 vector로 만든다.</li>
+  <li>두 embedding vector를 cosine similarty loss로 loss를 구하여 학습하며, 또는 추가 정보를 제공하여 더욱 좋은 성능의 semantic regularization loss를 이용하여 학습할 수 있다.</li>
+</ol>
+
+<h4 id='Cross-modal-translation'>Cross modal translation</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313204332841.png" alt="" /></p>
+
+<p><strong>[img. modal 간의 변환을 하는 Translating]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313204437528.png" alt="" /></p>
+
+<p><strong>[img. Image captioning ]</strong></p>
+
+<p><strong>Image Captioning</strong></p>
+
+<p>Image Captioning은 이미지의 설명 Text를 생성하는 대표적인 cross modal translation Task이다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313210508665.png" alt="" /></p>
+
+<p><strong>[img. Image 분석을 위한 CNN과 Text 생성을 위한 RNN으로 이루어져있다.]</strong></p>
+
+<p>Image Captioning 에서는 CNN과 RNN 구조가 필요하며 대표적인 구조로 <em>Show and tell</em>이 있다.</p>
+
+<ol>
+  <li>Encoder 구조로 ImageNet에 의해 pre-train된 CNN model을 사용하여 이미지를 vector로 바꾼 뒤,</li>
+  <li>이를 Decoder인 LSTM RNN의 Condition으로 제공하고, 시작 토큰(보통 0이나 <START> 토큰)을 준 뒤,</START></li>
+  <li>해당 LSTM의 Output을 다음 LSTM의 Input으로 주는 과정을 반복한다.</li>
+  <li>
+    <END> 토큰이 나올때 까지 반복하여 결과물은 만든다.
+
+</END>
+  </li>
+</ol>
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313210617115.png" alt="" /></p>
+
+<p><strong>[img. Show and Tell 구조, 좌측의 CNN과 우측 RNN을 활용]</strong></p>
+
+<p>Show and Tell은 단 한번의 Image 분석 뒤에 태깅을 하나, 실제로는 단어 마다 Image에서 중요시 해야할 feature가 다를 수 있다.</p>
+
+<p>Show, attend, and tell 이라는 구조는 attend 구조를 통하여 단어별로 attention을 달리하여 순차적으로 단어를 생성 시, 이미지에서 feature의 가중치를 바꿔가며 할 수 있다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313222709143.png" alt="" /></p>
+
+<p><strong>[img. show, attend, and tell의 attention]</strong></p>
+
+<ol>
+  <li>CNN을 이용하여 Input Image의 14x14 feature map을 생성한다.
+    <ul>
+      <li>기존의 Vector 형태가 아니라는 점이 특징</li>
+    </ul>
+  </li>
+  <li>해당 feature map을 RNN에 입력하여 단어를 생성할 때마다 다른 attention으로 단어를 생성</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210313220048887.png" alt="" /></p>
+
+<p><strong>[img. Show, attend, and tell 구조]</strong></p>
+
+<p>Show, attend, and tell 구조의 경우, 사람이 사진을 인식할 때 전체적인 부분을 보는 것이 아닌, 일부에 관심(attention)을 가중하여 본다는 것에 착안되었다.</p>
+
+<p>1) Input image를 CNN을 통해 얻은 feature map과,</p>
+
+<p>2) 위 featuremap을 RNN에 넣어 얻은 spatial attention</p>
+
+<p>1)과 2)을 결과물을 inner product(weighted sum)하여 얻은 soft attention embedding(z) 벡터를 얻어낸다.</p>
+
+<ul>
+  <li>사실, Translating 보다는 Reasoning의 Cross modal reasoning에 더 가깝다.</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314041635448.png" alt="" /></p>
+
+<p><strong>[img. 사람이 사진을 인식할 때 보는 부분 (좌), attention 결합 방법]</strong></p>
+
+<p>RNN에서 결과를 내는 과정을 좀 더 자세히 살펴보면,</p>
+
+<ol>
+  <li>Feature map을 hidden stat로 첫번째 RNN 모듈 h0에 넣어주고 spatial attention s1을 얻는다.</li>
+  <li>이렇게 얻은 s1과 feature map을 inner product하여 얻은 z1 vector를 start token y1과 함께 두번째 RNN 모듈 h1에 넣어준다.</li>
+  <li>그 결과 첫번째 단어 d1(‘A’)와 두번째 spatial attention s2가 나온며, 이를 다시 feature map과 합쳐 soft attention embedding z2를 만든다.</li>
+  <li>이 이후 세번째 RNN 모듈 h2에는 z2와 이전에 출력한 단어 y2(또는 d1, ‘A’)를 함께 넣어주고, End Token 나올때 까지 반복한다.</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314041733532.png" alt="" /></p>
+
+<p><strong>[img. RNN의 단어 build 과정]</strong></p>
+
+<p>또한, 반대로 Text를 통하여 Image를 생성하는 것이 가능하며, 이때, 여러 Output Image가 나오는 것이 가능하므로 Conditional GAN을 이용한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314050205760.png" alt="" /></p>
+
+<p><strong>[img. Text-to-image by generative model]</strong></p>
+
+<p>Text to image 모델의 Generator의 경우</p>
+
+<p>Text의 Vector가 주어지면, 이를 Gaussian Random factor와 결합하여 다양한 output이 나오도록 해준 뒤, Decoder를 거쳐서 image를 생성해준다.</p>
+
+<p>Discriminator의 경우</p>
+
+<p>Input된 Image를 encoder로 뽑은 feature map과 위에 사용했던 Text Vector를 합친 벡터를  label된 데이터와 비교하여 판단함.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210314050718230.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210314050658466.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[img. . Text-to-image Generator와 Discriminator 구조]</strong></p>
+
+<h4 id='Cross-modal-reasoning'>Cross modal reasoning</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314052621396.png" alt="" /></p>
+
+<p><strong>[img. Modality간의 Referencing을 이용하는 Cross Modal reasoning]</strong></p>
+
+<p><strong>Visual question answering</strong></p>
+
+<p>영상과 질문을 받으면 이를 통해 답을 도출하는 Task</p>
+
+<p>각각 Text와 Image에서 추출한 같은 차원의 vector를 point-wise multiplication을 통하여 Joint embedding 한 뒤, 이 vector를 FCL을 통하여 답을 도출한다.</p>
+
+<p>모든 구조에서 학습이 가능한 End-to-End 구조이다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314052755045.png" alt="" /></p>
+
+<p><strong>[img. Visual question answering 구조]</strong></p>
+
+<h3 id='Multi-modla-tasks-2-Visual-data-amp-Audio'>Multi-modla tasks(2) - Visual data &amp; Audio</h3>
+
+<h4 id='Sound-representation'>Sound representation</h4>
+
+<p>Sound data는 자연상태에서 1차원 Waveform 형태로 존재하지만, 우리가 사용하기 위해서는 Spectrogram이나, MFCC 등의 형태로 바꿔줘야 한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314055637416.png" alt="" /></p>
+
+<p><strong>[img. Sound data의 다양한 형태]</strong></p>
+
+<ol>
+  <li><strong>Fourier transform</strong></li>
+</ol>
+
+<p>대중적으로 많이 사용되는 소리의 형태인 Spectrogram으로 변환을 위한 방법</p>
+
+<p>wave 형태의 data를 분석하여 각 frequency 별 세기를 기록한 것이 Power spectrum 형태이다.</p>
+
+<ul>
+  <li>Power spectrum : 주파수와 세기에 대한 그래프</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314122450480.png" alt="" /></p>
+
+<p><strong>[img. Fourier transform]</strong></p>
+
+<p>Waveform에 Fourier transform이용하면 하나의 파장으로 표현가능 하나, 시간에 대한 정보가 사라지게 된다.</p>
+
+<p>구체적으로 이를 방지하기 위해 아주 작은 시간 구간 t에 대해서만 FT하여 Spectrogram으로 바꾸는  <em>Short-Time Fourier transform(STFT)</em>라는 방법이 사용된다.</p>
+
+<ol>
+  <li>Hamming window의 형태처럼 Boundary 부분은 조금, 가운데 부분은 강조하는 식으로 element wise 곱을 해준다.</li>
+</ol>
+
+<ul>
+  <li>이때 window가 달라질 때마다(= 정의한 시간 t가 지날때마다) 값이 확달라지게 되는데, 이를 막기 위해 window가 조금씩 겹치게 하면서 Spectrum을 구하게 된다.</li>
+  <li>하단의 예시는 시간 t인 A를 20~25ms로 잡고, B를 10ms로 잡았으니 각 window들은 10~15ms(A-B)만큼 이전과 이후 window들과 겹치면서 변환이 진행된다.</li>
+</ul>
+
+<ol>
+  <li>이렇게 구한 Spectrum들을 stack하여 Spectrogram을 구하게 된다.</li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314123237637.png" alt="" /></p>
+
+<p><strong>[img. STFT의 예시]</strong></p>
+
+<p>Spectrogram은 시간축과 Frequecy 축으로 표현한 그래프에 강도(세기, Magnitude)를 색으로 표현한 3차원 그래프이다.</p>
+
+<ul>
+  <li>Dimension을 조금 낮추면 Melspectrogram, MFCC 등의 다른 표현 방법도 있다.</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314130743494.png" alt="" /></p>
+
+<p><strong>[img. Spectrogram. 시간별로 색이 대비되는 부분은 windowing의 흔적이다.]</strong></p>
+
+<p><strong>Application- Scene recognition by sound</strong></p>
+
+<p>Sound-Image Task 중 Matching에 해당하는 Scene recognition by sound task를 알아보자</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314131555165.png" alt="" /><img src="/assets/img/컴퓨터비전 기본/image-20210314131606093.png" alt="" /></p>
+
+<p><strong>[img. Scene recognition by sound, 영상에 대한 sound 태깅 Task]</strong></p>
+
+<p><strong>SoundNet</strong></p>
+
+<p>오디오 표현에 대한 학습을 처음 제시함, Teacher-student 학습 모델</p>
+
+<ol>
+  <li>label되지 않은 영상을 프레임별로 pretrained된 Object detection과 Scene detection 모델들에게 각각 Input으로 넣고 output을 얻는다.</li>
+  <li>Raw waveform을 CNN layer에 넣어준 뒤, 위의 output dimension과 같은 차원의 two head output을 얻는다.
+    <ul>
+      <li>이때, Spectrogram이 아니라 Raw Waveform을 쓴 이유는 단순히 연구 초기라 모르고 안썼다고 한다.</li>
+    </ul>
+  </li>
+  <li>1의 output과 2의 output을 KL loss를 통해 loss를 얻은 뒤, 1번 모델들은 fixed한 채로 2번 모델을 학습시킨다. (Teacher-student 학습)</li>
+  <li>이렇게 학습된 2번의 모델을 다른 Task에 적용할 때에는 중앙의 pool5의 output인 feature vector를 task에 맞게 layer를 추가로 쌓아 사용한다.
+    <ul>
+      <li>주로 이렇게 Pre-trained 모델로 사용하기 위해 학습시킨다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314131813882.png" alt="" /></p>
+
+<p><strong>[img. SoundNet의 구조]</strong></p>
+
+<h4 id='Cross-modal-translation'>Cross modal translation</h4>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314142514349.png" alt="" /></p>
+
+<p><strong>1. Speech2Face</strong></p>
+
+<p>음성을 통하여 사람의 얼굴을 상상하는 Network</p>
+
+<p>각각 담당 Task에 대하여 Pretrained된 모델을 활용하는 Module 구조를 활용</p>
+
+<p>사람이 말하는 영상을 그대로 쓰면 되므로 annotation이 필요없는 self-supervised 모델</p>
+
+<p>이때 사용된 Pretrained 모델로</p>
+
+<ol>
+  <li>Face Recognition : VGG-Face Model
+    <ul>
+      <li>얼굴 사진을 4096-D의 Face Feature vector로 바꿔 줌</li>
+    </ul>
+  </li>
+  <li>Face Decoder : facenet
+    <ul>
+      <li>얼굴 사진을 Landmark location을 이용하여 무표정으로 바꿔줌</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314142608069.png" alt="" /></p>
+
+<p><strong>[img.Speech2Face 구조]</strong></p>
+
+<p>이후,</p>
+
+<ol>
+  <li>Spectrogram 형태로 바꾼 사운드 데이터를</li>
+  <li>Voice Encoder에 넣어 앞서 구했던 Face Recogntion의 Feature dimension과 같은 vector를 생성하고</li>
+  <li>Face feature와 비교하여 Loss를 구하여 학습한다.
+    <ul>
+      <li>이때, 학습되는 것은 Speech2Face Model인 Voice Encoder 부분이며, 기타 Pretrained 된 부분은 업데이트하지 않는다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314152015701.png" alt="" /></p>
+
+<p><strong>[img. Speech2Face에서 학습되는 부분]</strong></p>
+
+<ol>
+  <li><strong>Image-to-speech synthesis</strong></li>
+</ol>
+
+<p>사진에 대한 묘사를 음성으로 출력해주는 Task, Module network 구조를 활용</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314161355636.png" alt="" /></p>
+
+<p><strong>[img. Image-to-speech Task]</strong></p>
+
+<ol>
+  <li>Input Image를 14x14 feature map으로 형성 후 Attention을 활용한 RNN 구조에 hidden state로 사용한다.</li>
+</ol>
+
+<ul>
+  <li>기본적으로 Show, Attend, and Tell 구조와 같지만, subword unit이라는 토큰 비슷한  것이 output 이다.(Learned Units)</li>
+</ul>
+
+<ol>
+  <li>해당 Unit을 Unit-to-Speech Model인 Tacotron 2를 이용해 subword를 음성으로 변환한다.
+    <ul>
+      <li>원본 Tacotron 2는 TTS(Text To Speech) 모델, 즉, text를 input으로 받지만 여기서는 subword를 받는다는 점이 다르다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314161515132.png" alt="" /></p>
+
+<p><strong>[img. Image to speech Task]</strong></p>
+
+<p>이때, 위의 두 모델을 학습시키기 위해, Pre-trained model(ResDAVEnet-VQ)을 이용해 speech를 Unit으로 바꾸고 이를 Learned Units의 Ground-Truth로 사용한다.</p>
+
+<p>1) 즉 Image-to-Unit Model은 Ground-Truth Unit과 비교하여 Loss로 나와야 하고,</p>
+
+<p>2) Unit-to-Speech Model은 Ground-Truth Unit을 Input으로 받으면 Pre-trained model(ResDAVEnet-VQ)의 Input Speech가 나와야 한다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314205744504.png" alt="" /></p>
+
+<p><strong>[img. 학습을 위한 Speech-to-Unit Model]</strong></p>
+
+<h4 id='Cross-modal-reasoning'>Cross modal reasoning</h4>
+
+<p><strong>Sound source localization</strong></p>
+
+<p>사운드가 주어지면 해당 사운드가 사진의 어떤 Object가 내는지 예측하는 Task</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314220447590.png" alt="" /><img src="/assets/img/컴퓨터비전 기본/image-20210314220505377.png" alt="" /></p>
+
+<p><strong>[img. Sound source localization은 Cross modal Referencing에 속한다.]</strong></p>
+
+<p>label된 데이터의 여부에 따라 3가지 버전이 있으며 기초적인 과정은</p>
+
+<p>1) image Input을 통해서 Visual net에서 WxHxF image feature map을 내보낸다.</p>
+
+<p>2) audio Input을 통해서 Audio net에서 1x1xF audio feature map을 내보낸다.</p>
+
+<p>3) image feature map의 각 pixel 마다 audio feature map을 내적하여 관계성(attention)을 파악하고, 이 결과물 map이 Localization Score map이다.</p>
+
+<p>여기서 부터는 각 버전에 따라 다르다.</p>
+
+<ol>
+  <li>Fully supervised version : label이 된 데이터셋이 있는 경우</li>
+</ol>
+
+<p>4) 결과물로 나온 Localization Score를 Ground-truth Loclization score와 비교하여 loss를 구한 뒤, Backpropagation 한다.</p>
+
+<ol>
+  <li>unsupervised verison: label된 데이터셋이 없음</li>
+</ol>
+
+<ul>
+  <li>비디오에는 보통 Sound가 포함되어 있다는 점을 annotation으로 활용</li>
+</ul>
+
+<p>4) 1)에서 구했던 WxHxF image feature map을 결과물이었던 Localization Score map과 Weighted sum pooling하여 1x1xF의 Attended visual feature를 만든다.</p>
+
+<p>5) Audio net에서 만든 1x1xF audio feature map과 비교해서 metric learn Loss를 구한다.</p>
+
+<ul>
+  <li>같은 비디오에서 나온 소리면 positive pair</li>
+  <li>다른 비디오에서 나온 소리면 negative pair로 이용한다.</li>
+  <li>여러 영상에서 특정 사운드가 나올 때마다 비슷한 image feature map이 나온다면, 그 image feature map의 가중치가 높은 지점이 sound source이기 때문</li>
+</ul>
+
+<ol>
+  <li>semisupervised version: label된 데이터셋이 있지만 Audio net output과도 비교함</li>
+</ol>
+
+<p>4) 1. 2. 방법을 전부 사용하여 loss를 2개를 구하고 맞춰본다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314225611105.png" alt="" /></p>
+
+<p><strong>[img. Sound source localization의 여러가지 버전]</strong></p>
+
+<p><strong>Speech separation</strong></p>
+
+<p>동시에 말하는 사람들의 말을 각각 1사람씩 말하는 Audio를 가져오는 Task</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210314225228243.png" alt="" /></p>
+
+<p><strong>[img. Speech separation]</strong></p>
+
+<p>Dataset 필요한 Supervised Learning이며, 이때 데이터셋은 단순히 목소리 2개를 겹쳐서 만들 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">과정</th>
+      <th style="text-align: center">도식</th>
+      <th style="text-align: left">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Visual<br />stream</td>
+      <td style="text-align: center"><img src="image-20210314235141102.png" alt="image-20210314235141102" /></td>
+      <td style="text-align: left">N개의 나눌 사람 만큼, <br />Face Embedding을 통해 <br />각자 feature를 구한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Audio<br />stream</td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210314235235719.png" alt="" /></td>
+      <td style="text-align: left">Audio Spectrogram으로<br /> speech feature를 구한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Audio-visual<br />fusion</td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210314235245107.png" alt="" /></td>
+      <td style="text-align: left">위에서 구한 feature들을<br /> concat한 뒤, N개의 <br />complex mask를 뽑아낸다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">output</td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315000341431.png" alt="" /></td>
+      <td style="text-align: left">오리지널 spectrogram과 <br />mask를 곱해 필터링 결과 <br />spectrogram을 ISTFT로<br />waveform으로 바꾼 뒤,<br />원본과 비교해서 L2 Loss를 구하여 학습</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[table. Speech separation 과정]</strong></p>
+
+<p>이외에도 Cross modal task로, Lip movements generation, Tesla self-driving 등이 있다.</p>
+
+<h2 id='3D-undersanding'>3D undersanding</h2>
+
+<h3 id='Seeing-the-world-in-3D-perspective'>Seeing the world in 3D perspective</h3>
+
+<p>우리는 3D 세상에 살고 있기 때문에, 3D 공간에 대한 이해가 중요하다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">예시</th>
+      <th>영역</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315085123440.png" alt="" /></td>
+      <td>VR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315085130426.png" alt="" /></td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315085154016.png" alt="" /></td>
+      <td>3D Print</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315085207489.png" alt="" /></td>
+      <td>Medical</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315085217203.png" alt="" /></td>
+      <td>Bio</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[img. 3D를 활용하는 영역의 예시]</strong></p>
+
+<p>빛은 직진성을 띄기 때문에 3D의 형태는 2차원에 표현이 가능하며, 우리가 실제로 3D 물체를 인식하는 방법은 3D world를 2D space에 projection하는 image이다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315085444009.png" alt="" /></p>
+
+<p><strong>[img. 원근에 대한 연구와 과거와 현재의 결실]</strong></p>
+
+<p>3차원 공간을 2차원 공간에 표현하는 것을 Projection을 통하여 가능했다면, 반대로 2차원 공간의 정보를 이용해 3차원 공간으로 표현하는 것은 Triangulation으로 가능하다.</p>
+
+<ul>
+  <li>2장 이상의 이미지에서 3D pint의 한 점의 pixel 이동값과 이미지를 촬영했던 위치를 알고 있으면 Triangulation을 통해 이론상 3D 모델을 예측할 수 있다.</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315085636357.png" alt="" /></p>
+
+<p><strong>[img. Triangulation의 예시]</strong></p>
+
+<p>2차원 이미지는 각 픽셀을 의미하는 2차원 array에 RGB 값을 저장함으로써 표현 가능하다.</p>
+
+<p>3차원 데이터의 표현은 여러가지 방법이 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">3D 데이터 표현 예시</th>
+      <th style="text-align: center"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315090240429.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315090245681.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315090252859.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Multi-view images</td>
+      <td style="text-align: center">Volumetric(voxel)</td>
+      <td style="text-align: center">Part assembly</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2차원 이미지 여러장</td>
+      <td style="text-align: center">3차원 array</td>
+      <td style="text-align: center">기본 3D 도형의 집합</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315090258370.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315090304829.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/img/컴퓨터비전 기본/image-20210315090329872.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Point cloud</td>
+      <td style="text-align: center">Mesh (Graph CNN)</td>
+      <td style="text-align: center">Implicit shape(function)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3차원 Point 들의 집합</td>
+      <td style="text-align: center">Vertex의 삼각 edge</td>
+      <td style="text-align: center">고차원의 함수</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>[img. 3D의 다양한 표현 방법들]</strong></p>
+
+<h4 id='3D-datasets'>3D datasets</h4>
+
+<p><strong>ShapeNet</strong></p>
+
+<p>대용량 3D model 데이터셋(51,300개, 55 카테고리)</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315090929981.png" alt="" /></p>
+
+<p><strong>[img. ShapeNet의 object들]</strong></p>
+
+<p><strong>PartNet(ShapeNetPart2019)</strong></p>
+
+<p>ShapeNet의 개량, 추가로 Detail이 annotation 되어있음(ex)자동차 모델 -&gt; 자동차 바퀴, 창문, 천장 등이 따로 나눠짐)</p>
+
+<p>(26,671개의 3D model 총 573,585개의 part로 나눠짐)</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315091038307.png" alt="" /></p>
+
+<p><strong>[img. PartNet 예시들]</strong></p>
+
+<p><strong>SceneNet</strong></p>
+
+<p>500만개의 랜덤하게 Generation된 RGB-Depth Indoor image들</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315091318160.png" alt="" /></p>
+
+<p><strong>[img. SceneNet, 랜덤하게 만들어짐]</strong></p>
+
+<p><strong>ScanNet</strong></p>
+
+<p>RGB-Depth 250만개의 실제 Indoor scan data</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315091502679.png" alt="" /></p>
+
+<p><strong>[img. ScanNet]</strong></p>
+
+<p><strong>Outdoor 3D scene datasets</strong></p>
+
+<p>주로 자율주행을 위한 야외 데이터셋들, Lidar로 스캔한 것이 많음</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315091528122.png" alt="" /></p>
+
+<p><strong>[img. Outdoor 3D scene 모음]</strong></p>
+
+<h3 id='3D-tasks'>3D tasks</h3>
+
+<p>2차원 classification이나 object detection, semantic segmentation 등, 3D에도 같은 Task가 있다.</p>
+
+<p>자율주행, 의료, 제조업 등에 활발히 사용 중</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315093050546.png" alt="" /><img src="/assets/img/컴퓨터비전 기본/image-20210315093057024.png" alt="" /></p>
+
+<p><strong>[img. 3D task의 예시]</strong></p>
+
+<p><strong>Mesh R-CNN</strong></p>
+
+<p>2D image를 입력으로 감지된 object의 3D 메쉬를 출력</p>
+
+<p>Mask R-CNN 구조를 변경해서 구현</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315094811949.png" alt="" /></p>
+
+<p><strong>[img. Mesh R-CNN 예시]</strong></p>
+
+<p>Mesh R-CNN은 기존의 Mask R-CNN에 3D mesh를 출력하는 3D branch가 추가된 형태</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315095019376.png" alt="" /></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315095042922.png" alt="" /></p>
+
+<p><strong>[imgs. Mask R-CNN VS Mesh R-CNN]</strong></p>
+
+<p>3D mesh를 생성하는 문제를 조금더 작은 여러개의 부 문제로 나누어 해결하여 더 좋은 성능을 낼 수 있다.</p>
+
+<ul>
+  <li>normal map, depth map, silhouette 검출 -&gt; 3D 오브젝트 생성</li>
+  <li>Depth 탐지-&gt; Spherical map(어느 한점을 중심으로 물체를 보았을 때의 이미지) 생성 -&gt; voxel화 -&gt; 3D mesh화</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315095118571.png" alt="" /></p>
+
+<p><strong>[img. 더 복잡하고 정확한  3D mesh 생성법]</strong></p>
+
+<h3 id='3D-application-example-Photo-refocusing'>3D application example- Photo refocusing</h3>
+
+<p>사진의 depth map을 이용하여 사진의 focus를 바꾸는 application</p>
+
+<p>Photo refocusing 또는 post-refocusing이라고도 함.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315101738298.png" alt="" /></p>
+
+<p><strong>[img. 앞의 조각상에 focusing 된 사진]</strong></p>
+
+<p>depth map은 depth sensor나 neural network를 이용해 검출 가능하다.</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315101921972.png" alt="" /></p>
+
+<p><strong>[img. 사진의 depth map]</strong></p>
+
+<p><strong>구현 과정</strong></p>
+
+<ol>
+  <li>depth thrshold range 최소치 ~ 최대치($D_{min}\sim D_{max}$)를 정하기</li>
+</ol>
+
+<ul>
+  <li>즉 $D_{min}\sim D_{max}$까지만 focus하고 나머지는 blur 처리하겠다는 의미</li>
+</ul>
+
+<p>우리의 경우 0~255로 표현함</p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315103416424.png" alt="" /></p>
+
+<p><strong>[img.  depthmap 예시]</strong></p>
+
+<ol>
+  <li>depth map thresholding으로 masking
+    <ul>
+      <li>focusing할 focusing area와 blur 처리할 defocsing area로 마스킹</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315103523577.png" alt="" /></p>
+
+<p><strong>[img. Threshold가 170일 때의 masking]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">focus_mask</span> <span class="o">=</span> <span class="n">depth_map</span><span class="p">[...,</span> <span class="p">:]</span> <span class="o">&amp;</span><span class="c1">#38;#62; threshold_value
+</span><span class="n">defocus_mask</span> <span class="o">=</span> <span class="n">depth_map</span><span class="p">[...,</span> <span class="p">:]</span> <span class="o">&amp;</span><span class="c1">#38;#60;= threshold_value
+</span>
+</code></pre></div></div>
+<p><strong>[img. masking code 예시]</strong></p>
+
+<ol>
+  <li>blurr버전의 image를 생성</li>
+</ol>
+
+<ul>
+  <li>Depth에 따라 adaptive하게 적용하는 방법도 있음</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315103745583.png" alt="" /></p>
+
+<p><strong>[img. Blur kernal을 이용한 image]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">blurred_image</span><span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">blur</span><span class="p">(</span><span class="n">original_image</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+
+</code></pre></div></div>
+<p><strong>[code. cv2를 이용한 blur 처리]</strong></p>
+
+<ol>
+  <li>Masked focused image와 Masked defocused image를 생성하고 이미지 blending을 통해 refocused된 이미지 생성</li>
+</ol>
+
+<ul>
+  <li>간단한 image array의 연산으로 생성 가능</li>
+</ul>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315104240365.png" alt="" /></p>
+
+<p><strong>[img. Masked images]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">focused_with_mask</span> <span class="o">=</span> <span class="n">focus_mask</span> <span class="o">*</span> <span class="n">original_image</span>
+<span class="n">defocused_with_mask</span> <span class="o">=</span> <span class="n">defocus_mask</span> <span class="o">*</span> <span class="n">blurred_image</span>
+
+</code></pre></div></div>
+<p><strong>[code. Masked Image 생성 코드]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315104319659.png" alt="" /></p>
+
+<p><strong>[img. 결과물 blend]</strong></p>
+
+<p><img src="/assets/img/컴퓨터비전 기본/image-20210315104654349.png" alt="" /></p>
+
+<p><strong>[img. Threshold에 따른 blur 차이]</strong></p>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/AI/CV/%EC%BB%B4%ED%93%A8%ED%84%B0%EB%B9%84%EC%A0%84%20%EA%B8%B0%EB%B3%B8.html" hidden></a>
+  <p class="u-path" hidden>_articles/AI/CV/컴퓨터비전 기본.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

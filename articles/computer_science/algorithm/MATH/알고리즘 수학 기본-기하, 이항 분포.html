@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>알고리즘 수학 기본-기하, 이항 분포 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="알고리즘 수학 기본-기하, 이항 분포" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%EA%B8%B0%ED%95%98,%20%EC%9D%B4%ED%95%AD%20%EB%B6%84%ED%8F%AC.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%EA%B8%B0%ED%95%98,%20%EC%9D%B4%ED%95%AD%20%EB%B6%84%ED%8F%AC.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-08T19:53:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="알고리즘 수학 기본-기하, 이항 분포" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-07-08T19:53:58+09:00","datePublished":"2021-07-08T19:53:58+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"알고리즘 수학 기본-기하, 이항 분포","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%EA%B8%B0%ED%95%98,%20%EC%9D%B4%ED%95%AD%20%EB%B6%84%ED%8F%AC.html"},"url":"http://localhost:4000/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%EA%B8%B0%ED%95%98,%20%EC%9D%B4%ED%95%AD%20%EB%B6%84%ED%8F%AC.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">알고리즘 수학 기본-기하, 이항 분포</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2021-07-08T19:53:58+09:00" itemprop="datePublished">Jul 8, 2021
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#베르누이-시행의-분포-Bernoulli-trial-Distribution' id='markdown-toc-0-베르누이-시행의-분포-Bernoulli-trial-Distribution'>베르누이 시행의 분포 (Bernoulli trial Distribution)</a><ul><li><a href='#기하-분포-The-geometric-distribution' id='markdown-toc-0-기하-분포-The-geometric-distribution'>기하 분포 (The geometric distribution)</a></li> 
+<li><a href='#이항-분포-The-binomial-distribution' id='markdown-toc-0-이항-분포-The-binomial-distribution'>이항 분포(The binomial distribution)</a></li> 
+<li><a href='#이항-분포의-상한을-얻을-수-있는-부명제-증명' id='markdown-toc-0-이항-분포의-상한을-얻을-수-있는-부명제-증명'>이항 분포의 상한을 얻을 수 있는 부명제 증명</a></li> 
+<li><a href='#이항-분포의-꼬리들-The-tails-of-the-binomial-distribution' id='markdown-toc-0-이항-분포의-꼬리들-The-tails-of-the-binomial-distribution'>이항 분포의 꼬리들 (The tails of the binomial distribution)</a><ul>
+</ul></li> 
+
+</ul></li> 
+</ol>
+<h1 id='알고리즘을-위한-수학-기하-이항-분포-geometric-and-binomial-distributions'>알고리즘을 위한 수학 - 기하, 이항 분포(geometric and binomial distributions)</h1>
+
+<hr />
+
+<p>Introduction to Algorithm, 3rd, Cormen을 토대로 정리한 내용입니다. 일부 표기나 개념이 기존의 수학과 다를 수도 있으므로, 여기서 배운 내용은 단순 해당 책(<strong>Introduction to Algorithm, 3rd, Cormen</strong>)의 부록으로 취급해야한다. 추가로 <span class='link-warning'>
+      <a href="https://blog.naver.com/PostList.naver?blogId=mykepzzang" class="wikilink externallink">존이(mykepzzang)님의 블로그</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://blog.naver.com/PostLis..."</em>로
+        <button onclick="window.open('https://blog.naver.com/PostList.naver?blogId=mykepzzang','_blank'); return false;">이동</button>?
+      </span>
+    </span>에서 내용을 발췌하였다.</p>
+
+<p>이 장에서는 분포의 표기법, 정의, 속성 같은 기본적인 것만 배운다. 들어가기에 앞서 확률에 대한 기본적인 이해가 필요하므로 알고리즘을 위한 수학 <span class="preview-wrapper">
+      <a href="" class="wikilink">확률편</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>, <span class="preview-wrapper">
+      <a href="" class="wikilink">확률 변수편</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>을 보고 오는 것을 추천한다.</p>
+
+<h2 id='베르누이-시행의-분포-Bernoulli-trial-Distribution'>베르누이 시행의 분포 (Bernoulli trial Distribution)</h2>
+
+<hr />
+
+<p><strong>베르누이 시행 (Bernoulli trial)은 동전 던지기처럼 상호 독립적인 2가지 결과(성공, 실패)만 나올 수 있는 경험</strong>을 의미하며, 보통은 두 결과 모두 동등하게 절반의 확률이다.</p>
+
+<p>베르누이 시행에는 중요한 분포로 기하 분포와 이항 분포가 존재한다.</p>
+
+<h3 id='기하-분포-The-geometric-distribution'>기하 분포 (The geometric distribution)</h3>
+
+<hr />
+
+<p><img src="/assets/img/알고리즘 수학 기본-기하, 이항 분포/image-20220109074759354.png" alt="Figure 1. p=1/3의 성공확률을 가진 경험의 성공할 때 까지의 시도 횟수에 따른 기하 분포, 분포(distrbution)의 기댓값은 1/p=3이다." /></p>
+
+<p>아래는 성공 확률과 실패 확률이 각각 $p,\ q=1-p$인 베르누이 시행의 시도에 대해, 확률 변수 X를 성공할 때까지 경험을 시도한 횟수라고 가정하면, $k \geq 1$일 때, 다음과 같은 확률을 구할 수 있다.</p>
+
+<p>$\Pr{X=k}=q^{k-1}p$</p>
+
+<p>이때 k-1의 실패 뒤에 k번재에 성공하게 되며, 이러한 식이 만족하는 확률 분포를 <strong>기하 분포</strong>라고 하며, Figure 1과 같은 모습이다.</p>
+
+<p>또한, q &lt; 1을 가정하고, 기하 분포의 기대값을 다음과 같이 구할 수 있다.</p>
+
+\[\begin{align}
+E[X]&amp;=\sum_{k=1}^\infty kq^{k-1}p
+\\&amp;=\frac{p}{q}\sum^\infty_{k=0}kq^k
+\\&amp;=\frac{p}{q}\cdot\frac{q}{(1-q)^2}
+\\&amp;=\frac{p}{q}\cdot\frac{q}{p^2}
+\\&amp;=1/p
+\end{align}\]
+
+<p>따라서, 성공을 얻는데 평균적으로 1/p 번의 시도가 필요하며, 다음과 같이 분산을 구할 수 있다.</p>
+
+<p>$Var[X]=q/p^2$</p>
+
+<p>예시로, 우리가 반복적으로 두개의 주사위를 던져 합이 7이나 11이 나오기 위해선, 36가지의 가능한 결과에서 6개의 합이 7인 경우와 2개의 합이 11인 경우가 존재한다. 따라서 성공 확률 $p=8/36=2/9$이며, 평균적으로 4.5회 던져야 성공할 수 있다.</p>
+
+<h3 id='이항-분포-The-binomial-distribution'>이항 분포(The binomial distribution)</h3>
+
+<hr />
+
+<p><img src="/assets/img/알고리즘 수학 기본-기하, 이항 분포/image-20220109074820058.png" alt="Figure 2. 이항 분포 b(k; 15, 1/3)인 경우의 이항 분포, 분포의 기댓값은 np=5이다." /></p>
+
+<p>n번 시도에 대한 성공 횟수를 확률 변수 X로 놓는다면, $0 \leq k \leq n$일 때, 각기 일어날 확률이 $p^kq^{n-k}$이며, 총 $\binom{n}{k}$개의 방법이 존재하므로, 다음 같은 확률이 나온다.<br />
+\(\Pr\{X=k\}=\binom{n}{k}p^kq^{n-k}\)</p>
+
+<p>위와 같은 식을 만족하는 확률 분포를 <strong>이항 분포(binomial distribution)</strong>라고 하며, Figure 2와 같이 표현된다.</p>
+
+<p>“이항”은 위의 식이 전개시, $(p+q)^n$의 전개식 처럼 보이기 때문에 붙여진 이름이며, $p=1-q$일 때, 위 식을 아래와 같이 표기하기도 한다.<br />
+\(b(k;n,p)=\binom{n}{k} p^k(1-p)^{n-k}\)</p>
+
+<p>또한, 확률 공리 “모든 사건들의 확률의 합은 1이다.”에 의해 다음과 같이 된다.<br />
+\(\sum^n_{k=0}b(k;n,p)=1 \tag{1} \label{eq:binomial sums}\)</p>
+
+<p>또한, 이를 이용해 다음과 같은 이항 분포의 기댓값을 얻을 수 있다.<br />
+\(\begin{align}
+E[X]&amp;=\sum^n_{k=0}k\cdot \Pr\{X=k\}
+\\&amp;=\sum^n_{k=0}k\cdot b(k;n,p)
+\\&amp;=\sum^n_{k=1}k\binom{n}{k}p^kq^{n-k} 
+\\&amp;= np\sum^n_{k=1}\binom{n-1}{k-1}p^{k-1}q^{n-k} 
+\\&amp;=np\sum^{n-1}_{k=0}\binom{n-1}{k}p^k q^{(n-1)-k}
+\\&amp;=np\sum^{n-1}_{k=0}b(k;n-1,p)
+\\&amp;=np\ &amp;(식\ \eqref{eq:binomial sums}에\ 의해)
+\label{eq:expectation of binomial distribution}
+\tag{expectation}
+\end{align}\)</p>
+
+<p>또 다른 방법으로 구하려면, 확률 변수 $X_i$를 i 번째 시도에서의 성공 횟수로 가정하면,(즉, 한번 시도했을 때의 성공횟수 =&gt; 최대 1 또는 0) $E[X_i]=p\cdot 1+ q\cdot 0=p$가 나오게 된다. 기댓값의 선형성에 의해 아래와 같이 기댓값을 구할 수 있다.</p>
+
+\[\begin{align}
+E[X]&amp;= E\left[\sum^n_{i=1}X_i\right]
+\\&amp;=\sum^n_{i=1}E[X_i]
+\\&amp;=\sum^n_{i=1}p
+\\&amp;=np
+\end{align}\]
+
+<p>이러한 방법으로 분포의 분산 또한 쉽게 구할 수 있다. 앞선 확률 변수편에서 구했던 분산 공식 $Var[X_i]=E[X_i^2]-E^2[X_i]$에서, 확률 변수 $X_i$는 위에서 언급했듯이 1아니면 0이므로 $X_i^2=X_i$가 되며, 이는 곧 $E[X^2_i]=E[X_i]=p$를 의미한다.</p>
+
+<p>따라서 $Var[X_i]=p-p^2=p(1-p)=pq$를 만족하며, 이를 이용해 아래와 같이 확률 변수 X에 대한 분산을 구할 수 있다.</p>
+
+\[\begin{align}
+Var[X]&amp;= Var\left[\sum^n_{i=1}X_i\right]
+\\&amp;=\sum^n_{i=1}Var[X_i]
+\\&amp;=\sum^n_{i=1}pq
+\\&amp;=npq
+\end{align}\]
+
+<p>Figure 2에서 보면, 이항 분포는 k가 증가할 수록 증가하는 추세에서, np에 다다르면 감소하게되는데, 이러한 추세는 다음과 같은 연속식의 비율로 증명 가능하다.</p>
+
+\[\begin{align}
+\frac{b(nk;n,p)}{b(k-1;n,p)}&amp;=\frac{\binom{n}{k}p^kq^{n-k}}{\binom{n}{k-1}p^{k-1}q^{n-k+1}}
+\\&amp;=\frac{n!(k-1)!(n-k+1)!p}{k!(n-k)!n!q}
+\\&amp;=\frac{(n-k+1)p}{kq}
+\\&amp;=1+\frac{(n+1)p-k}{kq}
+\label{eq:ratio of binomial distribution}
+\tag{2}
+\end{align}\]
+
+<p>이 비율은 $(n+1)p-k$가 양수일때 1보다 크며, 즉 $b(k;n,p)&gt;b(k-1;n,p)$일때, $k&lt;(n+1)p$, 즉 분포가 증가하는 추세이고, $b(k;n,p)&lt;b(k-1;n,p)$일때, $k&gt;(n+1)p$, 즉 분포가 감소하는 추세이다.</p>
+
+<p>만약 $k=(n+1)p$가 정수라면, $b(k;n,p)=b(k-1;n,p)$이며, k의 범위가 $np-q &lt;k&lt;(n+1)p$일때 최대값을 얻을 수 있다.</p>
+
+<h3 id='이항-분포의-상한을-얻을-수-있는-부명제-증명'>이항 분포의 상한을 얻을 수 있는 부명제 증명</h3>
+
+<p><strong>부명제 1</strong>. $n \geq 0$이고, $0&lt;p&lt;1$ $q=1-p$이며, $0\leq k \leq n$일때, 다음 식이 성립한다.<br />
+\(b(k;n,p)\leq (\frac{np}{k})^k(\frac{nq}{n-k})^{n-k}\)</p>
+
+<p><strong>증명</strong>:</p>
+
+<p>앞서 Counting 편의 이항 한계의 식에서 배웠던 $\binom{n}{k}\leq \frac{n^n}{k^k(n-k)^{n-k}}$을 통하여 다음이 성립한다.<br />
+\(\begin{align}
+b(k;n,p)&amp;=\binom{n}{k}p^kq^{n-k}
+\\&amp;\leq \left(\frac{n}{k}\right)^k\left(\frac{n}{n-k}\right)^{n-k}p^kq^{n-k}
+\\&amp;=\left(\frac{np}{k}\right)^k \left(\frac{np}{n-k}\right)^{n-k}
+\end{align}\)</p>
+
+<h3 id='이항-분포의-꼬리들-The-tails-of-the-binomial-distribution'>이항 분포의 꼬리들 (The tails of the binomial distribution)</h3>
+
+<p><img src="/assets/img/알고리즘 수학 기본-기하, 이항 분포/image-20220112170751652.png" alt="" /></p>
+
+<p>이항 분포의 가장 확률이 높은 지역인 평균($np$)에서 가장 먼 양 끝단을 이항 분포의 꼬리(tail) 부분이라고 하며, 좌측 꼬리는 최소의 성공, 우측 꼬리는 최대의 성공확률를 의미한다.</p>
+
+<p>먼저 분포에서 우측 꼬리의 한계(bound)에 대해 알아보자.</p>
+
+<h4 id='정리-Theorem-1'>정리(Theorem) 1</h4>
+
+<p>n번의 베르누이 시행에서 성공 확률이 p이며, 확률 변수 X가 성공 횟수를 의미할 때, $0\leq k \leq n$일 때, 최소 성공 횟수 k의 확률의 상한은 다음과 같다.<br />
+\(\Pr\{X\geq k\}=\sum^n_{i=k}b(i;n,p)\leq \binom{n}{k}p^k\)</p>
+<h5 id='증명'>증명</h5>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$S \sube {1,2,\dots,n}$일 때,  $A_S$를 $i\in S$인 i번째 시도 하나가 성공인 사건으로 놓으면, $</td>
+      <td>S</td>
+      <td>=k$일 때, $\Pr{A_S}=p^k$이게 된다.(모든 시도 중에 S에 속한 i번째 시도가전부 성공할 확률)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>그럴 경우, 아래가 성립한다.<br />
+\(\begin{align}
+\Pr\{X\geq k\}&amp;=\Pr\{there\ exists\ S\sube \{1,2,\dots,n\}:|S|=k\ and\ A_S\}
+\\&amp;=\Pr\left\{\bigcup_{S\sube\{1,2,\dots,n\}:|S|=k}A_S\right\} &amp; (S에\ 속한\ 모든\ i\ 번째\ 시도가\ 성공할\ 확률)
+\\&amp;\le \sum_{S\sube\{1,2,\dots,n\}:|S|=k}\Pr\{A_S\} &amp;(Boole 부등식에\ 의해)
+\\&amp;=\binom{n}{k}p^k
+\end{align}\)</p>
+
+<hr />
+<p><strong>NOTE</strong></p>
+
+<p><strong>부울의 부등식 (Boole’s inequality)</strong></p>
+
+<p>유한 또는 가산 무한 이벤트들의 수열 $A_1, A_2, \dots$에 대하여 확률의 공리 $\Pr{A\cup B}=\Pr{A}+\Pr{B}-\Pr{A\cap B}\leq \Pr{A}+\Pr{B}$$가 만족하므로, \Pr{A_1\cup A_2\cup\cdots}\le \Pr{A_1}+\Pr{A_2}+\cdots$를 만족한다.</p>
+
+<hr />
+
+<h4 id='따름-정리-Corollary-2'>따름 정리(Corollary) 2</h4>
+
+<p>성공확률이 p이며, n번 시도하는 베르누이 시행에서 확률 변수 X를 성공 횟수로 놓고, $0\leq k \leq n$일 경우, 최대 성공횟수 k에 대한 확률의 상한은 다음과 같다.</p>
+
+<p>이는 또한, 반대편 꼬리에도 적용 가능하다.</p>
+
+<p>\(\begin{align}
+\Pr\{X\leq k\}&amp;=\sum^k_{k=0}b(i;n,p)
+\\&amp;\leq \binom{n}{n-k}(1-p)^{n-k}
+\\&amp;=\binom{n}{k}(1-p)^{n-k}
+\end{align}\)</p>
+<h4 id='정리-Theorem-3'>정리(Theorem) 3</h4>
+
+<p>성공확률이 p이며, 실패 확률이 $q=1-p$인 n번 시도하는 베르누이 시행에서 확률 변수 X를 성공 횟수로 놓고, $0 &lt; k&lt; np$에서 k보다 적게 성공할 확률의 상한은 다음과 같다. <br />
+\(\begin{align}
+\Pr\{X&lt;k\}&amp;=\sum^{k-1}_{i=0}b(i;n,p)
+\\&amp;&lt; \frac{kq}{np-k}b(k;n,p)
+\end{align}\)</p>
+
+<p>이는 이항 분포의 좌측 꼬리에 대한 한계이며, 좌측 꼬리부터 기하급수적으로 줄어드는 이유이다.</p>
+
+<p><strong>증명</strong></p>
+
+<p>먼저 수열 $\sum^{k-1}_{i=0}b(i;n,p)$을 <span class="preview-wrapper">
+      <a href="" class="wikilink">연속합편</a>
+      <iframe class="preview" src='' data-href="" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>에서 배웠던 등비수열을 통해 한계를 구한 뒤, $i=1,2,\dots,k,$일 때, 식 $\eqref{eq:ratio of binomial distribution}$를 통해 다음이 성립한다. <br />
+\(\begin{align}
+\frac{b(i-1;n,p)}{b(i;n,p)}&amp;=\frac{iq}{(n-i+1)p}
+\\&amp;&lt;\frac{iq}{(n-i)p}
+\\&amp;\leq\frac{kq}{(n-k)p}
+\end{align}\)</p>
+
+<p>이때 x를 다음과 같이 정하면, x의 상한을 얻을 수 있다.<br />
+\(\begin{align}
+x&amp;=\frac{kq}{(n-k)p}
+\\&amp;&lt;\frac{kq}{(n-np)p}
+\\&amp;=\frac{kq}{nqp}
+\\&amp;=\frac{k}{np}
+\\&amp;&lt;1
+\end{align}\)</p>
+
+<p>위 식을 통해 식 $b(i-1;n,p)&lt;xb(i;n,p)$이 성립하게 된다.</p>
+
+<p>위 부등식을 $0&lt;i\leq k$일 때, k-i번 연속적으로 적용하면 $b(i;n,p)&lt;x^{k-i}b(k;n,p)$를 구할 수 있다.</p>
+
+<p>$0\leq i &lt;k$일 때, 다음이 성립한다.<br />
+\(\begin{align}
+\sum^{k-1}_{i=0}b(i;n,p)&amp;&lt;\sum^{k-1}_{i=0}x^{k-i}b(k;n,p)
+\\&amp;&lt;b(k;n,p)\sum^\infty_{i=0}x^i
+\\&amp;=\frac{x}{1-x}b(k;n,p)
+\\&amp;=\frac{kq}{np-k}b(k;n,p)
+\end{align}\)</p>
+
+<h4 id='따름-정리-Corollary-4'>따름 정리(Corollary) 4</h4>
+
+<p>성공확률이 p이며, 실패 확률이 $q=1-p$인 n번 시도하는 베르누이 시행에서 확률 변수 X를 성공 횟수로 놓고, $0&lt;k\leq np/2$에서 k번 보다 적게 성공할 확률은 k+1번 보다 적게 성공할 확률보다 절반 이하이다.</p>
+
+<p><strong>증명</strong></p>
+
+<p>$k\leq np/2$이기 때문에 다음이 성립한다.<br />
+\(\frac{kq}{np-k}\leq \frac{(np/2)q}{np-(np/2)}=\frac{np/2q}{np/2}\leq 1\)</p>
+
+<p>확률 q는 1보다 작으므로, 정리(Theorem) 3과 위의 식에 의해 k보다 적게 성공할 확률은 다음과 같이 된다.<br />
+\(\Pr\{X&lt;k\}=\sum^{k-1}_{i=0}b(i;n,p)&lt;b(k;n,p)\)</p>
+
+<p>따라서, $\sum^{k-1}_{i=0}b(i;n,p)&lt;b(k;n,p)$에 의해 다음과 같은 식이 성립한다.<br />
+\(\begin{align}
+\frac{\Pr\{X&lt;k\}}{\Pr\{X&lt;k+1\}}&amp;=\frac{\sum^{k-1}_{i=0}b(i;n,p)}{\sum^k_{i=0}b(i;n,p)}
+\\&amp;=\frac{\sum^{k-1}_{i=0}b(i;n,p)}{\sum^{k-1}_{i=0}b(i;n,p)+b(k;n,p)}
+\\&amp;&lt;1/2
+\end{align}\)</p>
+
+<p>이는, 다른 반대편 꼬리에도 똑같이 적용된다,즉 k번보다 많게 성공할 확률은 k-1번 보다 많게 성공할 확률의 절반 이하이다. (<a href="####따름 정리(Corollary) 6">따름 정리 6</a> 참조)</p>
+
+<h4 id='따름-정리-Corollary-5'>따름 정리(Corollary) 5</h4>
+
+<p>성공확률이 p이며, 실패 확률이 $q=1-p$인 n번 시도하는 베르누이 시행에서 확률 변수 X를 성공 횟수로 놓고, $np&lt;k&lt;n$일 때, k번보다 높게 성공할 확률은 다음과 같은 상한을 가지고 있다.</p>
+
+<p>$\Pr{X&gt;k}=\sum^n_{i=k+1}b(i;n,p)&lt;\frac{(n-k)p}{k-np}b(k;n,p)$</p>
+
+<h4 id='따름-정리-Corollary-6'>따름 정리(Corollary) 6</h4>
+
+<p>성공확률이 p이며, 실패 확률이 $q=1-p$인 n번 시도하는 베르누이 시행에서 확률 변수 X를 성공 횟수로 놓고 $(np+n)/2&lt;k&lt;n$ 를 만족할 때, k보다 많이 성공할 확률은 k-1보다 많이 성공할 확률의 절반 이하이다.</p>
+
+<h4 id='정리-Theorem-7'>정리 (Theorem) 7</h4>
+
+<p>n번의 베르누이 시행에서,$i=1,2,\dots,n$에서 각 i번째 시도의 성공확률을 $p_i$로 놓고, 실패 확률을 $q_i=1-p_i$로 놓는다.</p>
+
+<p>확률 변수 X를 총 성공 횟수로 놓고, $\mu=E[X]$로 놓고, $r&gt;\mu$일 경우, $\Pr{X-\mu \geq r} \leq (\frac{\mu e}{r})^r$가 성립한다.</p>
+
+<p>이 정리를 통해 이항 분포의 우측 꼬리의 한계를 알 수 있다.</p>
+
+<p><strong>증명</strong></p>
+
+<p>$\alpha &gt;0$일 때, 함수 $e^{\alpha x}$는 x에 대해 크기가 비례하게 되므로, 다음이 성립한다.</p>
+
+\[\Pr\{X-\mu \geq r\}=\Pr\{e^{\alpha(X-\mu)}\geq e^{\alpha r}\}
+\label{eq:possibility bound by markov inequality}\tag{3}\]
+
+<p>위 식을 이용해 음이 아닌 확률 변수 X의 확률의 상한을 알 수 있는 마르코프 부등식(Markov’s inequality)에 의하여 $t&gt;0$일 경우, $\Pr{X \geq t}\leq E[X]/t$이 성립하므로 다음 식 $\eqref{eq:possibility bound by markov inequality with exponential}$이 성립한다.<br />
+\(\Pr\{e^{\alpha(X-\mu)}\geq e^{\alpha r}\}\leq E[e^{\alpha (X-\mu)}]e^{-\alpha r}
+\label{eq:possibility bound by markov inequality with exponential}\tag{4}\)</p>
+
+<hr />
+
+<p><strong>NOTE</strong></p>
+
+<p><strong>마르코프 부등식(Markov’s inequality)의 증명</strong><br />
+\(\begin{align}
+E(X)&amp;=\int^\infty_{-\infty}xf(x)dx\ &amp;(기댓값의\ 정의)\\
+\\&amp;=\int^\infty_{0}xf(x)dx&amp;(X는\ 음이\ 아닌\ 확률\ 변수이므로)
+\\&amp;=\int^a_{0}xf(x)dx+\int^\infty_{a}xf(x)dx
+\\&amp;\geq\int^\infty_{a}xf(x)dx
+\\&amp;\geq \int^\infty_{a}af(x)dx
+\\&amp;=a\int^\infty_{a}f(x)dx
+\\&amp;=a\Pr(X\geq a)
+\\&amp; \therefore \Pr\{X \geq a\}\leq E[X]/a
+\end{align}\)</p>
+
+<hr />
+
+<p>증명 과정은 $E[e^{\alpha (X-\mu)}]$의 한계 구하기와 식 $\eqref{eq:possibility bound by markov inequality with exponential}$의 $\alpha$값의 적절한 대체가 주를 이룬다.</p>
+
+<p>먼저 지시 확률 변수(indicator random variables)를 이용해 확률 변수 $X_i$를 i번째 베르누이 시행이 성공이면 1, 실패이면 0으로 설정한다. 따라서</p>
+
+<p>$X=\sum^n_{i=1}X_i$가 성립하며,</p>
+
+<p>기댓값의 선형성에 의해 $\mu=E[X]=E\left[\sum^n_{i=1}X_i\right]=\sum^n_{i=1}E[X_i]=\sum^n_{i=1}p_i$이 성립하며 이는 $X-\mu=\sum^n_{i=1}(X_i-p_i)$을 성립하게 한다.</p>
+
+<p>이제 $X-\mu$를 위에 구한 식으로 대체하면, 다음이 성립한다.<br />
+\(\begin{align}
+E[e^{\alpha(X-\mu)}] &amp;=E[e^{\alpha \sum^n_{i=1}(X_i-p_i)}]
+\\&amp;=E\left[\prod^n_{i=1} e^{\alpha(X_i-p_i)}\right]
+\\&amp;=\prod^n_{i=1}E[e^{\alpha(X_i-p_i)}]
+\end{align}\)</p>
+
+<p>이때 상호 독립적인 확률 변수 $X_i$는 확률변수 $e^{\alpha (X_i-p_i)}$ 또한 상호 독립적으로 만드므로, 기댓값의 정의와 $\alpha &gt;0, q_i\leq 1, e^{\alpha q_i}\leq e^\alpha,e^{-\alpha p_i}\leq 1, e^x \ge 1+x$등의 부등식들에 의해 다음이 성립한다.</p>
+
+<p>\(\begin{align}
+E[e^{\alpha(X_i-p_i)}] &amp;= e^{\alpha(1-p_i)}p_i+e^{\alpha(0-p_i)}q_i
+\\&amp;= p_ie^{\alpha q_i}+q_ie^{-\alpha p_i}
+\\&amp;\leq p_ie^\alpha+1
+\\&amp;\leq \exp(p_ie^\alpha)
+\end{align}\)<br />
+여기서 $\exp(x)=e^x$는 지수함수를 의미한다.</p>
+
+<p>따라서 $\mu =\sum^n_{i=1}p_i$이므로, 다음이 성립하며,<br />
+\(\begin{align}
+E[e^{\alpha(X-\mu)}] &amp;= \prod^n_{i=1}E[e^{\alpha(X_i-p_i)}]
+\\&amp;\leq \prod^n_{i=1}\exp(p_ie^\alpha)
+\\&amp;= \exp\left(\sum_{i=1}^n p_ie^\alpha\right)
+\\&amp;= \exp(\mu e^\alpha)
+\label{eq:Expectation to exp func}
+\tag{5}
+\end{align}\)<br />
+식 $\refeq{eq:possibility bound by markov inequality}$, 식 $\refeq{eq:possibility bound by markov inequality with exponential}$, 식 $\refeq{eq:Expectation to exp func}$에 의해 다음이 성립한다.</p>
+
+\[\Pr\{X-\mu \geq r\}\leq \exp(\mu e^\alpha -\alpha r)
+\label{eq:upper bound of possibility}
+\tag{6}\]
+
+<p>이때, $\alpha =\ln(r/\mu)$로 대입하면 다음과 같은 식이 나온다.</p>
+
+\[\begin{align}
+\Pr\{X-\mu \geq r\} &amp;\leq \exp(\mu e^{\ln(r/\mu)}-r\ln(r/\mu))
+\\&amp;=\exp(r-r\ln(r/\mu))
+\\&amp;= \frac{e^r}{(r/\mu)^r}
+\\&amp;= (\frac{\mu e}{r})^r
+\end{align}\]
+
+<h4 id='따름-정리-Corollary-8'>따름 정리(Corollary) 8</h4>
+
+<p>언제나 같은 확률인 베르누이 시행에서는 이항 분포의 우측 꼬리에서 다음이 성립한다.</p>
+
+<p>성공확률이 p이며, 실패 확률이 $q=1-p$인 n번 시도하는 베르누이 시행에서 $r &gt; np$일 때, 다음이 성립한다.<br />
+\(\Pr\{X-np\geq r\}=\sum^n_{k=\lceil np+r \rceil}b(k;n,p)=(\frac{npe}{r})^r\)<br />
+<strong>증명</strong></p>
+
+<p>이항 분포의 기댓값을 유도하는 식 $\refeq{eq:expectation of binomial distribution}$에 의해 $\mu= E[X]=np$이 성립한다.</p>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/algorithm/MATH/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%88%98%ED%95%99%20%EA%B8%B0%EB%B3%B8-%EA%B8%B0%ED%95%98,%20%EC%9D%B4%ED%95%AD%20%EB%B6%84%ED%8F%AC.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/algorithm/MATH/알고리즘 수학 기본-기하, 이항 분포.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

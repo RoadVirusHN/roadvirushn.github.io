@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>DataVis-seaborn과 matplotlib 배우기 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="DataVis-seaborn과 matplotlib 배우기" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/AI/Data_Vis/seaborn%EA%B3%BC%20matplotlib.html" />
+<meta property="og:url" content="http://localhost:4000/articles/AI/Data_Vis/seaborn%EA%B3%BC%20matplotlib.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-14T13:41:08+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="DataVis-seaborn과 matplotlib 배우기" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-14T13:41:08+09:00","datePublished":"2022-12-14T13:41:08+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"DataVis-seaborn과 matplotlib 배우기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/AI/Data_Vis/seaborn%EA%B3%BC%20matplotlib.html"},"url":"http://localhost:4000/articles/AI/Data_Vis/seaborn%EA%B3%BC%20matplotlib.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">DataVis-seaborn과 matplotlib 배우기</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-12-14T13:41:08+09:00" itemprop="datePublished">Dec 14, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#matplotlib' id='markdown-toc-0-matplotlib'>matplotlib</a><ul><li><a href='#Figure-amp-Subplot' id='markdown-toc-0-Figure-amp-Subplot'>Figure &amp; Subplot</a></li> 
+<li><a href='#style' id='markdown-toc-0-style'>style</a></li> 
+<li><a href='#scatter-선점도' id='markdown-toc-0-scatter-선점도'>scatter(선점도)</a></li> 
+<li><a href='#기타-grpah' id='markdown-toc-0-기타-grpah'>기타 grpah</a></li> 
+
+</ul></li> 
+<li><a href='#seaborn' id='markdown-toc-0-seaborn'>seaborn</a><ul><li><a href='#introduction' id='markdown-toc-0-introduction'>introduction</a><ul>
+</ul></li> 
+
+</ul></li> 
+</ol>
+<h1 id='DataVis-seaborn과-matplotlib-배우기'>DataVis-seaborn과 matplotlib 배우기</h1>
+
+<ul>
+  <li>naver AI boost camp의 강의를 정리한 내용입니다.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install </span>seaborn
+conda <span class="nb">install </span>matplotlib
+
+pip <span class="nb">install </span>jupyterthemes <span class="c"># matplotlib의 테마를 바꿔서 그래프가 잘보이게 하자</span>
+jt <span class="nt">-l</span> <span class="c"># jupyter notebook 테마 리스트</span>
+jt <span class="nt">-t</span> <span class="o">[</span>원하는 테마]
+
+</code></pre></div></div>
+<p><strong>[code -1. 모듈 설치]</strong></p>
+
+<h2 id='matplotlib'>matplotlib</h2>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129113400037.png" alt="" /></p>
+
+<p><strong>[img 0. matplotlib 로고]</strong></p>
+
+<ul>
+  <li><em>파이썬에서 널리 사용되는 데이터 시각화 모듈</em></li>
+  <li>pyplot 객체를 사용하여 데이터를 표시, pyplot 객체에 그래프들을 쌓은 다음 flush(plt.show()를 해줘야 출력)</li>
+  <li>단점으로 고정된 argument가 없어 문서화가 애매함.</li>
+  <li>기본 figure 객체에 그래프가 그려짐</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">X_1</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">Y_1</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]</span>
+
+<span class="n">X_2</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">Y_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_1</span><span class="p">,</span> <span class="n">Y_1</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_2</span><span class="p">,</span> <span class="n">Y_2</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p><strong>[code 0-1. 기본적인 사용 방법]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129145927917.png" alt="" /></p>
+
+<p><strong>[img 0.  이러한 창이 팝업된다.]</strong></p>
+
+<h3 id='Figure-amp-Subplot'>Figure &amp; Subplot</h3>
+
+<ul>
+  <li>Matplotlib는 Figure 안에 여러개의 Axes를 생성하는 방식입니다.</li>
+</ul>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129150922634.png" alt="" /></p>
+
+<p><strong>[img 1. 생성 방식에 대한 그림]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 싸이즈 설정
+</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="c1">#34;b&amp;#34;, &amp;#34;g&amp;#34;, &amp;#34;r&amp;#34;, &amp;#34;c&amp;#34;, &amp;#34;m&amp;#34;, &amp;#34;y&amp;#34;, &amp;#34;k&amp;#34;]
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>  <span class="c1"># 두개의 plot 생성
+</span>    <span class="n">X_1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># 이걸 랜덤으로 하면 자기멋대로 그려진다.(즉 작은거부터 큰거 순으로 그리자)
+</span>    <span class="n">Y_1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">))]</span>
+
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">].</span><span class="n">plot</span><span class="p">(</span><span class="n">X_1</span><span class="p">,</span> <span class="n">Y_1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+
+</code></pre></div></div>
+<p><strong>[code 1. figure 위에 쌓아서 그리는 법]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129152259809.png" alt="" /></p>
+
+<p><strong>[img 1. 결과]</strong></p>
+
+<h3 id='style'>style</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># plt.style.use(&amp;#34;ggplot&amp;#34;)    # 스타일적용 사이트 참조
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_1</span><span class="p">,</span> <span class="n">Y_1</span><span class="p">,</span> <span class="n">color</span><span class="o">=&amp;</span><span class="c1">#34;b&amp;#34;, linestyle=&amp;#34;dashed&amp;#34;, label=&amp;#34;line_1&amp;#34;) # 선의 색깔, 선의 종류, 선의 라벨 설정, 색깔은 rgb color, predefined color 등 사용 가능
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_2</span><span class="p">,</span> <span class="n">Y_2</span><span class="p">,</span> <span class="n">color</span><span class="o">=&amp;</span><span class="c1">#34;r&amp;#34;, linestyle=&amp;#34;dotted&amp;#34;, label=&amp;#34;line_2&amp;#34;)
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#34;Line_1&amp;#34;)# 해당 x,y 좌표에 글자 생성
+</span><span class="n">plt</span><span class="p">.</span><span class="n">annotate</span><span class="p">(</span> <span class="c1"># 해당 위치에 arrow 생성
+</span>    <span class="o">&amp;</span><span class="c1">#34;line_2&amp;#34;,
+</span>    <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">175</span><span class="p">),</span>
+    <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=&amp;</span><span class="c1">#34;black&amp;#34;, shrink=0.05),
+</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">ls</span><span class="o">=&amp;</span><span class="c1">#34;--&amp;#34;, c=&amp;#34;.90&amp;#34;) # grid 생성
+</span><span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">(</span><span class="n">shadow</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fancybox</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">loc</span><span class="o">=&amp;</span><span class="c1">#34;upper right&amp;#34;) # 우측 위의 범례표 생성
+# shadow, fancybox= 그림자, 예쁜 표 설정
+</span><span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1"># 보여줄 좌표 범위 설정
+</span><span class="n">plt</span><span class="p">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#34;$y = ax+b$&amp;#34;) # 상단의 그래프 이름 설정, $$ 사이에 수학 latex 수식 사용 가능
+</span><span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#34;$x_line$&amp;#34;) # x좌표측 라벨 이름 설정
+</span><span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#34;y_line&amp;#34;)
+</span><span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#34;test.png&amp;#34;, c=&amp;#34;a&amp;#34;)# 표 저장
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p><strong>[code 2. styling을 위한 변수들]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129155121635.png" alt="" /></p>
+
+<p><strong>[img 2. 결과]</strong></p>
+<h3 id='scatter-선점도'>scatter(선점도)</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">data_2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data_1</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data_1</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=&amp;</span><span class="c1">#34;b&amp;#34;, marker=&amp;#34;x&amp;#34;) # c로 색깔, marker로 모양 지정
+# matplotlib의 공식 marker 또한 사용 가능
+</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data_2</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data_2</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=&amp;</span><span class="c1">#34;r&amp;#34;, marker=&amp;#34;o&amp;#34;)
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p><strong>[code 3. 기본값 scatter 함수 사용]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129221525873.png" alt="" /></p>
+
+<p><strong>[img 3. 함수 결과]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">area</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># area로 크기를 지정하고 alpha로 투명도 조정 
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p><strong>[code 3-1.  area를 적용한 scatter 함수 사용]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129221706370.png" alt="" /></p>
+
+<p><strong>[img 3-1. 함수 결과]</strong></p>
+
+<h3 id='기타-grpah'>기타 grpah</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">,</span> <span class="mf">51.0</span><span class="p">,</span> <span class="mi">17</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">22.0</span><span class="p">,</span> <span class="mf">52.0</span><span class="p">,</span> <span class="mi">19</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.00</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=&amp;</span><span class="c1">#34;b&amp;#34;, width=0.50)
+</span><span class="n">plt</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.50</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=&amp;</span><span class="c1">#34;g&amp;#34;, width=0.50)
+</span><span class="n">plt</span><span class="p">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=&amp;</span><span class="c1">#34;r&amp;#34;, width=0.50)
+# plt.barh 함수를 이용하면 가로 세로가 바뀐 그래프가 나온다.
+</span><span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.50</span><span class="p">,</span> <span class="p">(</span><span class="o">&amp;</span><span class="c1">#34;A&amp;#34;, &amp;#34;B&amp;#34;, &amp;#34;C&amp;#34;, &amp;#34;D&amp;#34;)) # 자리를 벌려줌, yticks도 존재하지만 y는 bottom arg를 이용하기도함
+</span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p><strong>[code 4. bar 함수 사용]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129222506401.png" alt="" /></p>
+
+<p><strong>[img 4. bar 함수 결과]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p><strong>[code 4-1. histogram 함수 사용]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129222627427.png" alt="" /></p>
+
+<p><strong>[img 4-1. histogram 함수 사용 결과 ]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p><strong>[code 4-2. boxplot 함수 사용]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210129222719005.png" alt="" /></p>
+
+<p><strong>[img 4-2. histogram 함수 사용 결과 ]</strong></p>
+
+<ul>
+  <li>박스 범위는 IQR(Interquartile Range), 박스 사이는 25~75% 사이이며, 그 위에 박힌 점은 outlier, 즉 이상치다.</li>
+  <li>중간의 노란선은 50% 지점이다.</li>
+</ul>
+
+<h2 id='seaborn'>seaborn</h2>
+
+<h3 id='introduction'>introduction</h3>
+
+<ul>
+  <li>통계적 데이터의 visualization, matplotlib의 wrapper이며, 더욱 쉽게 사용하게 해준다.</li>
+  <li>튜토리얼이 잘되있으니 추천</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install </span>seaborn
+
+</code></pre></div></div>
+<p><strong>[code 5. seaborn 인스톨]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+
+<span class="n">sns</span><span class="p">.</span><span class="nb">set</span><span class="p">(</span><span class="n">style</span><span class="o">=&amp;</span><span class="c1">#34;darkgrid&amp;#34;)# 테마 제공1, 홈페이지 참조
+</span><span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#34;tips&amp;#34;)# 기본 제공 dataset
+</span><span class="n">fmri</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#34;fmri&amp;#34;)# 기본 제공 dataset2
+</span>
+</code></pre></div></div>
+<p><strong>[code 5-1. seabron 및 기본 datset import]</strong></p>
+
+<h4 id='기본-사용법'>기본 사용법</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=&amp;</span><span class="c1">#34;timepoint&amp;#34;, y=&amp;#34;signal&amp;#34;, hue=&amp;#34;event&amp;#34;, data=fmri) # 선으로 되어있는 그래프 생성
+# 중앙선은 평균, 넓이는 분포, 기본적으로 정렬이 되서 연속적으로 표현됨.
+# hue를 통해 해당 category 별로변하는 데이터를 보여줌
+</span><span class="n">fmri</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># seaborn의 샘플 추출법, random으로 추출 가능
+# 물론, 기본적인 fmri.head() 또한 가능하다.
+</span>
+</code></pre></div></div>
+<p><strong>[code 6. line plot 사용과 샘플 추출]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210130150153587.png" alt="" /></p>
+
+<p><strong>[img 6. lineplot example]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210130150111395.png" alt="" /></p>
+
+<p><strong>[img 6-1. sample example]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="p">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=&amp;</span><span class="c1">#34;total_bill&amp;#34;, y=&amp;#34;tip&amp;#34;, hue=&amp;#34;time&amp;#34;, data=tips)
+</span><span class="n">sns</span><span class="p">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=&amp;</span><span class="c1">#34;total_bill&amp;#34;, y=&amp;#34;tip&amp;#34;, data=tips) # 중간에 선형함수를 줄쳐주는 scatter plot
+</span>
+</code></pre></div></div>
+<p><strong>[code 6-1. scatter plot 코드]</strong></p>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210130154253686.png" alt="" /><img src="/assets/img/seaborn과 matplotlib/image-20210130154146417.png" alt="" /></p>
+
+<p><strong>[img 6-2. scatter plot 와 regplot 결과]</strong></p>
+
+<ul>
+  <li>이외에도 barplot, distplot 등의 plot이 있다.</li>
+</ul>
+
+<h4 id='기타-추가-적인-plots'>기타 추가 적인 plots</h4>
+
+<ul>
+  <li>vilolinplot : boxplot에 distribution을 함께 표현</li>
+  <li>stripplot : scatter와 category 정보를 함께 표현</li>
+  <li>swarmplot : 분포와 함께 scatter를 함께 표현
+    <ul>
+      <li>catplot의 kind에 ‘swarm’값을 넣은것과 같음</li>
+    </ul>
+  </li>
+  <li>pointplot : category 별로 numeric의 평균, 신뢰구간 표시</li>
+  <li>regplot : scatter + 선형함수를 함께 표시</li>
+  <li>FacetGrid : 4개 정도의 grid를 만든 뒤, map함수를 통해각 그리드에 들어가야할 plot을 설정해줌</li>
+</ul>
+
+<h4 id='multiple-plots'>multiple plots</h4>
+
+<ul>
+  <li>한개 이상의 도표를 하나의 plot에 작성</li>
+  <li>Axes를 사용해서 grid를 나누는 방법</li>
+</ul>
+
+<p><img src="/assets/img/seaborn과 matplotlib/image-20210130151746857.png" alt="" /></p>
+
+<p><strong>[img 8. multiple plot 사용 예제]</strong></p>
+
+<ul>
+  <li>replot : Numeric 데이터 중심의 부포/ 선형 표시</li>
+  <li>catplot : category 데이터 중심의 표시</li>
+  <li>FacetGrid : 특정조건에 따른 다양한 plot을 grid로 표시</li>
+  <li>pairplot : 데이터 간의 상관관계 표시</li>
+  <li>implot : regression 모델과 category 데이터를 함께 표시</li>
+</ul>
+
+</div>
+
+  </div><a class="u-url" href="/articles/AI/Data_Vis/seaborn%EA%B3%BC%20matplotlib.html" hidden></a>
+  <p class="u-path" hidden>_articles/AI/Data_Vis/seaborn과 matplotlib.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

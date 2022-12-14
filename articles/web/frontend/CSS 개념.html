@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>CSS 개념 | The Digital garden of Nurgle.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="CSS 개념" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="CSS CSS의 개념과 기본 사용법" />
+<meta property="og:description" content="CSS CSS의 개념과 기본 사용법" />
+<link rel="canonical" href="http://localhost:4000/articles/web/frontend/CSS%20%EA%B0%9C%EB%85%90.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/frontend/CSS%20%EA%B0%9C%EB%85%90.html" />
+<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-11-02T17:21:08+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CSS 개념" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-11-02T17:21:08+09:00","datePublished":"2019-11-02T17:21:08+09:00","description":"CSS CSS의 개념과 기본 사용법","headline":"CSS 개념","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/frontend/CSS%20%EA%B0%9C%EB%85%90.html"},"url":"http://localhost:4000/articles/web/frontend/CSS%20%EA%B0%9C%EB%85%90.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/COMPUTER_SCIENCE/" >COMPUTER_SCIENCE</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 5
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 15 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 14 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/WEB/" >WEB</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a class="category-link" href="/categories/ETC/" >ETC</a>
+    </h3>
+    <span style="font-size: xx-small;">
+      📄: 9 
+      
+    </span>
+    <ul class="child-category-list">
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <span class="category-drop-down">▶</span>
+      
+      <a class="category-link" href="/categories/AI/" >AI</a>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">CSS 개념</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2019-11-02T17:21:08+09:00" itemprop="datePublished">Nov 2, 2019
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <h1 id="css">CSS</h1>
+<h2 id='CSS의-개념과-기본-사용법'>CSS의 개념과 기본 사용법</h2>
+
+<p>HTML =&gt; 정보와 구조화<br />
+CSS =&gt; styling의 정의</p>
+
+<p>이 둘은 각자 문법이 다른 별개의 언어, 하지만 HTML이 없으면 CSS는 무의미</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="o">&amp;</span><span class="err">#123</span><span class="o">;</span> 
+	<span class="nt">color</span><span class="nd">:blue</span><span class="o">;</span>
+	<span class="nt">font-size</span><span class="o">:</span><span class="err">15</span><span class="nt">px</span><span class="o">;</span> 
+<span class="o">&amp;</span><span class="err">#125</span><span class="o">;</span>
+
+</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">h1</code> : 셀렉터(selector),</li>
+  <li><code class="language-plaintext highlighter-rouge">color:blue;</code> : 선언
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">color</code>: 프로퍼티(property), <code class="language-plaintext highlighter-rouge">blue</code>: 값(value)</li>
+    </ul>
+  </li>
+  <li>세미콜론(;)으로 각각의 값을 구분</li>
+  <li>CSS의 주석 설정은 <code class="language-plaintext highlighter-rouge">/* 내용 */</code></li>
+</ul>
+
+<h2 id='CSS-활용'>CSS 활용</h2>
+
+<h3 id='CSS-활용하기-1-Inline-인라인'>CSS 활용하기 1. Inline(인라인)</h3>
+
+<div class="callout callout-example" id="callout-10329366-27d9-4045-b3fc-2182c7e6d480">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>00_intro.html 바디 부분
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">style=</span><span class="s">"color:red;"</span><span class="nt">&gt;</span>CSS intro<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+<ul>
+  <li>html 태그 안에 인라인으로 CSS를 적용해본 것, 유지보수가 힘드므로 금지된다.</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<h3 id='CSS-활용하기-2-CSS-나누기'>CSS 활용하기 2. CSS 나누기</h3>
+
+<div class="callout callout-example" id="callout-5d9095c8-a566-4d2c-9760-c028f8621a9d">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>00_intro.html 파일 헤더와 바디 부분
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;style&gt;</span> 
+    <span class="nt">h2</span><span class="p">{</span> <span class="err">&lt;!--보통</span> <span class="err">여러값이</span> <span class="err">나오므로</span> <span class="err">CSS</span> <span class="err">사용시</span> <span class="err">여러줄로</span> <span class="err">나눔--&gt;</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+        <span class="nl">font-size</span><span class="p">:</span><span class="m">50px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>CSS is awesome<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='CSS-활용하기-3-파일-분리하기'>CSS 활용하기 3.파일 분리하기</h3>
+
+<div class="callout callout-example" id="callout-041cae44-a8b4-4a8d-bca7-537d3104f664">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>같은 폴더 내의 00__intro css 파일
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-0afa7b95-093a-429a-b821-53768d2519d9">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>00_intro.html 파일 헤더와 바디 부분
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"00_intro css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-tip" id="callout-2bf3a1d7-d16c-4c2b-98cb-46b91fcfa43a">
+      <div class="header">
+        <span class="emoji">💡</span>
+        <span class="title"><strong>vscode 기능
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>lorem ipsum 기능: 랜덤의 의미없는 문장 만들어줌</p>
+<pre><code class="language-txt">lorem{단어수}
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<h2 id='값'>값</h2>
+
+<p>값 : 키워드, 크기 단위, 색깔 등이 들어갈 수 있음</p>
+<ul>
+  <li>키워드 예시 : <code class="language-plaintext highlighter-rouge">display: block</code>, <code class="language-plaintext highlighter-rouge">visiblity: hidden</code> 등…</li>
+</ul>
+
+<p>키워드의 경우 개발자 도구로 확인 가능</p>
+
+<p><img src="/assets/img/CSS 개념/image-20221206011124877.png" alt="" /></p>
+
+<ul>
+  <li>주황색 영역 : 설정된 크기 영역</li>
+  <li>파란색 영역 : 실제로 해당 요소가 차지하고 있는 부분</li>
+</ul>
+
+<div class="callout callout-example" id="callout-b98f1ba8-439c-4d41-8618-5eab008513df">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>CSS 값 설정 예시 (01_css_val css 파일)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<pre><code class="language-CSS">/* CSS 주석 #으로 시작하는 것은 아이디이다.*/
+#hello {
+    font-size: 50px;
+}
+#welcome{
+    font-size: 50%; /* 기존의 크기 대비해서 바꿈*/
+}
+#lunch{
+    font-size: 5em; /* 기본설정의 x배 커지게 함  %와 마찬가지로 곱셈됨*/
+}
+/*div는 부모*/
+div{
+    width: 50%;
+}
+/*h1은 자식, 부모의 width를 상속받아서 결국은 0.5 * 0.5 의 값을 갖는다.*/
+h1{
+    width: 50%;
+}
+#snack {
+    font-size: 0.5rem;
+}
+#menu { /*화면 크기에 상대적으로 크기가 바뀌는 반응형 단위*/
+    background-color: red;
+    width: 50vw;
+    height: 50vh;
+    /*프로퍼티값 앞에 콜론을 붙이고 한칸 띄우는게 국룰*/
+}
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-81bc3769-8a5b-40ec-9974-814f37b8745c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>CSS 값 설정 예시 (01_css_val.html 파일)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<pre><code class="language-HTML">&lt;link rel="stylesheet" href="01_css_val css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;P id="hello"&gt;안뇽&lt;/P&gt;&lt;!--px 단위--&gt;
+    &lt;P id="welcome"&gt;반갑습니다&lt;/P&gt; &lt;!--% 단위--&gt;
+    &lt;h1&gt;
+        &lt;P id="lunch"&gt;점심시간입니다.&lt;/P&gt;&lt;!--em 단위--&gt;
+    &lt;/h1&gt;
+    &lt;h1&gt;
+        &lt;p id="snack"&gt;오늘 간식은 도시락&lt;/p&gt;&lt;!--rem 단위--&gt;
+    &lt;/h1&gt;
+    &lt;div&gt;
+        &lt;h1&gt;배고파 &lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;h1 id="menu"&gt;오늘의 메뉴&lt;/h1&gt;&lt;!--viewport 단위--&gt;
+&lt;/body&gt;
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<h3 id='px'>px</h3>
+
+<ul>
+  <li>한 픽셀은 RGB로 색을 구분하여 표현하며, 매우 작은 사각형</li>
+  <li>디바이스별로 픽셀의 크기는 제각각, 대부분 브라우저는 1px를 1/96인치로 지정</li>
+</ul>
+
+<h3 id=''>%</h3>
+<p>백분율 단위의 상대 단위이다.<br />
+요소에 지정된 사이즈(상속된 사이즈나 디폴트 사이즈)에 상대적인 사이즈를 설정한다.<br />
+부모와 상속, 즉 곱셈 됨</p>
+<h3 id='em'>em</h3>
+<p>em은 배수 단위로 상대 단위이다. 요소에 지정된 사이즈에 상대적인 사이즈를 설정한다. %와 마찬가지로 곱셈, 즉 상속됨</p>
+<h3 id='rem'>rem</h3>
+<p>em과 비슷하나 상대 단위가 아닌, 절대 단위, 즉 2배로 설정하면 다른 값을 다 곱해도 2배로 설정됨</p>
+<ul>
+  <li>보통 1rem은 16px</li>
+</ul>
+
+<h3 id='viewport-단위'>viewport 단위</h3>
+<p>디바이스마다 다른 크기의 화면을 가지고 있기 때문에 상대적인 단위인 viewport를 기준으로 표현하는 단위, 인터넷창이나 모니터크기를 바꾸면 동적으로 바뀐다. 반응형 단위<br />
+IE 8 이하는 지원하지 않으며 IE 9~11, Edge는 지원이 완전하지 않다</p>
+
+<h3 id='색상-표현-단위'>색상 표현 단위</h3>
+<p>HEX 표현: 16진수의 두자리씩 RGB 표현 <code class="language-plaintext highlighter-rouge">\#24f4cd</code>, <code class="language-plaintext highlighter-rouge">\#ffffff(흰색)</code><br />
+RGB 표현: 빨강, 초록, 파랑이 섞이는 정도를 표현 (0~255)<br />
+RGBA 표현: RGB + 투명도 (alpha)</p>
+<h2 id='Box-model'>Box model</h2>
+<p><code class="language-plaintext highlighter-rouge">margin</code> : 내용과 내용사이의 여백<br />
+<code class="language-plaintext highlighter-rouge">border</code>: 테두리 영역<br />
+<code class="language-plaintext highlighter-rouge">padding</code>: 테두리 안쪽의 내부 여백, 요소에 적용된 요소들이 내용과 함께 적용됨<br />
+<code class="language-plaintext highlighter-rouge">contents</code>: 내용, 역시 스타일 적용됨</p>
+
+<div class="callout callout-example" id="callout-3658dff4-27f0-4cb3-8d59-e8ba59d56a1c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Box model 예시(02_box.html)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"ie=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"02_box css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"margin border"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"margin padding"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"margin border"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"margin"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"margin padding"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"margin-1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"margin-2"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"margin-3"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"margin-4"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-a35f686b-983c-43da-a0a0-9834b1198561">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Box model 예시 CSS (02_box css)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span><span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">196</span><span class="p">,</span> <span class="m">61</span><span class="p">,</span> <span class="m">61</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.margin</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.padding</span><span class="p">{</span>
+    <span class="nl">padding-top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.border</span><span class="p">{</span>
+    <span class="c">/* border-width: 2px;
+    border-color: blue;
+    border-style: dotted; */</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">3px</span> <span class="no">blue</span> <span class="nb">dotted</span><span class="p">;</span> <span class="c">/*위의 축약형*/</span>
+<span class="p">}</span>
+<span class="nc">.margin-1</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span> 
+    <span class="c">/* 상하 좌우 전부 마진 10 */</span>
+<span class="p">}</span>
+<span class="nc">.margin-2</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="c">/* 위 아래 마진 10px, 20px */</span>
+<span class="p">}</span>
+<span class="nc">.margin-3</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span> <span class="m">30px</span><span class="p">;</span>
+    <span class="c">/*위 10 양옆 20 아래 30px 마진 생김*/</span>
+<span class="p">}</span>
+<span class="nc">.margin-4</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span> <span class="m">30px</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="c">/* 위 마진 부터 시계방향으로 10, 20, 30, 40 px 마진 생김 */</span>
+<span class="p">}</span>
+<span class="c">/*border, padding에도 적용됨*/</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='margin'>margin</h3>
+<ul>
+  <li>
+    <p>id 속성 <br />
+특정 id 속성을 가진 태그 하나에만 적용할때 쓰는 속성, CSS에서 앞에 #을 붙여 표현</p>
+  </li>
+  <li>class 속성 <br />
+같은 클래스 속성의 태그를 전부 적용할때 쓰는 속성, CSS에서 앞에 .(점)을 붙여 표현
+    <ul>
+      <li>각기 다른 class를 한 태그에 스페이스바(공백)으로 나누어 적용할 수 있다.</li>
+    </ul>
+  </li>
+  <li>마진 상쇄현상: 다른 존재의 마진과 상쇄됨
+    <h3 id='padding'>padding</h3>
+  </li>
+</ul>
+
+<h3 id='border'>border</h3>
+
+<h3 id='shorthand'>shorthand</h3>
+
+<h2 id='Display'>Display</h2>
+<p>display 프로퍼티를 이용해 block과 inline 그리고 inline-block, none을 정해줄 수 있다. 원래 기본이 block이여도 inline으로 바꿀 수 잇음</p>
+
+<div class="callout callout-example" id="callout-f81b6c28-a96b-4d31-9b98-1148016c67c1">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>03_display css 파일 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">cornflowerblue</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.half</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.b</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.i</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.bi</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.bg</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(https://picsum.photos/200/300)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.text</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Saira Stencil One'</span><span class="p">,</span> <span class="nb">cursive</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-6343d3f0-6010-4105-bff4-de085ee6620c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Display 예시 (03_display.html)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"ie=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/css?family=Fira+Code|Saira+Stencil+One&amp;display=swap"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"03_display.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>div는 block입니다.<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"half i"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>test<span class="nt">&lt;/span&gt;</span> <span class="c">&lt;!-- &lt;h1&gt;여기는 절반만!&lt;/h1&gt; --&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!-- &lt;h1&gt;여기는 h1입니다.&lt;/h1&gt; --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"half i"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>test<span class="nt">&lt;/span&gt;</span> <span class="c">&lt;!-- &lt;h1&gt;여기는 절반만!&lt;/h1&gt; --&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bi"</span><span class="nt">&gt;</span>여기는 span<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"b"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"date"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"bg"</span><span class="nt">&gt;</span>hello.<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>ooh yeah.<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='block'>block</h3>
+<ul>
+  <li>항상 새로운 라인에서 시작한다.</li>
+  <li>너비가 정해지면 마진으로 나머지 영역을 채움(margin-right: auto;(기본값)) margin-left: auto; 도 같이 하면 중앙 정렬이 됨</li>
+  <li>화면 크기 전체의 가로폭을 차지한다(width: 100%)</li>
+  <li>block 레벨 요소 내에 inline</li>
+  <li>block 레벨 요소의 예
+    <h3 id='inline'>inline</h3>
+  </li>
+  <li>span, input 등</li>
+  <li>새로운 라인에서 시작하지 않으며 문장의 중간에 들어갈 수 있따.</li>
+  <li>content의 너비만큼 가로폭을 차지한다.</li>
+  <li>width, height, margin-top, margin-bottom 같은 프로퍼티를 지정할 수 없다.</li>
+  <li>상, 하 여백은 line-height로 지정한다.</li>
+</ul>
+
+<h3 id='inline-block'>inline-block</h3>
+<ul>
+  <li>두 요소를 모두 가지고 있는 성질, 마진을 줄 수도 있음</li>
+  <li>inline 레벨 요소처럼 한줄에 표시되면서 마직 속성을 모두 정해줄 수 있다.
+    <h3 id='none'>none</h3>
+  </li>
+  <li>적용하면 보이지않음, 동적으로 웹을 만들어 사라지게 만들고 싶을때 씀 (공간조차 사라짐0)</li>
+</ul>
+
+<h2 id='visibility-속성'>visibility 속성</h2>
+<h3 id='visible'>visible</h3>
+<ul>
+  <li>보이게 한다
+    <h3 id='hidden'>hidden</h3>
+  </li>
+  <li>안보이게 한다, none과 달리 사라지진 않고 보이지만 않는다. 영역을 그대로 차지하고 있음</li>
+</ul>
+
+<h2 id='background-image-속성'>background-image 속성</h2>
+<ul>
+  <li>url(https://picsum.photos/200/300);을 지정하면 그 공간만큼의 사진을 보여줌</li>
+</ul>
+
+<h2 id='font-size-font-family-letter-spacing-white-space-text-align-등이-있음'>font-size, font-family, letter-spacing, white space, text-align 등이 있음</h2>
+
+<h2 id='position-속성'>position 속성</h2>
+<ul>
+  <li>left: , right: , bottom, top 요소로 얼마나 떨어져야 하는 가를 크기로 정해줌</li>
+  <li>즉 얼마나 떨어져야하는가 ex) left: 50px == 왼쪽으로 부터 50px 떨어짐</li>
+  <li>만약 left: 0px, right: 0px 처럼 서로 충돌하면 왼쪽, 그리고 위쪽이 우선됨</li>
+  <li>각 div의 중심은 div가 그 해당 모서리에서 가장 가까운 쪽으로 결정되는듯?</li>
+  <li>Ctrl + enter로 코드 중간에 줄바꿈 가능</li>
+</ul>
+
+<div class="callout callout-example" id="callout-cf656f17-7915-4328-a2fd-fc95490822a6">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Position 속성 예시 (04_postion css)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.blue</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">static</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.red</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.green</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>    
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span> 
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.yellow</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.parent</span> <span class="p">{</span>   
+    <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.children</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">pink</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-c3aff6ad-f0c3-4be8-808f-78f16ed03792">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>position 예시 (04_position.html)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"ie=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"04_position css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"blue"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"red"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"green"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"parent"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"children"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"yellow"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id='static'>static</h3>
+<ul>
+  <li>아무것도 안적은 기본값</li>
+  <li>안움직임, absolute의 부모가 될 수 없음</li>
+</ul>
+
+<h3 id='relative'>relative</h3>
+<ul>
+  <li>left: , right: , bottom, top 요소로 정한 크기만큼 원래 있어야하는 위치를 중심으로 여백을 줌</li>
+  <li>전체 영역 (마진, 보더 등)이 전부 움직임, 원래 위치에도</li>
+</ul>
+
+<h3 id='absolute'>absolute</h3>
+<ul>
+  <li>부모(body가 부모일 경우 화면의 왼쪽 상단)를 중심으로 left: , right: , bottom, top 요소 크기만큼 여백을 줌, 그만큼 떨어짐</li>
+  <li>부모를 중심으로 이동함,</li>
+  <li>부모는 position 속성이 static이 아니여야 함, 부모 바깥으로 나갈 수도 있음</li>
+</ul>
+
+<h3 id='fixed-고정위치'>fixed(고정위치)</h3>
+<ul>
+  <li>부모 자식 관계없이 브라우저 뷰포트(우측 상단)를 중심으로 이동함</li>
+  <li>스크롤을 움직여도 따라 움직임, 상단 메뉴바 같은거 만들 때</li>
+</ul>
+
+
+</div>
+
+  </div><a class="u-url" href="/articles/web/frontend/CSS%20%EA%B0%9C%EB%85%90.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/frontend/CSS 개념.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>
