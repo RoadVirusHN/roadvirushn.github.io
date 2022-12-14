@@ -81,20 +81,19 @@ function renderCategories(drawer, drawerStatus) {
     });
 }
 function setCategoryButtonEV(category, drawerStatus) {
-    const categoryDropDown = category.querySelector("span.category-drop-down");
-    const categoryLink = category.querySelector("a.category-link");
+    const categoryDropDown = category.querySelector("a.category-drop-down");
+    const categoryLink = category.querySelector("span.category-link");
     const childCategory = category.querySelector("ul.child-category-list");
-    if (categoryDropDown !== null) {
-        categoryDropDown.addEventListener("click", (e) => {
-            const button = e.target;
+    if (categoryLink !== null) {
+        categoryLink.addEventListener("click", () => {
             if (drawerStatus[categoryLink.innerText] === undefined ||
                 drawerStatus[categoryLink.innerText] === "up") {
-                button.innerText = "▼";
+                categoryDropDown.innerText = "▼";
                 childCategory.style.display = "list-item";
                 drawerStatus[categoryLink.innerText] = "down";
             }
             else {
-                button.innerText = "▶";
+                categoryDropDown.innerText = "▶";
                 childCategory.style.display = "none";
                 drawerStatus[categoryLink.innerText] = "up";
             }
@@ -103,10 +102,10 @@ function setCategoryButtonEV(category, drawerStatus) {
     }
 }
 function renderCategoryByStatus(category, drawerStatus) {
-    const categoryDropDown = category.querySelector("span.category-drop-down");
+    const categoryDropDown = category.querySelector("a.category-drop-down");
     if (categoryDropDown === null)
         return;
-    const categoryLink = category.querySelector("a.category-link");
+    const categoryLink = category.querySelector("span.category-link");
     const childCategory = category.querySelector("ul.child-category-list");
     if (drawerStatus[categoryLink.innerText] === undefined ||
         drawerStatus[categoryLink.innerText] === "up") {
