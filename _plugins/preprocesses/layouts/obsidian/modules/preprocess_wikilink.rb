@@ -59,7 +59,7 @@ module PreprocessWikiLink
     alt_text || external_url || raw_headings_to_innertext((article_name || '') + (raw_headings || '')) || 'Empty Link'
   end
 
-  def build_href(site, link_data, is_innerlink. article_title)
+  def build_href(site, link_data, is_innerlink, article_title)
     external_url, article_name, target_heading =
       link_data.values_at(:external_url, :article_name, :target_heading)
 

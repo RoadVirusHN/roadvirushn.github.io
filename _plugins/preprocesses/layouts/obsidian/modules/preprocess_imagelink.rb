@@ -15,7 +15,7 @@ module PreprocessImageLink
   # rubocop:disable Metrics/MethodLength(RuboCop)
   # rubocop:disable Metrics/AbcSize(RuboCop)
   def convert_imagelink(article)
-    static_dir = "/#{Jekyll.configuration({})['static_img_dir']}/#{article.date.strftime('%Y-%m-%d')}-#{article['slug']}"
+    static_dir = "/#{Jekyll.configuration({})['static_img_dir']}/#{article['slug']}"
     article.content = article.content
         .gsub(MARKDOWN_IMAGE_LINK_REGEX) do |_matched|
       build_markdown_img({

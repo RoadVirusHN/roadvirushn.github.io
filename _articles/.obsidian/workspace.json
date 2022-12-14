@@ -13,9 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "web/backend/2020-02-14-django.md",
+                "file": "AI/MATH/AI 수학 기본.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "web/backend/2020-02-14-django.md",
+                "file": "AI/MATH/AI 수학 기본.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "web/backend/2020-02-14-django.md",
+                "file": "AI/MATH/AI 수학 기본.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "web/backend/2020-02-14-django.md"
+                "file": "AI/MATH/AI 수학 기본.md"
               }
             }
           },
@@ -156,15 +156,15 @@
   },
   "active": "9218438fd39b00d1",
   "lastOpenFiles": [
+    "AI/AIMath/[Week2]AIMath/AIMath.md",
+    "etc/2022-06-11-English Determiner.md",
+    "etc/2022-03-23-git-deploy-key-개념.md",
+    "web/backend/2020-02-14-django.md",
     "web/CI,CD/2021-3-23-docker-compose-개념.md",
     "web/CI,CD/2021-03-23-Docker.md",
     "computer_science/algorithm/2020-08-13-알고리즘-상.md",
     "computer_science/algorithm/2020-08-19-알고리즘-중.md",
     "computer_science/algorithm/2020-08-23-알고리즘-하.md",
-    "computer_science/algorithm/2021-09-19-알고리즘이란.md",
-    "computer_science/algorithm/2022-09-23-Python-for-Algorithms-Tree.md",
-    "computer_science/algorithm/2022-09-22-Python-for-Algorithms-Graph.md",
-    "computer_science/algorithm/2022-09-23-Python-for-Algorithms-etc.md",
-    "computer_science/algorithm/2022-09-19-Python-for-Algorithms-libraries.md"
+    "computer_science/algorithm/2021-09-19-알고리즘이란.md"
   ]
 }
