@@ -118,13 +118,13 @@ div.my-description {
     & > li h3 {
       cursor: pointer;
     }
-    span.category-drop-down{
+    a.category-drop-down{
       font-size: xx-small;
       display: table-cell;
       vertical-align: middle;
       padding-right: 5px;
     }
-    a.category-link{
+    span.category-link{
       background-color: lightgray;
       padding: 0px 1px;
       border-radius: 2px;

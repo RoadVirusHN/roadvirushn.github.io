@@ -120,26 +120,25 @@ function setCategoryButtonEV(
   drawerStatus: drawerStatus
 ): void {
   const categoryDropDown = category.querySelector(
-    "span.category-drop-down"
+    "a.category-drop-down"
   ) as HTMLElement;
   const categoryLink = category.querySelector(
-    "a.category-link"
+    "span.category-link"
   ) as HTMLAnchorElement;
   const childCategory = category.querySelector(
     "ul.child-category-list"
   ) as HTMLUListElement;
-  if (categoryDropDown !== null) {
-    categoryDropDown.addEventListener("click", (e) => {
-      const button = e.target as HTMLElement;
+  if (categoryLink !== null) {
+    categoryLink.addEventListener("click", () => {
       if (
         drawerStatus[categoryLink.innerText] === undefined ||
         drawerStatus[categoryLink.innerText] === "up"
       ) {
-        button.innerText = "▼";
+        categoryDropDown.innerText = "▼";
         childCategory.style.display = "list-item";
         drawerStatus[categoryLink.innerText] = "down";
       } else {
-        button.innerText = "▶";
+        categoryDropDown.innerText = "▶";
         childCategory.style.display = "none";
         drawerStatus[categoryLink.innerText] = "up";
       }
@@ -153,11 +152,11 @@ function renderCategoryByStatus(
   drawerStatus: drawerStatus
 ): void {
   const categoryDropDown = category.querySelector(
-    "span.category-drop-down"
+    "a.category-drop-down"
   ) as HTMLElement;
   if (categoryDropDown === null) return;
   const categoryLink = category.querySelector(
-    "a.category-link"
+    "span.category-link"
   ) as HTMLAnchorElement;
   const childCategory = category.querySelector(
     "ul.child-category-list"
