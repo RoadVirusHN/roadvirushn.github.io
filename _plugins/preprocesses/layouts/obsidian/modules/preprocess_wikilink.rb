@@ -33,7 +33,7 @@ module PreprocessWikiLink
 
     is_innerlink = link_in_this_article?(link_data, article)
 
-    href = build_href(site, link_data, is_innerlink)
+    href = build_href(site, link_data, is_innerlink, article['title'])
 
     add_link_properties(link_data[:external_url], is_innerlink, innertext, href)
   end
@@ -59,7 +59,7 @@ module PreprocessWikiLink
     alt_text || external_url || raw_headings_to_innertext((article_name || '') + (raw_headings || '')) || 'Empty Link'
   end
 
-  def build_href(site, link_data, is_innerlink)
+  def build_href(site, link_data, is_innerlink. article_title)
     external_url, article_name, target_heading =
       link_data.values_at(:external_url, :article_name, :target_heading)
 
@@ -67,7 +67,7 @@ module PreprocessWikiLink
       (if is_innerlink
          (raw_headings_to_href(target_heading) || '#')
        else
-         link_to_other_article(site.collections['articles'], article_name, target_heading)
+         link_to_other_article(site.collections['articles'], article_name, target_heading, article_title)
        end)
   end
 
@@ -79,16 +79,16 @@ module PreprocessWikiLink
     string&.downcase&.gsub(/^#+ +/, '')&.gsub(%r{[!@$%^&*()_+\-=\[\]{};':"\\|,.<>/? ]+$}, '')&.gsub(%r{^[!@$%^&*()_+\-=\[\]{};':"\\|,.<>/? ]+}, '')&.gsub(%r{[!@$%^&*()_+\-=\[\]{};':"\\|,.<>/? ]+}, '-')
   end
 
-  def link_to_other_article(articles, article_name, target_heading)
-    article = find_article_by_name(articles, article_name)
+  def link_to_other_article(articles, target_article_name, target_heading, article_title)
+    article = find_article_by_name(articles, target_article_name)
 
     if article.length == 1
       article[0].url + (raw_headings_to_href(target_heading) || '')
     elsif article.length > 1
-      puts "ERROR article title: #{article_name} => Duplicated articles."
+      puts "ERROR IN #{article_title}: taget_title: #{target_article_name} => Duplicated articles."
       article[0].url + (raw_headings_to_href(target_heading) || '')
     elsif article.empty?
-      puts "ERROR article title: #{article_name} => No such a article in your website."
+      puts "ERROR IN #{article_title}: target_title: #{target_article_name} => No such a article in your website."
       ''
     end
   end
