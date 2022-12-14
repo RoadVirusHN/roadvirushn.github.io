@@ -100,16 +100,16 @@ div.my-description {
     margin-left: 0px; }
     #drawer ul.category-list > li h3 {
       cursor: pointer; }
-    #drawer ul.category-list span.category-drop-down {
+    #drawer ul.category-list a.category-drop-down {
       font-size: xx-small;
       display: table-cell;
       vertical-align: middle;
       padding-right: 5px; }
-    #drawer ul.category-list a.category-link {
+    #drawer ul.category-list span.category-link {
       background-color: lightgray;
       padding: 0px 1px;
       border-radius: 2px; }
-      #drawer ul.category-list a.category-link:hover {
+      #drawer ul.category-list span.category-link:hover {
         text-decoration: none; }
   #drawer ul.category-list ul.child-category-list {
     margin: 0; }
