@@ -4,16 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "0597100afae73d57",
+        "id": "c8547fb7c5d5bb0a",
         "type": "tabs",
         "children": [
           {
-            "id": "9218438fd39b00d1",
+            "id": "2d122b89c1c11f03",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/MATH/AI 수학 기본.md",
+                "file": "computer_science/algorithm/Python for Algorithms-Graph.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e3ef9e34cb427c96",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 10-파일 관리.md",
                 "mode": "source",
                 "source": false
               }
@@ -67,6 +79,18 @@
             "id": "5038fe9288fe9965",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/OS/Linux 계정 및 권한.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "aad7f202712e20d0",
+            "type": "leaf",
+            "state": {
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
@@ -74,11 +98,11 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 321.5
+    "width": 450.5
   },
   "right": {
     "id": "2f957799fb48536f",
@@ -94,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AI/MATH/AI 수학 기본.md",
+                "file": "computer_science/algorithm/Python for Algorithms-Graph.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AI/MATH/AI 수학 기본.md",
+                "file": "computer_science/algorithm/Python for Algorithms-Graph.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AI/MATH/AI 수학 기본.md"
+                "file": "computer_science/algorithm/Python for Algorithms-Graph.md"
               }
             }
           },
@@ -154,17 +178,30 @@
     "width": 339,
     "collapsed": true
   },
-  "active": "9218438fd39b00d1",
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
+      "templater-obsidian:Templater": false,
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "audio-recorder:녹음 시작/중지": false
+    }
+  },
+  "active": "2d122b89c1c11f03",
   "lastOpenFiles": [
-    "AI/AIMath/[Week2]AIMath/AIMath.md",
-    "etc/2022-06-11-English Determiner.md",
-    "etc/2022-03-23-git-deploy-key-개념.md",
-    "web/backend/2020-02-14-django.md",
-    "web/CI,CD/2021-3-23-docker-compose-개념.md",
-    "web/CI,CD/2021-03-23-Docker.md",
-    "computer_science/algorithm/2020-08-13-알고리즘-상.md",
-    "computer_science/algorithm/2020-08-19-알고리즘-중.md",
-    "computer_science/algorithm/2020-08-23-알고리즘-하.md",
-    "computer_science/algorithm/2021-09-19-알고리즘이란.md"
+    "computer_science/algorithm/알고리즘 문제 해결 과정.md",
+    "web/CI,CD/Docker/docker-compose 개념.md",
+    "web/CI,CD/Docker/Docker 기본.md",
+    "computer_science/OS/Linux 계정 및 권한.md",
+    "computer_science/OS/Linux file directory.md",
+    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 10-파일 관리.md",
+    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 12-시스템 보안과 보안 운영체제.md",
+    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 11-분산 및 다중(병렬) 처리 시스템.md",
+    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 1-컴퓨터 시스템의 소개.md",
+    "무제파일.md"
   ]
 }

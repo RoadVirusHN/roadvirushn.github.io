@@ -40,6 +40,7 @@ title: WHY??
 
 - `/etc/`:  시스템 설정 파일
 	- 로그인 할 수 있는 패즈워드 정보(`/etc/passwd`), 호스트명(`/etc/hostname`), 웹서버 설정 파일(`/etc/httpd/conf.d/htppd.conf`) 등의 ASCII text 파일과 폴더들이 존재
+	- 여러 정보들이 이곳에 적혀있다 [[Linux 계정 및 권한|예시]]
 
 - `/var/`: 자주 변하는 파일들이나 애플리케이션 데이터
 	- `/var/log/`: OS에 관련된 모든 활동에 대한 기록이 존재
