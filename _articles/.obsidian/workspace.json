@@ -23,6 +23,18 @@
             "id": "e3ef9e34cb427c96",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 10-파일 관리.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e3ef9e34cb427c96",
+            "type": "leaf",
+            "state": {
               "type": "empty",
               "state": {}
             }
@@ -75,8 +87,12 @@
             "id": "5038fe9288fe9965",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/OS/Linux 계정 및 권한.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {

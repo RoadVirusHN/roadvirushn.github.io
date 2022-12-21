@@ -130,7 +130,6 @@ distance = [INF for i in range(nodeNum+1)]
 visited = [False for i in range(nodeNum+1)]
 distance[startNode] = 0
 hq = [(0,startNode)]
-nodeNow = startNode
 while(hq):
     minweight, minIndex = heapq.heappop(hq)
     visited[minIndex] = True
