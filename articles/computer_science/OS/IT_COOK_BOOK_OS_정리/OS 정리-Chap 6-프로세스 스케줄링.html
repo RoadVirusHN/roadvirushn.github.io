@@ -9,15 +9,15 @@
 <meta property="og:locale" content="kr" />
 <meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true 6. 프로세스 스케줄링 ```ad-quote title: 출처" />
 <meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true 6. 프로세스 스케줄링 ```ad-quote title: 출처" />
-<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html" />
-<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html" />
 <meta property="og:site_name" content="The Digital garden of Nurgle." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-10T20:23:16+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="OS 정리-Chap 6-프로세스 스케줄링" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T20:23:16+09:00","datePublished":"2022-08-10T20:23:16+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true 6. 프로세스 스케줄링 ```ad-quote title: 출처","headline":"OS 정리-Chap 6-프로세스 스케줄링","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html"},"url":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T20:23:16+09:00","datePublished":"2022-08-10T20:23:16+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true 6. 프로세스 스케줄링 ```ad-quote title: 출처","headline":"OS 정리-Chap 6-프로세스 스케줄링","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html"},"url":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
 <div class="scrollWrapper">
@@ -167,8 +167,8 @@
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 14 
-            
+            📄: 2 
+            📂: 1
           </span>
       </li>
       
@@ -527,7 +527,7 @@
 </ol>
 <h1 id='6-프로세스-스케줄링'>6. 프로세스 스케줄링</h1>
 
-<div class="callout callout-quote" id="callout-ba3b28f0-52dd-4f61-9be1-975fddba30c2">
+<div class="callout callout-quote" id="callout-0f73cb86-9b1e-463f-9b46-0c6238c22f5e">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -890,7 +890,7 @@
 
 <p>또한, <strong>호위 효과</strong>라는 현상이 생기는데, 처리 속도가 빠른 프로세스들이 처리 속도가 느린 프로세스를 끝나기를 기다리며 몰려다니는 현상이다.(그림 6-12)</p>
 
-<div class="callout callout-note" id="callout-44da66fa-1ecc-41d6-be1a-5159b2e55ee4">
+<div class="callout callout-note" id="callout-29f4f174-2252-4d8a-a32f-30ac54ae6763">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>호위 효과 예시
@@ -975,7 +975,7 @@
 
 <p>최소 작업 우선 스케줄링은 <strong>선점과 비선점 방식 두 가지 방식으로 구현</strong> 가능하다.(그림 6-13)</p>
 
-<div class="callout callout-note" id="callout-ed74b9ee-b27c-4c90-8dd7-c130d20e9e56">
+<div class="callout callout-note" id="callout-0abe9070-1217-4ae5-a4a1-4115fdc2999f">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>프로세스 도착 시간 예시 그래프
@@ -1025,7 +1025,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-note" id="callout-561c1000-e766-4cbc-afe7-e81fa9294a5e">
+<div class="callout callout-note" id="callout-31f41f09-22b3-43b8-bd1e-e55d4b658e24">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>비선점 최소 작업 우선 스케줄링 VS 선점 최소 작업 우선 스케줄링
@@ -1177,7 +1177,7 @@
   </tbody>
 </table>
 
-<div class="callout callout-note" id="callout-493f79a3-a482-423c-9963-cf4460978368">
+<div class="callout callout-note" id="callout-e74b6be4-9f1f-4f5f-b775-b189ba2b2911">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>라운드 로빈 스케줄링 예시
@@ -1299,7 +1299,7 @@
   </tbody>
 </table>
 
-<div class="callout callout-note" id="callout-332c2770-6fc2-48cc-84d1-5b2166351058">
+<div class="callout callout-note" id="callout-9609fb57-d613-440a-b831-c9bdd7d40475">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>다단계 피드백 큐 예시
@@ -1500,8 +1500,8 @@
 
 </div>
 
-  </div><a class="u-url" href="/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html" hidden></a>
-  <p class="u-path" hidden>_articles/computer_science/OS/OS 정리-Chap 6-프로세스 스케줄링.md</p>
+  </div><a class="u-url" href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%206-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 6-프로세스 스케줄링.md</p>
   <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
 </article>
 

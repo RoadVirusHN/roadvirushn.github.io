@@ -3,20 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>The Digital garden of Nurgle. | 이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</title>
+<title>OS 정리-Chap 13-유닉스 운영체제 | The Digital garden of Nurgle.</title>
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="The Digital garden of Nurgle." />
+<meta property="og:title" content="OS 정리-Chap 13-유닉스 운영체제" />
 <meta property="og:locale" content="kr" />
-<meta name="description" content="이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)" />
-<meta property="og:description" content="이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)" />
-<link rel="canonical" href="http://localhost:4000/categories/AI/LIGHTWEIGHT/" />
-<meta property="og:url" content="http://localhost:4000/categories/AI/LIGHTWEIGHT/" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2013-%EC%9C%A0%EB%8B%89%EC%8A%A4%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2013-%EC%9C%A0%EB%8B%89%EC%8A%A4%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html" />
 <meta property="og:site_name" content="The Digital garden of Nurgle." />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-11T13:34:26+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="The Digital garden of Nurgle." />
+<meta property="twitter:title" content="OS 정리-Chap 13-유닉스 운영체제" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)","headline":"The Digital garden of Nurgle.","url":"http://localhost:4000/categories/AI/LIGHTWEIGHT/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-11T13:34:26+09:00","datePublished":"2022-08-11T13:34:26+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 13-유닉스 운영체제","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2013-%EC%9C%A0%EB%8B%89%EC%8A%A4%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html"},"url":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2013-%EC%9C%A0%EB%8B%89%EC%8A%A4%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
 <div class="scrollWrapper">
@@ -27,7 +28,7 @@
 
 <link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
 
-  <!--<div class="redirection">
+<!--<div class="redirection">
   <h1 class="name">Redirection for full experience.</h1>
   <br>
   Move to <br /> <a class="to" href="#">netlify url</a><br />
@@ -38,7 +39,8 @@
 <script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
 
 <link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
-  <body><header class="site-header" role="banner">
+
+<body><header class="site-header" role="banner">
 
   <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
     <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
@@ -66,7 +68,7 @@
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
-      <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
 <button class="drawer-button open">▶️</button>
 <div id="drawer" class="close">
   <button class="drawer-button close">
@@ -448,39 +450,204 @@
     <hr>
   <div style="height: 7vh;"></div>
 </div>
-      <div class="wrapper">
-        <!-- This loops through the paginated articles -->
-        <h2 class="article-list-heading">📂 ~/AI/LIGHTWEIGHT/</h2>
-        <ul class="article-list">
-          
-            
-              <li><span class="article-meta">Dec 14, 2022</span>
-                
-                  
-                  <a class="tag-link" href="/search.html?tags=AI" style="color: rgb(242, 194, 154);
-                    background-color: rgb(13, 61, 61);">
-                    AI
-                  </a>
-                
-                  
-                  <a class="tag-link" href="/search.html?tags=모델_경량화" style="color: rgb(44, 68, 62);
-                    background-color: rgb(211, 187, 187);">
-                    모델_경량화
-                  </a>
-                
-                  
-                  <a class="tag-link" href="/search.html?tags=요약" style="color: rgb(25, 45, 88);
-                    background-color: rgb(230, 210, 210);">
-                    요약
-                  </a>
-                
-                <h3>
-                  <a class="article-link" href="/articles/AI/Lightweight/%EB%AA%A8%EB%8D%B8%20%EA%B2%BD%EB%9F%89%ED%99%94%20%EA%B8%B0%EB%B3%B8.html">
-                    📄 모델 경량화 기본
-                  </a>
-                </h3></li>
-            </ul>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">OS 정리-Chap 13-유닉스 운영체제</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-08-11T13:34:26+09:00" itemprop="datePublished">Aug 11, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  
+<ol id='markdown-toc-0'>
+<li><a href='#01-유닉스의-탄생과-구성' id='markdown-toc-0-01-유닉스의-탄생과-구성'>01 유닉스의 탄생과 구성</a><ul><li><a href='#1-유닉스의-탄생과-발전-과정' id='markdown-toc-0-1-유닉스의-탄생과-발전-과정'>1 유닉스의 탄생과 발전 과정</a></li> 
+<li><a href='#2-유닉스의-설계-원칙' id='markdown-toc-0-2-유닉스의-설계-원칙'>2 유닉스의 설계 원칙</a></li> 
+<li><a href='#3-유닉스의-특징' id='markdown-toc-0-3-유닉스의-특징'>3 유닉스의 특징</a></li> 
+<li><a href='#4-유닉스의-구성-요소' id='markdown-toc-0-4-유닉스의-구성-요소'>4 유닉스의 구성 요소</a><ul>
+</ul></li> 
+
+</ul></li> 
+<li><a href='#02-유닉스-프로세스의-관리' id='markdown-toc-0-02-유닉스-프로세스의-관리'>02 유닉스 프로세스의 관리</a><ul><li><a href='#1-유닉스-프로세스의-종류' id='markdown-toc-0-1-유닉스-프로세스의-종류'>1 유닉스 프로세스의 종류</a></li> 
+<li><a href='#2-유닉스-프로세스의-상태' id='markdown-toc-0-2-유닉스-프로세스의-상태'>2 유닉스 프로세스의 상태</a></li> 
+<li><a href='#3-유닉스-프로세스의-구조' id='markdown-toc-0-3-유닉스-프로세스의-구조'>3 유닉스 프로세스의 구조</a></li> 
+<li><a href='#4-유닉스-프로세스의-스케줄링' id='markdown-toc-0-4-유닉스-프로세스의-스케줄링'>4 유닉스 프로세스의 스케줄링</a></li> 
+
+</ul></li> 
+<li><a href='#03-시스템-호출-인터페이스' id='markdown-toc-0-03-시스템-호출-인터페이스'>03 시스템 호출 인터페이스</a><ul><li><a href='#1-파일-조작' id='markdown-toc-0-1-파일-조작'>1 파일 조작</a></li> 
+<li><a href='#2-프로세스-제어' id='markdown-toc-0-2-프로세스-제어'>2 프로세스 제어</a></li> 
+<li><a href='#3-시그널' id='markdown-toc-0-3-시그널'>3 시그널</a></li> 
+
+</ul></li> 
+<li><a href='#04-유닉스의-메모리-관리' id='markdown-toc-0-04-유닉스의-메모리-관리'>04 유닉스의 메모리 관리</a><ul><li><a href='#1-유닉스의-메모리-관리-개요' id='markdown-toc-0-1-유닉스의-메모리-관리-개요'>1 유닉스의 메모리 관리 개요</a></li> 
+<li><a href='#2-대치' id='markdown-toc-0-2-대치'>2 대치</a></li> 
+<li><a href='#3-페이징' id='markdown-toc-0-3-페이징'>3 페이징</a></li> 
+
+</ul></li> 
+<li><a href='#05-유닉스의-파일-시스템' id='markdown-toc-0-05-유닉스의-파일-시스템'>05 유닉스의 파일 시스템</a><ul><li><a href='#1-디스크-블록의-구조' id='markdown-toc-0-1-디스크-블록의-구조'>1 디스크 블록의 구조</a></li> 
+<li><a href='#2-유닉스에서-연속-파일-할당' id='markdown-toc-0-2-유닉스에서-연속-파일-할당'>2 유닉스에서 연속 파일 할당</a></li> 
+<li><a href='#3-i-노드의-할당과-반납' id='markdown-toc-0-3-i-노드의-할당과-반납'>3 i 노드의 할당과 반납</a></li> 
+<li><a href='#4-유닉스의-디렉터리' id='markdown-toc-0-4-유닉스의-디렉터리'>4 유닉스의 디렉터리</a></li> 
+<li><a href='#5-유닉스의-시스템-파일-테이블' id='markdown-toc-0-5-유닉스의-시스템-파일-테이블'>5 유닉스의 시스템 파일 테이블</a></li> 
+<li><a href='#6-유닉스의-디스크-구조' id='markdown-toc-0-6-유닉스의-디스크-구조'>6 유닉스의 디스크 구조</a></li> 
+
+</ul></li> 
+</ol>
+<h1 id='13-유닉스-운영체제'>13. 유닉스 운영체제</h1>
+
+<div class="callout callout-quote" id="callout-0325057d-1cdd-4344-bdb3-652070b5430d">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
       </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<blockquote>
+  <p><span class='link-warning'>
+      <a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B3239422381" class="wikilink externallink">IT COOK BOOK 운영체제 (개정 3판, 구현회 저, 한빛 아카데미)</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.hanbit.co.kr/store..."</em>로
+        <button onclick="window.open('https://www.hanbit.co.kr/store/books/look.php?p_code=B3239422381','_blank'); return false;">이동</button>?
+      </span>
+    </span>를 정리한 내용입니다.</p>
+</blockquote>
+
+</div>
+    </div>
+    </div>
+<h2 id='01-유닉스의-탄생과-구성'>01 유닉스의 탄생과 구성</h2>
+<h3 id='1-유닉스의-탄생과-발전-과정'>1 유닉스의 탄생과 발전 과정</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803234803.png" alt="" /></p>
+<h3 id='2-유닉스의-설계-원칙'>2 유닉스의 설계 원칙</h3>
+
+<h3 id='3-유닉스의-특징'>3 유닉스의 특징</h3>
+
+<h3 id='4-유닉스의-구성-요소'>4 유닉스의 구성 요소</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220810220920.png" alt="" /></p>
+
+<h4 id='4-1-커널'>4.1 커널</h4>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803234919.png" alt="" /><br />
+<img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235038.png" alt="" /></p>
+
+<h4 id='4-2-셸'>4.2 셸</h4>
+
+<h4 id='4-3-유틸리티와-파일-시스템'>4.3 유틸리티와 파일 시스템</h4>
+
+<h2 id='02-유닉스-프로세스의-관리'>02 유닉스 프로세스의 관리</h2>
+
+<h3 id='1-유닉스-프로세스의-종류'>1 유닉스 프로세스의 종류</h3>
+
+<h3 id='2-유닉스-프로세스의-상태'>2 유닉스 프로세스의 상태</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235057.png" alt="" /><br />
+<img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235117.png" alt="" /></p>
+
+<h3 id='3-유닉스-프로세스의-구조'>3 유닉스 프로세스의 구조</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235141.png" alt="" /></p>
+
+<h3 id='4-유닉스-프로세스의-스케줄링'>4 유닉스 프로세스의 스케줄링</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235202.png" alt="" /><br />
+<img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235219.png" alt="" /></p>
+
+<h2 id='03-시스템-호출-인터페이스'>03 시스템 호출 인터페이스</h2>
+
+<h3 id='1-파일-조작'>1 파일 조작</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235237.png" alt="" /></p>
+<h3 id='2-프로세스-제어'>2 프로세스 제어</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235246.png" alt="" /></p>
+<h3 id='3-시그널'>3 시그널</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235325.png" alt="" /></p>
+<h2 id='04-유닉스의-메모리-관리'>04 유닉스의 메모리 관리</h2>
+
+<h3 id='1-유닉스의-메모리-관리-개요'>1 유닉스의 메모리 관리 개요</h3>
+
+<h3 id='2-대치'>2 대치</h3>
+<p>그림 13-13 초기의 대치 맵과 대치 공간의 할당</p>
+
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235443.png" alt="" /></p>
+<blockquote>
+  <p>(a) :<br />
+(b) :<br />
+(c) :</p>
+</blockquote>
+
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235528.png" alt="" /><br />
+<img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235558.png" alt="" /></p>
+<h3 id='3-페이징'>3 페이징</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235625.png" alt="" /><br />
+<img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235637.png" alt="" /><br />
+<img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220803235648.png" alt="" /></p>
+<h2 id='05-유닉스의-파일-시스템'>05 유닉스의 파일 시스템</h2>
+
+<h3 id='1-디스크-블록의-구조'>1 디스크 블록의 구조</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804000933.png" alt="" /><br />
+<img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804000925.png" alt="" /></p>
+<h3 id='2-유닉스에서-연속-파일-할당'>2 유닉스에서 연속 파일 할당</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804001010.png" alt="" /><br />
+<img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804001026.png" alt="" /></p>
+<h3 id='3-i-노드의-할당과-반납'>3 i 노드의 할당과 반납</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804001047.png" alt="" /></p>
+
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804001101.png" alt="" /></p>
+
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804001120.png" alt="" /></p>
+<h3 id='4-유닉스의-디렉터리'>4 유닉스의 디렉터리</h3>
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804001134.png" alt="" /></p>
+<h3 id='5-유닉스의-시스템-파일-테이블'>5 유닉스의 시스템 파일 테이블</h3>
+
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804001150.png" alt="" /></p>
+<h3 id='6-유닉스의-디스크-구조'>6 유닉스의 디스크 구조</h3>
+
+<p><img src="/assets/img/OS 정리-Chap 13-유닉스 운영체제/Pasted image 20220804001214.png" alt="" /></p>
+
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2013-%EC%9C%A0%EB%8B%89%EC%8A%A4%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 13-유닉스 운영체제.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
     </div>
   </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
@@ -513,6 +680,6 @@
 </footer>
 </body>
 
-  <script src="/assets/scripts/bundle/common.bundle.js"></script>
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
 
 </html>

@@ -9,15 +9,15 @@
 <meta property="og:locale" content="kr" />
 <meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
 <meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
-<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html" />
-<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html" />
 <meta property="og:site_name" content="The Digital garden of Nurgle." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-10T23:23:16+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="OS 정리-Chap 9-입출력 시스템과 디스크 관리" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T23:23:16+09:00","datePublished":"2022-08-10T23:23:16+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 9-입출력 시스템과 디스크 관리","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html"},"url":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T23:23:16+09:00","datePublished":"2022-08-10T23:23:16+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 9-입출력 시스템과 디스크 관리","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html"},"url":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
 <div class="scrollWrapper">
@@ -167,8 +167,8 @@
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 14 
-            
+            📄: 2 
+            📂: 1
           </span>
       </li>
       
@@ -527,7 +527,7 @@
 </ol>
 <h1 id='9-입출력-시스템'>9. 입출력 시스템</h1>
 
-<div class="callout callout-quote" id="callout-e7a03e78-9e36-47f0-9cdf-d76caa3e3520">
+<div class="callout callout-quote" id="callout-9d4de8a2-60db-48db-bd65-c33f568c129b">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -1104,7 +1104,7 @@ N이 크면 스캔 알고리즘 N=1이면 선입 선처리 알고리즘과 동�
 <p>- 디스크 공간 낭비<br />
 - 최신 SCSI 드라이브는 자체적으로 오류 검출 능력 존재</p>
 
-<div class="callout callout-note" id="callout-4bc38107-97ef-48a4-b1c7-94f2994392b9">
+<div class="callout callout-note" id="callout-e94f1962-7222-4772-9ca6-c08ce19affb3">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>허밍 코드
@@ -1184,8 +1184,8 @@ N이 크면 스캔 알고리즘 N=1이면 선입 선처리 알고리즘과 동�
 
 </div>
 
-  </div><a class="u-url" href="/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html" hidden></a>
-  <p class="u-path" hidden>_articles/computer_science/OS/OS 정리-Chap 9-입출력 시스템과 디스크 관리.md</p>
+  </div><a class="u-url" href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%209-%EC%9E%85%EC%B6%9C%EB%A0%A5%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20%EB%94%94%EC%8A%A4%ED%81%AC%20%EA%B4%80%EB%A6%AC.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 9-입출력 시스템과 디스크 관리.md</p>
   <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
 </article>
 

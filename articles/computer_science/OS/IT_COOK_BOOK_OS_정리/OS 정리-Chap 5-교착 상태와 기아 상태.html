@@ -9,15 +9,15 @@
 <meta property="og:locale" content="kr" />
 <meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
 <meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
-<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html" />
-<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html" />
 <meta property="og:site_name" content="The Digital garden of Nurgle." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-10T19:23:16+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="OS 정리-Chap 5-교착 상태와 기아 상태" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T19:23:16+09:00","datePublished":"2022-08-10T19:23:16+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 5-교착 상태와 기아 상태","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html"},"url":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T19:23:16+09:00","datePublished":"2022-08-10T19:23:16+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 5-교착 상태와 기아 상태","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html"},"url":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
 <div class="scrollWrapper">
@@ -167,8 +167,8 @@
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 14 
-            
+            📄: 2 
+            📂: 1
           </span>
       </li>
       
@@ -521,7 +521,7 @@
 </ol>
 <h1 id='5-교착-상태와-기아-상태'>5. 교착 상태와 기아 상태</h1>
 
-<div class="callout callout-quote" id="callout-19480555-94a1-4174-aff1-186bf0b45c7b">
+<div class="callout callout-quote" id="callout-1594e553-0f09-455c-9067-f449d445d86f">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -574,7 +574,7 @@
 
 <h4 id='교착-상태의-그림-예시'>교착 상태의 그림 예시</h4>
 
-<div class="callout callout-note" id="callout-16a48c15-6ab3-4382-8ffb-e0bc3f9ca994">
+<div class="callout callout-note" id="callout-93643bca-37d0-4bc8-929e-78fa5649552d">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>A와 B 프로세스는 서로가 가진 자원을 할당받을 때까지 작업이 중지되게 된다.
@@ -684,7 +684,7 @@
   </li>
 </ul>
 
-<div class="callout callout-note" id="callout-7e55ceb2-a0fe-4725-b0b0-002d8cb19a04">
+<div class="callout callout-note" id="callout-a44896c2-ca81-4fda-a8ea-b9bc0a9f6007">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>선점 자원과 비선점 자원
@@ -999,7 +999,7 @@ F(프린터) = 7
 
 <p>동일한 자원 10개와 $P_0,P_1,P_2,P_3$을 가진 시스템의 예시를 들어보자.</p>
 
-<div class="callout callout-note" id="callout-85eb26fd-525f-4adb-a403-0a4b75b62817">
+<div class="callout callout-note" id="callout-14e25023-0d0b-4cc5-8497-3e8e9435bf9c">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>안정 상태의 자원 예
@@ -1066,7 +1066,7 @@ F(프린터) = 7
   </li>
 </ol>
 
-<div class="callout callout-note" id="callout-3e8b5ad1-4ff6-49db-8713-0deb42dfba40">
+<div class="callout callout-note" id="callout-fee58433-447d-40b0-992a-8f3a70f415fa">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>불안정 상태의 자원 예
@@ -1247,7 +1247,7 @@ F(프린터) = 7
 
 <p>프로세스가 $P_0\sim P_4$까지 5개 존재하며, 자원 4 종류(A,B,C,D)가 있을 때, 다음과 같은 상태의 예시를 알아보자.</p>
 
-<div class="callout callout-note" id="callout-f0178b25-477e-4d73-b722-2a7b5cf648da">
+<div class="callout callout-note" id="callout-28caae1a-b4fe-4b60-b173-86b29785e7c2">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>시간 $t_0$일 때 시스템의 상태 (자원 ABCD 순서)
@@ -1401,7 +1401,7 @@ F(프린터) = 7
 
 <p>시스템을 아래 표와 같이 가정하여 알아보자.</p>
 
-<div class="callout callout-note" id="callout-b36e1db5-5a03-41e7-ac2f-1a5596a4633e">
+<div class="callout callout-note" id="callout-7c239cdf-31c7-4a9e-91c4-72aa4f865b1b">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>시간 $t_0$일 때 시스템의 상태 (자원 ABC 순서)
@@ -1545,7 +1545,7 @@ F(프린터) = 7
 
 <p>이를 코드로 표현하면 아래와 같다.</p>
 
-<div class="callout callout-note" id="callout-9fa29db9-797e-4754-bb2f-2b17ee8b3dbb">
+<div class="callout callout-note" id="callout-c6b540d2-e008-4ff1-87bd-ff231d41f45e">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>식사하는 철학자 문제에서 철학자 $i$의 구조
@@ -1574,7 +1574,7 @@ F(프린터) = 7
     </div>
 <p>아래는 최대 4명만 동시에 앉게 하는 방법의 코드다.</p>
 
-<div class="callout callout-note" id="callout-3c74a80a-b2da-4237-9daf-934ca8c57a64">
+<div class="callout callout-note" id="callout-ce9671be-d913-4951-904b-926a9924e29a">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>식사하는 철학자 문제의 해결 방안
@@ -1611,8 +1611,8 @@ F(프린터) = 7
 
 </div>
 
-  </div><a class="u-url" href="/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html" hidden></a>
-  <p class="u-path" hidden>_articles/computer_science/OS/OS 정리-Chap 5-교착 상태와 기아 상태.md</p>
+  </div><a class="u-url" href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 5-교착 상태와 기아 상태.md</p>
   <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
 </article>
 

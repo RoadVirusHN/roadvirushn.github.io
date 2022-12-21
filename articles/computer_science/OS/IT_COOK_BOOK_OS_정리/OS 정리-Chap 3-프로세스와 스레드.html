@@ -9,15 +9,15 @@
 <meta property="og:locale" content="kr" />
 <meta name="description" content="3. 프로세스와 스레드 ```ad-quote title: 출처" />
 <meta property="og:description" content="3. 프로세스와 스레드 ```ad-quote title: 출처" />
-<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html" />
-<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html" />
 <meta property="og:site_name" content="The Digital garden of Nurgle." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-10T17:23:16+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="OS 정리-Chap 3-프로세스와 스레드" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T17:23:16+09:00","datePublished":"2022-08-10T17:23:16+09:00","description":"3. 프로세스와 스레드 ```ad-quote title: 출처","headline":"OS 정리-Chap 3-프로세스와 스레드","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html"},"url":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T17:23:16+09:00","datePublished":"2022-08-10T17:23:16+09:00","description":"3. 프로세스와 스레드 ```ad-quote title: 출처","headline":"OS 정리-Chap 3-프로세스와 스레드","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html"},"url":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
 <div class="scrollWrapper">
@@ -167,8 +167,8 @@
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 14 
-            
+            📄: 2 
+            📂: 1
           </span>
       </li>
       
@@ -549,7 +549,7 @@
 </ul>
 <h1 id='3-프로세스와-스레드'>3. 프로세스와 스레드</h1>
 
-<div class="callout callout-quote" id="callout-96b82b13-9188-4858-9b30-36639258129d">
+<div class="callout callout-quote" id="callout-661085b1-869a-421c-9382-a73711704e06">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -820,7 +820,7 @@
   </li>
 </ol>
 
-<div class="callout callout-note" id="callout-828317ab-4874-422c-a1c7-26ec2c9a789b">
+<div class="callout callout-note" id="callout-f9e327f8-9f32-4784-a75b-991d242cca2c">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>note</strong></span>
@@ -839,7 +839,7 @@
 
 <p>프로세스가 마지막 명령을 실행하면 종료하여 운영체제에 프로세스 삭제를 요청한다. 이외에도 프로세스가 종료되는 이유는 여러가지가 있으며 몇가지 예를 들자면, 앞선 정상적인 종료 요청, 할당 시간 초과, 오류 및 실패, 메모리 부족, 엑세스 위반 등이 있다.</p>
 
-<div class="callout callout-note" id="callout-50366e56-6fd5-408a-9828-e161c8f081e2">
+<div class="callout callout-note" id="callout-ccb98e6f-c21c-432d-a9b6-0dc054ec47b0">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>note</strong></span>
@@ -1241,8 +1241,8 @@
 
 </div>
 
-  </div><a class="u-url" href="/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html" hidden></a>
-  <p class="u-path" hidden>_articles/computer_science/OS/OS 정리-Chap 3-프로세스와 스레드.md</p>
+  </div><a class="u-url" href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 3-프로세스와 스레드.md</p>
   <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
 </article>
 

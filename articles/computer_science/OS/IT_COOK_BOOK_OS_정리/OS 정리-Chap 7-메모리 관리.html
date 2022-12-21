@@ -9,15 +9,15 @@
 <meta property="og:locale" content="kr" />
 <meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
 <meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
-<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html" />
-<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html" />
 <meta property="og:site_name" content="The Digital garden of Nurgle." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-10T21:23:16+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="OS 정리-Chap 7-메모리 관리" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T21:23:16+09:00","datePublished":"2022-08-10T21:23:16+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 7-메모리 관리","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html"},"url":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T21:23:16+09:00","datePublished":"2022-08-10T21:23:16+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 7-메모리 관리","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html"},"url":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
 <div class="scrollWrapper">
@@ -167,8 +167,8 @@
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 14 
-            
+            📄: 2 
+            📂: 1
           </span>
       </li>
       
@@ -534,7 +534,7 @@
 </ol>
 <h1 id='7-메모리-관리'>7. 메모리 관리</h1>
 
-<div class="callout callout-quote" id="callout-792934c7-9197-40f7-952e-55eb2ddd07ad">
+<div class="callout callout-quote" id="callout-8e0f98c6-1e8c-4ce1-bfb6-a4bd75afd279">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -635,7 +635,7 @@
   </li>
 </ul>
 
-<div class="callout callout-note" id="callout-a7ab4830-7a27-4cab-9e2f-ce270c9e1975">
+<div class="callout callout-note" id="callout-c99d775a-5442-473c-862a-ee03488864b2">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>컴파일러의 동작
@@ -1278,7 +1278,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
 
 <p>페이지의 크기는 보통 하드웨어에 따라 다르며, 512Byte ~ 1GB 사이이며, 2의 배수만큼의 크기이다.</p>
 
-<div class="callout callout-question" id="callout-d4d0e24f-4b57-4fc3-926f-a04d711ddc9b">
+<div class="callout callout-question" id="callout-bc23c102-413a-428b-997a-f2195d2b272f">
       <div class="header">
         <span class="emoji">✨</span>
         <span class="title"><strong>페이지가 2의 계승에 비례한 크기인 이유?
@@ -1307,7 +1307,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
 
 <p>그림 7-32는 IBM 370의 32비트 논리적 주소로, 앞의 8비트는 사용되지 않는다.</p>
 
-<div class="callout callout-question" id="callout-9636a0f9-9b2b-49e7-afed-830479d46ced">
+<div class="callout callout-question" id="callout-0e5f7890-1640-4560-9708-400dd01486c3">
       <div class="header">
         <span class="emoji">✨</span>
         <span class="title"><strong>Why?
@@ -1396,7 +1396,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
   </li>
 </ul>
 
-<div class="callout callout-seealso" id="callout-78ae9e66-3c67-4d37-ab1f-a9b924be482e">
+<div class="callout callout-seealso" id="callout-84ebe5e4-1fcb-40d8-86f2-1a809d3b33c0">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>최근에는 최대 4단계 페이징 시스템까지 사용(모토로라 68030)
@@ -1493,7 +1493,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
   </li>
 </ul>
 
-<div class="callout callout-warning" id="callout-8c905fc6-5491-4da1-b2d2-0c6ce8be4291">
+<div class="callout callout-warning" id="callout-6d708810-a544-4cd0-8de6-4e6b14377d50">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong>But!
@@ -1884,7 +1884,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
 
 <p>으로 구성되어 있다.</p>
 
-<div class="callout callout-seealso" id="callout-e5ff5b77-60ea-4ca0-9a4a-20f71846bd90">
+<div class="callout callout-seealso" id="callout-b51a6f47-aff0-43a7-8c25-e994126368ca">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>seealso</strong></span>
@@ -1946,8 +1946,8 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
 
 </div>
 
-  </div><a class="u-url" href="/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html" hidden></a>
-  <p class="u-path" hidden>_articles/computer_science/OS/OS 정리-Chap 7-메모리 관리.md</p>
+  </div><a class="u-url" href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%207-%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 7-메모리 관리.md</p>
   <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
 </article>
 

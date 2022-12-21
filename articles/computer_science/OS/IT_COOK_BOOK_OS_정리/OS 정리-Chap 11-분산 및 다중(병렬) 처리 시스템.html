@@ -9,15 +9,15 @@
 <meta property="og:locale" content="kr" />
 <meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
 <meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
-<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html" />
-<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html" />
 <meta property="og:site_name" content="The Digital garden of Nurgle." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-11T10:34:26+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="OS 정리-Chap 11-분산 및 다중(병렬) 처리 시스템" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-11T10:34:26+09:00","datePublished":"2022-08-11T10:34:26+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 11-분산 및 다중(병렬) 처리 시스템","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html"},"url":"http://localhost:4000/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-11T10:34:26+09:00","datePublished":"2022-08-11T10:34:26+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 11-분산 및 다중(병렬) 처리 시스템","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html"},"url":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
 <div class="scrollWrapper">
@@ -167,8 +167,8 @@
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 14 
-            
+            📄: 2 
+            📂: 1
           </span>
       </li>
       
@@ -530,7 +530,7 @@
 </ol>
 <h1 id='11-분산-및-다중-병렬-처리-시스템'>11. 분산 및 다중(병렬) 처리 시스템</h1>
 
-<div class="callout callout-quote" id="callout-51971e69-a6c3-409f-b059-e63a23fcd0de">
+<div class="callout callout-quote" id="callout-f91819f1-f890-47b2-9384-99a14c9a54fb">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -581,7 +581,7 @@
 <p>그림 11-1과 같이 프로세서들이 메모리를 공유하는 다중 처리 시스템.<br />
 공유 메모리를 이용해 통신하므로, 결합 교환을 통해 경쟁을 최소화</p>
 
-<div class="callout callout-note" id="callout-aba9bf50-735d-47e9-a697-0727b29f2813">
+<div class="callout callout-note" id="callout-200e769d-55ed-4e63-a96e-cd17cd65778b">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>결합교환(combining switch)이란?
@@ -604,7 +604,7 @@
 <h3 id='3-네트워크의-구조-topology'>3 네트워크의 구조(topology)</h3>
 <p>네트워크의 노드나 링크 요소를 물리적으로 연결하는 방법들</p>
 
-<div class="callout callout-note" id="callout-75a7769e-1cbd-4dfd-8a86-c2ee2407ad15">
+<div class="callout callout-note" id="callout-71702985-9b6b-4ea3-bbe9-0845daf01255">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>노드(Node)
@@ -947,7 +947,7 @@
 
 <p>클라이언트 서버 분산 컴퓨팅 환경은 사용자, 응용 프로그램, 자원들을 네트워크(단일 LAN이나 WAN)으로 연결함.</p>
 
-<div class="callout callout-note" id="callout-a6aba71b-86d7-4afe-bc2a-2b630aa371f4">
+<div class="callout callout-note" id="callout-5dd15df7-9f59-4846-876c-0ffc70d5af8d">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>WAN(Wide Area Network, 광역 네트워크)?
@@ -980,7 +980,7 @@
 
 <p>이 둘을 서로 연동하기 위해 TCP/IP나 OSI 참조 모델 같은 통신 소프트웨어와 분산 응용 프로그램을 이용하여 연동한다.</p>
 
-<div class="callout callout-note" id="callout-f60ecd60-47ba-40c4-b6a4-8443c1b1feeb">
+<div class="callout callout-note" id="callout-bcb67170-0c89-4623-934e-960a27a2515c">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>OSI? TCP/IP?
@@ -1380,8 +1380,8 @@
 
 </div>
 
-  </div><a class="u-url" href="/articles/computer_science/OS/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html" hidden></a>
-  <p class="u-path" hidden>_articles/computer_science/OS/OS 정리-Chap 11-분산 및 다중(병렬) 처리 시스템.md</p>
+  </div><a class="u-url" href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%2011-%EB%B6%84%EC%82%B0%20%EB%B0%8F%20%EB%8B%A4%EC%A4%91(%EB%B3%91%EB%A0%AC)%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 11-분산 및 다중(병렬) 처리 시스템.md</p>
   <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
 </article>
 
