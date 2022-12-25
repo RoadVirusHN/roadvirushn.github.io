@@ -38,7 +38,7 @@ module PreprocessFrontmatter
     {
       'title' => article_data['title'].encode('utf-8'),
       'date' => article_data['date'].to_s.encode('utf-8'),
-      'path' => article.path.encode('utf-8'),
+      'path' => article.path.encode('utf-8').gsub(%r{(.*)(/_articles/.*)}) { |_matched| Regexp.last_match(2) },
       'tags' => article_data['tags'].map do |tag|
         tag.upcase.encode('utf-8')
       end
