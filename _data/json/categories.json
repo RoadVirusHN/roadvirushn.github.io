@@ -44,7 +44,8 @@
             "/articles/computer_science/algorithm/Python%20for%20Algorithms-etc.html",
             "/articles/computer_science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%20%EA%B3%BC%EC%A0%95.html",
             "/articles/computer_science/algorithm/%EC%A0%95%EB%A0%AC%20%EC%A0%95%EB%A6%AC.html",
-            "/articles/computer_science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%A0%95%EB%8B%B9%EC%84%B1%20%EC%A6%9D%EB%AA%85.html"
+            "/articles/computer_science/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%A0%95%EB%8B%B9%EC%84%B1%20%EC%A6%9D%EB%AA%85.html",
+            "/articles/computer_science/algorithm/Python%20for%20Algorithms-DP&Merge.html"
           ]
         },
         "OS": {
@@ -90,6 +91,21 @@
         },
         "ETC": {
           "categories": {
+            "CS 질문 정리 시리즈": {
+              "categories": {
+              },
+              "articles": [
+                "/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20ALG.html",
+                "/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20BE.html",
+                "/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20DB.html",
+                "/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20DevOps.html",
+                "/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20FE.html",
+                "/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20Network.html",
+                "/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20OS.html",
+                "/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20PL.html",
+                "/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88.html"
+              ]
+            }
           },
           "articles": [
             "/articles/computer_science/etc/float%20%EC%B2%98%EB%A6%AC.html"

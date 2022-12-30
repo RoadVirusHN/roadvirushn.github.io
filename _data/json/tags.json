@@ -162,5 +162,17 @@
   "정형데이터": {
     "background-color": "rgb(223, 204, 204)",
     "color": "rgb(32, 51, 197)"
+  },
+  "DEVOPS": {
+    "background-color": "rgb(53, 4, 4)",
+    "color": "rgb(202, 251, 80)"
+  },
+  "COLLECTION": {
+    "background-color": "rgb(189, 24, 24)",
+    "color": "rgb(66, 231, 62)"
+  },
+  "ETC": {
+    "background-color": "rgb(66, 11, 11)",
+    "color": "rgb(189, 244, 54)"
   }
 }
