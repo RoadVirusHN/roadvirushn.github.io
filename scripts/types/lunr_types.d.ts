@@ -1,4 +1,4 @@
-import { TagInfo, CategoryInfo, PostList } from "./search_types";
+import { TagInfo, CategoryInfo, ArticleList } from "./search_types";
 
 declare global {
   interface Window {
@@ -8,7 +8,7 @@ declare global {
 
 export type NewWindow = Window &
   typeof globalThis & {
-    store: PostList;
+    store: ArticleList;
     tags: TagInfo;
     categories: CategoryInfo;
   };

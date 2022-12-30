@@ -99,7 +99,7 @@ function goToSearchpage(
     /#([^# ]+)/g,
     replaceTagToElement(tagHolder)
   );
-  let url = `search.html?query=${searchBar.value}`;
+  let url = `/search.html?query=${searchBar.value}`;
   if (queryTags.length > 0) {
     url += "&tags=";
     for (const tag of queryTags) {

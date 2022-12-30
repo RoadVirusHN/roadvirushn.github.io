@@ -1,5 +1,5 @@
-export interface PostList {
-  [url: string]: PostData;
+export interface ArticleList {
+  [url: string]: ArticleData;
 }
 interface PositionList {
   position: [[number, number]];
@@ -17,7 +17,7 @@ interface Attributes {
 export interface MyMetadata {
   [query: string]: Attributes;
 }
-export interface PostData {
+export interface ArticleData {
   title: string;
   date: string;
   tags: string[];
@@ -25,7 +25,7 @@ export interface PostData {
   content: string;
 }
 
-export interface WindowPostData {
+export interface WindowArticleData {
   [url: string]: {
     title: string;
     date: string;
