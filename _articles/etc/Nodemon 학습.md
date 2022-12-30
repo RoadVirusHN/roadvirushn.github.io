@@ -1,7 +1,7 @@
 ---
 title: Nodemon 학습
 date: 2020-02-16 17:21:08 +0900
-tags: javascript node tool
+tags: JS node tool
 layout: obsidian
 is_Finished: true
 last_Reviewed: 2022-10-30 17:21:08 +0900

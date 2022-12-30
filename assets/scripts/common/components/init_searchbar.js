@@ -70,7 +70,7 @@ function removeLastTag(tagHolder) {
 }
 function goToSearchpage(searchBar, tagHolder) {
     searchBar.value = searchBar.value.replaceAll(/#([^# ]+)/g, replaceTagToElement(tagHolder));
-    let url = `search.html?query=${searchBar.value}`;
+    let url = `/search.html?query=${searchBar.value}`;
     if (queryTags.length > 0) {
         url += "&tags=";
         for (const tag of queryTags) {
