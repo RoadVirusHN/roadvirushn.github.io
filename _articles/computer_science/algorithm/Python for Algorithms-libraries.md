@@ -110,6 +110,7 @@ print(points)
 # [{'x': 1, 'y': 1}, {'x': 2, 'y': 1}, {'x': 1, 'y': 2}, {'x': 2, 'y': 2}] 'y': 2}]
 ~~~
 ```
+
 ```ad-seealso
 title: `cmp_to_key()`의 구현
 collapse: true
@@ -155,13 +156,13 @@ print(points)
 ```ad-seealso
 title: 사용해본 알고리즘 문제
 collapse: true
-[[https://www.acmicpc.net/problem/11650| 백준 11650번 문제]]
+[[https://www.acmicpc.net/problem/11650|백준 11650번 문제]]
 - 다른 사람은 x와 y값의 합을 통해 정렬하되, y에 가중치를 적게 주어 (x의 최대값으로 나눈 수준의 가중치) 구별하는 방법으로 빠르게 정렬했다.
 ```
 
 ### reduce()
 자료 구조 내의 각 요소들을 순서대로 함수를 적용해 누적된 값을 보여준다.
-- [[https://www.acmicpc.net/problem/1010|백준 문제 1010번]]
+- [백준 문제 1010번](https://www.acmicpc.net/problem/1010)
 ```ad-tip
 title: `accumulate` 함수와 달리 결과값이 `iterator`가 아닌 값이다.
 collapse: true
@@ -174,6 +175,7 @@ print(list(accumulate([1, 2, 3, 4, 5], add))) # [1, 3, 6, 10, 15]
 # add 함수를 만드는 대신 operator로 이용 가능
 ~~~
 ```
+
 ```ad-example
 title: `reduce()`의 활용 예시
 collapse: true
@@ -214,7 +216,7 @@ def accumulate(iterable, func=operator.add, *, initial=None):
 ```
 
 ### @cache
-함수 위에 데코레이터로 이용하여 손쉽게 [[|Memoization]]을 구현할 수 있다. 
+함수 위에 데코레이터로 이용하여 손쉽게 [[Python for Algorithms-DP&Merge|Memoization]]을 구현할 수 있다. 
 ```ad-warning
 title: 최신 버전(3.9++) 파이썬의 함수이므로 지원하지 않는 알고리즘 시험도 많다.
 ```
@@ -245,12 +247,6 @@ print("recursive called : ", recursiveCall)  # 2
 # 앞서 실행한 결과에 추가로 두번만 더 실행해 값을 가져옴
 ~~~
 ```
-```ad-seealso
-title: `@cache` 데코레이터의 구현
-collapse: true
-
-[[https://github.com/python/cpython/blob/main/Lib/functools.py|코드가 많이 복잡]]하므로 구현하여 사용하기 보다는 [[|Memoization]] 구현 파트를 참고하자.
-```
 
 ## itertools
 효율적인 루핑을 위한 이터레이터를 만드는 함수
@@ -274,6 +270,7 @@ from itertools import cycle
    # A B C D A B C D A B 출력
 ~~~
 ```
+
 ```ad-seealso
 title: `cycles()`의 구현
 collapse: true
@@ -340,9 +337,9 @@ print(list(combinations('ABCD', 2))) # 조합 생성
 # [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')]
 print(list(combinations_with_replacement('ABCD', 2))) # n번 중복 가능한 조합 생성
 # [('A', 'A'), ('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'B'), ('B', 'C'), ('B', 'D'), ('C', 'C'), ('C', 'D'), ('D', 'D')]
-
 ~~~
 ```
+
 ```ad-seealso
 title: 조합, 순열 함수들의 구현
 collapse: true
@@ -725,7 +722,7 @@ print(b)  # [1, 3, 6]
 title: heapq 키값 비교 방법 바꾸기
 collapse: true
 
-> 출처 [[https://stackoverflow.com/questions/8875706/heapq-with-custom-compare-predicate|here]]
+> 출처 [here](https://stackoverflow.com/questions/8875706/heapq-with-custom-compare-predicate)
 
 heapq를 이용하여 우선순위 큐 등을 만들 시 아래와 같이 `__lt__` 메소드를 오버라이딩하여 키값의 비교 방법을 정해줄 수 있다.
 
@@ -757,4 +754,4 @@ print(heap)
 
 ## 재귀함수
 
-[[https://www.acmicpc.net/problem/1929|재귀함수 문제]]
+[재귀함수 문제](https://www.acmicpc.net/problem/1929)

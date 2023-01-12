@@ -37,7 +37,7 @@ Host github-YOUR-APP
     IdentityFile ~/.ssh/id_ed25519
 ```
 
-이는 [EC2]() 글에서 본적 있을 것이다.
+~~이는 EC2 글에서 본 적 있을 것이다.~~
 
 ```bash
 cat ~/.ssh/id_ed25519.pub

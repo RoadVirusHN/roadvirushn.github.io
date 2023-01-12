@@ -231,7 +231,7 @@ def MST_PRIM(G, s):
 
 ### 크루스컬 알고리즘
 사이클이 생기지 않도록 최소 가중치 간선을 하나씩 선택해서 최소 신장 트리를 찾는 알고리즘
-사이클은 [[2022-09-23-Python-for-Algorithms-Tree#상호 배타 집합|상호 배타 집합]]을 이용해 감지한다.
+사이클은 [[Python for Algorithms-Tree#상호 배타 집합|상호 배타 집합]]을 이용해 감지한다.
 ```ad-example
 title: 크루스컬 알고리즘 예시
 collapse: true

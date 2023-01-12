@@ -21,20 +21,20 @@ Jenkins는 Jenkins가 설치된 마스터 노드가 에이전트 노드를 생�
 
 ### 1. 도커를 이용한 설치
 
-Linux, Windows 등의 특정 운영체제의 설치방법도 존재하지만, 설정 등의 편의를 위해 주로 Docker를 설치하고 [[2022-05-12-DinD_DooD|DinD]] 구조 Jenkins 컨테이너를 설치한다.
+Linux, Windows 등의 특정 운영체제의 설치방법도 존재하지만, 설정 등의 편의를 위해 주로 Docker를 설치하고 [[DinD와 DooD|DinD]] 구조 Jenkins 컨테이너를 설치한다.
 
 ```ad-quote
-title: [[https://www.jenkins.io/doc/book/installing|공식 설치 가이드]]에서 더욱 자세한 방법 참조
+title: [공식 설치 가이드](https://www.jenkins.io/doc/book/installing)에서 더욱 자세한 방법 참조
 ```
 
 ```bash
 docker run -it -p 8080:8080 jenkins/jenkins:lts -v /home/${myname}/jenkins_compose/jenkins_configuration:/var/jenkins_home /var/run/docker.sock:/var/run/docker.sock
 ```
 
-만일, dind 구조나 [[https://www.jenkins.io/doc/book/blueocean/|blue-ocean]]를 사용하지 않을 거라면 위와 같은 코드로 설치 가능
+만일, dind 구조나 [blue-ocean](https://www.jenkins.io/doc/book/blueocean/)를 사용하지 않을 거라면 위와 같은 코드로 설치 가능
 
 ```ad-seealso
-title: Linux, EC2 instance 내부에 docker를 설치하는 방법은 [[2021-03-23-Docker|Docker 글]] 참조
+title: Linux, EC2 instance 내부에 docker를 설치하는 방법은 [[Docker 기본|Docker 글]] 참조
 ```
 
 ### 2. 암호 설정
@@ -132,7 +132,6 @@ url을 요청하면 위와 같은 로그인 요청창이 뜬다.
 
 #### 직접 가입
 
-![](D:\git\TIL\CICD\Jenkins\assets\2022-07-05-07-48-53-image.png)
 
 
 

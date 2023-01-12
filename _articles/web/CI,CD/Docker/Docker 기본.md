@@ -149,4 +149,4 @@ sudo yum install gnupg2 pass
 ## docker-compose
 
 docker-compose를 이용하면 여러 컨테이너의 연계와 설정을 쉽게 할 수 있다.
-[[2021-3-23-docker-compose-개념]] 참조
+[[docker-compose 개념]] 참조
