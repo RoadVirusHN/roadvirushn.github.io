@@ -16,12 +16,12 @@ varied_style: true
 ```
 # Kubernetes
 ```ad-quote
-title:  _[[https://www.youtube.com/@ttabae-learn4274/featured|TTABE-LEARN]] 채널_의 내용을 토대로 정리한 내용입니다.
+title:  _[TTABE-LEARN](https://www.youtube.com/@ttabae-learn4274/featured) 채널_의 내용을 토대로 정리한 내용입니다.
 ```
 ## Kubernetes(K8S)?
 
 ![[image-20221204222059554.png]]
-[[https://kubernetes.io/|쿠버네티스 공식]]
+[쿠버네티스 공식](https://kubernetes.io/)
 **컨테이너(보통 도커)들의 배포, 스케일링, 운영 등을 자동화하는 방법을 제공하는 오픈소스 관리 시스템**.
 
 구글이 설계하여 리눅스 재단이 관리하고 있으며, K와 S 사이에 8글자가 있다는 의미로 K8S라고 줄여서 쓰기도 한다. 🤔
@@ -56,7 +56,7 @@ docker exec -ti ${container_name} bash
 ```
 ## Docker, cri-dockerd 설치
 ### Docker 설치
-- [[2021-03-23-Docker#Docker 설치|Docker]] 설치과정 참조
+- [[Docker 기본#Docker 설치|Docker]] 설치과정 참조
 
 마스터와 워커 노드 전부에 설치되어 있어야 한다.
 리눅스에 직접 설치 하지 않고 도커 컨테이너로 실습 등을 진행하려는 경우는 아래 참조
@@ -104,12 +104,12 @@ ENTRYPOINT service docker start && /bin/bash
 
 ### cri-dockerd 설치
 cri-docker는 docker를 설치 후에 설치해야하는 추가적인 어뎁터이다.
-Kubernetes가 더이상 순정 Docker를 지원하지 않기 때문이다. [[https://kubernetes.io/blog/2020/12/02/dont-panic-kubernetes-and-docker/|왜?]]
+Kubernetes가 더이상 순정 Docker를 지원하지 않기 때문이다. [왜?](https://kubernetes.io/blog/2020/12/02/dont-panic-kubernetes-and-docker/)
 
 
 ## Kubernetes 설치 - linux 환경
 
-- [[https://kubernetes.io/ko/docs/setup/production-environment/tools/kubeadm/install-kubeadm/| 공식 문서 ]] 참고
+- [공식 문서](https://kubernetes.io/ko/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) 참고
 
 ### 설치전 환경 설정
 - 2 코어 이상의 cpu, 2GB 이상의 램을 가져야 한다

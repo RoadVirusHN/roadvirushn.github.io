@@ -44,7 +44,7 @@ Git을 이용할 때 실수로 잘못된 파일이 올라가면 곤란한 경우
 
 1. `.gitignore` 파일을 제대로 작성하자. 
    
-   🔵 gitignore 파일 작성법, `git check-ignore` 명령어, 전역 제외 설정 등의 도움되는 정보는  📝[.gitignore 작성법](add_later) 확인
+   🔵 gitignore 파일 작성법, `git check-ignore` 명령어, 전역 제외 설정 등의 도움되는 정보는  📝[[gitignore 작성법]] 확인
 
 2. 프로젝트 시작부터 env 세팅을 하자.
    
@@ -160,7 +160,7 @@ git reset --soft HEAD~1
 
 `--soft` 플래그를 사용하면 당신이 작업한 파일들은 commit에만 빠지며, 수정한 작업과 파일들은 여전히 존재하며 심지어 staging 되어있는 상태이다.
 
-즉, 그대로 다시 `git commit` 명령어를 입력하면, 방금 했던 실수를 재현할 수 있을 것이다. 앞서 설명했던 ↩[git add 이후](###잘못된 파일을 git add ) 조치가 필요하다.
+즉, 그대로 다시 `git commit` 명령어를 입력하면, 방금 했던 실수를 재현할 수 있을 것이다. 앞서 설명했던 ↩[[#잘못된 파일을 git add|git add 이후]] 조치가 필요하다.
 
 #### 여러번 이전 commit 제거
 

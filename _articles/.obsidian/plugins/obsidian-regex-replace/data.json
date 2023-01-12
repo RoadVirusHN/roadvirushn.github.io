@@ -1,6 +1,6 @@
 {
-  "findText": " \\.css",
-  "replaceText": " css",
+  "findText": " \\bold",
+  "replaceText": "",
   "useRegEx": false,
   "selOnly": false,
   "caseInsensitive": false,

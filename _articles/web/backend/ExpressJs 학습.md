@@ -22,9 +22,9 @@ varied_style: true
 
 > Fast, unopinionated, minimalist web framework for [Node.js](https://nodejs.org/en/)
 
-[Node.js](add later) 기반의 심플한 웹 프레임워크, 주로 벡엔드 서버를 만드는데 사용한다.
+[Node.js](https://nodejs.org/en/) 기반의 심플한 웹 프레임워크, 주로 벡엔드 서버를 만드는데 사용한다.
 
-정말 기본적인 서버이고, [MIT 라이센스](add later)이므로, 좋게 말하면 가볍고 여러 기능을 제약없이 구현하기 쉬우며, 나쁘게 말하면 많은 부분을 직접 구현해야 한다.
+정말 기본적인 서버이고, [MIT 라이센스](https://opensource.org/licenses/MIT)이므로, 좋게 말하면 가볍고 여러 기능을 제약없이 구현하기 쉬우며, 나쁘게 말하면 많은 부분을 직접 구현해야 한다.
 
 더욱 자세한 사항은 [Express.js 공식 문서](https://expressjs.com/) 참조 바람.
 
@@ -36,7 +36,7 @@ varied_style: true
 
 ---
 
-기본적으로 최신 버전의 [Node.js](add later)가 설치가 끝난 상태여야 한다.
+기본적으로 최신 버전의 Node.js가 설치가 끝난 상태여야 한다.
 
 ```bash
 $ mkdir myapp # 프로젝트 폴더 생성
@@ -45,15 +45,12 @@ $ npm init # 기본적인 프로젝트 설정, package.json 생성
 $ npm install express --save # node_modules에 express 설치 및 dependency 설정
 ```
 
-> **🔵 NOTE**
-> 
-> 이 글에서는 `package.json` 생성 설정의 기본값을 전제로 한다. 추가적인 설정에 따라 일부 용어가 바뀔 수 있다. 예를 들면,
-> 
-> - `main` 항목을 `index.js` 대신 `app.js`로 사용할 경우, `app.js`로 생성해야 한다.
-> 
-> - [Javascript](add later) 대신 [Typescript](add_later)를 사용할 수도 있다.
-> 
-> - 자세한 사항은 [Node.js](add_later) 참조
+```ad-note
+이 글에서는 `package.json` 생성 설정의 기본값을 전제로 한다. 추가적인 설정에 따라 일부 용어가 바뀔 수 있다. 예를 들면,
+- `main` 항목을 `index.js` 대신 `app.js`로 사용할 경우, `app.js`로 생성해야 한다.
+- Javascript 대신 Typescript를 사용할 수도 있다.
+- 자세한 사항은 [Node.js](https://nodejs.org/en/)참조
+```
 
 ### 기본 세팅(Default setting)
 
@@ -84,7 +81,7 @@ Example app listening at http://localhost:3000
 
 ![Figure 1. 예시 뷰](image-20220115082101591.png)
 
-추가적으로 [`Nodemon`]()이나 [`Typescript`]() 설정을 해주는 것도 나쁘지 않다.
+추가적으로 Nodemon이나 Typescript 설정을 해주는 것도 나쁘지 않다.
 
 ## 기능
 
@@ -129,15 +126,18 @@ app.get('/users/:userId/books/:bookId', function (req, res) { // ex) http://loca
 })
 ```
 
-> 🔵 **NOTE**
-> 
-> 이때 인자의 이름으로 숫자와 영어 대소문자만 가능하다. 즉, 특수문자가 들어가면 특수문자 이전까지만 인자의 이름으로 인정된다.
-> 
-> ```javascript
-> app.get('/flights/:to-:from', function (req, res) { // ex) http://localhst:3000/flights/LAX-SFO
->   res.send(req.params) //":to-:from" 전체를 변수명으로 인식하는 것이 아닌 :to"(="LAX") 부분과 ":from"(="SFO") 부분에 존재하는 값들이 string 타입으로 표시.
-> })
-> ```
+
+```ad-note
+이때 인자의 이름으로 숫자와 영어 대소문자만 가능하다. 
+
+즉, 특수문자가 들어가면 특수문자 이전까지만 인자의 이름으로 인정된다.
+
+~~~javascript
+app.get('/flights/:to-:from', function (req, res) { // ex) http://localhst:3000/flights/LAX-SFO
+res.send(req.params) //":to-:from" 전체를 변수명으로 인식하는 것이 아닌 :to"(="LAX") 부분과 ":from"(="SFO") 부분에 존재하는 값들이 string 타입으로 표시.
+}) 
+~~~
+```
 
 #### 라우팅 Extras (Routing extras)
 
@@ -213,7 +213,7 @@ app.all('/user', function(req, res, next){
 
  `express.Router` 클래스는 라우팅에 활용할 수 있는 미들웨어이다. 추가적인 미들웨어 함수를 적용하여 사용하거나, 라우터를 모듈화, 파일 구조 라우팅 등을 하는데 사용한다.
 
-🔵 파일 구조 라우팅(File-system Routing) : [Next.js](add_later)의 기능처럼 폴더와 파일경로를 url 주소로 이용하여 라우팅 하는 방법.
+🔵 파일 구조 라우팅(File-system Routing) : Next.js의 기능처럼 폴더와 파일경로를 url 주소로 이용하여 라우팅 하는 방법.
 
 ```javascript
 var express = require('express')
@@ -280,7 +280,7 @@ app.get('/octet', (req, res)=>{
 })
 ```
 
-만약, 응답이 [`JSON`]()형식에 맞지 않아 굳이 `res.set(field[, value])`형식을 바꿔줘야 한다면, 차라리 `res.json()`를 이용하여 코드의 길이를 줄이자.
+만약, 응답이 `JSON` 형식에 맞지 않아 굳이 `res.set(field[, value])`형식을 바꿔줘야 한다면, 차라리 `res.json()`를 이용하여 코드의 길이를 줄이자.
 
 ```javascript
 app.get('/', (req, res) => {
@@ -378,8 +378,8 @@ express.static(root, [options])
 - `[options]` 인자는 `static` 함수가 가질 수 있는 옵션이다. 예를 들면
   
   - `dotfiles` : `.`으로 시작하는 파일과 폴더는 어떻게 다룰 것인가? ex) `"ignore"` : 없는 걸로 취급. (default : `"allow"`, 특별한 조치 취하지 않음)
-  - `etag`: HTTP 응답 헤더에 [ETag](add_later) 헤더를 추가한다. (default: `"true"`, weak ETag)
-  - `lastModified`:  HTTP 응답 헤더에 [Last-Modified]() 헤더를 추가한다. (default: `"true"`)
+  - `etag`: HTTP 응답 헤더에 `ETag` 헤더를 추가한다. (default: `"true"`, weak ETag)
+  - `lastModified`:  HTTP 응답 헤더에 `Last-Modified` 헤더를 추가한다. (default: `"true"`)
   
   등이 존재한다.
 
@@ -426,7 +426,7 @@ http://localhost:3000/static/js/SPA.js
 
 DB 연결 방법은 [공식 문서](https://expressjs.com/en/guide/database-integration.html)에 DB 별로 상세히 설명되어 있다.
 
-각기 DB에서 지원하는 모듈을 이용하는 방식으로 진행되며, 여기서는 [MySQL]()과 [MongoDB]()의 예시를 알아보겠다.
+각기 DB에서 지원하는 모듈을 이용하는 방식으로 진행되며, 여기서는 MySQL과 MongoDB의 예시를 알아보겠다.
 
 #### MySQL
 
@@ -469,7 +469,7 @@ connection.end() // 연결 종료
 npm install mongodb
 ```
 
-마찬가지로, [MongoDB]()의 NodeJS를 위한 드라이버를 이용하면 된다.
+마찬가지로, MongoDB NodeJS를 위한 드라이버를 이용하면 된다.
 
 ```javascript
 var MongoClient = require('mongodb').MongoClient
@@ -487,7 +487,7 @@ MongoClient.connect('mongodb://localhost:27017/animals', function (err, client) 
 })
 ```
 
-Node.js와 MongoDB를 함께 쓸때는, [Mongoose]()와 함께 쓰는 것도 고려해볼만 하다.
+Node.js와 MongoDB를 함께 쓸때는, Mongoose와 함께 쓰는 것도 고려해볼만 하다.
 
 Mongoose를 이용하면 관계형 데이터베이스와 달리 자유로운 형식을 가지는 콜렉션(Collection)들의 형식을 정의하고, 제약(Constraint)을 설정해줄 수 있다.
 
@@ -526,7 +526,7 @@ module.exports = new Database()
 
 ---
 
-Express.js에서는 [리버스 프록시(Reverse Proxy)]()를 이용할 경우, [`proxy-addr`](https://www.npmjs.com/package/proxy-addr) 패키지 기반인 `trust proxy` 설정을 해주어야 정상 작동한다.
+Express.js에서는 리버스 프록시(Reverse Proxy)를 이용할 경우, [`proxy-addr`](https://www.npmjs.com/package/proxy-addr) 패키지 기반인 `trust proxy` 설정을 해주어야 정상 작동한다.
 
 이를 설정해주지 않는다면, 클라이언트의 IP 주소 대신, 리버스 프록시의 IP 주소를 클라이언트로 착각한다는 듯하다.
 
@@ -653,7 +653,7 @@ middleware 4
 
 #### static
 
-[앞서](###정적 파일(static file) 설정) 설명했던 Express.js 빌트인 모듈, 정적 파일을 이용하는데 사용한다.
+[[#정적 파일(static file) 설정|앞서]] 설명했던 Express.js 빌트인 모듈, 정적 파일을 이용하는데 사용한다.
 
 ```javascript
 express.static(root, [options])
@@ -700,7 +700,7 @@ app.listen(80, function () {
 npm install express-session
 ```
 
-[Session]() 미들웨어를 형성할 수 있게 해주는 Express 팀에서 만든 서드 파티 미들웨어.
+Session 미들웨어를 형성할 수 있게 해주는 Express 팀에서 만든 서드 파티 미들웨어.
 
 Session을 이용하여, 유저의 쿠키를 저장하고, 요청을 유저별로 구분하여, 보안과 유저 특화 서비스 등을 구현할 수 있다.
 

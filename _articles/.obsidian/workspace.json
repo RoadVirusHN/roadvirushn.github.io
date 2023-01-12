@@ -4,30 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "c8547fb7c5d5bb0a",
+        "id": "0fbbae648d44a4d7",
         "type": "tabs",
         "children": [
           {
-            "id": "2d122b89c1c11f03",
+            "id": "2acc64d6b5829de6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer_science/algorithm/Python for Algorithms-Graph.md",
+                "file": "AI/NLP/자연어처리 기본.md",
                 "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e3ef9e34cb427c96",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 10-파일 관리.md",
-                "mode": "source",
-                "source": false
+                "source": true
               }
             }
           },
@@ -58,7 +46,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "path:templates",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -76,27 +64,7 @@
             }
           },
           {
-            "id": "e52fa2f4498bb0b6",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "5038fe9288fe9965",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "computer_science/OS/Linux 계정 및 권한.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "aad7f202712e20d0",
+            "id": "22c1ad915639b737",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -106,11 +74,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 450.5
+    "width": 326.5
   },
   "right": {
     "id": "2f957799fb48536f",
@@ -126,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "computer_science/algorithm/Python for Algorithms-Graph.md",
+                "file": "AI/NLP/자연어처리 기본.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "computer_science/algorithm/Python for Algorithms-Graph.md",
+                "file": "AI/NLP/자연어처리 기본.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -166,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "computer_science/algorithm/Python for Algorithms-Graph.md"
+                "file": "AI/NLP/자연어처리 기본.md"
               }
             }
           },
@@ -199,17 +167,17 @@
       "audio-recorder:녹음 시작/중지": false
     }
   },
-  "active": "2d122b89c1c11f03",
+  "active": "2acc64d6b5829de6",
   "lastOpenFiles": [
-    "computer_science/algorithm/알고리즘 문제 해결 과정.md",
-    "web/CI,CD/Docker/docker-compose 개념.md",
-    "web/CI,CD/Docker/Docker 기본.md",
-    "computer_science/OS/Linux 계정 및 권한.md",
-    "computer_science/OS/Linux file directory.md",
-    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 10-파일 관리.md",
-    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 12-시스템 보안과 보안 운영체제.md",
-    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 11-분산 및 다중(병렬) 처리 시스템.md",
+    "AI/MATH/AI 수학 기본.md",
+    "computer_science/algorithm/Python for Algorithms-libraries.md",
+    "computer_science/network/네트워크 정리-Chap 1-컴퓨터 네트워크와 인터넷.md",
     "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 1-컴퓨터 시스템의 소개.md",
-    "무제파일.md"
+    "etc/etcs/Obsidian-example-pt-2.md",
+    "etc/etcs/Obsidian-example-pt-1.md",
+    "web/CI,CD/K8S/K8S 실습-1-Kubernetes 소개 및 설치.md",
+    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 2-운영체제란.md",
+    "etc/etcs/git deploy key 사용하기.md",
+    "web/CI,CD/Jenkins 간단 설명 및 설치.md"
   ]
 }

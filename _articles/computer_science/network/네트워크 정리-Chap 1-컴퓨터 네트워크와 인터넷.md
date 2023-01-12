@@ -47,7 +47,7 @@ title: 출처
 
 - **ISP(Internet Service Providers)**: 모뎀, DSL, 무선, 랜 등 여러 네트워크 서비스를 제공하는 인터넷회사, 각 호스트 간 연결을 위한 인터넷망을 제공함.
   
-[[2022-08-21-1-컴퓨터-네트워크와-인터넷#1.3.3 네트워크들의 네트워크(A Network of Network)]] 참조
+[[#1.3.3 네트워크들의 네트워크(A Network of Network)]] 참조
 
 #### Software 관점
 
@@ -127,7 +127,7 @@ ISP 가격 정책, 사무소와의 거리, 연선의 상태와 전자기파 간�
 - **OLT(Optical line terminator)**: 광섬유 정보를 디지털 신호로 변경, Packet을 나누어 각기 Splitter로 보내는 역할도 겸
 
 ##### 5G 고정 무선(5G fixed wireless)
-**선없이 무선으로 모뎀을 사무소와 연결해 통신**, [[#무선 랜 Wireless LAN WiFi|WiFi]] 비슷
+**선없이 무선으로 모뎀을 사무소와 연결해 통신**, [[#무선 랜(Wireless LAN), WiFi|WiFi]] 비슷
 
 속도가 빠르고 유선 설치가 필요 없음.
 
@@ -151,7 +151,7 @@ IEEE 802.11 기술로 몇십미터 내에 100Mbps이상의 속도를 제공
 
 라디오 대역을 매개로 수십 킬로 미터 내의 기지국을 통해 휴대전화 통신 기반 연결
 
-4G망 기준으로 60Mbps 속도이며, 5G는 더욱 빠르다. [[|7장]] 참조
+4G망 기준으로 60Mbps 속도이며, 5G는 더욱 빠르다. [[네트워크 정리-Chap 7-무선과 모바일 네트워크|7장]] 참조
 
 ### 1.2.2 물리적 매체(Physical Media)
 
@@ -173,7 +173,7 @@ IEEE 802.11 기술로 몇십미터 내에 100Mbps이상의 속도를 제공
 
 **두개의 절연된 관 모양의 구리선이 같은 방향으로 붙어있음.**
 
-유선 TV 시스템과 [[2022-08-21-1-컴퓨터-네트워크와-인터넷#유선(cable) 연결, HFC(hybrid fiber coax)|HFC]]를 구현하는데 사용되며, 대역을 여러 장치와 공유 가능
+유선 TV 시스템과 [[#유선(cable) 연결, HFC(hybrid fiber coax)|HFC]]를 구현하는데 사용되며, 대역을 여러 장치와 공유 가능
 
 ###### 광섬유(Fiber Optics)
 
@@ -259,7 +259,7 @@ $$
 **패킷 손실(packet loss)**
 - 만약 이러한 큐가 가득차게 되면 패킷을 저장할 수 없어 손실되며 이를 패킷 손실이라고 함.
 
-자세한 내용은 [[2022-08-21-1-컴퓨터-네트워크와-인터넷#큐 지연(Queuing Delay)|이곳]] 참조
+자세한 내용은 [[#큐 지연(Queuing Delay)|이곳]] 참조
 
 #### 포워딩 테이블과 라우팅 프로토콜(Forwarding Tables and Routing Protocols)
 
@@ -269,7 +269,7 @@ $$
 **포워딩 테이블(forwarding table)**
 - 패킷 포워딩을 구현하기 위한 방법
 - 각 스위치에서 패킷의 목적지와 보낼 링크를 포워딩 테이블에서 대조하여 보낼 방향을 결정
-- 각 포워딩 테이블은 라우팅 프로토콜(Routing protocol)에 의해 자동으로 결정 [[|5장]] 참조
+- 각 포워딩 테이블은 라우팅 프로토콜(Routing protocol)에 의해 자동으로 결정 [[네트워크 정리-Chap 5-네트워크 계층-컨트롤 측면|5장]] 참조
 
 ### 1.3.2 서킷 스위칭(Circuit Switching)
 
@@ -458,7 +458,7 @@ HTTP(웹 문서), SMTP(e-mail), FTP(파일 전송), Domain Name System(DNS)
 
 **어플리케이션 layer의 message들을 application endpoint를 통해서 전송하는 계층**
 
-[[|TCP]]와 [[|UDP]]가 존재
+[[네트워크 정리-Chap 3-전달 계층#3.5 Connection-Oriented Transport :TCP|TCP]]와 [[네트워크 정리-Chap 3-전달 계층#3.3 Connectionless Transport: UDP|UDP]]가 존재
 
 패킷을 segment라고 부름
 
@@ -544,5 +544,5 @@ WiFi, Ethernet, DOCSIS(cable access network용), PPP
 
 ```ad-warning
 title: 인터넷의 역사 부분은 생략했음
-정리하지 않은 정리를 보고 싶다면 [[https://google.com|이곳]]을 참조
+정리하지 않은 정리를 보고 싶다면 [[|이곳]]을 참조
 ```

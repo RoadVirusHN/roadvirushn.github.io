@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2021",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,

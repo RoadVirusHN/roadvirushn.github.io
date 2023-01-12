@@ -15,6 +15,8 @@ min_depth: 2
 max_depth: 3
 varied_style: true
 ```
+
+
 ```ad-quote
 title: 출처 
 
@@ -106,7 +108,7 @@ clientSocket = socket(AF_INET, SOCK_DGRAM)
 위는 UDP socket을 생성하는 python 코드이며, 이때 socket의 port 번호는 1024~65535 중 알아서 생성된다.
 
 ```python
-clientSocket.bind(('', 19157))
+clientSocket.bind((' ', 19157))
 ```
 
 만약 특정 주소로, 특정 port 번호로 바꾸고 싶다면 위와 같은 bind 함수를 사용하면 된다.
@@ -117,7 +119,7 @@ UDP socket은 desination IP address와 destination port number의 값에 따라 
 
 source IP address와 source port number의 경우, 데이터를 수신받은 socket이 segement를 돌려주는 용도로 사용한다.
 
-python 코드의 경우 `recvfrom()` 코드를 이용해 source address를 받은 뒤, 응답을 돌려줄 수 있다, ([[Chapter 2. Application Layer#UDPServer py|Chap2.7.UDPServer.py]] 참조)
+python 코드의 경우 `recvfrom()` 코드를 이용해 source address를 받은 뒤, 응답을 돌려줄 수 있다, ([[네트워크 정리-Chap 2-응용 계층#UDPServer.py|Chap 2.7.UDPServer.py]] 참조)
 
 #### Connection-Oriented Multiplexing and Demultiplexing
 
@@ -129,7 +131,7 @@ python 코드의 경우 `recvfrom()` 코드를 이용해 source address를 받�
 
 ![fig 3.4.The inversion of source and destination port numbers](image-20211104135715150.png)
 
-자세한 내용은 [[Chapter 2. Application Layer#TCPSever py|2.7 절의 TCPServer.py]] 부분을 참고하자.
+자세한 내용은 [[네트워크 정리-Chap 2-응용 계층#TCPSever.py|2.7 절의 TCPServer.py]] 부분을 참고하자.
 
 ```python
 clientSocket = socket(AF_INET, SOCK_STREAM) # client측 TCP 소켓 생성
@@ -144,7 +146,7 @@ TCP 서버는 이러한 TCP 소켓에 의한 연결을 address에 따라 구분�
 
 이러한 port 번호는 system 관리자가 켜져있는 application의 종류를 확인하는데도, 공격자가 보안 취약점이 있는 application을 공격하는데도 유용하다.
 
-`nmap`이나 `port sanner`같은 program으로 이러한 port들의 상태를 알 수 있고 이는 [[Chapter 3. Transport Layer#3 5 6 TCP Connection Management|3.5.6장]]에 더 자세히 다룰 것이다.
+`nmap`이나 `port sanner`같은 program으로 이러한 port들의 상태를 알 수 있고 이는 [[네트워크 정리-Chap 3-전달 계층#3.5.6 TCP Connection Management|3.5.6장]]에 더 자세히 다룰 것이다.
 
 ![fig 3.5.Two clients, using the same destination port number (80) to communicate with the same Web server application](image-20211104135857962.png)
 
@@ -487,7 +489,7 @@ title: Fig3.24.SR 송신자 이벤트와 활동
 
 ```ad-note
 title: Fig.3.25.SR 수신자 이벤트와 활동
-1. 윈도우 범위 \[rcv_base, rcv_base+N-1\](즉, 윈도우 범위 전체)에 존재하는 seq num를 가진 packet을 받고 각각마다 ACK 되돌려주기. 
+1. 윈도우 범위 \[rcv_base, rcv_base+N-1\]\(즉, 윈도우 범위 전체\)에 존재하는 seq num를 가진 packet을 받고 각각마다 ACK 되돌려주기. 
 
 만약 해당 packet이 순서에 맞지않는다면 Ack는 보내되, 상위 계층으로 보내지 않고 buffer해둔다.
 

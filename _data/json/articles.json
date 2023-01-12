@@ -971,9 +971,9 @@
     "date": "2022-12-28 10:45:34 +0900",
     "path": "/_articles/computer_science/etc/CS 질문 정리 시리즈/CS 질문 정리 시리즈.md",
     "tags": [
-      "HIDE",
       "CS",
-      "COLLECTION"
+      "SERIES",
+      "JOB"
     ]
   },
   "/articles/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80.html": {
@@ -983,6 +983,254 @@
     "tags": [
       "HIDE",
       "CRUDE",
+      "ETC"
+    ]
+  },
+  "/articles/web/backend/Django/Django%20%EA%B8%B0%EB%B3%B8.html": {
+    "title": "Django 기본",
+    "date": "2020-02-14 17:21:08 +0900",
+    "path": "/_articles/web/backend/Django/Django 기본.md",
+    "tags": [
+      "DJANGO",
+      "PYTHON",
+      "BE"
+    ]
+  },
+  "/articles/web/backend/Django/Django%20WSGI%20%EA%B8%B0%EB%B3%B8.html": {
+    "title": "Django WSGI 기본",
+    "date": "2020-02-15 17:21:08 +0900",
+    "path": "/_articles/web/backend/Django/Django WSGI 기본.md",
+    "tags": [
+      "DJANGO",
+      "PYTHON",
+      "BE"
+    ]
+  },
+  "/articles/etc/etcs/Nodemon%20%ED%95%99%EC%8A%B5.html": {
+    "title": "Nodemon 학습",
+    "date": "2020-02-16 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/Nodemon 학습.md",
+    "tags": [
+      "JS",
+      "NODE",
+      "TOOL"
+    ]
+  },
+  "/articles/web/backend/Django/Django%20CRUD.html": {
+    "title": "Django CRUD",
+    "date": "2020-02-16 17:21:08 +0900",
+    "path": "/_articles/web/backend/Django/Django CRUD.md",
+    "tags": [
+      "DJANGO",
+      "PYTHON",
+      "BE"
+    ]
+  },
+  "/articles/etc/etcs/git%20deploy%20key%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.html": {
+    "title": "git deploy key 사용하기",
+    "date": "2022-03-23 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/git deploy key 사용하기.md",
+    "tags": [
+      "GIT"
+    ]
+  },
+  "/articles/etc/etcs/gitignore%20%EC%9E%91%EC%84%B1%EB%B2%95.html": {
+    "title": "gitignore 작성법",
+    "date": "2022-03-24 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/gitignore 작성법.md",
+    "tags": [
+      "GIT"
+    ]
+  },
+  "/articles/etc/etcs/%EC%98%81%EC%96%B4%20%EC%8B%9C%EC%A0%9C%20%EC%A0%95%EB%A6%AC.html": {
+    "title": "영어 시제 정리",
+    "date": "2022-06-10 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/영어 시제 정리.md",
+    "tags": [
+      "ENG"
+    ]
+  },
+  "/articles/etc/etcs/English%20Determiner.html": {
+    "title": "English Determiner",
+    "date": "2022-06-11 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/English Determiner.md",
+    "tags": [
+      "ENG"
+    ]
+  },
+  "/articles/etc/etcs/Git%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B0%EB%A1%9D%20%EC%A7%80%EC%9A%B0%EA%B8%B0.html": {
+    "title": "Git 파일 기록 지우기",
+    "date": "2022-07-12 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/Git 파일 기록 지우기.md",
+    "tags": [
+      "GIT",
+      "CRUDE"
+    ]
+  },
+  "/articles/etc/etcs/%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EA%B8%80%EC%93%B0%EA%B8%B0%20%EC%A0%95%EB%A6%AC.html": {
+    "title": "개발자 글쓰기 정리",
+    "date": "2022-08-10 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/개발자 글쓰기 정리.md",
+    "tags": [
+
+    ]
+  },
+  "/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%84%A4%EA%B3%84.html": {
+    "title": "어떻게 코딩할 것인가-데이터 설계",
+    "date": "2022-12-28 20:49:46 +0900",
+    "path": "/_articles/computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-데이터 설계.md",
+    "tags": [
+      "HIDE",
+      "CRUDE",
+      "ETC"
+    ]
+  },
+  "/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80.html": {
+    "title": "어떻게 코딩할 것인가",
+    "date": "2022-12-28 20:49:46 +0900",
+    "path": "/_articles/computer_science/OSSU/HowToCode/어떻게 코딩할 것인가.md",
+    "tags": [
+      "CRUDE",
+      "ETC",
+      "OSSU",
+      "PL"
+    ]
+  },
+  "/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Ruby&Jekyll.html": {
+    "title": "Subbrain 개발기 - Ruby&Jekyll",
+    "date": "2022-12-30 18:15:47 +0900",
+    "path": "/_articles/etc/Subbrain 개발기/Subbrain 개발기 - Ruby&Jekyll.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/etc/etcs/Obsidian.html": {
+    "title": "Obsidian",
+    "date": "2023-01-03 12:05:51 +0900",
+    "path": "/_articles/etc/etcs/Obsidian.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%84%B8%EA%B3%84%20%EC%84%A4%EA%B3%84.html": {
+    "title": "어떻게 코딩할 것인가-세계 설계",
+    "date": "2023-01-04 05:47:59 +0900",
+    "path": "/_articles/computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-세계 설계.md",
+    "tags": [
+      "HIDE",
+      "CRUDE",
+      "ETC"
+    ]
+  },
+  "/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%ED%95%A8%EC%88%98%20%EC%84%A4%EA%B3%84.html": {
+    "title": "어떻게 코딩할 것인가-함수 설계",
+    "date": "2023-01-04 10:15:35 +0900",
+    "path": "/_articles/computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8.html": {
+    "title": "Spring5 입문",
+    "date": "2023-01-04 18:35:08 +0900",
+    "path": "/_articles/web/backend/Spring/Spring5 입문.md",
+    "tags": [
+      "WEB",
+      "SPRING",
+      "BE",
+      "SUMMARY"
+    ]
+  },
+  "/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Sass.html": {
+    "title": "Subbrain 개발기 - Sass",
+    "date": "2023-01-05 14:28:32 +0900",
+    "path": "/_articles/etc/Subbrain 개발기/Subbrain 개발기 - Sass.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%84%A4%EC%A0%95%EA%B3%BC%20%EC%9D%98%EC%A1%B4%20%EA%B4%80%EB%A6%AC%20%ED%88%B4.html": {
+    "title": "스프링 설정과 의존 관리 툴",
+    "date": "2023-01-06 04:36:53 +0900",
+    "path": "/_articles/web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%9D%98%EC%A1%B4%EC%84%B1%20%EC%A3%BC%EC%9E%85(DI).html": {
+    "title": "Spring5 입문-의존성 주입(DI)",
+    "date": "2023-01-06 13:50:29 +0900",
+    "path": "/_articles/web/backend/Spring/Spring5 입문-의존성 주입(DI).md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%9D%98%EC%A1%B4%20%EC%9E%90%EB%8F%99%20%EC%A3%BC%EC%9E%85.html": {
+    "title": "Spring5 입문-의존 자동 주입",
+    "date": "2023-01-09 05:12:40 +0900",
+    "path": "/_articles/web/backend/Spring/Spring5 입문-의존 자동 주입.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EB%B9%88(Bean)%EA%B3%BC%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88.html": {
+    "title": "Spring5 입문-빈(Bean)과 컨테이너",
+    "date": "2023-01-09 13:57:33 +0900",
+    "path": "/_articles/web/backend/Spring/Spring5 입문-빈(Bean)과 컨테이너.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%8A%A4%EC%BA%94(Component%20Scan).html": {
+    "title": "Spring5 입문 - 컴포넌트 스캔(Component Scan)",
+    "date": "2023-01-09 14:57:33 +0900",
+    "path": "/_articles/web/backend/Spring/Spring5 입문-컴포넌트 스캔(Component Scan).md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-AOP.html": {
+    "title": "Spring5 입문-AOP",
+    "date": "2023-01-09 19:22:11 +0900",
+    "path": "/_articles/web/backend/Spring/Spring5 입문-AOP.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20webpack,%20eslint,%20etc.html": {
+    "title": "Subbrain 개발기 - webpack, eslint, etc",
+    "date": "2023-01-11 15:23:25 +0900",
+    "path": "/_articles/etc/Subbrain 개발기/Subbrain 개발기 - webpack, eslint, etc.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Typescript.html": {
+    "title": "Subbrain 개발기 - Typescript",
+    "date": "2023-01-11 16:29:58 +0900",
+    "path": "/_articles/etc/Subbrain 개발기/Subbrain 개발기 - Typescript.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/%EA%B0%9C%EC%9D%B8%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0.html": {
+    "title": "개인 블로그 Subbrain 개발기",
+    "date": "2023-01-12 12:57:58 +0900",
+    "path": "/_articles/etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md",
+    "tags": [
+      "PJT",
       "ETC"
     ]
   }

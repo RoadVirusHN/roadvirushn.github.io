@@ -164,15 +164,51 @@
     "color": "rgb(32, 51, 197)"
   },
   "DEVOPS": {
-    "background-color": "rgb(53, 4, 4)",
-    "color": "rgb(202, 251, 80)"
+    "background-color": "rgb(6, 201, 201)",
+    "color": "rgb(249, 54, 186)"
   },
   "COLLECTION": {
-    "background-color": "rgb(189, 24, 24)",
-    "color": "rgb(66, 231, 62)"
+    "background-color": "rgb(129, 213, 213)",
+    "color": "rgb(126, 42, 181)"
   },
   "ETC": {
-    "background-color": "rgb(66, 11, 11)",
-    "color": "rgb(189, 244, 54)"
+    "background-color": "rgb(11, 13, 13)",
+    "color": "rgb(244, 242, 116)"
+  },
+  "WEB": {
+    "background-color": "rgb(248, 86, 86)",
+    "color": "rgb(7, 169, 2)"
+  },
+  "SPRING": {
+    "background-color": "rgb(71, 154, 154)",
+    "color": "rgb(184, 101, 128)"
+  },
+  "B": {
+    "background-color": "rgb(222, 158, 158)",
+    "color": "rgb(33, 97, 7)"
+  },
+  "SUMMARY": {
+    "background-color": "rgb(1, 135, 135)",
+    "color": "rgb(254, 120, 201)"
+  },
+  "PJT": {
+    "background-color": "rgb(32, 224, 224)",
+    "color": "rgb(223, 31, 226)"
+  },
+  "OSSU": {
+    "background-color": "rgb(178, 207, 207)",
+    "color": "rgb(77, 48, 80)"
+  },
+  "PL": {
+    "background-color": "rgb(122, 86, 86)",
+    "color": "rgb(133, 169, 187)"
+  },
+  "SERIES": {
+    "background-color": "rgb(112, 191, 191)",
+    "color": "rgb(143, 64, 233)"
+  },
+  "JOB": {
+    "background-color": "rgb(70, 222, 222)",
+    "color": "rgb(185, 33, 207)"
   }
 }

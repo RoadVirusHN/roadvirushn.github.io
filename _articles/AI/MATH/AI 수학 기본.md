@@ -26,7 +26,7 @@ varied_style: true
 
   ![1611570207609](1611570207609.png)
 
-- X = 열 벡터, X^T^ = 행 벡터
+- $X$ = 열 벡터, $X^T$ = 행 벡터
 
 - 수학적으로는 **공간에서의 한 점, 원점으로 부터의 상대적 위치**를 의미
 
@@ -40,7 +40,7 @@ varied_style: true
 
 **1. 벡터에 양수를 곱해주면 방향은 그대로, 길이만 변한다.**
 
-   - 이 때 곱해주는 숫자를 **스칼라곱(α)**이라고 표현한다.
+   - 이 때 곱해주는 숫자를 **스칼라곱($\alpha$)**이라고 표현한다.
 
    - 스칼라곱이 음수이면 방향이 정반대 방향이 된다.
 
@@ -60,15 +60,15 @@ varied_style: true
 
   - 차원의 수와 관계없이 모든 벡터는 노름을 구할 수 있다.
   - **L~1~-노름은 각 성분의 변화량의 절대값의 합**을 의미
-    - (x,y)는 |x|+|y| 만큼 거리
+    - $(x,y)$는 $\|x\|+\|y\|$ 만큼 거리
   - **L~2~-노름은 피타고라스 정리를 이용해 유클리드 거리**를 계산
-    - (x,y)는 sqrt(|x|^2^ +|y|^2^)를 의미
+    - $(x,y)$는 $\sqrt{\|x\|^2 +\|y\|^2}$를 의미
     - `np.linalg.norm`으로 구현 가능
-  - ||．|| 기호는 노름이라고 부름
+  - $\parallel \parallel $ 기호는 노름이라고 부름
 
   $$
-  \left\| x\right\|_1 = \sum_{i=1}^d|x_i|\\
-  \left\| x\right\|_2 = \sqrt{\sum_{i=1}^d|x_i|^2}\\
+  \parallel x\parallel_1 = \sum_{i=1}^d|x_i|\\
+  \parallel x\parallel_2 = \sqrt{\sum_{i=1}^d|x_i|^2}\\
   $$
 
 > 백터 노름의 코드 구현
@@ -90,17 +90,17 @@ def l2_norm(x):
 
 - 노름의 종류를 무엇으로 적용하느냐에 따라 기하학적 성질이 달라진다.
 
-  - L~1~노름은 마름모 모양의 원을 그리며, L~2~노름은 기존의 원 모양의 원을 가진다.
+  - L1 노름은 마름모 모양의 원을 그리며, L2 노름은 기존의 원 모양의 원을 가진다.
   - 노름의 종류에 따라 머신러닝에서의 활용도 달라진다.
 
 - 노름을 이용해 **두 벡터 사이의 거리를 뺄셈을 통하여 계산**할 수 있다.
 
   ![1611574014374](1611574014374.png)
 
-  - ||y - x|| = || x - y|| 인점을 이용하게 된다.
+  - $\parallel y - x\parallel  = \parallel x - y\parallel$ 인점을 이용하게 된다.
   - 즉 x-y 또는 y-x를 한 원점에서의 좌표를 이용해 L2 norm을 구하면 두벡터 사이의 거리가 나온다.
 
-- **L~2~노름 한정으로 내적을 이용해 이렇게 구한 벡터사이의 거리를 이용해 각도 또한 계산** 가능하다.
+- **L2 노름 한정으로 내적을 이용해 이렇게 구한 벡터사이의 거리를 이용해 각도 또한 계산** 가능하다.
 
   ![1611574198533](1611574198533.png)
 
@@ -124,15 +124,15 @@ def angle(x,y):
   - Proj(x)는 벡터 y로 정사영된 벡터 x의 그림자를 의미한다.
   - Proj(x)의 길이는 코사인법칙에 의해
 
-  $$
-  \left\|x\right\|cos\theta
-  $$
+$$
+  \parallel x \parallel cos\theta
+$$
 
   - 가 된다.
 
     ![1611574680528](1611574680528.png)
 
-  - 이때 **내적은 정사영의 길이를 벡터 y의 길이 ||y||만큼 조정한(곱한) 값**이다.
+  - 이때 **내적은 정사영의 길이를 벡터 y의 길이 $\parallel y \parallel$만큼 조정한(곱한) 값**이다.
 
   - 내적을 이용해 유사도(similarity)를 구할 수 있다.
 
@@ -155,8 +155,8 @@ x = np.array([[1, -2, 3], [7, 5, 0], [-2, -1, 2]]) # numpy에선 행(row)이 기
 ```
 
 $$
-\boldsymbol{X} = \begin{bmatrix} \boldsymbol{x_{1}} \\ \boldsymbol{x_{2}} \\ \boldsymbol{\vdots}\\ \boldsymbol{x_{n}} \end{bmatrix} = \begin{bmatrix} x_{11} & x_{12} & \dots & x_{1m}\\ x_{21} & x_{22} & \dots & y_{2m}\\ \vdots & \vdots & & \vdots\\ x_{n1} & x_{n2} & \dots & x_{nm}\end{bmatrix}
-\begin{aligned}\boldsymbol{x_{1}}\\ \boldsymbol{x_{2}}\\ \boldsymbol{x_{7}}\end{aligned}
+\boldsymbol{X} = \begin{bmatrix}symbol{x_{1}} \\symbol{x_{2}} \\symbol{\vdots}\\symbol{x_{n}} \end{bmatrix} = \begin{bmatrix} x_{11} & x_{12} & \dots & x_{1m}\\ x_{21} & x_{22} & \dots & y_{2m}\\ \vdots & \vdots & & \vdots\\ x_{n1} & x_{n2} & \dots & x_{nm}\end{bmatrix}
+\begin{aligned}\boldsymbol{x_{1}}\\symbol{x_{2}}\\symbol{x_{7}}\end{aligned}
 $$
 
 - n x m 행렬의 표현
@@ -165,7 +165,7 @@ $$
 
 - 행렬의 특정 행이나 열을 고정하면 행 벡터 또는 열 벡터라 부른다.
 
--  전치 행렬(transpose matrix) **X^T^**는 행과 열의 인덱스가 바뀐 행렬을 의미함.
+-  전치 행렬(transpose matrix) $X^T$는 행과 열의 인덱스가 바뀐 행렬을 의미함.
 
   - 벡터 또한 동일하게 행과 열이 바뀐 전치 벡터가 존재한다.
 
@@ -176,13 +176,13 @@ $$
 **1. 첫번째 의미**
 
 - 벡터가 공간의 한점을 의미한다면 행렬은 **공간에서 여러 점들의 집합**을 의미함.
-- 행렬의 행벡터 x~i~는 i번째 데이터를 의미함.
-- 행렬 x~ij~는 i번째 데이터의 j 번재 변수값을 의미함.
+- 행렬의 행벡터 $x_i$는 i번째 데이터를 의미함.
+- 행렬 $x_{ij}$는 i번째 데이터의 j 번째 변수값을 의미함.
 
 ![1611576499688](1611576499688.png)
 
 - 벡터와 마찬가지로 **같은 모양을 가지면 같은 인덱스 위치끼리 덧셈, 뺄셈. 성분곱을 계산할 수 있다.**
--  벡터와 마찬가지로 **스칼라곱(α) 또한 가능하다.**
+-  벡터와 마찬가지로 **스칼라곱($\alpha$) 또한 가능하다.**
 
 **2. 두번째 의미**
 
@@ -224,7 +224,7 @@ print(x @ Y) # numpy에선 @ 연산으로 행렬 곱셈 계산
 **2. 행렬의 내적**
 
 - `np.inner`는 **i번째 행벡터와 j번째 행벡터 사이의 내적을 성분으로 가지는 행렬**을 계산합니다.
-- 수학의 행렬 내적 **tr(XY^T^)**과 다름
+- 수학의 행렬 내적 **$tr(XY^T)$**과 다름
 
 ![1611577585251](1611577585251.png)
 > 행렬의 내적 code 구현 시
@@ -243,7 +243,7 @@ print(np.inner(x, Y)) # numpy에선 np.inner() 함수로 행렬 내적 계산
 
 ### 역행렬의 이해
 
-- **행렬 A의 연산을 같은 연산으로 거꾸로 돌리는 행렬을 역행렬(Inverse matrix)라고 부르며, A^-1^라 표기**한다.
+- **행렬 A의 연산을 같은 연산으로 거꾸로 돌리는 행렬을 역행렬(Inverse matrix)라고 부르며, $A^{-1}$라 표기**한다.
 - **행과 열 숫자가 같고 행렬식(determinant)가 0이 아닌 경우에만 계산 가능**.
 
 > 역행렬과의 행렬곱의 결과
@@ -254,7 +254,7 @@ $$
 
 - **항등행렬(Identity Matrix)은 곱하게 될 시 자기 자신이 나오는 행렬이다.**
 
-> 역 행렬의 코드 구현
+> 역행렬의 코드 구현
 
 ```python
 Y = np.array([[1, -2, 3], [7, 5, 0], [-2,-1,2]])
@@ -262,7 +262,7 @@ print(Y @ np.linalg.inv(Y)) # np.linalg.inv(Y) Y 행렬의 역행렬이 리턴
 # array([[1, 0, 0], [0, 1, 0], [0, 0, 1]]) # 정확히는 float으로 비슷한 값이 나온다.
 ```
 
-- 역행렬을 계산할 수 없는 조건이라면 유사역행렬(pseudo-inverse) 또는 무어-펜로즈(Moore-Penrose) 역행렬 A^+^을 이용한다.
+- 역행렬을 계산할 수 없는 조건이라면 유사역행렬(pseudo-inverse) 또는 무어-펜로즈(Moore-Penrose) 역행렬 $A^ +$을 이용한다.
 
 > 유사역행렬의 성질
 
@@ -328,7 +328,7 @@ y_test = np.append(x, [1]) @ beta
 - **변화율의 극한, 최적화에서 제일 많이 사용하는 기법.**
 
 $$
-f'(x) = \lim_{h\rightarrow0}\frac{f(x+h) - f(x)}h
+f'(x) = \lim_{h\rightarrow 0}\frac{f(x+h) - f(x)}h
 $$
 
 > 미분 코드 구현
@@ -523,6 +523,7 @@ $$
 - b는 각 한 행의 모든 값이 같다.
 
 ```mermaid
+으에에... 이게 머야 언젠간 고치기
 graph BT
 	x1((x<sub>1</sub>)) & x2((x<sub>2</sub>)) & x((x...)) & xd((x<sub>d</sub>))-->o1((O<sub>1</sub>)) & os((o...)) & op((O<sub>p</sub>))
 ```
@@ -576,8 +577,8 @@ def one_hot_encoding(vec):
 - 신경망은 *선형모델과 활성함수(activation function)을 합성한 함수*
 
 $$
-\bold{H} = (\sigma (z_1), \dots, \sigma(z_n)), \sigma(z) = \sigma(Wx + b)\\
-\sigma = 활성함수(비선형),\ z = (z_1,\dots,z_q) = 잠재벡터,\ \bold H = 새로운\ 잠재벡터 = 뉴런
+H = (\sigma (z_1), \dots, \sigma(z_n)), \sigma(z) = \sigma(Wx + b)\\
+\sigma = 활성함수(비선형),\ z = (z_1,\dots,z_q) = 잠재벡터,\ H = 새로운\ 잠재벡터 = 뉴런
 $$
 
 **[math 2. 신경망 뉴런]**
@@ -591,17 +592,17 @@ $$
 
 - 활성화 함수는 *실수값을 받아 실수값을 돌려주는 비선형(nonlinear) 함수*
   - 비선현 근사를 하기 위해 존재
-- 이로 인해 딥러닝이 선형모형과 차이를 보였으며, *시그모이드(sigmoid), tanh, 그리고 주로 쓰이고 있는 ReLU 함수* 등이 있다. 
+- 이로 인해 딥러닝이 선형모형과 차이를 보였으며, *시그모이드(sigmoid), $tanh$, 그리고 주로 쓰이고 있는 ReLU 함수* 등이 있다. 
 
 ![image-20210127172913738](image-20210127172913738.png)
 
 **[img 3. sigmoid, tanh, ReLu 함수 그래프]**
 
-- 만약, 이렇게 구한 *잠재 벡터 H에서 가중치행렬 W^(2)^와 b^(2)^를 통해 다시 한번 선형 변환해서 출력하게 되면 (W^(2)^, W^(1)^)를 패러미터로 가진 2층(2-layers) 신경망*이 된다.
+- 만약, 이렇게 구한 *잠재 벡터 H에서 가중치행렬 $W^{(2)}$와 $b^{(2)}$를 통해 다시 한번 선형 변환해서 출력하게 되면 ($W^{(2)}, W^{(1)}$)를 패러미터로 가진 2층(2-layers) 신경망*이 된다.
 
 $$
-\bold O = \bold H\bold W^{(2)} + b^{(2)},\  \bold{H} = (\sigma (z_1), \dots, \sigma(z_n)) = \sigma(\bold Z^{(1)}),\ \sigma(z) = \sigma(W^{(1)}x + b^{(1)}) \\
-\bold Z^{(1)} = \bold X\bold W^{(1)} + \bold b^{(1)}
+ O =  H W^{(2)} + b^{(2)},\  H = (\sigma (z_1), \dots, \sigma(z_n)) = \sigma( Z^{(1)}),\ \sigma(z) = \sigma(W^{(1)}x + b^{(1)}) \\
+ Z^{(1)} =  X W^{(1)} + b^{(1)}
 $$
 
 **[math 2-1. 2중 신경망]**
@@ -613,18 +614,18 @@ $$
 - 이렇게 *신경망이 여러층 합성된 함수를 다층(multi-layer) 퍼셉트론(MLP)*라고 한다.
 
 $$
-\\ \bold O = \bold Z^{(L)}
+\\ O = Z^{(L)}
 \\ \vdots
-\\ \bold H^{(l)} = \sigma(\bold Z^{(l)})
-\\ \bold Z^{(l)} = \bold H^{(l-1)}\bold W^{(l)} + \bold b^{(l)}
+\\ H^{(l)} = \sigma(Z^{(l)})
+\\ Z^{(l)} = H^{(l-1)} W^{(l)} + b^{(l)}
 \\ \vdots
-\\ \bold{H^{(1)}} = \sigma(\bold Z^{(1)})
-\\ \bold Z^{(1)} = \bold X\bold W^{(1)} + \bold b^{(1)}
+\\{H^{(1)}} = \sigma(\bold Z^{(1)})
+\\ Z^{(1)} = X\bold W^{(1)} + b^{(1)}
 $$
 
 **[math 2-2. n층으로 이루어진  다중신경망의 합성함수]**
 
-- l = 1,...,L까지 순차적인 신경망 계산을 순전파(forward propagation)이라 부른다.
+- $l = 1,\dots,L$까지 순차적인 신경망 계산을 순전파(forward propagation)이라 부른다.
 
 ![image-20210127212725927](image-20210127212725927.png)
 
@@ -637,7 +638,7 @@ $$
 
 ### 역전파(backpropagation) 알고리즘
 
-- *각 층에 사용된 패러미터 **{W^{l}^,b^{l}^}^L^ ~l=1~**을 역순으로 학습*하는데 사용된다.
+- *각 층에 사용된 패러미터 **${W^{l},b^{l}}^L_{l=1}$**을 역순으로 학습*하는데 사용된다.
 - 합성미분의 *연쇄법칙(chain-rule) 기반 자동미분(auto-differentiation)*을 이용하여 역순으로 구한다. 
 
 $$
@@ -662,14 +663,14 @@ $$
 ## 확률론
 
 - 딥러닝은 **확률론 기반의 기계학습 이론에 바탕**을 두고 있으며, 통계적 해석은 손실함수 들의 기본 작동원리이다.
-  - 회귀 분석의 L~2~노름은 예측오차 분산을 최소화하는 방향으로 학습하며
+  - 회귀 분석의 L2 노름은 예측오차 분산을 최소화하는 방향으로 학습하며
   - 분류 문제의 교차 엔트로피는 모델 예측의 불확실성을 최소화하는 방향으로 학습한다.
 
 ### 확률분포
 
 - 확률분포란, *확률 변수가 특정한 값을 가질 확률을 나타내는 함수*를 의미한다.
 
-- 확률분포는 데이터공간 (x,y) 에서 데이터를 추출하는 분포이다.
+- 확률분포는 데이터공간 $(x, y)$ 에서 데이터를 추출하는 분포이다.
 
 - 확률 변수는 이산형(discrete)과 연속형(continuous)으로 구분된다.
 
@@ -690,19 +691,20 @@ $$
 
   **[math 4-1. 연속형 확률변수]**
 
--  P(x)는 *입력 x에 대한 주변확률 분포*로 y에 대한 정보를 주진 않음
+-  $P(x)$는 *입력 x에 대한 주변확률 분포*로 y에 대한 정보를 주진 않음
 
 
 ### 기대값
-- 조건부 확률 P(x|y)는 *데이터 공간에서 입력 x와 출력 y 사이의 관계를 모델링하며, 입력 변수 x에 대해 정답이 y일 확률*을 의미함.
-- softmax(WΦ  + b )은 데이터 x으로부터 추출된 특징패턴 Φ(x)과 가중치행렬 W을 통해 조건부확률 P(y|x)을 계산
+- 조건부 확률 $P(x\|y)$는 *데이터 공간에서 입력 x와 출력 y 사이의 관계를 모델링하며, 입력 변수 x에 대해 정답이 y일 확률*을 의미함.
+
+- $softmax(W\phi + b )$은 데이터 x으로부터 추출된 특징패턴 $\phi (x)$과 가중치행렬 W을 통해 조건부확률 $P(y\|x)$을 계산
 
 - 기대값(expectation)은 *데이터를 대표하는 통계량, 확률 분포를 통해 다른 통계적 범함수를 계산하는데 사용*
 
   - 회귀 문제의 경우 조건부 기대값을 추정하며 이는 각 확률분포에 따라 다음과 같이 구한다.
 
   $$
-  \mathbb{E}_{x\sim P(x)}[f(x)] = \int_\chi f(x)P(x)dx \rightarrow연속확률분포\\
+  \mathbb{E}_{x\sim P(x)}[f(x)] = \int_\chi f(x)P(x)dx \rightarrow연속확률분포\ \ \\
   \mathbb{E}_{x\sim P(x)}[f(x)] = \sum_{x\in\chi} f(x)P(x) \rightarrow 이산확률분포
   $$
 
@@ -887,32 +889,32 @@ $$
 
 ### 조건부 확률
 
-- *조건부 확률 $P(A|B)$는 사건 B가 일어난 상황에서 사건 A가 발생할 확률*
-- 이를 통해 $P(A|B)$ 또한 구할 수 있다.
+- *조건부 확률 $P(A\|B)$는 사건 B가 일어난 상황에서 사건 A가 발생할 확률*
+- 이를 통해 $P(A\|B)$ 또한 구할 수 있다.
 
 $$
-P(A\cap B) = P(B)P(A|B)\\
-P(B|A) = \frac {P(A\cap B)}{P(A)} = P(B)\frac {P(A|B)}{P(A)}
+P(A\cap B) = P(B)P(A\|B)\\
+P(B\|A) = \frac {P(A\cap B)}{P(A)} = P(B)\frac {P(A\|B)}{P(A)}
 $$
 
 **[math 11. 조건부확률에 대한 식]**
 $$
-P(\theta|\mathcal{D}) = P(\theta)\frac{P(\mathcal{D}|\theta)}{P(\mathcal{D})}\\
-P(\theta|\mathcal{D}) : 사후확률(posterior),\ P(\theta):사전확률(prior), \ P(\mathcal{D}|\theta): 가능도(likelihood),\ P(\mathcal{D}):Evidence
+P(\theta\|\mathcal{D}) = P(\theta)\frac{P(\mathcal{D}\|\theta)}{P(\mathcal{D})}\\
+P(\theta\|\mathcal{D}) : 사후확률(posterior),\ P(\theta):사전확률(prior), \ P(\mathcal{D}|\theta): 가능도(likelihood),\ P(\mathcal{D}):Evidence
 $$
 **[math 11-1. 베이즈 정리 용어 정리]**
 
-- 예시를 들어보자면 코로나 발병률이 10%(사전확률 $P(\theta)$:0.1), 실제로 걸려서 확진될 확률 99%, 안걸렸는데 오진될 확률 1% (가능도, $P(\mathcal{D}|\theta)$: 0.99, 0.01 )라 할때 질병에 걸린 사람의 검진결과가 나왔을 때 정말로 코로나에 감염되었을 확률?
+- 예시를 들어보자면 코로나 발병률이 10%(사전확률 $P(\theta)$:0.1), 실제로 걸려서 확진될 확률 99%, 안걸렸는데 오진될 확률 1% (가능도, $P(\mathcal{D}\|\theta)$: 0.99, 0.01 )라 할때 질병에 걸린 사람의 검진결과가 나왔을 때 정말로 코로나에 감염되었을 확률?
 
 $$
-P(\theta) = 0.1,\ P(\neg\theta) = 0.9,\ P(\mathcal{D}|\theta)=0.99,\ p(\mathcal{D}|\neg\theta)=0.01\\
-P(\mathcal{D}) = \sum_\theta P(\mathcal{D}|\theta)P(\theta) = 0.99 \times 0.1 + 0.01 \times0.9 = 0.108\\
-P(\theta|\mathcal{D}) = 0.1 \times\frac{0.99}{0.108} \approx 0.916 \rightarrow 정답
+P(\theta) = 0.1,\ P(\neg\theta) = 0.9,\ P(\mathcal{D}\|\theta)=0.99,\ p(\mathcal{D}\|\neg\theta)=0.01\\
+P(\mathcal{D}) = \sum_\theta P(\mathcal{D}\|\theta)P(\theta) = 0.99 \times 0.1 + 0.01 \times0.9 = 0.108\\
+P(\theta\|\mathcal{D}) = 0.1 \times\frac{0.99}{0.108} \approx 0.916 \rightarrow 정답
 $$
 
 **[math 11-2. 사후확률 계산]**
 
-- $\theta : 코로나\ 발병사건으로\ 정의(관찰 불가),\ \mathcal{D}: 테스트\ 결과로\ 정의(관찰 가능), \neg\theta : ~가\ 아닐\ 확률  $
+- $\theta : 코로나\ 발병사건으로\ 정의(관찰 불가),\ \mathcal{D}: 테스트\ 결과로\ 정의(관찰 가능), \neg\theta : ~가\ 아닐\ 확률$
 - 오탐율(False alarm)이 오르면 테스트의 정밀도(Precision)가 떨어진다. (0.1로 10배 오를시 0.524까지 떨어짐)
 
 ![image-20210201103716368](image-20210201103716368.png)
@@ -924,14 +926,14 @@ $$
 - 베이즈 정리를 통해 새로운 데이터가 들어왔을 때 앞서 계산한 사후확률을 사전확률로 사용하여 갱신된 사후확률을 계산할 수 있음.
 
 $$
-new\ P(\theta|\mathcal{D}) = P(\theta|\mathcal{D})\frac{P(\mathcal{D}|\theta)}{P(\mathcal{D})}
+new\ P(\theta\|\mathcal{D}) = P(\theta\|\mathcal{D})\frac{P(\mathcal{D}\|\theta)}{P(\mathcal{D})}
 $$
 
 **[math 12. 갱신된 사후확률 구하기]**
 $$
-new\ P(\theta|\mathcal{D}) = 0.1 \times \frac {0.99}{0.189} \approx 0.524,\ P(\theta|\mathcal{D}) = 0.99,\ P(\theta|\neg\mathcal{D}) = 0.1 \\ 
+new\ P(\theta\|\mathcal{D}) = 0.1 \times \frac {0.99}{0.189} \approx 0.524,\ P(\theta\|\mathcal{D}) = 0.99,\ P(\theta\|\neg\mathcal{D}) = 0.1 \\ 
 P(\mathcal{D}^*)=0.99\times0.524+0.1\times0.476 \approx0.566\\
-갱신된\ 사후확률\ P(\theta|\mathcal{D}^*) = 0.524 \times\frac{0.99}{0.566}\approx0.917 
+갱신된\ 사후확률\ P(\theta\|\mathcal{D}^*) = 0.524 \times\frac{0.99}{0.566}\approx0.917 
 $$
 **[math 12-1. 갱신된 사후확률 계산]**
 
@@ -958,9 +960,9 @@ $$
 - do(T=a)라는 조정 효과를 통해 Z의 개입을 제거해야한다.
 
 $$
-P_a(R=1) = \sum_{z\in \{0,1\}}P(R=1|T=b,Z=z)P(Z=z) = \frac{81}{87}\times\frac{(87+270)}{700} + \frac{192}{263}\times\frac{263+80}{700}\approx 0.8325 \\
+P_a(R=1) = \sum_{z\in \{0,1\}}P(R=1\|T=b,Z=z)P(Z=z) = \frac{81}{87}\times\frac{(87+270)}{700} + \frac{192}{263}\times\frac{263+80}{700}\approx 0.8325 \\
 
-P_b(R=1) = \sum_{z\in \{0,1\}}P(R=1|T=b,Z=z)P(Z=z) = \frac{234}{270}\times\frac{(87+270)}{700} + \frac{55}{80}\times\frac{263+80}{700}\approx 0.7789
+P_b(R=1) = \sum_{z\in \{0,1\}}P(R=1\|T=b,Z=z)P(Z=z) = \frac{234}{270}\times\frac{(87+270)}{700} + \frac{55}{80}\times\frac{263+80}{700}\approx 0.7789
 $$
 
 **[math 13. 조정 효과를 통한 Z(중첩요인) 개입 제거]**
@@ -988,8 +990,8 @@ $$
   - 정의역이 이상(discrete) 공간 : 급수로 표현
 
 $$
-continuous\ \  [f*g](x) = \int_{\mathbb{R}^d}f(z)g(x-z)dz=\int_{\mathbb{R}^d}f(x-z)g(z)dz=[g*f](x)\\
-discrete\ \  [f*g](i) = \sum_{a \in \mathbb{Z}^d}f(a)g(i-a)=\sum_{a \in \mathbb{Z}^d}f(i-a)g(a)=[g*f](i) \\
+continuous\ \  \[f*g\]\(x\) = \int_{\mathbb{R}^d}f(z)g(x-z)dz=\int_{\mathbb{R}^d}f(x-z)g(z)dz=\[g*f\]\(x\)\\
+discrete\ \  \[f*g\]\(i\) = \sum_{a \in \mathbb{Z}^d}f(a)g(i-a)=\sum_{a \in \mathbb{Z}^d}f(i-a)g(a)=\[g*f\]\(i\) \\
 g(x-z), g(i-a) : signal\ term,\ f(z), f(a): kernal\ term
 $$
 
@@ -1010,9 +1012,9 @@ $$
 
 
 $$
-1D-conv\ \  [f*g](i) = \sum^d_{p=1}f(p)g(i+p)\\
-2D-conv\ \  [f*g](i,j) = \sum_{p,q}f(p,q)g(i+p, j+q)\\
-3D-conv\ \  [f*g](i,j,k) = \sum_{p,q,r}f(p,q,r)g(i+p, j+q, k+r)\\
+1D-conv\ \  \[f*g\]\(i\) = \sum^d_{p=1}f(p)g(i+p)\\
+2D-conv\ \  \[f*g\]\(i,j\) = \sum_{p,q}f(p,q)g(i+p, j+q)\\
+3D-conv\ \  \[f*g\]\(i,j,k\) = \sum_{p,q,r}f(p,q,r)g(i+p, j+q, k+r)\\
 $$
 
 **[math 14-2.  Convolution 여러 차원 연산]**
@@ -1054,7 +1056,7 @@ $$
 - 커널이 모든 입력데이터에 공통으로 적용되므로 역전파 계산시 convolution 연산을 함
 
 $$
-\frac \partial {\partial x}[f*g](x) = \frac \partial {\partial x}\int_{\mathbb{R}^d}f(y)g(x-y)dy =\int_{\mathbb{R}^d}f(y)\frac {\partial g}{\partial x}(x-y)dy =[f*g'](x)
+\frac \partial {\partial x}\[f*g\]\(x\) = \frac \partial {\partial x}\int_{\mathbb{R}^d}f(y)g(x-y)dy =\int_{\mathbb{R}^d}f(y)\frac {\partial g}{\partial x}(x-y)dy =\[f*g'\]\(x\)
 $$
 
 **[math 14-4.  Convolution 연산 연속시 역전파]**
@@ -1074,7 +1076,7 @@ $$
 
 - 소리, 문자열, 주가 추이 등, 순차적으로 들어오는 데이터
   - 시계열(time-series) 데이터는 시간 순서에 따라 나열된 데이터로, 시퀀스 데이터에 속함.
-- 독립 동등 분포 (i.i.d)가정을 위배하기 때문에 순서를 바꾸거나 과거 정보이 변형되면 데이터의 확률 분포도 바뀜.
+- 독립 동등 분포 ($i\.i\.d$)가정을 위배하기 때문에 순서를 바꾸거나 과거 정보이 변형되면 데이터의 확률 분포도 바뀜.
   - ex) 개가 사람을 물었다. $\leftrightarrow$ 사람이 개를 물었다. $\rightarrow$ 위치를 바꾼것 만으로, 데이터의 확률, 의미가 달라짐.
 
 #### sequence data handling
@@ -1082,12 +1084,12 @@ $$
 - 이전 시퀀스의 정보로 앞으로의 데이터의 확률 분포를 다루기 위해 조건부확률 결합법칙 이용
 
 $$
-P(X_1,\dots,X_t) = P(X_t|X_1,\dots,X_{t-1})P(X_1,\dots,X_{t-1})\\
-= P(X_t|X_1,\dots,X_{t-1})P(X_{t-1}|X_1,\dots,X_{t-2})\times P(X_1,\dots,X_{t-2})\\
-=\prod^t_{s=1}P(X_s|X_{s-1},\dots,X_1)\\
+P(X_1,\dots,X_t) = P(X_t\|X_1,\dots,X_{t-1})P(X_1,\dots,X_{t-1})\\
+= P(X_t\|X_1,\dots,X_{t-1})P(X_{t-1}|X_1,\dots,X_{t-2})\times P(X_1,\dots,X_{t-2})\\
+=\prod^t_{s=1}P(X_s\|X_{s-1},\dots,X_1)\\
 \prod_{s=1}^t = s =1,\dots,t 까지\ 전부\ 곱하라\\
-즉,\ X_t \sim P(X_t|X_{t-1},\dots,X_1), \\
-X_{t+1} \sim P(x_{t+1}|X_t,X_{t-1},\dots,X_1)
+즉,\ X_t \sim P(X_t\|X_{t-1},\dots,X_1), \\
+X_{t+1} \sim P(x_{t+1}\|X_t,X_{t-1},\dots,X_1)
 $$
 
 **[math. 베이즈 법칙에 의한 P(X~s~) 추론 ]**
@@ -1103,8 +1105,8 @@ $$
     
 
 $$
-X_t \sim P(X_t|X_{t-1},H_t), \\
-X_{t+1} \sim P(x_{t+1}|X_t,X_{t-1},H_{t+1})\\
+X_t \sim P(X_t\|X_{t-1},H_t), \\
+X_{t+1} \sim P(x_{t+1}\|X_t,X_{t-1},H_{t+1})\\
 잠재변수\ H_t=X_{t-2},\dots,X_{1}=Net_\theta(H_{t-1},X_{t-1})
 $$
 
