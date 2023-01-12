@@ -14,7 +14,7 @@
 <img class="badge" title="roadvirushn@gmail.com" src="https://img.shields.io/badge/Gmail-roadviurshn-lightgrey?style=plastic&logo=gmail"></a>
 ## Overview
 
-![](_README/subbrain_front 1.webp)
+![](_README/preview.gif)
 
 PKMS(Personal Knowledge Management System) Build by [Roadvirushn](https://github.com/RoadVirusHN)
 - **Static Web site by Jekyll**
