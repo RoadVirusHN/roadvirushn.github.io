@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Subbrain 개발기 - Ruby&amp;Jekyll | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Subbrain 개발기 - Ruby&amp;Jekyll" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Ruby&Jekyll.html" />
+<meta property="og:url" content="http://localhost:4000/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Ruby&Jekyll.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-30T18:15:47+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Subbrain 개발기 - Ruby&amp;Jekyll" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-30T18:15:47+09:00","datePublished":"2022-12-30T18:15:47+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"Subbrain 개발기 - Ruby&amp;Jekyll","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Ruby&Jekyll.html"},"url":"http://localhost:4000/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Ruby&Jekyll.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 6
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Subbrain 개발기 - Ruby&Jekyll</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-12-30T18:15:47+09:00" itemprop="datePublished">Dec 30, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#개요">개요</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#개발-기능">개발 기능</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#개발-환경-설정">개발 환경 설정</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#프로젝트-파일-구조">프로젝트 파일 구조</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#Obsidian-Jekyll-포스트-구조">Obsidian &lt;=&gt; Jekyll 포스트 구조</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#전처리-구현-Custom-Generator-기반">전처리 구현: Custom Generator 기반</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#회고">회고</a><ul><li lvl="3"><a id="markdown-toc-0-7" href="#Ruby">Ruby</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#Jekyll">Jekyll</a><ul></ul></li></ul></li></ol>
+<h1 id="Subbrain-개발기-Ruby-Jekyll">Subbrain 개발기 - Ruby &amp; Jekyll</h1>
+
+<h2 id="개요">개요</h2>
+<p><strong>Ruby</strong>는 가독성과 생산성에 치중한 고수준 인터프리터 언어로, 함수형, 절차형, 객체형 프로그래밍을 지원하며, 웹 프레임워크인 <span class='link-warning'>
+      <a href="https://rubyonrails.org/" class="wikilink externallink">ruby on rails</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://rubyonrails.org/"</em>로
+        <button onclick="window.open('https://rubyonrails.org/','_blank'); return false;">이동</button>?
+      </span>
+    </span>가 유명하다</p>
+
+<p><strong>Jekyll</strong>은 작성한 문서 파일들을 간단히 정적 블로그 사이트로 바꿔주는 Ruby와 Gem 기반 정적 사이트 생성 툴이다. 주로 github page와 연동되어 개발자 블로그로 많이 사용된다.</p>
+
+<p>사용하기 쉽고 간단하며, 은근히 많은 사람들이 블로그를 만들기 위해 사용하여, 기술 스택으로 채용하게 되었다.</p>
+
+<p>하지만 둘 다 내가 이번 프로젝트에서 처음 접해보았으며, Ruby의 간단한 문법과 Jekyll의 편의성에도 불구하고 학습으로 인한 개발 시간 증가의 원인 중 하나이기도 하다.</p>
+
+<p>이 둘을 통해 블로그 기능 중 주로 동적 요구가 필요하지 않은 것들을 만들었다.</p>
+
+<h2 id="개발-기능">개발 기능</h2>
+
+<h3 id="개발-환경-설정">개발 환경 설정</h3>
+<ul>
+  <li><strong>Ruby 설치 및 linter 설정</strong></li>
+</ul>
+
+<div class="callout callout-example" id="callout-199f39a9-2872-4bda-92e2-ffcf05a6e4b1">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Gemfile 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<pre><code class="language-gem">gem "webrick", "~&gt; 1.7"
+gem "rufo"
+gem "reek"
+gem "rubocop"
+gem "jekyll-seo-tag"
+gem "nokogiri"
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<p>Ruby를 설치한 뒤, 위와 같이 Gemfile을 설정 후, <code class="language-plaintext highlighter-rouge">bundle install</code>을 통해 설치 후, VScode ruby 플러그인을 설치하여 여러 환경 설정을 손쉽게 할 수 있다.</p>
+
+<ul>
+  <li><strong>VScode task 설정</strong></li>
+</ul>
+
+<div class="callout callout-example" id="callout-57fa7440-3257-426e-aa57-d7971b37f8fa">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>vscode .vscode/tasks.json
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"dependsOn"</span><span class="p">:[</span><span class="s2">"jekyll"</span><span class="p">,</span><span class="w"> </span><span class="s2">"webpack"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sass"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tsc"</span><span class="p">]</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jekyll"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bundle exec jekyll serve"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shell"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./"</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"presentation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"reveal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"always"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"panel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node_modules/.bin/webpack"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shell"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./"</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"presentation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"reveal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"always"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"panel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"problemMatcher"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sass"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sass -w _sass:assets/css"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shell"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./"</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"presentation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"reveal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"always"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"panel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"problemMatcher"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tsc"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npx tsc -w"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shell"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"cwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./"</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"presentation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"reveal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"always"</span><span class="p">,</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"panel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="nl">"problemMatcher"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">&nbsp;</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>프로젝트 개발 시 나는 다음과 같은 커맨드들을 일일이 입력해야 했다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> : Gem에 명시된 라이브러리들과 함께 Jekyll 개발 모드로 실행</li>
+  <li><code class="language-plaintext highlighter-rouge">node_modules/.bin/webpack -w</code>: 자바스크립트 파일 변경 시 자동 번들링</li>
+  <li><code class="language-plaintext highlighter-rouge">sass -w _sass:assets/css</code>: 작성한 sass 파일 변경시 css 파일로 자동 컴파일</li>
+  <li><code class="language-plaintext highlighter-rouge">npx tsc -w</code>: 작성한 타입스크립트 파일 변경 시 자동 자바스크립트로 컴파일</li>
+</ul>
+
+<p>이는 매우 귀찮은 일이였고, 위와 같이 VScode의 기능을 활용해 커스텀 Task를 생성해 <code class="language-plaintext highlighter-rouge">ctrl + p Tasks: Run task</code> 명령을 통해 한꺼번에 실행시킬 수 있게 만들었다.</p>
+
+<h3 id="프로젝트-파일-구조">프로젝트 파일 구조</h3>
+
+<p>Jekyll의 기본 폴더 구조를 기본으로 몇몇 폴더와 다른 툴들을 위한 파일이 추가되었다.</p>
+
+<div class="callout callout-note" id="callout-31ed3d38-b7c7-4410-8ae8-e2360499ed2e">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>프로젝트 파일 구조 개요
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>subbrain/
+<span class="nt">---folders</span>↓---
+ |-assets/ : css, 이미지, 자바스크립트 등 여러 정적 파일이 저장되어 있는 폴더
+ |-blog/ : 라우터 인덱싱, 정적 페이지들의 html 파일들 저장소
+ |-node_modules/ : javascript가 사용하는 패키지
+ |-scripts/ : Typescript 파일들
+ |-_articles/ : 작성한 마크다운 파일들이 카테고리 별 폴더 구조로 나뉘어 저장
+ |-_data/ : 생성된 블로그 포스트들의 정보<span class="o">(</span>태그 정보, 카테고리 정보 등<span class="o">)</span>가 json형식으로 저장
+ |-_etcs/ : 기타 임시 코드 저장용 폴더
+ |-_includes/ : 재사용 가능한 컴포넌트들<span class="o">(</span>헤더, 푸터, 드로워 등<span class="o">)</span>
+ |-_layouts/ : 페이지 템플릿들<span class="o">(</span>옵시디언 마크다운 블로그 포스트 글 등<span class="o">)</span>
+ |-_plugins/ : 커스텀 루비 플러그인 파일들, 주로 블로그 포스트의 전처리와 후처리 구현
+ |-_sass/ : css로 컴파일되 assets 폴더로 옮겨짐
+ |-_site/ : 정적 사이트 생성 결과물
+ <span class="nt">---files</span>↓---
+ |-tsconfig.json : Typescript 설정 파일
+ |-webpack.config.js : Webpack 설정 파일
+ |-package.json : Javascript 패키지 정보
+ |-Gemfile : Ruby 패키지 정보
+ |-index.html : 메인 페이지
+ |-.eslintrc.json : Typescript linter 설정 파일
+ |-_config.yml : Jekyll 설정 파일
+</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_</code>가 앞에 붙은 폴더나 <code class="language-plaintext highlighter-rouge">_config.yml</code>에서 제외 목록에 들어간 폴더는 정적 사이트 생성시 제외됨</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-998b0b92-1245-4566-b835-909bb5d727b6">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>일부 폴더 소개
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">assets</code> 폴더 : css, 이미지, 자바스크립트 등 여러 정적 파일이 저장되어 있는 폴더</strong><br>
+  정적 사이트 프로젝트이므로 규모가 크다.  <code class="language-plaintext highlighter-rouge">_sass</code> 폴더에서 css 파일을, <code class="language-plaintext highlighter-rouge">scripts</code> 폴더에서 JS 파일을 컴파일하여 이곳에서 저장한다.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">_articles</code> 폴더 : 작성한 마크다운 파일들이 카테고리 별 폴더 구조로 나뉘어 저장</strong><br>
+  기존의 <code class="language-plaintext highlighter-rouge">_post</code> 폴더의 동작을 모방하여, Jekyll이 이들의 변화를 감지하고 블로그 포스트를 생성하도록 구현함</p>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">_data</code> 폴더 : 생성된 블로그 포스트들의 정보(태그 정보, 카테고리 정보 등)가 json 형식으로 저장</strong><br>
+  Jekyll이 자동으로 변화를 업데이트하게끔 구현하였다.<br>
+  주로 자바스크립트와 커스텀 플러그인에서 포스트 정보를 가져오는데 사용하는 <strong>일종의 DB 역할</strong>을 한다.
+    <ul>
+      <li>Liquid의 경우 Jekyll의 <code class="language-plaintext highlighter-rouge">site</code> 변수에서 정보를 제공하지만, JS와 ruby에서 사용할 수 없어서 구현</li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">_includes</code> 폴더와 <code class="language-plaintext highlighter-rouge">_layouts</code> 폴더: 컴포넌트와 페이지 템플릿  파일들</strong><br>
+  liquid 태그가 포함되어 html 파일들이 존재, <code class="language-plaintext highlighter-rouge">_layouts</code> 내의 파일은 <strong>일종의 페이지를 위한 템플릿</strong>이고, <code class="language-plaintext highlighter-rouge">_includes</code> 내의 파일은 <strong>일종의 재사용 가능한 컴포넌트</strong>들이다.
+    <ul>
+      <li>예를 들어 <code class="language-plaintext highlighter-rouge">_layouts/obsidian.html</code>은 옵시디언 파일들을 페이지로 만들 때 공통으로 사용</li>
+      <li><code class="language-plaintext highlighter-rouge">_includes/drawer/drawer.html</code>은 페이지 내 drawer를 구현할 때 <code class="language-plaintext highlighter-rouge">liquid include</code> 문법으로 불러와 사용한다.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">blog</code> 폴더 : 정적으로 생성되는 페이지들에 사용되는 html 파일들</strong><br>
+  일종의 라우팅 인덱스 폴더, 내 소개 페이지, 검색결과 페이지, 404 에러 페이지, 포스트 리스트 페이지가 존재</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">_site</code> 폴더 : 생성된 정적 사이트 결과물</strong><br>
+  내부 파일을 <code class="language-plaintext highlighter-rouge">gh-page</code> 브랜치에 옮겨 배포한다.</p>
+  </li>
+  <li>기타 폴더(<code class="language-plaintext highlighter-rouge">_sass</code> 폴더, <code class="language-plaintext highlighter-rouge">scripts</code> 폴더, <code class="language-plaintext highlighter-rouge">node_modules</code> 폴더)는 해당 도메인에서 설명하겠다.</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<h3 id="Obsidian-Jekyll-포스트-구조">Obsidian &lt;=&gt; Jekyll 포스트 구조</h3>
+
+<div class="callout callout-seealso" id="callout-3f205e94-8c0e-4d7a-860e-b6d008869c72">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><strong><span class="preview-wrapper">
+      <a href="/articles/etc/etcs/Obsidian.html" class="wikilink">Obsidian</a>
+      <iframe class="preview" src='' data-href="/articles/etc/etcs/Obsidian.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span></strong> 이란?
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<p>Jekyll에서 기본적으로 마크다운 파일을 HTML 파일로 바꾸어주는 기능을 지원한다.</p>
+<ul>
+  <li><strong>커스텀 id 설정과 Hard wrap 기능을 지원하기 위해 Kramdown 마크다운 변환</strong>으로 설정을 바꾸어 주었다.</li>
+</ul>
+
+<p>추가적으로 내가 원하는 기능을 구현하기 위해 Ruby 플러그인을 직접 구현하였다.</p>
+<ul>
+  <li>직접 구현한 이유는 학습 + 관련 라이브러리 없음 + gh page에서 플러그인 지원 안함</li>
+</ul>
+
+<div class="callout callout-note" id="callout-b01212e0-e608-499a-914a-b0800c853cef">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>Obsidian &lt;=&gt; Jekyll 포스트 아키텍처 구현
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/Subbrain 개발기 - Ruby&amp;Jekyll/image-20230103130212087.png" alt=""></p>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>변환 전, md 파일에 영향을 줘야하는 기능은 <strong>Jekyll에서 지원하는 Generator 클래스를 상속하여 구현</strong></li>
+  <li>변환 후, html 파일에 영향을 줘야하는 기능은 <strong>Liquid에서 지원하는 Custom Filter 등록 기능으로 구현</strong></li>
+</ul>
+
+<h3 id="전처리-구현-Custom-Generator-기반">전처리 구현: Custom Generator 기반</h3>
+
+<div class="callout callout-example" id="callout-82d2cf0b-2f3c-43d0-9454-a3addd829807">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>전처리 플러그인 파일 구조
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/Subbrain 개발기 - Ruby&amp;Jekyll/image-20230103132944510.png" alt="300"></p>
+
+</div>
+    </div>
+    </div>
+<p>전처리 레이어는 <code class="language-plaintext highlighter-rouge">ruby</code> 플러그인으로 구현되었으며, 추가로 레이어 내부에 각 전처리 함수들이 계층 구조로 이루어져 있다.<br>
+Jekyll 측에서 각 마크다운 파일을 처리할 때 사용하는 <span class='link-warning'>
+      <a href="https://jekyllrb.com/docs/plugins/generators/" class="wikilink externallink">Generator</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jekyllrb.com/docs/plug..."</em>로
+        <button onclick="window.open('https://jekyllrb.com/docs/plugins/generators/','_blank'); return false;">이동</button>?
+      </span>
+    </span>  클래스를 상속받아 구현하였다.</p>
+
+<div class="callout callout-example" id="callout-8fe3faf3-de1b-4ad9-8dfe-393f3cfa6456">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Preprocessor.rb
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require_relative</span> <span class="s1">'./layouts/obsidian/preprocess_obsidian'</span>
+<span class="nb">require_relative</span> <span class="s1">'./common/modules/preprocess_frontmatter'</span>
+<span class="nb">require_relative</span> <span class="s1">'./common/preprocess_common'</span>
+
+<span class="k">module</span> <span class="nn">Preprocessor</span>
+<span class="err">&nbsp;</span> <span class="k">class</span> <span class="nc">ArticleConverter</span> <span class="o">&lt;</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Generator</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kp">include</span> <span class="no">PreprocessObsidian</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kp">include</span> <span class="no">PreprocessFrontmatter</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kp">include</span> <span class="no">PreprocessCommon</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">changed</span> <span class="o">=</span> <span class="n">register_articles</span><span class="p">(</span><span class="n">site</span><span class="p">.</span><span class="nf">collections</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">])</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">clear_categories</span> <span class="k">if</span> <span class="n">changed</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">site</span><span class="p">.</span><span class="nf">collections</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">].</span><span class="nf">docs</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">article</span><span class="o">|</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">preprocess_common</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">changed</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">preprocess_obsidian</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s1">'layout'</span><span class="p">].</span><span class="nf">upcase</span> <span class="o">==</span> <span class="s1">'OBSIDIAN'</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">result</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">end</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">create_category_pages</span><span class="p">(</span><span class="n">site</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">page</span><span class="o">|</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">site</span><span class="p">.</span><span class="nf">pages</span> <span class="o">&lt;&lt;</span> <span class="n">page</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">end</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">end</span>
+<span class="err">&nbsp;</span> <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>가장 먼저 새로 등록된 파일들의 정보를 <code class="language-plaintext highlighter-rouge">_data</code> 폴더에 업데이트한다.(<code class="language-plaintext highlighter-rouge">register_articles</code>)</li>
+  <li>블로그 포스트의 정보(태그, 사용하는 레이아웃)에 따라 처리한다.</li>
+  <li>주로 옵시디언에서만 지원하는 마크다운 기능들을 랜더링하기 위한 정보들을 추출하는 함수들이다.</li>
+  <li>폴더 구조에 따라 변형되는 게시판 카테고리 구조 페이지 또한 이곳에서 구현된다.</li>
+  <li>마크다운 파일은 DOM 구조가 없으므로 대부분 정규 표현식을 통해 요소를 검색하고 수정한다.</li>
+</ul>
+
+<p>구현하면서 <strong>정규표현식을 정말 많이 공부</strong>할 수 있었다. <br>
+기존에는 정규 표현식을 정말 가독성이 떨어지고 복잡하다고 생각하여 초보적인 단계까지만 학습했지만, 이제 캡처 그룹부터 룩 어헤드까지 사용할 수 있게 되었다.</p>
+
+<h4 id="후처리-구현-Custom-Liquid-Filter-기반">후처리 구현 : Custom Liquid Filter 기반</h4>
+
+<div class="callout callout-example" id="callout-7bf1cf62-ad74-4745-8278-12664dc46d24">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>후처리 플러그인 파일 구조
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/Subbrain 개발기 - Ruby&amp;Jekyll/image-20230103133015293.png" alt=""></p>
+
+</div>
+    </div>
+    </div>
+<p>후처리 레이어 또한 <code class="language-plaintext highlighter-rouge">ruby</code> 플러그인으로 구현되었으며, Jekyll의 layout 기능을 이용해서 필요한 후처리 함수만 Liquid Custom Filter를 통해 처리되도록 구현했다.</p>
+
+<div class="callout callout-example" id="callout-7aaf705a-5676-4693-8f73-92be789a17ff">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>layout 후처리 필터 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content-section"</span><span class="nt">&gt;</span>
+&nbsp; {{content | postprocess_obsidian}}
+<span class="nt">&lt;/div&gt;</span>
+...
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>주로, 콜아웃이나 TOC, 위키 링크 등의 실제 뷰를 HTML 태그로 구현하는 기능을 만들었다.</p>
+
+<div class="callout callout-example" id="callout-6a7685d0-13ad-4379-99bf-88b25331e433">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>postprocess_obsidian.rb
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'liquid'</span>
+<span class="nb">require</span> <span class="s1">'nokogiri'</span>
+<span class="nb">require_relative</span> <span class="s1">'./modules/postprocess_toc'</span>
+<span class="nb">require_relative</span> <span class="s1">'./modules/postprocess_callout'</span>
+<span class="nb">require_relative</span> <span class="s1">'./modules/postprocess_wikilink'</span>  
+
+<span class="k">module</span> <span class="nn">Jekyll</span>
+<span class="err">&nbsp;</span> <span class="k">module</span> <span class="nn">PostprocessObsidian</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kp">include</span> <span class="no">PostprocessToc</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kp">include</span> <span class="no">PostprocessCallout</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kp">include</span> <span class="no">PostprocessWikilink</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">def</span> <span class="nf">postprocess_obsidian</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">html</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">.</span><span class="no">HTML5</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">html</span> <span class="o">=</span> <span class="n">convert_noneng_custom_id</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">html</span> <span class="o">=</span> <span class="n">convert_toc</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">html</span> <span class="o">=</span> <span class="n">html</span><span class="p">.</span><span class="nf">to_html</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">html</span> <span class="o">=</span> <span class="n">convert_callout</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">html</span> <span class="o">=</span> <span class="n">convert_wikilink</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">html</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">end</span>
+<span class="err">&nbsp;</span> <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Liquid</span><span class="o">::</span><span class="no">Template</span><span class="p">.</span><span class="nf">register_filter</span><span class="p">(</span><span class="no">Jekyll</span><span class="o">::</span><span class="no">PostprocessObsidian</span><span class="p">)</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>개발 초반에는 DOM 트리 탐색 및 변경을 정규표현식으로 처리했으나, 후반에는 Nokogiri라는 HTML DOM 기반 parser 라이브러리를 이용하여 구현했다.</p>
+<ul>
+  <li>다만 일부 경우, 오히려 가독성이 나빠지는 경우가 있어 그대로 정규 표현식 기반으로 구현한 기능도 존재한다.</li>
+</ul>
+
+<h2 id="회고">회고</h2>
+
+<h3 id="Ruby">Ruby</h3>
+
+<div class="callout callout-example" id="callout-4a722d5f-ebff-4085-9132-cc9d3b3bf3d9">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>내 Ruby 코드 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_category_page_recursive</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="c1"># python과 유사하다.</span>
+<span class="err">&nbsp;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'categories'</span><span class="p">].</span><span class="nf">keys</span><span class="p">.</span><span class="nf">inject</span><span class="p">([])</span> <span class="k">do</span> <span class="o">|</span><span class="n">memo</span><span class="p">,</span> <span class="n">sub_category</span><span class="o">|</span> <span class="c1"># 다양한 loop문 표현</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">memo</span> <span class="o">+</span> <span class="n">create_category_page_recursive</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">categories</span> <span class="o">+</span> <span class="p">[</span><span class="n">sub_category</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'categories'</span><span class="p">][</span><span class="n">sub_category</span><span class="p">])</span>
+<span class="err">&nbsp;</span> <span class="k">end</span>
+<span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">categories</span><span class="p">.</span><span class="nf">empty?</span> <span class="c1"># 함수형 프로그래밍, 파라미터 없을 경우 생략 가능한 "()"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">result</span> <span class="c1"># return을 생략 가능</span>
+<span class="err">&nbsp;</span> <span class="k">else</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="p">[</span><span class="no">CategoryPage</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">data</span><span class="p">)]</span> <span class="o">+</span> <span class="n">result</span>
+<span class="err">&nbsp;</span> <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>Ruby는 파이썬과 상당히 비슷하게 사용자의 가독성과 편의성을 상당히 신경쓴 것이 느껴졌다.
+    <ul>
+      <li>데이터 타입을 선언할 필요가 없음</li>
+      <li>함수의 <code class="language-plaintext highlighter-rouge">return</code>을 생략 가능</li>
+      <li><code class="language-plaintext highlighter-rouge">.empty?</code>, <code class="language-plaintext highlighter-rouge">.nil?</code> 등 직관적이고 함수형 프로그래밍이 가능</li>
+    </ul>
+  </li>
+  <li>단, 오히려 이점이 오히려 호불호 갈린 경우도 많다.
+    <ul>
+      <li>함수에 파라미터를 넘기지 않을 때는 괄호를 생략할 수 있음, 그럴 경우 해당 객체의 변수를 읽은건지, 함수를 호출한 건지 보기만해서는 알 수 없음.</li>
+      <li>해당 함수가 <code class="language-plaintext highlighter-rouge">return</code> 값이 존재하는 함수인지, 아닌지도 알기 힘들다.</li>
+      <li>마치 자바스크립트 루프문들 처럼 같은 코드를 여러 방식으로 표현할 수 있다는 점</li>
+      <li><code class="language-plaintext highlighter-rouge">unless</code> 처럼 단순히 <code class="language-plaintext highlighter-rouge">if</code>의 반대의 의미를 가진 표현도 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-a30c8c49-bb35-447b-a967-6dddc14b13f2">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Rubocop Linter 경고문 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/Subbrain 개발기 - Ruby&amp;Jekyll/image-20221230185605204.png" alt=""></p>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>Ruby의 Linter 겸 Formatter인 <span class='link-warning'>
+      <a href="https://rubocop.org/" class="wikilink externallink">Rubocop</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://rubocop.org/"</em>로
+        <button onclick="window.open('https://rubocop.org/','_blank'); return false;">이동</button>?
+      </span>
+    </span>을 적용했었는데, 내 짧은 프로그래밍 인생 중, 가장 훌륭한 Linter였다.
+    <ul>
+      <li>코드 스타일, 네이밍 컨벤션, 주석 여부 같은 기본 기능</li>
+      <li>같은 동작의 더 좋은 표현까지 추천</li>
+      <li>ABCSize, 순환 복잡도 같은 각종 코드 복잡도까지 지원</li>
+      <li>귀찮으면 버튼 하나로 이를 자동으로 수정 (코드 표현까지도!)</li>
+      <li>VScode와의 호환성이 좋고, 설정도 쉬웠으5며, Reek 같은 다른 린터와 동시에 사용가능.</li>
+      <li>설명이 잘되어 있고, 문서화가 잘되어있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-feb7fd1a-596c-47e6-ad47-6805264538eb">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Rubocop <code class="language-plaintext highlighter-rouge">CyclomaticComplexity</code> 문서 중 일부
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/Subbrain 개발기 - Ruby&amp;Jekyll/image-20230103142143858.png" alt=""></p>
+
+<p>문서를 읽으면서, 좋은 코드에 대해 많이 배울 수 있었다.</p>
+
+</div>
+    </div>
+    </div>
+<p><del>물론 어쩌면 내가 다른 언어의 Linter를 잘못쓰는 것일지도 모르지만</del></p>
+<ul>
+  <li>regex를 이용하기 전에 진즉에 Nokogiri를 썼으면 시간을 꽤나 아꼈을 것 같다.</li>
+  <li>제대로 설계를 안하고 써서 그런지, 코드 가독성이나 재사용성이 조금 아쉽다.</li>
+  <li>Ruby on rails를 함께 사용했으면 경험에 큰 도움이 됬을 것 같지만, 내가 Ruby를 더 파볼 일은 없을 것 같다.</li>
+</ul>
+
+<h3 id="Jekyll">Jekyll</h3>
+
+<ul>
+  <li>확실히 다양한 기능을 클릭 몇번으로 적용 가능하고, 가벼운 블로그로써 손색이 없었지만, 나의 기능에 대한 욕심이 이를 망쳤다.
+    <ul>
+      <li>오히려, 기존 기능을 수정하여 사용하느라 힘들었다.</li>
+      <li>예를 들어, 기본 값인 <code class="language-plaintext highlighter-rouge">post</code> 콜렉션을 이용하다 파일들의 제목을 이상하게 바꿔야하는 (<code class="language-plaintext highlighter-rouge">date-sluggedtitle.md</code>) 제한이 마음에 안들어 새로운 콜렉션으로 바꾸는 과정에서 모든 파일들의 내용과 제목을 손봐줘야 했다.</li>
+      <li>정적 사이트에 동적 기능을 넣을 생각을 한 시점에서 이상함을 느껴야 했다.</li>
+    </ul>
+  </li>
+  <li>github page에서 보안상의 이유로 일부 플러그인을 제외하고 지원하지 않았던 점 또한 치명적이었다.
+    <ul>
+      <li>지원되는 플러그인 찾기 -&gt; netlify 등의 다른 무료 배포 서비스 찾아보기 -&gt; 자바스크립트, 루비, 템플릿 언어 등으로 기능 직접 구현 -&gt; 커스텀 플러그인 지원을 위해 github action 건드려보기</li>
+      <li>위 과정의 시간이 오래 걸렸다.</li>
+    </ul>
+  </li>
+  <li>하지만, 만약 나의 경우와 정반대로, 별 다른 커스터마이징 없이 블로깅하려면, 굳이 Jekyll을 쓰는 것 보다는 Tistory나 네이버 블로그, velog 같은 상용 블로그를 쓰는게 더 나은것 같다.
+    <ul>
+      <li>댓글, 조회수, 추천 등의 동적인 기능이 가능하며, 광고 등을 쉽게 적용할 수 있기 때문</li>
+    </ul>
+  </li>
+  <li>Liquid 템플릿 언어는 <code class="language-plaintext highlighter-rouge">include</code>를 이용한 코드 재사용이 쉬웠고, 각종 필터와 함수들이 꽤 편리했지만, 여전히 별로였다. React의 JSX와 컴포넌트가 너무 그리웠다.
+    <ul>
+      <li>jinja2 같은 다른 템플릿 언어와의 차별점은 잘 모르겠다.</li>
+    </ul>
+  </li>
+</ul>
+
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Ruby&Jekyll.html" hidden></a>
+  <p class="u-path" hidden>_articles/etc/Subbrain 개발기/Subbrain 개발기 - Ruby&Jekyll.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

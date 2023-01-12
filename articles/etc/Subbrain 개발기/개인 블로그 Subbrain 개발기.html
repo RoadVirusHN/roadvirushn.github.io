@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>개인 블로그 Subbrain 개발기 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="개인 블로그 Subbrain 개발기" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="나의 Subbrain 개발기" />
+<meta property="og:description" content="나의 Subbrain 개발기" />
+<link rel="canonical" href="http://localhost:4000/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/%EA%B0%9C%EC%9D%B8%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0.html" />
+<meta property="og:url" content="http://localhost:4000/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/%EA%B0%9C%EC%9D%B8%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-12T12:57:58+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="개인 블로그 Subbrain 개발기" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-12T12:57:58+09:00","datePublished":"2023-01-12T12:57:58+09:00","description":"나의 Subbrain 개발기","headline":"개인 블로그 Subbrain 개발기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/%EA%B0%9C%EC%9D%B8%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0.html"},"url":"http://localhost:4000/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/%EA%B0%9C%EC%9D%B8%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 6
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">개인 블로그 Subbrain 개발기</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-01-12T12:57:58+09:00" itemprop="datePublished">Jan 12, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><h1 id="나의-Subbrain-개발기">나의 Subbrain 개발기</h1>
+
+<ul id="markdown-toc-0"><li lvl="1"><a id="markdown-toc-0-0" href="#나의-Subbrain-개발기">나의 Subbrain 개발기</a><ul><li lvl="2"><a id="markdown-toc-0-1" href="#개요">개요</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#Subbrain의-시작">Subbrain의 시작</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#Subbrain-기술-스택">Subbrain 기술 스택</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#Subbrain의-기능">Subbrain의 기능</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#Subbrain의-끝">Subbrain의 끝</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#기술-스택-별-회고">기술 스택 별 회고</a><ul><li lvl="3"><a id="markdown-toc-0-7" href="#Subbrain-개발기-Ruby-Jekyll">Subbrain 개발기 - Ruby&amp;Jekyll</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#Subbrain-개발기-Typescript">Subbrain 개발기 - Typescript</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#Subbrain-개발기-Sass">Subbrain 개발기 - Sass</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#Subbrain-개발기-webpack-eslint-etc">Subbrain 개발기 - webpack, eslint, etc</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#Subbrain의-교훈-및-회고">Subbrain의 교훈 및 회고</a><ul></ul></li></ul></li></ul></li></ul>
+<div class="callout callout-info" id="callout-987e3b59-274a-4e24-9f95-48e8c81ed8dd">
+      <div class="header">
+        <span class="emoji">ℹ️</span>
+        <span class="title"><strong>Subbrain의 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/개인 블로그 Subbrain 개발기/subbrain_front 1.webp" alt=""></p>
+
+</div>
+    </div>
+    </div>
+<h2 id="개요">개요</h2>
+
+<p><strong>프로젝트 명</strong>: Subbrain 개인 지식 기반 정적 블로그</p>
+
+<p><strong>개발 팀</strong> : 혼자</p>
+
+<p><strong>개발 기간</strong>: 2022. 08. 17 ~ 2022. 12. 27 (개발 중단), 일 평균 2시간 투자</p>
+
+<p><strong>URL</strong>: <span class='link-warning'>
+      <a href="https://roadvirushn.github.io/" class="wikilink externallink">https://roadvirushn.github.io/</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://roadvirushn.github.io/"</em>로
+        <button onclick="window.open('https://roadvirushn.github.io/','_blank'); return false;">이동</button>?
+      </span>
+    </span></p>
+
+<p><strong>Trello</strong>: <span class='link-warning'>
+      <a href="https://trello.com/b/CJ5hI8Iz/til-%EB%A6%AC%EB%89%B4%EC%96%BC" class="wikilink externallink">https://trello.com/b/CJ5hI8Iz/til-%EB%A6%AC%EB%89%B4%EC%96%BC</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://trello.com/b/CJ5hI8Iz/..."</em>로
+        <button onclick="window.open('https://trello.com/b/CJ5hI8Iz/til-%EB%A6%AC%EB%89%B4%EC%96%BC','_blank'); return false;">이동</button>?
+      </span>
+    </span></p>
+
+<h3 id="Subbrain의-시작">Subbrain의 시작</h3>
+
+<div class="callout callout-info" id="callout-d41c9bd1-3feb-4a14-864b-3bee4731b20a">
+      <div class="header">
+        <span class="emoji">ℹ️</span>
+        <span class="title"><strong>Subbrain의 메인 페이지
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/개인 블로그 Subbrain 개발기/image-20221227183103050.png" alt=""></p>
+
+</div>
+    </div>
+    </div>
+<p><strong>Subbrain</strong>은 어딘가에 사는 늙은 개발자 지망생이 만든 <strong>IT 블로그 겸 개인 지식 기반 시스템</strong>이다.</p>
+
+<p><strong>Subbrain</strong>은 보조 뇌🧠라는 의미로, 나의 모자란 기억력을 보조하고, 저작물을 저장, 공개 하기 위한 용도로 개발되었다.</p>
+
+<div class="callout callout-seealso" id="callout-a4c42108-c213-4e67-9e65-9355f5d624e4">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>사실은…
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>원래의 프로젝트명은 대형 SNS _Twitter_의 명칭을 패러디한 <strong>Twathut</strong> (머저리의 헛간)이었다.</p>
+
+<p>엉뚱한 발명만 하는 한 머저리 그림자와 그의 작업장 겸 헛간을 형상화한 로고는 이 때문이다.</p>
+
+<p><img src="/assets/img/개인 블로그 Subbrain 개발기/image-20221228170446933.png" alt="">👈🏽 이 캐릭터의 이름이 <strong>Twat</strong>이었으나 단순히 영어로 “머저리”라는 뜻 뿐만 아니라 “여성의 음부”를 의미한다는 것을 깨닫고 급히 바꿨다.</p>
+
+<p>심지어 개발 중의 가제는 <span class='link-warning'>
+      <a href="https://wh40k.lexicanum.com/wiki/Garden_of_Nurgle" class="wikilink externallink">너글의 디지털 정원</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://wh40k.lexicanum.com/wi..."</em>로
+        <button onclick="window.open('https://wh40k.lexicanum.com/wiki/Garden_of_Nurgle','_blank'); return false;">이동</button>?
+      </span>
+    </span>이었다.</p>
+
+</div>
+    </div>
+    </div>
+<p>이 프로젝트는 다음과 같은 필요성으로 시작되었다.</p>
+
+<ul>
+  <li><strong>기존의 지식 정리 방법이 남이 보기에 극히 더럽고 비효율적이여서 이를 개선하고자.</strong></li>
+  <li><strong>나의 지식을 원하는 자에게 이를 숨김없이 나눠주기 위함. (특히, 다 잊어버렸을 미래의 나)</strong></li>
+  <li><strong>집도 차도 직장도 없는데 인터넷 한 귀퉁이에 내 홈페이지 하나 정도는 있어도 되지 않나 생각해서</strong> 😭</li>
+</ul>
+
+<p>따라서 <strong>Subbrain</strong>은 다음과 같은 조건을 중점으로 개발되었다.</p>
+
+<ul>
+  <li><strong>지식을 정리하는데 기존에 사용하던 마크다운 파일 형식과 옵시디언 툴의 기능을 지원할 것</strong></li>
+  <li><strong>서버 비용이 적거나 무료로 사용할 수 있으면서 다른 유저들을 위해 적절한 접근성을 가질 것</strong></li>
+  <li><strong>내가 원하는 기능을 손쉽게 커스터마이징하여 구현할 수 있을 것</strong></li>
+</ul>
+
+<h3 id="Subbrain-기술-스택">Subbrain 기술 스택</h3>
+
+<div class="callout callout-info" id="callout-42160dd4-d9dd-4ca9-89e3-1836167c3ce1">
+      <div class="header">
+        <span class="emoji">ℹ️</span>
+        <span class="title"><strong>Subbrain 아키텍처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/개인 블로그 Subbrain 개발기/image-20221228174337312.png" alt=""></p>
+
+</div>
+    </div>
+    </div>
+<p>원하는 기능을 구현하기 위해 다음과 같은 기술 스택이 선정되었다.</p>
+
+<ul>
+  <li><strong><span class='link-warning'>
+      <a href="https://pages.github.com/" class="wikilink externallink">Github page</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://pages.github.com/"</em>로
+        <button onclick="window.open('https://pages.github.com/','_blank'); return false;">이동</button>?
+      </span>
+    </span></strong>: 깃헙에서 제공하는 무료 정적 사이트 배포 서비스
+    <ul>
+      <li>상업적 목적이 아닌 이상 무료로 사용할 수 있으며, CDN, DNS, 배포 설정을 자동으로 해주므로 거렁뱅이인 나에게 이상적이다.</li>
+    </ul>
+  </li>
+  <li><strong><span class='link-warning'>
+      <a href="https://jekyllrb.com/" class="wikilink externallink">Jekyll</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jekyllrb.com/"</em>로
+        <button onclick="window.open('https://jekyllrb.com/','_blank'); return false;">이동</button>?
+      </span>
+    </span></strong>: Ruby 기반의 정적 사이트 생성 툴
+    <ul>
+      <li>Github page 공식 문서의 적용 예시로 나와있음 + 많이들 사용하길래 사용</li>
+    </ul>
+  </li>
+  <li><strong><span class='link-warning'>
+      <a href="https://obsidian.md/" class="wikilink externallink">Obsidian</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://obsidian.md/"</em>로
+        <button onclick="window.open('https://obsidian.md/','_blank'); return false;">이동</button>?
+      </span>
+    </span></strong>: 커스터마이징 가능하고, 무료로 사용 가능하며, 인터넷 연결이 필요없는 마크다운 작성 툴
+    <ul>
+      <li>내가 애용하는 툴이며, 이곳에서 한번 정리한 TIL 들을 블로그를 위해 한번 더 정리해야 한다는 점에서 불편함을 느꼈다.</li>
+    </ul>
+  </li>
+  <li><strong>Javascript</strong>
+    <ul>
+      <li>분명 Jekyll의 기본 기능만으로는 만족하지 못할 것이라 예상하였다.</li>
+    </ul>
+  </li>
+  <li><strong><span class='link-warning'>
+      <a href="https://sass-lang.com/" class="wikilink externallink">Sass</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://sass-lang.com/"</em>로
+        <button onclick="window.open('https://sass-lang.com/','_blank'); return false;">이동</button>?
+      </span>
+    </span></strong>: CSS 확장 언어
+    <ul>
+      <li>기본 템플릿(minimal)을 바탕으로 직접 원하는 템플릿을 효율적으로 구현하기 위해</li>
+      <li>여러 기업에서 CSS를 좀더 효율적으로 활용하기 위해 쓰는 것 같아 선정하였다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>프로젝트를 진행하면서 다음 기술 스택들이 추가되었다.</p>
+
+<ul>
+  <li><strong>Typescript</strong>: 자바스크립트 타입 오류나는게 짜증나서 + 기술 스택 학습을 위해</li>
+  <li><strong>Webpack</strong>: 자바스크립트와 기타 여러 정적 어셋들의 번들링 툴
+    <ul>
+      <li>자바스크립트 모듈 및 라이브러리 임포트 순서 설정 등에 어려움을 느낀 후로 도입했다.</li>
+      <li>알고보니 진즉에 필수로 적용했어야 했다.</li>
+    </ul>
+  </li>
+  <li><strong>Github Action</strong>: github에서 지원하는 CICD 툴
+    <ul>
+      <li>루비 커스텀 플러그인을 보안상의 이유로 github page에서 지원하지 않자 이를 우회하기 위해 조금 건드리게 됬다.</li>
+      <li>솔직히 필요한 문제 해결만 한 뒤로 깊게 배우지 않았으며, 앞으로도 깊게 배울 생각이 없다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="Subbrain의-기능">Subbrain의 기능</h3>
+
+<p><strong>Subbrain</strong> 블로그는 다른 블로그와 달리 다음과 같은 차별화된 기능을 가진다.</p>
+
+<ul>
+  <li><strong>Obsidian-Jekyll 연동 포스트 생성</strong><br>
+ <img src="/assets/img/개인 블로그 Subbrain 개발기/image-20221228010940141.png" alt=""></li>
+</ul>
+
+<p>Obsidian으로 생성한 md 파일을 프로젝트 폴더로 옮기기만 하면 그대로 블로그의 포스트로 생성됨.</p>
+
+<ul>
+  <li><strong>파일 구조 기반 카테고리 사이트맵 생성, Github Repository 기반 포스트 등록</strong><br>
+<img src="/assets/img/개인 블로그 Subbrain 개발기/image-20221228011408368.png" alt=""></li>
+</ul>
+
+<p>파일 구조 형식으로 정리한 마크다운 파일들이 그대로 카테고리 항목과 포스트로 생성되도록 하는 기능, 서비스 배포는 Github 레포지토리에 변경 사항을 푸시하면 자동으로 진행된다.</p>
+
+<ul>
+  <li><strong>Obsidian의 커스텀 플러그인 기능이 포함된 마크다운 지원</strong><br>
+<img src="/assets/img/개인 블로그 Subbrain 개발기/image-20221228012827600.png" alt="500"></li>
+</ul>
+
+<p>콜아웃, Mathjax 문법, Link 미리보기, 외부 링크 경고 등 순정 markdown에서 지원하지 않는 Obsidian의 기능을 지원</p>
+
+<ul>
+  <li><strong>브라우저 기반 검색 기능</strong><br>
+<img src="/assets/img/개인 블로그 Subbrain 개발기/image-20221228142859318.png" alt="500"></li>
+</ul>
+
+<p>정적 사이트는 보통 WAS와 DB가 존재하지 않아 동적인 검색 기능을 지원하기 힘들지만, 지식을 저장하고 공유하는 블로그 입장에서 검색 기능은 필수적이다. 이를 위해 자바스크립트 기반의 검색 기능을 구현하였다.</p>
+
+<ul>
+  <li><strong>커스터마이징된 기능과 템플릿</strong><br>
+  <img src="/assets/img/개인 블로그 Subbrain 개발기/image-20221228143104583.png" alt="300"></li>
+</ul>
+
+<p>개폐 가능하며, 카테고리 항목, 최근 조회 포스트 등의 기능을 가진 사이드바 추가, 스크롤바, 태그 등의 스타일을 변경</p>
+
+<h3 id="Subbrain의-끝">Subbrain의 끝</h3>
+
+<p>Subbrain은 2022년 12월 27일을 기점으로 <strong>개발이 중단</strong>된다. 이유는 다음과 같다.</p>
+
+<ul>
+  <li>
+    <p><strong>재사용이 힘들고 표준화가 되어있지 않은 코드</strong><br>
+  여태껏 진행해왔던 프로젝트들은 주로 프레임워크를 이용해 개발하는 경우가 많아 컴포넌트화 및 객체화 등에 소홀히 하였고 마치 절차지향적인 코드가 생성되었다.</p>
+  </li>
+  <li>
+    <p><strong>Jekyll의 한계</strong><br>
+  Jekyll은 말그래도 간단한 정적 블로그를 생성하기 위해 만들어졌으며, 내가 원하던 기능들을 구현하는 데에 한계가 많았다. 직접 구현한 기능들은 막대한 개발 비용 요구와 나쁜 성능을 가지고 있었다.</p>
+  </li>
+  <li>
+    <p><strong>단촐할 것으로 예상한 설계와 달리 점점 방대해지는 프로젝트</strong><br>
+  처음에 간단하게 기술 스택을 지정한 이유는 이 프로젝트가 이렇게 긴 시간으로, 그리고 고도화된 기능을 구현하게 될 것이라고 생각하지 않았기 때문이다. 애시당초 검색엔진, 댓글 등의 동적 기능을 고려하면서 동시에 정적 사이트 프로젝트를 설계하는 것은 커다란 모순인 것 같다.</p>
+  </li>
+  <li>
+    <p><strong>그래서 이건 블로그인가? 개인 지식 기반 시스템인가?</strong><br>
+  블로그는 남에게 내 글을 읽게 하는 곳이므로, 누가 보더라도 흥미롭고 유익하게 글을 써야 한다. <br>
+  개인 지식 기반 시스템(PKMS)은 나의 지식을 정리하고 저장하는 곳이므로,일부 정보는 생략과 축약을 통해 없애고, 필요한 정보를 위주로 필요 정보만 나타내야 하며, 이 둘은 서로 상충된다.</p>
+  </li>
+  <li>
+    <p><strong>현자타임</strong><br>
+  새로운 서비스? 기존의 다른 포트폴리오를 정리하고 개선할 시간도 부족하지 않은가? <br>
+  어떤 회사가 Jekyll과 Ruby 언어를 사용하는 프로젝트에 관심을 가지겠는가? 그것도 ruby on rails 없이? <br>
+  사람들이 이 프로젝트를 흥미롭게 생각할 것 인가?</p>
+  </li>
+  <li>
+    <p><strong>전혀 <a href="https://en.wikipedia.org/wiki/Hip_(slang){: .wikilink}{:target=\&quot;_blank\&quot;}{: .externallink}">힙(hip)</a>하지 않음</strong><br>
+  막상 공들여 만들어낸 결과물은 기존의 tistory나 네이버 블로그에 비해 조악하였고 전혀 차별화되지 않았다. 그렇다면 학습 이외에 내가 이 서비스를 계속 개발해야할 이유가 있는가?</p>
+  </li>
+</ul>
+
+<p><strong>Subbrain</strong>은 한동안 현재 상태로 계속 사용될 것이며, 가끔 실험 등을 위해 조금씩만 개선될 것이다.<br>
+이후, 개인 블로그 개발 프로젝트 시즌 2 <strong>mospOS</strong>(가제)의 개발이 완료된 후 어딘가에 처박힐 예정이다.</p>
+
+<h2 id="기술-스택-별-회고">기술 스택 별 회고</h2>
+
+<h3 id="Subbrain-개발기-Ruby-Jekyll"><span class="preview-wrapper">
+      <a href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Ruby&amp;Jekyll.html" class="wikilink">Subbrain 개발기 - Ruby&amp;Jekyll</a>
+      <iframe class="preview" src='' data-href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Ruby&amp;Jekyll.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span></h3>
+
+<h3 id="Subbrain-개발기-Typescript"><span class="preview-wrapper">
+      <a href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Typescript.html" class="wikilink">Subbrain 개발기 - Typescript</a>
+      <iframe class="preview" src='' data-href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Typescript.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span></h3>
+
+<h3 id="Subbrain-개발기-Sass"><span class="preview-wrapper">
+      <a href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Sass.html" class="wikilink">Subbrain 개발기 - Sass</a>
+      <iframe class="preview" src='' data-href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Sass.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span></h3>
+
+<h3 id="Subbrain-개발기-webpack-eslint-etc"><span class="preview-wrapper">
+      <a href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20webpack,%20eslint,%20etc.html" class="wikilink">Subbrain 개발기 - webpack, eslint, etc</a>
+      <iframe class="preview" src='' data-href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20webpack,%20eslint,%20etc.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span></h3>
+
+<h3 id="Subbrain의-교훈-및-회고">Subbrain의 교훈 및 회고</h3>
+
+<div class="callout callout-quote" id="callout-26043cc8-44a4-4ab1-9230-b7f0ee188582">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>“IT 프로젝트의 성공률은 약 30%” - 보스턴 컨설팅 그룹
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<ul>
+  <li><strong>아쉬운 점들</strong>
+    <ul>
+      <li>
+        <p><strong>예상보다 느린 개발 진척과 차별화되지 못한 결과물</strong><br>
+  처음에는 모든 개발을 14 영업일 이내에 끝낼 생각이였지만, 대략 그것보다 두배 가량의 시간이 걸렸으며, 점점 추가된 계획까지 포함한다면 아마 또 그것의 배가 들었을 것이다.<br>
+  결과로 나온 블로그는 객관적인 입장에서 기존의 무료 상용 블로그에 비해 떨어진다. 이 모든 일은 다음 항목들이 원인이라고 생각한다.</p>
+      </li>
+      <li>
+        <p><strong>잘 설계된 계획과 이를 지키는 일을 아주 중요하다.</strong><br>
+  원 계획은 훨씬 간소한 일정과 간단한 기능만을 포함한 블로그였지만, 점점 거창한 기능과 사용해보지 않은 기술들을 추가로 고려하면서 일정이 눈덩이처럼 불어나버렸다. <br>
+  또한, 솔로 프로젝트이므로 의사소통에 문제가 적을 것이라 생각하여 문서화를 소홀히 했다.<br>
+  👉 다음부터는 정식적인 문서 작성과 체계화된 설계를 필두로 하여 개발을 진행할 것이다.<br>
+  예를 들어 Trello의 사용법을 좀더 정교화하고 엄격히 한다거나, figma 목업, 유즈케이스 다이어그램, 클래스 다이어그램 같은 UML 도입, Sprint 등의 도입을 고려해볼 것이다.</p>
+      </li>
+      <li>
+        <p><strong>얻은 기술 스택이 생각보다 도움이 될것 같지 않음.</strong><br>
+  러닝 커브와 트랜드를 고려하지 않고 재미있어 보이는 기술 스택을 위주로 골라 학습에 많은 시간이 걸렸고, 앞으로 사용할 일도 많이 없을 것 같다.<br>
+  👉 다음부터는 기획은 창의적이되, 기술은 검증되고 인기있는 것을 사용하도록 하자.<br>
+  현재 예상되는 블로그 시즌 2의 기술 스택은 Next.js, Express.js를 사용하는 동적 사이트가 될 것 같다.</p>
+      </li>
+    </ul>
+  </li>
+  <li><strong>좋았던 점들</strong>
+    <ul>
+      <li>
+        <p><strong>새로 얻은 기술 스택들과 교훈 그리고 보람</strong><br>
+  Jekyll, Webpack, Typescript, Regex, Github Action, Ruby, Sass 등 내가 공부만 해보고 제대로 단독으로 사용해본적 없는 기술들을 사용해볼 수 있었다. 앞으로 사용 여부와 관계없이 나에게 많은 깨달음과 보람을 주었다.</p>
+      </li>
+      <li>
+        <p><strong>이전 보다 나아진 TIL 정리법</strong><br>
+  상용 블로그에 비할바 못되지만 기존의 Github 레포지토리에 정리되지 않은 채로 우르르 올리던 때보다 훨씬 체계적이고 보여줄만한 개인 지식 기반 시스템이 완성되었다.</p>
+      </li>
+      <li>
+        <p><strong>부족하지만 내 손으로, 내 의지로 만든 내 보금자리</strong><br>
+  이전까지 해본 프로젝트는 취직을 위해, 팀원을 위해, 평가를 위해, 학습을 위해 등 철저히 목적지향성이었지만, 이번 프로젝트는 순수히 나의 지적 욕구와 필요성에 의해 개발되었으며, 홀로 힘으로 만들어냈다. 내가 어째서 개발을 시작하게 되었는지 다시 떠올릴 수 있었던 좋은 기회였다.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-warning" id="callout-5ce9305a-9f92-4159-bb2f-943e97eddb58">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>warning</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>… 그리고 드디어 인터넷 한 귀퉁이에 나의 공간이 생겼다.</p>
+
+<p>이 곳은 앞으로 진행될 나의 세계 정복 계획의 교두보가 될 것이다. 👽</p>
+
+</div>
+    </div>
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/%EA%B0%9C%EC%9D%B8%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0.html" hidden></a>
+  <p class="u-path" hidden>_articles/etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

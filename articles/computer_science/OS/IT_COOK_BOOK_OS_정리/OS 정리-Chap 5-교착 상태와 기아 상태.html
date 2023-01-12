@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>OS 정리-Chap 5-교착 상태와 기아 상태 | The Digital garden of Nurgle.</title>
+<title>OS 정리-Chap 5-교착 상태와 기아 상태 | 🧠SUBBRAIN</title>
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="OS 정리-Chap 5-교착 상태와 기아 상태" />
 <meta property="og:locale" content="kr" />
@@ -11,7 +11,7 @@
 <meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
 <link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html" />
 <meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html" />
-<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-10T19:23:16+09:00" />
 <meta name="twitter:card" content="summary" />
@@ -19,7 +19,8 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T19:23:16+09:00","datePublished":"2022-08-10T19:23:16+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"OS 정리-Chap 5-교착 상태와 기아 상태","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html"},"url":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
 <div class="scrollWrapper">
   <div class="scrollbar"></div>
   <div class="progressbar"></div>
@@ -43,7 +44,7 @@
 <body><header class="site-header" role="banner">
 
   <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
-    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
 
     </div><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -126,7 +127,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 5
+      📂: 6
     </span>
     <ul class="child-category-list">
       
@@ -153,7 +154,7 @@
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 15 
+            📄: 16 
             📂: 1
           </span>
       </li>
@@ -189,14 +190,28 @@
       <li>
         <strong style="font-size: larger;">
           ┃  
-          ┗ 
+          ┣ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
         </h4>
           <span style="font-size: xx-small;">
             📄: 1 
-            
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
           </span>
       </li>
       
@@ -241,8 +256,8 @@
           <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
-            
+            📄: 2 
+            📂: 2
           </span>
       </li>
       
@@ -268,13 +283,43 @@
     <strong style="font-size: larger;">┣ </strong>
     <h3 style="display: inline;">
       
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
       <span class="category-link">ETC</span>
     </h3>
     <span style="font-size: xx-small;">
-      📄: 9 
-      
+       
+      📂: 2
     </span>
     <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
       
     </ul>
   </li>
@@ -497,31 +542,10 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  
-<ol id='markdown-toc-0'>
-<li><a href='#교착-상태의-개념과-발생-원인' id='markdown-toc-0-교착-상태의-개념과-발생-원인'>교착 상태의 개념과 발생 원인</a><ul><li><a href='#1-교착-상태-deadlock-의-개념' id='markdown-toc-0-1-교착-상태-deadlock-의-개념'>1 교착 상태(deadlock)의 개념</a><ul>
-</ul></li> 
-<li><a href='#2-교착-상태의-예' id='markdown-toc-0-2-교착-상태의-예'>2 교착 상태의 예</a></li> 
-<li><a href='#3-교착-상태의-발생-조건' id='markdown-toc-0-3-교착-상태의-발생-조건'>3 교착 상태의 발생 조건</a><ul>
-</ul></li> 
-<li><a href='#4-교착-상태의-표현' id='markdown-toc-0-4-교착-상태의-표현'>4 교착 상태의 표현</a></li> 
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#교착-상태의-개념과-발생-원인">교착 상태의 개념과 발생 원인</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-교착-상태-deadlock-의-개념">1 교착 상태(deadlock)의 개념</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-교착-상태의-예">2 교착 상태의 예</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-교착-상태의-발생-조건">3 교착 상태의 발생 조건</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#4-교착-상태의-표현">4 교착 상태의 표현</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-5" href="#교착-상태의-해결-방법">교착 상태의 해결 방법</a><ul><li lvl="3"><a id="markdown-toc-0-6" href="#1-교착-상태-예방">1 교착 상태 예방</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#2-교착-상태-회피">2 교착 상태 회피</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#3-교착-상태-회복">3 교착 상태 회복</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-9" href="#기아-상태">기아 상태</a><ul><li lvl="3"><a id="markdown-toc-0-10" href="#식사하는-철학자">식사하는 철학자</a><ul></ul></li></ul></li></ol>
+<h1 id="5-교착-상태와-기아-상태">5. 교착 상태와 기아 상태</h1>
 
-</ul></li> 
-<li><a href='#교착-상태의-해결-방법' id='markdown-toc-0-교착-상태의-해결-방법'>교착 상태의 해결 방법</a><ul><li><a href='#1-교착-상태-예방' id='markdown-toc-0-1-교착-상태-예방'>1 교착 상태 예방</a><ul>
-</ul></li> 
-<li><a href='#2-교착-상태-회피' id='markdown-toc-0-2-교착-상태-회피'>2 교착 상태 회피</a><ul>
-</ul></li> 
-<li><a href='#3-교착-상태-회복' id='markdown-toc-0-3-교착-상태-회복'>3 교착 상태 회복</a><ul>
-</ul></li> 
-
-</ul></li> 
-<li><a href='#기아-상태' id='markdown-toc-0-기아-상태'>기아 상태</a><ul><li><a href='#식사하는-철학자' id='markdown-toc-0-식사하는-철학자'>식사하는 철학자</a></li> 
-
-</ul></li> 
-</ol>
-<h1 id='5-교착-상태와-기아-상태'>5. 교착 상태와 기아 상태</h1>
-
-<div class="callout callout-quote" id="callout-9db9a8fd-bab3-444b-a753-b8cfc10b95c6">
+<div class="callout callout-quote" id="callout-28268fec-f5cb-443a-9ad3-b0660e7b19a6">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -545,11 +569,11 @@
 </div>
     </div>
     </div>
-<h2 id='교착-상태의-개념과-발생-원인'>교착 상태의 개념과 발생 원인</h2>
+<h2 id="교착-상태의-개념과-발생-원인">교착 상태의 개념과 발생 원인</h2>
 
-<h3 id='1-교착-상태-deadlock-의-개념'>1 교착 상태(deadlock)의 개념</h3>
+<h3 id="1-교착-상태-deadlock-의-개념">1 교착 상태(deadlock)의 개념</h3>
 
-<h4 id='교착-상태-정의'>교착 상태 정의</h4>
+<h4 id="교착-상태-정의">교착 상태 정의</h4>
 
 <ul>
   <li>
@@ -560,21 +584,21 @@
   </li>
 </ul>
 
-<h4 id='교착-상태의-해악'>교착 상태의 해악</h4>
+<h4 id="교착-상태의-해악">교착 상태의 해악</h4>
 
 <p>교착 상태에 빠지면 작업이 정지되어 더 이상 진행하지 못하게 되며, 무한 대기, 기아 상태와 그 이상의 문제를 일으킨다.</p>
 
 <p>이를 해결하기 위해 운영자나 사용자가 작업을 교체하거나 종료하는 외부 간섭으로 해결해야 한다.</p>
 
-<h4 id='교착-상태의-대두'>교착 상태의 대두</h4>
+<h4 id="교착-상태의-대두">교착 상태의 대두</h4>
 
 <p>일괄 처리 시스템에서는 없었지만 대화식 시스템에서 동적 자원을 공유하여 자원의 사용률을 높이기 위해 병행 처리와 자원 공유를 하면서 생기는 부작용이다.</p>
 
 <p>프로세스는 자원 요청, 자원 사용, 자원 해제 순서로 자원을 사용하고 반납하는데, <strong>자원의 요청과 해제는 시스템 호출로 하며 이때 운영체제가 관여할 수 있으며, 이 두 가지를 잘 관리하면 교착 상태를 막을 수 있다.</strong></p>
 
-<h4 id='교착-상태의-그림-예시'>교착 상태의 그림 예시</h4>
+<h4 id="교착-상태의-그림-예시">교착 상태의 그림 예시</h4>
 
-<div class="callout callout-note" id="callout-39a258fd-ed2a-4bd4-91cb-67919e931cf5">
+<div class="callout callout-note" id="callout-a6e189e3-dda1-49c6-940b-488922941aaa">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>A와 B 프로세스는 서로가 가진 자원을 할당받을 때까지 작업이 중지되게 된다.
@@ -584,27 +608,27 @@
       <div class="card" name="card">
     
     <div class="content" name="content">
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-13-47-10-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-13-47-10-image.png" alt=""></p>
 
 </div>
     </div>
     </div>
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/Pasted image 20220810214535.png" alt="" /><br />
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/Pasted image 20220810214535.png" alt=""><br>
 교차로에서 교통 마비의 예시, 일부 자동차를 후진하거나 네 줄의 차량 줄 중 한 줄을 없애야 한다.</p>
 
-<h3 id='2-교착-상태의-예'>2 교착 상태의 예</h3>
+<h3 id="2-교착-상태의-예">2 교착 상태의 예</h3>
 
 <ul>
   <li>
     <p><strong>스풀링 시스템에서 발생하는 교착 상태</strong></p>
 
-    <p>할당된 스풀 공간의 출력을 완료하지 않은 상태에서 다른 작업이 스풀 공간을 모두 차지하면 교착 상태가 발생한다.<br />
+    <p>할당된 스풀 공간의 출력을 완료하지 않은 상태에서 다른 작업이 스풀 공간을 모두 차지하면 교착 상태가 발생한다.<br>
 스풀링 파일의 일정 포화 임계치(saturation threshold)를 설정하여 교착 상태를 예방할 수 있다. 대신 그만큼 시스템의 처리량은 줄어들 것이다.</p>
   </li>
   <li>
     <p><strong>디스크를 공유할 때 발생하는 교착 상태</strong></p>
 
-    <p>디스크 사용에 제어가 없으면 프로세스들이 서로 충돌하는 명령을 요청할 때 교착 상태가 발생한다. <br />
+    <p>디스크 사용에 제어가 없으면 프로세스들이 서로 충돌하는 명령을 요청할 때 교착 상태가 발생한다. <br>
 예를 들어</p>
 
     <ol>
@@ -629,27 +653,27 @@
   </li>
 </ul>
 
-<h3 id='3-교착-상태의-발생-조건'>3 교착 상태의 발생 조건</h3>
+<h3 id="3-교착-상태의-발생-조건">3 교착 상태의 발생 조건</h3>
 
 <p>교착 상태는 다음과 같은 네가지 조건을 만족할 때 반드시 발생한다. 정확히는 <strong>순환 대기를 제외한 나머지 조건을 만족하면, 순환 대기가 생길 가능성이 생기고, 순환 대기는 점유와 대기 조건을 포함한 교착 상태</strong>이다.</p>
 
-<h4 id='상호-배제-Mutual-exclusion'>상호 배제(Mutual exclusion)</h4>
+<h4 id="상호-배제-Mutual-exclusion">상호 배제(Mutual exclusion)</h4>
 
 <p><strong>한 번에 프로세스 하나만 해당 자원을 사용할 수 있음</strong>. 사용 중인 자원을 다른 프로세스가 사용하려면 요청한 자원이 해제될 때까지 기다려야 함.</p>
 
-<h4 id='점유와-대기-Hold-and-wait'>점유와 대기(Hold and wait)</h4>
+<h4 id="점유와-대기-Hold-and-wait">점유와 대기(Hold and wait)</h4>
 
 <p><strong>자원을 최소한 하나 정도는 보유하고, 다른 프로세스에 할당된 자원을 얻으려고 기다리는 프로세스가 있음.</strong></p>
 
-<h4 id='비선점-No-preemption'>비선점(No preemption)</h4>
+<h4 id="비선점-No-preemption">비선점(No preemption)</h4>
 
 <p><strong>자원은 선점, 즉 강제로 빼앗을 수 없고, 자원을 점유하고 있는 프로세스가 끝나야 해제</strong>된다.</p>
 
-<h4 id='순환-환형-대기-Circular-wait'>순환(환형) 대기(Circular wait)</h4>
+<h4 id="순환-환형-대기-Circular-wait">순환(환형) 대기(Circular wait)</h4>
 
 <p>그림 5-3과 같이 <strong>프로세스들이 각자 다른 프로세스가 점유하고 있는 자원을 얻으려 기다리는 것을 의미</strong>한다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-14-43-35-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-14-43-35-image.png" alt=""></p>
 
 <p>돌 하나에 한 사람만 디딜 수 있는 징검 다리 위를 두 사람이 마주친다면, 서로 상대방이 딛고 있는 돌에 발을 디딜 수 없으므로, 교착상태가 발생할 것이다.</p>
 
@@ -684,7 +708,7 @@
   </li>
 </ul>
 
-<div class="callout callout-note" id="callout-dcf48a58-6f4c-47c0-b864-2808c626ca94">
+<div class="callout callout-note" id="callout-15880f35-0b39-4cae-8cc2-c33fd2dfd5c4">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>선점 자원과 비선점 자원
@@ -703,15 +727,15 @@
 </div>
     </div>
     </div>
-<h3 id='4-교착-상태의-표현'>4 교착 상태의 표현</h3>
+<h3 id="4-교착-상태의-표현">4 교착 상태의 표현</h3>
 
 <p>교착 상태는 방향 그래프로 표현된 시스템 자원 할당 그래프으로 쉽게 파악할 수 있다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-15-39-01-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-15-39-01-image.png" alt=""></p>
 
 <p>정집 집합는 프로세스 집합과 자원 집합으로 나뉘며, 간선 집합은 자원 할당선으로 나타낸다.그래프는 그림 5-4와 같이 표현된다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-15-40-03-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-15-40-03-image.png" alt=""></p>
 
 <table>
   <thead>
@@ -746,7 +770,7 @@
 
 <p>자원 할당 그래프에서는 <strong>그래프에 사이클이 없다면 교착 상태가 발생하지 않으며, 사이클이 있다면 발생할 가능성이 존재</strong>할 수 있다. 만약 사이클이 존재하고 각 자원에는 단 하나의 자원만 존재한다면 교착상태가 발생한다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-20-03-02-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-20-03-02-image.png" alt=""></p>
 
 <p>예를 들어 위의 그림 5-6에서는 총 2개의 사이클이 있다.</p>
 
@@ -761,7 +785,7 @@
 
 <p>이 두 사이클 모두 서로의 자원 얻으려고 기다리는 교착 상태이다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-20-03-38-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-19-20-03-38-image.png" alt=""></p>
 
 <ul>
   <li>$P_1\rightarrow R_1\rightarrow P_3\rightarrow R_2 \rightarrow P_1$</li>
@@ -769,7 +793,7 @@
 
 <p>위 그림은 사이클이 존재하지만 프로세스 $P_4$가 작업이 끝나면 $P_3$가 자원을 할당받아 차례대로 대기 상태를 벗어나므로 교착상태가 아니다.</p>
 
-<h2 id='교착-상태의-해결-방법'>교착 상태의 해결 방법</h2>
+<h2 id="교착-상태의-해결-방법">교착 상태의 해결 방법</h2>
 
 <p>교착 상태의 해결 방법은 크게 3가지로 나눈다.</p>
 
@@ -785,9 +809,9 @@
   </li>
 </ul>
 
-<h3 id='1-교착-상태-예방'>1 교착 상태 예방</h3>
+<h3 id="1-교착-상태-예방">1 교착 상태 예방</h3>
 
-<p>앞서 설명한 교착 상태의 네가지 조건이 하나라도 발생하지 않는다면 교착 상태는 예방된다. <br />
+<p>앞서 설명한 교착 상태의 네가지 조건이 하나라도 발생하지 않는다면 교착 상태는 예방된다. <br>
 다만, 상호배제를 제외할 경우 자원을 효율적으로 쓰는게 불가능하므로, 다음 세가지 교착 상태 예방 방법이 있다.</p>
 
 <ul>
@@ -804,7 +828,7 @@
 
 <p>먼저, 상호배제를 포함해 모든 교착 상태 조건을 예방하는 방법을 하나씩 알아보겠다.</p>
 
-<h4 id='1-1-자원의-상호배제-조건-방지'>1.1 자원의 상호배제 조건 방지</h4>
+<h4 id="1-1-자원의-상호배제-조건-방지">1.1 자원의 상호배제 조건 방지</h4>
 
 <p><strong>상호배제는 프린터, 디스크 같은 동시에 사용 불가능한 비공유 자원을 대상</strong>으로 한다.</p>
 
@@ -812,7 +836,7 @@
 
 <p>하지만 상호배제의 완벽한 예방은 사실상 불가능한데, 파일 쓰기 처럼 배타적인 접근을 허용하지 않고 공유하면 교착 상태가 발생하는 경우도 있다. <strong>즉, 상호배제는 일부 자원에만 교착 상태를 유발하며, 일부 자원의 경우 오히려 상호배제가 없으면 교착 상태가 생긴다.</strong></p>
 
-<h4 id='1-2-점유와-대기-조건-방지'>1.2 점유와 대기 조건 방지</h4>
+<h4 id="1-2-점유와-대기-조건-방지">1.2 점유와 대기 조건 방지</h4>
 
 <p>점유와 대기 조건을 방지하려면 두 가지 방법이 있는데 이를 DVD 드라이브에서 디스크 파일을 데이터를 복사, 정렬, 인쇄 후 테이프 드라이브에 복사하는 프로세스의 경우를 예시로 들어 보자.</p>
 
@@ -861,7 +885,7 @@
   </li>
 </ul>
 
-<h4 id='1-3-비선점-조건-방지'>1.3 비선점 조건 방지</h4>
+<h4 id="1-3-비선점-조건-방지">1.3 비선점 조건 방지</h4>
 
 <p>비선점 조건 방지를 위한 3가지 방법이다.</p>
 
@@ -907,7 +931,7 @@
   </li>
 </ul>
 
-<h4 id='1-4-순환-환형-대기-조건-방지'>1.4 순환(환형) 대기 조건 방지</h4>
+<h4 id="1-4-순환-환형-대기-조건-방지">1.4 순환(환형) 대기 조건 방지</h4>
 
 <p><strong>모든 자원에 일련의 순서를 부여하고 각 프로세스가 오름차순으로만 자원을 요청하게 함</strong></p>
 
@@ -945,7 +969,7 @@ F(프린터) = 7
 </code></pre></div></div>
 <p>만약 CD 드라이브와 프린터를 요청하려면, CD 드라이브를 먼저 요청해 할당 받고, 프린터를 요청해 할당받아야 한다.</p>
 
-<h3 id='2-교착-상태-회피'>2 교착 상태 회피</h3>
+<h3 id="2-교착-상태-회피">2 교착 상태 회피</h3>
 
 <p>앞서 배운 예방 방법들은 효율성이 크게 떨어지는 문제점이 있었고, 교착 상태 회피는 덜 엄격한 조건을 요구하여 자원을 좀 더 효율적으로 사용하는 것이 목적이다.</p>
 
@@ -966,7 +990,7 @@ F(프린터) = 7
   </li>
 </ul>
 
-<h4 id='2-1-프로세스의-시작-중단'>2.1 프로세스의 시작 중단</h4>
+<h4 id="2-1-프로세스의-시작-중단">2.1 프로세스의 시작 중단</h4>
 
 <p>교착 상태를 회피할 수 있는 자원 할당의 이상적인 방법은 앞으로 할당된 자원의 순서와 사용가능한 자원, 사용하고 있는 자원등을 미리 파악하고 있는 것이다.</p>
 
@@ -974,7 +998,7 @@ F(프린터) = 7
 
 <p>시스템은 <strong>자원 할당 사태를 사용 가능 자원 수, 할당된 자원 수, 프로세스들의 최대 요청 수</strong>로 정의하여 순환 대기 조건이 발생하지 않도록 검사하고 할당한다.</p>
 
-<h5 id='자원-할당-상태'>자원 할당 상태</h5>
+<h5 id="자원-할당-상태">자원 할당 상태</h5>
 
 <p><strong>안정 상태</strong> : 각 프로세스에 최대치까지 자원을 할당할 수 있고, 안정 순서에 따라 할당할 수 있어 교착 상태를 예방할 수 있는 상태</p>
 
@@ -995,11 +1019,11 @@ F(프린터) = 7
 
 <p><strong>불안정 상태</strong> : 안정 순서가 없는 상태, 교착 상태가 발생할 가능성이 있는 상태.</p>
 
-<h5 id='시스템-상태-변화-예시'>시스템 상태 변화 예시</h5>
+<h5 id="시스템-상태-변화-예시">시스템 상태 변화 예시</h5>
 
 <p>동일한 자원 10개와 $P_0,P_1,P_2,P_3$을 가진 시스템의 예시를 들어보자.</p>
 
-<div class="callout callout-note" id="callout-cfe7042e-a745-4d34-845e-109b72db5d3a">
+<div class="callout callout-note" id="callout-59ce945b-801c-4065-910d-822cbd277f23">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>안정 상태의 자원 예
@@ -1040,7 +1064,7 @@ F(프린터) = 7
     </tr>
     <tr>
       <td>여분 자원 수</td>
-      <td> </td>
+      <td>&nbsp;</td>
       <td>3</td>
     </tr>
   </tbody>
@@ -1066,7 +1090,7 @@ F(프린터) = 7
   </li>
 </ol>
 
-<div class="callout callout-note" id="callout-affe10b1-8f5d-4d87-935b-0f3d7e71beea">
+<div class="callout callout-note" id="callout-795fadac-4547-4402-9b58-84710d67f484">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>불안정 상태의 자원 예
@@ -1107,7 +1131,7 @@ F(프린터) = 7
     </tr>
     <tr>
       <td>여분 자원 수</td>
-      <td> </td>
+      <td>&nbsp;</td>
       <td>1</td>
     </tr>
   </tbody>
@@ -1124,13 +1148,13 @@ F(프린터) = 7
 
 <p>위의 두 예시를 보았듯이 자원 요청을 어떻게 들어주냐에 따라 시스템 상태가 바뀌므로, 시스템은 언제나 자원 상태를 검사하고 확인하여 할당을 허용해야 한다.</p>
 
-<h4 id='2-2-자원-할당-거부-은행원-알고리즘'>2.2 자원 할당 거부(은행원 알고리즘)</h4>
+<h4 id="2-2-자원-할당-거부-은행원-알고리즘">2.2 자원 할당 거부(은행원 알고리즘)</h4>
 
 <p>은행원 알고리즘은 <strong>자원의 할당 여부를 결정하기 전에 미리 모든 자원의 최대 가능한 할당량을 시뮬레이션해 할당 시, 교착 상태, 안정 상태를 검사</strong>한다.</p>
 
 <p>각 프로세스는 얼마큼 자원 요청이 가능하고, 얼마큼 자원을 보유하고 있으며, 얼만큼 각 자원을 사용할 수 있는지 등 정보를 얻고, 이를 여러 자료 구조에 저장한다.</p>
 
-<h5 id='은행원-알고리즘-구현에-필요한-자료구조'>은행원 알고리즘 구현에 필요한 자료구조</h5>
+<h5 id="은행원-알고리즘-구현에-필요한-자료구조">은행원 알고리즘 구현에 필요한 자료구조</h5>
 
 <p>자료 구조는 자원 할당 시스템의 상태를 나타내며, $n$을 시스템의 프로세스 수, $m$을 자원 수라 하면 다음과 같은 자료구조가 필요하다.</p>
 
@@ -1173,7 +1197,7 @@ F(프린터) = 7
   </li>
 </ul>
 
-<h5 id='은행원-알고리즘-구현에-필요한-제약-조건'>은행원 알고리즘 구현에 필요한 제약 조건</h5>
+<h5 id="은행원-알고리즘-구현에-필요한-제약-조건">은행원 알고리즘 구현에 필요한 제약 조건</h5>
 
 <ul>
   <li>
@@ -1193,7 +1217,7 @@ F(프린터) = 7
   </li>
 </ul>
 
-<h5 id='은행원-알고리즘-동작'>은행원 알고리즘 동작</h5>
+<h5 id="은행원-알고리즘-동작">은행원 알고리즘 동작</h5>
 
 <p>프로세스 $P_i$가 자원을 요청했을 시 아래와 같이 동작한다.</p>
 
@@ -1222,7 +1246,7 @@ F(프린터) = 7
 
 <p>이를 흐름 차트로 나타내면 아래 그림 5-8과 같다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-20-12-10-21-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-20-12-10-21-image.png" alt=""></p>
 
 <p>안전 알고리즘은 시스템이 안정 상태인지, 불안정 상태인지 검사하며 다음과 같은 과정을 거친다.(그림 5-9)</p>
 
@@ -1241,13 +1265,13 @@ F(프린터) = 7
   </li>
 </ol>
 
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-20-13-48-08-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-20-13-48-08-image.png" alt=""></p>
 
-<h5 id='안정-알고리즘의-예시'>안정 알고리즘의 예시</h5>
+<h5 id="안정-알고리즘의-예시">안정 알고리즘의 예시</h5>
 
 <p>프로세스가 $P_0\sim P_4$까지 5개 존재하며, 자원 4 종류(A,B,C,D)가 있을 때, 다음과 같은 상태의 예시를 알아보자.</p>
 
-<div class="callout callout-note" id="callout-39d2bb4c-edd6-44b4-b6cd-92fd9b2da07b">
+<div class="callout callout-note" id="callout-984ab3ee-3eb6-4769-bb08-fb64b9afec27">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>시간 $t_0$일 때 시스템의 상태 (자원 ABCD 순서)
@@ -1280,35 +1304,35 @@ F(프린터) = 7
       <td>0121</td>
       <td>0252</td>
       <td>0131</td>
-      <td> </td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>$P_2$</td>
       <td>4003</td>
       <td>3105</td>
       <td>1102</td>
-      <td> </td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>$P_3$</td>
       <td>0210</td>
       <td>1530</td>
       <td>1320</td>
-      <td> </td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>$P_4$</td>
       <td>1030</td>
       <td>3033</td>
       <td>2003</td>
-      <td> </td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>할당량</td>
       <td>7375</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
     </tr>
   </tbody>
 </table>
@@ -1331,7 +1355,7 @@ F(프린터) = 7
 
 <p>따라서 이를 막기 위해 안정 알고리즘으로 미리 상태를 시뮬레이션 해야한다.</p>
 
-<h5 id='은행원-알고리즘의-단점'>은행원 알고리즘의 단점</h5>
+<h5 id="은행원-알고리즘의-단점">은행원 알고리즘의 단점</h5>
 
 <ul>
   <li>
@@ -1354,13 +1378,13 @@ F(프린터) = 7
   </li>
 </ul>
 
-<h3 id='3-교착-상태-회복'>3 교착 상태 회복</h3>
+<h3 id="3-교착-상태-회복">3 교착 상태 회복</h3>
 
 <p>교착 상태 회복에는 <strong>교착 상태 탐지 알고리즘과 교착 상태 회복 알고리즘</strong>이 필요하다.</p>
 
 <p>탐지와 회복 방법은 필요한 정보를 유지하고 탐지와 회복에 비용이 많이든다. 하지만 탐지 알고리즘을 자주 실행하면 시스템 성능은 떨어지지만, 반대로 자주 실행하지 않으면 자원의 유휴 상태가 오래 남을 수 있다.</p>
 
-<h4 id='3-1-교착-상태-탐지-알고리즘'>3.1 교착 상태 탐지 알고리즘</h4>
+<h4 id="3-1-교착-상태-탐지-알고리즘">3.1 교착 상태 탐지 알고리즘</h4>
 
 <p>은행원 알고리즘과 비슷한 자료구조를 사용한다.</p>
 
@@ -1397,11 +1421,11 @@ F(프린터) = 7
   <li>아래 차트는 <code class="language-plaintext highlighter-rouge">for loop</code>를 모두 표현하면 지나치게 복잡해져서 간략하게 표현되었다.</li>
 </ul>
 
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-20-22-36-15-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-20-22-36-15-image.png" alt=""></p>
 
 <p>시스템을 아래 표와 같이 가정하여 알아보자.</p>
 
-<div class="callout callout-note" id="callout-0c20230d-5bd1-4133-a039-636f98f82529">
+<div class="callout callout-note" id="callout-03027ddd-f6fe-4a73-9bba-4cd552356ce7">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>시간 $t_0$일 때 시스템의 상태 (자원 ABC 순서)
@@ -1431,30 +1455,30 @@ F(프린터) = 7
       <td>$P_1$</td>
       <td>200</td>
       <td>202</td>
-      <td> </td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>$P_2$</td>
       <td>303</td>
       <td>000</td>
-      <td> </td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>$P_3$</td>
       <td>211</td>
       <td>100</td>
-      <td> </td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>$P_4$</td>
       <td>002</td>
       <td>002</td>
-      <td> </td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>total</td>
-      <td> </td>
-      <td> </td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
       <td>726</td>
     </tr>
   </tbody>
@@ -1467,11 +1491,11 @@ F(프린터) = 7
 
 <p>교착 상태 탐지 알고리즘은 교착 상태가 자주 발생할 수록 자주 호출해야 줘야 자원들의 유휴 상태를 막을 수 있지만, <strong>너무 자주 부르면 연산 시간 부담이 크며, 특히 객체 수가 증가하면 기하급수적으로 증가하므로 보통 1시간 마다 또는 CPU 이용률이 40%로 떨어질 때마다 호출</strong>한다.</p>
 
-<h4 id='3-2-교착-상태-회복-방법'>3.2 교착 상태 회복 방법</h4>
+<h4 id="3-2-교착-상태-회복-방법">3.2 교착 상태 회복 방법</h4>
 
 <p>교착 상태에서 회복한다는 것은 순환 대기에서 벗어난다는 것이며, 단순하게 <strong>프로세스를 중단하는 방법과 교착 상태 프로세스들에게 자원을 선점하게 하는 방법</strong>이 있다.</p>
 
-<h5 id='프로세스-중단'>프로세스 중단</h5>
+<h5 id="프로세스-중단">프로세스 중단</h5>
 
 <p>중단 방법 또한 두 가지로 나뉘며, 둘다 <strong>시스템이 정지된 프로세스에 할당되어 있는 모든 자원의 해제를 요청하는 방법</strong>이다.</p>
 
@@ -1488,7 +1512,7 @@ F(프린터) = 7
 
 <p>중단의 기준으로 <strong>프로세스의 우선 순위, 수행 시간과 필요 시간, 사용한 자원 형태, 필요한 자원 수, 대화식, 일괄식 여부 등의 정보</strong>를 기준으로 한다.</p>
 
-<h5 id='자원-선점'>자원 선점</h5>
+<h5 id="자원-선점">자원 선점</h5>
 
 <p><strong>프로세스의 자원을 선점해서 교착 상태를 해결할 때까지 선점한 자원을 다른 프로세스에 할당하는 방법</strong>, 다음과 같은 세가지 사항을 해결해야 한다.</p>
 
@@ -1508,15 +1532,15 @@ F(프린터) = 7
 
 <p>예를 들어 PCB 내부 자원은 자원 순서화, 메인 메모리 자원은 선점, 작업 파일 등은 회피 방법을 이용한다.</p>
 
-<h2 id='기아-상태'>기아 상태</h2>
+<h2 id="기아-상태">기아 상태</h2>
 
 <p>교착 상태는 자유로운 자원 할당에 의한 자원 부족 상태가 원인이라면, <strong>기아 상태는 교착 상태를 예방을 하기 위한 조치들을 원인으로 프로세스가 자원을 영원히 혹은 아주 오랫동안  기다리는 상태</strong>이다.</p>
 
-<h3 id='식사하는-철학자'>식사하는 철학자</h3>
+<h3 id="식사하는-철학자">식사하는 철학자</h3>
 
 <p>철학자(<strong>프로세스</strong>) 다섯명이 식사(<strong>작업</strong>)하거나 생각(<strong>대기</strong>)하는데 양 손에 두개의 포크(<strong>자원</strong>)이 필요하다. 자신의 양옆의 포크만 집을 수 있으며, 이는 모두 공유(<strong>경쟁 상태</strong>)한다. 그림 5-11 처럼 음식을 중앙으로 두개씩 배치되어있으므로, 최대 2명만 식사를 하고, 식사를 마치거나 중단하면 내려놓을 수 있다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-20-02-02-55-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 5-교착 상태와 기아 상태/2022-05-20-02-02-55-image.png" alt=""></p>
 
 <p>모든 철학자가 동시에 왼쪽 포크를 집은 뒤, 오른쪽 포크를 집으려면, 모두 왼손에 하나만 들게되므로 모두 식사를 하지 못한다.(<strong>교착 상태</strong>) 이 상태를 해결하기 위한 방법은</p>
 
@@ -1545,7 +1569,7 @@ F(프린터) = 7
 
 <p>이를 코드로 표현하면 아래와 같다.</p>
 
-<div class="callout callout-note" id="callout-2d5ae7b0-bd09-4902-bb98-3c5fcec65e47">
+<div class="callout callout-note" id="callout-36c4d995-8ee6-4c0e-8ca9-43a02625dcde">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>식사하는 철학자 문제에서 철학자 $i$의 구조
@@ -1574,7 +1598,7 @@ F(프린터) = 7
     </div>
 <p>아래는 최대 4명만 동시에 앉게 하는 방법의 코드다.</p>
 
-<div class="callout callout-note" id="callout-dd672243-5dca-4f54-a729-ac0ecf1c52fc">
+<div class="callout callout-note" id="callout-06ff86a9-7536-4050-aa68-a821c3162b98">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>식사하는 철학자 문제의 해결 방안
@@ -1608,7 +1632,7 @@ F(프린터) = 7
     </div>
 <p>교착 상태의 해결책은 기아 상태의 해결책이 아니므로, <strong>기아 상태를 해결하기 위해 프로세스의 기다리는 시간을 조사 추적하고, 조치</strong>해야 한다. 하지만 이 또한 시스템 대기로 처리량이 감소할 수 있다.</p>
 
-
+</body></html>
 </div>
 
   </div><a class="u-url" href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%205-%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C%EC%99%80%20%EA%B8%B0%EC%95%84%20%EC%83%81%ED%83%9C.html" hidden></a>
@@ -1622,12 +1646,12 @@ F(프린터) = 7
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list"><li>

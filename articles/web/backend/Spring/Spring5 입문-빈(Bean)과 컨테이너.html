@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spring5 입문-빈(Bean)과 컨테이너 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Spring5 입문-빈(Bean)과 컨테이너" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true 빈(Bean)과 컨테이너" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true 빈(Bean)과 컨테이너" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EB%B9%88(Bean)%EA%B3%BC%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EB%B9%88(Bean)%EA%B3%BC%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-09T13:57:33+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spring5 입문-빈(Bean)과 컨테이너" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-09T13:57:33+09:00","datePublished":"2023-01-09T13:57:33+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true 빈(Bean)과 컨테이너","headline":"Spring5 입문-빈(Bean)과 컨테이너","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EB%B9%88(Bean)%EA%B3%BC%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88.html"},"url":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EB%B9%88(Bean)%EA%B3%BC%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 6
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Spring5 입문-빈(Bean)과 컨테이너</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-01-09T13:57:33+09:00" itemprop="datePublished">Jan 9, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#컨테이너">컨테이너</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#빈-Bean">빈(Bean)</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#빈-등록-방법">빈 등록 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#빈-생성-및-검색-방법">빈 생성 및 검색 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#빈-객체의-라이프-사이클">빈 객체의 라이프 사이클</a><ul></ul></li></ul></li></ol>
+<h1 id="빈-Bean-과-컨테이너">빈(Bean)과 컨테이너</h1>
+
+<div class="callout callout-quote" id="callout-19c9c8e6-6593-444a-8a93-8c35a3ef9bc4">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>_<span class='link-warning'>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.kame.co.kr/nkm/det..."</em>로
+        <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
+      </span>
+    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<h2 id="컨테이너">컨테이너</h2>
+
+<p><strong>객체 컨테이너</strong> : 스프링에서 빈(Bean) 객체의 생성, 초기화, 보관, 제거 등을 관리하는 <code class="language-plaintext highlighter-rouge">ApplicationContext</code> 인터페이스를 구현한 객체.</p>
+
+<div class="callout callout-info" id="callout-5a032ba6-7653-47ca-81c2-8c2d7ada0fac">
+      <div class="header">
+        <span class="emoji">ℹ️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">ApplicationContext</code> 인터페이스 클래스 그래프
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/Spring5 입문-빈(Bean)과 컨테이너/image-20230109162755749.png" alt="600"></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">BeanFactory</code>는 최상위 인터페이스로 객체 생성과 검색에 대한 기능 정의</li>
+  <li><code class="language-plaintext highlighter-rouge">ApplicationContext</code> 인터페이스는 메시지, 프로필/환경 변수 등을 처리</li>
+  <li><code class="language-plaintext highlighter-rouge">AbstractApplicationContext</code> 클래스는 <code class="language-plaintext highlighter-rouge">close()</code>  메서드를 정의해 컨테이너 종료 가능</li>
+  <li><code class="language-plaintext highlighter-rouge">AnnotationConfigApplicationContext</code>는 자바 어노테이션을 이용해 클래스로 부터 객체 설정 정보 가져옴</li>
+  <li>나머지는 xml, groovy 문법으로 가져온다.</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-b6bd0736-27e8-4ce6-9baf-2b11bd0eada5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>스프링 컨테이너 선언
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.AnnotationConfigApplicationContext</span><span class="o">;</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="nc">ApplicationContext</span> <span class="n">ctx</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AnnotationConfigApplicationContext</span><span class="o">(</span><span class="nc">AppCtx</span><span class="o">.</span><span class="na">class</span><span class="o">);</span> <span class="c1">// 스프링 컨테이너 초기화</span>
+<span class="c1">// AppCtx = 컨테이너 인스턴스, 설정 클래스가 여러개일 경우 (AppCtx.class, AppCtx2.class) 처럼 여러개 지정 가능 </span>
+<span class="nc">MemberRegisterService</span> <span class="n">regSvc</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"memberRegSvc"</span><span class="o">,</span> <span class="nc">MemberRegisterService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span> <span class="c1">// 컨테이너의 객체 생성 혹은 검색</span>
+
+<span class="n">ctx</span><span class="o">.</span><span class="na">close</span><span class="o">();</span><span class="c1">// 컨테이너 종료</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>스프링 컨테이너는 초기화와 종료에 의해 다음과 같이 빈 객체의 라이프 사이클을 관리한다.</p>
+<ul>
+  <li>컨테이너 초기화 -&gt; 빈 객체 생성, 의존 주입, 초기화</li>
+  <li>컨테이너 종료 -&gt; 빈 객체 소멸</li>
+</ul>
+
+<h2 id="빈-Bean">빈(Bean)</h2>
+<ul>
+  <li><strong>빈(Bean) 객체</strong> : 스프링이 생성, 관리, 검색 가능한 객체, 빈 객체를 생성하는 메소드명으로 구분하며 검색하여 단 하나의 인스턴스만 생성한다.
+    <h3 id="빈-등록-방법">빈 등록 방법</h3>
+    <p>빈 객체를 등록하는 방법은 직접 설정 클래스 내부 선언을 통한 수동 등록과 컴포넌트 스캔 두가지가 있다.</p>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-a929a5e9-d29b-4450-8e32-9913457cde14">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>설정 클래스 내부에서 빈 객체를 생성하는 메서드 선언
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">spring.MemberDao</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppCtx</span><span class="o">{</span>
+	<span class="nd">@Autowired</span> 
+	<span class="kd">private</span> <span class="nc">MemberPrinter</span> <span class="n">printer</span><span class="o">;</span> <span class="c1">// @Autowired 어노테이션을 통한 자동 주입 // 아래 memberDao 처럼 메서드를 정의해줄 필요 없다. </span>
+	<span class="nd">@Bean</span> <span class="c1">// 스프링 빈 생성을 위한 메서드임을 표시 </span>
+	<span class="kd">public</span> <span class="nc">MemberDao</span> <span class="nf">memberDao</span><span class="o">(){</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">MemberDao</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><span class="preview-wrapper">
+      <a href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%8A%A4%EC%BA%94(Component%20Scan).html" class="wikilink">Spring5 입문-컴포넌트 스캔(Component Scan)</a>
+      <iframe class="preview" src='' data-href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20%EC%8A%A4%EC%BA%94(Component%20Scan).html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>
+    <h3 id="빈-생성-및-검색-방법">빈 생성 및 검색 방법</h3>
+    <p>이후 알아볼 <span class="preview-wrapper">
+      <a href="#컨테이너" class="wikilink">컨테이너 인스턴스</a>
+      <iframe class="preview" src='' data-href="#컨테이너" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>를 통해 빈 객체를 생성 혹은 검색할 수 있다.</p>
+  </li>
+  <li>빈 객체 자동 주입은 가장 자주 사용하는 <code class="language-plaintext highlighter-rouge">@Autowired</code> 말고도 <code class="language-plaintext highlighter-rouge">@Resource, @Inject</code>등이 존재한다.</li>
+  <li>자세한 내용은 <span class="preview-wrapper">
+      <a href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%9D%98%EC%A1%B4%20%EC%9E%90%EB%8F%99%20%EC%A3%BC%EC%9E%85.html" class="wikilink">Spring5 입문-의존 자동 주입</a>
+      <iframe class="preview" src='' data-href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%9D%98%EC%A1%B4%20%EC%9E%90%EB%8F%99%20%EC%A3%BC%EC%9E%85.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 참조</li>
+</ul>
+
+<div class="callout callout-example" id="callout-6d6ab3a1-6ba4-4482-99d3-ff7c5010001a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">.getBean()</code> 메서드
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="nc">ApplicationContext</span> <span class="n">ctx</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AnnotationConfigApplicationContext</span><span class="o">(</span><span class="nc">AppCtx</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+<span class="nc">VersionPrinter</span> <span class="n">versionPrinter</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"versionPrinter"</span><span class="o">,</span> <span class="nc">VersionPrinter</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p><code class="language-plaintext highlighter-rouge">.getBean()</code> : 빈 객체를 생성하는 메소드명과 클래스를 인자로 빈 객체를 생성하거나, 이전에 생성했던 빈 객체를 가져온다.</p>
+<ul>
+  <li>만약 메서드 리턴과 클래스가 일치하지 않거나 오타가 있다면 오류가 난다.</li>
+  <li>만약 해당 클래스의 빈 객체 종류가 단 하나만 존재한다면, 클래스만 넣어도 된다.</li>
+</ul>
+
+<h3 id="빈-객체의-라이프-사이클">빈 객체의 라이프 사이클</h3>
+
+<p>빈 객체는 스프링 컨테이너에 의해 관리되며 크게 <strong>생성, 의존 주입, 초기화, 소멸</strong>로 나뉜다.</p>
+
+<ul>
+  <li><strong>생성</strong> : 컨테이너 생성 직후 실행
+    <ul>
+      <li>빈 객체 싱글톤, 혹은 설정에 따라 프로토타입 패턴으로 생성</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- #@#callout-example#@#빈 객체의 Scope 설정#@# -->
+<p>title: 빈 객체의 Scope 설정</p>
+
+<p>아래와 같이 <code class="language-plaintext highlighter-rouge">@Scope</code>를 통해 <code class="language-plaintext highlighter-rouge">prototype</code> 범위의 빈을 지정해 빈 객체를 구할 때마다 새로운 객체를 생성하게 할 수 있다.</p>
+
+<ul>
+  <li>단, prototype 빈은 <strong>컨테이너 종료 시에도 소멸 메서드를 실행하지 않고, 직접 소멸하고 소멸 관련 메서드를 구현</strong>해야 한다.<br>
+~~~java<br>
+import org.springframework.context.annotation.Scope;</li>
+</ul>
+
+<p>@Bean<br>
+@Scope(“prototype”) // 명시하지 않거나 @Scope(“singleton”) 일 경우 오직 하나만 생성<br>
+public Client client() {<br>
+&nbsp; &nbsp; Client client = new Client();<br>
+&nbsp; &nbsp; client.setHost(“host”);<br>
+&nbsp; &nbsp; return client;<br>
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+&lt;!-- @#@-example@#@빈 객체의 Scope 설정@#@ --&gt;
+
+---
+- **의존 주입**
+	- 의존 자동 주입을 통한 의존 설정
+---
+- **초기화**
+	- 구현한 초기화 메서드 실행
+
+&lt;!-- #@#callout-example#@#초기화 메서드 구현 예제#@# --&gt;
+title: 초기화 메서드 구현 예제
+
+`InitializingBean` 인터페이스의 `afterPropertieSet` 메서드를 구현하면 실행되며, 주로 DB 커넥션 풀 연결 생성, 채팅 클라이언트 시작 등에 사용
+
+**수동으로 설정 클래스 빈 생성 메서드 내에서 부를 수 있으나, 그 경우 2번 실행되게 된다.**
+~~~java
+import org.springframework.beans.factory.InitializingBean;
+public class Client implements InitializingBean {
+&nbsp; &nbsp; @Override
+&nbsp; &nbsp; public void afterPropertiesSet() throws Exception {
+&nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Client.afterPropertiesSet() 실행");
+&nbsp; &nbsp; }
+
+	public void connect() {
+		System.out.println("Client.connect() 실행");
+	}
+}
+</code></pre></div></div>
+
+<!-- @#@-example@#@초기화 메서드 구현 예제@#@ -->
+
+<p>만약, 변경 불가능한 외부 모듈 클래스, 아니면 모종의 이유로 인터페이스를 사용하고 싶지 않으면 다음과 같이 <code class="language-plaintext highlighter-rouge">@Bean</code> 어노테이션의 속성을 사용하면 된다.</p>
+
+<div class="callout callout-example" id="callout-84589b75-60f2-4d88-a879-c6fb8ee3b0a9">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Bean</code> 속성을 이용한 초기화 메서드 구현
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">Client</code> 클래스 내의 <code class="language-plaintext highlighter-rouge">connect</code>라는 메서드를 초기화 시 실행시키게 된다.<br>
+<code class="language-plaintext highlighter-rouge">Client</code> 클래스 내 <code class="language-plaintext highlighter-rouge">connect</code> 함수 구현 필요, 단, 파라미터가 존재할 경우 에러 발생</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Bean</span><span class="o">(</span><span class="n">initMethod</span> <span class="o">=</span> <span class="s">"connect"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">Client</span> <span class="nf">client</span><span class="o">()</span> <span class="o">{</span>
+	<span class="c1">//...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<hr>
+<ul>
+  <li><strong>소멸</strong> : 컨테이너 <code class="language-plaintext highlighter-rouge">close()</code> 메서드 실행 이후 실행
+    <ul>
+      <li>특정 메서드 실행</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-5a05307a-65a1-48e1-ad35-9b1f0b84cbb8">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>소멸 메서드 구현 예제
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">DisposableBean</code> 인터페이스의 <code class="language-plaintext highlighter-rouge">destroy</code> 메서드를 구현하면 실행되며, 주로 DB 커넥션 풀 연결 종료, 채팅 클라이언트 종료 등에 사용</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.DisposableBean</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client</span> <span class="kd">implements</span> <span class="nc">DisposableBean</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Client.destroy() 실행"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Client.close() 실행"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>마찬가지로, 변경 불가능한 외부 모듈 클래스, 모종의 이유로 인터페이스를 사용하고 싶지 않으면 다음과 같이 <code class="language-plaintext highlighter-rouge">@Bean</code> 어노테이션의 속성을 사용하면 된다.</p>
+
+<div class="callout callout-example" id="callout-5dd76ed9-7350-4961-98fd-0769a24fd754">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Bean</code> 속성을 이용한 소멸 메서드 구현
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">Client</code> 클래스 내의 <code class="language-plaintext highlighter-rouge">close</code>라는 메서드를 소멸 시 실행시키게 된다.<br>
+<code class="language-plaintext highlighter-rouge">Client</code> 클래스 내 <code class="language-plaintext highlighter-rouge">close</code> 함수 구현 필요. 단, 파라미터가 존재할 경우 에러 발생</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Bean</span><span class="o">(</span><span class="n">destroyMethod</span> <span class="o">=</span> <span class="s">"close"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">Client</span> <span class="nf">client</span><span class="o">()</span> <span class="o">{</span>
+	<span class="c1">//...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EB%B9%88(Bean)%EA%B3%BC%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/Spring/Spring5 입문-빈(Bean)과 컨테이너.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

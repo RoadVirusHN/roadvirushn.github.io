@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>스프링 설정과 의존 관리 툴 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="스프링 설정과 의존 관리 툴" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%84%A4%EC%A0%95%EA%B3%BC%20%EC%9D%98%EC%A1%B4%20%EA%B4%80%EB%A6%AC%20%ED%88%B4.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%84%A4%EC%A0%95%EA%B3%BC%20%EC%9D%98%EC%A1%B4%20%EA%B4%80%EB%A6%AC%20%ED%88%B4.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-06T04:36:53+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="스프링 설정과 의존 관리 툴" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-06T04:36:53+09:00","datePublished":"2023-01-06T04:36:53+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"스프링 설정과 의존 관리 툴","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%84%A4%EC%A0%95%EA%B3%BC%20%EC%9D%98%EC%A1%B4%20%EA%B4%80%EB%A6%AC%20%ED%88%B4.html"},"url":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%84%A4%EC%A0%95%EA%B3%BC%20%EC%9D%98%EC%A1%B4%20%EA%B4%80%EB%A6%AC%20%ED%88%B4.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 6
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">스프링 설정과 의존 관리 툴</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-01-06T04:36:53+09:00" itemprop="datePublished">Jan 6, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#스프링5-설정-순서">스프링5 설정 순서</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#의존-관리-툴-메이븐-Maven">의존 관리 툴 : 메이븐(Maven)</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#프로젝트-폴더-생성-및-pom-xml-설정">프로젝트 폴더 생성 및 pom.xml 설정</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#의존-scope-의-예시">의존 &lt;scope&gt;의 예시</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#의존-모듈-및-플러그인-설치">의존 모듈 및 플러그인 설치</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#메이븐-라이프사이클-Lifecycle">메이븐 라이프사이클(Lifecycle)</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#그래이들-Gradle">그래이들(Gradle)</a><ul></ul></li></ol>
+<h1 id="스프링-설정과-의존-관리-툴">스프링 설정과 의존 관리 툴</h1>
+
+<div class="callout callout-quote" id="callout-67a88d0c-5424-4d4a-b175-1af5586383a3">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>_<span class='link-warning'>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.kame.co.kr/nkm/det..."</em>로
+        <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
+      </span>
+    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<h2 id="스프링5-설정-순서">스프링5 설정 순서</h2>
+<ul>
+  <li>JDK 설치 및 환경 변수 설정</li>
+  <li>의존 관리 툴(메이븐, 그래이들) 설치 및 환경 변수 설정</li>
+  <li>IDE 이클립스 설치</li>
+  <li>스프링 의존과 의존 관리 툴 플러그인 설치</li>
+</ul>
+
+<h2 id="의존-관리-툴-메이븐-Maven">의존 관리 툴 : 메이븐(Maven)</h2>
+
+<p>메이븐은 프로젝트 관리 및 빌드 툴이다.<br>
+메이븐을 설치하고 스프링 프로젝트를 만드려면 다음과 같은 순서를 따르자.</p>
+
+<h3 id="프로젝트-폴더-생성-및-pom-xml-설정">프로젝트 폴더 생성 및 <code class="language-plaintext highlighter-rouge">pom.xml</code> 설정</h3>
+<p>POM 파일은 크게 다음과 같은 정보를 포함하고 있다.</p>
+<ul>
+  <li><strong>프로젝트 정보</strong>: 프로젝트의 이름, 개발자의 목록, 라이센스 등의 정보 기술</li>
+  <li><strong>빌드 설정</strong>: 소스, 리소스, 라이프 사이클별 실행할 플러그인 등 빌드와 관련된 설정 기술</li>
+  <li><strong>빌드 환경</strong>: 사용자 환경별로 달라질 수 있는 프로파일 정보를 기술</li>
+  <li><strong>POM 연관 정보</strong>: 의존 모듈, 상위 프로젝트, 포함하고 있는 하위 모듈 기술</li>
+</ul>
+
+<div class="callout callout-example" id="callout-c797e1a4-2db0-40aa-98a4-df458a4c0d27">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>프로젝트 폴더 설정과 <code class="language-plaintext highlighter-rouge">pom.xml</code> 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">프로젝트명/src/main/java</code>폴더를 만든 뒤, <code class="language-plaintext highlighter-rouge">cd 프로젝트명/</code> 로 작업 영역을 옮긴다.</li>
+  <li>프로젝트 폴더 내에서 아래 <code class="language-plaintext highlighter-rouge">pom.xml</code>을 복사하거나 <code class="language-plaintext highlighter-rouge">mvn archetype:generate</code>을 이용해 가벼운 설정 이후 생성할 수 있다.</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;groupId&gt;</span>회사명<span class="nt">&lt;/groupId&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;artifactId&gt;</span>프로젝트ID<span class="nt">&lt;/artifactId&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;version&gt;</span>버전 정보(ex) 0.0.1-SNAPSHOT)<span class="nt">&lt;/version&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;packaging&gt;</span>패키징 방법(ex)jar)<span class="nt">&lt;/packaging&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;name&gt;</span>프로젝트명<span class="nt">&lt;/name&gt;</span>
+	<span class="nt">&lt;description&gt;</span>프로젝트 설명<span class="nt">&lt;/description&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;properties&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;java.version&gt;</span>자바 버전 ex)17.0<span class="nt">&lt;/java.version&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;/properties&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;dependencies&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;dependency&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;groupId&gt;</span>org.springframework<span class="nt">&lt;/groupId&gt;</span> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;artifactId&gt;</span>spring-context<span class="nt">&lt;/artifactId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;version&gt;</span>의존 버전 (ex)6.0.3)<span class="nt">&lt;/version&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;scope&gt;</span>compile<span class="nt">&lt;/scope&gt;</span><span class="c">&lt;!--'의존 &lt;scope&gt;'에 설명--&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/dependency&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;/dependencies&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;build&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;plugins&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;plugin&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="c">&lt;!--&lt;configuration&gt;
+	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 플러그인에 필요한 설정
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/configuration&gt;--&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/plugin&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/plugins&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;/build&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이후 <code class="language-plaintext highlighter-rouge">mvn compile</code>을 통해 실행 결과를 확인 해보자.</p>
+
+<p>추가로 의존 모듈을 추가하고 싶으면 search.maven.org에서 검색하여 추가할 수 있다.</p>
+
+<h3 id="의존-scope-의-예시">의존 &lt;scope&gt;의 예시</h3>
+<ul>
+  <li><strong>compile</strong>: 컴파일 시 필요한 모듈, 테스트 및 런타임에도 클래스패스에 모듈 포함, 기본값</li>
+  <li><strong>runtime</strong>: 런타임에만 필요, 배포시에도 포함됨 (ex) JDBC 드라이버)</li>
+  <li><strong>provided</strong>: 컴파일 시 필요하지만 실제 런타임 때 컨테이너 같은 것에서 기본으로 제공하므로 배포시 제외됨(ex) 서블릿)</li>
+  <li><strong>test</strong>: 테스트 코드를 컴파일 시 필요, 테스트시에만 클래스패스에 포함, 배포시 제외 (ex) Mock)</li>
+</ul>
+
+<h3 id="의존-모듈-및-플러그인-설치">의존 모듈 및 플러그인 설치</h3>
+
+<div class="callout callout-seealso" id="callout-37fd44b6-a11b-44e0-ac7d-39b7d3ba2009">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>의존 모듈과 플러그인의 차이
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li><strong>의존 모듈</strong>은 프로젝트에서 필요로 하는 jar 파일로, classpath에 추가된다</li>
+  <li><strong>플러그인</strong>은 메이븐이 빌드하는 과정에 사용되는 jar파일로 classpath에 추가되지 않음
+    <ul>
+      <li>메이븐은 플러그인의 기능들을 이용해 빌드한다.</li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<p>필요한 플러그인이나 의존 모듈들은 빌드, 컴파일, 테스트 등의 동작 시, 메이븐 중앙 리포지토리에서 다운로드 받은 뒤 로컬 리포지토리에 저장되어 사용된다.</p>
+<ul>
+  <li>메이븐 중앙 리포지토리 url : <code class="language-plaintext highlighter-rouge">http://repo1.maven.org/maven2</code></li>
+  <li>로컬 리포지토리 저장 경로 : <code class="language-plaintext highlighter-rouge">[USER_HOME]/.m2/repository/[groupId]/[artifactId]/[version]/[artifactId]-[version].jar</code></li>
+</ul>
+
+<p>이때, <strong>메이븐이 자동으로 각 모듈과 플러그인들의 하위 의존들을 자동으로 설치</strong>해준다.\</p>
+<ul>
+  <li>이를 <strong>의존 전이(Transitive Dependencies)</strong>라고 한다.</li>
+</ul>
+
+<h3 id="메이븐-라이프사이클-Lifecycle">메이븐 라이프사이클(Lifecycle)</h3>
+
+<p>라이프사이클은 <strong>메이븐이 프로젝트를 빌드하는 과정을 의미</strong>하며, 각 과정의 일부까지만 명령어를 통해 실행할 수 있다.</p>
+
+<p>크게 <strong>clean, build, site</strong>의 세가지 라이프 사이클을 제공하며, 각 라이프 사이클은 추가로 단계(phase)로 나뉜다.</p>
+<ul>
+  <li><strong>clean</strong> 라이프 사이클 : 빌드 시 생성되었던 산출물을 삭제
+    <ul>
+      <li>이전 산출물 : 업데이트 이전 리소스나 의존 모듈 등이 존재</li>
+    </ul>
+  </li>
+  <li><strong>build(default)</strong> 라이프 사이클 : default 값, 프로젝트 패키징 및 배포 절차, 핵심 절차
+    <ul>
+      <li>무려 도합 23개의 단계가 존재하며 일부 주요 단계만 설명한다.
+        <ul>
+          <li><strong>validate</strong> : 프로젝트 상태, 필요 정보 체크</li>
+          <li><strong>compile</strong> : 소스 코드 컴파일 및 클래스 출력 폴더에 클래스 생성</li>
+          <li><strong>test</strong> : 테스트 실행</li>
+          <li><strong>package</strong> : 컴파일 코드와 리소스 파일들을 war, jar 등으로 패키지 수행</li>
+          <li><strong>install</strong> : 패키지를 로컬 저장소에 설치</li>
+          <li><strong>deploy</strong> : 생성 패키지를 원격 저장소에 배포</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>site</strong> 라이프 사이클 : 프로젝트 문서화 절차
+    <ul>
+      <li>사이트 문서 자동 생성, 배포 등의 절차</li>
+    </ul>
+  </li>
+</ul>
+
+<p>라이프 사이클의 특정 단계 실행하려면 다음과 같이 실행하며, 앞선 모든 단계들을 실행한다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn <span class="nb">test
+</span>mvn deploy
+mvn surefire:test <span class="c"># 특정 플러그인의 단계만 실행하기, 앞선 단계 실행 X</span>
+
+</code></pre></div></div>
+<ul>
+  <li>각 플러그인의 목적 혹은 기능을 골(goal)이라고 표현한다.</li>
+</ul>
+
+<h2 id="그래이들-Gradle">그래이들(Gradle)</h2>
+
+<p>XML 대신 Groovy 스크립트를 이용한 동적인 빌드를 지원하며, 스프링과 같은 의존성 주입 방식으로 모듈을 설치하며, 전체적으로 성능은 더욱 좋지만, 아직까진 메이븐이 더 잘 사용된다.</p>
+
+<div class="callout callout-example" id="callout-bbc55093-42fc-4e87-aa98-80fe17e0a225">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">프로젝트폴더/build.gradle</code> 파일 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'java'</span> <span class="c1">// 자바 플러그인 사용</span>
+<span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="mf">17.0</span> <span class="c1">// 현재 프로젝트 자바 버전</span>
+<span class="n">targetCompatibility</span> <span class="o">=</span> <span class="mf">17.0</span> <span class="c1">// 디플로이 시 자바 버전</span>
+<span class="n">compileJava</span><span class="o">.</span><span class="na">options</span><span class="o">.</span><span class="na">encoding</span> <span class="o">=</span> <span class="s2">"UTF-8"</span> <span class="c1">// 인코딩</span>
+<span class="n">repositories</span> <span class="o">{</span>
+	<span class="n">mavenCentral</span><span class="o">()</span> <span class="c1">// 메이븐 중앙 레포지토리에서 의존 설치</span>
+<span class="o">}</span>
+<span class="n">dependencies</span> <span class="o">{</span>
+	<span class="n">implementation</span> <span class="s1">'org.springframework:spring-context:6.0.3'</span>
+<span class="o">}</span> <span class="c1">// spring-context 6.0.3버전 의존을 컴파일 시 설치</span>
+<span class="n">wrapper</span> <span class="o">{</span> <span class="c1">// gradle이 없어도 의존을 설치할 수 있게 gradlew 생성</span>
+	<span class="n">gradleVersion</span> <span class="o">=</span> <span class="s1">'7.6'</span> <span class="c1">// 현재 gradle 버전</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>위 예시 파일을 만든 후 <code class="language-plaintext highlighter-rouge">gradle wrapper</code> 명령어를 실행하면 <code class="language-plaintext highlighter-rouge">gradlew</code> 파일이 생성되어 gradle을 설치하지 않아도 명령어를 실행할 수 있다.
+    <ul>
+      <li>ex) <code class="language-plaintext highlighter-rouge">gradlew compileJava</code></li>
+    </ul>
+  </li>
+</ul>
+
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%84%A4%EC%A0%95%EA%B3%BC%20%EC%9D%98%EC%A1%B4%20%EA%B4%80%EB%A6%AC%20%ED%88%B4.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

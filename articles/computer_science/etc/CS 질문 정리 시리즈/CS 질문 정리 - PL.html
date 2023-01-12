@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>CS 질문 정리 - PL | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="CS 질문 정리 - PL" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20PL.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20PL.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-28T10:45:34+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CS 질문 정리 - PL" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-28T10:45:34+09:00","datePublished":"2022-12-28T10:45:34+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"CS 질문 정리 - PL","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20PL.html"},"url":"http://localhost:4000/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20PL.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 6
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">CS 질문 정리 - PL</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-12-28T10:45:34+09:00" itemprop="datePublished">Dec 28, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#객체-지향형-프로그래밍">객체 지향형 프로그래밍</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#제어자-Modifier">제어자(Modifier)</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#선언형-프로그래밍">선언형 프로그래밍</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#함수형-프로그래밍">함수형 프로그래밍</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#Java">Java</a><ul><li lvl="3"><a id="markdown-toc-0-5" href="#Java의-접근-제한자">Java의 접근 제한자</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#Java-상속과-인터페이스">Java 상속과 인터페이스</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-7" href="#Javascript">Javascript</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-8" href="#C-family">C-family</a><ul><li lvl="3"><a id="markdown-toc-0-9" href="#메모리의-동적-할당">메모리의 동적 할당</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-10" href="#Python">Python</a><ul></ul></li></ol>
+<h1 id="CS-질문-정리">CS 질문 정리</h1>
+<h2 id="객체-지향형-프로그래밍">객체 지향형 프로그래밍</h2>
+
+<h3 id="제어자-Modifier">제어자(Modifier)</h3>
+<p>클래스나 변수, 메서드 선언 시 앞에 함께 선언되어 부가적인 의미를 부여한다.</p>
+
+<ul>
+  <li><strong>접근 제한자(Access Modifier)</strong><br>
+객체 지향형 프로그래밍 언어들에서 <strong>클래스 내부 또는 외부에서 메소드와 필드의 접근을 제어하여 캡슐화를 구현하기 위한 수단</strong>이다.</li>
+</ul>
+
+<p>주로 Java로 설명하므로 자세한 건, <span class="preview-wrapper">
+      <a href="#java" class="wikilink">Java</a>
+      <iframe class="preview" src='' data-href="#java" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>을 참조</p>
+
+<ul>
+  <li><strong>접근 제한자 이외</strong><br>
+  자바의 경우 주로 static, final, abstract를 이용한다.
+    <ul>
+      <li>
+        <p><strong>static</strong> : 클래스가 인스턴스화하지 않고도 접근 가능하며, 모든 인스턴스가 값을 공유한다.<br>
+  클래스가 메모리에 로딩될 시 생성되며, 메모리의 위치가 고정되게 된다.<br>
+  <strong>static</strong> 메서드의 경우, 각 인스턴스의 인스턴스 멤버를 사용할 수 없게 된다.</p>
+      </li>
+      <li>
+        <p><strong>final</strong>: 클래스의 경우 확장(상속) 불가능, 메소드와 변수의 경우 최초 선언 이후로, 재정의, 변경 불가능하게 제한한다.<br>
+  보통 <strong>static final</strong>로 같이 사용하여 다른 언어에서의 <strong>Const</strong>처럼 상수로 사용한다.</p>
+      </li>
+      <li>
+        <p><strong>abstract</strong>:  클래스와 메서드에만 사용, 메서드의 선언부만 작성하고 실제 수행 내용은 오버라이딩 해서 사용한다.<br>
+  이를 추상 메서드라 하며, 추상 메서드가 있는 클래스의 앞에 같이 선언하여 추상 클래스로 만들어지면, 해당 클래스는 인스턴스화될 수 없고 상속만 받을 수 있다.</p>
+      </li>
+    </ul>
+
+    <p>그 외에는 <strong>native</strong>(자바가 아닌 언어로 구현 뒤, 자바에서 사용 시), <strong>transient</strong>(직렬화 시, 직렬화 대상 제외), <strong>snchronized</strong>(스레드 동기화용), <strong>volatile</strong>(메인 메모리에 변수 저장), <strong>strictfp</strong>(부동 소수점 계산 제한) 등이 존재하며, 자바 이외의 언어는 추가로 <strong>extern</strong>, <strong>inline</strong>, <strong>*const</strong> 등이 존재한다.</p>
+  </li>
+</ul>
+
+<h2 id="선언형-프로그래밍">선언형 프로그래밍</h2>
+<h3 id="함수형-프로그래밍">함수형 프로그래밍</h3>
+
+<h2 id="Java">Java</h2>
+<h3 id="Java의-접근-제한자">Java의 접근 제한자</h3>
+<p>클래스와 지역 변수를 제외하고 모든 메서드, 필드, 생성자는 폐쇄성 오름차순으로 <strong>Public, Protected, Default, Private</strong>이 존재한다.</p>
+
+<ul>
+  <li><strong>Public</strong>: 언제 어디서나 접근 가능</li>
+  <li><strong>Protected</strong>: 같은 패키지 소속이거나 자식 객체만 접근 가능</li>
+  <li><strong>Default</strong>: 같은 패키지에 소속된 객체만 접근 가능, 아무 선언 안할 시 기본값</li>
+  <li><strong>Private</strong>: 클래스 내부에서만 접근 가능,
+    <ul>
+      <li>접근 불가능한 private 생성자를 이용해 인스턴스 생성 또한 클래스 내부의 다른 퍼블릭 메소드로 진행하도록 강제하여 싱글톤 패턴을 만드는데 사용할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-seealso" id="callout-e7978710-9497-4ab7-9a49-a2d9abcebbd6">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>Class 접근 제한자는 <strong>Public과 Default</strong>만 있으며, <strong>Public</strong>의 경우, 다른 패지키에서 해당 클래스를 사용 가능하다. 지역변수는 언제나 <strong>Default</strong> 상태이다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<h3 id="Java-상속과-인터페이스">Java 상속과 인터페이스</h3>
+
+<h2 id="Javascript">Javascript</h2>
+
+<p>비동기</p>
+
+<p>이벤트 루프</p>
+
+<p>프로미스</p>
+
+<h2 id="C-family">C-family</h2>
+
+<h3 id="메모리의-동적-할당">메모리의 동적 할당</h3>
+<p>C 언어의 경우, 런타임 중에 사용할 메모리 공간을 <span class="preview-wrapper">
+      <a href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html#프로세스-메모리-구조" class="wikilink">힙</a>
+      <iframe class="preview" src='' data-href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html#프로세스-메모리-구조" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>에 할당하기 위해 <code class="language-plaintext highlighter-rouge">malloc</code> 함수를 이용할 수 있다.</p>
+
+<p>다른 프로그래밍 언어는 자동으로 동적 할당이 가능하지만 C언어는 메모리에 대한 완전한 제어를 가지는 대신 관리 책임 또한 지어야 한다.</p>
+
+<div class="callout callout-note" id="callout-499ffa6e-44d3-4fae-8804-93082464a336">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">malloc</code> 함수
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span><span class="o">*</span> <span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">size</code> : 동적으로 할당할 메모리의 크기<br>
+<code class="language-plaintext highlighter-rouge">return</code> : 할당된 메모리의 주소, 할당 실패시 NULL</p>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>리턴이 void 형이므로 주소를 얻어오기 위해 <code class="language-plaintext highlighter-rouge">int*</code>처럼 캐스팅하여 값을 받아와야 한다.</li>
+</ul>
+
+<p>이후 사용이 끝난 메모리는 <code class="language-plaintext highlighter-rouge">free</code> 함수를 이용해 해제해 줘야 한다.</p>
+
+<div class="callout callout-note" id="callout-53dee35f-b11b-4fba-9a5b-f897e3360a8f">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">free</code> 함수
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">free</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">ptr</code>: 해제하고자 하는 메모리의 포인터</p>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>해제해주지 않을 경우 해당 메모리 공간을 계속 차지하는 메모리 누수 현상이 일어난다.</li>
+  <li>다른 프로그래밍 언어는 가비지콜렉션을 통해 자동으로 해제해준다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-ff5f0846-07f5-4465-b051-58262a1f30a5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>동적 할당 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="c1"> // or &lt;malloc.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span><span class="o">*</span> <span class="n">arr</span><span class="p">;</span>
+	<span class="n">arr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 3 길이의 int 배열 크기 만큼 동적 할당 </span>
+
+	<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+	<span class="p">}</span>
+	<span class="n">free</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span> <span class="c1">// 사용한 메모리 해제</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-bdbd43e3-e483-4841-ae89-56b50983febf">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>만약 해제한(free) 메모리 또 해제하면? =&gt; DFB
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span> <span class="n">myString</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="o">*</span><span class="n">STRING_BUFFER_SIZE</span><span class="p">);</span>
+<span class="n">free</span><span class="p">(</span><span class="n">myString</span><span class="p">);</span> 
+<span class="n">free</span><span class="p">(</span><span class="n">myString</span><span class="p">);</span> <span class="c1">// all realloc</span>
+</code></pre></div></div>
+
+<p>이를 double free bug(DFB)라고 하며, 보통 crash나 메모리 오염의 위험이 있다.</p>
+
+<p>이를 막기위해  다음과 같이 해제한 뒤 <code class="language-plaintext highlighter-rouge">NULL</code>을 지정해주면 좋다.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">free</span><span class="p">(</span><span class="n">myString</span><span class="p">);</span>
+<span class="n">myString</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-84da288a-28c4-4800-8b9b-238e5f55f7c3">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>왜 DFB가 나타나는 가?
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>간단히 말하자면, 두 번 해제된 메모리 공간은 덮어씌어질 위험이 생긴다.<br>
+<span class='link-warning'>
+      <a href="https://showx123.tistory.com/59" class="wikilink externallink">블로그 글</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://showx123.tistory.com/5..."</em>로
+        <button onclick="window.open('https://showx123.tistory.com/59','_blank'); return false;">이동</button>?
+      </span>
+    </span> 참조</p>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-5762daae-8128-4ca7-8a29-acf98b4929f1">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>메모리 누수란?
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>ㅣ</p>
+
+</div>
+    </div>
+    </div>
+<h2 id="Python">Python</h2>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/etc/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%A6%AC%EC%A6%88/CS%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC%20-%20PL.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/etc/CS 질문 정리 시리즈/CS 질문 정리 - PL.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

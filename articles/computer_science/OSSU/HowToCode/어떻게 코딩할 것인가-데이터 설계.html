@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>어떻게 코딩할 것인가-데이터 설계 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="어떻게 코딩할 것인가-데이터 설계" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%84%A4%EA%B3%84.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%84%A4%EA%B3%84.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-28T20:49:46+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="어떻게 코딩할 것인가-데이터 설계" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-28T20:49:46+09:00","datePublished":"2022-12-28T20:49:46+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"어떻게 코딩할 것인가-데이터 설계","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%84%A4%EA%B3%84.html"},"url":"http://localhost:4000/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%84%A4%EA%B3%84.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 6
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">어떻게 코딩할 것인가-데이터 설계</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2022-12-28T20:49:46+09:00" itemprop="datePublished">Dec 28, 2022
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#데이터-정의-Data-Definition-란">데이터 정의(Data Definition)란?</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#데이터-종류-별-설계-과정">데이터 종류 별 설계 과정</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#원자-데이터-Atomic">원자 데이터(Atomic)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#범위-데이터-Interval">범위 데이터(Interval)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#열거형-데이터-Enumeration">열거형 데이터(Enumeration)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#항목형-데이터-Itemization">항목형 데이터(Itemization)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#복합-데이터-Compound-data">복합 데이터(Compound data)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#List-데이터-List-data">List 데이터(List data)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#여러-종류의-데이터-정의가-필요한-경우">여러 종류의 데이터 정의가 필요한 경우</a><ul></ul></li></ul></li></ol>
+<h1 id="데이터-설계">데이터 설계</h1>
+
+<div class="callout callout-quote" id="callout-5ef7ebb5-7ac7-4d5a-af1c-a56c30cd055a">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>quote</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>Edx 강의 <span class='link-warning'>
+      <a href="https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home" class="wikilink externallink"><em>How to Code</em></a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://learning.edx.org/cours..."</em>로
+        <button onclick="window.open('https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home','_blank'); return false;">이동</button>?
+      </span>
+    </span> 시리즈를 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<p>데이터 설계는 함수 설계보다 프로그램에 직접적인 영향을 끼치진 않지만, 함수 설계에 크나큰 영향을 끼친다.</p>
+<ul>
+  <li>함수는 데이터를 다루는 방법이기 때문</li>
+</ul>
+
+<p><strong>데이터</strong>는 사람이 이해 가능한 문제 영역의 정보(problem domain information)를 <strong>프로그램이 이해 가능하게 표현</strong>(represent)한 것이다.</p>
+
+<p>이러한 데이터는 개발자가 보았을 때, 다시 문제 영역의 정보로 해석(interpret)할 수 있어야 한다.</p>
+<ul>
+  <li>예를 들어, <code class="language-plaintext highlighter-rouge">enum = {1, 2, 3}</code>은 데이터이며, 사람이 이해하는 <code class="language-plaintext highlighter-rouge">apple, orange, strawberry</code>는 문제 영역 정보이다.  <code class="language-plaintext highlighter-rouge">1</code>은 데이터이며, <code class="language-plaintext highlighter-rouge">apple</code>의 표현이며, <code class="language-plaintext highlighter-rouge">apple</code>이라는 문제 영역 정보로 해석할 수 있다.</li>
+</ul>
+
+<p>정보의 구조는 데이터의 구조를 정하며, 데이터의 구조는 템플릿의 구조를 정하고 템플릿의 구조는 함수의 구조를 정하고, 이러한 함수가 모여 전체 프로그램을 설계하므로 중요하다.</p>
+
+<h2 id="데이터-정의-Data-Definition-란">데이터 정의(Data Definition)란?</h2>
+
+<p>데이터 정의는 정보와 데이터의 표현/해석 관계를 수립하는 것이다. 다음과 같은 내용을 정해야 한다.</p>
+<ul>
+  <li>데이터가 새로운 타입으로 어떻게 대치되는가?</li>
+  <li>정보를 어떻게 데이터로 표현하고, 데이터를 어떻게 정보로 해석하는가?</li>
+  <li>데이터를 다루기 위한 템플릿</li>
+</ul>
+
+<div class="callout callout-example" id="callout-973e1139-f97a-4ed9-89c9-5d1b9fc5200a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>데이터 정의 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Data definitions:
+</span><span class="p">{:</span> <span class="c1">#data-definitions}
+# TLColor is one of:
+</span><span class="p">{:</span> <span class="c1">#tlcolor-is-one-of}
+#  - 0
+</span><span class="p">{:</span> <span class="c1">#0}
+#  - 1
+</span><span class="p">{:</span> <span class="c1">#1}
+#  - 2
+</span><span class="p">{:</span> <span class="c1">#2}
+# interp. 0 means red, 1 yellow, 2 green               
+</span><span class="p">{:</span> <span class="c1">#interp-0-means-red-1-yellow-2-green}
+</span><span class="k">def</span> <span class="nf">FnForTlcolor</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">pass</span>
+	<span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">pass</span>
+	<span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">pass</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>데이터 정의를 통해 함수 설계에 다음과 같은 영향을 끼친다.</p>
+<ul>
+  <li>데이터 입력과 출력 도메인을 제한</li>
+  <li>테스트를 만드는데 도움을 줄 수 있음</li>
+  <li>템플릿을 만드는데 도움을 줄 수 있음</li>
+</ul>
+
+<div class="callout callout-example" id="callout-c2df754b-4d81-49ab-897c-25b011b455a5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>데이터 정의에 도움을 받은 함수 디자인
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Function Design:
+</span><span class="p">{:</span> <span class="c1">#function-design}
+# Signature: TLColor -&gt; TLColor
+</span><span class="p">{:</span> <span class="c1">#signature-tlcolor-tlcolor}
+# Purpose: produce next color of traffic light
+</span><span class="p">{:</span> <span class="c1">#purpose-produce-next-color-of-traffic-light}
+# Stub : def nextColor_stub(c): return 0
+</span><span class="p">{:</span> <span class="c1">#stub-def-nextcolor-stub-c-return-0}
+</span>
+<span class="c1"># Tests 
+</span><span class="p">{:</span> <span class="c1">#tests}# 테스트를 만드는데 도움을 줄 수 있음, 데이터 입력과 출력 도메인을 제한을 통해 테스트 생성
+</span><span class="k">print</span><span class="p">(</span><span class="n">nextColor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">nextColor</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">nextColor</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Template from TLColor 
+</span><span class="p">{:</span> <span class="c1">#template-from-tlcolor}# 템플릿을 만드는데 도움을 줄 수 있음
+# function
+</span><span class="p">{:</span> <span class="c1">#function}
+</span><span class="k">def</span> <span class="nf">nextColor</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="mi">2</span>
+	<span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">return</span> <span class="mi">0</span>
+	<span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+		<span class="k">return</span> <span class="mi">1</span>
+
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id="데이터-종류-별-설계-과정">데이터 종류 별 설계 과정</h2>
+
+<p>데이터의 종류에 따른 여러 설계 방법과 함수 설계의 예시를 알아보자.</p>
+<ul>
+  <li>예시에서는 하나의 데이터 설계에 하나의 함수 설계가 대치되므로 매우 비효율적이게 보이겠지만, 실제로는 하나의 데이터 설계 이후 여러 함수가 공유하므로 훨씬 낫다.</li>
+</ul>
+
+<p>데이터의 종류에 따라 정의한 결과물들을 이용해 함수 설계를 하므로, 데이터 별 정의는 함수 설계에 직교성을 가진다.</p>
+<ul>
+  <li>쉽게 말해 사용하는 데이터에 따라 함수 설계 방법이 크게 바뀐다는 의미</li>
+</ul>
+
+<p>모든 설계 과정은 다음과 같은 공통 과정을 거친다.</p>
+
+<ol>
+  <li><strong>정보의 내재 구조 파악</strong>
+    <ul>
+      <li>데이터를 어떤 타입으로 표현해야할 것인가? ex) <code class="language-plaintext highlighter-rouge">atomic, Interval, Itemization</code></li>
+    </ul>
+  </li>
+  <li><strong>가능한 구조 정의(복합 데이터의 경우에만 시행)</strong></li>
+  <li><strong>데이터 타입 정의</strong>
+    <ul>
+      <li>타입명과 데이터의 구성 방법을 기술</li>
+    </ul>
+  </li>
+  <li><strong>정보와 데이터 간의 상호 해석/표현 방법 정의</strong></li>
+  <li><strong>데이터에 대한 예시들 기술</strong></li>
+  <li><strong>데이터를 해석/표현하는 하나의 인자를 가진 함수 템플릿 정의</strong>
+    <ul>
+      <li>함수의 템플릿을 만드는데 지대한 영향을 끼침</li>
+      <li>템플릿을 이용해서 꼭 테스트해서 오류를 조기에 찾아내자</li>
+      <li><span class='link-warning'>
+      <a href="https://courses.edx.org/courses/course-v1:UBCx+HtC1x+2T2017/77860a93562d40bda45e452ea064998b/#Data" class="wikilink externallink">Data Driven Template</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://courses.edx.org/course..."</em>로
+        <button onclick="window.open('https://courses.edx.org/courses/course-v1:UBCx+HtC1x+2T2017/77860a93562d40bda45e452ea064998b/#Data','_blank'); return false;">이동</button>?
+      </span>
+    </span>을 참조하여 구현한다.</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="callout callout-note" id="callout-b6ba0bcc-4ddb-4f44-8999-95954419d3b2">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>Data Driven Template(DDT)
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<table border="1" cellpadding="5" style="text-align: left; vertical-align: text-top;">
+<thead>
+<tr><th>Type of data</th><th><tt>cond</tt> question (if applicable)</th><th>Body or <tt>cond</tt> answer (if applicable)</th></tr>
+</thead>
+<tbody>
+<tr style="text-align: left; vertical-align: text-top;">
+<td>
+<p><strong>Atomic Non-Distinct</strong></p>
+<ul>
+<li><tt>Number</tt></li>
+<li><tt>String</tt></li>
+<li><tt>Boolean</tt></li>
+<li><tt>Image</tt></li>
+<li>interval like <tt>Number[0, 10)</tt></li>
+<li>etc.</li>
+</ul>
+</td>
+<td>
+<p>Appropriate predicate</p>
+<ul>
+<li><tt>type(x)==int</tt></li>
+<li><tt>type(x)==str</tt></li>
+<li><tt>type(x)== type(True)</tt></li>
+<li><tt>type(x)==Image</tt></li>
+<li><tt>(and (&lt;= 0 x)</tt><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&lt; x 10))</tt></li>
+<li>etc.</li>
+</ul>
+</td>
+<td>
+<p>Expression that operates on the parameter.</p>
+<p><tt>(... x)</tt></p>
+</td>
+</tr>
+<tr style="text-align: left; vertical-align: text-top;">
+<td>
+<p><strong>Atomic Distinct Value</strong></p>
+<ul>
+<li><tt>"red"</tt></li>
+<li><tt>false</tt></li>
+<li><tt>empty</tt></li>
+<li>etc.</li>
+</ul>
+</td>
+<td>
+<p>Appropriate predicate</p>
+<ul>
+<li><tt>x=="red"</tt></li>
+<li><tt>x==false</tt></li>
+<li><tt>len(x)==0</tt></li>
+<li>etc.</li>
+</ul>
+</td>
+<td>
+<p>Since value is distinct, parameter does not appear.</p>
+<p><tt>(...)</tt></p>
+</td>
+</tr>
+<tr style="text-align: left; vertical-align: text-top;">
+<td>
+<p><strong>One Of</strong></p>
+<ul>
+<li>enumerations</li>
+<li>itemizations</li>
+</ul>
+</td>
+<td></td>
+<td>
+<p>Cond with one clause per subclass of one of.</p>
+<p><tt>(cond [&lt;question1&gt; &lt;answer1&gt;]<br></tt> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;question2&gt; &lt;answer2&gt;])</tt></p>
+<p>Where each question and answer expression is formed by following the rule in the question or answer column of this table for the corresponding case. A detailed derivation of a template for a one-of type appears below.</p>
+<p>It is permissible to use <tt>else</tt> for the last question for itemizations and large enumerations. Normal enumerations should not use else.</p>
+<p>Note that in a <i>mixed data itemization</i>, such as</p>
+<p><tt>;; Measurement is one of:</tt><br> <tt>;; - Number[-10, 0)</tt><br> <tt>;; - true</tt><br> <tt>;; - Number(0, 10]</tt></p>
+<p>the cond questions must be <strong>guarded</strong> with an appropriate type predicate. In particular, the first cond question for <tt>Measurement</tt> must be</p>
+<p><tt>(and (number? m)</tt><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&lt;= -10 m)</tt><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&lt; m 0))</tt></p>
+<p>where the call to <tt>number?</tt> guards the calls to <tt>&lt;=</tt> and <tt>&lt;</tt>. This will protect <tt>&lt;=</tt> and <tt>&lt;</tt> from ever receiving true as an argument.</p>
+</td>
+</tr>
+<tr style="text-align: left; vertical-align: text-top;">
+<td>
+<p><strong>Compound</strong></p>
+<ul>
+<li><tt>Position</tt></li>
+<li><tt>Firework</tt></li>
+<li><tt>Ball</tt></li>
+<li>cons</li>
+<li>etc.</li>
+</ul>
+</td>
+<td>
+<p>Predicate from structure</p>
+<ul>
+<li><tt>(posn? x)</tt></li>
+<li><tt>(firework? x)</tt></li>
+<li><tt>(ball? x)</tt></li>
+<li><tt>(cons? x)</tt> (often just else)</li>
+<li>etc.</li>
+</ul>
+</td>
+<td>
+<p>All selectors.</p>
+<ul>
+<li><tt>(... (posn-x x) (posn-y x))</tt></li>
+<li><tt>(... (firework-y x) (firework-color x))</tt></li>
+<li><tt>(... (ball-x x) (ball-dx x))</tt></li>
+<li><tt>(... (first x) (rest x))</tt></li>
+<li>etc.</li>
+</ul>
+<br>
+<p>Then consider the result type of each selector call and wrap the accessor expression appropriately using the table with that type. So for example, if after adding all the selectors you have:</p>
+<p><tt>(... (game-ball g) ;produces Ball</tt><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(game-paddle g)) ;produces Paddle</tt></p>
+<p>Then, because both Ball and Paddle are non-primitive types (types that you yourself defined in a data definition) the reference rule (immediately below) says that you should add calls to those types' template functions as follows:</p>
+<p><tt> (... (fn-for-ball (game-ball g))</tt><br> <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(fn-for-paddle (game-paddle g)))</tt></p>
+</td>
+</tr>
+<tr style="text-align: left; vertical-align: text-top;">
+<td>
+<p><strong>Other Non-Primitive Type Reference</strong></p>
+</td>
+<td>
+<p>Predicate, usually from structure definition</p>
+<ul>
+<li><tt>(firework? x)</tt></li>
+<li><tt>(person? x)</tt></li>
+</ul>
+</td>
+<td>
+<p>Call to other type's template function</p>
+<ul>
+<li><tt>(fn-for-firework x)</tt></li>
+<li><tt>(fn-for-person x)</tt></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align: left; vertical-align: text-top;">
+<td>
+<p><strong>Self Reference</strong></p>
+</td>
+<td></td>
+<td>
+<p>Form natural recursion with call to this type's template function:</p>
+<ul>
+<li><tt>(fn-for-los (rest los))</tt></li>
+</ul>
+</td>
+</tr>
+<tr style="text-align: left; vertical-align: text-top;">
+<td>
+<p><strong>Mutual Reference</strong></p>
+<br>
+<p>Note: form and group all templates in mutual reference cycle together.</p>
+</td>
+<td></td>
+<td>
+<p>Call to other type's template function:</p>
+<p><tt>(fn-for-lod (dir-subdirs d)</tt><br> <tt>(fn-for-dir (first lod))</tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>데이터 템플릿 내부의 비교 구문과 로직 구현 부분을 참조하여 넣으면 된다.</li>
+</ul>
+
+<h3 id="원자-데이터-Atomic">원자 데이터(Atomic)</h3>
+<p><strong>더 이상 의미를 나눌 수 없는 데이터에 적용</strong>하며 기본 내장된 원시 타입들을 이용해 만드는 <strong>비원시 타입 데이터</strong>이다.</p>
+<ul>
+  <li>예를 들어 <code class="language-plaintext highlighter-rouge">Vancouver, Boston, Homead</code>는 각기의 의미를 가지고 있으며 추가로 나누는 것이 불가능하며 원시 타입인 <code class="language-plaintext highlighter-rouge">String</code>을 이용해 만들었다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-feaa9131-f0bd-44a3-b755-4b621eb490f0">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>원자 데이터 정의 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Vancouver, Boston, Homead 같은 도시명들을 원자형으로 표현하고자 한다. 
+</span><span class="p">{:</span> <span class="c1">#vancouver-boston-homead-같은-도시명들을-원자형으로-표현하고자-한다}# 1. 정보 내재 구조 파악
+</span>
+<span class="c1"># CityName is String 
+</span><span class="p">{:</span> <span class="c1">#cityname-is-string}# 3. 데이터 타입 정의
+# interp. the name of a city 
+</span><span class="p">{:</span> <span class="c1">#interp-the-name-of-a-city}# 4. 해석/표현 방법 정의           
+</span>
+<span class="c1"># 5. 데이터에 대한 예시 기술
+</span><span class="p">{:</span> <span class="c1">#5-데이터에-대한-예시-기술}
+</span><span class="n">CT1</span> <span class="o">=</span> <span class="s">"Vancouver"</span>
+<span class="n">CT2</span> <span class="o">=</span> <span class="s">"Boston"</span>
+
+<span class="c1">#6. 데이터를 해석/표현하는 함수 템플릿 정의
+# def fnForCityname(cn):
+</span><span class="p">{:</span> <span class="c1">#def-fnforcityname-cn}
+#	# ...cn
+#	pass
+</span>
+<span class="c1"># Template rules used: 
+</span><span class="p">{:</span> <span class="c1">#template-rules-used}# Data Driven Template을 참조하여 정의한다.
+# - Atomic non-distinct: String 
+</span><span class="p">{:</span> <span class="c1">#atomic-non-distinct-string}# 우리는 CityName을 Atomic non-distinct라고 정의함.
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>함수 템플릿 내의 <code class="language-plaintext highlighter-rouge">...</code>은 만약 데이터가 구분형(distinct)이라면 <code class="language-plaintext highlighter-rouge">...</code>으로 충분하고, 비구분형(non-distinct)라면 <code class="language-plaintext highlighter-rouge">...n</code> 같이 명시해줘야 한다.  구분형에서는 해당하는 조건문 블락에 들어가면 해당 데이터를 더이상 안쓰기 때문이다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-42a70cdf-6cc8-43cb-8c4b-3a8c1b0428f4">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>원자 데이터 정의를 사용한 함수 정의 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 최고의 도시의 이름일 경우 참을 돌려주는 함수 만들기
+</span><span class="p">{:</span> <span class="c1">#최고의-도시의-이름일-경우-참을-돌려주는-함수-만들기}
+# Signature: CityName -&gt; Boolean
+</span><span class="p">{:</span> <span class="c1">#signature-cityname-boolean}
+# Purpose: produce true if the given city is the best in the world(Karazakarak).
+</span><span class="p">{:</span> <span class="c1">#purpose-produce-true-if-the-given-city-is-the-best-in-the-world-karazakarak}
+# Stub: 
+</span><span class="p">{:</span> <span class="c1">#stub}
+</span><span class="k">def</span> <span class="nf">isBestCity_stub</span><span class="p">(</span><span class="n">cn</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">false</span>
+
+<span class="c1"># Tests: 특별 케이스, 결과 데이터, 입력 데이터를 고려하여 설정
+</span><span class="p">{:</span> <span class="c1">#tests-특별-케이스-결과-데이터-입력-데이터를-고려하여-설정}
+</span><span class="k">print</span><span class="p">(</span><span class="n">isBestCity_stub</span><span class="p">(</span><span class="s">"Skavenblight"</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">isBestCity_stub</span><span class="p">(</span><span class="s">"Karazakarak"</span><span class="p">)</span> <span class="o">==</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Template: CityName 데이터 설계시 만든 템플릿 함수를 개명하여 사용 
+</span><span class="p">{:</span> <span class="c1">#template-cityname-데이터-설계시-만든-템플릿-함수를-개명하여-사용}
+# def isBestCity(cn):
+</span><span class="p">{:</span> <span class="c1">#def-isbestcity-cn}
+#	# ...cn
+#	pass
+</span>
+<span class="c1"># Function
+</span><span class="p">{:</span> <span class="c1">#function}
+</span><span class="k">def</span> <span class="nf">isBestCity</span><span class="p">(</span><span class="n">cn</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">cn</span> <span class="o">==</span> <span class="s">"Karazakarak"</span> <span class="c1">#...cn 부분이 cn을 이용한다는 점에서 힌트를 얻어 만든 함수 	
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>함수 구현 시, 데이터 정의 템플릿을 활용할 때 무조건 데이터 템플릿의 모든 부분을 활용할 필요는 없다.</li>
+</ul>
+
+<h3 id="범위-데이터-Interval">범위 데이터(Interval)</h3>
+<p><strong>특정한 범위가 존재하는 데이터를 명시</strong>하는데 사용, 나중에 등장할 [[#항목형 데이터(Itemization)|항목형 데이터]]에 부분 데이터로 등장하는 경우가 많다.</p>
+
+<div class="callout callout-example" id="callout-def10b84-faef-4b27-9046-98b4265d5666">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>범위 데이터 정의 예시: 1~32번까지 존재하는 영화 좌석 번호를 표시할 데이터
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 1. type comment : interval
+</span><span class="p">{:</span> <span class="c1">#1-type-comment-interval}
+# SeatNum is Integer[1, 32] 
+</span><span class="p">{:</span> <span class="c1">#seatnum-is-integer-1-32}
+# interp. seat numbers in a row, 1 and 32 are aisle seats
+</span><span class="p">{:</span> <span class="c1">#interp-seat-numbers-in-a-row-1-and-32-are-aisle-seats}
+</span>
+<span class="c1"># data examples 
+</span><span class="p">{:</span> <span class="c1">#data-examples}# 주로 범위의 처음과 끝, 중간과 특수한 부분을 테스트
+</span><span class="n">SN1</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># aisle
+</span><span class="n">SN2</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1"># middle
+</span><span class="n">SN3</span> <span class="o">=</span> <span class="mi">32</span> <span class="c1"># aisle
+</span>
+<span class="c1"># data template
+</span><span class="p">{:</span> <span class="c1">#data-template}
+</span><span class="k">def</span> <span class="nf">fNForSeatNum</span><span class="p">(</span><span class="n">sn</span><span class="p">):</span>
+	<span class="c1">#(... sn)
+</span>	<span class="k">pass</span>
+<span class="c1"># Template rules used: at Data Drive Templates page
+</span><span class="p">{:</span> <span class="c1">#template-rules-used-at-data-drive-templates-page}
+# - atomic non-distinct: Integer[1, 32]
+</span><span class="p">{:</span> <span class="c1">#atomic-non-distinct-integer-1-32}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>”[” : 해당 값 포함(이상, 이하), “(” : 해당 값 미포함(미만, 초과) ex) [1, 32) = 1~31</li>
+</ul>
+
+<div class="callout callout-example" id="callout-683040f0-3a20-46f5-9632-b520a0546bef">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>범위 데이터 함수 예시: 끝단에 있는 영화 좌석 여부를 알려주는 함수
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Functions:
+</span><span class="p">{:</span> <span class="c1">#functions}
+</span>
+<span class="c1"># Signature: SeatNum -&gt; Boolean
+</span><span class="p">{:</span> <span class="c1">#signature-seatnum-boolean}
+# Purpose: produce true if the given seat number is on the aisle
+</span><span class="p">{:</span> <span class="c1">#purpose-produce-true-if-the-given-seat-number-is-on-the-aisle}
+# tests
+</span><span class="p">{:</span> <span class="c1">#tests}
+</span><span class="k">print</span><span class="p">(</span><span class="n">isAisle</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">isAisle</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">isAisle</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">==</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># def isAisle(sn) return false 
+</span><span class="p">{:</span> <span class="c1">#def-isaisle-sn-return-false}#stub
+</span>
+<span class="c1"># &lt;use template from SeatNum&gt; 
+</span><span class="p">{:</span> <span class="c1">#use-template-from-seatnum}# 범위 데이터에서 정의한 템플릿 사용
+</span>
+<span class="k">def</span> <span class="nf">isAisle</span><span class="p">(</span><span class="n">sn</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">sn</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">sn</span> <span class="o">==</span> <span class="mi">32</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>함수 테스트 작성 시, 범위의 극단값들과 중간 값, 특수 값 등을 고려하고 작성하자.</li>
+</ul>
+
+<h3 id="열거형-데이터-Enumeration">열거형 데이터(Enumeration)</h3>
+<p><strong>구분되는 유한 개의 항목으로 표현할 수 있는 데이터</strong>, 숫자, 이미지, 문자 등으로 나타낼 수 있다.</p>
+<ul>
+  <li>ex) 요일, 성별 등, 원자 데이터와 달리 들어올 데이터가 예상 가능한 표현 내에 있다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-b6faf868-ebb7-414f-ab0d-56f8ce90f59c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>열거형 데이터 정의 예시: 학생의 시험 점수 표시 데이터(A, B, C)
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># A, B, C =&gt; consists of a fixed number of disinct items 
+</span><span class="p">{:</span> <span class="c1">#a-b-c-consists-of-a-fixed-number-of-disinct-items}
+# 2.type comment : enumeration
+</span><span class="p">{:</span> <span class="c1">#2-type-comment-enumeration}
+# LetterGrade is one of:
+</span><span class="p">{:</span> <span class="c1">#lettergrade-is-one-of}
+# - "A" 
+</span><span class="p">{:</span> <span class="c1">#a}
+# - "B" 
+</span><span class="p">{:</span> <span class="c1">#b}
+# - "C" 
+</span><span class="p">{:</span> <span class="c1">#c}
+# 3.interp. the letter grade in a course
+</span><span class="p">{:</span> <span class="c1">#3-interp-the-letter-grade-in-a-course}
+# &lt;examples are redundant for enumerations&gt; 4. 예시, 보통 열거형 데이터 전부를 집어넣어 보므로 생략
+</span><span class="p">{:</span> <span class="c1">#examples-are-redundant-for-enumerations-4-예시-보통-열거형-데이터-전부를-집어넣어-보므로-생략}
+# def fNForLetterGrade(lg): 5. Template for data
+</span><span class="p">{:</span> <span class="c1">#def-fnforlettergrade-lg-5-template-for-data}
+#	 if Q:
+#		A
+#    elif Q:
+</span><span class="p">{:</span> <span class="c1">#elif-q}
+#		A
+#    else:
+</span><span class="p">{:</span> <span class="c1">#else}
+#		A
+# if Q A를 DDT를 참고하여 아래처럼 바꿔주면 된다.        
+</span><span class="p">{:</span> <span class="c1">#if-q-a를-ddt를-참고하여-아래처럼-바꿔주면-된다}
+</span><span class="k">def</span> <span class="nf">fNForLetterGrade</span><span class="p">(</span><span class="n">lg</span><span class="p">):</span> <span class="c1"># 5-2. Template for data after Data Driven Table
+</span>	<span class="k">if</span> <span class="n">lg</span> <span class="o">==</span> <span class="s">"A"</span><span class="p">:</span>
+		<span class="c1"># ...
+</span>		<span class="k">pass</span>
+	<span class="k">elif</span> <span class="n">lg</span> <span class="o">==</span> <span class="s">"B"</span><span class="p">:</span>
+		<span class="c1"># ...
+</span>		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1"># ...
+</span>		<span class="k">pass</span>
+<span class="c1"># Template rules used:
+</span><span class="p">{:</span> <span class="c1">#template-rules-used}
+# - one of: 3 cases
+</span><span class="p">{:</span> <span class="c1">#one-of-3-cases}
+# - atomic distinct value: "A"
+</span><span class="p">{:</span> <span class="c1">#atomic-distinct-value-a}
+# - atomic distinct value: "B"
+</span><span class="p">{:</span> <span class="c1">#atomic-distinct-value-b}
+# - atomic distinct value: "C"
+</span><span class="p">{:</span> <span class="c1">#atomic-distinct-value-c}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-c125e1ed-5f61-4997-a444-2e0da6b57d20">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>열거형 데이터 함수 예시: 학생의 시험 점수 한 단계 올려주기 함수
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Functions:
+</span><span class="p">{:</span> <span class="c1">#functions}
+# Signature: LetterGrade -&gt; LetterGrade
+</span><span class="p">{:</span> <span class="c1">#signature-lettergrade-lettergrade}
+# Purpose: produce next highest letter grade (no change for A)
+</span><span class="p">{:</span> <span class="c1">#purpose-produce-next-highest-letter-grade-no-change-for-a}
+</span>
+<span class="c1"># def bumpUp(lg): return "A" 
+</span><span class="p">{:</span> <span class="c1">#def-bumpup-lg-return-a}#stub
+# 테스트 갯수는 열거형 항목 갯수 만큼
+</span><span class="p">{:</span> <span class="c1">#테스트-갯수는-열거형-항목-갯수-만큼}
+</span><span class="k">print</span><span class="p">(</span><span class="n">bumpUp</span><span class="p">(</span><span class="s">"A"</span><span class="p">)</span><span class="o">==</span><span class="s">"A"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">bumpUp</span><span class="p">(</span><span class="s">"B"</span><span class="p">)</span><span class="o">==</span><span class="s">"A"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">bumpUp</span><span class="p">(</span><span class="s">"C"</span><span class="p">)</span><span class="o">==</span><span class="s">"B"</span><span class="p">)</span>
+
+<span class="c1">#&lt;use template from LetterGrade&gt;
+</span>
+<span class="k">def</span> <span class="nf">bumpUp</span><span class="p">(</span><span class="n">lg</span><span class="p">):</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">lg</span> <span class="o">==</span> <span class="s">"A"</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s">"A"</span>
+	<span class="k">elif</span> <span class="p">(</span><span class="n">lg</span> <span class="o">==</span> <span class="s">"B"</span><span class="p">):</span>
+		<span class="k">return</span> <span class="s">"A"</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">lg</span> <span class="o">==</span> <span class="s">"C"</span><span class="p">)</span>
+	    <span class="k">return</span> <span class="s">"B"</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>열거형의 경우 항목 수 이상 만큼 테스트를 하는게 이상적이다.
+    <ul>
+      <li>항목 수 보다 많은 경우 :</li>
+      <li>하지만, 일정 항목만 테스트 해도 코드의 모든 부분을 커버할 수 있다면 적게하는 경우도 있다.(Whitebox Test)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="항목형-데이터-Itemization">항목형 데이터(Itemization)</h3>
+<p><strong>일부 데이터가 구분되는 데이터가 아닌 다른 부차적 데이터로 이루어진 데이터</strong></p>
+
+<div class="callout callout-example" id="callout-d3450460-8158-466d-b1ce-e05546518baf">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>항목형 데이터 정의 예시: 새해 카운트다운 데이터
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># itemization: 
+</span><span class="p">{:</span> <span class="c1">#itemization}
+# CountDown is one of:
+</span><span class="p">{:</span> <span class="c1">#countdown-is-one-of}
+#  - false
+</span><span class="p">{:</span> <span class="c1">#false}
+#  - Natural[1, 10]
+</span><span class="p">{:</span> <span class="c1">#natural-1-10}
+#  - "complete" ;; true로 놓으면 숫자도 true이므로 문자열로 표시
+</span><span class="p">{:</span> <span class="c1">#complete-true로-놓으면-숫자도-true이므로-문자열로-표시}
+# interp. false means not yest started
+</span><span class="p">{:</span> <span class="c1">#interp-false-means-not-yest-started}
+# Natural[1, 10] means countdown is running and how many seconds left
+</span><span class="p">{:</span> <span class="c1">#natural-1-10-means-countdown-is-running-and-how-many-seconds-left}
+# "complete" means countdown is over
+</span><span class="p">{:</span> <span class="c1">#complete-means-countdown-is-over}
+</span>
+<span class="c1"># Examples:
+</span><span class="p">{:</span> <span class="c1">#examples}
+</span><span class="n">CD1</span> <span class="o">=</span> <span class="n">false</span>
+<span class="n">CD2</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># just started running
+</span><span class="n">CD3</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># almost over
+</span><span class="n">CD4</span> <span class="o">=</span> <span class="s">"complete"</span>
+
+<span class="c1"># Template
+</span><span class="p">{:</span> <span class="c1">#template}
+</span><span class="k">def</span> <span class="nf">fnForCountdown</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">c</span><span class="o">==</span><span class="bp">False</span> <span class="p">(</span>
+		<span class="c1">#...
+</span>		<span class="k">pass</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">==</span><span class="nb">int</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="c1"># 숫자 인지 확인(guard)하지 않으면 &lt; 같은 부등호를 쓰면 string="complete"가 들어오면 오류.
+</span>	    <span class="c1">#...c # 이후 c의 숫자에 따라 추가로 구현이 다르므로 body에 c를 포함해야 함.
+</span>	    <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># 입력을 CountDown으로 한정하므로 나머지는 굳이 비교 안해도 됨
+</span>	    <span class="c1">#...
+</span>	    <span class="k">pass</span>
+<span class="c1">#template rules used:
+# - one of: 3 cases
+</span><span class="p">{:</span> <span class="c1">#one-of-3-cases}
+# - atomic distinict: false
+</span><span class="p">{:</span> <span class="c1">#atomic-distinict-false}
+# - atomic non-distinct: Natural[1, 10]
+</span><span class="p">{:</span> <span class="c1">#atomic-non-distinct-natural-1-10}
+# - atomic distnict: "complete"
+</span><span class="p">{:</span> <span class="c1">#atomic-distnict-complete}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-ce693fc2-0349-430c-b73e-cbed03ef5075">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>항목형 데이터 함수 예시: 새해 카운트 다운 함수
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Functions:
+</span><span class="p">{:</span> <span class="c1">#functions}
+# Signature: Countdown -&gt; Image
+</span><span class="p">{:</span> <span class="c1">#signature-countdown-image}
+# Purpose: produce nice image of current state of countdown
+</span><span class="p">{:</span> <span class="c1">#purpose-produce-nice-image-of-current-state-of-countdown}
+# Stub: def countdownToImage(c) return "blank"
+</span><span class="p">{:</span> <span class="c1">#stub-def-countdowntoimage-c-return-blank}
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">countdownToImage</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span> <span class="o">==</span> <span class="s">"blank"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">countdownToImage</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s">"1"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">countdownToImage</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="s">"5"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">countdownToImage</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="s">"10"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">countdownToImage</span><span class="p">(</span><span class="s">"complete"</span><span class="p">)</span> <span class="o">==</span> <span class="s">"Happy New Year!"</span><span class="p">)</span>
+<span class="c1"># &lt;use template from Countdown&gt;
+</span><span class="p">{:</span> <span class="c1">#use-template-from-countdown}
+</span>
+<span class="k">def</span> <span class="nf">countdownToImage</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s">"blank"</span>
+	<span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+		<span class="k">return</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s">"</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s">"Happy New Year!"</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>열거형 데이터가 포함된 부분도 테스트해줘야 한다.</li>
+</ul>
+
+<h3 id="복합-데이터-Compound-data">복합 데이터(Compound data)</h3>
+<p><strong>하나 이상의 같거나 다른 형태의 데이터들과 짝을 이루는 데이터 구조</strong></p>
+
+<div class="callout callout-example" id="callout-fc1a9429-6a1c-422c-8391-c4a91cb3fee3">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>복합 데이터 정의 예시: 하키 선수 명단
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Player</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">ln</span><span class="p">):</span>
+		<span class="bp">self</span><span class="p">.</span><span class="n">fn</span> <span class="o">=</span> <span class="n">fn</span>
+		<span class="bp">self</span><span class="p">.</span><span class="n">ln</span> <span class="o">=</span> <span class="n">ln</span>
+<span class="c1"># Player is Player(fn:string, ln:string)
+</span><span class="p">{:</span> <span class="c1">#player-is-player-fn-string-ln-string}
+# interp. Player is a hocky player with
+</span><span class="p">{:</span> <span class="c1">#interp-player-is-a-hocky-player-with}
+# - fn is the first name
+</span><span class="p">{:</span> <span class="c1">#fn-is-the-first-name}
+# - ln is the last name
+</span><span class="p">{:</span> <span class="c1">#ln-is-the-last-name}
+</span><span class="n">P1</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s">"Bobby"</span><span class="p">,</span> <span class="s">"Orr"</span><span class="p">)</span>
+<span class="n">P2</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s">"Wayne"</span><span class="p">,</span> <span class="s">"Gretzky"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fnForPlayer</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+	<span class="c1">#...(p.fn, p.ln)
+</span>	<span class="k">pass</span>
+
+<span class="c1"># Template rules used:
+</span><span class="p">{:</span> <span class="c1">#template-rules-used}
+# - Compound: 2 fields
+</span><span class="p">{:</span> <span class="c1">#compound-2-fields}
+# - atomic non-distinct: String
+</span><span class="p">{:</span> <span class="c1">#atomic-non-distinct-string}
+# 만약 서로 다른 형태의 데이터들이 짝지었다면
+</span><span class="p">{:</span> <span class="c1">#만약-서로-다른-형태의-데이터들이-짝지었다면}
+# 여기에 추가로 정의하자 (ex) atomic distinct: false)
+</span><span class="p">{:</span> <span class="c1">#여기에-추가로-정의하자-ex-atomic-distinct-false}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-37adb4f2-e92a-4d09-90bd-f7e8fb8678ee">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>복합 데이터 함수 예시: 사전순 하키선수 이름 함수
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Signature: Player Player -&gt; String
+</span><span class="p">{:</span> <span class="c1">#signature-player-player-string}
+# Purpose: produce first name of player with the earliest last name in alphabetical order.
+</span><span class="p">{:</span> <span class="c1">#purpose-produce-first-name-of-player-with-the-earliest-last-name-in-alphabetical-order}
+# Stub:
+</span><span class="p">{:</span> <span class="c1">#stub}
+# def longerName(p1:Player, p2:Player):
+</span><span class="p">{:</span> <span class="c1">#def-longername-p1-player-p2-player}
+#	return p1.fn
+</span>
+<span class="c1">#Tests:
+</span><span class="k">print</span><span class="p">(</span><span class="n">longerName</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span> <span class="n">P2</span><span class="p">)</span><span class="o">==</span><span class="s">"Wayne"</span><span class="p">)</span>
+
+<span class="c1">#Templates:
+</span><span class="k">def</span> <span class="nf">longerName_stub</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+	<span class="c1"># ...(p1.fn, p1.ln, p2.fn, p2.ln)
+</span>	<span class="k">pass</span> 
+
+<span class="k">def</span> <span class="nf">longerName</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">fn</span> <span class="k">if</span> <span class="n">p1</span><span class="p">.</span><span class="n">ln</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">ln</span> <span class="k">else</span> <span class="n">p2</span><span class="p">.</span><span class="n">fn</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>함수 템플릿 부분을 잘 보자</li>
+</ul>
+
+<h3 id="List-데이터-List-data">List 데이터(List data)</h3>
+
+<p><strong>하나 이상의 타입의 데이터들을 동적인 수만큼 할당 가능한 데이터 구조</strong><br>
+강의에서는 재귀를 이용해 리스트를 처리하지만, 대부분의 프로그래밍 언어에서는 그러하지 않으므로 변경했다.</p>
+
+<p>대신, 재귀 함수에 대한 팁을 적어놓았다.</p>
+
+<div class="callout callout-example" id="callout-9858ddca-5bc3-429b-9737-0ac63efdd175">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>리스트 데이터 정의 예시: 퀴디치 팀 명단
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ListOfString</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># ListOfString is one of:
+</span><span class="p">{:</span> <span class="c1">#listofstring-is-one-of}
+# - empty list
+</span><span class="p">{:</span> <span class="c1">#empty-list}
+# - List of String
+</span><span class="p">{:</span> <span class="c1">#list-of-string}
+# interp. a list of strings
+</span><span class="p">{:</span> <span class="c1">#interp-a-list-of-strings}
+</span><span class="n">LOS1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">LOS2</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Mcgill"</span><span class="p">,</span> <span class="s">"UBC"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">fnForLos</span><span class="p">(</span><span class="n">los</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">los</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+		<span class="c1">#...
+</span>		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">los</span><span class="p">:</span>
+			<span class="c1">#...e
+</span>			<span class="k">pass</span>
+<span class="c1"># Template rules used:
+</span><span class="p">{:</span> <span class="c1">#template-rules-used}
+# - one if: 2 cases
+</span><span class="p">{:</span> <span class="c1">#one-if-2-cases}
+# - atomic distinct: empty
+</span><span class="p">{:</span> <span class="c1">#atomic-distinct-empty}
+# - compound: n fields of string
+</span><span class="p">{:</span> <span class="c1">#compound-n-fields-of-string}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-tip" id="callout-7939228d-0749-4022-9b89-a4a3831bd1f4">
+      <div class="header">
+        <span class="emoji">💡</span>
+        <span class="title"><strong>재귀함수 구현
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li>기저 사례를 맨 처음 찾아내고, 처리하도록 테스트 생성 및 구현
+    <ul>
+      <li>구현이 간단한 경우가 많고, 재귀 함수 구현을 위해 꼭 필요하므로 최초로 디버깅되게 하기 위함</li>
+    </ul>
+  </li>
+  <li>재귀 사례는 결국 기저 사례로 향하는지 알기 위해, 넘겨주는 인자가 기저 사례로 수렴하도록 변경되는지 확인하기</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<h3 id="여러-종류의-데이터-정의가-필요한-경우">여러 종류의 데이터 정의가 필요한 경우</h3>
+
+<p>두 개 이상의 데이터가 참조 관계 등으로 인해 정의되어야 할 경우</p>
+
+<div class="callout callout-example" id="callout-42b74507-1fb1-4269-8bc8-e69f048f4f16">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>참조 관계의 두 데이터 정의 예시 : 학교별 등록금 정보
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Data definition:
+</span><span class="p">{:</span> <span class="c1">#data-definition}
+</span><span class="k">class</span> <span class="nc">School</span><span class="p">:</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">tuition</span><span class="p">):</span>
+		<span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+		<span class="bp">self</span><span class="p">.</span><span class="n">tuition</span> <span class="o">=</span> <span class="n">tuition</span>
+<span class="c1"># Shcool is School(String, Integer[0,])
+</span><span class="p">{:</span> <span class="c1">#shcool-is-school-string-integer-0}
+# interp. name is the school's name, tuition is interational student's tuition in USD
+</span><span class="p">{:</span> <span class="c1">#interp-name-is-the-school-s-name-tuition-is-interational-student-s-tuition-in-usd}
+</span>
+<span class="n">S1</span> <span class="o">=</span> <span class="n">School</span><span class="p">(</span><span class="s">"School1"</span><span class="p">,</span> <span class="mi">27797</span><span class="p">)</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">School</span><span class="p">(</span><span class="s">"School2"</span><span class="p">,</span> <span class="mi">23300</span><span class="p">)</span>
+<span class="n">S3</span> <span class="o">=</span> <span class="n">School</span><span class="p">(</span><span class="s">"School3"</span><span class="p">,</span> <span class="mi">28500</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fnForSchool</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+	<span class="c1">#(...(school-name s)(school-tuition s))
+</span>	<span class="k">pass</span> 
+<span class="c1"># this template is helper funtion for fn-for-los
+</span><span class="p">{:</span> <span class="c1">#this-template-is-helper-funtion-for-fn-for-los}
+</span>
+<span class="c1"># Template rules used:
+</span><span class="p">{:</span> <span class="c1">#template-rules-used}
+# - compound: School(String, Integer[0,])
+</span><span class="p">{:</span> <span class="c1">#compound-school-string-integer-0}
+</span>
+<span class="c1"># ListOfSchool is one of:
+</span><span class="p">{:</span> <span class="c1">#listofschool-is-one-of}
+# - empty
+</span><span class="p">{:</span> <span class="c1">#empty}
+# - compound: n fields of School 
+</span><span class="p">{:</span> <span class="c1">#compound-n-fields-of-school}# reference from school
+# interp. a list of schools
+</span><span class="p">{:</span> <span class="c1">#interp-a-list-of-schools}
+</span><span class="n">LOS1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">LOS2</span> <span class="o">=</span> <span class="p">[</span><span class="n">S1</span><span class="p">,</span> <span class="n">S2</span><span class="p">,</span> <span class="n">S3</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">fnForLos</span><span class="p">(</span><span class="n">los</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">los</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> 
+		<span class="c1">#... 
+</span>		<span class="k">pass</span> 
+	<span class="k">else</span><span class="p">:</span> 
+		<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">los</span><span class="p">:</span> 
+			<span class="c1">#...fnForSchool(e) # mutual recursion from mutual-reference
+</span>			<span class="k">pass</span>
+			
+<span class="c1"># Template rules used:
+</span><span class="p">{:</span> <span class="c1">#template-rules-used}
+# - one of 2 cases:
+</span><span class="p">{:</span> <span class="c1">#one-of-2-cases}
+# - atomic distinct : empty
+</span><span class="p">{:</span> <span class="c1">#atomic-distinct-empty}
+# - compound: n fields of School
+</span><span class="p">{:</span> <span class="c1">#compound-n-fields-of-school}
+# - Mutual reference: School 
+</span><span class="p">{:</span> <span class="c1">#mutual-reference-school}# other reference
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%84%A4%EA%B3%84.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-데이터 설계.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

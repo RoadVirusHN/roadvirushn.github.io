@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>OS 정리-Chap 3-프로세스와 스레드 | The Digital garden of Nurgle.</title>
+<title>OS 정리-Chap 3-프로세스와 스레드 | 🧠SUBBRAIN</title>
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="OS 정리-Chap 3-프로세스와 스레드" />
 <meta property="og:locale" content="kr" />
@@ -11,7 +11,7 @@
 <meta property="og:description" content="3. 프로세스와 스레드 ```ad-quote title: 출처" />
 <link rel="canonical" href="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html" />
 <meta property="og:url" content="http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html" />
-<meta property="og:site_name" content="The Digital garden of Nurgle." />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-10T17:23:16+09:00" />
 <meta name="twitter:card" content="summary" />
@@ -19,7 +19,8 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-10T17:23:16+09:00","datePublished":"2022-08-10T17:23:16+09:00","description":"3. 프로세스와 스레드 ```ad-quote title: 출처","headline":"OS 정리-Chap 3-프로세스와 스레드","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html"},"url":"http://localhost:4000/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="The Digital garden of Nurgle." /></head>
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
 <div class="scrollWrapper">
   <div class="scrollbar"></div>
   <div class="progressbar"></div>
@@ -43,7 +44,7 @@
 <body><header class="site-header" role="banner">
 
   <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
-    <a class="site-title" rel="author" href="/blog">The Digital garden of Nurgle.</a>
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
 
     </div><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -126,7 +127,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 5
+      📂: 6
     </span>
     <ul class="child-category-list">
       
@@ -153,7 +154,7 @@
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 15 
+            📄: 16 
             📂: 1
           </span>
       </li>
@@ -189,14 +190,28 @@
       <li>
         <strong style="font-size: larger;">
           ┃  
-          ┗ 
+          ┣ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
         </h4>
           <span style="font-size: xx-small;">
             📄: 1 
-            
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
           </span>
       </li>
       
@@ -241,8 +256,8 @@
           <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
-            
+            📄: 2 
+            📂: 2
           </span>
       </li>
       
@@ -268,13 +283,43 @@
     <strong style="font-size: larger;">┣ </strong>
     <h3 style="display: inline;">
       
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
       <span class="category-link">ETC</span>
     </h3>
     <span style="font-size: xx-small;">
-      📄: 9 
-      
+       
+      📂: 2
     </span>
     <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
       
     </ul>
   </li>
@@ -497,59 +542,10 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  
-<ul id='markdown-toc-0'>
-<li><a href='#3-프로세스와-스레드' id='markdown-toc-0-3-프로세스와-스레드'>3. 프로세스와 스레드</a><ul><li><a href='#프로세스의-개념과-상태-변화' id='markdown-toc-0-프로세스의-개념과-상태-변화'>프로세스의 개념과 상태 변화</a><ul><li><a href='#프로세스-process-란' id='markdown-toc-0-프로세스-process-란'>프로세스(process)란?</a></li> 
-<li><a href='#프로세스-메모리-구조' id='markdown-toc-0-프로세스-메모리-구조'>프로세스 메모리 구조</a></li> 
+  <html><head></head><body><ul id="markdown-toc-0"><li lvl="1"><a id="markdown-toc-0-0" href="#3-프로세스와-스레드">3. 프로세스와 스레드</a><ul><li lvl="2"><a id="markdown-toc-0-1" href="#프로세스의-개념과-상태-변화">프로세스의 개념과 상태 변화</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#프로세스-process-란">프로세스(process)란?</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#프로세스-메모리-구조">프로세스 메모리 구조</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#프로세스-상태-변호와-상태-정보">프로세스 상태 변호와 상태 정보</a><ul><li lvl="3"><a id="markdown-toc-0-5" href="#프로세스-상태-변화">프로세스 상태 변화</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#프로세스-제어-블록-PCB-Process-Control-Block">프로세스 제어 블록(PCB, Process Control Block)</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-7" href="#프로세스의-관리">프로세스의 관리</a><ul><li lvl="3"><a id="markdown-toc-0-8" href="#프로세스의-계층-구조">프로세스의 계층 구조</a><ul><li lvl="4"><a id="markdown-toc-0-9" href="#자식-프로세스로의-자원-분배">자식 프로세스로의 자원 분배</a><ul></ul></li><li lvl="4"><a id="markdown-toc-0-10" href="#자식-프로세스로의-데이터-분배">자식 프로세스로의 데이터 분배</a><ul></ul></li><li lvl="4"><a id="markdown-toc-0-11" href="#자식-프로세스의-종료">자식 프로세스의 종료</a><ul></ul></li><li lvl="4"><a id="markdown-toc-0-12" href="#자식프로세스와의-작업-순서-선택">자식프로세스와의 작업 순서 선택</a><ul></ul></li></ul></li><li lvl="3"><a id="markdown-toc-0-13" href="#프로세스의-생애주기">프로세스의 생애주기</a><ul><li lvl="4"><a id="markdown-toc-0-14" href="#프로세스의-생성">프로세스의 생성</a><ul></ul></li><li lvl="4"><a id="markdown-toc-0-15" href="#프로세스의-종료">프로세스의 종료</a><ul></ul></li><li lvl="4"><a id="markdown-toc-0-16" href="#프로세스의-제거">프로세스의 제거</a><ul></ul></li><li lvl="4"><a id="markdown-toc-0-17" href="#프로세스-중단과-재시작">프로세스 중단과 재시작</a><ul><li lvl="5"><a id="markdown-toc-0-18" href="#사용례">사용례</a><ul></ul></li><li lvl="5"><a id="markdown-toc-0-19" href="#중단-상태">중단 상태</a><ul></ul></li></ul></li><li lvl="4"><a id="markdown-toc-0-20" href="#프로세스-우선순위-변경">프로세스 우선순위 변경</a><ul></ul></li><li lvl="4"><a id="markdown-toc-0-21" href="#프로세스의-문맥교환-context-switching">프로세스의 문맥교환(context switching)</a><ul><li lvl="5"><a id="markdown-toc-0-22" href="#문맥-교환의-원인">문맥 교환의 원인</a><ul></ul></li><li lvl="5"><a id="markdown-toc-0-23" href="#문맥교환-context-switching">문맥교환(context switching)</a><ul></ul></li></ul></li></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-24" href="#스레드의-개념과-상태-변화">스레드의 개념과 상태 변화</a><ul><li lvl="3"><a id="markdown-toc-0-25" href="#스레드-thread-란">스레드(thread)란?</a><ul><li lvl="4"><a id="markdown-toc-0-26" href="#스레드의-이점">스레드의 이점</a><ul></ul></li><li lvl="4"><a id="markdown-toc-0-27" href="#스레드-제어블록-TCB-Thread-Control-Block">스레드 제어블록(TCB, Thread Control Block)</a><ul></ul></li></ul></li><li lvl="3"><a id="markdown-toc-0-28" href="#스레드의-상태-변화">스레드의 상태 변화</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-29" href="#다중-스레드-multithread">다중 스레드(multithread)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-30" href="#스레드-사용례">스레드 사용례</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-31" href="#수준별-스레드와-스레드-구현">수준별 스레드와 스레드 구현</a><ul><li lvl="3"><a id="markdown-toc-0-32" href="#사용자-수준-스레드-user-level-thread">사용자 수준 스레드(user-level thread)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-33" href="#커널-수준-스레드-kernel-level-thread">커널 수준 스레드(kernel-level thread)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-34" href="#혼합형-스레드-multiplexed-thread">혼합형 스레드(multiplexed thread)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-35" href="#다중-처리-다중-프로그래밍-다중-작업-다중-스레드">다중 처리, 다중 프로그래밍, 다중 작업, 다중 스레드</a><ul></ul></li></ul></li></ul></li></ul>
+<h1 id="3-프로세스와-스레드">3. 프로세스와 스레드</h1>
 
-</ul></li> 
-<li><a href='#프로세스-상태-변호와-상태-정보' id='markdown-toc-0-프로세스-상태-변호와-상태-정보'>프로세스 상태 변호와 상태 정보</a><ul><li><a href='#프로세스-상태-변화' id='markdown-toc-0-프로세스-상태-변화'>프로세스 상태 변화</a></li> 
-<li><a href='#프로세스-제어-블록-PCB-Process-Control-Block' id='markdown-toc-0-프로세스-제어-블록-PCB-Process-Control-Block'>프로세스 제어 블록(PCB, Process Control Block)</a></li> 
-
-</ul></li> 
-<li><a href='#프로세스의-관리' id='markdown-toc-0-프로세스의-관리'>프로세스의 관리</a><ul><li><a href='#프로세스의-계층-구조' id='markdown-toc-0-프로세스의-계층-구조'>프로세스의 계층 구조</a><ul><li><a href='#자식-프로세스로의-자원-분배' id='markdown-toc-0-자식-프로세스로의-자원-분배'>자식 프로세스로의 자원 분배</a></li> 
-<li><a href='#자식-프로세스로의-데이터-분배' id='markdown-toc-0-자식-프로세스로의-데이터-분배'>자식 프로세스로의 데이터 분배</a></li> 
-<li><a href='#자식-프로세스의-종료' id='markdown-toc-0-자식-프로세스의-종료'>자식 프로세스의 종료</a></li> 
-<li><a href='#자식프로세스와의-작업-순서-선택' id='markdown-toc-0-자식프로세스와의-작업-순서-선택'>자식프로세스와의 작업 순서 선택</a></li> 
-
-</ul></li> 
-<li><a href='#프로세스의-생애주기' id='markdown-toc-0-프로세스의-생애주기'>프로세스의 생애주기</a><ul><li><a href='#프로세스의-생성' id='markdown-toc-0-프로세스의-생성'>프로세스의 생성</a></li> 
-<li><a href='#프로세스의-종료' id='markdown-toc-0-프로세스의-종료'>프로세스의 종료</a></li> 
-<li><a href='#프로세스의-제거' id='markdown-toc-0-프로세스의-제거'>프로세스의 제거</a></li> 
-<li><a href='#프로세스-중단과-재시작' id='markdown-toc-0-프로세스-중단과-재시작'>프로세스 중단과 재시작</a><ul><li><a href='#사용례' id='markdown-toc-0-사용례'>사용례</a></li> 
-<li><a href='#중단-상태' id='markdown-toc-0-중단-상태'>중단 상태</a></li> 
-
-</ul></li> 
-<li><a href='#프로세스-우선순위-변경' id='markdown-toc-0-프로세스-우선순위-변경'>프로세스 우선순위 변경</a></li> 
-<li><a href='#프로세스의-문맥교환-context-switching' id='markdown-toc-0-프로세스의-문맥교환-context-switching'>프로세스의 문맥교환(context switching)</a><ul><li><a href='#문맥-교환의-원인' id='markdown-toc-0-문맥-교환의-원인'>문맥 교환의 원인</a></li> 
-<li><a href='#문맥교환-context-switching' id='markdown-toc-0-문맥교환-context-switching'>문맥교환(context switching)</a></li> 
-
-</ul></li> 
-
-</ul></li> 
-
-</ul></li> 
-<li><a href='#스레드의-개념과-상태-변화' id='markdown-toc-0-스레드의-개념과-상태-변화'>스레드의 개념과 상태 변화</a><ul><li><a href='#스레드-thread-란' id='markdown-toc-0-스레드-thread-란'>스레드(thread)란?</a><ul><li><a href='#스레드의-이점' id='markdown-toc-0-스레드의-이점'>스레드의 이점</a></li> 
-<li><a href='#스레드-제어블록-TCB-Thread-Control-Block' id='markdown-toc-0-스레드-제어블록-TCB-Thread-Control-Block'>스레드 제어블록(TCB, Thread Control Block)</a></li> 
-
-</ul></li> 
-<li><a href='#스레드의-상태-변화' id='markdown-toc-0-스레드의-상태-변화'>스레드의 상태 변화</a></li> 
-<li><a href='#다중-스레드-multithread' id='markdown-toc-0-다중-스레드-multithread'>다중 스레드(multithread)</a></li> 
-<li><a href='#스레드-사용례' id='markdown-toc-0-스레드-사용례'>스레드 사용례</a></li> 
-
-</ul></li> 
-<li><a href='#수준별-스레드와-스레드-구현' id='markdown-toc-0-수준별-스레드와-스레드-구현'>수준별 스레드와 스레드 구현</a><ul><li><a href='#사용자-수준-스레드-user-level-thread' id='markdown-toc-0-사용자-수준-스레드-user-level-thread'>사용자 수준 스레드(user-level thread)</a></li> 
-<li><a href='#커널-수준-스레드-kernel-level-thread' id='markdown-toc-0-커널-수준-스레드-kernel-level-thread'>커널 수준 스레드(kernel-level thread)</a></li> 
-<li><a href='#혼합형-스레드-multiplexed-thread' id='markdown-toc-0-혼합형-스레드-multiplexed-thread'>혼합형 스레드(multiplexed thread)</a></li> 
-<li><a href='#다중-처리-다중-프로그래밍-다중-작업-다중-스레드' id='markdown-toc-0-다중-처리-다중-프로그래밍-다중-작업-다중-스레드'>다중 처리, 다중 프로그래밍, 다중 작업, 다중 스레드</a></li> 
-
-</ul></li> 
-
-</ul></li> 
-</ul>
-<h1 id='3-프로세스와-스레드'>3. 프로세스와 스레드</h1>
-
-<div class="callout callout-quote" id="callout-70ff2b11-4d56-4f7b-b3dc-f40f2d06002a">
+<div class="callout callout-quote" id="callout-3e110b5c-df75-4d95-906a-eb973bf2b0bc">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -573,9 +569,9 @@
 </div>
     </div>
     </div>
-<h2 id='프로세스의-개념과-상태-변화'>프로세스의 개념과 상태 변화</h2>
+<h2 id="프로세스의-개념과-상태-변화">프로세스의 개념과 상태 변화</h2>
 
-<h3 id='프로세스-process-란'>프로세스(process)란?</h3>
+<h3 id="프로세스-process-란">프로세스(process)란?</h3>
 
 <p>프로세스(process) 또는 작업(task)는 다음과 같이 여러 의미로 정의 된다.</p>
 
@@ -597,23 +593,23 @@
   </li>
 </ul>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-26-56-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-26-56-image.png" alt=""></p>
 
 <p><strong>프로그램은 컴파일한 코드, 초기화 전역변수, 문자열, 상수 등의 정적 데이터를 포함한 정적인 개체</strong>이다.</p>
 
-<p>프로그램이 동적인 개체인 프로세스가 되려면, <strong>자신만의 메모리 영역을 할당</strong>받아야 하며, 프로그램 인스턴스 갯수에 따라 프로세스의 갯수도 달라진다. <br />
+<p>프로그램이 동적인 개체인 프로세스가 되려면, <strong>자신만의 메모리 영역을 할당</strong>받아야 하며, 프로그램 인스턴스 갯수에 따라 프로세스의 갯수도 달라진다. <br>
 즉, 같은 프로그램이라도 2개를 실행하면 각기 다른 프로세스이다.</p>
 
-<p>프로세스는 <strong>프로세서 점유 시간, 메모리, 파일 ,입출력 장치 같은 자원을 스케줄러로부터 할당</strong>받아야 하며, 자신의 메모리 영역에는 나중에 배울 프로세스 제어 블록 (PCB)에 자신의 정보를 저장한다.<br />
+<p>프로세스는 <strong>프로세서 점유 시간, 메모리, 파일 ,입출력 장치 같은 자원을 스케줄러로부터 할당</strong>받아야 하며, 자신의 메모리 영역에는 나중에 배울 프로세스 제어 블록 (PCB)에 자신의 정보를 저장한다.<br>
 <strong>스케줄러는 추가로, 프로세스의 교착 상태, 보호, 동기화 지원 및 실행 순서를 결정하는 역할</strong>도 한다.</p>
 
 <p>프로세스를 통해서 병행 실행 프로그램들의 자원 공유를 효율적으로 구현할 수 있게 되었다.</p>
 
-<h3 id='프로세스-메모리-구조'>프로세스 메모리 구조</h3>
+<h3 id="프로세스-메모리-구조">프로세스 메모리 구조</h3>
 
 <p>이때 프로세스는 아래와 같은 그림 3-2와 같은 모습으로 메모리에 적재된다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-27-45-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-27-45-image.png" alt=""></p>
 
 <p>메모리 구조는 다음과 같이 4개로 구분된다.</p>
 
@@ -644,17 +640,17 @@
   </li>
 </ul>
 
-<h2 id='프로세스-상태-변호와-상태-정보'>프로세스 상태 변호와 상태 정보</h2>
+<h2 id="프로세스-상태-변호와-상태-정보">프로세스 상태 변호와 상태 정보</h2>
 
 <p>운영체제는 작업 스케줄러, 프로세서 스케줄러를 통해 프로세스의 상태를 점검 및 제어하여 자원을 효율적으로 사용하게 만든다.</p>
 
-<h3 id='프로세스-상태-변화'>프로세스 상태 변화</h3>
+<h3 id="프로세스-상태-변화">프로세스 상태 변화</h3>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-31-36-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-31-36-image.png" alt=""></p>
 
 <p>프로세스 스케줄러는 그림 3-5와 같이 프로세스의 상태를 변화시킨다. 각 상태의 설명과 상태변화를 주시하자.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-21-01-02-34-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-21-01-02-34-image.png" alt=""></p>
 
 <p>추가적으로 위와 같이 <strong>생성 상태는, 잡 스케줄러가 디스크에 저장한작업 중 실행할 작업을 선정(Spooling)하여 준비리스트에 삽입한 상태를 의미</strong>한다. 잡 스케줄러는 이러한 접수된 프로세스를 준비큐에 넣어 준비상태가 되며, 디스패처에 의해 실행 상태로 바꾼다.</p>
 
@@ -673,7 +669,7 @@
       <td style="text-align: center">준비 큐 맨 앞의 프로세스가 프로세서를 점유하는 것을 dispatch라고 하며, 할당 시간이 주어져 프로세서 독점을 방지한다.</td>
     </tr>
     <tr>
-      <td style="text-align: center">실행 $\rightarrow$준비</td>
+      <td style="text-align: center">실행&nbsp;$\rightarrow$준비</td>
       <td style="text-align: center">timeout(프로세스명)</td>
       <td style="text-align: center">자발적으로, 혹은 인터럽트 클록을 통해 할당된 시간이 넘어가면 프로세서가 반환되며, 준비 상태로 돌아간다.</td>
     </tr>
@@ -683,16 +679,16 @@
       <td style="text-align: center">할당 시간 종료 이전에 입출력 연산 등이 필요해지면 새로운 자원 요청 등의 문제로 프로세서를 스스로 양도하고 대기 상태가 된다.</td>
     </tr>
     <tr>
-      <td style="text-align: center">대기(보류) $\rightarrow$준비</td>
+      <td style="text-align: center">대기(보류)&nbsp;$\rightarrow$준비</td>
       <td style="text-align: center">wakeup(프로세스명)</td>
       <td style="text-align: center">입출력 작업이 끝나면 wakeup으로 대기에서 준비상태가 된다.</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id='프로세스-제어-블록-PCB-Process-Control-Block'>프로세스 제어 블록(PCB, Process Control Block)</h3>
+<h3 id="프로세스-제어-블록-PCB-Process-Control-Block">프로세스 제어 블록(PCB, Process Control Block)</h3>
 
-<p><strong>프로세스 제어 블록(PCB, Process Control Block) 혹은 작업 제어 블록(TCB, Task Control Block)은 특정 프로세스 정보를 저장하는 데이터 블록이나 레코드</strong>를 의미하며, 프로세스의 생성과 삭제를 함께한다. <br />
+<p><strong>프로세스 제어 블록(PCB, Process Control Block) 혹은 작업 제어 블록(TCB, Task Control Block)은 특정 프로세스 정보를 저장하는 데이터 블록이나 레코드</strong>를 의미하며, 프로세스의 생성과 삭제를 함께한다. <br>
 아래와 같은 항목의 정보를 가지고 있으며, 운영체제의 모든 모듈이 읽고 수정 가능하다.</p>
 
 <table>
@@ -742,28 +738,28 @@
   </tbody>
 </table>
 
-<h2 id='프로세스의-관리'>프로세스의 관리</h2>
+<h2 id="프로세스의-관리">프로세스의 관리</h2>
 
-<h3 id='프로세스의-계층-구조'>프로세스의 계층 구조</h3>
+<h3 id="프로세스의-계층-구조">프로세스의 계층 구조</h3>
 
 <p>프로세스는 <strong>실행 중 프로세스 생성 시스템을 호출하여 계층 구조의 새로운 프로세스</strong>를 만들 수 있는데, 생성 순서에 따라 부모-자식 관계를 유지하여 그림 3-9와 같이 계층적으로 생성할 수 있다.</p>
 
 <p>이때, 프로세스를 생성하는 프로세스가 부모 프로세스이고, 생성되는 프로세스가 자식 프로세스이다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-33-07-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-33-07-image.png" alt=""></p>
 
 <p>이러한 계층 구조는 다음과 같은 기능을 위해 사용된다.</p>
 
-<h4 id='자식-프로세스로의-자원-분배'>자식 프로세스로의 자원 분배</h4>
+<h4 id="자식-프로세스로의-자원-분배">자식 프로세스로의 자원 분배</h4>
 
-<p>자식 프로세스는 프로세서, 메모리 같은 필<strong>요한 자원을 직접 운영체제로부터 얻어내거나, 부모 프로세스로 부터 일부 얻어</strong>낼 수 있다.<br />
+<p>자식 프로세스는 프로세서, 메모리 같은 필<strong>요한 자원을 직접 운영체제로부터 얻어내거나, 부모 프로세스로 부터 일부 얻어</strong>낼 수 있다.<br>
 또한 <strong>부모 프로세스는 자식 프로세스가 가져갈 수 있는 자원량을 제한할 수도 있다.</strong></p>
 
-<h4 id='자식-프로세스로의-데이터-분배'>자식 프로세스로의 데이터 분배</h4>
+<h4 id="자식-프로세스로의-데이터-분배">자식 프로세스로의 데이터 분배</h4>
 
 <p><strong>초기화 시, 일부 데이터를 자식프로세스에게 줄 수 있다</strong>. 예를 들어 자식 프로세스가 파일 이름을 화면에 출력하는 일을 한다면, 생성 시, 부모 프로세스로 부터 파일 이름을 받아올 수 있다.</p>
 
-<h4 id='자식-프로세스의-종료'>자식 프로세스의 종료</h4>
+<h4 id="자식-프로세스의-종료">자식 프로세스의 종료</h4>
 
 <p><strong>부모 프로세스만이 자식 프로세스를 종료</strong>시킬 수 있으며, 다음과 같은 경우 자식 프로세스가 종료된다.</p>
 
@@ -782,7 +778,7 @@
   </li>
 </ol>
 
-<h4 id='자식프로세스와의-작업-순서-선택'>자식프로세스와의 작업 순서 선택</h4>
+<h4 id="자식프로세스와의-작업-순서-선택">자식프로세스와의 작업 순서 선택</h4>
 
 <p>생성된 자식 프로세스와 부모 프로세스의 작업 순서는</p>
 
@@ -797,11 +793,11 @@
 
 <p>선택지가 있다. 만약 부모 프로세스를 먼저 실행하고 싶다면, 자식 프로세스를 생성하기 전에 작업을 끝내고 생성하면 된다.</p>
 
-<h3 id='프로세스의-생애주기'>프로세스의 생애주기</h3>
+<h3 id="프로세스의-생애주기">프로세스의 생애주기</h3>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-35-00-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-35-00-image.png" alt=""></p>
 
-<h4 id='프로세스의-생성'>프로세스의 생성</h4>
+<h4 id="프로세스의-생성">프로세스의 생성</h4>
 
 <p>프로세스는 PCB 생성 뒤, 주소 공간이 할당되면 생성된다. 구체적으로 다음과 같다.</p>
 
@@ -820,7 +816,7 @@
   </li>
 </ol>
 
-<div class="callout callout-note" id="callout-f4ae741e-ee0a-4da2-a4b2-00e798ad5991">
+<div class="callout callout-note" id="callout-8d0316b4-4c92-4cf8-ac68-64e91ecf9331">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>note</strong></span>
@@ -835,11 +831,11 @@
     </div>
 <p>추가로, 일괄 처리 환경에서는 준비 큐에 작업이 도착하면 프로세스를 생성하고, 대화형 환경에서는 새로운 사용자가 로그온할 때 프로세스를 생성한다.</p>
 
-<h4 id='프로세스의-종료'>프로세스의 종료</h4>
+<h4 id="프로세스의-종료">프로세스의 종료</h4>
 
 <p>프로세스가 마지막 명령을 실행하면 종료하여 운영체제에 프로세스 삭제를 요청한다. 이외에도 프로세스가 종료되는 이유는 여러가지가 있으며 몇가지 예를 들자면, 앞선 정상적인 종료 요청, 할당 시간 초과, 오류 및 실패, 메모리 부족, 엑세스 위반 등이 있다.</p>
 
-<div class="callout callout-note" id="callout-edbf8b08-3297-48c6-af08-ac3b299fb8f6">
+<div class="callout callout-note" id="callout-d9a2fa1e-88ea-4980-a2e7-617a6b6d81fe">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>note</strong></span>
@@ -858,16 +854,16 @@
 </div>
     </div>
     </div>
-<p>일괄 처리 환경에서는 작업 종료를 의미하는 신호 인터럽트가 발생되거나 시스템 호출로 중단 명령을 받으면 프로세스가 종료된다.<br />
+<p>일괄 처리 환경에서는 작업 종료를 의미하는 신호 인터럽트가 발생되거나 시스템 호출로 중단 명령을 받으면 프로세스가 종료된다.<br>
 대화형 환경에서는 사용자가 로그오프하거나 터미널을 닫으면 프로세스를 종료한다. 오류는 어떠한 환경에서도 종료된다.</p>
 
-<h4 id='프로세스의-제거'>프로세스의 제거</h4>
+<h4 id="프로세스의-제거">프로세스의 제거</h4>
 
 <p>프로세서의 제거는 상태 변화와 관련 없이 프로세스를 파괴하는 것이다. 사용하던 자원과 PCB가 차지하는 메모리는 반환되며, 시스템 리스트나 테이블에서 삭제된다.</p>
 
 <p>물론, 디스크에서는 프로그램이 삭제되지 않으며, 부모프로세스가 제거되면 자동으로 자식 프로세스도 제거된다.</p>
 
-<h4 id='프로세스-중단과-재시작'>프로세스 중단과 재시작</h4>
+<h4 id="프로세스-중단과-재시작">프로세스 중단과 재시작</h4>
 
 <p>다중 프로그래밍 환경에서는 <strong>입출력 동작이 연산 속도보다 느리기 때문에, 대부분의 시간을 유휴시간</strong>으로 기다리게 된다.</p>
 
@@ -875,7 +871,7 @@
 
 <p>기존의 비슷한 상태인 프로세스 대기 상태는 자원이 할당받기를 기다리는 상태라면, <strong>프로세스 중단 상태는 할당받은 자원을 기다리는 상태이며, 재시작 이벤트를 통해 이전 상태로</strong> 돌아가게 된다.</p>
 
-<h5 id='사용례'>사용례</h5>
+<h5 id="사용례">사용례</h5>
 
 <p>자원을 할당받길 기다리지 않아도 되므로, 재시작 이벤트를 감지하는 즉시 실행 상태로 되돌아 갈 수 있어서 시스템 부하 조절에 용이하다.</p>
 
@@ -883,7 +879,7 @@
 
 <p>예를 들어 프로세스가 더 많은 저장장치를 요구하는데 현재 사용가능한 저장장치가 부족하면 대기 상태가 되며, 시간이 지나 자원들이 사용가능하게 되면 대기상태로 바뀐다. 하지만 만약 영원히 자원을 얻을 수 없게 되면, 교착 상태가 되게 된다.</p>
 
-<h5 id='중단-상태'>중단 상태</h5>
+<h5 id="중단-상태">중단 상태</h5>
 
 <p>다중 처리 시스템에서는 다른 프로세서가 실행 중인 프로세스를 중단할 수 있고, 단일 처리 시스템에서는 해당 프로세스 스스로 중단해야 한다.</p>
 
@@ -891,7 +887,7 @@
 
 <p>중단한 프로세스는 원래 상태로 돌아가면 중단된 시점부터 다시 시작한다.</p>
 
-<h4 id='프로세스-우선순위-변경'>프로세스 우선순위 변경</h4>
+<h4 id="프로세스-우선순위-변경">프로세스 우선순위 변경</h4>
 
 <p><strong>프로세스 스케줄러는 PCB의 우선순위를 이용해 준비 리스트의 프로세스를 처리</strong>한다.</p>
 
@@ -901,9 +897,9 @@
 
 <p>보통 우선순위가 낮은면 대신 시간을 많이 할당받고 우선순위가 높으면 시간을 짧게 할당 받는다. 따라서 프로세서 중심 프로세스는 우선 순위가 낮은 대신 긴 시간을 할당받고, 입출력 중심 프로세스는 우선순위가 높아 자주 프로세서를 받는 대신 짧은 시간을 할당받는다.</p>
 
-<h4 id='프로세스의-문맥교환-context-switching'>프로세스의 문맥교환(context switching)</h4>
+<h4 id="프로세스의-문맥교환-context-switching">프로세스의 문맥교환(context switching)</h4>
 
-<h5 id='문맥-교환의-원인'>문맥 교환의 원인</h5>
+<h5 id="문맥-교환의-원인">문맥 교환의 원인</h5>
 
 <ol>
   <li>
@@ -927,9 +923,9 @@
   </li>
 </ol>
 
-<h5 id='문맥교환-context-switching'>문맥교환(context switching)</h5>
+<h5 id="문맥교환-context-switching">문맥교환(context switching)</h5>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-29-53-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-29-53-image.png" alt=""></p>
 
 <p><strong>이전 프로세스의 상태 레지스터 내용을 보관하고 다른 프로세스의 레지스터를 적재하여 프로세스 교환하는 과정을 문맥교환(context switching)</strong> 이라고 한다.</p>
 
@@ -937,21 +933,21 @@
 
 <p>이 때 기존의 작업이 끝나지 않은 프로세스은 다음 할당 때 이어가야 하므로, 프로세서의 레지스터 내용을 저장해두고 그림 3-8 처럼 저장한다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-36-07-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-36-07-image.png" alt=""></p>
 
 <p>따라서 문맥교환에는 오버헤드가 발생하는데, 메모리 속도, 레지스터 수, 특수 명령어 유무에 따라 오버헤드 크기가 다르며, 최대한 문맥교환을 줄이게 프로그래밍하는 것이 좋다.</p>
 
 <p>문맥교환이 발생되면 종료되는 프로세스는 사용자가 아닌 커널에게 제어가 넘어가며 아래와 같은 문맥 교환이 일어나게 된다.</p>
 
-<h2 id='스레드의-개념과-상태-변화'>스레드의 개념과 상태 변화</h2>
+<h2 id="스레드의-개념과-상태-변화">스레드의 개념과 상태 변화</h2>
 
-<h3 id='스레드-thread-란'>스레드(thread)란?</h3>
+<h3 id="스레드-thread-란">스레드(thread)란?</h3>
 
 <p><strong>프로세스의 제어 부분의 실행단위</strong>를 스레드(thread)이라고 하며, <strong>하나의 프로세스는 여러 스레드로 나눌</strong> 수 있다.</p>
 
 <p>같은 프로세스의 스레드들은 프로세스의 직접 실행정보를 제외한 나머지 <strong>프로세스 관리 정보를 모든 스레드가 공유</strong>한다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-37-02-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-37-02-image.png" alt=""></p>
 
 <p>그림 3-12는 각 스레드가 <strong>프로그램 카운터(PC), 스택 포인터(SP), 지역 데이터, 스택 등을 독립</strong>적으로 가지지만, <strong>코드 , 전역 데이터, 힙을 다른 스레드와 공유</strong>하는 것을 보여준다.</p>
 
@@ -959,7 +955,7 @@
 
 <p><strong>스레드들이 프로세스 속성의 일부를 공유하는 것을 경량 프로세스</strong>(LWP, Light Weight Process), 전통적인 <strong>프로세스 하나당 스레드 하나인 경우를 중량 프로세스</strong>(HWP, Heavy weight Process)라고 한다.</p>
 
-<h4 id='스레드의-이점'>스레드의 이점</h4>
+<h4 id="스레드의-이점">스레드의 이점</h4>
 
 <p>한 프로세스에는 하나 이상의 스레드가 존재할 수 있으며, 이들은 <strong>공동의 목적을 위해 병렬로 수행하며, 프로그램의 서로 다른 부분을 동시 실행</strong>할 수 있다.</p>
 
@@ -980,13 +976,13 @@
   </li>
 </ol>
 
-<h4 id='스레드-제어블록-TCB-Thread-Control-Block'>스레드 제어블록(TCB, Thread Control Block)</h4>
+<h4 id="스레드-제어블록-TCB-Thread-Control-Block">스레드 제어블록(TCB, Thread Control Block)</h4>
 
 <p>같은 프로세스의 스레드들은 그림 3-13과 같이 주소 공간을 공유한다. 그림 3-19는 더욱 자세한 스레드 제어블록에 관한 그림이다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-37-54-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-37-54-image.png" alt=""></p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-44-05-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-44-05-image.png" alt=""></p>
 
 <p><strong>한 프로세스는 여러 스레드를 가지고 있으므로, PCB 내에는 여러 TCB의 리스트</strong>를 가진다.</p>
 
@@ -1004,9 +1000,9 @@
   </li>
 </ul>
 
-<h3 id='스레드의-상태-변화'>스레드의 상태 변화</h3>
+<h3 id="스레드의-상태-변화">스레드의 상태 변화</h3>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-43-24-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-43-24-image.png" alt=""></p>
 
 <p>프로세서 하나에 스레드가 항상 하나만 실행되므로 <strong>프로세스처럼 상태 변화가 존재</strong>한다.</p>
 
@@ -1016,29 +1012,29 @@
 
 <p>다만, 프로세스들과 달리 스레드들은 <strong>한 프로세스 내의 메모리를 공유하므로, 보호, 보안 문제가 발생할 수 있지만, 보통 프로세스 하나는 한 사용자만 사용하므로, 보통은 문제없다.</strong></p>
 
-<h3 id='다중-스레드-multithread'>다중 스레드(multithread)</h3>
+<h3 id="다중-스레드-multithread">다중 스레드(multithread)</h3>
 
 <p>DOS 같은 과거의 운영체제를 제외한 현대 운영체제는 단일 프로세스에서 단일 스레드 실행과 다중 스레드 실행을 둘 다 지원한다. 그림 3-14는 이러한 스레드의 예시이다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-38-44-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-38-44-image.png" alt=""></p>
 
 <p><strong>다중 스레드(multithread)는 자원을 공유하는 특성상 자원 생성과 관리의 중복성을 최소화하여 실행능력이 향상될 수 있고, 커널이 개입하지 않고 독립적으로 실행할 수 있어 서버에서 많은 요청을 효과적으로 처리할 수 있다.</strong></p>
 
 <p>다중 스레드에서는 그림 3-15와 같이 데이터를 공유한다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-40-15-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-40-15-image.png" alt=""></p>
 
 <p>전역 데이터가 바뀌면 다른 스레드에서 확인 가능하며 힙의 내용 또한 공유된다. 이러한 <strong>공유 특성 덕분에 스레드 생성, 스레드 간 자원 및 문맥 교환, 스레드 종료가 훨씬 빠르고, 병렬 처리로 성능을 극대화 할 수 있다.</strong></p>
 
-<h3 id='스레드-사용례'>스레드 사용례</h3>
+<h3 id="스레드-사용례">스레드 사용례</h3>
 
 <p>다중 스레드는 <strong>사용자 수준에서 적용하여 운영체제와 무관하여 속도가 매우 빠르고 비동기적 요소를 구현</strong>할 수 있다. 예를 들면, 스레드 하나는 사용자의 입력을 받아들이고 다른 스레드는 다음 명령을 신속하게 준비할 수 있다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-41-42-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-41-42-image.png" alt=""></p>
 
 <p>그림 3-16처럼 워드 편집기에서 주기적으로 진행되는 자동저장 또한 이런식으로 동작한다.</p>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-42-29-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-42-29-image.png" alt=""></p>
 
 <p>현재 실행중인 스레드를 대기 상태로 바꾸고 제어를 다른 스레드로 옮기는 상태 변화로 많은 요청을 효과적으로 처리할 수 있다. 그림 3-17은 웹 브라우저에서 스레드 한개가 이미지, 텍스트를 로딩하는 동안 다른 스레드는 네트워크에 연결하여 데이터를 검색할 수 있다.</p>
 
@@ -1046,7 +1042,7 @@
 
 <p>하지만 이러한 <strong>사용자 수준 스레드는 커널 하나를 통해서만 시스템 호출이 가능하므로 시스템 호출의 경우 병목현상</strong>이 일어날 수 있다.</p>
 
-<h2 id='수준별-스레드와-스레드-구현'>수준별 스레드와 스레드 구현</h2>
+<h2 id="수준별-스레드와-스레드-구현">수준별 스레드와 스레드 구현</h2>
 
 <p>스레드는 다음과 같이 세 가지 형태로 구현할 수 있다.</p>
 
@@ -1074,9 +1070,9 @@
   </li>
 </ul>
 
-<h3 id='사용자-수준-스레드-user-level-thread'>사용자 수준 스레드(user-level thread)</h3>
+<h3 id="사용자-수준-스레드-user-level-thread">사용자 수준 스레드(user-level thread)</h3>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-46-00-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-46-00-image.png" alt=""></p>
 
 <p><strong>사용자 수준 스레드는 스레드 라이브러리를 통해 구현하며, 커널 입장에서는 다중 스레드로 보이지 않고 프로세스 하나로 본다.</strong> 즉 스레드 교환에 커널이 개입하지 않고, 커널 수준 스레드 하나에 사용자 수준 스레드 여러개가 매핑되므로 다대일 스레드 매핑이라고도 한다.</p>
 
@@ -1128,9 +1124,9 @@
   </tbody>
 </table>
 
-<h3 id='커널-수준-스레드-kernel-level-thread'>커널 수준 스레드(kernel-level thread)</h3>
+<h3 id="커널-수준-스레드-kernel-level-thread">커널 수준 스레드(kernel-level thread)</h3>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-47-03-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-47-03-image.png" alt=""></p>
 
 <p>사용자 수준 스레드의 한계를 극복하고 <strong>커널이 스레드와 관련된 모든 작업을 관리하는 방식</strong>, PCB와 TCB를 커널에서 관리한다.</p>
 
@@ -1184,9 +1180,9 @@
   </tbody>
 </table>
 
-<h3 id='혼합형-스레드-multiplexed-thread'>혼합형 스레드(multiplexed thread)</h3>
+<h3 id="혼합형-스레드-multiplexed-thread">혼합형 스레드(multiplexed thread)</h3>
 
-<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-48-19-image.png" alt="" /></p>
+<p><img src="/assets/img/OS 정리-Chap 3-프로세스와 스레드/2022-04-19-00-48-19-image.png" alt=""></p>
 
 <p><strong>사용자 수준 스레드와 커널 수준 스레드를 혼합한 구조로, 양 측 단점을 극복</strong>하기 위해 제안되었다.</p>
 
@@ -1230,15 +1226,15 @@
   </thead>
   <tbody>
     <tr>
-      <td> </td>
-      <td> </td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id='다중-처리-다중-프로그래밍-다중-작업-다중-스레드'>다중 처리, 다중 프로그래밍, 다중 작업, 다중 스레드</h3>
+<h3 id="다중-처리-다중-프로그래밍-다중-작업-다중-스레드">다중 처리, 다중 프로그래밍, 다중 작업, 다중 스레드</h3>
 
-
+</body></html>
 </div>
 
   </div><a class="u-url" href="/articles/computer_science/OS/IT_COOK_BOOK_OS_%EC%A0%95%EB%A6%AC/OS%20%EC%A0%95%EB%A6%AC-Chap%203-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%20%EC%8A%A4%EB%A0%88%EB%93%9C.html" hidden></a>
@@ -1252,12 +1248,12 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">The Digital garden of Nurgle.</h2>
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="a-name">The Digital garden of Nurgle.</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
