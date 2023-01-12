@@ -1,6 +1,6 @@
 {
-  "findText": " \\bold",
-  "replaceText": "",
+  "findText": "README",
+  "replaceText": "_README",
   "useRegEx": false,
   "selOnly": false,
   "caseInsensitive": false,

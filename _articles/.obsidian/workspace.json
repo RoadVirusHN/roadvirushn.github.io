@@ -4,30 +4,51 @@
     "type": "split",
     "children": [
       {
-        "id": "0fbbae648d44a4d7",
+        "id": "710090bcb9eceac4",
         "type": "tabs",
         "children": [
           {
-            "id": "2acc64d6b5829de6",
+            "id": "f93361a99b498bbd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/NLP/자연어처리 기본.md",
+                "file": "etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md",
                 "mode": "source",
                 "source": true
               }
             }
           },
           {
-            "id": "e3ef9e34cb427c96",
+            "id": "5a498ed674511a58",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "92c5a5c64e3fe497",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "99a8f087110d0fbf",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -94,7 +115,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AI/NLP/자연어처리 기본.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +131,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AI/NLP/자연어처리 기본.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +152,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "AI/NLP/자연어처리 기본.md"
-              }
+              "state": {}
             }
           },
           {
@@ -167,17 +184,17 @@
       "audio-recorder:녹음 시작/중지": false
     }
   },
-  "active": "2acc64d6b5829de6",
+  "active": "99a8f087110d0fbf",
   "lastOpenFiles": [
-    "AI/MATH/AI 수학 기본.md",
-    "computer_science/algorithm/Python for Algorithms-libraries.md",
-    "computer_science/network/네트워크 정리-Chap 1-컴퓨터 네트워크와 인터넷.md",
-    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 1-컴퓨터 시스템의 소개.md",
-    "etc/etcs/Obsidian-example-pt-2.md",
-    "etc/etcs/Obsidian-example-pt-1.md",
-    "web/CI,CD/K8S/K8S 실습-1-Kubernetes 소개 및 설치.md",
-    "computer_science/OS/IT_COOK_BOOK_OS_정리/OS 정리-Chap 2-운영체제란.md",
-    "etc/etcs/git deploy key 사용하기.md",
-    "web/CI,CD/Jenkins 간단 설명 및 설치.md"
+    "README.md",
+    "etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md",
+    "_README/image-20221228174337312.png",
+    "_README/image-20221228142859318.png",
+    "_README/image-20221228012827600.png",
+    "_README/image-20221228011408368.png",
+    "_README/image-20221228010940141.png",
+    "_README/image-20221227183103050.png",
+    "AI/NLP/자연어처리 기본.md",
+    "etc/Subbrain 개발기/Subbrain 개발기 - Ruby&Jekyll.md"
   ]
 }

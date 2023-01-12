@@ -880,6 +880,36 @@
       "LINUX"
     ]
   },
+  "/articles/web/backend/Django/Django%20%EA%B8%B0%EB%B3%B8.html": {
+    "title": "Django 기본",
+    "date": "2020-02-14 17:21:08 +0900",
+    "path": "/_articles/web/backend/Django/Django 기본.md",
+    "tags": [
+      "DJANGO",
+      "PYTHON",
+      "BE"
+    ]
+  },
+  "/articles/web/backend/Django/Django%20WSGI%20%EA%B8%B0%EB%B3%B8.html": {
+    "title": "Django WSGI 기본",
+    "date": "2020-02-15 17:21:08 +0900",
+    "path": "/_articles/web/backend/Django/Django WSGI 기본.md",
+    "tags": [
+      "DJANGO",
+      "PYTHON",
+      "BE"
+    ]
+  },
+  "/articles/web/backend/Django/Django%20CRUD.html": {
+    "title": "Django CRUD",
+    "date": "2020-02-16 17:21:08 +0900",
+    "path": "/_articles/web/backend/Django/Django CRUD.md",
+    "tags": [
+      "DJANGO",
+      "PYTHON",
+      "BE"
+    ]
+  },
   "/articles/computer_science/algorithm/Python%20for%20Algorithms-DP&Merge.html": {
     "title": "Python for Algorithms-DP&Merge",
     "date": "2022-12-28 10:15:43 +0900",
@@ -976,105 +1006,6 @@
       "JOB"
     ]
   },
-  "/articles/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80.html": {
-    "title": "어떻게 코딩할 것인가",
-    "date": "2022-12-28 20:49:46 +0900",
-    "path": "/_articles/어떻게 코딩할 것인가.md",
-    "tags": [
-      "HIDE",
-      "CRUDE",
-      "ETC"
-    ]
-  },
-  "/articles/web/backend/Django/Django%20%EA%B8%B0%EB%B3%B8.html": {
-    "title": "Django 기본",
-    "date": "2020-02-14 17:21:08 +0900",
-    "path": "/_articles/web/backend/Django/Django 기본.md",
-    "tags": [
-      "DJANGO",
-      "PYTHON",
-      "BE"
-    ]
-  },
-  "/articles/web/backend/Django/Django%20WSGI%20%EA%B8%B0%EB%B3%B8.html": {
-    "title": "Django WSGI 기본",
-    "date": "2020-02-15 17:21:08 +0900",
-    "path": "/_articles/web/backend/Django/Django WSGI 기본.md",
-    "tags": [
-      "DJANGO",
-      "PYTHON",
-      "BE"
-    ]
-  },
-  "/articles/etc/etcs/Nodemon%20%ED%95%99%EC%8A%B5.html": {
-    "title": "Nodemon 학습",
-    "date": "2020-02-16 17:21:08 +0900",
-    "path": "/_articles/etc/etcs/Nodemon 학습.md",
-    "tags": [
-      "JS",
-      "NODE",
-      "TOOL"
-    ]
-  },
-  "/articles/web/backend/Django/Django%20CRUD.html": {
-    "title": "Django CRUD",
-    "date": "2020-02-16 17:21:08 +0900",
-    "path": "/_articles/web/backend/Django/Django CRUD.md",
-    "tags": [
-      "DJANGO",
-      "PYTHON",
-      "BE"
-    ]
-  },
-  "/articles/etc/etcs/git%20deploy%20key%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.html": {
-    "title": "git deploy key 사용하기",
-    "date": "2022-03-23 17:21:08 +0900",
-    "path": "/_articles/etc/etcs/git deploy key 사용하기.md",
-    "tags": [
-      "GIT"
-    ]
-  },
-  "/articles/etc/etcs/gitignore%20%EC%9E%91%EC%84%B1%EB%B2%95.html": {
-    "title": "gitignore 작성법",
-    "date": "2022-03-24 17:21:08 +0900",
-    "path": "/_articles/etc/etcs/gitignore 작성법.md",
-    "tags": [
-      "GIT"
-    ]
-  },
-  "/articles/etc/etcs/%EC%98%81%EC%96%B4%20%EC%8B%9C%EC%A0%9C%20%EC%A0%95%EB%A6%AC.html": {
-    "title": "영어 시제 정리",
-    "date": "2022-06-10 17:21:08 +0900",
-    "path": "/_articles/etc/etcs/영어 시제 정리.md",
-    "tags": [
-      "ENG"
-    ]
-  },
-  "/articles/etc/etcs/English%20Determiner.html": {
-    "title": "English Determiner",
-    "date": "2022-06-11 17:21:08 +0900",
-    "path": "/_articles/etc/etcs/English Determiner.md",
-    "tags": [
-      "ENG"
-    ]
-  },
-  "/articles/etc/etcs/Git%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B0%EB%A1%9D%20%EC%A7%80%EC%9A%B0%EA%B8%B0.html": {
-    "title": "Git 파일 기록 지우기",
-    "date": "2022-07-12 17:21:08 +0900",
-    "path": "/_articles/etc/etcs/Git 파일 기록 지우기.md",
-    "tags": [
-      "GIT",
-      "CRUDE"
-    ]
-  },
-  "/articles/etc/etcs/%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EA%B8%80%EC%93%B0%EA%B8%B0%20%EC%A0%95%EB%A6%AC.html": {
-    "title": "개발자 글쓰기 정리",
-    "date": "2022-08-10 17:21:08 +0900",
-    "path": "/_articles/etc/etcs/개발자 글쓰기 정리.md",
-    "tags": [
-
-    ]
-  },
   "/articles/computer_science/OSSU/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%84%A4%EA%B3%84.html": {
     "title": "어떻게 코딩할 것인가-데이터 설계",
     "date": "2022-12-28 20:49:46 +0900",
@@ -1105,10 +1036,10 @@
       "CRUDE"
     ]
   },
-  "/articles/etc/etcs/Obsidian.html": {
+  "/articles/Obsidian.html": {
     "title": "Obsidian",
     "date": "2023-01-03 12:05:51 +0900",
-    "path": "/_articles/etc/etcs/Obsidian.md",
+    "path": "/_articles/Obsidian.md",
     "tags": [
       "HIDE",
       "CRUDE"
@@ -1148,6 +1079,15 @@
     "title": "Subbrain 개발기 - Sass",
     "date": "2023-01-05 14:28:32 +0900",
     "path": "/_articles/etc/Subbrain 개발기/Subbrain 개발기 - Sass.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/etc/Obsidian.html": {
+    "title": "Obsidian",
+    "date": "2023-01-03 12:05:51 +0900",
+    "path": "/_articles/etc/Obsidian.md",
     "tags": [
       "HIDE",
       "CRUDE"
@@ -1232,6 +1172,90 @@
     "tags": [
       "PJT",
       "ETC"
+    ]
+  },
+  "/articles/etc/etcs/Nodemon%20%ED%95%99%EC%8A%B5.html": {
+    "title": "Nodemon 학습",
+    "date": "2020-02-16 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/Nodemon 학습.md",
+    "tags": [
+      "JS",
+      "NODE",
+      "TOOL"
+    ]
+  },
+  "/articles/etc/etcs/git%20deploy%20key%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.html": {
+    "title": "git deploy key 사용하기",
+    "date": "2022-03-23 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/git deploy key 사용하기.md",
+    "tags": [
+      "GIT"
+    ]
+  },
+  "/articles/etc/etcs/gitignore%20%EC%9E%91%EC%84%B1%EB%B2%95.html": {
+    "title": "gitignore 작성법",
+    "date": "2022-03-24 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/gitignore 작성법.md",
+    "tags": [
+      "GIT"
+    ]
+  },
+  "/articles/etc/etcs/%EC%98%81%EC%96%B4%20%EC%8B%9C%EC%A0%9C%20%EC%A0%95%EB%A6%AC.html": {
+    "title": "영어 시제 정리",
+    "date": "2022-06-10 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/영어 시제 정리.md",
+    "tags": [
+      "ENG"
+    ]
+  },
+  "/articles/etc/etcs/English%20Determiner.html": {
+    "title": "English Determiner",
+    "date": "2022-06-11 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/English Determiner.md",
+    "tags": [
+      "ENG"
+    ]
+  },
+  "/articles/etc/etcs/Git%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B0%EB%A1%9D%20%EC%A7%80%EC%9A%B0%EA%B8%B0.html": {
+    "title": "Git 파일 기록 지우기",
+    "date": "2022-07-12 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/Git 파일 기록 지우기.md",
+    "tags": [
+      "GIT",
+      "CRUDE"
+    ]
+  },
+  "/articles/etc/etcs/%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EA%B8%80%EC%93%B0%EA%B8%B0%20%EC%A0%95%EB%A6%AC.html": {
+    "title": "개발자 글쓰기 정리",
+    "date": "2022-08-10 17:21:08 +0900",
+    "path": "/_articles/etc/etcs/개발자 글쓰기 정리.md",
+    "tags": [
+
+    ]
+  },
+  "/articles/etc/etcs/Obsidian-example-pt-1.html": {
+    "title": "Obsidian-example-pt-1",
+    "date": "2022-08-24 14:10:02 +0900",
+    "path": "/_articles/etc/etcs/Obsidian-example-pt-1.md",
+    "tags": [
+      "BLOG_TEST"
+    ]
+  },
+  "/articles/etc/etcs/Obsidian-example-pt-2.html": {
+    "title": "Obsidian-example-pt-2",
+    "date": "2022-08-24 15:03:32 +0900",
+    "path": "/_articles/etc/etcs/Obsidian-example-pt-2.md",
+    "tags": [
+
+    ]
+  },
+  "/articles/etc/etcs/Obsidian.html": {
+    "title": "Obsidian",
+    "date": "2023-01-03 12:05:51 +0900",
+    "path": "/_articles/etc/etcs/Obsidian.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
     ]
   }
 }
