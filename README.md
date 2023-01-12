@@ -1,5 +1,5 @@
 
-[![[_README/image-20230112153831764.png]]]([[https://roadvirushn.github.io/]]) By _RoadvirusHN_
+[![](_README/image-20230112153831764.png)]([[https://roadvirushn.github.io/]]) By _RoadvirusHN_
 
 > **[Obsidian](https://obsidian.md/) → Blog Post**, Personal Knowledge Management System
 
@@ -14,27 +14,27 @@
 <img class="badge" title="roadvirushn@gmail.com" src="https://img.shields.io/badge/Gmail-roadviurshn-lightgrey?style=plastic&logo=gmail"></a>
 ## Overview
 
-![[_README/subbrain_front 1.webp]]
+![](_README/subbrain_front 1.webp)
 
 PKMS(Personal Knowledge Management System) Build by [Roadvirushn](https://github.com/RoadVirusHN)
 - **Static Web site by Jekyll**
 - **Free Hosting by gh-page**
 ---
-![[_README/image-20221228010940141.png]]
+![](_README/image-20221228010940141.png)
 - **Automatically Convtert Obsidian markdown file → HTML Blog Post**
 ---
-![[_README/image-20221228011408368.png]]
+![](_README/image-20221228011408368.png)
 - **Generate Folder directoy based Category tree.**
 ---
-![[_README/image-20221228142859318.png]]
+![](_README/image-20221228142859318.png)
 - **Client Browser base Search engine**
 ---
-![[_README/image-20221228012827600.png]]
+![](_README/image-20221228012827600.png)
 - **Support Obsidian featrues like callout, mathjax, wikilink, etc...**
 
 ## Architecture
 
-![[_README/image-20221228174337312.png]]
+![](_README/image-20221228174337312.png)
 
 ## Tech Stacks
 - **[Github page](https://pages.github.com/)**:
