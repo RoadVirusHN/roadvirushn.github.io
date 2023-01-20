@@ -102,6 +102,7 @@ title: 빈 객체의 Scope 설정
 아래와 같이 `@Scope`를 통해 `prototype` 범위의 빈을 지정해 빈 객체를 구할 때마다 새로운 객체를 생성하게 할 수 있다.
 
 - 단, prototype 빈은 **컨테이너 종료 시에도 소멸 메서드를 실행하지 않고, 직접 소멸하고 소멸 관련 메서드를 구현**해야 한다.
+
 ~~~java
 import org.springframework.context.annotation.Scope;
 

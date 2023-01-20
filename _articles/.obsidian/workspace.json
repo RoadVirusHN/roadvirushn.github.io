@@ -4,51 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "710090bcb9eceac4",
+        "id": "b21da67f0b961d28",
         "type": "tabs",
         "children": [
           {
-            "id": "f93361a99b498bbd",
+            "id": "b5119de052b736a7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md",
+                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
                 "mode": "source",
                 "source": true
               }
             }
           },
           {
-            "id": "5a498ed674511a58",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "92c5a5c64e3fe497",
+            "id": "ddcbd567aec6eb7d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md",
+                "file": "web/backend/Spring/Spring5 입문-DB 연동.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "99a8f087110d0fbf",
+            "id": "d23c4124d5769096",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -99,7 +95,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 344.5
   },
   "right": {
     "id": "2f957799fb48536f",
@@ -115,6 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,6 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +150,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md"
+              }
             }
           },
           {
@@ -184,17 +184,17 @@
       "audio-recorder:녹음 시작/중지": false
     }
   },
-  "active": "99a8f087110d0fbf",
+  "active": "d23c4124d5769096",
   "lastOpenFiles": [
-    "README.md",
-    "etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md",
-    "_README/image-20221228174337312.png",
-    "_README/image-20221228142859318.png",
-    "_README/image-20221228012827600.png",
-    "_README/image-20221228011408368.png",
-    "_README/image-20221228010940141.png",
-    "_README/image-20221227183103050.png",
-    "AI/NLP/자연어처리 기본.md",
-    "etc/Subbrain 개발기/Subbrain 개발기 - Ruby&Jekyll.md"
+    "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-세계 설계.md",
+    "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-데이터 설계.md",
+    "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
+    "web/backend/Spring/Spring5 입문-빈(Bean)과 컨테이너.md",
+    "web/backend/Spring/Spring5 입문-DB 연동.md",
+    "web/backend/Spring/Spring5 입문-MVC 개념과 설정.md",
+    "web/backend/Spring/Spring5 입문-컨트롤러와 뷰 구현.md",
+    "web/backend/Spring/Spring5 입문.md",
+    "computer_science/OSSU/HowToCode/스페이스 인베이더-세계 설계 예시 프로젝트.md",
+    "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가.md"
   ]
 }
