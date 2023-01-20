@@ -302,7 +302,7 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 10 
+            📄: 8 
             
           </span>
       </li>
@@ -542,10 +542,10 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#프록시-패턴">프록시 패턴</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#프록시-패턴-예시">프록시 패턴 예시</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#AOP-구현">AOP 구현</a><ul></ul></li></ol>
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#프록시-패턴">프록시 패턴</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#프록시-패턴-예시">프록시 패턴 예시</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#AOP-구현">AOP 구현</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#Aspect-클래스-구현">Aspect 클래스 구현</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#Aspect-클래스-적용">Aspect 클래스 적용</a><ul></ul></li></ul></li></ol>
 <h1 id="Spring5-입문-AOP-Aspect-Oriented-Programming">Spring5 입문-AOP(Aspect Oriented Programming)</h1>
 
-<div class="callout callout-quote" id="callout-79133ea4-02bf-483c-8e2f-0607a38fdb93">
+<div class="callout callout-quote" id="callout-b2d9cfdd-fff4-4652-a091-4ac543503c0a">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -576,7 +576,7 @@
   <li><strong>런타임에 프록시 객체 생성해 공통 기능 삽입 -&gt; 스프링의 자동 생성 프록시 객체로 구현</strong></li>
 </ul>
 
-<div class="callout callout-info" id="callout-35f60d1c-fb30-4cf8-93fd-e22cd1323b78">
+<div class="callout callout-info" id="callout-d70cfdcb-72a5-4af2-a147-99b21cb8021e">
       <div class="header">
         <span class="emoji">ℹ️</span>
         <span class="title"><strong>프록시 기반 AOP
@@ -599,10 +599,10 @@
 
 <p>이를 통해 공통 기능 코드를 재사용하고 수정하기 쉬우며 가독성 좋은 코드를 만들어 낼 수 있다.</p>
 
-<div class="callout callout-seealso" id="callout-222b5e3b-96ce-493a-a7c7-98fcc9448ae4">
+<div class="callout callout-seealso" id="callout-148c0f65-d276-4609-b476-118daf722307">
       <div class="header">
         <span class="emoji">➕</span>
-        <span class="title"><strong>사실은, 저자가 생각하기에는 기능 추가와 확장에 초점이 맞춰져 있는 데코레이터 패턴이 좀 더 가깝다고 한다.
+        <span class="title"><strong>사실은, 저자가 생각하기에는 기능 추가와 확장에 초점이 맞춰져 있는 데코레이터 패턴이 좀 더 가깝다고 한다. 프록시 패턴은 좀 더 접근 제어와 보안에 관련됨
 </strong></span>
         <button class="collapse">🔼</button>
       </div>
@@ -610,7 +610,7 @@
     </div>
 <h3 id="프록시-패턴-예시">프록시 패턴 예시</h3>
 
-<div class="callout callout-example" id="callout-5c079804-032c-4fc3-b1d0-e9b32f922954">
+<div class="callout callout-example" id="callout-b6e33223-cc1e-4d7d-840e-c69e38414371">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>프록시 객체와 대상 객체 예시
@@ -650,7 +650,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-615eff4e-96ad-487f-bb13-3bfd4e25913b">
+<div class="callout callout-example" id="callout-0b59455e-e6ed-405f-bbb9-3b7028410bdb">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>프록시 패턴 예시
@@ -679,13 +679,196 @@ result
     </div>
 <h2 id="AOP-구현">AOP 구현</h2>
 
+<p>스프링의 <code class="language-plaintext highlighter-rouge">aspectjweaver</code> 의존을 추가하면 AOP를 쉽게 구현할 수 있다.</p>
+
+<p>스프링 AOP는 프록시 객체를 자동으로 생성해 주며, 다음과 같은 용어가 존재한다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Aspect</code> : 공통으로 적용할 기능, 메서드, 예시로 트랜잭션, 보안, 캐시, 성능 모니터링 등이 있음</li>
+  <li><code class="language-plaintext highlighter-rouge">Advice</code> : <code class="language-plaintext highlighter-rouge">Aspect</code>을 적용할 시점, 메서드 전(Before), 후(After), 정상 작동 후(After Returning), 오류 후(After Throwing) 등이 존재하지만 모든 시점에 자유롭게 적용가능한 <code class="language-plaintext highlighter-rouge">Around Adivce</code>를 가장 자주 사용한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Joinpoint</code>: <code class="language-plaintext highlighter-rouge">Advice</code>를 적용 가능한 부분, 메서드, 필드 값 변경 등이 존재하지만 스프링은 메서드에만 적용 가능하다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Pointcut</code>: 해당 프록시 객체를 적용할 클래스, 빈 객체 등의 범위를 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">Weaving</code>: 이러한 AOP를 특정 객체에 설정해주는 행위를 의미</li>
+</ul>
+
+<h3 id="Aspect-클래스-구현">Aspect 클래스 구현</h3>
 <p>스프링 AOP에서 가장 자주 사용되는 Around Advice를 기준으로 다음과 같이 구현하면 된다.</p>
 <ol>
   <li>Aspect로 사용할 클래스에 <code class="language-plaintext highlighter-rouge">@Aspect</code> 어노테이션 적용</li>
-  <li><code class="language-plaintext highlighter-rouge">@Pointcut</code> 어노테이션으로 공통 기능을 적용할 Pointcut 정의</li>
-  <li>공통 기능 구현 메서드에 <code class="language-plaintext highlighter-rouge">@Around</code> 어노테이션 적용</li>
+  <li><code class="language-plaintext highlighter-rouge">@Pointcut</code> 어노테이션으로 공통 기능을 적용할 객체를 지정</li>
+  <li>공통 기능 구현 메서드에 <code class="language-plaintext highlighter-rouge">@Around</code> 어노테이션 적용하여 대상 메서드 전후 실행에 관련한 로직 작성</li>
 </ol>
 
+<div class="callout callout-example" id="callout-18aa39d1-33a6-4b0b-8c3c-752a592cc209">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Aspect 클래스 구현
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">aspect</span><span class="o">;</span> 
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.aspectj.lang.ProceedingJoinPoint</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.aspectj.lang.Signature</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.aspectj.lang.annotation.Around</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.aspectj.lang.annotation.Aspect</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.aspectj.lang.annotation.Pointcut</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.core.annotation.Order</span><span class="o">;</span>
+
+<span class="nd">@Aspect</span> <span class="c1">//프록시 객체 구현을 위한 Aspect 객체로 지정</span>
+<span class="nd">@Order</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="c1">// 여러 AOP 적용시 메서드를 감쌀 우선순위, 낮을수록 먼저 감싼다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExeTimeAspect</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Pointcut</span><span class="o">(</span><span class="s">"execution(public * chap07..*(..))"</span><span class="o">)</span> <span class="c1">// chap07 패키지 내의 모든 퍼블릭 메서드들이 대상</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kt">void</span> <span class="nf">publicTarget</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Around</span><span class="o">(</span><span class="s">"publicTarget()"</span><span class="o">)</span> <span class="c1">// 아래 Around Adivce 기능은 publicTarget에서 설정한 범위에만 적용된다.</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">measure</span><span class="o">(</span><span class="nc">ProceedingJoinPoint</span> <span class="n">joinPoint</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span> <span class="c1">// 공통 기능 구현 메서드, 리턴 타입은 모든 값을 아우를 수 있게 원시 타입인 Object</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">long</span> <span class="n">start</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">try</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Object</span> <span class="n">result</span> <span class="o">=</span> <span class="n">joinPoint</span><span class="o">.</span><span class="na">proceed</span><span class="o">();</span> <span class="c1">// 적용 대상 메서드 실행, ProceedingJoinPoint에 대해서 아래 쪽에 설명</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">long</span> <span class="n">finish</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Signature</span> <span class="n">sig</span> <span class="o">=</span> <span class="n">joinPoint</span><span class="o">.</span><span class="na">getSignature</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%s.%s(%s) 실행 시간 : %d ns\n"</span><span class="o">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">joinPoint</span><span class="o">.</span><span class="na">getTarget</span><span class="o">().</span><span class="na">getClass</span><span class="o">().</span><span class="na">getSimpleName</span><span class="o">(),</span> <span class="c1">// 적용 대상 메서드 시그니처 정보</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">sig</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">joinPoint</span><span class="o">.</span><span class="na">getArgs</span><span class="o">()),</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">(</span><span class="n">finish</span> <span class="o">-</span> <span class="n">start</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-63c56ca3-17b5-4630-a9bd-7d7612b6bb53">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>execution 명시자
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>pointcut 메서드 설정을 위한 범위 지정을 위해 사용됨</p>
+
+<p>@Around 어노테이션 안에 직접 명시해도 범위가 지정되지만, 위 예시와 같이 PublicTarget() 처럼 @Pointcut 메서드를 지정해주면 다른 패키지에서 임포트하거나 <code class="language-plaintext highlighter-rouge">@Around("패키지명.Aspect객체.publicTarget()")</code>처럼 재활용 가능</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>execution(수식어패턴? 리턴타입패턴 클래스이름패턴?메서드이름패턴(파라미터패턴))
+*: 모든 값
+.. : 0개 이상
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-545b369d-9496-434e-b5e5-5fcef1a2c6c3">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">ProceedingJoinPoint</code> 객체의 인터페이스
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">proceed()</code>: 지정 메서드가 실행되는 시점을 의미, 메서드 결과값을 리턴하며, 이를 다시 리턴해줘야 함.</li>
+  <li><code class="language-plaintext highlighter-rouge">getSignature()</code>: 호출되는 메서드에 대한 시그니처 객체
+    <ul>
+      <li>리턴 값인 <code class="language-plaintext highlighter-rouge">Signature</code> 객체로 부터 메서드명(getName()), 시그니처 정보(toLongString()) 등을 구함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">getTarget()</code>: 대상 객체 인스턴스</li>
+  <li><code class="language-plaintext highlighter-rouge">getArgs()</code>: 대상 메서드 파리미터</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<h3 id="Aspect-클래스-적용">Aspect 클래스 적용</h3>
+
+<p>이후 완성한 클래스를 다음과 같이 설정 클래스에 등록하면 적용된다.</p>
+
+<div class="callout callout-example" id="callout-d523639b-a9be-4425-8e3d-8c15b401bf86">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>AppCtx 설정 클래스 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.EnableAspectJAutoProxy</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableAspectJAutoProxy</span> <span class="c1">// 필수 Enable류 어노테이션, AOP 객체 사용을 위한 설정 빈 객체들을 자동으로 등록해줌</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppCtx</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">ExeTimeAspect</span> <span class="nf">exeTimeAspect</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// 우리가 만든 Aspect</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="k">new</span> <span class="nc">ExeTimeAspect</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">Calculator</span> <span class="nf">calculator</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">RecCalculator</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="c1">//...</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이후 다음과 같이 빈 객체를 가져와 클래스를 확인해보면 자동 생성된 프록시 객체가 생성되있음을 알 수 있다.</p>
+
+<div class="callout callout-example" id="callout-d48c78e0-9310-4813-9c59-6c86d368710f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>AOP 대상이 된 빈 객체 실행예
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Calculator</span> <span class="n">cal</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"calculator"</span><span class="o">,</span> <span class="nc">Calculator</span><span class="o">.</span><span class="na">class</span><span class="o">);</span> 
+<span class="kt">long</span> <span class="n">fiveFact</span> <span class="o">=</span> <span class="n">cal</span><span class="o">.</span><span class="na">factorial</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"cal.factorial(5) = "</span> <span class="o">+</span> <span class="n">fiveFact</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">cal</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getName</span><span class="o">());</span> <span class="c1">// com.sum.proxy.%Proxy17 =&gt; RecCalculator 클래스가 아니라 자동 생성된 프록시 객체</span>
+<span class="n">ctx</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="cm">/* console:
+RecCalculator.factorial([5]) 실행 시간: 50201 ns
+cal.factorial(5)=120
+com.sum.proxy.%Proxy17
+*/</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이때 <code class="language-plaintext highlighter-rouge">%Proxy17</code>의 타입은 메서드의 리턴 타입인 <code class="language-plaintext highlighter-rouge">Calculator</code>를 상속받아 생성됨</p>
+
+<div class="callout callout-seealso" id="callout-d020bb4c-603e-4e71-81e6-489d18862a39">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>만약 원본 클래스인 <code class="language-plaintext highlighter-rouge">RecCalculator</code> 클래스를 상속받아 프록시 객체를 이용해 생성하고 싶다면
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>어노테이션<code class="language-plaintext highlighter-rouge"> @EnableAspectJAutoProxy(proxyTargetClass = true)</code>로 설정하면 메서드 리턴타입이 아닌, 실제 결과값의 타입으로 설정된다.</p>
+
+</div>
+    </div>
+    </div>
 </body></html>
 </div>
 

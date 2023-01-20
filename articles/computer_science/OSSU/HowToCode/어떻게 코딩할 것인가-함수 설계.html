@@ -302,7 +302,7 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 10 
+            📄: 8 
             
           </span>
       </li>
@@ -542,9 +542,29 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#함수-설계-과정">함수 설계 과정</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-시그니처-목적-스텁-생성">1. 시그니처, 목적, 스텁, 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-테스트-커버리지와-입력-값들을-고려한-테스트-실행-코드-작성">2. 테스트 커버리지와 입력 값들을 고려한 테스트 실행 코드 작성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-템플릿-만들기">3. 템플릿 만들기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#4-함수-구현하기">4. 함수 구현하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#5-테스트와-디버깅하기">5. 테스트와 디버깅하기</a><ul></ul></li></ul></li></ol>
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#함수-설계-과정">함수 설계 과정</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-시그니처-목적-스텁-생성">1. 시그니처, 목적, 스텁, 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-테스트-커버리지와-입력-값들을-고려한-테스트-실행-코드-작성">2. 테스트 커버리지와 입력 값들을 고려한 테스트 실행 코드 작성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-템플릿-만들기">3. 템플릿 만들기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#4-함수-구현하기">4. 함수 구현하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#5-테스트와-디버깅하기">5. 테스트와 디버깅하기</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#복합-함수-설계">복합 함수 설계</a><ul><li lvl="3"><a id="markdown-toc-0-7" href="#재귀-함수-설계">재귀 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#보조-함수-설계">보조 함수 설계</a><ul></ul></li></ul></li></ol>
 <h1 id="함수-설계">함수 설계</h1>
 
+<div class="callout callout-quote" id="callout-f44d6a52-5720-421b-9920-7821ba199e10">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>quote</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>Edx 강의 <span class='link-warning'>
+      <a href="https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home" class="wikilink externallink"><em>How to Code</em></a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://learning.edx.org/cours..."</em>로
+        <button onclick="window.open('https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home','_blank'); return false;">이동</button>?
+      </span>
+    </span> 시리즈를 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
 <p>함수 설계 과정을 숙달하고 이해하면 어렵고 고차원의 함수를 구현할 때 큰 도움이 된다.</p>
 
 <p>함수 설계는 폭포수 모델로 구현되지 않았으며 <strong>애매모호하거나 틀릴 경우 이전 단계로 돌아가서 수정</strong>해도 된다.</p>
@@ -559,7 +579,7 @@
 
 <p><strong>자주, 그리고 빨리 함수를 실행시켜 조기에 잘못을 찾아 고치는게 좋다.</strong> 여러 잘못이 쌓인다면 무엇이 잘못인지 모르게 되기 때문이다.</p>
 
-<div class="callout callout-seealso" id="callout-39b5108b-c798-4706-b8b5-5202cd61c909">
+<div class="callout callout-seealso" id="callout-ddac6f65-a7c9-487e-bef3-a170775866ef">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>사소한 가독성 팁
@@ -587,7 +607,9 @@
     </div>
 <h2 id="함수-설계-과정">함수 설계 과정</h2>
 
-<div class="callout callout-example" id="callout-07145f6f-4ea2-4139-8d5a-74934ba48bf8">
+<p>함수 디자인에 앞서 그림이나 시나리오 등을 작성하며 테스트용, 그리고 함수 내에 사용할 목적의 상수 등을 미리 정의할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-7ca3a1d3-75af-4481-9e0f-30f1693dd8bf">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>함수 디자인 예시
@@ -658,11 +680,12 @@
     <p><strong>목적</strong>은 해당 함수의 사용하는 목적과 입력값과 결과값의 의미</p>
     <ul>
       <li>단순 입력과 출력이 아니라 각각 데이터의 의미가 들어가면 좋다. 애매모호한 기준과 단어를 쓰면 안됨.</li>
+      <li>다른 함수와 비교해 비슷한 일을 하는지 비교해보고, 비슷하다면 다른 함수를 이용할 수 없는지 알아보자.</li>
     </ul>
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-0af60085-093d-43aa-adaf-a1fd795c0e77">
+<div class="callout callout-example" id="callout-02353be6-9684-44ee-ad6c-c52951ca49cc">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>목적의 예시
@@ -714,7 +737,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-73a20988-76d0-4f95-b00a-e88beec367c2">
+<div class="callout callout-example" id="callout-2d5cc0e2-f94a-4ceb-a743-52d56ecb90bc">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>테스트 커버리지 고려 예시
@@ -747,7 +770,7 @@
   <li>함수의 템플릿은 데이터 설계의 정보를 기반으로 만들면 쉽다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-6fc2a3bc-4b61-4917-9db9-d3909d082a33">
+<div class="callout callout-example" id="callout-349ec9a0-bbdf-4f86-b542-d9db59765233">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>데이터 설계와 함수 템플릿의 상관 관계
@@ -765,6 +788,36 @@
 </div>
     </div>
     </div>
+<p>만약, 여러 타입의 인자가 주어진다면, 데이터 타입에 따라 템플릿을 변형해야 한다.<br>
+예를 들어, 두개의 compound type이 주어지면 2개의 중첩된 조건문의 템플릿이 나타날 수 있다.</p>
+
+<p>아래 예시는 compound type의 템플릿 조건 안에 atomic distinct type의 템플릿이 추가로 결합되었다.</p>
+
+<div class="callout callout-example" id="callout-62182d6c-a2ae-44b5-9052-c5fd491feb2a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>재귀구조와 empty를 가진 compound type t와 atomic distinct type k를 인자로 받는 함수 템플릿
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">lookup</span><span class="o">-</span><span class="n">key</span><span class="p">(</span><span class="n">t</span> <span class="n">k</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="c1"># ...k
+</span>		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>
+        <span class="c1"># (...k (node-key t)    ;Integer
+</span>        <span class="c1">#     (node-val t)    ;String
+</span>	    <span class="c1"># (lookup-key (node-l t) (...k))
+</span>        <span class="c1"># (lookup-key (node-r t) (...k))
+</span>        <span class="k">pass</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
 <h3 id="4-함수-구현하기">4. 함수 구현하기</h3>
 <ul>
   <li>군더더기 없이 오류없이 잘 구현하였는가?
@@ -775,7 +828,6 @@
   <li><strong>도움 함수(helper function)</strong> : 함수 내부의 복잡한 로직을 추가로 구현하는 함수, 보통 데이터 정의 과정에서 들어난다.
     <ul>
       <li>위의 <em>데이터 설계와 함수 템플릿의 상관 관계</em> 그림의 <code class="language-plaintext highlighter-rouge">fn-for-school</code> 함수 같은 함수를 의미</li>
-      <li>도움 함수 구현 시 현재 함수 설계 과정을 재귀적으로 진행하면 된다.</li>
     </ul>
   </li>
 </ul>
@@ -789,11 +841,245 @@
       <li>목적에 맞는 결과를 내놓는가?</li>
     </ul>
   </li>
-  <li>만약, 오류가 생기면, 테스트가 잘못됬는지, 함수 구현이 잘못됬는지 꼭 확인하자!</li>
+  <li>만약, 오류가 생기면, 테스트가 잘못됬는지, 함수 구현이 잘못되었는지 꼭 확인하자!</li>
   <li>빠르게, 자주 테스트하여 잘못을 조기에 발견하자!</li>
 </ul>
 
-<p>이후 함수를 완성하면 함수를 제외하곤 전부 지워도 된다.</p>
+<p>이후 함수를 완성하면</p>
+<ul>
+  <li>함수의 설명 부분을 다시 작성해보자. 여러 로직이 겹치는 경우 보조함수로 바꿔야 한다.</li>
+  <li>시그니처와 스텁은 더이상 의미없으므로 지워도 된다.</li>
+  <li>테스트는 경우에 따라 재활용하거나 후에 디버깅 원인 분선시 필요할 수 있으므로 옮기거나 잘 정리하자</li>
+</ul>
+
+<h2 id="복합-함수-설계">복합 함수 설계</h2>
+
+<p>함수 내부에 또 다른 함수를 포함한 함수를 설계하기 위한 방법 소개</p>
+
+<h3 id="재귀-함수-설계">재귀 함수 설계</h3>
+
+<p><strong>자기 자신 함수를 함수 로직 내에 이용하는 함수</strong></p>
+
+<div class="callout callout-note" id="callout-692e4d76-adf1-498b-8fed-a367bc74c453">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>재귀 함수 구현 시 유의점
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li><strong>데이터 설계 시 재귀 구조가 나타난다면, 함수 구현 시에도 재귀 구조</strong>가 나타난다.</li>
+  <li><strong>기필코 기저 사례(Base Case)가 존재해야 하며, 도달 가능해야 한다.</strong>
+    <ul>
+      <li>그렇지 않으면 무한 루프가 일어난다.</li>
+    </ul>
+  </li>
+  <li><strong>로직 구현시, 테스트 생성 및 구현 시 기저 사례를 맨 처음 처리할 것.</strong>
+    <ul>
+      <li>구현이 간단한 경우가 많고, 재귀 함수 구현을 위해 꼭 필요하므로 빠르게 디버깅 하기 위함</li>
+    </ul>
+  </li>
+  <li>재귀 사례는 결국 기저 사례로 향하는지 알기 위해, <strong>내부 재귀함수의 인자가 기저 사례로 수렴하도록 변경되는지 확인</strong>해야 함.</li>
+  <li><strong>재귀 함수의 결과값이 항상 특정 조건을 만족한다는 가정을 충족</strong>해야 한다.(Invariant) 아래 예시 참조</li>
+  <li><strong>보조 함수와 다르게 새로 테스트를 작성할 필요가 없다.</strong></li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-1f294dd2-2d60-49f5-9b95-a78b1a1d822a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>재귀 함수와 재귀 데이터 설계 예시 : 짝수 필터링
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>사실, 많은 경우 재귀로 처리하는 것보다 반복문으로 처리하는 경우가 성능 상으로 좋은 경우가 많다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Data definition:
+</span><span class="p">{:</span> <span class="c1">#data-definition}
+</span>
+<span class="c1"># ListOfNumber is one of the
+</span><span class="p">{:</span> <span class="c1">#listofnumber-is-one-of-the}
+# - empty
+</span><span class="p">{:</span> <span class="c1">#empty}
+# - [Integer] + ListOfNumber 
+</span><span class="p">{:</span> <span class="c1">#integer-listofnumber}# 데이터 설계 중 재귀 구조 발견
+# interp. an arbitrary number of Numbers
+</span><span class="p">{:</span> <span class="c1">#interp-an-arbitrary-number-of-numbers}
+</span>
+<span class="k">def</span> <span class="nf">fnForLon</span><span class="p">(</span><span class="n">lon</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+		<span class="c1">#...
+</span>		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1">#...lon[0]
+</span>		<span class="c1">#...fnForLon(lon[1:])
+</span>		<span class="k">pass</span>
+
+<span class="c1"># Function:
+</span><span class="p">{:</span> <span class="c1">#function}
+# ListOfNumber -&gt; ListOfNumber
+</span><span class="p">{:</span> <span class="c1">#listofnumber-listofnumber}
+# filter even Number from ListOfNumber.
+</span><span class="p">{:</span> <span class="c1">#filter-even-number-from-listofnumber}
+# Invariants : All the results of evenFilter should contain only odd number.
+</span><span class="p">{:</span> <span class="c1">#invariants-all-the-results-of-evenfilter-should-contain-only-odd-number}
+# Stub
+</span><span class="p">{:</span> <span class="c1">#stub}
+# def evenFilter(lon):
+</span><span class="p">{:</span> <span class="c1">#def-evenfilter-lon}
+#	return []
+</span>	
+<span class="k">print</span><span class="p">(</span><span class="n">evenFilter</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span><span class="o">==</span><span class="p">[])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">evenFilter</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">==</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># &lt;Template From fnForLon&gt;
+</span><span class="p">{:</span> <span class="c1">#template-from-fnforlon}
+</span>
+<span class="k">def</span> <span class="nf">evenFilter</span><span class="p">(</span><span class="n">lon</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">[]</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">([</span><span class="n">lon</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="k">if</span> <span class="n">lon</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span> <span class="k">else</span> <span class="p">[])</span> <span class="o">+</span> <span class="n">evenFilter</span><span class="p">(</span><span class="n">lon</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="c1"># 이후 evenFilter는 모두 홀수만 포함된다는 가정을 충족해야 한다. (Invariant)
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p><strong>불변성(Invariants)</strong><br>
+복합 함수의 경우 어떤 함수의 결과물이 항상 특정 조건을 만족한다는 가정이 충족해야 할 필요가 있다.<br>
+이를 불변성이라고 하며, 이를 엄격히 지키는지 확인하기 위해 로직을 수학적으로 증명하고, 테스트를 세세하게 짜내어야 한다.<br>
+불변성이 깨지면 가정이 깨지므로 원하는 결과가 나오지 않는다.<br>
+불변성은 재귀나 복합 함수 뿐만 아니라 반복문의 반복 과정에서도 사용된다.</p>
+
+<p>예시로 동적 계획법의 점화식이나 이중 탐색 트리의 좌측 자식은 언제나 현재 노드의 값보다 작고, 우측 자식은 언제나 현재 노드의 값보다 큼 등이 있다.</p>
+
+<h3 id="보조-함수-설계">보조 함수 설계</h3>
+<p>보조 함수(helper function)는 <strong>자기 자신이 아닌 다른 함수로, 복잡한 함수의 일부 로직을 담당하는 함수</strong>이다.</p>
+
+<p>다음과 같은 경우에 보조 함수를 설계해야 한다.</p>
+<ul>
+  <li>함수 설계 중 설계 내용이 새로운 지식 도메인으로 바뀜(즉, 두가지 이상의 일을 함)</li>
+  <li>데이터 설계 중 재귀 구조가 발견됨</li>
+  <li>함수 해석 부분 구현 시, 내용이 길고 복잡함</li>
+</ul>
+
+<div class="callout callout-warning" id="callout-72981fc8-8fa6-43f9-b007-3f87ebbc9070">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>의미없는 보조함수의 추가는 오히려 구현을 복잡하게 만들 수 있다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<p>보조 함수 설계시, 각 보조 함수의 기능과 데이터를 따로 설계하고, 테스트 해야 함.</p>
+<ul>
+  <li>이때, 복잡한 구조일 수록 내부의 보조 함수를 염두에 두고 최대한의 커버지리가 가능한 테스트를 설계해야 한다.</li>
+  <li>하지만, 반대로 보조 함수는 자신을 참조하는 부모 함수를 염두에 두지 않고 자신의 기능만 신경쓰면 된다.</li>
+</ul>
+
+<p>보조 함수는 자신을 위한 또 다른 보조 함수를 가질 수 있다.</p>
+
+<div class="callout callout-example" id="callout-11086676-8a75-4573-8012-13c5711097bd">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>보조 함수 의존 관계
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>아래 그림처럼 특정 함수의 테스트와 설계의 끝은 해당 함수 내부에서 의존하는 보조 함수들의 설계와 테스트가 전부 끝나야 가능하다.</p>
+
+<p><img src="/assets/img/어떻게 코딩할 것인가-함수 설계/image-20230113215653165.png" alt="500"></p>
+
+</div>
+    </div>
+    </div>
+<p>따라서, 각 보조 함수를 일단 <strong>위시리스트 항목</strong>으로 만들어 두고 상위 함수를 먼저 구현할 수 있다.</p>
+
+<div class="callout callout-seealso" id="callout-8c0d18ef-c57d-42dd-b8c8-79c01e53ae87">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>위시리스트 항목(wish-list entry)?
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><strong>시그니처, 목적, <code class="language-plaintext highlighter-rouge">!!!</code>와 스텁으로 이루어진 완성되지 못한 함수</strong></p>
+
+<p>스텁과 다른 점은 처음에는 스텁처럼 생겼지만 언젠가는 추가로 테스트와 내부 로직을 제대로 구현한다는 점이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">!!!</code>, <code class="language-plaintext highlighter-rouge">TODO:</code>등을 통해 나중에 꼭 구현하도록 표시해둔다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Number -&gt; Number
+</span><span class="p">{:</span> <span class="c1">#number-number}
+# 고양이를 우측으로 1 픽셀 옮긴 좌표를 출력
+</span><span class="p">{:</span> <span class="c1">#고양이를-우측으로-1-픽셀-옮긴-좌표를-출력}
+# !!! or TODO:
+</span><span class="p">{:</span> <span class="c1">#or-todo}
+</span><span class="k">def</span> <span class="nf">advanceCat</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">return</span> <span class="mi">0</span>	
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-8ed15d80-60a7-4ce7-bd08-1fd6a025b64a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>구현 완료된 위시 리스트 항목
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 구현 완료된 위시 리스트 항목
+</span><span class="p">{:</span> <span class="c1">#구현-완료된-위시-리스트-항목}
+# CAT -&gt; CAT
+</span><span class="p">{:</span> <span class="c1">#cat-cat}
+# produce the next cat, by advancing it 1 pixel to right
+</span><span class="p">{:</span> <span class="c1">#produce-the-next-cat-by-advancing-it-1-pixel-to-right}
+# Tests:
+</span><span class="p">{:</span> <span class="c1">#tests}
+</span><span class="k">print</span><span class="p">(</span><span class="n">advanceCat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># def advanceCat(c): return 1 
+</span><span class="p">{:</span> <span class="c1">#def-advancecat-c-return-1}# stub
+</span>
+<span class="c1"># &lt;use template from Cat&gt;
+</span><span class="p">{:</span> <span class="c1">#use-template-from-cat}
+</span><span class="k">def</span> <span class="nf">advanceCat</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="c1"># CAT -&gt; Image
+</span><span class="p">{:</span> <span class="c1">#cat-image}
+# render the cat image at appropriate place on MTS
+</span><span class="p">{:</span> <span class="c1">#render-the-cat-image-at-appropriate-place-on-mts}
+</span><span class="k">print</span><span class="p">(</span><span class="n">render</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">==</span><span class="n">Image</span><span class="p">(</span><span class="s">"cat"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">CTR_Y</span><span class="p">,</span> <span class="n">MTS</span><span class="p">))</span>
+
+<span class="c1"># def render(c): return MTS 
+</span><span class="p">{:</span> <span class="c1">#def-render-c-return-mts}# stub
+# &lt;use template from Cat&gt;
+</span><span class="p">{:</span> <span class="c1">#use-template-from-cat}
+</span><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="s">"cat"</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">CTR_Y</span><span class="p">,</span> <span class="n">MTS</span><span class="p">)</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
 </body></html>
 </div>
 

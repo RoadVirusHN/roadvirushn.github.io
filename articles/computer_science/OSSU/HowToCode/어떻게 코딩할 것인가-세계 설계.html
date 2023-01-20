@@ -302,7 +302,7 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 10 
+            📄: 8 
             
           </span>
       </li>
@@ -545,7 +545,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#세계-설계-과정">세계 설계 과정</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#도메인-분석-단계">도메인 분석 단계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#프로그램-구현-단계">프로그램 구현 단계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#프로그램-수정">프로그램 수정</a><ul></ul></li></ul></li></ol>
 <h1 id="세계-설계">세계 설계</h1>
 
-<div class="callout callout-quote" id="callout-3322d07a-38d6-41b3-9051-442ca3c800d6">
+<div class="callout callout-quote" id="callout-17de335f-d1fb-4bd1-a670-cb386094224e">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>quote</strong></span>
@@ -618,221 +618,182 @@
   <li>템플릿을 이용해 디자인 과정을 여러 처리 과정으로 나누며 이러한 여러 처리 과정을 각 함수마다 실행하게 하여 큰 문제를 잘게 쪼갤 수 있게 한다.</li>
 </ul>
 
-<!-- #@#callout-example#@#세계 설계 템플릿#@#- -->
-<p>title: 세계 설계 템플릿</p>
-
-<p>추적성 : 도메인 분석 단계에서 분석했던 모델 정보가 반영되도록 템플릿을 설계하자.</p>
-<ul id="import-libraries">
-  <li>사람들이 사용하는 프로그램은 언제나 변화를 필요로 하므로 문서화와 좋은 추적성을 가진 코드가 중요</li>
-  <li>상수명 등을 일치시키자.<br>
-~~~python
-    <h1 id="import-libraries">import libraries</h1>
-  </li>
-</ul>
-
-<h1 id="My-world-program-make-this-more-specific">My world program  (make this more specific)</h1>
-<h1 id="">=================</h1>
-<h1 id="Constants">Constants:</h1>
-
-<h1 id="">=================</h1>
-<h1 id="Data-definitions">Data definitions:</h1>
-
-<h1 id="WS-is-…-give-WS-a-better-name">WS is … (give WS a better name)</h1>
-
-<h1 id="">=================</h1>
-<h1 id="Functions">Functions:</h1>
-
-<h1 id="WS-WS">WS -&gt; WS</h1>
-<h1 id="start-the-world-with-…">start the world with …</h1>
-<p># <br>
-def main(ws):<br>
-	return BigBang(<br>
-		ws, # ws<br>
-		onTick=tock, # WS -&gt; WS<br>
-		toDraw=render, # WS -&gt; Image<br>
-		# stopWhen=…, # WS -&gt; Boolean<br>
-		# onMouse=…, # WS Integer Integer MouseEvent -&gt; WS<br>
-		# onKey=… # WS KeyEvent -&gt; WS<br>
-	)</p>
-<h1 id="WS-WS">WS -&gt; WS</h1>
-<h1 id="produce-the-next-…">produce the next …</h1>
-<h1 id="">!!!</h1>
-<p>def tock(ws):<br>
-	#…<br>
-	pass</p>
-
-<h1 id="WS-Image">WS -&gt; Image</h1>
-<h1 id="render-…">render …</h1>
-<h1 id="">!!!</h1>
-<p>def render(ws)<br>
-	#…<br>
-	pass</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-&lt;!-- @#@-example@#@세계 설계 템플릿@#@ --&gt;
-
-
-&lt;!-- #@#callout-example#@#세계 설계 템플릿 예시#@#- --&gt;
-title: 세계 설계 템플릿 예시
-
-~~~python
-import Image
-import BigBang
-
-# 고양이가 스크린을 가로지르는 프로그램
-{: #고양이가-스크린을-가로지르는-프로그램}
-# - 추적성을 고려하여 도메인 분석 단계를 참조하여 작성하기
-{: #추적성을-고려하여-도메인-분석-단계를-참조하여-작성하기}
-# =================
-{: #}
-# Constants: 
-{: #constants}# 상수 정보 입력 단계
-WIDTH = 600
-HEIGHT = 400
-
-# 단일 지점 제어(single point of control)
-{: #단일-지점-제어-single-point-of-control}
-# ex) HEIGHT가 바뀌면 자동으로 CTR-Y도 바뀌게 HEIGHT를 이용해 상수 정의
-{: #ex-height가-바뀌면-자동으로-ctr-y도-바뀌게-height를-이용해-상수-정의}
-CTR_Y = HEIGHT/2 
-MTS = Image(WIDTH, HEIGHT)
-CAT = Image("Cat")
-# =================
-{: #}
-# Data definitions: 
-{: #data-definitions}# 데이터 정의 단계
-
-# Cat is Number
-{: #cat-is-number}
-# interp. x position of the cat in screen coordinates
-{: #interp-x-position-of-the-cat-in-screen-coordinates}
-C1 = 0 # left edge
-C2 = WIDTH/2 # middle
-C3 = WIDTH # right edge
-
-# Template
-{: #template}
-# def fnForCat(c):
-{: #def-fnforcat-c}
-# 	
-{: #	}# ...c
-# 	pass
-{: #	pass}
-
-# Template rules used:
-{: #template-rules-used}
-# - atomic non-distinct: Number
-{: #atomic-non-distinct-number}
-
-# =================
-{: #}
-# Functions: 
-{: #functions}# 함수 정의 단계
-
-# CAT -&gt; CAT
-{: #cat-cat}
-# start the world with (main 0)
-{: #start-the-world-with-main-0}
-# 
-def main(c):
-	return BigBang(
-		c, # ws
-		onTick=advanceCat, # CAT -&gt; CAT
-		toDraw=render # CAT -&gt; Image
-	)
-
-# 핸들러 함수 정의
-{: #핸들러-함수-정의}
-# CAT -&gt; CAT
-{: #cat-cat}
-# produce the next cat, by advancing it 1 pixel to right
-{: #produce-the-next-cat-by-advancing-it-1-pixel-to-right}
-# !!!
-{: #}
-def advanceCat(c):
-	return 0
-
-# CAT -&gt; Image
-{: #cat-image}
-# render the cat image at appropriate place on MTS
-{: #render-the-cat-image-at-appropriate-place-on-mts}
-# !!!
-{: #}
-def render(c):
-	return MTS
-# 위시리스트 구현은 아래 참조
-{: #위시리스트-구현은-아래-참조}
-</code></pre></div></div>
-
-<!-- @#@-example@#@세계 설계 템플릿 예시@#@ -->
-
-<div class="callout callout-seealso" id="callout-4c64ca6c-05c7-4e7d-99be-9d1bacbc93ec">
+<div class="callout callout-example" id="callout-639445f3-4f18-4a5e-ab56-f4b7d8eba101">
       <div class="header">
-        <span class="emoji">➕</span>
-        <span class="title"><strong>위시리스트 항목(wish-list entry)?
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>세계 설계 템플릿
 </strong></span>
-        <button class="collapse">🔼</button>
+        <button class="collapse">🔽</button>
       </div>
       <div class="card" name="card">
     
     <div class="content" name="content">
-<p><strong>시그니처, 목적, <code class="language-plaintext highlighter-rouge">!!!</code>와 스텁으로 이루어진 완성되지 못한 함수</strong></p>
+<p>추적성 : 도메인 분석 단계에서 분석했던 모델 정보가 반영되도록 템플릿을 설계하자.</p>
+<ul>
+  <li>사람들이 사용하는 프로그램은 언제나 변화를 필요로 하므로 문서화와 좋은 추적성을 가진 코드가 중요</li>
+  <li>상수명 등을 일치시키자.</li>
+</ul>
 
-<p>스텁과 다른 점은 처음에는 스텁처럼 생겼지만 언젠가는 추가로 테스트와 내부 로직을 제대로 구현한다는 점이다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import libraries
+</span><span class="p">{:</span> <span class="c1">#import-libraries}
+</span>
+<span class="c1"># My world program  (make this more specific)
+</span><span class="p">{:</span> <span class="c1">#my-world-program-make-this-more-specific}
+# =================
+</span><span class="p">{:</span> <span class="c1">#}
+# Constants:
+</span><span class="p">{:</span> <span class="c1">#constants}
+</span>
 
-<p><code class="language-plaintext highlighter-rouge">!!!</code>, <code class="language-plaintext highlighter-rouge">TODO:</code>등을 통해 나중에 꼭 구현하도록 표시해둔다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Number -&gt; Number
-</span><span class="p">{:</span> <span class="c1">#number-number}
-# 고양이를 우측으로 1 픽셀 옮긴 좌표를 출력
-</span><span class="p">{:</span> <span class="c1">#고양이를-우측으로-1-픽셀-옮긴-좌표를-출력}
+<span class="c1"># =================
+</span><span class="p">{:</span> <span class="c1">#}
+# Data definitions:
+</span><span class="p">{:</span> <span class="c1">#data-definitions}
+</span>
+<span class="c1"># WS is ... (give WS a better name)
+</span><span class="p">{:</span> <span class="c1">#ws-is-give-ws-a-better-name}
+</span>
+
+<span class="c1"># =================
+</span><span class="p">{:</span> <span class="c1">#}
+# Functions:
+</span><span class="p">{:</span> <span class="c1">#functions}
+</span>
+<span class="c1"># WS -&gt; WS
+</span><span class="p">{:</span> <span class="c1">#ws-ws}
+# start the world with ...
+</span><span class="p">{:</span> <span class="c1">#start-the-world-with}
+# 
+</span><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">ws</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">BigBang</span><span class="p">(</span>
+		<span class="n">ws</span><span class="p">,</span> <span class="c1"># ws
+</span>		<span class="n">onTick</span><span class="o">=</span><span class="n">tock</span><span class="p">,</span> <span class="c1"># WS -&gt; WS
+</span>		<span class="n">toDraw</span><span class="o">=</span><span class="n">render</span><span class="p">,</span> <span class="c1"># WS -&gt; Image
+</span>		<span class="c1"># stopWhen=..., # WS -&gt; Boolean
+</span>		<span class="c1"># onMouse=..., # WS Integer Integer MouseEvent -&gt; WS
+</span>		<span class="c1"># onKey=... # WS KeyEvent -&gt; WS
+</span>	<span class="p">)</span>
+<span class="c1"># WS -&gt; WS
+</span><span class="p">{:</span> <span class="c1">#ws-ws}
+# produce the next ...
+</span><span class="p">{:</span> <span class="c1">#produce-the-next}
 # !!!
 </span><span class="p">{:</span> <span class="c1">#}
-</span><span class="k">def</span> <span class="nf">advanceCat</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
-	<span class="k">return</span> <span class="mi">0</span>	
+</span><span class="k">def</span> <span class="nf">tock</span><span class="p">(</span><span class="n">ws</span><span class="p">):</span>
+	<span class="c1">#...
+</span>	<span class="k">pass</span>
+
+<span class="c1"># WS -&gt; Image
+</span><span class="p">{:</span> <span class="c1">#ws-image}
+# render ... 
+</span><span class="p">{:</span> <span class="c1">#render}
+# !!!
+</span><span class="p">{:</span> <span class="c1">#}
+</span><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
+	<span class="c1">#...
+</span>	<span class="k">pass</span>
 </code></pre></div></div>
 
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-8f068bb8-c7c8-4164-b652-8799c4e5ba2f">
+<div class="callout callout-example" id="callout-dd95429e-f630-49fe-a2ce-13c88232f569">
       <div class="header">
         <span class="emoji">🧾️</span>
-        <span class="title"><strong>구현 완료된 위시 리스트 항목
+        <span class="title"><strong>세계 설계 템플릿 예시
 </strong></span>
-        <button class="collapse">🔼</button>
+        <button class="collapse">🔽</button>
       </div>
       <div class="card" name="card">
     
     <div class="content" name="content">
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 구현 완료된 위시 리스트 항목
-</span><span class="p">{:</span> <span class="c1">#구현-완료된-위시-리스트-항목}
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">Image</span>
+<span class="kn">import</span> <span class="nn">BigBang</span>
+
+<span class="c1"># 고양이가 스크린을 가로지르는 프로그램
+</span><span class="p">{:</span> <span class="c1">#고양이가-스크린을-가로지르는-프로그램}
+# - 추적성을 고려하여 도메인 분석 단계를 참조하여 작성하기
+</span><span class="p">{:</span> <span class="c1">#추적성을-고려하여-도메인-분석-단계를-참조하여-작성하기}
+# =================
+</span><span class="p">{:</span> <span class="c1">#}
+# Constants: 
+</span><span class="p">{:</span> <span class="c1">#constants}# 상수 정보 입력 단계
+</span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">400</span>
+
+<span class="c1"># 단일 지점 제어(single point of control)
+</span><span class="p">{:</span> <span class="c1">#단일-지점-제어-single-point-of-control}
+# ex) HEIGHT가 바뀌면 자동으로 CTR-Y도 바뀌게 HEIGHT를 이용해 상수 정의
+</span><span class="p">{:</span> <span class="c1">#ex-height가-바뀌면-자동으로-ctr-y도-바뀌게-height를-이용해-상수-정의}
+</span><span class="n">CTR_Y</span> <span class="o">=</span> <span class="n">HEIGHT</span><span class="o">/</span><span class="mi">2</span> 
+<span class="n">MTS</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
+<span class="n">CAT</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s">"Cat"</span><span class="p">)</span>
+<span class="c1"># =================
+</span><span class="p">{:</span> <span class="c1">#}
+# Data definitions: 
+</span><span class="p">{:</span> <span class="c1">#data-definitions}# 데이터 정의 단계
+</span>
+<span class="c1"># Cat is Number
+</span><span class="p">{:</span> <span class="c1">#cat-is-number}
+# interp. x position of the cat in screen coordinates
+</span><span class="p">{:</span> <span class="c1">#interp-x-position-of-the-cat-in-screen-coordinates}
+</span><span class="n">C1</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># left edge
+</span><span class="n">C2</span> <span class="o">=</span> <span class="n">WIDTH</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># middle
+</span><span class="n">C3</span> <span class="o">=</span> <span class="n">WIDTH</span> <span class="c1"># right edge
+</span>
+<span class="c1"># Template
+</span><span class="p">{:</span> <span class="c1">#template}
+# def fnForCat(c):
+</span><span class="p">{:</span> <span class="c1">#def-fnforcat-c}
+# 	
+</span><span class="p">{:</span> <span class="c1">#	}# ...c
+# 	pass
+</span><span class="p">{:</span> <span class="c1">#	pass}
+</span>
+<span class="c1"># Template rules used:
+</span><span class="p">{:</span> <span class="c1">#template-rules-used}
+# - atomic non-distinct: Number
+</span><span class="p">{:</span> <span class="c1">#atomic-non-distinct-number}
+</span>
+<span class="c1"># =================
+</span><span class="p">{:</span> <span class="c1">#}
+# Functions: 
+</span><span class="p">{:</span> <span class="c1">#functions}# 함수 정의 단계
+</span>
+<span class="c1"># CAT -&gt; CAT
+</span><span class="p">{:</span> <span class="c1">#cat-cat}
+# start the world with (main 0)
+</span><span class="p">{:</span> <span class="c1">#start-the-world-with-main-0}
+# 
+</span><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">BigBang</span><span class="p">(</span>
+		<span class="n">c</span><span class="p">,</span> <span class="c1"># ws
+</span>		<span class="n">onTick</span><span class="o">=</span><span class="n">advanceCat</span><span class="p">,</span> <span class="c1"># CAT -&gt; CAT
+</span>		<span class="n">toDraw</span><span class="o">=</span><span class="n">render</span> <span class="c1"># CAT -&gt; Image
+</span>	<span class="p">)</span>
+
+<span class="c1"># 핸들러 함수 정의
+</span><span class="p">{:</span> <span class="c1">#핸들러-함수-정의}
 # CAT -&gt; CAT
 </span><span class="p">{:</span> <span class="c1">#cat-cat}
 # produce the next cat, by advancing it 1 pixel to right
 </span><span class="p">{:</span> <span class="c1">#produce-the-next-cat-by-advancing-it-1-pixel-to-right}
-</span><span class="k">print</span><span class="p">(</span><span class="n">advanceCat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="c1"># def advanceCat(c): return c+1 
-</span><span class="p">{:</span> <span class="c1">#def-advancecat-c-return-c-1}# stub
-</span>
-<span class="c1"># &lt;use template from Cat&gt;
-</span><span class="p">{:</span> <span class="c1">#use-template-from-cat}
-</span>
-<span class="k">def</span> <span class="nf">advanceCat</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
-	<span class="k">return</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span>
+# !!!
+</span><span class="p">{:</span> <span class="c1">#}
+</span><span class="k">def</span> <span class="nf">advanceCat</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">return</span> <span class="mi">0</span>
 
 <span class="c1"># CAT -&gt; Image
 </span><span class="p">{:</span> <span class="c1">#cat-image}
 # render the cat image at appropriate place on MTS
 </span><span class="p">{:</span> <span class="c1">#render-the-cat-image-at-appropriate-place-on-mts}
-</span><span class="k">print</span><span class="p">(</span><span class="n">render</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">==</span><span class="n">Image</span><span class="p">(</span><span class="s">"cat"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">CTR_Y</span><span class="p">,</span> <span class="n">MTS</span><span class="p">))</span>
-
-<span class="c1"># def render(c): return MTS 
-</span><span class="p">{:</span> <span class="c1">#def-render-c-return-mts}# stub
-# &lt;use template from Cat&gt;
-</span><span class="p">{:</span> <span class="c1">#use-template-from-cat}
+# !!!
+</span><span class="p">{:</span> <span class="c1">#}
 </span><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
-	<span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="s">"cat"</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">CTR_Y</span><span class="p">,</span> <span class="n">MTS</span><span class="p">)</span>
-</code></pre></div></div>
+	<span class="k">return</span> <span class="n">MTS</span>
+<span class="c1"># 위시리스트 구현은 아래 참조
+</span><span class="p">{:</span> <span class="c1">#위시리스트-구현은-아래-참조}
+</span></code></pre></div></div>
 
 </div>
     </div>

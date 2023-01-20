@@ -302,7 +302,7 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 10 
+            📄: 8 
             
           </span>
       </li>
@@ -545,7 +545,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#Autowired">@Autowired</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#Qualifier">@Qualifier</a><ul></ul></li></ol>
 <h1 id="Spring5-입문-의존-자동-주입">Spring5 입문-의존 자동 주입</h1>
 
-<div class="callout callout-quote" id="callout-0e0c2fea-42c1-4cf1-b7bc-09ec51635dca">
+<div class="callout callout-quote" id="callout-9562521d-11e1-4c42-8448-4aec7e83a8ec">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -578,7 +578,7 @@
   <li>만약, <code class="language-plaintext highlighter-rouge">@Autowired</code>와 수동 할당을 동시에 사용하면 <code class="language-plaintext highlighter-rouge">@Autowired</code>가 우선으로 덮어씌운다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-e7510745-4b6b-4da3-beac-ff6ae12aff86">
+<div class="callout callout-example" id="callout-2cf12dfb-af70-4ffa-bb0d-0b9f84c3bd79">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Autowired</code>의 사용례
@@ -605,7 +605,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-67fdba93-5463-4c99-9e82-82b5862c1ef1">
+<div class="callout callout-example" id="callout-a270da2c-0f4c-49f2-891d-fa275382e26d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Autowired</code>의 다른 사용례
@@ -645,7 +645,7 @@
     </div>
 <p>일치하는 클래스의 빈 객체가 설정 클래스 내에 없으면 오류가 난다. 만약 의도적으로 빈 객체를 지정하지 않아도 되게 만드려면 다음과 같이 3개의 방법이 있다.</p>
 
-<div class="callout callout-example" id="callout-52370601-312b-4d90-8917-ad71755bc862">
+<div class="callout callout-example" id="callout-e2bd4860-8997-41a3-9873-af035341a6c0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Nullable 빈 객체가 필요한 경우 예시
@@ -673,7 +673,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-98d366f1-a04a-497d-accf-d5f16a505b34">
+<div class="callout callout-example" id="callout-809c3b61-2106-4c7f-9190-83f14f948cf8">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Autowired(required=false)</code> 방법
@@ -701,7 +701,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-4f1a5f14-75db-4fcf-a01a-d223b3db4375">
+<div class="callout callout-example" id="callout-5af4332a-96fb-44e0-b695-d982975d7b6b">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong> Java8 이상에서<code class="language-plaintext highlighter-rouge">Optional</code> 방법
@@ -728,7 +728,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-7dc642fd-b52e-445d-84de-4eb70a3b4768">
+<div class="callout callout-example" id="callout-e45684a9-24e5-45b3-810e-7109a681d189">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Nullable</code> 방법
@@ -760,7 +760,7 @@
 <h2 id="Qualifier">@Qualifier</h2>
 <p>동일 클래스 혹은 자식 클래스 등 할당 가능한 여러 빈 객체 중 자동 주입 대상 빈을 한정하는데 사용하는 어노테이션</p>
 
-<div class="callout callout-example" id="callout-2193cc3c-c239-43f7-b7e5-ac88e16356cb">
+<div class="callout callout-example" id="callout-261e0230-0c6f-42c4-ba12-afe6d25c6e54">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Qualifier</code> 사용법 1:  <code class="language-plaintext highlighter-rouge">@Bean</code>에서 명칭 설정
@@ -786,7 +786,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-b878ddcc-13c7-4c47-9ce3-cb2b5044c635">
+<div class="callout callout-example" id="callout-8b78404a-11dc-4bfe-b8fa-1d98c979b8a3">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Qualifier</code> 사용법 2: <code class="language-plaintext highlighter-rouge">@Autowired</code>에서 명칭으로 지정

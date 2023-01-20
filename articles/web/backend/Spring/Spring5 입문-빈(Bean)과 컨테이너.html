@@ -302,7 +302,7 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 10 
+            📄: 8 
             
           </span>
       </li>
@@ -542,10 +542,10 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#컨테이너">컨테이너</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#빈-Bean">빈(Bean)</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#빈-등록-방법">빈 등록 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#빈-생성-및-검색-방법">빈 생성 및 검색 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#빈-객체의-라이프-사이클">빈 객체의 라이프 사이클</a><ul></ul></li></ul></li></ol>
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#컨테이너">컨테이너</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#빈-Bean">빈(Bean)</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#빈-등록-방법">빈 등록 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#빈-생성-및-검색-방법">빈 생성 및 검색 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#빈-객체의-라이프-사이클">빈 객체의 라이프 사이클</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-5" href="#의존-자동-주입을-통한-의존-설정">의존 자동 주입을 통한 의존 설정</a><ul></ul></li></ol>
 <h1 id="빈-Bean-과-컨테이너">빈(Bean)과 컨테이너</h1>
 
-<div class="callout callout-quote" id="callout-19c9c8e6-6593-444a-8a93-8c35a3ef9bc4">
+<div class="callout callout-quote" id="callout-a2f2bf01-553b-43a8-a6b2-0613c7aabc61">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -571,7 +571,7 @@
 
 <p><strong>객체 컨테이너</strong> : 스프링에서 빈(Bean) 객체의 생성, 초기화, 보관, 제거 등을 관리하는 <code class="language-plaintext highlighter-rouge">ApplicationContext</code> 인터페이스를 구현한 객체.</p>
 
-<div class="callout callout-info" id="callout-5a032ba6-7653-47ca-81c2-8c2d7ada0fac">
+<div class="callout callout-info" id="callout-a6c22a72-7043-42c2-94d9-2f3eb2e372b8">
       <div class="header">
         <span class="emoji">ℹ️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">ApplicationContext</code> 인터페이스 클래스 그래프
@@ -593,7 +593,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-b6bd0736-27e8-4ce6-9baf-2b11bd0eada5">
+<div class="callout callout-example" id="callout-982df0e0-0e50-409d-a745-d55ad25fc80d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>스프링 컨테이너 선언
@@ -630,7 +630,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-a929a5e9-d29b-4450-8e32-9913457cde14">
+<div class="callout callout-example" id="callout-4c271fd7-261d-471a-b367-b6093a29c70f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>설정 클래스 내부에서 빈 객체를 생성하는 메서드 선언
@@ -677,7 +677,7 @@
     </span> 참조</li>
 </ul>
 
-<div class="callout callout-example" id="callout-6d6ab3a1-6ba4-4482-99d3-ff7c5010001a">
+<div class="callout callout-example" id="callout-64260fc4-0b49-4fea-bc5b-522aed11bd5c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">.getBean()</code> 메서드
@@ -713,59 +713,84 @@
   </li>
 </ul>
 
-<!-- #@#callout-example#@#빈 객체의 Scope 설정#@# -->
-<p>title: 빈 객체의 Scope 설정</p>
-
+<div class="callout callout-example" id="callout-dcea7bf7-a683-46eb-a62b-337b3232f30f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>빈 객체의 Scope 설정
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
 <p>아래와 같이 <code class="language-plaintext highlighter-rouge">@Scope</code>를 통해 <code class="language-plaintext highlighter-rouge">prototype</code> 범위의 빈을 지정해 빈 객체를 구할 때마다 새로운 객체를 생성하게 할 수 있다.</p>
 
 <ul>
-  <li>단, prototype 빈은 <strong>컨테이너 종료 시에도 소멸 메서드를 실행하지 않고, 직접 소멸하고 소멸 관련 메서드를 구현</strong>해야 한다.<br>
-~~~java<br>
-import org.springframework.context.annotation.Scope;</li>
+  <li>단, prototype 빈은 <strong>컨테이너 종료 시에도 소멸 메서드를 실행하지 않고, 직접 소멸하고 소멸 관련 메서드를 구현</strong>해야 한다.</li>
 </ul>
 
-<p>@Bean<br>
-@Scope(“prototype”) // 명시하지 않거나 @Scope(“singleton”) 일 경우 오직 하나만 생성<br>
-public Client client() {<br>
-&nbsp; &nbsp; Client client = new Client();<br>
-&nbsp; &nbsp; client.setHost(“host”);<br>
-&nbsp; &nbsp; return client;<br>
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-&lt;!-- @#@-example@#@빈 객체의 Scope 설정@#@ --&gt;
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Scope</span><span class="o">;</span>
 
----
-- **의존 주입**
-	- 의존 자동 주입을 통한 의존 설정
----
-- **초기화**
-	- 구현한 초기화 메서드 실행
-
-&lt;!-- #@#callout-example#@#초기화 메서드 구현 예제#@# --&gt;
-title: 초기화 메서드 구현 예제
-
-`InitializingBean` 인터페이스의 `afterPropertieSet` 메서드를 구현하면 실행되며, 주로 DB 커넥션 풀 연결 생성, 채팅 클라이언트 시작 등에 사용
-
-**수동으로 설정 클래스 빈 생성 메서드 내에서 부를 수 있으나, 그 경우 2번 실행되게 된다.**
-~~~java
-import org.springframework.beans.factory.InitializingBean;
-public class Client implements InitializingBean {
-&nbsp; &nbsp; @Override
-&nbsp; &nbsp; public void afterPropertiesSet() throws Exception {
-&nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Client.afterPropertiesSet() 실행");
-&nbsp; &nbsp; }
-
-	public void connect() {
-		System.out.println("Client.connect() 실행");
-	}
-}
+<span class="nd">@Bean</span>
+<span class="nd">@Scope</span><span class="o">(</span><span class="s">"prototype"</span><span class="o">)</span> <span class="c1">// 명시하지 않거나 @Scope("singleton") 일 경우 오직 하나만 생성</span>
+<span class="kd">public</span> <span class="nc">Client</span> <span class="nf">client</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Client</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">client</span><span class="o">.</span><span class="na">setHost</span><span class="o">(</span><span class="s">"host"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">client</span><span class="o">;</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
-<!-- @#@-example@#@초기화 메서드 구현 예제@#@ -->
+</div>
+    </div>
+    </div>
+<hr>
+<ul>
+  <li><strong>의존 주입</strong>
+    <ul>
+      <li>
+        <h2 id="의존-자동-주입을-통한-의존-설정">의존 자동 주입을 통한 의존 설정</h2>
+      </li>
+    </ul>
+  </li>
+  <li><strong>초기화</strong>
+    <ul>
+      <li>구현한 초기화 메서드 실행</li>
+    </ul>
+  </li>
+</ul>
 
+<div class="callout callout-example" id="callout-49b109d9-061b-4397-9cf4-e24a2406fa2c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>초기화 메서드 구현 예제
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">InitializingBean</code> 인터페이스의 <code class="language-plaintext highlighter-rouge">afterPropertieSet</code> 메서드를 구현하면 실행되며, 주로 DB 커넥션 풀 연결 생성, 채팅 클라이언트 시작 등에 사용</p>
+
+<p><strong>수동으로 설정 클래스 빈 생성 메서드 내에서 부를 수 있으나, 그 경우 2번 실행되게 된다.</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.springframework.beans.factory.InitializingBean</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client</span> <span class="kd">implements</span> <span class="nc">InitializingBean</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterPropertiesSet</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Client.afterPropertiesSet() 실행"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">connect</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Client.connect() 실행"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
 <p>만약, 변경 불가능한 외부 모듈 클래스, 아니면 모종의 이유로 인터페이스를 사용하고 싶지 않으면 다음과 같이 <code class="language-plaintext highlighter-rouge">@Bean</code> 어노테이션의 속성을 사용하면 된다.</p>
 
-<div class="callout callout-example" id="callout-84589b75-60f2-4d88-a879-c6fb8ee3b0a9">
+<div class="callout callout-example" id="callout-1adc01c2-ea48-4dac-86ab-623b98cdc952">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Bean</code> 속성을 이용한 초기화 메서드 구현
@@ -795,7 +820,7 @@ public class Client implements InitializingBean {
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-5a05307a-65a1-48e1-ad35-9b1f0b84cbb8">
+<div class="callout callout-example" id="callout-5dcfd5b2-8709-48d1-a929-9581aa4adc41">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>소멸 메서드 구현 예제
@@ -824,7 +849,7 @@ public class Client implements InitializingBean {
     </div>
 <p>마찬가지로, 변경 불가능한 외부 모듈 클래스, 모종의 이유로 인터페이스를 사용하고 싶지 않으면 다음과 같이 <code class="language-plaintext highlighter-rouge">@Bean</code> 어노테이션의 속성을 사용하면 된다.</p>
 
-<div class="callout callout-example" id="callout-5dd76ed9-7350-4961-98fd-0769a24fd754">
+<div class="callout callout-example" id="callout-3ffaad9e-f5a4-493c-9d91-8029c9d4ff6f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Bean</code> 속성을 이용한 소멸 메서드 구현

@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spring5 입문-MVC 개념과 설정 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Spring5 입문-MVC 개념과 설정" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-MVC%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EC%84%A4%EC%A0%95.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-MVC%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EC%84%A4%EC%A0%95.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-20T09:15:29+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spring5 입문-MVC 개념과 설정" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-20T09:15:29+09:00","datePublished":"2023-01-20T09:15:29+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"Spring5 입문-MVC 개념과 설정","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-MVC%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EC%84%A4%EC%A0%95.html"},"url":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-MVC%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EC%84%A4%EC%A0%95.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 6
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Spring5 입문-MVC 개념과 설정</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-01-20T09:15:29+09:00" itemprop="datePublished">Jan 20, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#MVC-프로젝트-생성">MVC 프로젝트 생성</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#MVC-패턴">MVC 패턴</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#요청-과정-예시">요청 과정 예시</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#기본-핸들러와-HandlerMapping-우선-순위">기본 핸들러와 HandlerMapping 우선 순위</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#MVC-설정-클래스">MVC 설정 클래스</a><ul></ul></li></ol>
+<h1 id="Spring5-입문-MVC-개념과-설정">Spring5 입문-MVC 개념과 설정</h1>
+
+<div class="callout callout-quote" id="callout-0e0cf8c3-6b67-4535-aad8-40edf3f50814">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>_<span class='link-warning'>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.kame.co.kr/nkm/det..."</em>로
+        <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
+      </span>
+    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<h2 id="MVC-프로젝트-생성">MVC 프로젝트 생성</h2>
+
+<p>스프링 MVC 프레임워크를 이용하기 위해서는 기존 프로젝트 생성에서 다음과 같은 점이 다르다.</p>
+<ul>
+  <li><strong>파일 구조</strong> : <code class="language-plaintext highlighter-rouge">/webapp/</code> 폴더 내부에 HTML, CSS, JS, JSP 등 웹 앱을 위한 코드가 위치하게 된다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">src/main/webapp/WEB-INF</code> 폴더 생성 :  원래 서블릿에서 필요한 라이브러리와 모듈이 위치하지만 의존 관리 툴을 이용한다면 자동으로 빌드시 처리해준다.</li>
+      <li><code class="language-plaintext highlighter-rouge">src/main/webapp/WEB-INF/view</code> 폴더 : 내부에 페이지 뷰 부분을 생성할 <code class="language-plaintext highlighter-rouge">.jsp</code> 파일들이 위치하게 된다.</li>
+      <li><code class="language-plaintext highlighter-rouge">src/main/webapp/WEB-INF/web.xml</code> 파일 : 웹 요청 처리를 위한 서블릿 설정 아래 참조</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-d2a73e14-7966-4365-a8a4-0eaeda60c8f3">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">web.xml</code> 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>사용할 서블릿 클랫, 설정 클래스 위치, 인코딩 설정 및 초기값 설정 등에 사용됨.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="c">&lt;!-- 웹 요청 처리를 하는 servelet 등록 --&gt;</span>
+<span class="nt">&lt;web-app</span> <span class="na">xmlns=</span><span class="s">"http://xmlns.jcp.org/xml/ns/javaee"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://xmlns.jcp.org/xml/ns/javaee
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">version=</span><span class="s">"3.1"</span><span class="nt">&gt;</span>
+  
+&nbsp; &nbsp; <span class="nt">&lt;servlet&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;servlet-name&gt;</span>dispatcher<span class="nt">&lt;/servlet-name&gt;</span> <span class="c">&lt;!--dispatcher명 등록--&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;servlet-class&gt;</span><span class="c">&lt;!--DispatcherServlet 등록--&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; org.springframework.web.servlet.DispatcherServlet
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/servlet-class&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;init-param&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;param-name&gt;</span>contextClass<span class="nt">&lt;/param-name&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;param-value&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/param-value&gt;</span><span class="c">&lt;!--설정을 자바 클래스를 통해 함을 의미--&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/init-param&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;init-param&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;param-name&gt;</span>contextConfigLocation<span class="nt">&lt;/param-name&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;param-value&gt;</span><span class="c">&lt;!--스프링 컨테이너 초기화에 이용할 설정 파일 정해주기--&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; config.MvcConfig
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; config.ControllerConfig
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/param-value&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/init-param&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;load-on-startup&gt;</span>1<span class="nt">&lt;/load-on-startup&gt;</span> <span class="c">&lt;!--톰켓 컨테이너 구동 시 이 서블릿 함께 시작 true--&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;/servlet&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;servlet-mapping&gt;</span><span class="c">&lt;!--모든 요청을 기본적으로 이 서블릿이 처리하도록 매핑("/")--&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;servlet-name&gt;</span>dispatcher<span class="nt">&lt;/servlet-name&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;url-pattern&gt;</span>/<span class="nt">&lt;/url-pattern&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;/servlet-mapping&gt;</span>
+  &nbsp; &nbsp; <span class="nt">&lt;filter&gt;</span><span class="c">&lt;!--인코딩 설정--&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;filter-name&gt;</span>encodingFilter<span class="nt">&lt;/filter-name&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;filter-class&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; org.springframework.web.filter.CharacterEncodingFilter
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/filter-class&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;init-param&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;param-name&gt;</span>encoding<span class="nt">&lt;/param-name&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;param-value&gt;</span>UTF-8<span class="nt">&lt;/param-value&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/init-param&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;/filter&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;filter-mapping&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;filter-name&gt;</span>encodingFilter<span class="nt">&lt;/filter-name&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;url-pattern&gt;</span>/*<span class="nt">&lt;/url-pattern&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;/filter-mapping&gt;</span>
+<span class="nt">&lt;/web-app&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><strong>의존 관리 툴 설정 및 의존 모듈</strong>(<code class="language-plaintext highlighter-rouge">pom.xml || build.gradle</code>)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">war</code> 패키지 사용 설정 : 서블릿/JSP를 이용한 웹 어플리케이션 개발 시 필요한 패키징 형식</li>
+      <li><code class="language-plaintext highlighter-rouge">javax.servlet-api</code> 혹은 <code class="language-plaintext highlighter-rouge">jakarta.servlet-api</code> : 서블릿을 이용하기 위한 모듈, 톰캣 버전에 따라 택일
+        <ul>
+          <li>서블릿? : 웹 서버 내부에 요청을 받고 동적으로 응답해주는 자바 컴포넌트</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">javax.servlet.jsp-api</code> :  jsp를 사용하기 위한 모듈
+        <ul>
+          <li>JSP? : HTML 코드 내부에 자바 코드를 이용해 동적 웹 페이지를 생성하는 웹 앱 도구</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">jstl</code> : JSP 내부의 탬플릿 언어를 더 읽기 쉬운 JSTL로 바꿈</li>
+      <li><code class="language-plaintext highlighter-rouge">spring-webmvc</code> : MVC 프레임워크 웹 개발을 위한 모듈</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-c3b4438f-a600-4c2e-9dff-9f3684b39ada">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">pom.xml</code> 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0
+&nbsp; &nbsp; &nbsp; &nbsp; http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;groupId&gt;</span>sp5<span class="nt">&lt;/groupId&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;artifactId&gt;</span>sp5-chap09<span class="nt">&lt;/artifactId&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;packaging&gt;</span>war<span class="nt">&lt;/packaging&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;dependencies&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;dependency&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;groupId&gt;</span>javax.servlet<span class="nt">&lt;/groupId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;artifactId&gt;</span>javax.servlet-api<span class="nt">&lt;/artifactId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;version&gt;</span>3.1.0<span class="nt">&lt;/version&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/dependency&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;dependency&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;groupId&gt;</span>javax.servlet.jsp<span class="nt">&lt;/groupId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;artifactId&gt;</span>javax.servlet.jsp-api<span class="nt">&lt;/artifactId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;version&gt;</span>2.3.2-b02<span class="nt">&lt;/version&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/dependency&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;dependency&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;groupId&gt;</span>javax.servlet<span class="nt">&lt;/groupId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;artifactId&gt;</span>jstl<span class="nt">&lt;/artifactId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;version&gt;</span>1.2<span class="nt">&lt;/version&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/dependency&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;dependency&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;groupId&gt;</span>org.springframework<span class="nt">&lt;/groupId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;artifactId&gt;</span>spring-webmvc<span class="nt">&lt;/artifactId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;version&gt;</span>5.0.2.RELEASE<span class="nt">&lt;/version&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/dependency&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;/dependencies&gt;</span>
+
+&nbsp; &nbsp; <span class="nt">&lt;build&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;plugins&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;plugin&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;version&gt;</span>3.7.0<span class="nt">&lt;/version&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;configuration&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;source&gt;</span>1.8<span class="nt">&lt;/source&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;target&gt;</span>1.8<span class="nt">&lt;/target&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;encoding&gt;</span>utf-8<span class="nt">&lt;/encoding&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/configuration&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/plugin&gt;</span>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="nt">&lt;/plugins&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;/build&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-2a32f3a5-ea28-4750-9518-0f98dd6b0ea5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">build.gradle</code> 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'java'</span>
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'war'</span>
+<span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="mf">17.0</span> <span class="c1">// 현재 프로젝트 자바 버전</span>
+<span class="n">targetCompatibility</span> <span class="o">=</span> <span class="mf">17.0</span> <span class="c1">// 디플로이 시 자바 버전</span>
+<span class="n">compileJava</span><span class="o">.</span><span class="na">options</span><span class="o">.</span><span class="na">encoding</span> <span class="o">=</span> <span class="s2">"UTF-8"</span>
+<span class="k">repositories</span> <span class="o">{</span>
+	<span class="n">mavenCentral</span><span class="o">()</span>
+<span class="o">}</span>
+<span class="k">dependencies</span> <span class="o">{</span>
+	<span class="n">providedCompile</span> <span class="s1">'jakarta.servlet:jakarta.servlet-api:6.0.0'</span>
+	<span class="c1">// providedCompile 'javax.servlet:javax.servlet-api:3.1.0'</span>
+	<span class="n">providedRuntime</span> <span class="s1">'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'</span>
+	<span class="n">implementation</span> <span class="s1">'javax.servlet:jstl:1.2'</span>
+	<span class="n">implementation</span> <span class="s1">'org.springframework:spring-webmvc:6.0.4'</span>
+<span class="o">}</span>
+<span class="n">wrapper</span> <span class="o">{</span>
+	<span class="n">gradleVersion</span> <span class="o">=</span> <span class="s1">'7.6'</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><strong>이클립스 톰캣 설정</strong>
+    <ul>
+      <li><span class='link-warning'>
+      <a href="https://tomcat.apache.org/" class="wikilink externallink">tomcat</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://tomcat.apache.org/"</em>로
+        <button onclick="window.open('https://tomcat.apache.org/','_blank'); return false;">이동</button>?
+      </span>
+    </span> 웹서버 설치 및 이클립스 적용
+        <ul>
+          <li>책에서는 8.0~9.0 버전을 추천하고 8.5 버전을 이용했지만, 난 10.0 버전을 사용함</li>
+          <li><code class="language-plaintext highlighter-rouge">Window-&gt;Preferences-&gt;Server-&gt;Runtime Environment</code> 에서 <code class="language-plaintext highlighter-rouge">Add</code> 버튼으로 <code class="language-plaintext highlighter-rouge">Apache tomcat</code>의 설치 폴더를 지정해주면 된다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="MVC-패턴">MVC 패턴</h2>
+<p>MVC(Model-View-Controller) 패턴은 <strong>요청에 따라 컨트롤러가 사용자가 보는 뷰와 데이터가 담긴 모델을 조작하여 웹 서비스를 구성하는 방법</strong>이다.</p>
+
+<p>스프링의 MVC 패턴은 아래 그림과 구성 요소로 이루어진다.</p>
+
+<div class="callout callout-note" id="callout-0489ebe7-6df1-48ef-9525-93d5ee72a54b">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>스프링의 MVC 패턴
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>검정색은 필수적으로 개발자가 구현해야 하는 컴포넌트, 나머지는 선택적으로 구현할 수 있는 컴포넌트이다.<br>
+<code class="language-plaintext highlighter-rouge">&lt;&lt;spring bean&gt;&gt;</code>은 빈 객체로 생성되는 컴포넌트이다.<br>
+<img src="/assets/img/Spring5 입문-MVC 개념과 설정/image-20230120153554064.png" alt="500"></p>
+
+</div>
+    </div>
+    </div>
+<p><code class="language-plaintext highlighter-rouge">DispatcherServlet</code> 을 중심으로 <code class="language-plaintext highlighter-rouge">HandlerMapping, HandlerAdapter, 컨트롤러, ViewResolver, View, JSP</code>가 각자 역할을 수행해서 클라이언트 요청을 처리하는 구조이다.</p>
+<h3 id="요청-과정-예시">요청 과정 예시</h3>
+
+<p><strong>1. 요청 전송 과정</strong><br>
+클라이언트 브라우저 측에서 서버 측에 <code class="language-plaintext highlighter-rouge">/프로젝트명/hello?name=rv</code> URL로 <code class="language-plaintext highlighter-rouge">Get</code> 요청을 보내는 것을 가정하겠다.<br>
+이를 앞선 <code class="language-plaintext highlighter-rouge">web.xml</code> 설정에 따라 생성된 <code class="language-plaintext highlighter-rouge">DispatcherServlet</code>가 받아들인다.</p>
+
+<div class="callout callout-note" id="callout-1466356b-c285-4d86-9349-129221f9549e">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">DispatcherServlet</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li>위 그림의 중앙에 위치한 <code class="language-plaintext highlighter-rouge">DispatcherServlet</code>은 MVC 구성요소의 핵심 요소로, <strong>다른 컴포넌트 간의 요청을 받아 넘겨주는 중앙 창구 역할</strong>을 한다.</li>
+  <li>추가로, <code class="language-plaintext highlighter-rouge">DispatcherServlet</code>은 <strong>스프링 컨테이너를 생성</strong>하고, 해당 스프링 컨테이너는 <code class="language-plaintext highlighter-rouge">web.xml</code> 설정에 따른 <code class="language-plaintext highlighter-rouge">HandlerMapping</code>, <code class="language-plaintext highlighter-rouge">HandlerAdapter</code>, 컨트롤러 빈, <code class="language-plaintext highlighter-rouge">ViewResolver</code> 빈 객체를 생성한다.</li>
+</ul>
+
+<p>앞으로도 자주 나올 것이다.</p>
+
+</div>
+    </div>
+    </div>
+<p><strong>2. 요청 URL과 매칭되는 컨트롤러 검색</strong><br>
+<code class="language-plaintext highlighter-rouge">DispatcherServlet</code>는 해당 요청을 처리하는 컨트롤러를 직접 구하지 않고, <code class="language-plaintext highlighter-rouge">HandlerMapping</code> 이라는 빈 객체에게 컨트롤러를 알아오도록 시킨다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">HandlerMapping</code>은 <code class="language-plaintext highlighter-rouge">/hello</code> 경로로 등록된 컨트롤러 빈을 알아와 <code class="language-plaintext highlighter-rouge">DispatcherServlet</code>에게 리턴한다.</p>
+<ul>
+  <li>등록되지 않은 경로의 처리는 <span class="preview-wrapper">
+      <a href="#기본-핸들러와-handlermapping-우선-순위" class="wikilink">기본 핸들러와 HandlerMapping 우선 순위</a>
+      <iframe class="preview" src='' data-href="#기본-핸들러와-handlermapping-우선-순위" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 참조</li>
+</ul>
+
+<div class="callout callout-example" id="callout-f14170c1-c4b8-4a8e-bbbd-ab91237aa571">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>컨트롤러 구현 예시(<code class="language-plaintext highlighter-rouge">main/java/chap09/HelloController.java</code>)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">chap09</span><span class="o">;</span>
+<span class="c1">// 클라리언트 요청 처리용 컨트롤러 파일</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.ui.Model</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestParam</span><span class="o">;</span>
+
+<span class="nd">@Controller</span> <span class="c1">// 스프링 MVC 컨트롤러 클래스로 설정</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloController</span> <span class="o">{</span>
+	<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/hello"</span><span class="o">)</span> <span class="c1">// 메서드가 처리할 요청 경로 지정, Get 요청 한정</span>
+	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">hello</span><span class="o">(</span><span class="nc">Model</span> <span class="n">model</span><span class="o">,</span> <span class="c1">// 처리 결과를 뷰에 전달시 사용</span>
+			<span class="nd">@RequestParam</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"name"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span> <span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// HTTP 요청 파라미터 값 변환</span>
+		<span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"greeting"</span><span class="o">,</span> <span class="s">"안녕하세요, "</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span><span class="c1">//모델의 greeting 속성값을 설정</span>
+		<span class="k">return</span> <span class="s">"hello"</span><span class="o">;</span> <span class="c1">//처리 결과 뷰를 설정</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">@GetMapping</code>에 적힌 내용에 따라 <code class="language-plaintext highlighter-rouge">HandlerMapping</code>이 검색 가능하다.</li>
+  <li>위 컨트롤러는 결과값으로 처리에 필요한 뷰 이름을 문자열로 돌려주고, 입력받은 <code class="language-plaintext highlighter-rouge">Model</code> 객체에 <code class="language-plaintext highlighter-rouge">greeting</code> 속성 값을 저장한다.</li>
+  <li>위 컨트롤러를 <code class="language-plaintext highlighter-rouge">ModelAndView</code>로 변환하는 것은 <code class="language-plaintext highlighter-rouge">HandlerAdapter</code>가 처리해야 한다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-96a088da-0d4e-46b2-99b8-b3d63992f6a5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>컨트롤러 등록(<code class="language-plaintext highlighter-rouge">main/java/config/ControllerConfig.java</code>)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">config</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">chap09.HelloController</span><span class="o">;</span>
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ControllerConfig</span> <span class="o">{</span>
+	<span class="nd">@Bean</span> <span class="c1">// 컨트롤러 등록</span>
+	<span class="kd">public</span> <span class="nc">HelloController</span> <span class="nf">helloController</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">HelloController</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p><strong>3. 처리 요청 ~ 6. 컨트롤러 실행 결과 <code class="language-plaintext highlighter-rouge">ModelAndView</code>로 변환 리턴</strong><br>
+<code class="language-plaintext highlighter-rouge">DispatcherServlet</code>는 받은 컨트롤러를 직접 실행하지 않고, <code class="language-plaintext highlighter-rouge">HandlerAdapter</code> 이라는 빈 객체에게 요청 처리를 위임한다.<br>
+<code class="language-plaintext highlighter-rouge">HandlerAdapter</code>는 컨트롤러에 맞는 메서드를 요청에 처리하고, <code class="language-plaintext highlighter-rouge">ModelAndView</code> 객체로 변환해 돌려준다.</p>
+
+<div class="callout callout-seealso" id="callout-2acace1c-276d-4fb9-9c6a-97bc62ccc3b3">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">DispatcherServlet</code>가 직접 컨트롤러를 검색하고, 직접 컨트롤러를 실행하지 않는 이유
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">DispatcherServlet</code>은 컨트롤러의 요청 처리 결과로 <code class="language-plaintext highlighter-rouge">ModelAndView</code> 타입만 받는다.<br>
+하지만 <strong>컨트롤러는 구현에 따라 여러 클래스로 존재</strong>하므로, 실행한 결과가 모두 <code class="language-plaintext highlighter-rouge">ModelAndView</code>가 아니다.<br>
+따라서 이를 하나의 <code class="language-plaintext highlighter-rouge">ModelAndView</code>로 변환해줄 각기 다른 종류의<code class="language-plaintext highlighter-rouge">HandlerAdapter</code>가 필요하다.</p>
+
+<ul>
+  <li>마찬가지로 각기 다른 컨트롤러 종류를 검색하기 위해 각기 다른 종류의 <code class="language-plaintext highlighter-rouge">HandleMapping</code>이 필요하다.</li>
+</ul>
+
+<p>따라서, 만약 여러 클래스의 컨트롤러가 존재한다면 해당 타입 컨트롤러를 처리해줄 <code class="language-plaintext highlighter-rouge">HandlerAdapter</code>와 <code class="language-plaintext highlighter-rouge">HandleMapping</code>을 직접 스프링 빈으로 등록해야 한다.</p>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-656a6b7a-f7f0-4d53-b78f-d001362d0fa7">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>각기 다른 클래스 컨트롤러의 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>다양한 컨트롤러의 예시로 <code class="language-plaintext highlighter-rouge">@Controller</code> 어노테이션 사용, 이전 버전에 사용하던 <code class="language-plaintext highlighter-rouge">Controller</code> 인터페이스, <code class="language-plaintext highlighter-rouge">HttpRequestHandler</code> 인터페이스 구현, 직접 구현한 커스텀 컨트롤러 등이 있다.</p>
+
+</div>
+    </div>
+    </div>
+<p><strong>7.  컨트롤러의 실행 결과를 보여줄 View 검색</strong><br>
+<code class="language-plaintext highlighter-rouge">DispatcherServlet</code>는 해당 <code class="language-plaintext highlighter-rouge">ModelAndView</code>를 응답으로 생성할 <code class="language-plaintext highlighter-rouge">View</code> 객체를 직접 구하지 않고, <code class="language-plaintext highlighter-rouge">ViewResolver</code> 이라는 빈 객체에게 <code class="language-plaintext highlighter-rouge">View</code>를 알아오도록 시킨다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ModelAndView</code> 내에는 처리에 필요한 <code class="language-plaintext highlighter-rouge">View</code> 객체 이름이 담겨져 있고, 이를 이용해 <code class="language-plaintext highlighter-rouge">ViewResolver</code>는 해당 <code class="language-plaintext highlighter-rouge">View</code> 객체를 찾거나 생성한 뒤 <code class="language-plaintext highlighter-rouge">DispatcherServlet</code>에게 돌려준다. (JSP의 경우는 언제나 새로운 <code class="language-plaintext highlighter-rouge">View</code> 객체를 생성 !빈 객체 아님)</p>
+
+<div class="callout callout-example" id="callout-eec61439-e1a8-4b9d-ad51-478feecde3b3">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>ViewResolver 설정 예시 (<code class="language-plaintext highlighter-rouge">main/java/config/MvcConfig.java</code>)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">config</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.EnableWebMvc</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.ViewResolverRegistry</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableWebMvc</span> <span class="c1">// 스프링 MVC 설정 클래스로 활성화</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MvcConfig</span> <span class="kd">implements</span> <span class="nc">WebMvcConfigurer</span> <span class="o">{</span>
+	<span class="c1">// ...</span>
+	<span class="c1">// JSP를 이용해 컨트롤러의 실행 결과 보여주는 설정</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">configureViewResolvers</span><span class="o">(</span><span class="nc">ViewResolverRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">registry</span><span class="o">.</span><span class="na">jsp</span><span class="o">(</span><span class="s">"/WEB-INF/view/"</span><span class="o">,</span> <span class="s">".jsp"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">configureViewResolvers</code> 메소드에서 <code class="language-plaintext highlighter-rouge">registry.jsp</code> 함수를 이용해 경로에 존재하는 모든 <code class="language-plaintext highlighter-rouge">.jsp</code> 파일을 뷰로 등록한다.</li>
+</ul>
+
+<p><strong>8. <code class="language-plaintext highlighter-rouge">View</code> 객체에게 응답 생성 요청</strong><br>
+<code class="language-plaintext highlighter-rouge">DispatcherServlet</code>가 <code class="language-plaintext highlighter-rouge">View</code> 객체에게 응답 결과 생성을 요청하면 <code class="language-plaintext highlighter-rouge">View</code>가 JSP를 실행하여 응답 결과를 생성한다.</p>
+
+<div class="callout callout-example" id="callout-d562f904-8787-4680-bcce-08f5248cf7be">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>view.jsp 예시 (<code class="language-plaintext highlighter-rouge">main/webapp/WEB-INF/view/hello.jsp</code>)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">contentType=</span><span class="s">"text/html; charset=utf-8"</span> <span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+	<span class="nt">&lt;head&gt;</span>
+		<span class="nt">&lt;title&gt;</span>Hello<span class="nt">&lt;/title&gt;</span>
+	<span class="nt">&lt;/head&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
+		인사말: ${greeting} <span class="c">&lt;!--controller에서 지정한 greeting 출력--&gt;</span>
+	<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>사용된 <code class="language-plaintext highlighter-rouge">${greeting}</code>은 앞서 컨트롤러가 모델에 주입한다.</li>
+  <li>위 JSP 결과물 페이지가 응답 메시지에 담긴다.</li>
+</ul>
+
+<h2 id="기본-핸들러와-HandlerMapping-우선-순위">기본 핸들러와 HandlerMapping 우선 순위</h2>
+
+<p>앞서 컨트롤러의 <code class="language-plaintext highlighter-rouge">@***Mapping</code>설정에 따라 컨트롤러와 뷰가 검색되도록 하였다. 그렇다면 view를 사용하지 않는 정적 파일 url 같은 경우 어떻게 처리해야 할까?</p>
+
+<p>이를 처리하기 위해 view를 사용하지 않는 <strong>컨트롤러를 직접 구현하거나 아래 예시처럼 기본값 핸들러를 지정</strong>해줄 수 있다.</p>
+<ul>
+  <li>이를 지정해주지 않으면 404 에러 페이지가 뜬다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-35639780-737a-4616-bb7c-244ad3e2afe2">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>ViewResolver 설정 예시 (<code class="language-plaintext highlighter-rouge">main/java/config/MvcConfig.java</code>)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">config</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.EnableWebMvc</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.ViewResolverRegistry</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurer</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableWebMvc</span> <span class="c1">// 스프링 MVC 설정 클래스로 활성화</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MvcConfig</span> <span class="kd">implements</span> <span class="nc">WebMvcConfigurer</span> <span class="o">{</span>
+	<span class="nd">@Override</span> <span class="c1">// WebMvcConfigurer 인터페이스의 이 메소드를 재정의하면 기본값 핸들러 사용 가능</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">configureDefaultServletHandling</span><span class="o">(</span> <span class="c1">// "/" 매핑 설정, ViewResolver 설정 안된 주소에 대한 기본 설정</span>
+		<span class="nc">DefaultServletHandlerConfigurer</span> <span class="n">configurer</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">configurer</span><span class="o">.</span><span class="na">enable</span><span class="o">();</span> 
+	<span class="o">}</span>
+	<span class="c1">// JSP를 이용해 컨트롤러의 실행 결과 보여주는 설정</span>
+	<span class="nd">@Override</span> <span class="c1">// WebMvcConfigurer 인터페이스의 이 메소드를 재정의하면 뷰 관련 설정 가능</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">configureViewResolvers</span><span class="o">(</span><span class="nc">ViewResolverRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">registry</span><span class="o">.</span><span class="na">jsp</span><span class="o">(</span><span class="s">"/WEB-INF/view/"</span><span class="o">,</span> <span class="s">".jsp"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DefaultServletHandlerConfigurer.enable();</code>를 통해 <code class="language-plaintext highlighter-rouge">DefaultServletHttpRequestHandler</code>와 <code class="language-plaintext highlighter-rouge">SimpleUrlHandlerMapping</code> 빈이 추가된다.</li>
+  <li><code class="language-plaintext highlighter-rouge">DefaultServletHttpRequestHandler</code>: 클라이언트의 요청을 WAS가 제공하는 디폴트 서블릿에 전달</li>
+  <li><code class="language-plaintext highlighter-rouge">SimpleUrlHandlerMapping</code>:  설정된 경로를 특정 서블릿에게 처리하게 가능</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">DefaultServletHandlerConfigurer.enable();</code>로 적용된 <code class="language-plaintext highlighter-rouge">SimpleUrlHandlerMapping</code>은 <strong>우선순위가 아주 낮아</strong>,  설정 경로가 겹치는 경우, 우리가 커스텀으로 설정한 (보통 <code class="language-plaintext highlighter-rouge">RequestMappingHandlerMapping</code>) 핸들러가 먼저 처리하게 된다.</p>
+
+<p>하지만 아무런 경로가 겹치지 않는다면 <code class="language-plaintext highlighter-rouge">DefaultServletHttpRequestHandler</code>가 실행될 것이다.</p>
+<ul>
+  <li>ex) “<code class="language-plaintext highlighter-rouge">/index.html</code>” 경로의 경우 컨트롤러가 등록되어 있지 않으므로 WAS 서버에서 처리</li>
+</ul>
+
+<h2 id="MVC-설정-클래스">MVC 설정 클래스</h2>
+<p>MVC 패턴을 위한 설정 클래스는 <code class="language-plaintext highlighter-rouge">WebMvcConfigurer</code> 인터페이스를 상속받아야 한다.</p>
+
+<div class="callout callout-seealso" id="callout-b5e77be9-2c9c-4332-8ff3-54a1145e6625">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>참고로 스프링 4.x 버전 이하는 자바가 인터페이스의 디폴트 메서드 기능이 없었으므로, 대신 <code class="language-plaintext highlighter-rouge">WebMvcConfigurerAdpater</code> 클래스를 상속해서 필요한 메서드만 재정의했다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<p>해당 인터페이스는 <code class="language-plaintext highlighter-rouge">configureDefaultServletHandling</code>, <code class="language-plaintext highlighter-rouge">configureViewResolvers</code>를 포함해, <code class="language-plaintext highlighter-rouge">configurePathMatch</code>, <code class="language-plaintext highlighter-rouge">addFormatters</code> 등의 MVC 패턴 설정 관련 주요 메서드를 정의하고 있다.<br>
+추가로 <code class="language-plaintext highlighter-rouge">@EnableWebMvc</code>를 잉요하면 자동으로 MVC 설정에 필요한 빈을 생성해 준다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">@EnableWebMvc</code>를 사용하지않고 모두 직접 설정한다면 아래와 같이 구현할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-53fcc7f4-4483-4caa-9008-fb97d3198c29">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@EnableWebMvc</code>를 사용하지 않은 config 클래스
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">config</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.HttpRequestHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.HandlerAdapter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.HandlerMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.ViewResolverRegistry</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.handler.SimpleUrlHandlerMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.view.InternalResourceViewResolver</span><span class="o">;</span>  
+
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MvcConfig2</span> <span class="kd">implements</span> <span class="nc">WebMvcConfigurer</span> <span class="o">{</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span> <span class="c1">// @Controller 객체 처리용 handlerMapping</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">HandlerMapping</span> <span class="nf">handlerMapping</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">RequestMappingHandlerMapping</span> <span class="n">hm</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RequestMappingHandlerMapping</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">hm</span><span class="o">.</span><span class="na">setOrder</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">hm</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+  
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span> <span class="c1">// @Controller 객체 처리용 handlerAdapter</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">HandlerAdapter</span> <span class="nf">handlerAdapter</span><span class="o">(){</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">RequestMappingHandlerAdapter</span> <span class="n">ha</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RequestMappingHandlerAdapter</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">ha</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span> <span class="c1">// 기본값 핸들러 경로 설정(모두)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">HandlerMapping</span> <span class="nf">simpleHandlerMapping</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">SimpleUrlHandlerMapping</span> <span class="n">hm</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SimpleUrlHandlerMapping</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">pathMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">pathMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"/**"</span><span class="o">,</span> <span class="n">defaultServletHandler</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">hm</span><span class="o">.</span><span class="na">setUrlMap</span><span class="o">(</span><span class="n">pathMap</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">hm</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span> <span class="c1">// 기본값 핸들러</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">HttpRequestHandler</span> <span class="nf">defaultServletHandler</span><span class="o">(){</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">DefaultServletHttpRequestHandler</span> <span class="n">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DefaultServletHttpRequestHandler</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">handler</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> 
+  <span class="err">&nbsp;</span> <span class="nd">@Bean</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">HandlerAdapter</span> <span class="nf">requestHandlerAdapter</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">HttpRequestHandlerAdapter</span> <span class="n">ha</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HttpRequestHandlerAdapter</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">ha</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">ViewResolver</span> <span class="nf">ViewResolver</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">InternalResourceViewResolver</span> <span class="n">vr</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InternalResourceViewResolver</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">vr</span><span class="o">.</span><span class="na">setPrefix</span><span class="o">(</span><span class="s">"/WEB-INF/view/"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">vr</span><span class="o">.</span><span class="na">setSuffix</span><span class="o">(</span><span class="s">".jsp"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">vr</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// InternalResourceViewResolver : prefix + 뷰이름 + suffix를 조합하는 경로의 jsp 파일을 사용하는 view 객체 리턴</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>더욱 불편하고 잘안쓰이는 방식이지만, 기본 설정을 알아볼 수 있으므로 눈여겨 보는게 좋다.</p>
+
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-MVC%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EC%84%A4%EC%A0%95.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/Spring/Spring5 입문-MVC 개념과 설정.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>
