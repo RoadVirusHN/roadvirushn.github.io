@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
+                "file": "web/backend/Spring/Spring5 입문.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "03c582f516a79b87",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md",
                 "mode": "source",
                 "source": true
               }
@@ -25,26 +37,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "web/backend/Spring/Spring5 입문-DB 연동.md",
+                "file": "web/backend/Spring/Spring5 입문-컨트롤러와 뷰 구현.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "d23c4124d5769096",
+            "id": "45710a4fe79d696a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
+                "file": "web/backend/Spring/Spring5 입문-객체 검증.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,7 +93,7 @@
             }
           },
           {
-            "id": "22c1ad915639b737",
+            "id": "cd3a28ff02d9ef39",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -111,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
+                "file": "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
+                "file": "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md"
+                "file": "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md"
               }
             }
           },
@@ -184,17 +196,17 @@
       "audio-recorder:녹음 시작/중지": false
     }
   },
-  "active": "d23c4124d5769096",
+  "active": "03c582f516a79b87",
   "lastOpenFiles": [
-    "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-세계 설계.md",
-    "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-데이터 설계.md",
-    "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가-함수 설계.md",
-    "web/backend/Spring/Spring5 입문-빈(Bean)과 컨테이너.md",
-    "web/backend/Spring/Spring5 입문-DB 연동.md",
-    "web/backend/Spring/Spring5 입문-MVC 개념과 설정.md",
-    "web/backend/Spring/Spring5 입문-컨트롤러와 뷰 구현.md",
+    "web/backend/Spring/Spring5 입문-스프링 부트.md",
+    "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md",
     "web/backend/Spring/Spring5 입문.md",
-    "computer_science/OSSU/HowToCode/스페이스 인베이더-세계 설계 예시 프로젝트.md",
-    "computer_science/OSSU/HowToCode/어떻게 코딩할 것인가.md"
+    "web/backend/Spring/Spring5 입문-JSON 응답과 요청 처리.md",
+    "web/backend/Spring/Spring5 입문-객체 검증.md",
+    "web/backend/Spring/Spring5 입문-날짜 값 변환,  경로 변수, 익셉션 공동 처리.md",
+    "web/backend/Spring/Spring5 입문-빈(Bean)과 컨테이너.md",
+    "web/backend/Spring/Spring5 입문-세션, 인터셉터, 쿠키.md",
+    "web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md",
+    "web/backend/Spring/Spring5 입문-스프링 웹 어플 구조.md"
   ]
 }
