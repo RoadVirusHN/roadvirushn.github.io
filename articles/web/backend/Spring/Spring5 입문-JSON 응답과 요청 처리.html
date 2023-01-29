@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spring5 입문-JSON 응답과 요청 처리 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Spring5 입문-JSON 응답과 요청 처리" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true JSON 응답과 요청 처리" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true JSON 응답과 요청 처리" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-JSON%20%EC%9D%91%EB%8B%B5%EA%B3%BC%20%EC%9A%94%EC%B2%AD%20%EC%B2%98%EB%A6%AC.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-JSON%20%EC%9D%91%EB%8B%B5%EA%B3%BC%20%EC%9A%94%EC%B2%AD%20%EC%B2%98%EB%A6%AC.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-29T14:57:33+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spring5 입문-JSON 응답과 요청 처리" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-29T14:57:33+09:00","datePublished":"2023-01-29T14:57:33+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true JSON 응답과 요청 처리","headline":"Spring5 입문-JSON 응답과 요청 처리","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-JSON%20%EC%9D%91%EB%8B%B5%EA%B3%BC%20%EC%9A%94%EC%B2%AD%20%EC%B2%98%EB%A6%AC.html"},"url":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-JSON%20%EC%9D%91%EB%8B%B5%EA%B3%BC%20%EC%9A%94%EC%B2%AD%20%EC%B2%98%EB%A6%AC.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 6
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Spring5 입문-JSON 응답과 요청 처리</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-01-29T14:57:33+09:00" itemprop="datePublished">Jan 29, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#Jackson-의존-설정">Jackson 의존 설정</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#RestController로-JSON-형식-응답">@RestController로 JSON 형식 응답</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#어노테이션-이용한-JSON-응답-변경">어노테이션 이용한 JSON 응답 변경</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#JsonIgnore">@JsonIgnore</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#JsonFormat">@JsonFormat</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#포맷-기본-설정-바꾸기">포맷 기본 설정 바꾸기</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#RequestBody로-JSON-요청-처리">@RequestBody로 JSON 요청 처리</a><ul><li lvl="3"><a id="markdown-toc-0-7" href="#요청-데이터의-형식-변경-및-검증">요청 데이터의 형식 변경 및 검증</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-8" href="#ResponseEntity로-객체-리턴하고-응답-코드-지정하기">ResponseEntity로 객체 리턴하고 응답 코드 지정하기</a><ul><li lvl="3"><a id="markdown-toc-0-9" href="#ResponseEntitiy를-이용한-응답-메시지-작성">ResponseEntitiy를 이용한 응답 메시지 작성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#ExceptionHandler-RestControllerAdvice와-ResponseEntity-활용하기">@ExceptionHandler, @RestControllerAdvice와 ResponseEntity 활용하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#Valid-에러-메시지에-ResponseEntity-활용하기">@Valid 에러 메시지에 ResponseEntity 활용하기</a><ul></ul></li></ul></li></ol>
+<h1 id="JSON-응답과-요청-처리">JSON 응답과 요청 처리</h1>
+
+<div class="callout callout-quote" id="callout-9f589514-8d2c-4d83-92b3-4fc3c09f6c1b">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>_<span class='link-warning'>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.kame.co.kr/nkm/det..."</em>로
+        <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
+      </span>
+    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<p>Ajax를 이용해 서버 API를 호출하여 JSON이나 XML 데이터를 이용해 뷰를 구축하는 구조가 흔하므로, 이러한 방식을 알아보자.</p>
+<h2 id="Jackson-의존-설정">Jackson 의존 설정</h2>
+<p><code class="language-plaintext highlighter-rouge">Jackson</code>은 <strong>자바 객체와 JSON 형식 문자열 간 변환을 처리하는 라이브러리</strong>이다. <br>
+다음과 같이 두 의존을 추가하면 사용할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-fb2ebaa7-f939-4070-ab45-f23be44fb1e2">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">pom.xml</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Jackson core와 Jackson Annotation 의존 추가--&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>2.9.4<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="c">&lt;!-- java8 data/time 지원 위한 Jackson 모듈--&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+	<span class="nt">&lt;groupId&gt;</span>com.fasterxml.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+	<span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
+	<span class="nt">&lt;version&gt;</span>2.9.4<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>자바 객체의 프로퍼티의 이름과 값이 JSON의 이름, 값 쌍으로 변한다.</p>
+
+<div class="callout callout-example" id="callout-32867dbb-ff85-49f0-aa4e-33407a8c31e3">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Jackson 객체와 JSON간 변환 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Person {
+	private String name;
+	private int age;
+	//...get/set 메서드
+}
+&lt;=&gt;
+{"name": "이름", "age": 10}
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id="RestController로-JSON-형식-응답"><code class="language-plaintext highlighter-rouge">@RestController</code>로 JSON 형식 응답</h2>
+<p><code class="language-plaintext highlighter-rouge">@Controller</code> 대신 <code class="language-plaintext highlighter-rouge">@RestController</code>로 변경 후, 메소드의 리턴을 객체로 바꿔주면 JSON 형식으로 응답해줄 수 있다.</p>
+<ul>
+  <li>스프링 MVC 측에서 적절한 형태로 응답하는데, 이때 Jackson 의존 모듈이 있다면 JSON 형식으로 반환한다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-8304c608-7419-48a4-a6db-4a2ca5178ea6">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>example</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>title:<code class="language-plaintext highlighter-rouge">@RestController</code>을 이용한 JSON 형식 응답</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.PathVariable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">spring.Member</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">spring.MemberDao</span><span class="o">;</span>
+<span class="c1">//...</span>
+<span class="nd">@RestController</span> <span class="c1">// @Controller에서 변경</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RestMemberController</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">MemberDao</span> <span class="n">memberDao</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">MemberRegisterService</span> <span class="n">registerService</span><span class="o">;</span>
+
+	<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/members"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Member</span><span class="o">&gt;</span> <span class="nf">members</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// 뷰 이름에서 객체의 리스트로 리턴 변경</span>
+		<span class="k">return</span> <span class="n">memberDao</span><span class="o">.</span><span class="na">selectAll</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/members/{id}"</span><span class="o">)</span> <span class="c1">// 뷰 이름에서 객체 하나로 리턴 변경</span>
+	<span class="kd">public</span> <span class="nc">Member</span> <span class="nf">member</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+		<span class="nc">Member</span> <span class="n">member</span> <span class="o">=</span> <span class="n">memberDao</span><span class="o">.</span><span class="na">selectById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">member</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">response</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_NOT_FOUND</span><span class="o">);</span>
+			<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="o">}</span>
+		<span class="k">return</span> <span class="n">member</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="c1">//...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이후 해당 컨트롤러를 설정 클래스에 추가해주고 해당 URL에 요청하면 JSON으로 응답을 반환한다.</p>
+
+<div class="callout callout-example" id="callout-c1b6daba-4f37-4f5f-8189-4f89f57dc42a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">ControllerConfig.java</code>에 추가
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ControllerConfig</span> <span class="o">{</span>
+	<span class="c1">//... 생략</span>
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">RestMemberController</span> <span class="nf">restApi</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">RestMemberController</span> <span class="n">cont</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RestMemberController</span><span class="o">();</span>
+		<span class="n">cont</span><span class="o">.</span><span class="na">setMebmerDao</span><span class="o">(</span><span class="n">memberDao</span><span class="o">);</span>
+		<span class="n">cont</span><span class="o">.</span><span class="na">setRegisterService</span><span class="o">(</span><span class="n">memberRegSvc</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">cont</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이제 응답 메시지 바디에는 HTML 페이지에서, JSON 데이터로 변하며, 응답 헤더의 <code class="language-plaintext highlighter-rouge">Content-type</code>은 <code class="language-plaintext highlighter-rouge">text/plain</code>에서 <code class="language-plaintext highlighter-rouge">application/json</code>으로 바뀐다.</p>
+
+<div class="callout callout-seealso" id="callout-89845701-4cbf-4081-9618-0ac0789a34c9">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@ResponseBody</code> 방법
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">@RestController</code> 이전에는 <code class="language-plaintext highlighter-rouge">@ResponseBody</code>를 이용해서 다음과 같이 컨트롤러를 구현했다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RestMemberController</span><span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">MemberDao</span> <span class="n">memberDao</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">MemberRegisterService</span> <span class="n">registerService</span><span class="o">;</span>
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">path</span><span class="o">=</span><span class="s">"/api/members"</span><span class="o">,</span> <span class="n">method</span><span class="o">=</span><span class="nc">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>
+	<span class="nd">@ResponseBody</span>
+	<span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Member</span><span class="o">&gt;</span> <span class="nf">members</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">memberDao</span><span class="o">.</span><span class="na">selectAll</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id="어노테이션-이용한-JSON-응답-변경">어노테이션 이용한 JSON 응답 변경</h2>
+<h3 id="JsonIgnore"><code class="language-plaintext highlighter-rouge">@JsonIgnore</code></h3>
+<p><code class="language-plaintext highlighter-rouge">@JsonIgnore</code>를 이용하면 응답시 JSON 필드에서 뺄 수 있다.</p>
+
+<div class="callout callout-example" id="callout-d92cac61-daff-45bb-97bf-13b0bc90dd0b">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@JsonIgnore</code>를 이용한 비밀번호 마스킹
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">com.fasterxml.jackson.annotation.JsonIgnore</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Member</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">email</span><span class="o">;</span>
+	<span class="nd">@JsonIgnore</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">registerDateTIme</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>이에 따른 JSON 결과물은 다음과 같다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"id": 1, 
+	"email": "asdf@asdf.net"
+	"name": "asdf"
+	"registerDateTime": [2018,3,1,11,7,49]
+}
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="JsonFormat"><code class="language-plaintext highlighter-rouge">@JsonFormat</code></h3>
+<p><code class="language-plaintext highlighter-rouge">@JsonFormat</code>을 이용해 날짜를 특정한 형식으로 바꿀 수 있다.</p>
+
+<div class="callout callout-example" id="callout-4ad46fd6-be2a-4ae1-8a2b-39659c634618">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@JsonFormat</code> 이용 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">com.fasterxml.jackson.annotation.JsonFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fasterxml.jackson.annotation.JsonFormat.Shape</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Member</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">email</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+	<span class="nd">@JsonFormat</span><span class="o">(</span><span class="n">shape</span><span class="o">=</span><span class="nc">Shape</span><span class="o">.</span><span class="na">STRING</span><span class="o">)</span> <span class="c1">// ISO-8601 형식</span>
+	<span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">registerDateTime</span><span class="o">;</span> <span class="c1">// JSON 응답에서 "2018-03-01T11:07:49" 형식</span>
+	<span class="nd">@JsonFormat</span><span class="o">(</span><span class="n">pattern</span><span class="o">=</span><span class="s">"yyyyMMddHHmmss"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">updateDateTime</span><span class="o">;</span> <span class="c1">// JSON 응답에서 "20180301020749" 형식</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>pattern 속성에 주어질 패턴은 <code class="language-plaintext highlighter-rouge">java.text.SimpleDateFormat</code> 클래스의 <span class='link-warning'>
+      <a href="https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html" class="wikilink externallink">API 문서</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://docs.oracle.com/javase..."</em>로
+        <button onclick="window.open('https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html','_blank'); return false;">이동</button>?
+      </span>
+    </span> 참조</li>
+</ul>
+
+<h3 id="포맷-기본-설정-바꾸기">포맷 기본 설정 바꾸기</h3>
+
+<p>일일이 <code class="language-plaintext highlighter-rouge">@JsonFormat</code>을 붙여 변환하는 것은 귀찮은 일이므로, 다음과 같은 방법으로 변환 규칙을 기본 설정으로 바꿔줄 수 있다.</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">WebMvcConfigurer</code> 인터페이스의 <code class="language-plaintext highlighter-rouge">extendMessageConverters</code> 메서드는 <code class="language-plaintext highlighter-rouge">HttpMessageConverter</code>를 추가로 설정할 때 사용</li>
+  <li>스프링의 기본 제공 날짜 포맷 기능을 비활성화한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Jackson2ObjectMapperBuilder</code>를 이용해 새로운 포맷 매퍼를 만든다.</li>
+  <li><code class="language-plaintext highlighter-rouge">converters.add(순서, 컨버터)</code> 메서드를 이용해 새 변환 매퍼를 최우선으로 적용하게 한다.</li>
+</ol>
+
+<div class="callout callout-example" id="callout-15a7b168-5757-4bbd-b526-cf3c4d5ce35e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">MappingJackson2HttpMessageConvert</code>를 이용한 <code class="language-plaintext highlighter-rouge">MvcConfig</code> 클래스
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.converter.HttpMessageConverter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.converter.json.Jackson2ObjectMapperBuilder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.converter.json.MappingJackson2HttpMessageConverter</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.fasterxml.jackson.databind.ObjectMapper</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fasterxml.jackson.databind.SerializationFeature</span><span class="o">;</span>
+<span class="c1">//...</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableWebMvc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MvcConfig</span> <span class="kd">implements</span> <span class="nc">WebMvcConfigurer</span> <span class="o">{</span> 
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">extendMessageConverters</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">HttpMessageConverter</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">converters</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">ObjectMapper</span> <span class="n">objectMapper</span> <span class="o">=</span> <span class="nc">Jackson2ObjectMapperBuilder</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">json</span><span class="o">()</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">featuresToDisable</span><span class="o">(</span><span class="nc">SerializationFeature</span><span class="o">.</span><span class="na">WRITE_DATES_AS_TIMESTAMPS</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">converters</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MappingJackson2HttpMessageConverter</span><span class="o">(</span><span class="n">objectMapper</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>위 코드는 이제 모든 시간 형식을 <code class="language-plaintext highlighter-rouge">ISO-8601</code> 형식으로 변환한다.<br>
+<code class="language-plaintext highlighter-rouge">java.util.Date</code> 타입의 변경 코드는 아래와 같다.</p>
+
+<div class="callout callout-example" id="callout-dd94c916-5f7f-4c9c-9278-3006d0f491ae">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">java.util.Date</code> 타입 값 변경
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span> 
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">extendMessageConverters</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">HttpMessageConverter</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">converters</span><span class="o">)</span> <span class="o">{</span>
+	<span class="nc">ObjectMapper</span> <span class="n">objectMapper</span> <span class="o">=</span> <span class="nc">Jackson2ObjectMapperBuilder</span>
+		<span class="o">.</span><span class="na">json</span><span class="o">()</span>
+		<span class="o">.</span><span class="na">simpleDateFormat</span><span class="o">(</span><span class="s">"yyyyMMddHHmmss"</span><span class="o">)</span> <span class="c1">// Date를 위한 변환 패턴</span>
+		<span class="o">.</span><span class="na">build</span><span class="o">();</span>
+	<span class="n">converters</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MappingJackson2HttpMessageConverter</span><span class="o">(</span><span class="n">objectMapper</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>내가 원하는 커스텀 형식을 지정하고 싶다면 아래와 같이 할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-30947b19-9444-46fb-9951-3246c7a7b52b">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>모든 <code class="language-plaintext highlighter-rouge">LocalDateTime</code>형식을 원하는 패턴으로 변경
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.time.format.DateTimeFormatter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer</span><span class="o">;</span>
+
+<span class="c1">//...</span>
+<span class="nd">@Override</span> 
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">extendMessageConverters</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">HttpMessageConverter</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">converters</span><span class="o">)</span> <span class="o">{</span>
+	<span class="nc">DateTimeFormatter</span> <span class="n">formatter</span> <span class="o">=</span> <span class="nc">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">"yyyy-MM-dd HH:mm:ss"</span><span class="o">);</span>
+	<span class="nc">ObjectMapper</span> <span class="n">objectMapper</span> <span class="o">=</span> <span class="nc">Jackson2ObjectMapperBuilder</span>
+		<span class="o">.</span><span class="na">json</span><span class="o">()</span>
+		<span class="o">.</span><span class="na">serializerByType</span><span class="o">(</span><span class="nc">LocalDateTime</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="nc">LocalDateTimeSerializer</span><span class="o">(</span><span class="n">formatter</span><span class="o">))</span>
+		<span class="o">.</span><span class="na">build</span><span class="o">();</span>
+	<span class="n">converters</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MappingJackson2HttpMessageConverter</span><span class="o">(</span><span class="n">objectMapper</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이렇게 지정한 기본설정은 앞서 사용했던 <code class="language-plaintext highlighter-rouge">@JsonFormat</code> 방식보다 적용 우선순위가 떨어진다.</p>
+<h2 id="RequestBody로-JSON-요청-처리"><code class="language-plaintext highlighter-rouge">@RequestBody</code>로 JSON 요청 처리</h2>
+<p>반대로 JSON 형식으로 받은 데이터를 자바 객체로 바꾸는 기능을 알아보자.</p>
+
+<div class="callout callout-example" id="callout-21041d88-f2f1-4637-92dd-9069becf7ee1">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>JSON 형식 요청의 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li>POST, PUT 메서드의 쿼리 문자열 형식 데이터 대신 JSON으로 요청을 전송할 수 있다.</li>
+  <li>이때, 쿼리 문자열 <code class="language-plaintext highlighter-rouge">name=이름&amp;age=17</code>은 <code class="language-plaintext highlighter-rouge">{"name": "이름", "age": 17}</code> 같은 형식으로 바뀐다.</li>
+  <li>요청 메시지의 <code class="language-plaintext highlighter-rouge">Content-type</code> 헤더 값은 <code class="language-plaintext highlighter-rouge">application/x-www-form-urlencoded</code> 에서 <code class="language-plaintext highlighter-rouge">application/json</code>으로 바뀐다.</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<p>커맨드 객체에 <code class="language-plaintext highlighter-rouge">@RequestBody</code> 어노테이션을 붙이면 자동으로 커맨드 객체로 변환된다.</p>
+
+<div class="callout callout-example" id="callout-2994acb5-05a7-4527-adcb-bd732b1c35a7">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">/src/main/java/controller/RestMemberController.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestBody</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
+<span class="c1">//...</span>
+
+<span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RestMemberController</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">MemberDao</span> <span class="n">memberDado</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">MemberRegisterService</span> <span class="n">registerService</span><span class="o">;</span>
+
+	<span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"/api/members"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">newMember</span><span class="o">(</span>
+		<span class="nd">@RequestBody</span> <span class="nd">@Valid</span> <span class="nc">RegisterRequest</span> <span class="n">regReq</span><span class="o">,</span>
+		<span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="nc">Long</span> <span class="n">newMemberId</span> <span class="o">=</span> <span class="n">registerService</span><span class="o">.</span><span class="na">regist</span><span class="o">(</span><span class="n">regReq</span><span class="o">);</span>
+			<span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Location"</span><span class="o">,</span> <span class="s">"/api/members/"</span> <span class="o">+</span> <span class="n">newMemberId</span><span class="o">);</span> <span class="c1">// Location 헤더 추가</span>
+			<span class="n">response</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_CREATED</span><span class="o">);</span> <span class="c1">// 201(CREATED) 응답</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">DuplicateMemberException</span> <span class="n">dupEX</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">response</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_CONFLICT</span><span class="o">);</span> <span class="c1">// 409(Conflict)</span>
+		<span class="o">}</span>		
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>포스트맨, Advanced REST Client 같은 프로그램으로 시험해보면 보낸 JSON 데이터에 맞춰 객체가 생성된다. (ex) name 필드가 “이름”이고 age 필드가 17인 getter, setter 메서드가 존재하는 객체)</p>
+
+<h3 id="요청-데이터의-형식-변경-및-검증">요청 데이터의 형식 변경 및 검증</h3>
+<p><strong>요청 데이터 형식 변경</strong><br>
+JSON 데이터를 객체로 변환시 특정 문자열을 <code class="language-plaintext highlighter-rouge">LocalDateTime</code>, <code class="language-plaintext highlighter-rouge">Date</code> 같은 형식으로 바꾸려면 앞서 설명한 <span class="preview-wrapper">
+      <a href="#`-jsonformat`" class="wikilink"><code class="language-plaintext highlighter-rouge">@JsonFormat</code></a>
+      <iframe class="preview" src='' data-href="#`-jsonformat`" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>을 이용하면 된다.</p>
+
+<div class="callout callout-example" id="callout-ed29d6d1-3ab7-4a33-a6c8-5e0d77c462ff">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@JsonFormat</code> 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@JsonFormat</span><span class="o">(</span><span class="n">pattern</span><span class="o">=</span> <span class="s">"yyyyMMddHHmmss"</span><span class="o">)</span>
+<span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">birthDateTime</span><span class="o">;</span>
+
+<span class="nd">@JsonFormat</span><span class="o">(</span><span class="n">pattern</span><span class="o">=</span> <span class="s">"yyyyMMdd HHmmss"</span><span class="o">)</span>
+<span class="kd">private</span> <span class="nc">Date</span> <span class="n">birthDate</span><span class="o">;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이 또한 다음처럼 <code class="language-plaintext highlighter-rouge">extendMessageConverters</code>를 통해 기본 설정으로 바꿀 수 있다.</p>
+
+<div class="callout callout-example" id="callout-f1c663f0-eefe-4835-a1b1-21ccf6d3bd95">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">MvcConfig</code> 설정 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
+<span class="nd">@EnableWebMvc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MvcConfig</span> <span class="kd">implements</span> <span class="nc">WebMvcConfigurer</span><span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">extendMessageConverters</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">HttpMessageConverter</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">converters</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">DateTimeFormatter</span> <span class="n">formatter</span> <span class="o">=</span> <span class="nc">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">"yyyyMMddHHmmss"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">ObjectMapper</span> <span class="n">objectMapper</span> <span class="o">=</span> <span class="nc">Jackson2ObjectMapperBuilder</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">json</span><span class="o">()</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">featuresToDisable</span><span class="o">(</span><span class="nc">SerializationFeature</span><span class="o">.</span><span class="na">INDENT_OUTPUT</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">deserializerByType</span><span class="o">(</span><span class="nc">LocalDateTime</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="k">new</span> <span class="nc">LocalDateTimeSerializer</span><span class="o">(</span><span class="n">formatter</span><span class="o">))</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">simpleDateFormat</span><span class="o">(</span><span class="s">"yyyyMMdd HHmmss"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">converters</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MappingJackson2HttpMessageConverter</span><span class="o">(</span><span class="n">objectMapper</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">deserializerByType()</code>는 JSON 데이터를 <code class="language-plaintext highlighter-rouge">LocalDAteTime</code> 타입으로 변환 시 사용할 패턴을 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">simpleDateFormat()</code>은 JSON 데이터를 <code class="language-plaintext highlighter-rouge">Date</code> 타입으로 변환 시, 혹은 그 반대에 사용할 패턴을 지정<br>
+<strong>요청 객체 검증</strong><br>
+이전과 동일하게 <code class="language-plaintext highlighter-rouge">@Valid</code> 를 통해 해결할 수 있다. 이 경우, 잘못된 경우 자동으로 400 상태 코드로 응답한다. (단, 에러 메시지를 JSON 형식으로 보내고 싶은 경우 <span class="preview-wrapper">
+      <a href="#`-valid`-에러-메시지에-`responseentity`-활용하기" class="wikilink"><code class="language-plaintext highlighter-rouge">@Valid</code> 에러 메시지에 <code class="language-plaintext highlighter-rouge">ResponseEntity</code> 활용하기</a>
+      <iframe class="preview" src='' data-href="#`-valid`-에러-메시지에-`responseentity`-활용하기" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 참조)</li>
+</ul>
+
+<p>다만, Validator를 직접 구현할 경우 아래와 같이 직접 상태 코드를 해결해야 한다.</p>
+
+<div class="callout callout-example" id="callout-1cbf08c0-f498-48cf-84e1-636349db5374">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>Validator 구현 시 객체 검증 에러 처리
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"/api/members"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="nf">newMember</span><span class="o">(</span>
+		<span class="nd">@RequestBody</span> <span class="nc">RegisterRequest</span> <span class="n">regReq</span><span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span> <span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+	<span class="k">try</span> <span class="o">{</span>
+		<span class="k">new</span> <span class="nf">RegisterRequestValidator</span><span class="o">().</span><span class="na">validate</span><span class="o">(</span><span class="n">regReq</span><span class="o">,</span> <span class="n">errors</span><span class="o">);</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">errors</span><span class="o">.</span><span class="na">hasErrors</span><span class="o">())</span> <span class="o">{</span>
+			<span class="n">response</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_BAD_REQUEST</span><span class="o">);</span>
+			<span class="k">return</span><span class="o">;</span>
+		<span class="o">}</span>
+		<span class="c1">//... 다른 에러들 처리</span>
+	<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">DuplicateMemberException</span> <span class="n">dupEx</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">response</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_CONFLICT</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id="ResponseEntity로-객체-리턴하고-응답-코드-지정하기"><code class="language-plaintext highlighter-rouge">ResponseEntity</code>로 객체 리턴하고 응답 코드 지정하기</h2>
+<p>기본적인 <code class="language-plaintext highlighter-rouge">HttpServletResponse</code>를 이용한 <span class="preview-wrapper">
+      <a href="#`-requestbody`로-json-요청-처리" class="wikilink">에러 처리</a>
+      <iframe class="preview" src='' data-href="#`-requestbody`로-json-요청-처리" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>를 이용하면 톰캣 서버가 제공하는 기본 에러 HTML 페이지를 응답 메시지로 제공하게 된다.</p>
+
+<h3 id="ResponseEntitiy를-이용한-응답-메시지-작성"><code class="language-plaintext highlighter-rouge">ResponseEntitiy</code>를 이용한 응답 메시지 작성</h3>
+<p>이를 위해 <code class="language-plaintext highlighter-rouge">ResponseEntity</code> 이용한 JSON 데이터를 보내는 방법을 알아보자.</p>
+
+<p><strong>1. 응답으로 보낼 에러 객체 만들기</strong></p>
+
+<div class="callout callout-example" id="callout-86384bfc-72fc-4614-938d-54005426d347">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">ErrorResponse</code> 클래스
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">controller</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ErrorResponse</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">message</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="nf">ErrorResponse</span><span class="o">(</span><span class="nc">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">getMessage</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">message</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">ResponseEntitiy</code>를 통해서 응답 메시지 만들기</strong></li>
+</ol>
+
+<div class="callout callout-example" id="callout-5bc4b6fb-cd9c-4f5c-93ee-f5f2b458710f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">ResponseEntity</code>를 이용한 응답 데이터 처리
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.springframework.http.HttpStatus</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.ResponseEntity</span><span class="o">;</span>
+
+<span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RestMemberController</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">MemberDao</span> <span class="n">memberDao</span><span class="o">;</span>
+	<span class="c1">//...</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/members/{id}"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="nf">member</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Member</span> <span class="n">member</span> <span class="o">=</span> <span class="n">memberDao</span><span class="o">.</span><span class="na">selectById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">member</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="nc">ResponseEntity</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">NOT_FOUND</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="k">new</span> <span class="nc">ErrorResponse</span><span class="o">(</span><span class="s">"no member"</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// return ResponseEntity.notFound().build();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// return ResponseEntity.status(HttpStatus.OK).body(member);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="nc">ResponseEntity</span><span class="o">.</span><span class="na">ok</span><span class="o">(</span><span class="n">member</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>아래와 같이 <code class="language-plaintext highlighter-rouge">ResponseEntity</code>로 응답 메시지를 만들어 리턴하면 된다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nc">ResponseEntity</span><span class="o">.</span><span class="na">status</span><span class="o">(</span>
+<span class="c1">// 응답 상태 코드 지정, HttpSatus 객체 활용</span>
+<span class="o">).</span><span class="na">body</span><span class="o">(</span>
+<span class="c1">// JSON으로 변환할 객체 지정</span>
+<span class="o">)</span>
+
+</code></pre></div></div>
+<p>이때 <code class="language-plaintext highlighter-rouge">ResponseEntity.ok</code> 메서드나 <code class="language-plaintext highlighter-rouge">ResponseEntity.notFound()</code> 같은 관련 메시지를 이용할 수 있으며, body에 넣을 값이 없으면 <code class="language-plaintext highlighter-rouge">build()</code> 메서드를 끝에 붙여 완성할 수 있다.</p>
+<ul>
+  <li>이외에도 <code class="language-plaintext highlighter-rouge">noContent()(204), badRequest()(400), notFound()(404)</code> 등이 존재<br>
+다음 코드를 <code class="language-plaintext highlighter-rouge">created()</code> 메서드로 대체할 수 있다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-34601b98-a890-465b-aca1-80727152e32d">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">/src/main/java/controller/RestMemberController.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestBody</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
+<span class="c1">//...</span>
+
+<span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RestMemberController</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">MemberDao</span> <span class="n">memberDado</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">MemberRegisterService</span> <span class="n">registerService</span><span class="o">;</span>
+
+	<span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"/api/members"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">newMember</span><span class="o">(</span>
+		<span class="nd">@RequestBody</span> <span class="nd">@Valid</span> <span class="nc">RegisterRequest</span> <span class="n">regReq</span><span class="o">,</span>
+		<span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="nc">Long</span> <span class="n">newMemberId</span> <span class="o">=</span> <span class="n">registerService</span><span class="o">.</span><span class="na">regist</span><span class="o">(</span><span class="n">regReq</span><span class="o">);</span>
+			<span class="c1">// response.setHeader("Location", "/api/members/" + newMemberId); // Location 헤더 추가</span>
+			<span class="c1">// response.setStatus(HttpServletResponse.SC_CREATED); // 201(CREATED) 응답</span>
+			<span class="c1">// 위 주석과 동일한 코드</span>
+			<span class="no">URI</span> <span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">"/api/members/"</span> <span class="o">+</span> <span class="n">newMemberId</span><span class="o">);</span>
+			<span class="k">return</span> <span class="nc">ResponseEntity</span><span class="o">.</span><span class="na">created</span><span class="o">(</span><span class="n">uri</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">DuplicateMemberException</span> <span class="n">dupEX</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">response</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_CONFLICT</span><span class="o">);</span> <span class="c1">// 409(Conflict)</span>
+		<span class="o">}</span>		
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="ExceptionHandler-RestControllerAdvice와-ResponseEntity-활용하기"><code class="language-plaintext highlighter-rouge">@ExceptionHandler</code>, <code class="language-plaintext highlighter-rouge">@RestControllerAdvice</code>와 <code class="language-plaintext highlighter-rouge">ResponseEntity</code> 활용하기</h3>
+
+<p><span class="preview-wrapper">
+      <a href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EB%82%A0%EC%A7%9C%20%EA%B0%92%20%EB%B3%80%ED%99%98,%20%20%EA%B2%BD%EB%A1%9C%20%EB%B3%80%EC%88%98,%20%EC%9D%B5%EC%85%89%EC%85%98%20%EA%B3%B5%EB%8F%99%20%EC%B2%98%EB%A6%AC.html#`-exceptionhandler`" class="wikilink">앞서</a>
+      <iframe class="preview" src='' data-href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EB%82%A0%EC%A7%9C%20%EA%B0%92%20%EB%B3%80%ED%99%98,%20%20%EA%B2%BD%EB%A1%9C%20%EB%B3%80%EC%88%98,%20%EC%9D%B5%EC%85%89%EC%85%98%20%EA%B3%B5%EB%8F%99%20%EC%B2%98%EB%A6%AC.html#`-exceptionhandler`" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> <code class="language-plaintext highlighter-rouge">@ExceptionHandler</code>를 이용하면 에러 처리 관련 중복 코드를 제거할 수 있었다.</p>
+
+<p>이를 활용해 다음과 같이 중복 코드를 없앨 수 있다.</p>
+
+<div class="callout callout-example" id="callout-fbf02913-8b7d-4f1d-b8ee-66724529dedc">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@ExceptionHandler</code>를 이용한 JSON 에러 응답
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/members3/{id}"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">Member</span> <span class="nf">member3</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Member</span> <span class="n">member</span> <span class="o">=</span> <span class="n">memberDao</span><span class="o">.</span><span class="na">selectById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">member</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">throw</span> <span class="k">new</span> <span class="nf">MemberNotFoundException</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">member</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="nd">@ExceptionHandler</span><span class="o">(</span><span class="nc">MemberNotFoundException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">ErrorResponse</span><span class="o">&gt;</span> <span class="nf">handleNoData</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="nc">ResponseEntity</span>
+		<span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">NOT_FOUND</span><span class="o">)</span>
+		<span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="k">new</span> <span class="nc">ErrorResponse</span><span class="o">(</span><span class="s">"no member"</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>응답을 JSON이나 XML로 해야하는 경우 <code class="language-plaintext highlighter-rouge">@ControllerAdvice</code> 대신 <code class="language-plaintext highlighter-rouge">@RestControllerAdvice</code>를 이용해야 한다.</p>
+
+<div class="callout callout-example" id="callout-253fb4b5-5c12-4e5b-b318-3b02325f80d0">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@RestControllerAdvice</code>를 이용한 에러 공동 처리 코드 공유
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">controller</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.http.HttpStatus</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.ResponseEntity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.ExceptionHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestControllerAdvice</span><span class="o">;</span>  
+
+<span class="kn">import</span> <span class="nn">spring.MemberNotFoundException</span><span class="o">;</span>  
+
+<span class="nd">@RestControllerAdvice</span><span class="o">(</span><span class="s">"controller"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ApiExceptionAdvice</span> <span class="o">{</span> 
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@ExceptionHandler</span><span class="o">(</span><span class="nc">MemberNotFoundException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">ErrorResponse</span><span class="o">&gt;</span> <span class="nf">handleNoData</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="nc">ResponseEntity</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">NOT_FOUND</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="k">new</span> <span class="nc">ErrorResponse</span><span class="o">(</span><span class="s">"no member"</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="Valid-에러-메시지에-ResponseEntity-활용하기"><code class="language-plaintext highlighter-rouge">@Valid</code> 에러 메시지에 <code class="language-plaintext highlighter-rouge">ResponseEntity</code> 활용하기</h3>
+
+<p>아래 처럼 <code class="language-plaintext highlighter-rouge">Errors</code> 객체를 추가해 직접 에러 메시지를 작성하거나 공통 처리하면 된다.</p>
+
+<div class="callout callout-example" id="callout-52dfd9f2-2856-4d8b-9bfb-a7135f0d8a27">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Valid</code> 검증 에러 응답 메시지 생성
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"/api/members"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="nf">newMember</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="nd">@Valid</span> <span class="nc">RegisterRequest</span> <span class="n">regReq</span> <span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span> <span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">errors</span><span class="o">.</span><span class="na">hasErrors</span><span class="o">())</span> <span class="o">{</span>
+			<span class="nc">String</span> <span class="n">errorCodes</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="na">getAllErrors</span><span class="o">()</span>
+				<span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+				<span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">error</span> <span class="o">-&gt;</span> <span class="n">error</span><span class="o">.</span><span class="na">getCodes</span><span class="o">()[</span><span class="mi">0</span><span class="o">])</span>
+				<span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">(</span><span class="s">","</span><span class="o">));</span>
+			<span class="k">return</span> <span class="nc">ResponseEntity</span>
+					<span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">BAD_REQUEST</span><span class="o">)</span>
+					<span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="k">new</span> <span class="nc">ErrorResponse</span><span class="o">(</span><span class="s">"errorCodes = "</span> <span class="o">+</span> <span class="n">errorCodes</span><span class="o">));</span>
+		<span class="o">}</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="nc">Long</span> <span class="n">newMemberId</span> <span class="o">=</span> <span class="n">registerService</span><span class="o">.</span><span class="na">regist</span><span class="o">(</span><span class="n">regReq</span><span class="o">);</span>
+			<span class="no">URI</span> <span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">"/api/members/"</span> <span class="o">+</span> <span class="n">newMemberId</span><span class="o">);</span>
+			<span class="k">return</span> <span class="nc">ResponseEntity</span><span class="o">.</span><span class="na">created</span><span class="o">(</span><span class="n">uri</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">DuplicateMemberException</span> <span class="n">dupEx</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="nc">ResponseEntity</span><span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">CONFLICT</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
+		<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-c4413804-6c3e-41e8-9b2d-e83ef71eb6aa">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Valid</code> 검증 에러 공통 처리
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.springframework.web.bind.MethodArgumentNotValidException</span><span class="o">;</span>
+
+<span class="nd">@RestControllerAdvice</span><span class="o">(</span><span class="s">"controller"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ApiExceptionAdvice</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@ExceptionHandler</span><span class="o">(</span><span class="nc">MethodArgumentNotValidException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">ErrorResponse</span><span class="o">&gt;</span> <span class="nf">handleBindException</span><span class="o">(</span><span class="nc">MethodArgumentNotValidException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">String</span> <span class="n">errorCodes</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="na">getBindingResult</span><span class="o">().</span><span class="na">getAllErrors</span><span class="o">()</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">error</span> <span class="o">-&gt;</span> <span class="n">error</span><span class="o">.</span><span class="na">getCodes</span><span class="o">()[</span><span class="mi">0</span><span class="o">])</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">(</span><span class="s">","</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="nc">ResponseEntity</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">BAD_REQUEST</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="k">new</span> <span class="nc">ErrorResponse</span><span class="o">(</span><span class="s">"errorCodes = "</span> <span class="o">+</span> <span class="n">errorCodes</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-JSON%20%EC%9D%91%EB%8B%B5%EA%B3%BC%20%EC%9A%94%EC%B2%AD%20%EC%B2%98%EB%A6%AC.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/Spring/Spring5 입문-JSON 응답과 요청 처리.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

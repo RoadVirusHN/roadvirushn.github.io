@@ -542,10 +542,10 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#함수-설계-과정">함수 설계 과정</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-시그니처-목적-스텁-생성">1. 시그니처, 목적, 스텁, 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-테스트-커버리지와-입력-값들을-고려한-테스트-실행-코드-작성">2. 테스트 커버리지와 입력 값들을 고려한 테스트 실행 코드 작성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-템플릿-만들기">3. 템플릿 만들기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#4-함수-구현하기">4. 함수 구현하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#5-테스트와-디버깅하기">5. 테스트와 디버깅하기</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#복합-함수-설계">복합 함수 설계</a><ul><li lvl="3"><a id="markdown-toc-0-7" href="#재귀-함수-설계">재귀 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#보조-함수-설계">보조 함수 설계</a><ul></ul></li></ul></li></ol>
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#함수-설계-과정">함수 설계 과정</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-시그니처-목적-스텁-생성">1. 시그니처, 목적, 스텁, 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-테스트-커버리지와-입력-값들을-고려한-테스트-실행-코드-작성">2. 테스트 커버리지와 입력 값들을 고려한 테스트 실행 코드 작성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-템플릿-만들기">3. 템플릿 만들기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#4-함수-구현하기">4. 함수 구현하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#5-테스트와-디버깅하기">5. 테스트와 디버깅하기</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#복합-함수-설계">복합 함수 설계</a><ul><li lvl="3"><a id="markdown-toc-0-7" href="#재귀-함수-설계">재귀 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#보조-함수-설계">보조 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#상호-참조-함수-설계">상호 참조 함수 설계</a><ul></ul></li></ul></li></ol>
 <h1 id="함수-설계">함수 설계</h1>
 
-<div class="callout callout-quote" id="callout-f44d6a52-5720-421b-9920-7821ba199e10">
+<div class="callout callout-quote" id="callout-ab9abf97-7785-4ae2-b754-7f5f035764d6">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>quote</strong></span>
@@ -579,7 +579,7 @@
 
 <p><strong>자주, 그리고 빨리 함수를 실행시켜 조기에 잘못을 찾아 고치는게 좋다.</strong> 여러 잘못이 쌓인다면 무엇이 잘못인지 모르게 되기 때문이다.</p>
 
-<div class="callout callout-seealso" id="callout-ddac6f65-a7c9-487e-bef3-a170775866ef">
+<div class="callout callout-seealso" id="callout-3cc5cb1a-a5c0-45e1-b571-70b22c7c3a74">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>사소한 가독성 팁
@@ -609,7 +609,7 @@
 
 <p>함수 디자인에 앞서 그림이나 시나리오 등을 작성하며 테스트용, 그리고 함수 내에 사용할 목적의 상수 등을 미리 정의할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-7ca3a1d3-75af-4481-9e0f-30f1693dd8bf">
+<div class="callout callout-example" id="callout-43c09b03-8287-4b45-b4e8-0d7152ea4398">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>함수 디자인 예시
@@ -671,13 +671,22 @@
     </div>
 <h3 id="1-시그니처-목적-스텁-생성">1. 시그니처, 목적, 스텁, 생성</h3>
 <ul>
-  <li>
-    <p><strong>시그니처</strong> : 인풋과 아웃풋에 대한 정보, 특히 데이터 타입,<br>
-      - 자세해야 한다. ex) Number (X) Float (O)<br>
-      - ex) 두 수 더하기 함수의 시그니처 (Integer Integer -&gt; Integer)</p>
+  <li><strong>시그니처</strong> : 인풋과 아웃풋에 대한 정보, 특히 데이터 타입,
+    <ul>
+      <li>자세해야 한다. ex) Number (X) Float (O)</li>
+      <li>ex) 두 수 더하기 함수의 시그니처 (Integer Integer -&gt; Integer)
+        <ul>
+          <li>일부 프로그래밍 언어의 일부 함수의 경우, 리턴값이 두개 이거나 종류가 두개인 경우도 있다.
+            <ul>
+              <li>(Integer -&gt; Integer or Boolean), (Integer -&gt; Integer, name)</li>
+              <li>보통 추천되지 않는다.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </li>
-  <li>
-    <p><strong>목적</strong>은 해당 함수의 사용하는 목적과 입력값과 결과값의 의미</p>
+  <li><strong>목적</strong>은 해당 함수의 사용하는 목적과 입력값과 결과값의 의미
     <ul>
       <li>단순 입력과 출력이 아니라 각각 데이터의 의미가 들어가면 좋다. 애매모호한 기준과 단어를 쓰면 안됨.</li>
       <li>다른 함수와 비교해 비슷한 일을 하는지 비교해보고, 비슷하다면 다른 함수를 이용할 수 없는지 알아보자.</li>
@@ -685,7 +694,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-02353be6-9684-44ee-ad6c-c52951ca49cc">
+<div class="callout callout-example" id="callout-fae4c541-ec28-437b-99b1-c2fb26f88416">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>목적의 예시
@@ -737,7 +746,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-2d5cc0e2-f94a-4ceb-a743-52d56ecb90bc">
+<div class="callout callout-example" id="callout-966b5631-7bfd-4fb7-ac56-10bfd2952a9d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>테스트 커버리지 고려 예시
@@ -770,7 +779,7 @@
   <li>함수의 템플릿은 데이터 설계의 정보를 기반으로 만들면 쉽다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-349ec9a0-bbdf-4f86-b542-d9db59765233">
+<div class="callout callout-example" id="callout-5c1d8498-a61f-4737-a808-a97907dfa89f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>데이터 설계와 함수 템플릿의 상관 관계
@@ -793,7 +802,7 @@
 
 <p>아래 예시는 compound type의 템플릿 조건 안에 atomic distinct type의 템플릿이 추가로 결합되었다.</p>
 
-<div class="callout callout-example" id="callout-62182d6c-a2ae-44b5-9052-c5fd491feb2a">
+<div class="callout callout-example" id="callout-84e74d42-08d9-4863-8a31-f5ec2b94c58e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>재귀구조와 empty를 가진 compound type t와 atomic distinct type k를 인자로 받는 함수 템플릿
@@ -860,7 +869,7 @@
 
 <p><strong>자기 자신 함수를 함수 로직 내에 이용하는 함수</strong></p>
 
-<div class="callout callout-note" id="callout-692e4d76-adf1-498b-8fed-a367bc74c453">
+<div class="callout callout-note" id="callout-e72ac928-3c45-4226-90f1-4b428b22ad05">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>재귀 함수 구현 시 유의점
@@ -890,7 +899,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-1f294dd2-2d60-49f5-9b95-a78b1a1d822a">
+<div class="callout callout-example" id="callout-c36edf40-388b-4eaa-b2d2-37d3c01eee70">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>재귀 함수와 재귀 데이터 설계 예시 : 짝수 필터링
@@ -967,11 +976,11 @@
 <p>다음과 같은 경우에 보조 함수를 설계해야 한다.</p>
 <ul>
   <li>함수 설계 중 설계 내용이 새로운 지식 도메인으로 바뀜(즉, 두가지 이상의 일을 함)</li>
-  <li>데이터 설계 중 재귀 구조가 발견됨</li>
+  <li>데이터 설계 중 참조가 발견됨</li>
   <li>함수 해석 부분 구현 시, 내용이 길고 복잡함</li>
 </ul>
 
-<div class="callout callout-warning" id="callout-72981fc8-8fa6-43f9-b007-3f87ebbc9070">
+<div class="callout callout-warning" id="callout-f40ad9e0-3de0-4bf8-9bdf-3198be8d210c">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong>의미없는 보조함수의 추가는 오히려 구현을 복잡하게 만들 수 있다.
@@ -988,7 +997,7 @@
 
 <p>보조 함수는 자신을 위한 또 다른 보조 함수를 가질 수 있다.</p>
 
-<div class="callout callout-example" id="callout-11086676-8a75-4573-8012-13c5711097bd">
+<div class="callout callout-example" id="callout-051f634a-1023-48c4-8524-a1e1c34ec0d8">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>보조 함수 의존 관계
@@ -1007,7 +1016,7 @@
     </div>
 <p>따라서, 각 보조 함수를 일단 <strong>위시리스트 항목</strong>으로 만들어 두고 상위 함수를 먼저 구현할 수 있다.</p>
 
-<div class="callout callout-seealso" id="callout-8c0d18ef-c57d-42dd-b8c8-79c01e53ae87">
+<div class="callout callout-seealso" id="callout-2117ff14-30f6-4b81-89ba-340f32d21039">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>위시리스트 항목(wish-list entry)?
@@ -1035,7 +1044,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-8ed15d80-60a7-4ce7-bd08-1fd6a025b64a">
+<div class="callout callout-example" id="callout-e0b923b4-fc47-40ab-96da-c16a00ad373b">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>구현 완료된 위시 리스트 항목
@@ -1075,6 +1084,121 @@
 </span><span class="p">{:</span> <span class="c1">#use-template-from-cat}
 </span><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
 	<span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="s">"cat"</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">CTR_Y</span><span class="p">,</span> <span class="n">MTS</span><span class="p">)</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="상호-참조-함수-설계">상호 참조 함수 설계</h3>
+
+<p>상호 참조 함수는 보조 함수와 비슷하게 특정 기능을 다른 함수의 참조로 해결한다.</p>
+
+<p>보조 함수와 다른 점은, 다른 함수 또한 자신의 함수를 포함하는 상호 참조 관계를 가진 함수라는 점이다.</p>
+<ul>
+  <li>정확히는 둘 이상의 함수가 사이클을 이룰 수도 있다.</li>
+</ul>
+
+<p>상호 참조 데이터 설계 시와 비슷하게, 함수 설계시 서로의 로직이 서로 영향 받으므로, 상호 참조 함수들을 모두 동시에 함께 설계를 진행한다.</p>
+
+<div class="callout callout-example" id="callout-1e737b20-fd7b-4511-9f60-ea2a040932f2">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>상호 참조 함수 설계 예시 : 트리 내 이름 검색
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Data definitions:
+</span><span class="p">{:</span> <span class="c1">#data-definitions}
+# Element is (make-elt String Integer ListOfElement)
+</span><span class="p">{:</span> <span class="c1">#element-is-make-elt-string-integer-listofelement}
+# interp. An element in the file system, with name, and EITHER data or subs.
+</span><span class="p">{:</span> <span class="c1">#interp-an-element-in-the-file-system-with-name-and-either-data-or-subs}
+#         If data is 0, then subs is considered to be list of sub elements.
+</span><span class="p">{:</span> <span class="c1">#if-data-is-0-then-subs-is-considered-to-be-list-of-sub-elements}
+#         If data is not 0, then subs is ignored.
+</span><span class="p">{:</span> <span class="c1">#if-data-is-not-0-then-subs-is-ignored}
+</span>
+<span class="c1"># ListOfElement is one of:
+</span><span class="p">{:</span> <span class="c1">#listofelement-is-one-of}
+#  - empty
+</span><span class="p">{:</span> <span class="c1">#empty}
+#  - [Element] ListOfElement
+</span><span class="p">{:</span> <span class="c1">#element-listofelement}
+# interp. A list of file system Elements
+</span><span class="p">{:</span> <span class="c1">#interp-a-list-of-file-system-elements}
+</span>
+<span class="k">def</span> <span class="nf">fnForElt</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">loe</span><span class="p">):</span> <span class="c1"># Compound data
+</span>	<span class="c1"># ... (name) :String
+</span>	<span class="c1"># (data) : Integer
+</span>	<span class="c1"># fnForLoe(loe) : Reference
+</span>	<span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">fnForLoe</span><span class="p">(</span><span class="n">loe</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">loe</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+		<span class="c1">#...
+</span>		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1">#...loe[0]
+</span>		<span class="c1">#...fnForLoe(loe[1:])
+</span>		<span class="k">pass</span>
+
+<span class="n">F1</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"F1"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="n">F2</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"F2"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="n">F3</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"F3"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="n">D4</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"D4"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[</span><span class="n">F1</span><span class="p">,</span> <span class="n">F2</span><span class="p">]}</span>
+<span class="n">D5</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"D5"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[</span><span class="n">F3</span><span class="p">]}</span>
+<span class="n">D6</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"D6"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[</span><span class="n">D4</span><span class="p">,</span> <span class="n">D5</span><span class="p">]}</span>
+
+
+<span class="c1"># Search the given tree for an element with the given name, produce data if found; false otherwise
+</span><span class="p">{:</span> <span class="c1">#search-the-given-tree-for-an-element-with-the-given-name-produce-data-if-found-false-otherwise}
+# String Element -&gt; Integer or false
+</span><span class="p">{:</span> <span class="c1">#string-element-integer-or-false}
+# String ListOfElement -&gt; Integer or false
+</span><span class="p">{:</span> <span class="c1">#string-listofelement-integer-or-false}
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findLoe</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[])</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">F1</span><span class="p">])</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">F3</span><span class="p">])</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"D4"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"D4"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findLoe</span><span class="p">(</span><span class="s">"F2"</span><span class="p">,</span> <span class="p">[</span><span class="n">F1</span><span class="p">,</span> <span class="n">F2</span><span class="p">])</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findLoe</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">F1</span><span class="p">,</span> <span class="n">F2</span><span class="p">])</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F1"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F2"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">D6</span><span class="p">])</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># def findElement(n, e): 
+</span><span class="p">{:</span> <span class="c1">#def-findelement-n-e}
+#     return False 
+</span><span class="p">{:</span> <span class="c1">#return-false}#stubs
+</span>
+<span class="c1"># def findLoe(n, loe):
+</span><span class="p">{:</span> <span class="c1">#def-findloe-n-loe}
+#     return False 
+</span><span class="p">{:</span> <span class="c1">#return-false}#stubs
+</span>
+<span class="c1"># &lt;Template from Element&gt;
+</span><span class="p">{:</span> <span class="c1">#template-from-element}
+</span><span class="k">def</span> <span class="nf">findElement</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">e</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">e</span><span class="p">.</span><span class="n">data</span>
+    <span class="k">return</span> <span class="n">findLoe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">subs</span><span class="p">)</span>
+    
+<span class="c1"># &lt;Template from ListOfElement&gt;
+</span><span class="p">{:</span> <span class="c1">#template-from-listofelement}
+</span><span class="k">def</span> <span class="nf">findLoe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">loe</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">loe</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="bp">False</span>
+	<span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">findElement</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">loe</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="bp">False</span><span class="p">:</span>
+             <span class="k">return</span> <span class="n">findElement</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">loe</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+	    <span class="k">return</span> <span class="n">findLoe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">loe</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
 </code></pre></div></div>
 
 </div>

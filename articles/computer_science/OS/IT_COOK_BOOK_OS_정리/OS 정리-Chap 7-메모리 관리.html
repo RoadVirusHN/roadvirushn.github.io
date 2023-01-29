@@ -545,7 +545,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#01-메모리-관리의-개요">01 메모리 관리의 개요</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-메모리-관리의-개념과-정책">1 메모리 관리의 개념과 정책</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-메모리의-구조와-매핑-사상">2 메모리의 구조와 매핑(사상)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-메모리-관리-관련-용어">3 메모리 관리 관련 용어</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#02-연속-메모리-할당">02 연속 메모리 할당</a><ul><li lvl="3"><a id="markdown-toc-0-5" href="#1-단일-프로그래밍-환경에서-연속-메모리-할당">1 단일 프로그래밍 환경에서 연속 메모리 할당</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#2-다중-프로그래밍-환경에서-연속-메모리-할당">2 다중 프로그래밍 환경에서 연속 메모리 할당</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#3-다중-프로그래밍-환경의-버디-시스템-buddy-system">3 다중 프로그래밍 환경의 버디 시스템(buddy system)</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-8" href="#03-분산-메모리-할당-1-페이징">03 분산 메모리 할당 1: 페이징</a><ul><li lvl="3"><a id="markdown-toc-0-9" href="#1-페이징의-개념">1 페이징의 개념</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#2-페이징-시스템의-하드웨어-구조와-원리">2 페이징 시스템의 하드웨어 구조와 원리</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#3-다중-단계-페이징-시스템의-구조와-원리">3 다중 단계 페이징 시스템의 구조와 원리</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-12" href="#4-페이지-테이블의-구현">4 페이지 테이블의 구현</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-13" href="#5-공유-페이지">5 공유 페이지</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-14" href="#6-페이징에서-보호">6 페이징에서 보호</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-15" href="#04-분산-메모리-할당-2-세그먼테이션-segmentation">04 분산 메모리 할당 2 : 세그먼테이션(segmentation)</a><ul><li lvl="3"><a id="markdown-toc-0-16" href="#1-세그먼테이션의-개념">1 세그먼테이션의 개념</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-17" href="#2-세그먼테이션에서-하드웨어-구조와-원리">2 세그먼테이션에서 하드웨어 구조와 원리</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-18" href="#3-세그먼트-공유">3 세그먼트 공유</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-19" href="#4-페이징과-세그먼테이션-비교">4 페이징과 세그먼테이션 비교</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-20" href="#5-페이지화된-세그먼테이션">5 페이지화된 세그먼테이션</a><ul></ul></li></ul></li></ol>
 <h1 id="7-메모리-관리">7. 메모리 관리</h1>
 
-<div class="callout callout-quote" id="callout-b6466f35-8bae-418a-9734-8831a5061537">
+<div class="callout callout-quote" id="callout-f65f1a37-c439-40a9-8360-41d7dda77b5a">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -646,7 +646,7 @@
   </li>
 </ul>
 
-<div class="callout callout-note" id="callout-5ee1b1e6-9a68-4f25-8b8a-23fa9e66786e">
+<div class="callout callout-note" id="callout-3c6b3e39-2e79-40a2-aa79-c2777d119015">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>컴파일러의 동작
@@ -1289,7 +1289,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
 
 <p>페이지의 크기는 보통 하드웨어에 따라 다르며, 512Byte ~ 1GB 사이이며, 2의 배수만큼의 크기이다.</p>
 
-<div class="callout callout-question" id="callout-68f194ef-984b-435e-ad4d-691268a5dfa7">
+<div class="callout callout-question" id="callout-c793b480-3339-4353-a024-df5cc802cfb1">
       <div class="header">
         <span class="emoji">✨</span>
         <span class="title"><strong>페이지가 2의 계승에 비례한 크기인 이유?
@@ -1318,7 +1318,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
 
 <p>그림 7-32는 IBM 370의 32비트 논리적 주소로, 앞의 8비트는 사용되지 않는다.</p>
 
-<div class="callout callout-question" id="callout-6df80b6b-ed90-4057-8d13-7a9f4021e850">
+<div class="callout callout-question" id="callout-20c1ec78-99a4-4f68-951c-6532015944c6">
       <div class="header">
         <span class="emoji">✨</span>
         <span class="title"><strong>Why?
@@ -1407,7 +1407,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
   </li>
 </ul>
 
-<div class="callout callout-seealso" id="callout-db047467-a258-45c6-80e4-f76c61c46459">
+<div class="callout callout-seealso" id="callout-88e1f9f8-390b-400c-8f3b-ff40c85d58f1">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>최근에는 최대 4단계 페이징 시스템까지 사용(모토로라 68030)
@@ -1504,7 +1504,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
   </li>
 </ul>
 
-<div class="callout callout-warning" id="callout-630397c5-24ae-4777-a4c6-53e7ff3c4ca2">
+<div class="callout callout-warning" id="callout-cc93d889-b099-486b-8f40-de7be847288d">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong>But!
@@ -1895,7 +1895,7 @@ Q2 준비큐는 가득차고, 나머지 큐는 대기하는 프로세스가 없�
 
 <p>으로 구성되어 있다.</p>
 
-<div class="callout callout-seealso" id="callout-1e6deec9-81dc-4b54-bf2f-b9693802cf04">
+<div class="callout callout-seealso" id="callout-bb20cc25-5469-4cfe-be3e-1a47e4b2b7d4">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>seealso</strong></span>

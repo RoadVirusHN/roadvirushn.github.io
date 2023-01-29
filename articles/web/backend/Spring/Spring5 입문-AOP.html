@@ -543,9 +543,9 @@
 
 <div class="content-section">
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#프록시-패턴">프록시 패턴</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#프록시-패턴-예시">프록시 패턴 예시</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#AOP-구현">AOP 구현</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#Aspect-클래스-구현">Aspect 클래스 구현</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#Aspect-클래스-적용">Aspect 클래스 적용</a><ul></ul></li></ul></li></ol>
-<h1 id="Spring5-입문-AOP-Aspect-Oriented-Programming">Spring5 입문-AOP(Aspect Oriented Programming)</h1>
+<h1 id="AOP-Aspect-Oriented-Programming">AOP(Aspect Oriented Programming)</h1>
 
-<div class="callout callout-quote" id="callout-b2d9cfdd-fff4-4652-a091-4ac543503c0a">
+<div class="callout callout-quote" id="callout-1f82d834-c005-4c17-b7c9-ba72114f8ce1">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -576,7 +576,7 @@
   <li><strong>런타임에 프록시 객체 생성해 공통 기능 삽입 -&gt; 스프링의 자동 생성 프록시 객체로 구현</strong></li>
 </ul>
 
-<div class="callout callout-info" id="callout-d70cfdcb-72a5-4af2-a147-99b21cb8021e">
+<div class="callout callout-info" id="callout-f2665e37-964b-41dd-86a2-4af7b1d3e273">
       <div class="header">
         <span class="emoji">ℹ️</span>
         <span class="title"><strong>프록시 기반 AOP
@@ -599,7 +599,7 @@
 
 <p>이를 통해 공통 기능 코드를 재사용하고 수정하기 쉬우며 가독성 좋은 코드를 만들어 낼 수 있다.</p>
 
-<div class="callout callout-seealso" id="callout-148c0f65-d276-4609-b476-118daf722307">
+<div class="callout callout-seealso" id="callout-92946fde-14ab-4dee-a00c-5ecb31c3afd8">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>사실은, 저자가 생각하기에는 기능 추가와 확장에 초점이 맞춰져 있는 데코레이터 패턴이 좀 더 가깝다고 한다. 프록시 패턴은 좀 더 접근 제어와 보안에 관련됨
@@ -610,7 +610,7 @@
     </div>
 <h3 id="프록시-패턴-예시">프록시 패턴 예시</h3>
 
-<div class="callout callout-example" id="callout-b6e33223-cc1e-4d7d-840e-c69e38414371">
+<div class="callout callout-example" id="callout-947f5f2a-796e-4374-95bb-59f77f542e79">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>프록시 객체와 대상 객체 예시
@@ -650,7 +650,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-0b59455e-e6ed-405f-bbb9-3b7028410bdb">
+<div class="callout callout-example" id="callout-74fff65c-4a2d-46c7-9da1-d1ea21fb5be1">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>프록시 패턴 예시
@@ -698,7 +698,7 @@ result
   <li>공통 기능 구현 메서드에 <code class="language-plaintext highlighter-rouge">@Around</code> 어노테이션 적용하여 대상 메서드 전후 실행에 관련한 로직 작성</li>
 </ol>
 
-<div class="callout callout-example" id="callout-18aa39d1-33a6-4b0b-8c3c-752a592cc209">
+<div class="callout callout-example" id="callout-a6c3567b-cff9-4dcc-830c-0aed97de8743">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Aspect 클래스 구현
@@ -745,7 +745,7 @@ result
 </div>
     </div>
     </div>
-<div class="callout callout-seealso" id="callout-63c56ca3-17b5-4630-a9bd-7d7612b6bb53">
+<div class="callout callout-seealso" id="callout-e4bc11e5-e9bf-4b84-8028-452abaf5a317">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>execution 명시자
@@ -766,7 +766,7 @@ result
 </div>
     </div>
     </div>
-<div class="callout callout-seealso" id="callout-545b369d-9496-434e-b5e5-5fcef1a2c6c3">
+<div class="callout callout-seealso" id="callout-20d9266a-57e6-4572-a048-7ae80c9c0d8c">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">ProceedingJoinPoint</code> 객체의 인터페이스
@@ -794,7 +794,7 @@ result
 
 <p>이후 완성한 클래스를 다음과 같이 설정 클래스에 등록하면 적용된다.</p>
 
-<div class="callout callout-example" id="callout-d523639b-a9be-4425-8e3d-8c15b401bf86">
+<div class="callout callout-example" id="callout-785a3873-7468-47c0-b5cd-59cc0341c21f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>AppCtx 설정 클래스 예시
@@ -827,7 +827,7 @@ result
     </div>
 <p>이후 다음과 같이 빈 객체를 가져와 클래스를 확인해보면 자동 생성된 프록시 객체가 생성되있음을 알 수 있다.</p>
 
-<div class="callout callout-example" id="callout-d48c78e0-9310-4813-9c59-6c86d368710f">
+<div class="callout callout-example" id="callout-c2a236e3-fb3d-4578-a446-526e60dc59c5">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>AOP 대상이 된 빈 객체 실행예
@@ -854,7 +854,7 @@ com.sum.proxy.%Proxy17
     </div>
 <p>이때 <code class="language-plaintext highlighter-rouge">%Proxy17</code>의 타입은 메서드의 리턴 타입인 <code class="language-plaintext highlighter-rouge">Calculator</code>를 상속받아 생성됨</p>
 
-<div class="callout callout-seealso" id="callout-d020bb4c-603e-4e71-81e6-489d18862a39">
+<div class="callout callout-seealso" id="callout-6a3ba8c2-34cb-4f4a-b633-89bf96606a08">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>만약 원본 클래스인 <code class="language-plaintext highlighter-rouge">RecCalculator</code> 클래스를 상속받아 프록시 객체를 이용해 생성하고 싶다면

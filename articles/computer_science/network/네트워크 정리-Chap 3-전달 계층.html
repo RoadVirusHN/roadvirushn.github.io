@@ -545,7 +545,7 @@
   <html><head></head><body><h1 id="Chapter-3-전달-계층-Transport-Layer">Chapter 3. 전달 계층(Transport Layer)</h1>
 
 <ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#3-1-Introduction-and-Transport-Layer-Services">3.1 Introduction and Transport-Layer Services</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#3-1-1-Relationship-Between-Transport-and-Network-Layers">3.1.1 Relationship Between Transport and Network Layers</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#3-1-2-Overview-of-the-Transport-Layer-in-the-Internet">3.1.2. Overview of the Transport Layer in the Internet</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#3-2-Multiplexing-and-Demultiplexing">3.2 Multiplexing and Demultiplexing</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#3-3-Connectionless-Transport-UDP">3.3 Connectionless Transport: UDP</a><ul><li lvl="3"><a id="markdown-toc-0-5" href="#3-3-1-UDP-Segment-Structure">3.3.1 UDP Segment Structure</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#3-3-2-UDP-Checksum">3.3.2 UDP Checksum</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-7" href="#3-4-Principles-of-Reliable-Data-Transfer">3.4 Principles of Reliable Data Transfer</a><ul><li lvl="3"><a id="markdown-toc-0-8" href="#3-4-1-Building-a-Reliable-Data-Transfer-Protocol">3.4.1. Building a Reliable Data Transfer Protocol</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#3-4-2-Pipelined-Reliable-Data-Transfer-Protocols">3.4.2 Pipelined Reliable Data Transfer Protocols</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#3-4-3-Go-Back-N-GBN">3.4.3 Go-Back-N (GBN)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#3-4-4-Selective-Repeat-SR">3.4.4. Selective Repeat (SR)</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-12" href="#3-5-Connection-Oriented-Transport-TCP">3.5 Connection-Oriented Transport :TCP</a><ul><li lvl="3"><a id="markdown-toc-0-13" href="#3-5-1-The-TCP-Connection">3.5.1 The TCP Connection</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-14" href="#3-5-2-TCP-Segment-Structure">3.5.2 TCP Segment Structure</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-15" href="#3-5-3-Round-Trip-Time-Estimation-and-Timeout">3.5.3 Round-Trip Time Estimation and Timeout</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-16" href="#3-5-4-Reliable-Data-Transfer">3.5.4 Reliable Data Transfer</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-17" href="#3-6-Principles-of-Congestion-Control">3.6 Principles of Congestion Control</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-18" href="#3-7-TCP-Congestion-Control">3.7 TCP Congestion Control</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-19" href="#3-8-Evolution-of-Transport-Layer-Functionality">3.8 Evolution of Transport-Layer Functionality</a><ul></ul></li></ul></li></ol>
-<div class="callout callout-quote" id="callout-9926cc9f-e68d-477e-a587-26db090a212b">
+<div class="callout callout-quote" id="callout-33d7bde0-664f-4c78-bf5b-7292a571e633">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -1071,7 +1071,7 @@
   <li>하지만 이때, 수신자와 송신자의 윈도우 범우 크기는 같지만, 가르키고 있는 범위는 다를 수 있다. fig 3.23 참조</li>
 </ul>
 
-<div class="callout callout-note" id="callout-38783c04-c569-4e87-857d-7b9a627df4f1">
+<div class="callout callout-note" id="callout-d26896e0-ab91-4d59-8595-bbac65e8e3c9">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>Fig3.24.SR 송신자 이벤트와 활동
@@ -1096,7 +1096,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-note" id="callout-1dcae786-8bc9-44e6-8e35-a99eaaae1802">
+<div class="callout callout-note" id="callout-786d6c2d-56ef-459c-a638-95c0b6eaa3c8">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>Fig.3.25.SR 수신자 이벤트와 활동
@@ -1499,7 +1499,7 @@ recommended\ \alpha = 0.125\]
 
 <p>아래의 코드 fig3.33은 TCP sender의 동작을 pseudocode로 나타낸 것이다. <strong>동작은 크게 application으로 부터 데이터 받아오기, 타이머 timeout, ACK 받아내기 로 나뉜다.</strong></p>
 
-<div class="callout callout-note" id="callout-c5058979-30c1-475f-81d0-c3713dbb6a3e">
+<div class="callout callout-note" id="callout-e4244823-96fa-435e-bb2a-539545ca5790">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>Fig.3.33.Simplified
@@ -1630,7 +1630,7 @@ loop (forever) {
 
 <p><img src="/assets/img/네트워크 정리-Chap 3-전달 계층/image-20211104143716857.png" alt=""></p>
 
-<div class="callout callout-note" id="callout-c335a2bf-ee67-4b9d-a1c2-8fdfcd270ab2">
+<div class="callout callout-note" id="callout-7f7ebec6-9690-4054-974b-c8320525af2d">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>fig.3.33

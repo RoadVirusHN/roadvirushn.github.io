@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spring5 입문-세션, 인터셉터, 쿠키 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Spring5 입문-세션, 인터셉터, 쿠키" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%84%B8%EC%85%98,%20%EC%9D%B8%ED%84%B0%EC%85%89%ED%84%B0,%20%EC%BF%A0%ED%82%A4.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%84%B8%EC%85%98,%20%EC%9D%B8%ED%84%B0%EC%85%89%ED%84%B0,%20%EC%BF%A0%ED%82%A4.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-26T13:54:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spring5 입문-세션, 인터셉터, 쿠키" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-26T13:54:00+09:00","datePublished":"2023-01-26T13:54:00+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"Spring5 입문-세션, 인터셉터, 쿠키","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%84%B8%EC%85%98,%20%EC%9D%B8%ED%84%B0%EC%85%89%ED%84%B0,%20%EC%BF%A0%ED%82%A4.html"},"url":"http://localhost:4000/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%84%B8%EC%85%98,%20%EC%9D%B8%ED%84%B0%EC%85%89%ED%84%B0,%20%EC%BF%A0%ED%82%A4.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 6
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Spring5 입문-세션, 인터셉터, 쿠키</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-01-26T13:54:00+09:00" itemprop="datePublished">Jan 26, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#세션">세션</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#HttpSession을-이용한-인증-구현">HttpSession을 이용한 인증 구현</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#인터셉터">인터셉터</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#HandlerInterceptor-인터페이스">HandlerInterceptor 인터페이스</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#비밀번호-변경-기능">비밀번호 변경 기능</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-5" href="#쿠키">쿠키</a><ul><li lvl="3"><a id="markdown-toc-0-6" href="#이메일-기억하기-기능-구현">이메일 기억하기 기능 구현</a><ul></ul></li></ul></li></ol>
+<h1 id="세션-인터셉터-쿠키">세션, 인터셉터, 쿠키</h1>
+
+<div class="callout callout-quote" id="callout-f3c0b071-728b-4b72-8487-8dafa5869517">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>_<span class='link-warning'>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.kame.co.kr/nkm/det..."</em>로
+        <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
+      </span>
+    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<p>로그인과 유저 편의성, 차별화된 서비스를 위한 쿠키와 세션, 인터셉터를 통한 인증을 알아보자.</p>
+
+<h2 id="세션">세션</h2>
+
+<p>로그인 상태를 유지하기 위해 크게 HttpSession, 쿠키, JWT 토큰 등이 존재한다.<br>
+그중 우리는 Session을 이용할 것이다.</p>
+
+<p>추가로 Session을 보관하는 방법도 HttpsSession과 쿠키로 나뉜다.</p>
+
+<h3 id="HttpSession을-이용한-인증-구현"><code class="language-plaintext highlighter-rouge">HttpSession</code>을 이용한 인증 구현</h3>
+
+<p>인증은 아직 확인되지 않은 사용자를 특정 사용자로 확인하는 작업이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">HttpSession</code>을 이용하는 방법은 다음 두 가지가 있다.</p>
+
+<div class="callout callout-example" id="callout-d00f8961-46c6-4a24-9a20-1c951c6937f5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>요청 매핑 애노테이션 적용 메서드에 <code class="language-plaintext highlighter-rouge">HttpSession</code> 파라미터 넘기기
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li>메서드 실행 전에 <code class="language-plaintext highlighter-rouge">HttpSession</code>을 무조건 하나 생성하거나 기존의 것을 가져온다.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">form</span><span class="o">(</span><span class="nc">CommandObj</span> <span class="n">commandObj</span><span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span><span class="o">,</span> <span class="nc">HttpSession</span> <span class="n">session</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"authInfo"</span><span class="o">,</span> <span class="n">commandObj</span><span class="o">);</span> <span class="c1">// 세션 정보 지정</span>
+	<span class="n">session</span><span class="o">.</span><span class="na">invalidate</span><span class="o">();</span> <span class="c1">// 세션 만료</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-7463e8ff-ae54-400e-b7c6-8269f6d3e4f7">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>요청 매핑 애노테이션 적용 메서드에 <code class="language-plaintext highlighter-rouge">HttpServletRequest</code> 파라미터를 추가하고 <code class="language-plaintext highlighter-rouge">HttpServletRequest</code> 객체에서 세션 얻어내기
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li>세션 생성 코드를 원하는 타이밍에 이용하므로, 세션을 생성하지 않을 수 있다.</li>
+  <li>따라서 성능상 유리할 수 있다.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">submit</span><span class="o">(</span><span class="nc">CommandObj</span> <span class="n">commandObj</span><span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span><span class="o">,</span> <span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">)</span> <span class="o">{</span>
+	<span class="nc">HttpSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getSession</span><span class="o">();</span><span class="c1">// 세션 생성</span>
+	<span class="o">...</span> <span class="c1">// Session 이용</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이를 이용해 다음과 같이 로그인 컨트롤러를 구현할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-ff8922c8-fab9-4e89-879b-309823d7fe40">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/controller/LoginController.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">controller</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpSession</span><span class="o">;</span>
+<span class="c1">//...</span>
+
+<span class="nd">@Controller</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/login"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginController</span> <span class="o">{</span>
+<span class="c1">// ...</span>
+	<span class="nd">@PostMapping</span>
+	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">submit</span><span class="o">(</span><span class="nc">LoginCommand</span> <span class="n">loginCommand</span><span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span><span class="o">,</span> <span class="nc">HttpSession</span> <span class="n">session</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">new</span> <span class="nf">LoginCommandValidator</span><span class="o">().</span><span class="na">validate</span><span class="o">(</span><span class="n">loginCommand</span><span class="o">,</span> <span class="n">errors</span><span class="o">);</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">errors</span><span class="o">.</span><span class="na">hasErrors</span><span class="o">())</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="s">"login/loginForm"</span><span class="o">;</span>
+		<span class="o">}</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="nc">AuthInfo</span> <span class="n">authInfo</span> <span class="o">=</span> <span class="n">authService</span><span class="o">.</span><span class="na">authenticate</span><span class="o">(</span><span class="n">loginCommand</span><span class="o">.</span><span class="na">getEmail</span><span class="o">(),</span> <span class="n">loginCommand</span><span class="o">.</span><span class="na">getPassword</span><span class="o">());</span> <span class="c1">// DB 조회 및 이메일과 비밀번호 대조</span>
+		<span class="c1">// 로그인 성공시 session 값 저장</span>
+		<span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"authInfo"</span><span class="o">,</span> <span class="n">authInfo</span><span class="o">);</span>
+		<span class="c1">// 로그아웃 및 세션 만료는 session.invalidate(); 로 구현하면 된다.</span>
+			<span class="k">return</span> <span class="s">"login/loginSuccess"</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IdPasswordNotMatchingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">errors</span><span class="o">.</span><span class="na">reject</span><span class="o">(</span><span class="s">"idPasswordNotMatching"</span><span class="o">);</span>
+			<span class="k">return</span> <span class="s">"login/loginForm"</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id="인터셉터">인터셉터</h2>
+
+<p>인가는 이미 확인 사용자가 특정 권한이 있는지 확인하고, 확인이 여전히 유효한지 확인하는 작업이다.<br>
+	ex) 비밀번호를 변경하려면 이미 로그인이 되어있어야 한다. 특정 서비스에서는 게시글을 쓰려면 이미 회원임을 인가받아야 한다.</p>
+
+<p>이처럼 여러 기능에서 인가 기능을 사용하기 때문에 <strong>특정 컨트롤러 코드에 공통된 인가 기능을 구현하기 위해 인터셉터를 사용</strong>할 수 있다.</p>
+
+<h3 id="HandlerInterceptor-인터페이스"><code class="language-plaintext highlighter-rouge">HandlerInterceptor</code> 인터페이스</h3>
+
+<p><code class="language-plaintext highlighter-rouge">org.springframework.web.HandlerInterceptor</code> 인터페이스는 주어진 <code class="language-plaintext highlighter-rouge">Handler</code> 오브젝트 실행 시, 다음 세 시점에 공통 기능을 넣을 수 있다. 이중 원하는 시점의 로직만 재정의하면 된다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object Handler) throws Exception;</code> : <strong>컨트롤러 실행 전 실행, <code class="language-plaintext highlighter-rouge">false</code> 리턴 시 컨트롤러 실행 막음</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">void postHandle(HttpServletRequest request, HttpServletResponse response, Object Handler, ModelAndView modelAndView) throws Exception;</code> : <strong>컨트롤러 실행 후, 뷰 실행 전 실행, <code class="language-plaintext highlighter-rouge">Handler</code>가 오류를 일으키면 실행되지 않음.</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object Handler, Exception ex) throws Exception;</code> : <strong>뷰 실행 이후 실행, <code class="language-plaintext highlighter-rouge">Handler</code>가 오류를 일으키면 <code class="language-plaintext highlighter-rouge">ex</code> 객체를 덮어씀. 정상 작동하면 <code class="language-plaintext highlighter-rouge">ex</code>는 <code class="language-plaintext highlighter-rouge">null</code>이 됨</strong>
+    <ul>
+      <li>로그, 실행 시간 기록 등에 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<p>이중 <code class="language-plaintext highlighter-rouge">preHandle</code>을 이용해 인가를 구현할 수 있다.</p>
+
+<div class="callout callout-question" id="callout-a9680117-0d0c-4559-8d59-83da97afdbb5">
+      <div class="header">
+        <span class="emoji">✨</span>
+        <span class="title"><strong>앞서 배웠던 <code class="language-plaintext highlighter-rouge">AOP</code>와의 차이점은?
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li>AOP와 함께 구현시 인터셉터가 나중에 감싸진다.(이후 서블릿 필터가 감싸짐)</li>
+  <li>서블릿 필터와 인터셉터는 <strong>HTTP 요청과 응답, 그리고 스프링 빈에 접근</strong> 가능하다.</li>
+  <li>AOP는 둘과 다르게 서블릿 단위에서 실행하지 않고 Proxy 패턴으로 실행, MVC와 관계없이 사용 가능</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<h3 id="비밀번호-변경-기능">비밀번호 변경 기능</h3>
+<p>이제 인가 기능이 포함된 비밀번호 변경 기능을 구현할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-7476fe14-730d-4393-9a13-dc74652e7523">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/interceptor/AuthCheckInterceptor.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">interceptor</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpSession</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.HandlerInterceptor</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AuthCheckInterceptor</span> <span class="kd">implements</span> <span class="nc">HandlerInterceptor</span> <span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">preHandle</span><span class="o">(</span>
+			<span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span>
+			<span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span>
+			<span class="nc">Object</span> <span class="n">handler</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="nc">HttpSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">session</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 세션이 존재함</span>
+			<span class="nc">Object</span> <span class="n">authInfo</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"authInfo"</span><span class="o">);</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">authInfo</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+				<span class="k">return</span> <span class="kc">true</span><span class="o">;</span> <span class="c1">// 정상 진행</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getContextPath</span><span class="o">()</span> <span class="o">+</span> <span class="s">"/login"</span><span class="o">);</span> <span class="c1">// 로그인 페이지로 보냄</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="o">;</span> <span class="c1">// 컨트롤러 실행 막음</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>앞서 사용했던 <span class="preview-wrapper">
+      <a href="#세션" class="wikilink">세션</a>
+      <iframe class="preview" src='' data-href="#세션" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>을 통해 로그인한 사용자 정보를 가져올 것이며 사용자 정보가 <code class="language-plaintext highlighter-rouge">null</code>일 경우 로그인 페이지로 리다이렉트하고 컨트롤러의 실행을 막을 것이다.(<code class="language-plaintext highlighter-rouge">false</code>)</li>
+</ul>
+
+<p>이후, 생성한 <code class="language-plaintext highlighter-rouge">HandlerInterceptor</code>를 설정 클래스에 등록한다. 단, 빈 객체 등록이 아닌 기존 기능을 재정의해 새로 추가하는 것임을 유의하자.</p>
+
+<div class="callout callout-example" id="callout-d8ee3230-1a72-4d31-8e18-72e071c5b900">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>example</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>title:<code class="language-plaintext highlighter-rouge">src/main/java/config/MvcConfig.java</code></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.EnableWebMvc</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.InterceptorRegistry</span><span class="o">;</span>
+<span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">interceptor.AuthCheckInterceptor</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableWebMvc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MvcConfig</span> <span class="kd">implements</span> <span class="nc">WebMvcConfigurer</span> <span class="o">{</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addInterceptors</span><span class="o">(</span><span class="nc">InterceptorRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">registry</span><span class="o">.</span><span class="na">addInterceptor</span><span class="o">(</span><span class="n">authCheckInterceptor</span><span class="o">())</span>
+		<span class="o">.</span><span class="na">addPathPatterns</span><span class="o">(</span><span class="s">"/edit/**"</span><span class="o">)</span> <span class="c1">//해당 인터셉트를 포함할 url 루트 지정</span>
+		<span class="o">.</span><span class="na">excludePathPatterns</span><span class="o">(</span><span class="s">"/edit/help/**"</span><span class="o">,</span> <span class="s">"/edit/else/**"</span><span class="o">);</span> <span class="c1">// 포함 url 내에서 불포함할 url 루트 지정</span>
+		<span class="c1">// ,(콤마)로 여러 url을 포함하거나 불포함할 수 있음</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="nc">AuthCheckInterceptor</span> <span class="nf">authCheckInterceptor</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">AuthCheckInterceptor</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>이때 url 설정은 <span class='link-warning'>
+      <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html" class="wikilink externallink">Ant 경로 패턴</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://docs.spring.io/spring-..."</em>로
+        <button onclick="window.open('https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html','_blank'); return false;">이동</button>?
+      </span>
+    </span>을 따른다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-f6c78ac9-b696-4967-a473-50097acfe634">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/controller/ChangePwdController.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">submit</span><span class="o">(</span><span class="nd">@ModelAttribute</span><span class="o">(</span><span class="s">"command"</span><span class="o">)</span> <span class="nc">ChangePwdCommand</span> <span class="n">pwdCmd</span><span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span><span class="o">,</span> <span class="nc">HttpSession</span> <span class="n">session</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">new</span> <span class="nf">ChangePwdCommandValidator</span><span class="o">().</span><span class="na">validate</span><span class="o">(</span><span class="n">pwdCmd</span><span class="o">,</span> <span class="n">errors</span><span class="o">);</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">errors</span><span class="o">.</span><span class="na">hasErrors</span><span class="o">())</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="s">"edit/changePwdForm"</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="c1">// session 정보 가져오기.</span>
+	<span class="nc">AuthInfo</span> <span class="n">authInfo</span> <span class="o">=</span> <span class="o">(</span><span class="nc">AuthInfo</span><span class="o">)</span> <span class="n">session</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"authInfo"</span><span class="o">);</span>
+	<span class="c1">// 앞서 인터셉터로 null이 아님을 확인했으므로 무조건 존재한다.	</span>
+	<span class="k">try</span> <span class="o">{</span>
+		<span class="n">changePasswordService</span><span class="o">.</span><span class="na">changePassword</span><span class="o">(</span>
+			<span class="n">authInfo</span><span class="o">.</span><span class="na">getEmail</span><span class="o">(),</span>
+			<span class="n">pwdCmd</span><span class="o">.</span><span class="na">getCurrentPassword</span><span class="o">(),</span>
+			<span class="n">pwdCmd</span><span class="o">.</span><span class="na">getNewPassword</span><span class="o">());</span>
+		<span class="k">return</span> <span class="s">"edit/changedPwd"</span><span class="o">;</span>
+	<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">WrongIdPasswordException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">errors</span><span class="o">.</span><span class="na">rejectValue</span><span class="o">(</span><span class="s">"currentPassword"</span><span class="o">,</span> <span class="s">"notMatching"</span><span class="o">);</span>
+		<span class="k">return</span> <span class="s">"edit/changePwdForm"</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이후 위와 같이 비밀번호 변경 기능을 구현할 수 있다.</p>
+
+<h2 id="쿠키">쿠키</h2>
+<p>쿠키를 통해 이메일 기억하기 기능 같은 유저 특화 편의성 기능을 구현할 수 있다.<br>
+쿠키 구현을 위해 <code class="language-plaintext highlighter-rouge">@CookieValue</code> 어노테이션을 사용할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-94cce272-8693-4645-93e8-8269da1bdb1a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@CookieValue</code> 어노테이션
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">@CookieValue(value="쿠키명", required=default:true) Cookie 변수명</code></p>
+
+<p>위와 같이 파라미터 쿠키 타입 앞에 적어주면 된다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">value</code>: 쿠키 이름 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">required</code>: 해당 쿠키가 존재하지 않을 수 있다면 false, true 일 경우 에러 발생</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<h3 id="이메일-기억하기-기능-구현">이메일 기억하기 기능 구현</h3>
+
+<div class="callout callout-example" id="callout-4c47d143-7e38-49c7-8b7d-429212d22806">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/controller/LoginController.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.Cookie</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.CookieValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+<span class="c1">// ...</span>
+<span class="nd">@Controller</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/login"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginController</span> <span class="o">{</span>
+	<span class="c1">// ...</span>
+    <span class="nd">@GetMapping</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">form</span><span class="o">(</span><span class="nc">LoginCommand</span> <span class="n">loginCommand</span><span class="o">,</span>
+    		<span class="nd">@CookieValue</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"REMEMBER"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span> <span class="nc">Cookie</span> <span class="n">rCookie</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">rCookie</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 쿠키가 존재한다면</span>
+			<span class="n">loginCommand</span><span class="o">.</span><span class="na">setEmail</span><span class="o">(</span><span class="n">rCookie</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span> <span class="c1">// REMEMBER 쿠키값 가져와서 이메일 칸 채움</span>
+			<span class="n">loginCommand</span><span class="o">.</span><span class="na">setRememberEmail</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span> 
+		<span class="o">}</span>
+    	<span class="k">return</span> <span class="s">"login/loginForm"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@PostMapping</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">submit</span><span class="o">(</span>
+    		<span class="nc">LoginCommand</span> <span class="n">loginCommand</span><span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span><span class="o">,</span> <span class="nc">HttpSession</span> <span class="n">session</span><span class="o">,</span>
+    		<span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">new</span> <span class="nf">LoginCommandValidator</span><span class="o">().</span><span class="na">validate</span><span class="o">(</span><span class="n">loginCommand</span><span class="o">,</span> <span class="n">errors</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">errors</span><span class="o">.</span><span class="na">hasErrors</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="s">"login/loginForm"</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">AuthInfo</span> <span class="n">authInfo</span> <span class="o">=</span> <span class="n">authService</span><span class="o">.</span><span class="na">authenticate</span><span class="o">(</span>
+                    <span class="n">loginCommand</span><span class="o">.</span><span class="na">getEmail</span><span class="o">(),</span>
+                    <span class="n">loginCommand</span><span class="o">.</span><span class="na">getPassword</span><span class="o">());</span>
+            
+            <span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"authInfo"</span><span class="o">,</span> <span class="n">authInfo</span><span class="o">);</span>
+
+			<span class="nc">Cookie</span> <span class="n">rememberCookie</span> <span class="o">=</span> 
+					<span class="k">new</span> <span class="nf">Cookie</span><span class="o">(</span><span class="s">"REMEMBER"</span><span class="o">,</span> <span class="n">loginCommand</span><span class="o">.</span><span class="na">getEmail</span><span class="o">());</span> <span class="c1">// 새로운 쿠키 생성</span>
+			<span class="n">rememberCookie</span><span class="o">.</span><span class="na">setPath</span><span class="o">(</span><span class="s">"/"</span><span class="o">);</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">loginCommand</span><span class="o">.</span><span class="na">isRememberEmail</span><span class="o">())</span> <span class="o">{</span> <span class="c1">// 이메일 기억하기 쿠키 설정</span>
+				<span class="n">rememberCookie</span><span class="o">.</span><span class="na">setMaxAge</span><span class="o">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">30</span><span class="o">);</span>
+			<span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// 쿠키 수명을 0으로 만들어 이메일 기억하지 않게 하기</span>
+				<span class="n">rememberCookie</span><span class="o">.</span><span class="na">setMaxAge</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+			<span class="o">}</span>
+			<span class="n">response</span><span class="o">.</span><span class="na">addCookie</span><span class="o">(</span><span class="n">rememberCookie</span><span class="o">);</span> <span class="c1">// 응답 메시지에 쿠키 필드 추가</span>
+
+            <span class="k">return</span> <span class="s">"login/loginSuccess"</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">WrongIdPasswordException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">errors</span><span class="o">.</span><span class="na">reject</span><span class="o">(</span><span class="s">"idPasswordNotMatching"</span><span class="o">);</span>
+            <span class="k">return</span> <span class="s">"login/loginForm"</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-warning" id="callout-ce922fb2-dfb0-4ed6-aafd-2184296f6a76">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>실제 쿠키 사용시 예제와 달리 암호와 및 보안을 고려해야 한다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%84%B8%EC%85%98,%20%EC%9D%B8%ED%84%B0%EC%85%89%ED%84%B0,%20%EC%BF%A0%ED%82%A4.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/Spring/Spring5 입문-세션, 인터셉터, 쿠키.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>
