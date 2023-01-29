@@ -15,7 +15,7 @@ max_depth: 3
 varied_style: true
 ```
 
-# Spring5 입문-의존성 주입(DI)
+# 의존성 주입(DI)
 
 ```ad-quote
 title: 출처

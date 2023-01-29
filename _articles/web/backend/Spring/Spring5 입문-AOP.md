@@ -15,7 +15,7 @@ max_depth: 3
 varied_style: true
 ```
 
-# Spring5 입문-AOP(Aspect Oriented Programming)
+# AOP(Aspect Oriented Programming)
 ```ad-quote
 title: 출처
 

@@ -15,7 +15,7 @@ max_depth: 3
 varied_style: true
 ```
 
-# Spring5 입문-MVC 개념과 설정
+# MVC 개념과 설정
 
 ```ad-quote
 title: 출처

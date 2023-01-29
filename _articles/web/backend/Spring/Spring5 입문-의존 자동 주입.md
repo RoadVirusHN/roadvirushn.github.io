@@ -15,7 +15,7 @@ max_depth: 3
 varied_style: true
 ```
 
-# Spring5 입문-의존 자동 주입
+# 의존 자동 주입
 ```ad-quote
 title: 출처
 

@@ -15,7 +15,7 @@ max_depth: 3
 varied_style: true
 ```
 
-# Spring5 입문-컴포넌트 스캔(Component Scan)
+# 컴포넌트 스캔(Component Scan)
 ```ad-quote
 title: 출처
 
