@@ -1,7 +1,7 @@
 ---
 title: Spring5-MVC 개념과 설정
 date: 2023-01-20 09:15:29 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-20 09:15:29 +0900

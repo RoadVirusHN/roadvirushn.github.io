@@ -210,5 +210,13 @@
   "JOB": {
     "background-color": "rgb(70, 222, 222)",
     "color": "rgb(185, 33, 207)"
+  },
+  "RACKET": {
+    "background-color": "rgb(167, 50, 50)",
+    "color": "rgb(88, 205, 246)"
+  },
+  "SML": {
+    "background-color": "rgb(16, 72, 72)",
+    "color": "rgb(239, 183, 214)"
   }
 }

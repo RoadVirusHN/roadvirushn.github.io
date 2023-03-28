@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-스프링 부트
 date: 2023-01-29 15:00:22 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-29 15:00:22 +0900

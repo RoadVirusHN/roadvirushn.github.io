@@ -1,7 +1,7 @@
 ---
 title: OSSU PL 간단 정리
 date: 2023-03-10 11:16:55 +0900
-tags: HIDE CRUDE PL
+tags: SML ETC OSSU PL CS
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-03-10 11:16:55 +0900

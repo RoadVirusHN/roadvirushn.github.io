@@ -1,7 +1,7 @@
 ---
 title: Spring5-JPA
 date: 2023-02-09 22:52:59 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-02-09 22:52:59 +0900

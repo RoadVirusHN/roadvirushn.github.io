@@ -1,7 +1,7 @@
 ---
 title: Spring5-다른 REST API와 통신
 date: 2023-02-17 11:37:10 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE 
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-02-17 11:37:10 +0900

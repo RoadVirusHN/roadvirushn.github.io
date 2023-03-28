@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-세션, 인터셉터, 쿠키
 date: 2023-01-26 13:54:00 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-26 13:54:00 +0900

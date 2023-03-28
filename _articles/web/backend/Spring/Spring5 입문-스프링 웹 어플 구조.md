@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-스프링 웹 어플 구조
 date: 2023-01-26 21:35:04 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-26 21:35:04 +0900

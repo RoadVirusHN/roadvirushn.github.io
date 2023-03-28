@@ -1,7 +1,7 @@
 ---
 title: OSSU PL-A Section 2
 date: 2023-03-19 12:06:39 +0900
-tags: HIDE CRUDE 
+tags: CS PL SML OSSU 
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-03-19 12:06:39 +0900

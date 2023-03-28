@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-의존성 주입(DI)
 date: 2023-01-06 13:50:29 +0900
-tags: HIDE CRUDE
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-06 13:50:29 +0900

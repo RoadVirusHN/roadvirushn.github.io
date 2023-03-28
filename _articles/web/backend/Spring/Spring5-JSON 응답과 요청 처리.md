@@ -1,7 +1,7 @@
 ---
 title: Spring5-JSON 응답과 요청 처리
 date: 2023-01-29 14:57:33 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-29 14:57:33 +0900

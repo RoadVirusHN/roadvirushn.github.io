@@ -1,7 +1,7 @@
 ---
 title: Spring5-비동기 메시지 전송
 date: 2023-02-20 15:21:07 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-02-20 15:21:07 +0900

@@ -1,7 +1,7 @@
 ---
 title: Spring5-컨트롤러와 뷰 구현
 date: 2023-01-20 17:34:30 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-23 17:34:30 +0900

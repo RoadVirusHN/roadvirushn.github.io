@@ -1,7 +1,7 @@
 ---
 title: 스프링 설정과 의존 관리 툴
 date: 2023-01-06 04:36:53 +0900
-tags: HIDE CRUDE
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-06 04:36:53 +0900

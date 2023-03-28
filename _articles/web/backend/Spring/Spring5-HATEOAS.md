@@ -1,7 +1,7 @@
 ---
 title: Spring5-HATEOAS
 date: 2023-02-16 10:21:46 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-02-16 10:21:46 +0900

@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-빈(Bean)과 컨테이너
 date: 2023-01-09 13:57:33 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-09 13:57:33 +0900

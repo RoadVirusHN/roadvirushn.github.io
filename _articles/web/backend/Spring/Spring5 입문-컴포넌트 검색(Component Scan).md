@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문 - 컴포넌트 검색(Component Scan)
 date: 2023-01-09 14:57:33 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-09 14:57:33 +0900

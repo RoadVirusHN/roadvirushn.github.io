@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-AOP
 date: 2023-01-09 19:22:11 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE 
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-09 19:22:11 +0900
