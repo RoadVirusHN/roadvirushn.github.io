@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-세션, 인터셉터, 쿠키
 date: 2023-01-26 13:54:00 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-26 13:54:00 +0900
@@ -16,11 +16,10 @@ varied_style: true
 ```
 
 # 세션, 인터셉터, 쿠키
-
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
 로그인과 유저 편의성, 차별화된 서비스를 위한 쿠키와 세션, 인터셉터를 통한 인증을 알아보자.
@@ -158,7 +157,7 @@ public class AuthCheckInterceptor implements HandlerInterceptor {
 ```
 - 앞서 사용했던 [[#세션|세션]]을 통해 로그인한 사용자 정보를 가져올 것이며 사용자 정보가 `null`일 경우 로그인 페이지로 리다이렉트하고 컨트롤러의 실행을 막을 것이다.(`false`)
 
-이후, 생성한 `HandlerInterceptor`를 설정 클래스에 등록한다. 단, 빈 객체 등록이 아닌 기존 기능을 재정의해 새로 추가하는 것임을 유의하자.
+이후, 생성한 `HandlerInterceptor`를 구성 클래스에 등록한다. 단, 빈 객체 등록이 아닌 기존 기능을 재정의해 새로 추가하는 것임을 유의하자.
 ```ad-example
 title:`src/main/java/config/MvcConfig.java`
 ~~~java

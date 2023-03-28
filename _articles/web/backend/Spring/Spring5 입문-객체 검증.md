@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-객체 검증
 date: 2023-01-25 16:11:10 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-25 16:11:10 +0900
@@ -16,10 +16,11 @@ varied_style: true
 ```
 
 # 객체 검증
+
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
 ```ad-faq
@@ -172,7 +173,7 @@ public String handleStep3(Errors errors, RegisterRequest regReq) {
 - `rejectIfEmptyOrWhitespace(Errors errors, String field, String errorCode)`
 - `rejectIfEmptyOrWhitespace(Errors errors, String field, String errorCode, Object[] errorArgs)`
 
-<!-- vue에서 error 메시지 받는법 추가하기-->
+Vue, React 등 프론트엔드 서버 요청에 에러 메시지를 포함하는 방법은 [[Spring5-JSON 응답과 요청 처리]] 참조
 
 ### 글로벌 범위 Validator와 컨트롤러 범위 Validator 설정
 
@@ -183,6 +184,7 @@ public String handleStep3(Errors errors, RegisterRequest regReq) {
 1. **`javax.validation.validation-api` 의존 모듈 추가**
 ```ad-example
 title: `pom.xml`
+`MVC`, `Spring boot`, 버전에 따라 사용해야되는 의존 모듈이 다르다는 점을 주의
 ~~~xml
 <dependency>
 	<groupId>javax.validation</groupId>
@@ -191,7 +193,7 @@ title: `pom.xml`
 </dependency>
 ~~~
 ```
-2. **설정 클래스에 `getValidator()` 메서드 재정의**
+2. **구성 클래스에 `getValidator()` 메서드 재정의**
 ```ad-example
 title: `MvcConfig.java`
 ~~~java
@@ -321,15 +323,17 @@ title: `Bean Validation` 관련 의존
 2. **커맨드 객체 필드에 검증 규칙 어노테이션 설정**
 ```ad-example
 title: 커맨드 객체 예시
+`hibernate validator`에는`CreditCardNumber` 같은 다양한 유효성 검사 형식이 있다.
+공통으로 `message`라는 속성으로 충족하지 않았을때 보여줄 메시지를 지정할 수 있다.
 ~~~java
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotBlank; // javax에도 존재
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class RegisterRequest {
-	@NotBlank
+	@NotBlank(message="this is comment when invalid.")
 	@Email
 	private String email;
 	@Size(min = 6)
@@ -342,7 +346,7 @@ public class RegisterRequest {
 ~~~
 ```
 
-3. **설정 클래스에 `OptionalValidatorFactoryBean` 클래스를 빈으로 등록**
+3. **구성 클래스에 `OptionalValidatorFactoryBean` 클래스를 빈으로 등록**
 	- 기존에 사용하던 `@EnableWebMvc`를 사용하면 기본으로 설정되 있음
 	- 단, 기존에 적용되있는 전역 Validator은 삭제되어야 Bean Validation을 사용가능하다.
 4. **`@Valid` 어노테이션 적용**
@@ -373,3 +377,4 @@ public String handleStep3(@Valid RegisterRequest regReq, Errors errors) {
 - `@Null`, `@NotNull` : 값이 `null`이거나 아니면 오류
 - `@Pattern` : 정규표현식 매칭 여부로 오류 판단
 - `@Email` : 이메일 형식의 주소인지 판단
+

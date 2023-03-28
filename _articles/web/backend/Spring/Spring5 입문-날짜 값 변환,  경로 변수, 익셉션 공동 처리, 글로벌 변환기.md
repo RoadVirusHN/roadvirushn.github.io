@@ -1,7 +1,7 @@
 ---
-title: Spring5 입문-날짜 값 변환, 경로 변수, 익셉션 공동 처리
+title: Spring5 입문-날짜 값 변환, 경로 변수, 익셉션 공동 처리, 글로벌 변환기
 date: 2023-01-26 21:33:31 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-26 21:33:31 +0900
@@ -15,11 +15,11 @@ max_depth: 3
 varied_style: true
 ```
 
-# 날짜 값 변환, 경로 변수, 익셉션 공동 처리
+# 날짜 값 변환, 경로 변수, 익셉션 공동 처리, 글로벌 변환기
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
 ## 날짜 값 변환
@@ -130,7 +130,7 @@ title: 지원하는 타입
 
 ### 변환의 원리
 
-1. 스프링 MVC는 요청 매핑 어노테이션 적용 메서드와 [[Spring5 입문-MVC 개념과 설정#요청 과정 예시|DispatcherServlet]] 사이를 연결하기 위해 `RequestMappingHandlerAdapter` 객체를 사용한다.
+1. 스프링 MVC는 요청 매핑 어노테이션 적용 메서드와 [[Spring5-MVC 개념과 설정#요청 과정 예시|DispatcherServlet]] 사이를 연결하기 위해 `RequestMappingHandlerAdapter` 객체를 사용한다.
 2. 이때 `RequestMappingHandlerAdapter` 객체는 변환 요청 시, 로컬 Validator에서 사용했던 [[Spring5 입문-객체 검증#컨트롤러 범위 Validator 설정 : `@InitBinder` 어노테이션|WebDataBinder]]를 사용한다.
 ```ad-example
 title: `WebDataBinder`의 타입 변환 그림
@@ -139,6 +139,39 @@ title: `WebDataBinder`의 타입 변환 그림
 3. `WebDataBinder`는 커맨드 객체를 생성하고 `ConversionService`에 변환처리하는데, `@EnableWebMvc`의 기본 설정은 `DefaultFormattingConversionService` 객체이다.
 	- `DefaultFormattingConversionService`는 `int`, `long`, `@DateTimeFormat` 어노테이션 등의 시간 관련 타입 변환 기능을 제공한다.
 	- `WebDataBinder`는 모델을 이용해 JSP 뷰의 spring 태그들을 HTML 태그로 전환 시에도 사용
+
+## `Converter`
+`ConversionService`이외에 아래 처럼 직접 `Converter`를 구현해서 직접 등록할 수 있다.
+```ad-example
+title: `Converter`의 사용례
+
+`Converter<원타입, 변형타입>`으로 `Converter`의 `convert(원타입)`메소드를 구현해주면 된다.
+~~~java
+//...
+import org.springframework.core.convert.converter.Converter;
+
+import tacos.Ingredient;
+import tacos.data.IngredientRepository;
+
+@Component
+public class IngredientByIdConverter implements Converter<String, Ingredient> {
+
+	private IngredientRepository ingredientRepo;
+
+    @Autowired
+    public IngredientByIdConverter(IngredientRepository ingredientRepo) {
+        this.ingredientRepo = ingredientRepo;
+    }
+
+	@Override
+    public Ingredient convert(String id) {
+        return ingredientRepo.findById(id);
+    }
+}
+~~~
+```
+
+나중에 Converter와 ConversionService 좀더 공부하기.
 
 ## `@PathVariable`을 이용한 경로 변수 처리
 
@@ -201,7 +234,7 @@ import spring.MemberNotFoundException;
 - 리턴
 	- `ModelAndView`
 	- 뷰이름 `String`
-	- 임의 객체(`@ResponseBody` 시)
+	- 임의 객체(`@ResponseBody` 이용 시)
 	- `ResponseEntity`
 ### `@ControllerAdvice`
 
@@ -235,4 +268,3 @@ public class CommonExceptionHandler {
 	특정 애노테이션이 적용된 컨트롤러 대상
 - `assignableTypes`: `Class<?>[]`
 	특정 타입 또는 그 하위 타입인 컨트롤러 대상
-

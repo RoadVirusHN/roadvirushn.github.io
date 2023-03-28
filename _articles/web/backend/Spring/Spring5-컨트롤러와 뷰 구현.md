@@ -1,7 +1,7 @@
 ---
-title: Spring5 입문-컨트롤러와 뷰 구현
+title: Spring5-컨트롤러와 뷰 구현
 date: 2023-01-20 17:34:30 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-23 17:34:30 +0900
@@ -16,14 +16,13 @@ varied_style: true
 ```
 
 # 컨트롤러와 뷰 구현
-
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
-개발 설정은 대부분 극초기에 끝나며 개발의 대부분은 컨트롤러와 뷰의 구현이다. 컨트롤러는 특정 요청 URL을 처리하며, 뷰는 처리 결과를 HTML과 같은 형식으로 응답한다.
+개발 설정은 대부분 극초기에 끝나며 개발의 대부분은 컨트롤러와 뷰의 구현이다. 컨트롤러는 특정 요청과 응답을 처리는 컴포넌트이며, 뷰는 처리 결과를 HTML과 같은 형식으로 응답한다.
 
 ```ad-seealso
 title: 특별한 모델이나 처리가 필요 없는 컨트롤러 자동 추가법
@@ -37,7 +36,7 @@ public class MainController {
 	}
 }
 ~~~
-위와 같이 간단한 컨트롤러는 아래와 같이 `WebMvcConfigurer`를 상속한 설정 클래스와 `ViewControllerRegistery`를 따로 클래스를 만들지 않고 추가할 수 있다.
+위와 같이 간단한 컨트롤러는 아래와 같이 `WebMvcConfigurer`를 상속한 구성 클래스와 `ViewControllerRegistery`를 따로 클래스를 만들지 않고 추가할 수 있다.
 
 ~~~java
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -56,7 +55,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
 ## 요청 매핑 애노테이션
 
-앞서 [[Spring5 입문-MVC 개념과 설정#MVC 패턴|컨트롤러를 구현하는 방법]]을 배웠을 때, 요청 경로 지정에 사용되는 어노테이션 사용법에 대해 배워보자.
+앞서 [[Spring5-MVC 개념과 설정#MVC 패턴|컨트롤러를 구현하는 방법]]을 배웠을 때, 요청 경로 지정에 사용되는 어노테이션 사용법에 대해 배워보자.
 
 ```ad-tip
 title: 이 부분을 잘못 설정할 경우 404 에러가 많이 일어난다. 예를 들어 요청 경로나 설정 경로 오류, 컨트롤러 빈 등록(또는 `@Controller` 사용) 안함, 뷰로 지정한 JSP 파일 없음 
@@ -100,10 +99,13 @@ public class RegistController {
 
 ```ad-example
 title: 공통경로 지정
+`@ResponseStatus(HttpStatus 객체)`를 이용해 201(생성됨), 204(삭제되서 없어짐) 등 더욱 적절한 상태를 돌려줄 수 있다.
 ~~~java
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.http.HttpStatus;
 
 @Controller
 @RequestMapping("/register") // 공통 경로
@@ -117,6 +119,12 @@ public class RegistController {
 	@GetMapping("/step2") //  = https://serviehome/register/step2
 	public String handleStep2() {
 		....
+	}
+
+	@PostMapping(consumes="application/json") // = https://serviehome/register, 추가로 Content-type 헤더가 application/json 이어야 함.
+	@ResponseStatus(HttpStatus.CREATED) // 요청의 상태를 201로 보내줌
+	public Taco handleStep3(@RequestBody Taco taco){
+		return tacoRepo.save(taco)
 	}
 }
 ~~~
@@ -284,6 +292,7 @@ public String handleStep3(RegisterRequest regReq) {
 만약 뷰에서 커맨드 객체 속성 이름을 바꾸고 싶다면 아래처럼 `@ModelAttribute(바꿀문자열)`로 바꾸면 된다.
 ```ad-example
 title: 커맨드 객체명 바꾸기
+또한  `register/step3`에 요청시`regReq`를 요청 매개변수로 바인딩하지 않도록 하는 역할도 있음.
 ~~~java
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -326,45 +335,90 @@ public class AnswerData {
 }
 ~~~
 ```
-
+  
 ```ad-example
 title: 중첩 콜렉션 커맨드 객체 전달 예시
+
 ~~~java
 package survey;
-
 import java.util.Arrays;
-import java.util.List; 
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.ModelAttribute; 
 
 @Controller
 @RequestMapping("/survey")
 public class SurveyController {
-	
-	@GetMapping
-	public String from(Model model) { // 모델을 이용한 강제 할당
-		List<Question> questions = createQuestions(); 
-		model.addAttribute("questions", questions); 
-		return "survey/surveyForm";
-	}
+    @GetMapping
+    public String from(Model model) { // 모델을 이용한 강제 할당
+        List<Question> questions = createQuestions();
+        model.addAttribute("questions", questions);
+        return "survey/surveyForm";
+    } 
 
-	private List<Question> createQuestions() {
-		Question q1 = new Question("당신의 역할은 무엇입니까?",
-			Arrays.asList("서버", "프론트", "풀스택"));
-		Question q2 = new Question("많이 사용하는 개발도구는 무엇입니까?",
-			Arrays.asList("이클립스", "인텔리J", "서브라임"));
-		Question q3 = new Question("하고 싶은 말을 적어주세요.");
-		return Arrays.asList(q1, q2, q3);
-	}
+    private List<Question> createQuestions() {
+        Question q1 = new Question("당신의 역할은 무엇입니까?",
+            Arrays.asList("서버", "프론트", "풀스택"));
+        Question q2 = new Question("많이 사용하는 개발도구는 무엇입니까?",
+            Arrays.asList("이클립스", "인텔리J", "서브라임"));
+        Question q3 = new Question("하고 싶은 말을 적어주세요.");
+        return Arrays.asList(q1, q2, q3);
+    }
 
     @PostMapping
     public String submit(@ModelAttribute("ansData") AnsweredData data) {
-		// data.res.name, data.responses[0] 등이 할당되어 있다.
+        // data.res.name, data.responses[0] 등이 할당되어 있다.
         return "survey/submitted";
+    }
+}
+~~~
+```
+
+#### `@SessionAttributes`와 `SessionStatus`
+만약, 한 세션 간에 여러 요청 주소에 걸쳐 같은 커맨드 객체를 유지하고 싶다면 `@SessionAttributes`을 이용해 속성에 넣어주면 유지됨.
+
+더 이상 유지하고 싶지 않으면 `SessionStatus`의 `setComplete()` 메소드로 세션 재설정이 가능
+```ad-example
+title: `@SessionAttributes`와 `SessionStatus`의 활용
+~~~java
+//...
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+
+import lombok.extern.slf4j.Slf4j;
+import tacos.Order;
+import tacos.data.OrderRepository;
+import javax.validation.Valid;
+import org.springframework.validation.Errors;  
+
+@Slf4j
+@Controller
+@RequestMapping("/orders")
+@SessionAttributes("order")
+public class OrderController {
+
+    private OrderRepository orderRepo;
+    public OrderController(OrderRepository orderRepo) {
+        this.orderRepo = orderRepo;
+    }
+
+    @GetMapping("/current")
+    public String orderForm() {
+        return "orderForm";
+    }
+
+    @PostMapping
+    public String processOrder(@Valid Order order, Errors errors, SessionStatus sessionStatus) {
+        if (errors.hasErrors()) {
+            return "orderForm";
+        }
+        orderRepo.save(order);
+        sessionStatus.setComplete();
+        return "redirect:/";
     }
 }
 ~~~
@@ -429,7 +483,7 @@ public class SurveyController {
 ## 뷰 구현
 주로 React, Vue로 뷰를 구성할 예정인데, 책에서의 대부분 내용이 JSP에 대한 내용이므로 생략하겠다.
 
-대신, 나중에 웹 어플리케이션 부근에서 [[Spring5 입문-JSON 응답과 요청 처리]]에서 뷰 구현 방법을 배울 것이다.
+대신, 나중에 웹 어플리케이션 부근에서 [[Spring5-JSON 응답과 요청 처리]]에서 뷰 구현 방법을 배울 것이다.
 
 ### 주요 폼 태그
 스프링 MVC는 자체적인 [JSP 태그 라이브러리](https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/spring-form-tld.html)를 제공하여 쉽게 데이터 바인딩을 처리하게 한다.

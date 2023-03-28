@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-스프링 웹 어플 구조
 date: 2023-01-26 21:35:04 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-26 21:35:04 +0900
@@ -16,11 +16,10 @@ varied_style: true
 ```
 
 # 스프링 웹 어플 구조
-
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
 ## 간단한 웹 어플리케이션 구성 요소

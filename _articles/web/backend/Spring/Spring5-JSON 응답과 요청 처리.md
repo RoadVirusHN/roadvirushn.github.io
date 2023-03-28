@@ -1,7 +1,7 @@
 ---
-title: Spring5 입문-JSON 응답과 요청 처리
+title: Spring5-JSON 응답과 요청 처리
 date: 2023-01-29 14:57:33 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-29 14:57:33 +0900
@@ -14,13 +14,13 @@ max_depth: 3
 varied_style: true
 ```
 # JSON 응답과 요청 처리
-
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
-Ajax를 이용해 서버 API를 호출하여 JSON이나 XML 데이터를 이용해 뷰를 구축하는 구조가 흔하므로, 이러한 방식을 알아보자.
+
+Ajax를 이용해 서버 API를 호출하여 JSON이나 XML 데이터를 이용해 뷰나 프론트엔드를 구축하는 구조가 흔하므로, 이러한 방식을 알아보자.
 ## Jackson 의존 설정
 `Jackson`은 **자바 객체와 JSON 형식 문자열 간 변환을 처리하는 라이브러리**이다. 
 다음과 같이 두 의존을 추가하면 사용할 수 있다.
@@ -61,6 +61,7 @@ public class Person {
 - 스프링 MVC 측에서 적절한 형태로 응답하는데, 이때 Jackson 의존 모듈이 있다면 JSON 형식으로 반환한다.
 ```ad-example
 title:`@RestController`을 이용한 JSON 형식 응답
+`@CrossOrgigin`: `CORS` 헤더 포함을 위한 어노테이션
 ~~~java
 import java.util.List;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -69,6 +70,7 @@ import spring.Member;
 import spring.MemberDao;
 //...
 @RestController // @Controller에서 변경
+@CrossOrigin(origins="*") // 서로 다른 도메인간의 요청 허용
 public class RestMemberController {
 	private MemberDao memberDao;
 	private MemberRegisterService registerService;
@@ -91,7 +93,7 @@ public class RestMemberController {
 }
 ~~~
 ```
-이후 해당 컨트롤러를 설정 클래스에 추가해주고 해당 URL에 요청하면 JSON으로 응답을 반환한다.
+이후 해당 컨트롤러를 구성 클래스에 추가해주고 해당 URL에 요청하면 JSON으로 응답을 반환한다.
 ```ad-example
 title: `ControllerConfig.java`에 추가
 ~~~java
@@ -110,7 +112,7 @@ public class ControllerConfig {
 ~~~
 ```
 이제 응답 메시지 바디에는 HTML 페이지에서, JSON 데이터로 변하며, 응답 헤더의 `Content-type`은 `text/plain`에서 `application/json`으로 바뀐다.
-
+- 만약 응답 형식을 바꾸고 싶다면, `produces="text/html"` (=`xml` 출력)같이 속성을 주면 된다.(`@***Mapping` 시리즈도 속성 포함)
 ```ad-seealso
 title: `@ResponseBody` 방법
 `@RestController` 이전에는 `@ResponseBody`를 이용해서 다음과 같이 컨트롤러를 구현했다.
@@ -443,7 +445,7 @@ public class RestMemberController {
 
 ### `@ExceptionHandler`, `@RestControllerAdvice`와 `ResponseEntity` 활용하기
 
-[[Spring5 입문-날짜 값 변환,  경로 변수, 익셉션 공동 처리#`@ExceptionHandler`|앞서]] `@ExceptionHandler`를 이용하면 에러 처리 관련 중복 코드를 제거할 수 있었다.
+[[Spring5 입문-날짜 값 변환,  경로 변수, 익셉션 공동 처리, 글로벌 변환기#`@ExceptionHandler`|앞서]] `@ExceptionHandler`를 이용하면 에러 처리 관련 중복 코드를 제거할 수 있었다.
 
 이를 활용해 다음과 같이 중복 코드를 없앨 수 있다.
 
@@ -540,6 +542,218 @@ public class ApiExceptionAdvice {
                 .status(HttpStatus.BAD_REQUEST)
                 .body(new ErrorResponse("errorCodes = " + errorCodes));
     }
+}
+~~~
+```
+
+## REST API 자동 생성
+
+### 구성
+
+```ad-important
+나중에 직접 실습하고 다시 쓰기
+```
+
+스프링 부트를 이용한다면 스프링 데이터 REST를 이용해 자동으로 리퍼지터리 클래스를 통해 REST API를 만들 수 있다.
+- **org.springframework.boot.spring-boot-starter-data-rest** 의존성 추가
+
+이렇게 의존 모듈을 추가하고 **org.springframework.data.repository**의 클래스를 상속해 만든 리포지터리 클래스들만 존재하면, 기본적인 구성이 된다.
+
+```ad-warning
+title: 단! 이제 경로명이 충돌하는 `@RestController`는 더 이상 사용할 수 없으며 이미 사용된 코드 또한 해당 어노테이션을 지워줘야 한다.
+```
+
+예를 들어 인터페이스 `IngredientRepository extends CrudRepository<Ingredient, String>`를 구현했다면 `/ingredients`로 GET 요청을 하면 다음과 같은 응답이 온다.
+```ad-example
+title: `/ingredients` 응답 JSON
+HATEOAS 적용되어 있으며, GET, POST, PUT, DELETE 메서드로 CRUD가 가능하다.
+~~~java
+{
+	"_embedded": {
+		"ingredients": [
+			{
+				"name": "Flour Tortilla",
+				"type": "WRAP",
+				"_links": {
+					"self": {
+						"href": "http://localhost:8080/ingredients/FLTO"
+					},
+					"ingredient": {
+						"href": "http://localhost:8080/ingredients/FLTO"
+					}
+				}
+			},
+			//...
+		]
+	},
+	"_links": {
+		"self": {
+			"href": "http://localhost:8080/ingredients"
+		},
+		"profile": {
+			"href": "http://localhost:8080/profile/ingredients"
+		}
+	}
+}
+~~~
+```
+
+만약, 자동 생성한 API를 다른 경로로 설정하고 싶다면 다음같이 가능하다.
+```yaml
+spring:
+	data:
+		rest:
+			base-path: /api 
+```
+이제 자동생성된 api는 앞에 `/api`를 붙여야 한다.
+
+### 리소스 경로명과 관계명 변경
+이때 경로명을 자동으로 정해주는 것을 바꾸고 싶다면 다음과 같이 `@Entity`가 붙은 도메인 클래스에 `@RestResource` 어노테이션을 붙여바꾼다.
+
+```ad-example
+title: 리소스 경로명과 이름 바꾸기
+~~~java
+@Data
+@Entity
+@RestResource(rel="tacos", path="tacos")
+public class Taco {
+	//...
+}
+~~~
+```
+- 자동 생성 리소스 경로명이  `/api/tacoes`였던 것이 `path` 속성에 의해 `/api/tacos`로 바뀐다.
+- HAL Json 내의 속성명이 `rel` 속성에 의해 `tacos`바뀐다.
+
+### 페이징과 정렬
+
+`/api/tacos` 같은 컬렉션 리소스를 요청하면 기본적으로 한 페이지당 20개의 항목을 반환한다.
+
+페이지 번호와 페이지 크기는 경로 변수를 통하여 바꿀 수 있다.
+기본적으로 3개의 경로변수가 자동 구현 된다.
+```ad-note
+title: 경로변수 예시
+`/api/tacos{?page,size,sort}`
+- `size`: 한 페이지의 크기 ex) `/api/tacos?size=5`
+- `page`: 인덱스가 0부터 시작하는 페이지 ex) `/api/tacos?size=5&page=1`
+- `sort`: 해당 값들의 기준속성과 정렬방법 ex) `/api/tacos?sort=createdAt,desc`
+```
+
+그리고, 처음, 마지막, 다음, 이전 페이지의 링크 요청도 자동 생성되어 있다.
+
+```json
+"_links": {
+	"first": {
+		"href": "http://localhost:8080/api/tacos?page=0&szie=5"
+	},
+	"self": {
+		"href": "http://localhost:8080/api/tacos"
+	},
+	"next": {
+		"href": "http://localhost:8080/api/tacos?page=1&szie=5"
+	},
+	"last": {
+		"href": "http://localhost:8080/api/tacos?page=2&szie=5"
+	},
+	"profile": {
+		"href": "http://localhost:8080/api/profile/tacos"
+	},
+	"recents": {
+		"href": "http://localhost:8080/api/tacos/recent"
+	},
+}
+```
+
+### 커스텀 엔드포인트 추가
+
+커스텀 엔드 포인트를 추가하려면 다음 두 방법이 있다.
+- 기존의 `@RestController`를 경로명이 부딪히지 않게 사용
+	- 늘어나는 API + 일일이 충돌 확인 + 기본 경로명 하드코딩으로 인해 추천하지 않음.
+- `@RepositoryRestController` 사용
+
+`@RepositoryRestController`를 사용하면, 앞서 설정했던 기본 경로명 `spring.data.rest.base-path`가 자동으로 앞에 붙게 된다.
+
+또한 겹치게된 경로명은 자동으로 오버라이딩된다.
+
+```ad-example
+title: `@RepositoryRestController`를 이용한 컨트롤러
+단, 기존의 `@RestController`과 조금 기능이 다르다.
+
+특히, 요청 응답의 몸체에 자동으로 반환값을 추가하지 않는다.
+
+따라서 `@ResponseBody`나 `ResponseEntity`를 이용해 응답을 직접 생성해야 한다.
+
+~~~java
+//...
+import org.springframework.data.domain.Sort;
+import org.springframework.data.rest.webmvc.RepositoryRestController;
+import org.springframework.hateoas.Resources;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+//...  
+
+@RepositoryRestController
+public class RecentTacosController {
+	
+	private TacoRepository tacoRepo; 
+	
+	public RecentTacosController(TacoRepository tacoRepo) {
+		this.tacoRepo = tacoRepo;
+	}
+	
+	@GetMapping(path="/tacos/recent", produces="application/hal+json")
+	public ResponseEntity<Resources<TacoResource>> recentTacos() {
+		PageRequest page = PageRequest.of(0, 12, Sort.by("createdAt").descending());
+		
+		List<Taco> tacos = tacoRepo.findAll(page).getContent();
+
+		List<TacoResource> tacoResources = new TacoResourceAssembler().toResources(tacos);
+
+		Resources<TacoResource> recentResources = new Resources<TacoResource>(tacoResources);
+		 recentResources.add(
+			 linkTo(methodOn(RecentTacosController.class).recentTacos())
+			 .withRel("recents"));
+		return new ResponseEntity<>(recentResources, HttpStatus.OK);
+	}
+}
+~~~
+```
+
+### 커스텀 엔드포인트를 스프링 데이터에 등록
+
+하지만, 이렇게 생성한 커스텀 엔드포인트는 HAL json 내에서 소개되지 않는다. 
+이를 추가하기 위해 `ResourceProcessor` 인터페이스를 이용할 수 있다.
+-  **`ResourceProcessor` 인터페이스** : API를 통해 리소스가 반환되기 전에 리소스를 조작하는 인터페이스
+
+```ad-example
+title: 커스텀 리소스 프로세서
+오버라이딩한 뒤 빈으로 등록하면 빈으로 등록된 모든 리소스 프로세서를 적용한다.
+~~~java
+package tacos.web.api;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.hateoas.EntityLinks;
+import org.springframework.hateoas.PagedResources;
+import org.springframework.hateoas.Resource;
+import org.springframework.hateoas.ResourceProcessor;
+
+import tacos.Taco;
+
+@Configuration
+public class SpringDataRestConfiguration {
+
+	@Bean
+	public ResourceProcessor<PagedResources<Resource<Taco>>> tacoProcessor(EntityLinks links) {
+		return new ResourceProcessor<PagedResources<Resource<Taco>>>() {
+			@Override
+			public PagedResources<Resource<Taco>> process(PagedResources<Resource<Taco>> resource) {
+				resource.add(links.linkFor(Taco.class)
+					.slash("recent")
+					.withRel("recents")); //recent 엔드포인트 추가
+				return resource;
+			}
+		};
+	}
 }
 ~~~
 ```

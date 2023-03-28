@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-의존 자동 주입
 date: 2023-01-09 05:12:40 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-09 05:12:40 +0900
@@ -19,8 +19,9 @@ varied_style: true
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
+
 ## @Autowired
 `@Autowired`는 스프링이 해당 타입에 일치하는 `@Bean` 객체를 찾아 주입해주는 어노테이션이다.
 - 같은 클래스나 심지어 자식 클래스를 내놓는 다른 메소드가 두개 이상일 경우에도 오류가 난다. 이럴 때는 [[#@Qualifier]]를 통해 선택하면 된다.
@@ -72,7 +73,7 @@ public class MemberInfoPrinter {
 ~~~
 ```
 
-일치하는 클래스의 빈 객체가 설정 클래스 내에 없으면 오류가 난다. 만약 의도적으로 빈 객체를 지정하지 않아도 되게 만드려면 다음과 같이 3개의 방법이 있다.
+일치하는 클래스의 빈 객체가 구성 클래스 내에 없으면 오류가 난다. 만약 의도적으로 빈 객체를 지정하지 않아도 되게 만드려면 다음과 같이 3개의 방법이 있다.
 ```ad-example
 title: Nullable 빈 객체가 필요한 경우 예시
 collapse: close

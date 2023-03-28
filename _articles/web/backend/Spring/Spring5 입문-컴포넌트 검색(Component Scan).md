@@ -1,7 +1,7 @@
 ---
-title: Spring5 입문 - 컴포넌트 스캔(Component Scan)
+title: Spring5 입문 - 컴포넌트 검색(Component Scan)
 date: 2023-01-09 14:57:33 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-09 14:57:33 +0900
@@ -15,14 +15,16 @@ max_depth: 3
 varied_style: true
 ```
 
-# 컴포넌트 스캔(Component Scan)
+# 컴포넌트 검색(Component Scan)
+
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
+
 ## @Component
-`@Component`가 붙어있는 클래스는 컴포넌트 스캔에 의해 빈(bean)으로 등록될 수 있다.
+`@Component`가 붙어있는 클래스는 컴포넌트 검색에 의해 빈(bean)으로 등록될 수 있다.
 ```ad-example
 title: `@Component` 사용례
 
@@ -43,12 +45,12 @@ public class MemberInfoPrinter{
 컴포넌트들은 패키지 별로 같은 이름이 있으면 충돌하며, 수동 등록한 빈이 있으면 수동 등록이 우선수되므로 명시적으로 이름을 바꿔주거나 네이밍 규칙을 잘 선정하자.
 
 ## @ComponentScan
-앞서 `@Component`를 붙인 클래스들을 스캔하려면 기존의 설정 클래스를 이용하면 된다.
+앞서 `@Component`를 붙인 클래스들을 스캔하려면 기존의 구성 클래스를 이용하면 된다.
 ```ad-example
 title: `@ComponentScan` 사용례
 ~~~java
 import org.springframework.context.annotation.ComponentScan;
-@Configuration // 스프링 설정 클래스 임을 표시
+@Configuration // 스프링 구성 클래스 임을 표시
 @ComponentScan(basePackages = {"spring"} // spring 패키지 내의 @Component 탐색
 	excludeFilters = {
 	@Filter(type = FilterType.ASPECTJ, pattern = "spring.*Dao"),//Dao로 끝나는 클래스 타입은 스캔에서 제외, aspectjweaver 모듈 필요

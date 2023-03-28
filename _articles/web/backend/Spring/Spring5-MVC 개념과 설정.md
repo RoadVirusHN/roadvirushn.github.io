@@ -1,7 +1,7 @@
 ---
-title: Spring5 입문-MVC 개념과 설정
+title: Spring5-MVC 개념과 설정
 date: 2023-01-20 09:15:29 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-20 09:15:29 +0900
@@ -16,11 +16,10 @@ varied_style: true
 ```
 
 # MVC 개념과 설정
-
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
 ## MVC 프로젝트 생성
@@ -33,7 +32,7 @@ _[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 �
 ```ad-example
 title: `web.xml` 예시
 collapse: close
-사용할 서블릿 클랫, 설정 클래스 위치, 인코딩 설정 및 초기값 설정 등에 사용됨.
+사용할 서블릿 클래스, 구성 클래스 위치, 인코딩 설정 및 초기값 설정 등에 사용됨.
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 웹 요청 처리를 하는 servelet 등록 -->
@@ -92,6 +91,8 @@ collapse: close
 		- JSP? : HTML 코드 내부에 자바 코드를 이용해 동적 웹 페이지를 생성하는 웹 앱 도구
 	- `jstl` : JSP 내부의 탬플릿 언어를 더 읽기 쉬운 JSTL로 바꿈
 	- `spring-webmvc` : MVC 프레임워크 웹 개발을 위한 모듈
+`FreeMarker`나 `Thymeleaf` 등의 다른 템플릿 엔진을 사용해도 좋다.
+
 ```ad-example
 title: `pom.xml` 예시
 collapse: close
@@ -228,6 +229,10 @@ public class HelloController {
 ~~~
 ```
 - `@GetMapping`에 적힌 내용에 따라 `HandlerMapping`이 검색 가능하다.
+```ad-note
+title: 스프링 MVC HTTP 요청 처리 어노테이션들
+`@GetMapping`, `@PostMapping`, `@PutMapping`, `@PatchMapping`, `@DeleteMapping`, `@RequestMapping(method="메서드명")`
+```
 - 위 컨트롤러는 결과값으로 처리에 필요한 뷰 이름을 문자열로 돌려주고, 입력받은 `Model` 객체에 `greeting` 속성 값을 저장한다.
 - 위 컨트롤러를 `ModelAndView`로 변환하는 것은 `HandlerAdapter`가 처리해야 한다.
 
@@ -247,7 +252,6 @@ public class ControllerConfig {
 }
 ~~~
 ```
-
 
 **3. 처리 요청 ~ 6. 컨트롤러 실행 결과 `ModelAndView`로 변환 리턴**
 `DispatcherServlet`는 받은 컨트롤러를 직접 실행하지 않고, `HandlerAdapter` 이라는 빈 객체에게 요청 처리를 위임한다.
@@ -287,7 +291,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 
 @Configuration
-@EnableWebMvc // 스프링 MVC 설정 클래스로 활성화
+@EnableWebMvc // 스프링 MVC 구성 클래스로 활성화
 public class MvcConfig implements WebMvcConfigurer {
 	// ...
 	// JSP를 이용해 컨트롤러의 실행 결과 보여주는 설정
@@ -339,7 +343,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@EnableWebMvc // 스프링 MVC 설정 클래스로 활성화
+@EnableWebMvc // 스프링 MVC 구성 클래스로 활성화
 public class MvcConfig implements WebMvcConfigurer {
 	@Override // WebMvcConfigurer 인터페이스의 이 메소드를 재정의하면 기본값 핸들러 사용 가능
 	public void configureDefaultServletHandling( // "/" 매핑 설정, ViewResolver 설정 안된 주소에 대한 기본 설정
@@ -363,16 +367,14 @@ public class MvcConfig implements WebMvcConfigurer {
 하지만 아무런 경로가 겹치지 않는다면 `DefaultServletHttpRequestHandler`가 실행될 것이다.
 - ex) "`/index.html`" 경로의 경우 컨트롤러가 등록되어 있지 않으므로 WAS 서버에서 처리
 
-
-## MVC 설정 클래스
-MVC 패턴을 위한 설정 클래스는 `WebMvcConfigurer` 인터페이스를 상속받아야 한다.
+## MVC 구성 클래스
+MVC 패턴을 위한 구성 클래스는 `WebMvcConfigurer` 인터페이스를 상속받아야 한다.
 ```ad-seealso
 title: 참고로 스프링 4.x 버전 이하는 자바가 인터페이스의 디폴트 메서드 기능이 없었으므로, 대신 `WebMvcConfigurerAdpater` 클래스를 상속해서 필요한 메서드만 재정의했다. 
 ```
 
 해당 인터페이스는 `configureDefaultServletHandling`, `configureViewResolvers`를 포함해, `configurePathMatch`, `addFormatters` 등의 MVC 패턴 설정 관련 주요 메서드를 정의하고 있다.
 추가로 `@EnableWebMvc`를 잉요하면 자동으로 MVC 설정에 필요한 빈을 생성해 준다.
-
 
 `@EnableWebMvc`를 사용하지않고 모두 직접 설정한다면 아래와 같이 구현할 수 있다.
 

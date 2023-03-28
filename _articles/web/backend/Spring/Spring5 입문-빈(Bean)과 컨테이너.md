@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-빈(Bean)과 컨테이너
 date: 2023-01-09 13:57:33 +0900
-tags: HIDE CRUDE 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-09 13:57:33 +0900
@@ -15,16 +15,15 @@ max_depth: 3
 varied_style: true
 ```
 # 빈(Bean)과 컨테이너
-
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
 ## 컨테이너
 
-**객체 컨테이너** : 스프링에서 빈(Bean) 객체의 생성, 초기화, 보관, 제거 등을 관리하는 `ApplicationContext` 인터페이스를 구현한 객체.
+**컨테이너** : 스프링에서 빈(Bean) 객체의 생성, 초기화, 보관, 제거 등을 관리하는 `ApplicationContext` 인터페이스를 구현한 객체.
 
 ```ad-info
 title: `ApplicationContext` 인터페이스 클래스 그래프
@@ -43,7 +42,7 @@ title: 스프링 컨테이너 선언
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 private static ApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class); // 스프링 컨테이너 초기화
-// AppCtx = 컨테이너 인스턴스, 설정 클래스가 여러개일 경우 (AppCtx.class, AppCtx2.class) 처럼 여러개 지정 가능 
+// AppCtx = 컨테이너 인스턴스, 구성 클래스가 여러개일 경우 (AppCtx.class, AppCtx2.class) 처럼 여러개 지정 가능 
 MemberRegisterService regSvc = ctx.getBean("memberRegSvc", MemberRegisterService.class); // 컨테이너의 객체 생성 혹은 검색
 
 ctx.close();// 컨테이너 종료
@@ -56,9 +55,9 @@ ctx.close();// 컨테이너 종료
 ## 빈(Bean)
 - **빈(Bean) 객체** : 스프링이 생성, 관리, 검색 가능한 객체, 빈 객체를 생성하는 메소드명으로 구분하며 검색하여 단 하나의 인스턴스만 생성한다.
 ### 빈 등록 방법
-빈 객체를 등록하는 방법은 직접 설정 클래스 내부 선언을 통한 수동 등록과 컴포넌트 스캔 두가지가 있다.
+빈 객체를 등록하는 방법은 직접 구성 클래스 내부 선언을 통한 수동 등록과 컴포넌트 검색 두가지가 있다.
 ```ad-example
-title: 설정 클래스 내부에서 빈 객체를 생성하는 메서드 선언
+title: 구성 클래스 내부에서 빈 객체를 생성하는 메서드 선언
 ~~~java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -73,7 +72,7 @@ public class AppCtx{
 }
 ~~~
 ```
-- [[Spring5 입문-컴포넌트 스캔(Component Scan)]]
+- [[Spring5 입문-컴포넌트 검색(Component Scan)]]
 ### 빈 생성 및 검색 방법
 이후 알아볼 [[Spring5 입문-빈(Bean)과 컨테이너#컨테이너|컨테이너 인스턴스]]를 통해 빈 객체를 생성 혹은 검색할 수 있다.
 - 빈 객체 자동 주입은 가장 자주 사용하는 `@Autowired` 말고도 `@Resource, @Inject`등이 존재한다.
@@ -125,7 +124,7 @@ public Client client() {
 title: 초기화 메서드 구현 예제
 `InitializingBean` 인터페이스의 `afterPropertieSet` 메서드를 구현하면 실행되며, 주로 DB 커넥션 풀 연결 생성, 채팅 클라이언트 시작 등에 사용
 
-**수동으로 설정 클래스 빈 생성 메서드 내에서 부를 수 있으나, 그 경우 2번 실행되게 된다.**
+**수동으로 구성 클래스 빈 생성 메서드 내에서 부를 수 있으나, 그 경우 2번 실행되게 된다.**
 ~~~java
 import org.springframework.beans.factory.InitializingBean;
 public class Client implements InitializingBean {

@@ -1,7 +1,7 @@
 ---
 title: Spring5 입문-DB 연동
 date: 2023-01-14 13:16:11 +0900
-tags: WEB SPRING BE SUMMARY 
+tags: WEB SPRING BE SUMMARY HIDE
 layout: obsidian
 is_Finished: false
 last_Reviewed: 2023-01-14 13:16:11 +0900
@@ -16,23 +16,24 @@ varied_style: true
 ```
 
 # DB 연동
-
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
 ## 의존 모듈 추가 및 DB 설정
 
 1. Mysql를 기준으로 진행되며 Maven이나 Gradle을 이용해 다음과 같은 의존 모듈을 추가하자.
 	- **spring-jdbc** : JdbcTemplate, 스프링 트랜잭션 기능 등의 기능을 제공
+		- `spring boot`의 경우: **spring-boot-starter-jdbc**
 	- **tomcat-jdbc** : DB 커넥션 풀 기능을 제공
 	- **mysql-connector-java** : MySQL 연결에 필요한 JDBC 드라이버를 제공
 2. Mysql은 공식 레퍼런스를 이용해 설치하거나 Docker를 이용해 생성하자.
 3. 이후 DB 서버에 접속해 직접 SQL 구문을 이용해 DB, 사용자, 테이블 생성 및 권한 설정을 한다.
 ```ad-example
 title: sql문 예시
+만약 스프링 부트를 사용한다면, `src/main/resources/schema.sql, data.sql` 파일의 SQL 구문을 애플리케이션 실행시 자동으로 실행한다.
 ~~~sql
 create user 'spring5'@'localhost' identified by 'spring5';
 create database spring5fs character set=utf8;
@@ -51,7 +52,7 @@ create table spring5fs.MEMBER (
 ```ad-example
 title: /src/main/java/spring/MemberDao.java
 
-추가로 설정 클래스로 하단의 `memberDao`를 빈으로 추가하자.
+추가로 구성 클래스로 하단의 `memberDao`를 빈으로 추가하자.
 ~~~java
 package spring;
 import java.util.Collection;
@@ -263,7 +264,7 @@ public class MemberDao {
     private JdbcTemplate jdbcTemplate;
 
     public MemberDao(DataSource dataSource) { // 생성자로 JdbcTemplate와 데이터베이스 설정
-        this.jdbcTemplate = new JdbcTemplate(dataSource); // 설정 클래스 추가 시 datasource를 건네줘야 함
+        this.jdbcTemplate = new JdbcTemplate(dataSource); // 구성 클래스 추가 시 datasource를 건네줘야 함
     }
 
     public Member selectByEmail(String email) {
@@ -353,6 +354,28 @@ public class AppCtx {
 ~~~
 ```
 
+```ad-seealso
+title: `DAO` vs`@Repository`
+만약, 스프링 MVC를 이용한다면, `DAO` 대신 `@Repository` 어노테이션을 이용할 수 있거나 섞어서 사용할 수 있다.
+
+**DAO(Data Access Object)**
+- 비즈니스 로직(service?)과 퍼시스턴스 로직(DB 접근 로직)을 명확히 분리하기 위한 객체
+- 인터페이스로 먼저 추상화하고, `DAOImpl` 객체로 이를 구현하는 방식이 있지만 위 예시처럼 간단하다면 곧바로 구현해도 된다.
+- DB 테이블, 쿼리와 밀접히 연관 됨
+
+**Repository 패턴**
+- 만약, 도메인이 복잡해진다면, 여러 `DAO`나 다른 API 등의 기능을 사용해야 한다.
+- 이때 `Repository` 객체를 상위로 추가해 서로 다른 여러 `DAO`나 다른 API로 DB와 간접 통신한다.
+- 즉 `DAO`를 사용하는 상위 계층 객체이다.
+- DB보다는 비즈니스 로직에 더욱 가까운 일을 한다.
+- 마찬가지로 Repository 인터페이스로 먼저 추상화하고 `RepositoryImpl`로 구현해도 된다.
+
+즉, 복잡한 도메인 구조라면 `Repository` 패턴을 쓰면 좋다.
+
+`@Repository`를 이용하면 `@Autowwired` 같은 어노테이션을 이용해 자동으로 `jdbc`나 `datasource` 빈 객체를 할당받을 수 있다.
+
+
+```
 ### JdbcTemplate 조회 쿼리 생성 실행
 #### RowMapper 인터페이스
 쿼리 실행 결과를 자바 객체로 변환할 때 사용하는 인터페이스로, 이용 시 `mapRow()` 메서드를 직접 구현해야 한다.
@@ -387,7 +410,8 @@ List<Member> results = jdbcTemplate.query( // query 메서드를 통한 조회
 		}
 	}, email);
 ~~~
-람다식으로 더욱 짧게 구현할 수도 있다.
+
+굳이 `RowMapper`인터페이스의 `mapRow` 메서드를 직접 구현하지 않고 함수 시그니처가 일치하게 람다식으로 더욱 짧게 구현할 수도 있다.
 ~~~java
 List<Member> results = jdbcTemplate.query(
 	"select * from MEMBER where EMAIL = ?", 
@@ -403,7 +427,21 @@ List<Member> results = jdbcTemplate.query(
 ~~~
 ```
 
-만약 같은 `mapRow` 로직을 가진다면, 구현한 RowMapper를 재활용할 수도 있다.
+```ad-example
+title: `RowMapper` 함수
+만약 같은 `mapRow` 로직을 가진다면, 구현한 `RowMapper`를 아래 같이 함수화한 뒤 재활용할 수도 있다.
+~~~java
+private Member mapRowToMember(ResultSet rs, int rowNum) {
+	Member member = new Member( 
+		rs.getString("EMAIL"), 
+		rs.getString("PASSWORD"),
+		rs.getString("NAME"), 
+		rs.getTimestamp("REGDATE").toLocalDateTime());
+	member.setId(rs.getLong("ID"));
+	return member;
+}
+~~~
+```
 
 #### query() 메서드
 `query()` 메서드는 sql 파라미터로 전달받은 쿼리를 실행하고 앞서 배운 `RowMapper`를 이용해 `ResultSet`의 결과를 자바 객체로 변환한다.
@@ -560,7 +598,81 @@ public void insert(Member member) {
 }
 ~~~
 ```
+### `SimpleJdbcInsert` 객체를 이용한 더 쉬운 삽입
+`JdbcTemplate` 객체의 `wrapper` 객체인 `SimpleJdbcInsert` 객체를 이용하면 더 간단함
+```ad-example
+title: `SimpleJdbcInsert` 사용례
+`jdbcTemplate` 객체를 그대로 사용하지 않고 `SimpleJdbcInsert` 객체로 감싸 사용한다.
+~~~java
+package tacos.data;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import tacos.Taco;
+import tacos.Order;
+
+@Repository
+public class JdbcOrderRepository implements OrderRepository {
+    private SimpleJdbcInsert orderInserter;
+    private SimpleJdbcInsert orderTacoInserter;
+    private ObjectMapper objectMapper;
+
+    @Autowired
+    public JdbcOrderRepository(JdbcTemplate jdbc) {
+        this.orderInserter = new SimpleJdbcInsert(jdbc)
+                .withTableName("Taco_Order") // 대상 테이블 명
+                .usingGeneratedKeyColumns("id"); // DB 자동생성 키 사용
+                
+        this.orderTacoInserter = new SimpleJdbcInsert(jdbc)
+                .withTableName("Taco_Order_Tacos");
+                
+        this.objectMapper = new ObjectMapper();
+        // 나중에 커맨드 객체를 Map 객체로 바꾸는데 사용
+    }
+
+    @Override
+    public Order save(Order order) {
+        order.setPlacedAt(new Date());
+        long orderId = saveOrderDetails(order);
+        order.setId(orderId);
+        List<Taco> tacos = order.getTacos();
+        for (Taco taco : tacos) {
+            saveTacoToOrder(taco, orderId);
+        }
+        return order;
+    }
+
+    private long saveOrderDetails(Order order) {
+        @SuppressWarnings("unchecked")
+        Map<String, Object> values = 
+        objectMapper.convertValue(order, Map.class); // Map 객체로 바꾸기 
+        values.put("placedAt", order.getPlacedAt());
+        long orderId =
+                orderInserter
+                .executeAndReturnKey(values) // 실행 뒤 id 돌려받기
+                .longValue(); // long으로 변형
+        return orderId;
+    }
+
+    private void saveTacoToOrder(Taco taco, long orderId) {
+        Map<String, Object> values = new HashMap<>(); // execute는 Map<String, Object> 타입을 인자로 받는다.
+        values.put("tacoOrder", orderId); 
+        values.put("taco", taco.getId()); // column 설정
+        orderTacoInserter.execute(values); // 삽입 실행
+    }
+}
+~~~
+```
+단순히 메서드를 이용하면 되므로 더욱 빠르다.
 ## 스프링 익셉션 변환 처리
 
 DB를 다루는 것은 민감하고 중요하며 복잡한 사안이므로 상당히 많은 오류를 보게될 것이다.
@@ -628,14 +740,14 @@ public void changePassword(String email, String oldPwd, String newPwd) {
 ### @Transactional와 스프링 설정법
 
 `@Transactional` 기능을 사용하라면 다음과 같이 두 개의 설정이 필요하다.
-1. **설정 클래스에 플랫폼 트랜잭션 매니저(PlatformTransactionManager) 빈 설정**
+1. **구성 클래스에 플랫폼 트랜잭션 매니저(PlatformTransactionManager) 빈 설정**
 2. **`@Transactional` 어노테이션 활성화 설정**
 
 **플랫폼 트랜잭션 매니저(PlatformTransactionManager) 빈 설정**
-스프링 설정 클래스에 다음과 같은 내용을 추가해야 한다.
+스프링 구성 클래스에 다음과 같은 내용을 추가해야 한다.
 
 ```ad-example
-title: 스프링 설정 클래스 예시(AppCtx)
+title: 스프링 구성 클래스 예시(AppCtx)
 - `@EnableTransactionManagement`: `@Transactional` 어노테이션이 붙은 메서드를 트랜잭션 범위에서 실행, 빈이 직접 트랜잭션 적용
 	- 프록시 기반이므로 AOP에서 배웠던 `order, proxyTargetClass` 속성을 설정 가능하다.
 - `PlatformTransactionManager`: 구현 기술에 관계없이 동일한 방식으로 트랜잭션 처리를 위한 인터페이스, 이용할 `datasource`를 지정해야 함.
@@ -697,7 +809,7 @@ public class ChangePasswordService {
 
 ### 프록시를 이용한 커밋, 롤백 처리
 스프링의 `@Transactional` 어노테이션은 앞서 배웠던 [[Spring5 입문-AOP|AOP]]를 이용해 트랜잭션을 처리한다. 즉 프록시를 이용한다.
-1. 스프링이 설정 클래스에서 `@EnableTransactionManagement` 태그를 감지
+1. 스프링이 구성 클래스에서 `@EnableTransactionManagement` 태그를 감지
 2. `@Transactional` 어노테이션이 적용된 빈 객체를 찾음
 3. 적절한 프록시 객체 생성 뒤 메서드 이용 시 아래와 같이 프록시를 통해 트랜잭션 적용
 ```ad-example
@@ -740,10 +852,9 @@ title: 트랜잭션 전파란?
 - 이외에도 `SUPPORTS`, `NOT_SUPPORTED`, `NEVER`, `NESTED` 등이 존재
 ```
 
-
 ## 로깅 처리
 
-트랜잭션 처리, 오류, 관련 로그 메시지를 보기 위해서 일일이 print하기 보다는 `Log4j2`나 `Logback` 등의 외부 패키지를 이용할 수 있다.
+트랜잭션 처리, 오류, 관련 로그 메시지를 보기 위해서 일일이 프린트하기 보단 `Log4j2`나 `Logback` 등의 외부 패키지를 이용할 수 있다.
 - 엄밀히 말하면 스프링 자체 로깅 모듈인 `spring-jcl`이 위의 로깅 모듈을 인식하여 사용한다.
 
 메이븐이나 그래들을 이용해 Logback을 의존 모듈로 추가하고, 클래스 패스에 설정파일을 위치시키기 위해 `src/main/resources` 폴더를 만들어 설정 `xml`을 추가하고, 메이븐, 그래들로 프로젝트를 업데이트하면 된다. 
