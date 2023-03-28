@@ -16,10 +16,11 @@ varied_style: true
 ```
 
 # 스프링 설정과 의존 관리 툴
+
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
 ## 스프링5 설정 순서
@@ -108,7 +109,7 @@ title: 의존 모듈과 플러그인의 차이
 - 메이븐 중앙 리포지토리 url : `http://repo1.maven.org/maven2`
 - 로컬 리포지토리 저장 경로 : `[USER_HOME]/.m2/repository/[groupId]/[artifactId]/[version]/[artifactId]-[version].jar`
 
-이때, **메이븐이 자동으로 각 모듈과 플러그인들의 하위 의존들을 자동으로 설치**해준다.\
+이때, **메이븐이 자동으로 각 모듈과 플러그인들의 하위 의존들을 자동으로 설치**해준다.
 - 이를 **의존 전이(Transitive Dependencies)**라고 한다.
 
 ### 메이븐 라이프사이클(Lifecycle)
@@ -123,7 +124,9 @@ title: 의존 모듈과 플러그인의 차이
 		- **validate** : 프로젝트 상태, 필요 정보 체크
 		- **compile** : 소스 코드 컴파일 및 클래스 출력 폴더에 클래스 생성
 		- **test** : 테스트 실행
-		- **package** : 컴파일 코드와 리소스 파일들을 war, jar 등으로 패키지 수행
+		- **package** : 컴파일 코드와 리소스 파일들을 `war`, `jar` 등으로 패키지 수행
+			- `jar`은 라이브러리와 데스크톱 UI 앱에 주로 사용
+			- `war`은 주로 서버에 배포하는 앱에 사용
 		- **install** : 패키지를 로컬 저장소에 설치
 		- **deploy** : 생성 패키지를 원격 저장소에 배포
 - **site** 라이프 사이클 : 프로젝트 문서화 절차
@@ -162,3 +165,4 @@ wrapper { // gradle이 없어도 의존을 설치할 수 있게 gradlew 생성
 ```
 - 위 예시 파일을 만든 후 `gradle wrapper` 명령어를 실행하면 `gradlew` 파일이 생성되어 gradle을 설치하지 않아도 명령어를 실행할 수 있다.
 	- ex) `gradlew compileJava`
+	- 메이븐의 `mnvw.cmd, mnvw`와 같은 용도

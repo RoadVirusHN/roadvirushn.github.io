@@ -4,59 +4,34 @@
     "type": "split",
     "children": [
       {
-        "id": "b21da67f0b961d28",
+        "id": "77625bdffa64901c",
         "type": "tabs",
         "children": [
           {
-            "id": "b5119de052b736a7",
+            "id": "aa22f1967542cf60",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "web/backend/Spring/Spring5 입문.md",
+                "file": "computer_science/algorithm/Python for Algorithms-DP&Merge.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "03c582f516a79b87",
+            "id": "2b0595a574f609ed",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ddcbd567aec6eb7d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "web/backend/Spring/Spring5 입문-컨트롤러와 뷰 구현.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "45710a4fe79d696a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "web/backend/Spring/Spring5 입문-객체 검증.md",
+                "file": "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2/OSSU PL-A Section 2.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -75,7 +50,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "path:templates",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,7 +68,31 @@
             }
           },
           {
-            "id": "cd3a28ff02d9ef39",
+            "id": "1dea5db9cb820251",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2/OSSU PL-A Section 2.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "79927a8e40543442",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3/OSSU PL-A Section 3.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "60ff30bacf96aafe",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -103,11 +102,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 344.5
+    "width": 428.5
   },
   "right": {
     "id": "2f957799fb48536f",
@@ -123,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md",
+                "file": "computer_science/algorithm/Python for Algorithms-DP&Merge.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md",
+                "file": "computer_science/algorithm/Python for Algorithms-DP&Merge.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md"
+                "file": "computer_science/algorithm/Python for Algorithms-DP&Merge.md"
               }
             }
           },
@@ -185,28 +184,52 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:새 캔버스 만들기": false,
       "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
       "templater-obsidian:Templater": false,
       "switcher:퀵 스위처 열기": false,
       "graph:그래프 뷰 열기": false,
-      "canvas:Create new canvas": false,
       "daily-notes:오늘의 데일리 노트 열기": false,
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
       "audio-recorder:녹음 시작/중지": false
     }
   },
-  "active": "03c582f516a79b87",
+  "active": "aa22f1967542cf60",
   "lastOpenFiles": [
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3/OSSU PL-A Section 3.md",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2/OSSU PL-A Section 2.md",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3",
+    "web/backend/Spring/Spring5-JSON 응답과 요청 처리.md",
+    "web/backend/Spring/Spring5-JPA.md",
+    "web/backend/Spring/Spring5-컨트롤러와 뷰 구현.md",
+    "web/backend/Spring/Spring5-HATEOAS.md",
+    "web/backend/Spring/Spring5 입문-날짜 값 변환,  경로 변수, 익셉션 공동 처리, 글로벌 변환기.md",
+    "web/backend/Spring/Spring5 입문-스프링 웹 어플 구조.md",
+    "web/backend/Spring/Spring5 입문-AOP.md",
+    "web/backend/Spring/Spring5-MVC 개념과 설정.md",
+    "web/backend/Spring/Spring5-스프링 시큐리티.md",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/OSSU PL 간단 정리.md",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect1/OSSU PL-A Section 1.md",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect1",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A",
+    "web/backend/Spring/Spring5 입문-의존성 주입(DI).md",
+    "web/backend/Spring/Spring5 입문-DB 연동.md",
+    "web/backend/Spring/Spring5 입문-의존 자동 주입.md",
+    "web/backend/Spring/Spring5-리액티브 스프링.md",
+    "web/backend/Spring/Spring5-다른 REST API와 통신.md",
     "web/backend/Spring/Spring5 입문-스프링 부트.md",
-    "web/backend/Spring/Spring5 입문-프로필과 프로퍼티 파일.md",
-    "web/backend/Spring/Spring5 입문.md",
-    "web/backend/Spring/Spring5 입문-JSON 응답과 요청 처리.md",
-    "web/backend/Spring/Spring5 입문-객체 검증.md",
-    "web/backend/Spring/Spring5 입문-날짜 값 변환,  경로 변수, 익셉션 공동 처리.md",
+    "web/backend/Spring/Spring5-통합.md",
     "web/backend/Spring/Spring5 입문-빈(Bean)과 컨테이너.md",
-    "web/backend/Spring/Spring5 입문-세션, 인터셉터, 쿠키.md",
+    "web/backend/Spring/Spring5 입문-객체 검증.md",
+    "web/backend/Spring/Spring5-비동기 메시지 전송.md",
+    "web/backend/Spring/Spring5-테스트.md",
+    "무제 파일.canvas",
+    "무제 파일 1.canvas",
     "web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md",
-    "web/backend/Spring/Spring5 입문-스프링 웹 어플 구조.md"
+    "Emacs 자주 사용하는 단축키.md",
+    "computer_science/OSSU/PL/PL-A",
+    "computer_science/OSSU/PL"
   ]
 }

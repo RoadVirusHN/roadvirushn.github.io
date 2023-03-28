@@ -19,7 +19,7 @@ varied_style: true
 ```ad-quote
 title: 출처
 
-_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_의 내용을 바탕으로 정리한 내용입니다.
+_[초보 웹 개발자를 위한 스프링 5 프로그래밍 입문](https://www.kame.co.kr/nkm/detail.php?tcode=306&tbook_jong=3)_와 [스프링 인 액션](https://jpub.tistory.com/1040)의 내용을 바탕으로 정리한 내용입니다.
 ```
 
 **AOP(Aspect Oriented Programming, 기능 지향 프로그래밍)은 여러 객체에 공통으로 적용할 수 있는 기능을 분리하여 재사용성을 높여주는 프로그래밍 기법**이다.
@@ -179,10 +179,10 @@ title: `ProceedingJoinPoint` 객체의 인터페이스
 
 ### Aspect 클래스 적용
 
-이후 완성한 클래스를 다음과 같이 설정 클래스에 등록하면 적용된다.
+이후 완성한 클래스를 다음과 같이 구성 클래스에 등록하면 적용된다.
 
 ```ad-example
-title: AppCtx 설정 클래스 예시
+title: AppCtx 구성 클래스 예시
 
 ~~~java
 //...
