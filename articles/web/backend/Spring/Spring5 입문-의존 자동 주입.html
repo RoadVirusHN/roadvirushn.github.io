@@ -127,7 +127,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 6
+      📂: 7
     </span>
     <ul class="child-category-list">
       
@@ -204,10 +204,24 @@
       <li>
         <strong style="font-size: larger;">
           ┃  
-          ┗ 
+          ┣ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
         </h4>
           <span style="font-size: xx-small;">
              
@@ -545,7 +559,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#Autowired">@Autowired</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#Qualifier">@Qualifier</a><ul></ul></li></ol>
 <h1 id="의존-자동-주입">의존 자동 주입</h1>
 
-<div class="callout callout-quote" id="callout-d8622e39-7c8c-4c67-966b-d0e2a1363d4b">
+<div class="callout callout-quote" id="callout-5e552e3d-868a-4501-b97d-4442bbef25ac">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -556,13 +570,20 @@
     
     <div class="content" name="content">
 <p>_<span class='link-warning'>
-      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
       <a class="link-title" href="#" stlye="display: none;"></a>
       <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
       "https://www.kame.co.kr/nkm/det..."</em>로
         <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
       </span>
-    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
 
 </div>
     </div>
@@ -578,7 +599,7 @@
   <li>만약, <code class="language-plaintext highlighter-rouge">@Autowired</code>와 수동 할당을 동시에 사용하면 <code class="language-plaintext highlighter-rouge">@Autowired</code>가 우선으로 덮어씌운다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-28a59811-e068-4616-8561-1a99bdf1d935">
+<div class="callout callout-example" id="callout-5e79c9d3-d711-4762-b7e1-8bab3b6c4773">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Autowired</code>의 사용례
@@ -605,7 +626,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-af6542bf-aa8b-4582-8a01-5d74875b18d8">
+<div class="callout callout-example" id="callout-ba7e0d94-3bf4-4911-85b2-9ff9e40aad43">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Autowired</code>의 다른 사용례
@@ -643,9 +664,9 @@
 </div>
     </div>
     </div>
-<p>일치하는 클래스의 빈 객체가 설정 클래스 내에 없으면 오류가 난다. 만약 의도적으로 빈 객체를 지정하지 않아도 되게 만드려면 다음과 같이 3개의 방법이 있다.</p>
+<p>일치하는 클래스의 빈 객체가 구성 클래스 내에 없으면 오류가 난다. 만약 의도적으로 빈 객체를 지정하지 않아도 되게 만드려면 다음과 같이 3개의 방법이 있다.</p>
 
-<div class="callout callout-example" id="callout-b62899db-fad8-4a2b-907f-5370c4bf82c0">
+<div class="callout callout-example" id="callout-366f0e63-5adf-4841-bf05-496bf6adb423">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Nullable 빈 객체가 필요한 경우 예시
@@ -673,7 +694,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-0a832bbe-a68f-4cee-8a7f-2b8a1d7bfd8a">
+<div class="callout callout-example" id="callout-12f97fba-ae9a-414c-b5ef-6646aef95b20">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Autowired(required=false)</code> 방법
@@ -701,7 +722,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-296f7bbe-aaaf-4aa6-a80a-5897ca9f6789">
+<div class="callout callout-example" id="callout-43ac7209-30cd-4129-8a11-721ff9054f01">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong> Java8 이상에서<code class="language-plaintext highlighter-rouge">Optional</code> 방법
@@ -728,7 +749,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-e11e45fe-89c9-409a-827e-093ea35790a3">
+<div class="callout callout-example" id="callout-e16b5018-02fb-4e30-aec8-dbfdf9ee92c9">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Nullable</code> 방법
@@ -760,7 +781,7 @@
 <h2 id="Qualifier">@Qualifier</h2>
 <p>동일 클래스 혹은 자식 클래스 등 할당 가능한 여러 빈 객체 중 자동 주입 대상 빈을 한정하는데 사용하는 어노테이션</p>
 
-<div class="callout callout-example" id="callout-1d81bf37-89e2-436f-9c17-b2ee348bfd19">
+<div class="callout callout-example" id="callout-7ebfcc0c-022b-4f19-a5c8-b090be5c0a1a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Qualifier</code> 사용법 1:  <code class="language-plaintext highlighter-rouge">@Bean</code>에서 명칭 설정
@@ -786,7 +807,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-1fd79f8d-de28-4b1a-93d6-c88980aed55a">
+<div class="callout callout-example" id="callout-139e9dec-d11b-4da1-9e3c-83c93aa622b1">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Qualifier</code> 사용법 2: <code class="language-plaintext highlighter-rouge">@Autowired</code>에서 명칭으로 지정

@@ -127,7 +127,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 6
+      📂: 7
     </span>
     <ul class="child-category-list">
       
@@ -204,10 +204,24 @@
       <li>
         <strong style="font-size: larger;">
           ┃  
-          ┗ 
+          ┣ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
         </h4>
           <span style="font-size: xx-small;">
              
@@ -545,7 +559,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#스프링5-설정-순서">스프링5 설정 순서</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#의존-관리-툴-메이븐-Maven">의존 관리 툴 : 메이븐(Maven)</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#프로젝트-폴더-생성-및-pom-xml-설정">프로젝트 폴더 생성 및 pom.xml 설정</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#의존-scope-의-예시">의존 &lt;scope&gt;의 예시</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#의존-모듈-및-플러그인-설치">의존 모듈 및 플러그인 설치</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#메이븐-라이프사이클-Lifecycle">메이븐 라이프사이클(Lifecycle)</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#그래이들-Gradle">그래이들(Gradle)</a><ul></ul></li></ol>
 <h1 id="스프링-설정과-의존-관리-툴">스프링 설정과 의존 관리 툴</h1>
 
-<div class="callout callout-quote" id="callout-4db8099c-31dc-4f42-8192-59d9b203640b">
+<div class="callout callout-quote" id="callout-df0889c4-96ed-4f9f-805a-75c2d2ff1ab9">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -556,13 +570,20 @@
     
     <div class="content" name="content">
 <p>_<span class='link-warning'>
-      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
       <a class="link-title" href="#" stlye="display: none;"></a>
       <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
       "https://www.kame.co.kr/nkm/det..."</em>로
         <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
       </span>
-    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
 
 </div>
     </div>
@@ -589,7 +610,7 @@
   <li><strong>POM 연관 정보</strong>: 의존 모듈, 상위 프로젝트, 포함하고 있는 하위 모듈 기술</li>
 </ul>
 
-<div class="callout callout-example" id="callout-dccf7b1a-f1b9-4ced-a26a-003e16f3f5de">
+<div class="callout callout-example" id="callout-85ed4af3-7130-4ca7-9043-fd217f52efea">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>프로젝트 폴더 설정과 <code class="language-plaintext highlighter-rouge">pom.xml</code> 예시
@@ -657,7 +678,7 @@
 
 <h3 id="의존-모듈-및-플러그인-설치">의존 모듈 및 플러그인 설치</h3>
 
-<div class="callout callout-seealso" id="callout-60debcea-8576-4257-9641-9d802ceb7ab8">
+<div class="callout callout-seealso" id="callout-a16126ed-0eac-4754-ace2-cddcfea22d64">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>의존 모듈과 플러그인의 차이
@@ -685,7 +706,7 @@
   <li>로컬 리포지토리 저장 경로 : <code class="language-plaintext highlighter-rouge">[USER_HOME]/.m2/repository/[groupId]/[artifactId]/[version]/[artifactId]-[version].jar</code></li>
 </ul>
 
-<p>이때, <strong>메이븐이 자동으로 각 모듈과 플러그인들의 하위 의존들을 자동으로 설치</strong>해준다.\</p>
+<p>이때, <strong>메이븐이 자동으로 각 모듈과 플러그인들의 하위 의존들을 자동으로 설치</strong>해준다.</p>
 <ul>
   <li>이를 <strong>의존 전이(Transitive Dependencies)</strong>라고 한다.</li>
 </ul>
@@ -708,7 +729,12 @@
           <li><strong>validate</strong> : 프로젝트 상태, 필요 정보 체크</li>
           <li><strong>compile</strong> : 소스 코드 컴파일 및 클래스 출력 폴더에 클래스 생성</li>
           <li><strong>test</strong> : 테스트 실행</li>
-          <li><strong>package</strong> : 컴파일 코드와 리소스 파일들을 war, jar 등으로 패키지 수행</li>
+          <li><strong>package</strong> : 컴파일 코드와 리소스 파일들을 <code class="language-plaintext highlighter-rouge">war</code>, <code class="language-plaintext highlighter-rouge">jar</code> 등으로 패키지 수행
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">jar</code>은 라이브러리와 데스크톱 UI 앱에 주로 사용</li>
+              <li><code class="language-plaintext highlighter-rouge">war</code>은 주로 서버에 배포하는 앱에 사용</li>
+            </ul>
+          </li>
           <li><strong>install</strong> : 패키지를 로컬 저장소에 설치</li>
           <li><strong>deploy</strong> : 생성 패키지를 원격 저장소에 배포</li>
         </ul>
@@ -736,7 +762,7 @@ mvn surefire:test <span class="c"># 특정 플러그인의 단계만 실행하�
 
 <p>XML 대신 Groovy 스크립트를 이용한 동적인 빌드를 지원하며, 스프링과 같은 의존성 주입 방식으로 모듈을 설치하며, 전체적으로 성능은 더욱 좋지만, 아직까진 메이븐이 더 잘 사용된다.</p>
 
-<div class="callout callout-example" id="callout-10f9f13e-34c7-455f-b20d-8674cf565d0a">
+<div class="callout callout-example" id="callout-cfeadeae-864c-4948-bea6-acc7bdbadc66">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">프로젝트폴더/build.gradle</code> 파일 예시
@@ -768,6 +794,7 @@ mvn surefire:test <span class="c"># 특정 플러그인의 단계만 실행하�
   <li>위 예시 파일을 만든 후 <code class="language-plaintext highlighter-rouge">gradle wrapper</code> 명령어를 실행하면 <code class="language-plaintext highlighter-rouge">gradlew</code> 파일이 생성되어 gradle을 설치하지 않아도 명령어를 실행할 수 있다.
     <ul>
       <li>ex) <code class="language-plaintext highlighter-rouge">gradlew compileJava</code></li>
+      <li>메이븐의 <code class="language-plaintext highlighter-rouge">mnvw.cmd, mnvw</code>와 같은 용도</li>
     </ul>
   </li>
 </ul>

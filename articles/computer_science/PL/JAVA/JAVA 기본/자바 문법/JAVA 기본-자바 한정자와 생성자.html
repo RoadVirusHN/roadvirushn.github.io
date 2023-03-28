@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JAVA 기본-자바 한정자와 생성자 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="JAVA 기본-자바 한정자와 생성자" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%ED%95%9C%EC%A0%95%EC%9E%90%EC%99%80%20%EC%83%9D%EC%84%B1%EC%9E%90.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%ED%95%9C%EC%A0%95%EC%9E%90%EC%99%80%20%EC%83%9D%EC%84%B1%EC%9E%90.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-01T15:47:11+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JAVA 기본-자바 한정자와 생성자" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-01T15:47:11+09:00","datePublished":"2023-02-01T15:47:11+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"JAVA 기본-자바 한정자와 생성자","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%ED%95%9C%EC%A0%95%EC%9E%90%EC%99%80%20%EC%83%9D%EC%84%B1%EC%9E%90.html"},"url":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%ED%95%9C%EC%A0%95%EC%9E%90%EC%99%80%20%EC%83%9D%EC%84%B1%EC%9E%90.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">JAVA 기본-자바 한정자와 생성자</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-02-01T15:47:11+09:00" itemprop="datePublished">Feb 1, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#자바-Modifier와-생성자">자바 Modifier와 생성자</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#static-예약어">static 예약어</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#final-예약어">final 예약어</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#abstract-예약어">abstract 예약어</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#생성자-Constructor">생성자(Constructor)</a><ul><li lvl="3"><a id="markdown-toc-0-5" href="#생성자-개요">생성자 개요</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#this의-의미와-사용법">this의 의미와 사용법</a><ul></ul></li></ul></li></ol>
+<h1 id="자바-한정자와-생성자">자바 한정자와 생성자</h1>
+
+<h2 id="자바-Modifier와-생성자">자바 Modifier와 생성자</h2>
+<h3 id="static-예약어">static 예약어</h3>
+<ul>
+  <li>멤버 변수와 메서드 앞에 붙일 수 있는 modifier로서, 활용 방법을 제어함</li>
+  <li>static 예약어가 붙지않는 인스턴스 변수
+    <ul>
+      <li>생성된 인스턴스마다 그 안에 클래스의 인스턴스 변수들이 포함됨</li>
+      <li>일반적인 멤버 변수를 인스턴스 변수라고 부름</li>
+      <li>각 객체마다 따로따로 가지고 있는 변수, 한 객체의 값이 변경되도 다른 객체에 영향 없음</li>
+    </ul>
+  </li>
+  <li>static 예약어가 붙는 클래스 변수
+    <ul>
+      <li>클래스로부터 생성된 인스턴스에 포함되지 않는 변수</li>
+      <li>인스턴스 갯수와 상관없이 하나만 메모리에 존재하며, 인스턴스끼리 공유함</li>
+      <li>객체를 생성하지 않고도 접근 가능, 클래스가 로딩되는 과정에서 메모리에 한번만 할당됨</li>
+      <li>수많은 객체가 가지고 있는 동일한 변수를 메모리 효율적으로 관리하기 위해 사용</li>
+      <li>객체이름으로도 접근이 가능하지만 보통 클래스 이름을 통해서 접근함</li>
+    </ul>
+  </li>
+  <li>static 예약어가 붙은 클래스 메서드
+    <ul>
+      <li>메서드에서도 static 예약어를 사용 가능하며, 인스턴스 생성하지 않고도 사용가능</li>
+      <li>Integer.parseInt(“36”); // 문자열을 정수로 변환, 대표적인 클래스 메서드</li>
+      <li>인스턴스를 생성하지 않고 사용하므로 인스턴스 내부의 변수는 사용 불가능
+        <h3 id="final-예약어">final 예약어</h3>
+        <p>1) final 변수</p>
+      </li>
+    </ul>
+  </li>
+  <li>변수 앞에 final이 붙으면 할당된 값을 변화시킬 수 없음, 생성시 단 한번만 초기화 가능</li>
+  <li>다른 프로그래밍 언어의 const, 심볼릭 상수 역할을 하는듯?,</li>
+  <li>static 예약어와 final 예약어를 결합하면 공통적으로 존재하면서 바꿀 수 없는 값이 됨</li>
+  <li>상수는 모두 대문자로 선언, 단어 사이는 _로 구분<br>
+2) final 메서드</li>
+  <li>매서드 재정의(오버라이딩)는 상속 구조에서 부모 클래스의 메서드와 동일한 모양의 메서드를 자식 클래스에서 상속 받지 않고 새롭게 정의하는 것을 의미</li>
+  <li>메서드에 final을 사용하면 자식클래스에서의 메서드 재정의를 금지할 수 있음</li>
+  <li>만약 클래스 앞에 final 예약어를 추가하면 상속을 금지하는 클래스임
+    <h3 id="abstract-예약어">abstract 예약어</h3>
+  </li>
+  <li>클래스와 메서드를 선언할때 사용하는 Modifier, 선언부에 사용시 추상 클래스, 추상 메서드가 됨<br>
+1) 추상 메서드</li>
+  <li>추상 메서드란 메서드의 시그니쳐(리턴타입, 메서드명, 매개변수)만 정의되고, 구체적인 행위, 즉 블록{} 부분은 정의되지 않는 메서드를 의미함
+    <blockquote>
+      <p>abstract 예시<br>
+```Java<br>
+returnType name([argType argName, …]){…} //일반 메서드<br>
+abstract returnType name([argType argName, …]);// 추상 메서드</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>abstract int sum(int num1, int num2); // 더하는 추상 메서드</p>
+
+<p>```</p>
+<ul>
+  <li>추상 메서드를 선언할 때는 abstract 예약어는 메서드 앞에 붙여야함</li>
+  <li>메서드의 구체적인 행위를 표현하는 블록{} 부분을 생략함</li>
+  <li>메서드의 기본형식인 리턴 타입, 메서드명, 매개변수가 선언되어 있어서, 메서드의 기본적인 기능은 유추 가능</li>
+</ul>
+
+<p>2) 추상 클래스</p>
+<ul>
+  <li>추상 메서드를 포함하고 있는 클래스는 추상 클래스로 선언되어야 함, 추상 메서드가 있어 객체생성 불가능함</li>
+  <li>추상 클래스가 추상 메서드를 포함하지 않을 수도 있음</li>
+  <li>상속과 결합하여 유용한 기능을 하는데, abstract 클래스의 자식 클래스는 abstract 메서드를 반드시 재정의 해야하게끔 함</li>
+  <li>만약 재정의 하지 않으면 부모와 마찬가지로 추상메서드를 가졌으므로 객체생성이 불가능</li>
+  <li>즉 재정의를 강제하고 싶을때 씀
+    <h2 id="생성자-Constructor">생성자(Constructor)</h2>
+  </li>
+  <li>클래스로부터 객체를 생성할때 호출되며, 객체의 멤버 변수를 초기화하는데 사용되는 메서드</li>
+  <li>객체를 생성할 때 객체에 필요한 값들을 초기화하는 개념은 배열과 동일함</li>
+  <li>객체 생성 및 생성된 객체에 필요한 데이터를 초기화하는 과정을 단순화 하여 코드의 양 줄임</li>
+  <li>클래스 내부에 클래스 이름과 똑같은 메서드를 만들고, 매개변수로 초기화할 변수의 값을 넘겨줌</li>
+  <li>일반 멤버 메서드와 달리 반환형이 없고(객체 생성하여 변수에 담는데 쓰기 때문에)</li>
+  <li>생성자는 이름은 같지만 매개변수를 달리하여 여러 개를 중복정의 할 수 잇음</li>
+  <li>생성자는 new 키워드와 항상 같이 사용 됨, 명시적을 작성하지 않으면 기본 생성자가 호출됨
+    <h3 id="생성자-개요">생성자 개요</h3>
+  </li>
+  <li>IDE에서는 클래스의 생성자를 자동을 생성할 수 있는 기능이 있음
+    <h3 id="this의-의미와-사용법">this의 의미와 사용법</h3>
+  </li>
+  <li>생성자나 메서드의 매개변수 이름이 객체 변수의 이름과 같다면, 객체 변수 이름 앞에 this를 사용해 구별함</li>
+  <li>멤버 변수와 매개변수 이름이 동일하면 매개변수로 받은 값을 멤버 변수에 할당할 수 없음</li>
+  <li>this.멤버변수 형식임, 멤버변수와 매개변수 이름을 구분해 프로그램의 가독성을 높임</li>
+  <li>this() 생성자를 통하여 생성자나 다른 메서드 안에서 또 다른 생성자를 호출할 수 있음</li>
+</ul>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%ED%95%9C%EC%A0%95%EC%9E%90%EC%99%80%20%EC%83%9D%EC%84%B1%EC%9E%90.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/PL/JAVA/JAVA 기본/자바 문법/JAVA 기본-자바 한정자와 생성자.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

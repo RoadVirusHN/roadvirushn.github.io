@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spring5-비동기 메시지 전송 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Spring5-비동기 메시지 전송" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/Spring/Spring5-%EB%B9%84%EB%8F%99%EA%B8%B0%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%A0%84%EC%86%A1.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/Spring/Spring5-%EB%B9%84%EB%8F%99%EA%B8%B0%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%A0%84%EC%86%A1.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-20T15:21:07+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spring5-비동기 메시지 전송" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-20T15:21:07+09:00","datePublished":"2023-02-20T15:21:07+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"Spring5-비동기 메시지 전송","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/Spring/Spring5-%EB%B9%84%EB%8F%99%EA%B8%B0%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%A0%84%EC%86%A1.html"},"url":"http://localhost:4000/articles/web/backend/Spring/Spring5-%EB%B9%84%EB%8F%99%EA%B8%B0%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%A0%84%EC%86%A1.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Spring5-비동기 메시지 전송</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-02-20T15:21:07+09:00" itemprop="datePublished">Feb 20, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#JMS-Java-Message-Service">JMS(Java Message Service)</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#메시지-전송">메시지 전송</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#메시지-수신">메시지 수신</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#RabbitMQ">RabbitMQ</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#아파체-카프카">아파체 카프카</a><ul></ul></li></ol>
+<h1 id="Spring5-비동기-메시지-전송">Spring5-비동기 메시지 전송</h1>
+
+<div class="callout callout-quote" id="callout-b0ad799d-bfb7-4d72-9493-5baa30944028">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>_<span class='link-warning'>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.kame.co.kr/nkm/det..."</em>로
+        <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
+      </span>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-warning" id="callout-8e58bd5c-a1f5-4034-a8ed-47f448fe5864">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>스프링 부트를 사용한다는 가정 하에 진행됩니다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<p>동기화 통신인 REST API 이외에 비동기 통신을 이용하면 다음과 같은 특징이 있다.</p>
+<ul>
+  <li>어플리케이션 간의 응답을 기리지 않는 간접적인 전송</li>
+  <li>어플리케이션 간의 결합도를 낮추고 확장성 증가</li>
+  <li>요청-응답에 비해 짧은 대기시간, 연속처리 가능</li>
+  <li>지속적인 데이터 스트림이 중요한 기능, 클라이언트 간 통신 중계에 주로 사용(실시간 메시징, 모니터링 등)</li>
+</ul>
+
+<h2 id="JMS-Java-Message-Service">JMS(Java Message Service)</h2>
+
+<p>두 개 이상의 클라이언트 간에 메시지 통신을 위한 공통 API를 정의하는 자바 표준</p>
+
+<p>템플릿 기반 <code class="language-plaintext highlighter-rouge">JmsTemplate</code>  클래스를 이용해 프로듀서를 생성하여 메시지 전송<br>
+큐와 토픽이 메시지를 받아 컨슈머에게 메시지 전송 하는 구조</p>
+
+<p>메시지 기반 POJO(Plain Old Java Object) 지원</p>
+<ul>
+  <li>큐나 토픽에 도착하는 메시지에 반응하여 비동기 방식으로 메시지 수신하는 간단한 객체</li>
+</ul>
+
+<p>아래 의존모듈 둘중 하나를 지정하면 <code class="language-plaintext highlighter-rouge">JmsTemplate</code>를 자동 구성한다.<br>
+<strong>org.springframework.boot.spring-boot-starter-activemq</strong><br>
+<strong>org.springframework.boot.spring-boot-starter-artemis</strong> : 최신 차세대 브로커 이용</p>
+
+<div class="callout callout-example" id="callout-f138768f-face-4ae8-bf6e-a18504382079">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">application.yml</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>의존을 추가한 다음 다음과 같이 설정을 추가하자.</p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">spring</span><span class="pi">:</span>
+<span class="err">	</span><span class="na">artemis</span><span class="pi">:</span> <span class="c1"># artemis 사용 시 설정</span>
+<span class="err">		</span><span class="na">host</span><span class="pi">:</span> <span class="s">artemis.tacocloud.com</span>
+<span class="na">		port</span><span class="pi">:</span> <span class="m">61617</span>
+<span class="err">		</span><span class="na">user</span><span class="pi">:</span> <span class="s">tacoweb</span>
+<span class="na">		password</span><span class="pi">:</span> <span class="s">l3tm31n</span>
+<span class="na">	activemq</span><span class="pi">:</span> <span class="c1"># activemq 사용 시 설정</span>
+<span class="err">		</span><span class="na">broker-url</span><span class="pi">:</span> <span class="s">tcp://activemq.tacocloud.com</span>
+<span class="na">		user</span><span class="pi">:</span> <span class="s">tacoweb</span>
+<span class="na">		password</span><span class="pi">:</span> <span class="s">l3tm31n</span>
+<span class="na">		in-memory</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># 인메모리 브로커는 같은 어플리케이션에서만 사용 가능하므로 끄자</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>만약 스프링 부트가 아니라 따로 설치가 필요하다면 각 브로커를 웹페이지에서 다운로드 받아야 한다.</p>
+
+<h3 id="메시지-전송">메시지 전송</h3>
+
+<p>다음과 같이 <code class="language-plaintext highlighter-rouge">send()</code>와 <code class="language-plaintext highlighter-rouge">convertAndSend()</code> 두 개 메서드를 오버로딩하여 구현한다.</p>
+
+<div class="callout callout-example" id="callout-ad8485e1-f766-4fcd-bfb5-64234660355f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">JmsTemplate</code> 메시지 전송 메서드
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 원시 메시지 전송</span>
+<span class="c1">// MessageCreator로 메시지 생성 </span>
+<span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="nc">MessageCreator</span> <span class="n">messageCreator</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span> <span class="c1">// 기본 설정 도착지로 전송</span>
+<span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="nc">Destination</span> <span class="n">destination</span><span class="o">,</span> <span class="nc">MessageCreator</span> <span class="n">messageCreator</span><span class="o">)</span>  <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span> <span class="c1">// Destination 객체로 전송</span>
+<span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="nc">String</span> <span class="n">destinationName</span><span class="o">,</span> <span class="nc">MessageCreator</span> <span class="n">messageCreator</span><span class="o">)</span>  <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span> <span class="c1">// 도착지를 문자열로 받아 전송</span>
+
+<span class="c1">// 객체로부터 변환된 메시지를 전송</span>
+<span class="c1">// Object를 내부적으로 Message로 변경</span>
+<span class="kt">void</span> <span class="nf">convertAndSend</span><span class="o">(</span><span class="nc">Object</span> <span class="n">message</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span> <span class="c1">// 기본 설정 도착지로 전송</span>
+<span class="kt">void</span> <span class="nf">covnertAndSend</span><span class="o">(</span><span class="nc">Destination</span> <span class="n">destination</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">message</span><span class="o">)</span>  <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span> <span class="c1">// Destination 객체로 전송</span>
+<span class="kt">void</span> <span class="nf">convertAndSend</span><span class="o">(</span><span class="nc">String</span> <span class="n">destinationName</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">message</span><span class="o">)</span>  <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span> <span class="c1">// 도착지를 문자열로 받아 전송</span>
+
+<span class="c1">// 메시지 후처리 과정 추가</span>
+<span class="c1">// 위와 동일하나, 직전에 Message를 커스터마이징 가능</span>
+<span class="kt">void</span> <span class="nf">convertAndSend</span><span class="o">(</span><span class="nc">Object</span> <span class="n">message</span><span class="o">,</span> <span class="nc">MessagePostProcessor</span> <span class="n">postProcessor</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span> <span class="c1">// 기본 설정 도착지로 전송</span>
+<span class="kt">void</span> <span class="nf">convertAndSend</span><span class="o">(</span><span class="nc">Destination</span> <span class="n">destination</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">message</span><span class="o">,</span> <span class="nc">MessagePostProcessor</span> <span class="n">postProcessor</span><span class="o">)</span>  <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span> <span class="c1">// Destination 객체로 전송</span>
+<span class="kt">void</span> <span class="nf">convertAndSend</span><span class="o">(</span><span class="nc">String</span> <span class="n">destinationName</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">message</span><span class="o">,</span> <span class="nc">MessagePostProcessor</span> <span class="n">postProcessor</span><span class="o">)</span>  <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span> <span class="c1">// 도착지를 문자열로 받아 전송</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>목적지 선정하는 방법은 세가지 방법이 있다.</p>
+<ul>
+  <li>기본 설정 도착지<br>
+```yml<br>
+spring:<br>
+  jms:<br>
+      template:<br>
+          default-destination: tacocloud.order.queue</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- `Destination` 객체
+```java
+@Bean
+public Destination orderQueue() &amp;#123;
+	return new ActiveMQQueue(&amp;#34;tacocloud.order.queue&amp;#34;);
+&amp;#125;
+
+</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DestinationName</code> 문자열<br>
+```java<br>
+@Override<br>
+public void sendOrder(Order order) {<br>
+  jms.send(<br>
+      "tacocloud.order.queue",<br>
+      session -&amp;#62; session.createObjectMessage(order)<br>
+  );<br>
+}</li>
+</ul>
+
+<p>```<br>
+아래처럼 서비스를 이용하여 구현하면 된다.</p>
+
+<div class="callout callout-example" id="callout-329194aa-c868-4b0e-bddb-854d35047f30">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">send()</code> 주문 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.messaging</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.jms.JMSException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.jms.Message</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.jms.Session</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.jms.core.JmsTemplate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.jms.core.MessageCreator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">tacos.Order</span><span class="o">;</span>
+
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JmsOrderMessagingService</span> <span class="kd">implements</span> <span class="nc">OrderMessagingService</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">JmsTemplate</span> <span class="n">jms</span><span class="o">;</span>
+	
+	<span class="nd">@Autowired</span>
+	<span class="kd">public</span> <span class="nf">JmsOrderMessagingService</span><span class="o">(</span><span class="nc">JmsTemplate</span> <span class="n">jms</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">jms</span> <span class="o">=</span> <span class="n">jms</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendOrder</span><span class="o">(</span><span class="nc">Order</span> <span class="n">order</span><span class="o">)</span> <span class="o">{</span>
+		<span class="cm">/*
+		jms.send(new MessageCreator() {
+			@Override
+			public Message createMessage(Session session) throws JMSException {
+				return session.createObjectMessage(order);
+			}
+		}); // session -&gt; session.createObjectMessage(order) 람다 함수로 대체 가능
+		*/</span>
+
+		<span class="n">jms</span><span class="o">.</span><span class="na">convertAndSend</span><span class="o">(</span><span class="s">"tacocloud.order.queue"</span><span class="o">,</span> <span class="n">order</span><span class="o">,</span> <span class="k">this</span><span class="o">::</span><span class="n">addOrderSource</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="kd">private</span> <span class="nc">Message</span> <span class="nf">addOrderSource</span><span class="o">(</span><span class="nc">Message</span> <span class="n">message</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JMSException</span> <span class="o">{</span>
+		<span class="n">message</span><span class="o">.</span><span class="na">setStringProperty</span><span class="o">(</span><span class="s">"X_ORDER_SOURCE"</span><span class="o">,</span> <span class="s">"WEB"</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">message</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id="메시지-변환-후-전송">메시지 변환 후 전송</h4>
+
+<p>공통적인 변환 작업은 메시지 변환기를 구현 혹은 활용하면 되며, 특정 작업은 후처리기를 직접 구현하여 사용한다.</p>
+
+<p><strong>공통적인 메시지 변환기 구현</strong></p>
+
+<p>다음 인터페이스를 직접 구현하거나 미리 구현된 변환기를 직접 이용하면 된다.</p>
+
+<div class="callout callout-example" id="callout-776ebd4f-a7f9-48e2-98f4-20f7f800dc65">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>스프링의 <code class="language-plaintext highlighter-rouge">MessageConverter</code> 인터페이스
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MessageConvereter</span> <span class="o">{</span>
+	<span class="nc">Message</span> <span class="nf">toMessage</span><span class="o">(</span><span class="nc">Object</span> <span class="n">object</span><span class="o">,</span> <span class="nc">Session</span> <span class="n">session</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JMSException</span><span class="o">,</span> <span class="nc">MessageConversionException</span><span class="o">;</span>
+
+	<span class="nc">Object</span> <span class="nf">fromMessage</span><span class="o">(</span><span class="nc">Message</span> <span class="n">message</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>보통 <code class="language-plaintext highlighter-rouge">SimpleMessageConverter</code>를 자주 사용하며 변환기 인스턴스를 빈으로 선언하여 사용한다.</p>
+
+<div class="callout callout-example" id="callout-80ef5eee-5952-431a-ab8c-358f637860c7">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">org.springframeowrk.jms.support.converter</code>의 미리 정의된 스프링 메시지 변환기
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">|메시지 변환기|하는 일|
+|---|---|
+|</code>MappingJackson2MessageConverter<code class="language-plaintext highlighter-rouge">|Jackson 2 JSON 라이브러리로 메시지를 JSON으로 변환|
+|</code>MessagingMessageConverter<code class="language-plaintext highlighter-rouge">|수신된 메시지의 MessageConverter를 사용해 해당 메시지를 Message객체로 변환|
+|</code>SimpleMessageConvereter<code class="language-plaintext highlighter-rouge">| 문자열을 </code>TextMessage<code class="language-plaintext highlighter-rouge">로, byte 배열을 </code>ByteMessage<code class="language-plaintext highlighter-rouge">로 Map을 </code>MapMessage<code class="language-plaintext highlighter-rouge">로, </code>Serializeable<code class="language-plaintext highlighter-rouge"> 객체를 </code>ObjectMessage<code class="language-plaintext highlighter-rouge">로 상호 변환|</code><br>
+이때, <code class="language-plaintext highlighter-rouge">_typeId</code>로 변환되는 타입을 수신자에게 알리기 위해 매핑을 활용할 수 있다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="nc">MappingJackson2MessageConverter</span> <span class="nf">messageConverter</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">MappingJackson2MessageConverter</span> <span class="n">messageConverter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MappingJackson2MessageConverter</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">messageConverter</span><span class="o">.</span><span class="na">setTypeIdPropertyName</span><span class="o">(</span><span class="s">"_typeId"</span><span class="o">);</span> <span class="c1">// 수신된 메시지의 변환 타입을 수신자에게 알리기 위한 속성 설정</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Class</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">typeIdMappings</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Class</span><span class="o">&lt;?&gt;&gt;();</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">typeIdMappings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"order"</span><span class="o">,</span> <span class="nc">Order</span><span class="o">.</span><span class="na">class</span><span class="o">);</span> <span class="c1">// 실제 객체를 매핑시켜 변환 타입 알리기</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">messageConverter</span><span class="o">.</span><span class="na">setTypeIdMappings</span><span class="o">(</span><span class="n">typeIdMappings</span><span class="o">);</span> 
+	<span class="c1">// 이제 수신자는 해당 메시지가 order 객체로 변환되어야 함을 알고 해당 객체를 구현하여 변환할 것이다.</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">messageConverter</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p><strong>메시지 후처리</strong></p>
+
+<p>메시지 내부의 속성을 추가하려면 <code class="language-plaintext highlighter-rouge">send()</code> 메서드의 경우 다음과 같이 가능하다.</p>
+
+<div class="callout callout-example" id="callout-54eacc73-de89-46fa-bc73-1e6606e1d8c2">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">send()</code> 메서드 후처리
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">jms</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="s">"tacocloud.order.queue"</span><span class="o">,</span>
+	<span class="n">session</span> <span class="o">-&gt;</span> <span class="o">{</span>
+		<span class="nc">Message</span> <span class="n">message</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createObjectMessage</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
+		<span class="n">message</span><span class="o">.</span><span class="na">setStringProperty</span><span class="o">(</span><span class="s">"X_ORDER_SOURCE"</span><span class="o">,</span> <span class="s">"WEB"</span><span class="o">);</span>
+	<span class="o">});</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p><code class="language-plaintext highlighter-rouge">convertAndSend()</code> 사용 시 자동으로 메세지를 생성해주므로 변화를 주려면 메시지 변환기를 사용해야 함.</p>
+
+<div class="callout callout-example" id="callout-4ec3b7de-b1cd-47b1-86a5-a848b8b8ccc5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>후처리 구현
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.messaging</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.jms.JMSException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.jms.Message</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.jms.core.JmsTemplate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">tacos.Order</span><span class="o">;</span>
+
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JmsOrderMessagingService</span> <span class="kd">implements</span> <span class="nc">OrderMessagingService</span> <span class="o">{</span>
+
+<span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">JmsTemplate</span> <span class="n">jms</span><span class="o">;</span> 
+
+<span class="err">&nbsp;</span> <span class="nd">@Autowired</span>
+<span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nf">JmsOrderMessagingService</span><span class="o">(</span><span class="nc">JmsTemplate</span> <span class="n">jms</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">jms</span> <span class="o">=</span> <span class="n">jms</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="o">}</span> 
+
+<span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendOrder</span><span class="o">(</span><span class="nc">Order</span> <span class="n">order</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">jms</span><span class="o">.</span><span class="na">convertAndSend</span><span class="o">(</span><span class="s">"tacocloud.order.queue"</span><span class="o">,</span> <span class="n">order</span><span class="o">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">::</span><span class="n">addOrderSource</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// 람다, 내부 클래스를 이용할 수 도 있다.</span>
+<span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> 
+<span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">Message</span> <span class="nf">addOrderSource</span><span class="o">(</span><span class="nc">Message</span> <span class="n">message</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JMSException</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">message</span><span class="o">.</span><span class="na">setStringProperty</span><span class="o">(</span><span class="s">"X_ORDER_SOURCE"</span><span class="o">,</span> <span class="s">"WEB"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">message</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="메시지-수신">메시지 수신</h3>
+
+<p>메시지를 수신하는 방식은 크게 두가지가 있다.</p>
+<ul>
+  <li><strong>풀 모델(pull model)</strong> : 수신측에서 메시지를 요청
+    <ul>
+      <li>스레드가 사용가능할 때까지 시간이 조금 걸린다는 단점</li>
+    </ul>
+  </li>
+  <li><strong>푸시 모델(push model)</strong> : 송신 측에서 수신 가능하게 되면 메시지를 자동 전달
+    <ul>
+      <li>수신 측에 너무 많은 메시지가 도착 시, 처리가 힘들 때 파악 힘듦</li>
+    </ul>
+  </li>
+</ul>
+
+<p>스레드 문제가 없는 푸시 모델이 보통 효율적이지만, 메시지를 많이 받아야 하는 서비스는 풀 모델이 좋다.</p>
+
+<h4 id="풀모델-메시지-수신">풀모델 메시지 수신</h4>
+
+<div class="callout callout-example" id="callout-7fad5f25-a3cf-4896-ae05-75f615c136e1">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>메시지 수신 메서드
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>앞서 송신 메서드와 비슷한 방법으로 송신지를 설정할 수 있다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Message</span> <span class="nf">receive</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span>
+<span class="nc">Message</span> <span class="nf">receive</span><span class="o">(</span><span class="nc">Destination</span> <span class="n">destination</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span>
+<span class="nc">Message</span> <span class="nf">receive</span><span class="o">(</span><span class="nc">String</span> <span class="n">destinationName</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span>
+
+<span class="nc">Object</span> <span class="nf">receiveAndConvert</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span>
+<span class="nc">Object</span> <span class="nf">receiveAndConvert</span><span class="o">(</span><span class="nc">Destination</span> <span class="n">destination</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span>
+<span class="nc">Object</span> <span class="nf">receiveAndConvert</span><span class="o">(</span><span class="nc">String</span> <span class="n">destinationName</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">JmsException</span><span class="o">;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-09282aa7-271f-4677-a7dc-a680db4fba44">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>example</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>title:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.kitchen.messaging.jms</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Profile</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.jms.core.JmsTemplate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>  
+
+<span class="kn">import</span> <span class="nn">tacos.Order</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">tacos.kitchen.OrderReceiver</span><span class="o">;</span>  
+
+<span class="nd">@Profile</span><span class="o">(</span><span class="s">"jms-template"</span><span class="o">)</span>
+<span class="nd">@Component</span><span class="o">(</span><span class="s">"templateOrderReceiver"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JmsOrderReceiver</span> <span class="kd">implements</span> <span class="nc">OrderReceiver</span> <span class="o">{</span>
+  
+<span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">JmsTemplate</span> <span class="n">jms</span><span class="o">;</span> 
+
+<span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nf">JmsOrderReceiver</span><span class="o">(</span><span class="nc">JmsTemplate</span> <span class="n">jms</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">jms</span> <span class="o">=</span> <span class="n">jms</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> 
+<span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">Order</span> <span class="nf">receiveOrder</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="cm">/* //receive 메서드 버전
+	Message message = jms.receive("tacocloud.order.queue");
+	rerturn (Order) converter.fromMessage(message);
+&nbsp; &nbsp; */</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="o">(</span><span class="nc">Order</span><span class="o">)</span> <span class="n">jms</span><span class="o">.</span><span class="na">receiveAndConvert</span><span class="o">(</span><span class="s">"tacocloud.order.queue"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id="푸시모델-메시지-수신">푸시모델 메시지 수신</h4>
+
+<p>메시지가 도착할 때까지 대기하는 수동적 컴포넌트<br>
+POJO 방식으로 다른 메시지 의존 모듈로도 비슷한 방법으로 메시지 리스너를 선언 가능</p>
+
+<div class="callout callout-example" id="callout-c875ddea-4bd9-47a5-87bd-35c1c359ba48">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">OrderListener</code> 컴포넌트
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">@GetMapping</code> 등과 사용법이 비슷하다.</p>
+<pre><code class="language-Java">package tacos.kitchen.messaging.jms.listener;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+import org.springframework.jms.annotation.JmsListener;
+import org.springframework.stereotype.Component;  
+
+import tacos.Order;
+import tacos.kitchen.KitchenUI;
+
+@Profile("jms-listener")
+@Component
+public class OrderListener {
+
+&nbsp; private KitchenUI ui;
+
+&nbsp; @Autowired
+&nbsp; public OrderListener(KitchenUI ui) {
+&nbsp; &nbsp; this.ui = ui;
+&nbsp; } 
+
+&nbsp; @JmsListener(destination = "tacocloud.order.queue")
+&nbsp; public void receiveOrder(Order order) {
+&nbsp; &nbsp; ui.displayOrder(order);
+&nbsp; }
+}
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<h2 id="RabbitMQ">RabbitMQ</h2>
+
+<p>JMS는 자바 어플리케이션 간에만 사용가능하다는 단점이 있다.</p>
+
+<p><strong>org.springframework.boot.spring-boot-starter-amqp</strong>를 추가하고 관련 설정을 <code class="language-plaintext highlighter-rouge">application.yml</code>에 추가하자.</p>
+
+<p>RabbitMQ는 AMQP의 구현으로, 진보된 메시지 라우팅 전략을 이용한다.</p>
+
+<ol>
+  <li>메시지가 브로커에 도착하면 주소로 지정된 거래소로 들어간다.
+    <ul>
+      <li>주소는 거래소 타입, 거래소와 큐 간의 바인딩, 메시지의 라우팅 키 값을 기반으로 처리</li>
+    </ul>
+  </li>
+  <li>거래소는 하나 이상의 큐에 메시지를 전달한다.</li>
+</ol>
+
+<p>거래소(exchange)의 종류는 다음과 같다.</p>
+<ul>
+  <li><strong>기본(default) 거래소</strong> : 자동 생성되는 특별 거래소, 메시지의 라우팅키와 이름이 같은 큐로 메시지 전달. 모든 큐와 연결됨</li>
+  <li><strong>디렉트(direct) 거래소</strong> : 바인딩 키와 메시지 라우팅 키를 비교해 큐로 전달</li>
+  <li><strong>토픽(topic) 거래소</strong> : 바인딩 키를 와일드 카드를 이용해 라우팅 키와 비교해 메시지 전달</li>
+  <li><strong>팬아웃(fanout) 거래소</strong>: 모든 연결된 큐에 메시지 전달하는 거래소</li>
+  <li><strong>헤더(header) 거래소</strong> : 라우팅 키 대신 메시지 헤더 값으로 전달</li>
+  <li><strong>데드 레터(dead letter) 거래소</strong> : 전달 불가능한 라우팅 키로 보내진 메시지를 보관</li>
+</ul>
+
+<p>설정부터 송수신까지 <code class="language-plaintext highlighter-rouge">JmsTemplate</code>의 코드와 놀랍도록 유사하나 다음 두가지가 다르다.</p>
+<ul>
+  <li>목적지 대신 라우팅키와 거래소를 준다는 점</li>
+  <li>메시지 수신 시 큐 이름을 받고, 타임아웃 시간을 정할 수 있다.<br>
+자세한 것은 <span class='link-warning'>
+      <a href="https://spring.io/guides/gs/messaging-rabbitmq/" class="wikilink externallink">이곳</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://spring.io/guides/gs/me..."</em>로
+        <button onclick="window.open('https://spring.io/guides/gs/messaging-rabbitmq/','_blank'); return false;">이동</button>?
+      </span>
+    </span> 참조</li>
+</ul>
+
+<h2 id="아파체-카프카">아파체 카프카</h2>
+<p>아파체 카프카는 특유의 클러스터로 카프카 인스턴스를 나눈 뒤, 인스턴스 내의 토픽들을 파티션으로 분할하여 관리한다.</p>
+
+<p>거래소와 큐의 개념이 없으며, 토픽은 모든 클러스터에 복제되어 클러스터의 노드 들에 의해 관리된다.</p>
+
+<p><strong>org.springframework.kafka.spring-kafka</strong>를 추가하고 관련 설정을 <code class="language-plaintext highlighter-rouge">application.yml</code>에 추가하자.</p>
+
+<p>마찬가지로 비슷한 코드이나 다음이 다르다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">convertAndSend()</code> 메서드의 역할을 <code class="language-plaintext highlighter-rouge">send()</code> 메서드가 대신함
+    <ul>
+      <li>메시지 전송 시 직접 도메인 타입을 처리하므로 변환 기능을 대신함.</li>
+    </ul>
+  </li>
+  <li>매개변수로 다음을 이용함
+    <ul>
+      <li>메시지가 전송될 토픽(<code class="language-plaintext highlighter-rouge">String</code>)</li>
+      <li>토픽 데이터를 쓰는 파티션(<code class="language-plaintext highlighter-rouge">Integer</code>, optional)</li>
+      <li>레코드 전송 키(<code class="language-plaintext highlighter-rouge">K</code>, optional)</li>
+      <li>타임스탬프(optional)</li>
+      <li>페이로드(<code class="language-plaintext highlighter-rouge">V</code> 필수)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-44b1f6cc-63fc-419c-82e5-fdd80f999a6e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>kafka listener 구현
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.kitchen.messaging.kafka.listener</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.kafka.clients.consumer.ConsumerRecord</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Profile</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.kafka.annotation.KafkaListener</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>  
+
+<span class="kn">import</span> <span class="nn">lombok.extern.slf4j.Slf4j</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">tacos.Order</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">tacos.kitchen.KitchenUI</span><span class="o">;</span>
+  
+
+<span class="nd">@Profile</span><span class="o">(</span><span class="s">"kafka-listener"</span><span class="o">)</span>
+<span class="nd">@Component</span>
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderListener</span> <span class="o">{</span>
+
+<span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">KitchenUI</span> <span class="n">ui</span><span class="o">;</span> 
+
+<span class="err">&nbsp;</span> <span class="nd">@Autowired</span>
+<span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nf">OrderListener</span><span class="o">(</span><span class="nc">KitchenUI</span> <span class="n">ui</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="o">}</span>  
+
+<span class="err">&nbsp;</span> <span class="nd">@KafkaListener</span><span class="o">(</span><span class="n">topics</span><span class="o">=</span><span class="s">"tacocloud.orders.topic"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="nc">Order</span> <span class="n">order</span><span class="o">,</span> <span class="nc">ConsumerRecord</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Order</span><span class="o">&gt;</span> <span class="n">record</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Received from partition {} with timestamp {}"</span><span class="o">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">record</span><span class="o">.</span><span class="na">partition</span><span class="o">(),</span> <span class="n">record</span><span class="o">.</span><span class="na">timestamp</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ui</span><span class="o">.</span><span class="na">displayOrder</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="c1">//</span>
+<span class="c1">// Alternate implementation</span>
+<span class="c1">//</span>
+<span class="c1">// &nbsp;@KafkaListener(topics="tacocloud.orders.topic")</span>
+<span class="c1">// &nbsp;public void handle(Order order, Message&lt;Order&gt; message) {</span>
+<span class="c1">// &nbsp; &nbsp;MessageHeaders headers = message.getHeaders();</span>
+<span class="c1">// &nbsp; &nbsp;log.info("Received from partition {} with timestamp {}",</span>
+<span class="c1">// &nbsp; &nbsp; &nbsp; &nbsp;headers.get(KafkaHeaders.RECEIVED_PARTITION_ID),</span>
+<span class="c1">// &nbsp; &nbsp; &nbsp; &nbsp;headers.get(KafkaHeaders.RECEIVED_TIMESTAMP));</span>
+<span class="c1">// &nbsp; &nbsp;ui.displayOrder(order);</span>
+<span class="c1">// &nbsp;}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/Spring/Spring5-%EB%B9%84%EB%8F%99%EA%B8%B0%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%A0%84%EC%86%A1.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/Spring/Spring5-비동기 메시지 전송.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

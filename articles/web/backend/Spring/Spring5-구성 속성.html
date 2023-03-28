@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spring5-구성 속성 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Spring5-구성 속성" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/Spring/Spring5-%EA%B5%AC%EC%84%B1%20%EC%86%8D%EC%84%B1.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/Spring/Spring5-%EA%B5%AC%EC%84%B1%20%EC%86%8D%EC%84%B1.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-29T14:59:06+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spring5-구성 속성" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-29T14:59:06+09:00","datePublished":"2023-01-29T14:59:06+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"Spring5-구성 속성","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/Spring/Spring5-%EA%B5%AC%EC%84%B1%20%EC%86%8D%EC%84%B1.html"},"url":"http://localhost:4000/articles/web/backend/Spring/Spring5-%EA%B5%AC%EC%84%B1%20%EC%86%8D%EC%84%B1.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Spring5-구성 속성</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-01-29T14:59:06+09:00" itemprop="datePublished">Jan 29, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#속성">속성</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#프로퍼티-파일">프로퍼티 파일</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#프로퍼티-파일-생성-및-위치">프로퍼티 파일 생성 및 위치</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#프로퍼티-값-전달">프로퍼티 값 전달</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#프로퍼티-구성-예시">프로퍼티 구성 예시</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#구성-속성-메타데이터-선언">구성 속성 메타데이터 선언</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#프로필">프로필</a><ul><li lvl="3"><a id="markdown-toc-0-7" href="#프로필에-따른-구성-클래스-생성">프로필에 따른 구성 클래스 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#프로필-선택">프로필 선택</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#다수-프로필-설정-및-프로필-집합-클래스">다수 프로필 설정 및 프로필 집합 클래스</a><ul></ul></li></ul></li></ol>
+<h1 id="구성-속성">구성 속성</h1>
+
+<div class="callout callout-quote" id="callout-2b355521-7f06-4381-ae33-546f09c67a27">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>_<span class='link-warning'>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.kame.co.kr/nkm/det..."</em>로
+        <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
+      </span>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<h2 id="속성">속성</h2>
+
+<p>스프링에는 두 가지 구성이 필요하다.</p>
+<ul>
+  <li>빈을 생성하고 컴포넌트 등에 상호 주입되는 방법을 선언하는 <strong>빈 연결(Bean wiring)</strong></li>
+  <li>
+    <p>스프링 애플리케이션 컨텍스트 내부의 빈의 속성값을 정하는 <strong>속성 주입(Property injection)</strong><br>
+스프링 부트를 이용한다면 이 둘을 상당량 대신 해주지만, 기본 설정을 바꾸고 싶다면 구성 속성을 사용하는 방법을 알아야 한다.</p>
+  </li>
+  <li><strong>스프링 환경 추상화(environment abstraction)</strong><br>
+속성의 근원은 운영체제 환경 변수, 애플리케이션 내의 속성 구성 파일, 명령행 인자, JVM 시스템 속성 등 다양하지만, 이를 스프링이 한대 모아 빈들이 사용할 수 있게 한다.</li>
+</ul>
+
+<p>예를 들어 포트를 지정하는 방법은 다음과 같은 근원들로 가능하다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">src/main/resources/application.properties</code>에서 <code class="language-plaintext highlighter-rouge">server.port=9090</code></li>
+  <li><code class="language-plaintext highlighter-rouge">application.yml</code>에서 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">java -jar tacocloud-0.0.5-SNAPSHOT.jar --server.port=9090</code></li>
+  <li><code class="language-plaintext highlighter-rouge">export SERVER_PORT=9090</code> 운영체제 환경변수</li>
+</ul>
+
+<h2 id="프로퍼티-파일">프로퍼티 파일</h2>
+<h3 id="프로퍼티-파일-생성-및-위치">프로퍼티 파일 생성 및 위치</h3>
+<p>스프링은  간단한 설정으로 외부의 프로퍼티 파일을 이용해서 스프링 빈을 설정할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-e4a266ca-5021-4962-a32c-21b4225c42f7">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">db.properties</code> 파일
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">${}</code>를 이용하면 다른 프로퍼티의 값을 가져올 수 있다.</p>
+<div class="language-properties highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">db.driver</span><span class="p">=</span><span class="s">com.mysql.jdbc.Driver</span>
+<span class="py">db.url</span><span class="p">=</span><span class="s">jdbc:mysql://localhost/spring5fs?characterEncoding=utf8</span>
+<span class="py">db.user</span><span class="p">=</span><span class="s">spring5</span>
+<span class="py">db.password</span><span class="p">=</span><span class="s">${db.user}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>다음은 위 같은 프로퍼티 파일을 이용하게 하는 방법을 설명한다.</p>
+
+<div class="callout callout-note" id="callout-1c314449-0690-48c1-93ee-cbe283465894">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>스프링 부트의 경우, 자동 구성을 사용하므로 위 파일을 <code class="language-plaintext highlighter-rouge">src/main/resources</code> 폴더에 위치시키면 끝이다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">PropertySourcesPlaceholderConfigurer</code> 정적 빈 클래스 등록</strong></li>
+</ol>
+
+<div class="callout callout-warning" id="callout-3391c4da-253c-4db3-b917-d1eec5cf0611">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">PropertySourcesPlaceholderConfigurer</code> 빈은 무조건 <code class="language-plaintext highlighter-rouge">static</code> 클래스여야 한다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<div class="callout callout-example" id="callout-b07860ba-d83c-49f2-828b-db617be11cdd">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/config/PropertyConfig.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">config</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.support.PropertySourcesPlaceholderConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.core.io.ClassPathResource</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PropertyConfig</span> <span class="o">{</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kd">static</span> <span class="nc">PropertySourcesPlaceholderConfigurer</span> <span class="nf">properties</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">PropertySourcesPlaceholderConfigurer</span> <span class="n">configurer</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PropertySourcesPlaceholderConfigurer</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">configurer</span><span class="o">.</span><span class="na">setLocations</span><span class="o">(</span><span class="c1">// 프로퍼티 파일 목록 전달</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">new</span> <span class="nc">ClassPathResource</span><span class="o">(</span><span class="s">"db.properties"</span><span class="o">),</span><span class="c1">// 클래스 패스에 위치한 프로퍼티 파일 </span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">new</span> <span class="nc">FileSytstemResources</span><span class="o">(</span><span class="s">"../info.properties"</span><span class="o">)</span> <span class="c1">// 파일 시스템 특정 패스에 위치한 프로퍼티 파일</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">configurer</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="프로퍼티-값-전달">프로퍼티 값 전달</h3>
+<h4 id="Value를-이용한-프로퍼티-값-전달"><code class="language-plaintext highlighter-rouge">@Value</code>를 이용한 프로퍼티 값 전달</h4>
+<p>이후 구성 클래스에서 <code class="language-plaintext highlighter-rouge">@Value("${프로퍼티파일명.값}")</code>으로 값을 지정해준다.</p>
+
+<div class="callout callout-example" id="callout-95faa159-473a-4943-882b-79974c7772f7">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Value</code>를 이용한 프로퍼티 값 전달
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">config</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.tomcat.jdbc.pool.DataSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span> 
+
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DsConfigWithProp</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Value</span><span class="o">(</span><span class="s">"${db.driver}"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">driver</span><span class="o">;</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Value</span><span class="o">(</span><span class="s">"${db.url}"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">jdbcUrl</span><span class="o">;</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Value</span><span class="o">(</span><span class="s">"${db.user}"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">user</span><span class="o">;</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Value</span><span class="o">(</span><span class="s">"${db.password}"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span><span class="o">(</span><span class="n">destroyMethod</span> <span class="o">=</span> <span class="s">"close"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">DataSource</span> <span class="nf">dataSource</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">DataSource</span> <span class="n">ds</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DataSource</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setDriverClassName</span><span class="o">(</span><span class="n">driver</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setUrl</span><span class="o">(</span><span class="n">jdbcUrl</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="n">password</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">ds</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>뿐만 아니라 다른 빈 클래스에도 빈 생성시 값을 지정해줄 수 있다.</p>
+
+<div class="callout callout-example" id="callout-b2a93285-bd24-47ee-907d-4ff1a3a12c26">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Value</code> 어노테이션 빈 클래스 사용례
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">spring</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Info</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Value</span><span class="o">(</span><span class="s">"${info.version}"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">version</span><span class="o">;</span> <span class="c1">// 빈 클래스의 version이 자동으로 info.version 값으로 생성</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printInfo</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"version = "</span> <span class="o">+</span> <span class="n">version</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span> 
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVersion</span><span class="o">(</span><span class="nc">String</span> <span class="n">version</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">version</span> <span class="o">=</span> <span class="n">version</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Value</span><span class="o">(</span><span class="s">"${info.author}"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAuthor</span><span class="o">(</span><span class="nc">String</span> <span class="n">author</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// setter 메서드에도 붙여서 사용 가능</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id="ConfigurationProperties를-이용한-프로퍼티-값-전달"><code class="language-plaintext highlighter-rouge">@ConfigurationProperties</code>를 이용한 프로퍼티 값 전달</h4>
+<p>스프링 부트를 이용할 경우 <code class="language-plaintext highlighter-rouge">@ConfigurationProperties</code>를 이용할 수 있다.</p>
+
+<p>이 어노테이션은 해당 빈의 속성을 프로퍼티에서 가져오게 한다.</p>
+
+<p>프로퍼티 파일에 <code class="language-plaintext highlighter-rouge">taco.orders.pageSize: 10</code>이거나 운영체제 <code class="language-plaintext highlighter-rouge">export TACO_ORDERS_PAGESIZE=10</code>으로 값을 설정했다고 가정하자.</p>
+
+<p>다음과 같이 컨트롤러를 작성하면 된다.</p>
+
+<div class="callout callout-example" id="callout-3c3d1115-40e6-4e66-8d4b-eaff2e50334f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>페이지 사이즈 만큼 넘기기
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.context.properties.ConfigurationProperties</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.data.domain.Pageable</span><span class="o">;</span>
+<span class="c1">//...</span>
+<span class="nd">@Controller</span><span class="c1">// 컨트롤러 빈 설정</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/orders"</span><span class="o">)</span>
+<span class="nd">@SessionAttributes</span><span class="o">(</span><span class="s">"order"</span><span class="o">)</span>
+<span class="c1">// 해당 빈의 속성을 프로퍼티에서 가져오게 하는 어노테이션</span>
+<span class="nd">@ConfigurationProperties</span><span class="o">(</span><span class="n">prefix</span><span class="o">=</span><span class="s">"taco.orders"</span><span class="o">)</span> <span class="c1">// taco.orders의 값들 가져오기</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderController</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">pageSize</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span> <span class="c1">// taco.orders.pageSize=10으로 오버라이딩 됨</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPageSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">pageSize</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">pageSize</span> <span class="o">=</span> <span class="n">pageSize</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="c1">//...</span>
+
+	<span class="nd">@GetMapping</span>
+	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">ordersForUser</span><span class="o">(</span>
+	<span class="nd">@AuthenticationPrincipal</span> <span class="nc">User</span> <span class="n">user</span><span class="o">,</span> <span class="nc">Model</span> <span class="n">mode</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">Pageable</span> <span class="n">pageable</span> <span class="o">=</span> <span class="nc">PageRequest</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">pageSize</span><span class="o">);</span>
+		<span class="n">model</span><span class="o">.</span><span class="na">addAttributes</span><span class="o">(</span><span class="s">"orders"</span><span class="o">,</span>
+			<span class="n">orederRepo</span><span class="o">.</span><span class="na">findByUserOrderByPlacedAtDesc</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">pageable</span><span class="o">));</span>
+		<span class="k">return</span> <span class="s">"orderList"</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>위의 경우 보다는 주로 구성 데이터 홀더를 의미하는 <code class="language-plaintext highlighter-rouge">Props</code>를 붙인 새로운 컴포넌트 빈으로 생성하여 해당 값을 이용하는 방식으로 사용된다.</p>
+
+<div class="callout callout-example" id="callout-05c648bf-3c00-41b9-8c84-9173099856ba">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>구성 속성 홀더 정의
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>속성의 검증이 가능하고, 관심사를 분리한 <code class="language-plaintext highlighter-rouge">OrderProps</code> 속성 홀더</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.web</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.validation.constraints.Max</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.validation.constraints.Min</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.validation.annotation.Validated</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.context.properties.ConfigurationProperties</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.Data</span><span class="o">;</span> 
+
+<span class="nd">@Component</span>
+<span class="nd">@ConfigurationProperties</span><span class="o">(</span><span class="n">prefix</span><span class="o">=</span><span class="s">"taco.orders"</span><span class="o">)</span>
+<span class="nd">@Data</span>
+<span class="nd">@Validated</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderProps</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Min</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="mi">5</span><span class="o">,</span> <span class="n">message</span><span class="o">=</span><span class="s">"must be between 5 and 25"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Max</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="mi">25</span><span class="o">,</span> <span class="n">message</span><span class="o">=</span><span class="s">"must be between 5 and 25"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kt">int</span> <span class="n">pageSize</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이를 아래와 같이 사용할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-643cea9a-c73f-494a-a928-6e486e9b377e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">OrderController</code> 코드 변경
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="nd">@Slf4j</span>
+<span class="nd">@Controller</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/orders"</span><span class="o">)</span>
+<span class="nd">@SessionAttributes</span><span class="o">(</span><span class="s">"order"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderController</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">OrderProps</span> <span class="n">props</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">OrderRepository</span> <span class="n">orderRepo</span><span class="o">;</span>  
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nf">OrderController</span><span class="o">(</span><span class="nc">OrderRepository</span> <span class="n">orderRepo</span><span class="o">,</span> <span class="nc">OrderProps</span> <span class="n">props</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">orderRepo</span> <span class="o">=</span> <span class="n">orderRepo</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">props</span> <span class="o">=</span> <span class="n">props</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">//...</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@GetMapping</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">String</span> <span class="nf">ordersForUser</span><span class="o">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@AuthenticationPrincipal</span> <span class="nc">User</span> <span class="n">user</span><span class="o">,</span> <span class="nc">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Pageable</span> <span class="n">pageable</span> <span class="o">=</span> <span class="nc">PageRequest</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">props</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"orders"</span><span class="o">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">orderRepo</span><span class="o">.</span><span class="na">findByUserOrderByPlacedAtDesc</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">pageable</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="s">"orderList"</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="프로퍼티-구성-예시">프로퍼티 구성 예시</h3>
+
+<h4 id="데이터-소스-프로퍼티-파일">데이터 소스 프로퍼티 파일</h4>
+<p>데이터소스를 직접 코드하여 구성하는 것보다 스프링 부트를 이용하면 아래 처럼 프로퍼티 파일을 구성할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-a565c053-8237-4039-84b5-2125f769c3f4">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">application.yml</code> 파일 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">spring</span><span class="pi">:</span>
+<span class="err">	</span><span class="na">datasource</span><span class="pi">:</span>
+<span class="err">		</span><span class="na">url</span><span class="pi">:</span> <span class="s">jdbc:mysql://localhost/tacocloud</span>
+<span class="na">		usernmae</span><span class="pi">:</span> <span class="s">tacodb</span>
+<span class="na">		password</span><span class="pi">:</span> <span class="s">tacopassword</span>
+<span class="na">		driver-class-name</span><span class="pi">:</span> <span class="s">com.mysql.jdbcDriver</span> <span class="c1"># 스프링 부트 이외에 자동 JDBC 클래스 지정이 안될 경우 추가</span>
+<span class="err">		</span>
+<span class="err">		</span><span class="na">schema</span><span class="pi">:</span> <span class="c1"># schema.sql, data.sql 이외의 추가 sql 실행시킬 시 이용</span>
+<span class="err">			</span><span class="pi">-</span> <span class="s">order-schema.sql</span> 
+<span class="err">			</span><span class="s">- ingredient-schemal.sql</span>
+<span class="na">		data</span><span class="pi">:</span>
+<span class="err">			</span><span class="pi">-</span> <span class="s">ingredients.sql</span>
+<span class="na">		jndi-name</span><span class="pi">:</span> <span class="s">java:/comp/env/jdbc/tacoCloudDS</span> <span class="c1"># jndi를 이용한 구성, 이용할 경우 앞에 값들이 전부 무시됨</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>커넥션 풀의 경우도 HikariCP, Commons DBCP 2 같은 기본 값이 싫으면 프로퍼티 파일에 지정해줄 수도 있다.<br>
+JNDI는 <span class='link-warning'>
+      <a href="https://docs.oracle.com/javase/tutorial/jndi/overview/index.html" class="wikilink externallink">공식 문서</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://docs.oracle.com/javase..."</em>로
+        <button onclick="window.open('https://docs.oracle.com/javase/tutorial/jndi/overview/index.html','_blank'); return false;">이동</button>?
+      </span>
+    </span> 참조</p>
+<h4 id="내장-서버">내장 서버</h4>
+
+<p>서버의 HTTPS 요청 처리를 위한 컨테이너 관련 설정을 예시로 보자.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>keytool <span class="nt">-keystore</span> mykeys.jks <span class="nt">-genkey</span> <span class="nt">-alias</span> tomcat <span class="nt">-keyalg</span> RSA
+
+</code></pre></div></div>
+<ol>
+  <li>먼저 키 관리를 위해 JDK의 <code class="language-plaintext highlighter-rouge">keytool</code> 유틸리티로 키스토어를 생성하자.
+    <ul>
+      <li>이때 암호, 저장 위치 등을 입력해야 한다.</li>
+    </ul>
+  </li>
+  <li>다음과 같이 서블릿 컨테이너 설정을 해주자.<br>
+```yml<br>
+server:<br>
+ port: 0 # 보통, 8443, 포트를 0으로 하면 사용 가능한 포트를 무작위로 가져옴<br>
+ ssl:<br>
+     key-store: file:///path/to/mykeys.jks # JAR 파일의 경우 classpath:로 URL 참조<br>
+     key-store-password: 이전에_지정했던_암호<br>
+     key-password: 이전에_지정했던_암호</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#### 로깅
+기본적으로 스프링 부트에서 제공되는 Logback 로깅 구성을 위해 `logback.xml` 파일을 이용할 수 있지만, 다음과 같이 프로퍼티 파일로도 구성할 수 있다.
+
+```yml
+logging:
+	path: /var/logs/
+	file: TacoCloud.log # 로그를 저장하고 싶다면 이처럼 경로와 파일명을 지정
+	level: # 로깅 수준을 설정하기 위한 로거 별로 다른 수준으로 설정하게 해줌
+		root: WARN # root는 WARN
+		org.springframework: # .을 이용해 한줄로 표현도 가능
+				security: DEBUG # Spring Security 로거는 DEBUG
+
+</code></pre></div></div>
+<p>기본적인 로그 파일 크기는 10MB이며, 넘으면 새로운 로그 파일을 생성한다.</p>
+
+<h3 id="구성-속성-메타데이터-선언">구성 속성 메타데이터 선언</h3>
+<p>구성 속성을 이용하면 IDE에서는 이를 인식하지 못하여 오류가 나거나 값을 바로 확인할 수 없는 경우가 있으므로, 이를 해결하기 위해 메타데이터를 만들어보자.</p>
+
+<ol>
+  <li>
+    <p>스프링 부트의 의존 모듈에 <code class="language-plaintext highlighter-rouge">org.springframework.boot.spring-boot-configuration-processor</code>를 추가</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">src/main/resources/META-INF/additional-spring-configuration-metadata.json</code> 파일 생성</p>
+  </li>
+  <li>
+    <p>아래와 같이 파일 내용 추가</p>
+  </li>
+</ol>
+
+<div class="callout callout-example" id="callout-8e994d25-1229-4bcd-8557-39e44110028d">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">additional-spring-configuration-metadata.json</code> 파일
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>대문자와 <code class="language-plaintext highlighter-rouge">-</code> + 소문자는 속성 명칭에서 같은 취급한다.<br>
+ex) <code class="language-plaintext highlighter-rouge">pageSize</code> == <code class="language-plaintext highlighter-rouge">page-size</code></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+			</span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taco.orders.page-size"</span><span class="p">,</span><span class="w">
+			</span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+			</span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sets the maximum number of orders to display in a list."</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+	</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이제 내 커스텀 속성 명칭만큼 메타데이터를 추가하면 IDE에서 정상적으로 보인다.</p>
+
+<h2 id="프로필">프로필</h2>
+<p>개발과 실제 서비스 간에 DB, 로그, 오류 처리 등의 개발 환경이 달라지게 되며, 이 <strong>각기 다른 개발 환경 설정을 프로필(Profile)</strong>이라고 부른다.</p>
+
+<p>스프링에서는 이러한 다양한 <strong>프로필 별로 태그를 지정하고, 지정한 태그에 따라 프로필 설정을 이용해 스프링 컨테이너를 초기화</strong>할 수 있게 해준다.</p>
+
+<p>일부 배포용 클라우드 에서는 특정 프로파일명을 강제하는 경우가 있다.</p>
+<ul>
+  <li>클라우드 파운드리에서는 <code class="language-plaintext highlighter-rouge">cloud</code>라는 이름의 배포용 프로필을 만들어야 한다.</li>
+</ul>
+
+<h3 id="프로필에-따른-구성-클래스-생성">프로필에 따른 구성 클래스 생성</h3>
+
+<h4 id="Profile-어노테이션-사용"><code class="language-plaintext highlighter-rouge">@Profile</code> 어노테이션 사용</h4>
+
+<div class="callout callout-example" id="callout-ed4c88a9-9d10-46e7-92ff-b1add40b2f52">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>프로필의 생성 <code class="language-plaintext highlighter-rouge">src/main/java/confi/DsDevConfig.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">config</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.tomcat.jdbc.pool.DataSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Profile</span><span class="o">;</span> 
+
+<span class="nd">@Configuration</span>
+<span class="nd">@Profile</span><span class="o">(</span><span class="s">"dev"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DsDevConfig</span> <span class="o">{</span>  
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span><span class="o">(</span><span class="n">destroyMethod</span> <span class="o">=</span> <span class="s">"close"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">DataSource</span> <span class="nf">dataSource</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">DataSource</span> <span class="n">ds</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DataSource</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setDriverClassName</span><span class="o">(</span><span class="s">"com.mysql.jdbc.Driver"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setUrl</span><span class="o">(</span><span class="s">"jdbc:mysql://localhost/spring5fs?characterEncoding=utf8"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">"spring5"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="s">"spring5"</span><span class="o">);</span>
+		<span class="c1">// ...</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">ds</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id="프로필-별-프로퍼티-파일-생성">프로필 별 프로퍼티 파일 생성</h4>
+<p><code class="language-plaintext highlighter-rouge">application-{프로필명}.yml</code> 혹은 <code class="language-plaintext highlighter-rouge">application-{프로필명}.properties</code>라는 명칭을 통해 특정 상황에만 사용 가능한 프로퍼티 파일을 만들 수 있다.</p>
+
+<p>또는 아래와 같이 프론트매터(<code class="language-plaintext highlighter-rouge">---</code>)로 나누어 공통 속성을 지정하고, <code class="language-plaintext highlighter-rouge">spring.profiles</code> 값을 통해 프로필명을 나눌 수 있다.</p>
+
+<div class="callout callout-example" id="callout-d4bdbb66-9fc5-4598-afe7-043736e1e12e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">application.yml</code> 파일
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">logging</span><span class="pi">:</span>
+<span class="err">	</span><span class="na">level</span><span class="pi">:</span>
+<span class="err">		</span><span class="na">tacos</span><span class="pi">:</span> <span class="s">DEBUG</span> <span class="c1"># 공통된 모든 프로필의 기본 값</span>
+<span class="nn">---</span> <span class="c1"># 새로운 프로필 시작</span>
+<span class="na">spring</span><span class="pi">:</span>
+<span class="err">	</span><span class="na">profiles</span><span class="pi">:</span> <span class="s">prod</span> <span class="c1"># 프로필명 지정</span>
+<span class="err">	</span><span class="na">datasource</span><span class="pi">:</span>
+<span class="err">		</span><span class="na">url</span><span class="pi">:</span> <span class="s">jdbc:mysql://localhost/tacocloud</span>
+<span class="na">		username</span><span class="pi">:</span> <span class="s">tacouser</span>
+<span class="na">		password</span><span class="pi">:</span> <span class="s">tacopassword</span>
+
+<span class="na">logging</span><span class="pi">:</span>
+<span class="err">	</span><span class="na">level</span><span class="pi">:</span>
+<span class="err">		</span><span class="na">tacos</span><span class="pi">:</span> <span class="s">WARN</span> <span class="c1"># 기본값 덮어쓰기</span>
+<span class="nn">---</span>
+<span class="na">spring</span><span class="pi">:</span>
+<span class="err">	</span><span class="na">profiles</span><span class="pi">:</span> <span class="s">dev</span> <span class="c1"># 새로운 프로필 시작</span>
+<span class="err">	</span><span class="na">datasource</span><span class="pi">:</span>
+<span class="err">		</span><span class="na">url</span><span class="pi">:</span> <span class="s">jdbc:mysql://localhost/tacocloud</span>
+<span class="na">		username</span><span class="pi">:</span> <span class="s">tacouser</span>
+<span class="na">		password</span><span class="pi">:</span> <span class="s">tacopassword</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="프로필-선택">프로필 선택</h3>
+
+<h4 id="내부-코드-방법">내부 코드 방법</h4>
+
+<div class="callout callout-example" id="callout-89586047-36a4-4577-92e7-fbdfcceac20e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>설정한 프로필의 사용 <code class="language-plaintext highlighter-rouge">src/main/java/main/MainProfile.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">main</span><span class="o">;</span> 
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.AnnotationConfigApplicationContext</span><span class="o">;</span>
+<span class="c1">//...</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainProfile</span> <span class="o">{</span>
+  <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">AnnotationConfigApplicationContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AnnotationConfigApplicationContext</span><span class="o">();</span>
+		<span class="c1">// getEnvironment: 프로필 탐색</span>
+		<span class="c1">// setActiveProfiles: 프로필 선택</span>
+		<span class="n">context</span><span class="o">.</span><span class="na">getEnvironment</span><span class="o">().</span><span class="na">setActiveProfiles</span><span class="o">(</span><span class="s">"dev"</span><span class="o">);</span> <span class="c1">//("dev", "real"); 여러개의 프로필 선택 가능</span>
+		
+		<span class="c1">// 이후 사용할 구성 클래스를 등록해 줘야함. 순서 중요!</span>
+		<span class="n">context</span><span class="o">.</span><span class="na">register</span><span class="o">(</span><span class="nc">MemberConfig</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="nc">DsDevConfig</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="nc">DsRealConfig</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">//context.register(MemberConfigWithProfile.class);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">context</span><span class="o">.</span><span class="na">refresh</span><span class="o">();</span>
+		<span class="c1">//...</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">context</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>위처럼 <code class="language-plaintext highlighter-rouge">Main</code> 메서드로 프로필 선택하는것 이외에 추가로 세 가지 방법이 존재한다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">spring.profiles.active</code> 시스템 프로퍼티에 사용할 프로필 값 지정
+    <ul>
+      <li>다수의 경우 콤마로 구분 , 우선순위 중간</li>
+      <li>ex)  <code class="language-plaintext highlighter-rouge">System.setPropery("spring.profiles.active", "dev")</code>,  <code class="language-plaintext highlighter-rouge">java -D spring.profiles.active=dev, real main.Main</code></li>
+    </ul>
+  </li>
+  <li>OS 환경 변수 <code class="language-plaintext highlighter-rouge">spring.profiles.active</code>에 직접 값 설정
+    <ul>
+      <li>우선순위 가장 낮음</li>
+      <li>ex) <code class="language-plaintext highlighter-rouge">spring.profiles.active = dev, real</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">application.yml</code> 파일 내에 <code class="language-plaintext highlighter-rouge">spring.profiles.active=prod</code> 같이 값 지정
+    <ul>
+      <li>보통 사용하지 않음</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="web-xml-이용"><code class="language-plaintext highlighter-rouge">web.xml</code> 이용</h4>
+<p>혹은 아래와 같이 <code class="language-plaintext highlighter-rouge">web.xml</code>의 <code class="language-plaintext highlighter-rouge">spring.profiles.active</code> 초기화 파라미터로 프로필을 선택할 수 있다.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ni">&amp;#38;</span>#60;!--...--<span class="ni">&amp;#38;</span>#62;
+<span class="ni">&amp;#38;</span>#60;servlet<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;servlet-name<span class="ni">&amp;#38;</span>#62;dispatcher<span class="ni">&amp;#38;</span>#60;/servlet-name<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;servlet-class<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; org.springframework.web.servlet.DispatcherServlet
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;/servlet-class<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;init-param<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;param-name<span class="ni">&amp;#38;</span>#62;spring.profiles.active<span class="ni">&amp;#38;</span>#60;/param-name<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;param-value<span class="ni">&amp;#38;</span>#62;dev<span class="ni">&amp;#38;</span>#60;/param-value<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;/init-param<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;init-param<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;param-name<span class="ni">&amp;#38;</span>#62;contextClass<span class="ni">&amp;#38;</span>#60;/param-name<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;param-value<span class="ni">&amp;#38;</span>#62;
+org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;/param-value<span class="ni">&amp;#38;</span>#62;
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="ni">&amp;#38;</span>#60;/init-param<span class="ni">&amp;#38;</span>#62;
+<span class="ni">&amp;#38;</span>#60;!--...--<span class="ni">&amp;#38;</span>#62;
+
+</code></pre></div></div>
+<h3 id="다수-프로필-설정-및-프로필-집합-클래스">다수 프로필 설정 및 프로필 집합 클래스</h3>
+
+<p>여러 프로필 클래스를 한 중첩 클래스에 모아둘수 있는데, 이때 프로필 클래스는 무조건 <code class="language-plaintext highlighter-rouge">static</code> 클래스여야 한다.</p>
+
+<p>또한 아래 예시처럼 하나의 설정에 두 개 이상의 프로필을 주거나 <code class="language-plaintext highlighter-rouge">!</code>를 이용할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-aeb831f9-ee6a-4cc9-8c42-2e49cce1f40e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>중첩 클래스를 이용한 프로필 구성 클래스
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableTransactionManagement</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemberConfigWithProfile</span> <span class="o">{</span>
+	<span class="c1">//...</span>
+	<span class="nd">@Configuration</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Profile</span><span class="o">(</span><span class="s">"dev, test"</span><span class="o">)</span> <span class="c1">// dev &amp;&amp; test 사용 시 활성화</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// {"dev", "test"} : dev || test 사용시 활성화</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">DsDevConfig</span> <span class="o">{</span>
+		<span class="nd">@Bean</span><span class="o">(</span><span class="n">destroyMethod</span> <span class="o">=</span> <span class="s">"close"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">DataSource</span> <span class="nf">dataSource</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">DataSource</span> <span class="n">ds</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DataSource</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setDriverClassName</span><span class="o">(</span><span class="s">"com.mysql.jdbc.Driver"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setUrl</span><span class="o">(</span><span class="s">"jdbc:mysql://localhost/spring5fs?characterEncoding=utf8"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">ds</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+  
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Configuration</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Profile</span><span class="o">(</span><span class="s">"!real"</span><span class="o">)</span> <span class="c1">// real을 사용하지 않을때 활성화</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">DsRealConfig</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Bean</span><span class="o">(</span><span class="n">destroyMethod</span> <span class="o">=</span> <span class="s">"close"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">DataSource</span> <span class="nf">dataSource</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">DataSource</span> <span class="n">ds</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DataSource</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setDriverClassName</span><span class="o">(</span><span class="s">"com.mysql.jdbc.Driver"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setUrl</span><span class="o">(</span><span class="s">"jdbc:mysql://realdb/spring5fs?characterEncoding=utf8"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">"spring5"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">ds</span><span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="s">"spring5"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">ds</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/Spring/Spring5-%EA%B5%AC%EC%84%B1%20%EC%86%8D%EC%84%B1.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/Spring/Spring5-구성 속성.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

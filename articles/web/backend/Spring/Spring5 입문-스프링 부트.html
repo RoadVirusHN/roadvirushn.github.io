@@ -127,7 +127,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 6
+      📂: 7
     </span>
     <ul class="child-category-list">
       
@@ -204,10 +204,24 @@
       <li>
         <strong style="font-size: larger;">
           ┃  
-          ┗ 
+          ┣ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
         </h4>
           <span style="font-size: xx-small;">
              
@@ -542,10 +556,10 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#부트-프로젝트-생성">부트 프로젝트 생성</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#스프링-부트-파일-살펴보기">스프링 부트 파일 살펴보기</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#DB-연동-설정">DB 연동 설정</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#실행-가능한-패키지-생성">실행 가능한 패키지 생성</a><ul></ul></li></ol>
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#부트-프로젝트-생성">부트 프로젝트 생성</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#스프링-부트-파일-살펴보기">스프링 부트 파일 살펴보기</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#DB-연동-설정">DB 연동 설정</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#실행-가능한-패키지-생성">실행 가능한 패키지 생성</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#스프링-부트-CLI">스프링 부트 CLI</a><ul></ul></li></ol>
 <h1 id="스프링-부트">스프링 부트</h1>
 
-<div class="callout callout-quote" id="callout-256ef66e-3a6f-4d81-b4bb-f96e8e1452b7">
+<div class="callout callout-quote" id="callout-70039ebc-d36c-4685-895b-40e4fc698214">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -556,13 +570,20 @@
     
     <div class="content" name="content">
 <p>_<span class='link-warning'>
-      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
       <a class="link-title" href="#" stlye="display: none;"></a>
       <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
       "https://www.kame.co.kr/nkm/det..."</em>로
         <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
       </span>
-    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
 
 </div>
     </div>
@@ -572,26 +593,59 @@
 <p>더욱 자세한 내용은 스프링 부트 책이나 스프링 부트 레퍼런스를 확인해 보자.</p>
 
 <h2 id="부트-프로젝트-생성">부트 프로젝트 생성</h2>
-<p>https://start.spring.io 사이트에서 기본 프로젝트를 설정 후, 다운로드 받을 수 있다.<br>
-이곳에서 프로젝트명, 의존 관리 툴, 언어, 버전, 프로젝트명, 시작시 포함할 의존 등을 추가할 수 있다.<br>
-생성을 누르면, zip 파일이 다운로드되며 내부에는 다음과 같은 파일들이 존재한다.</p>
+<p>https://start.spring.io 사이트에서 기본 프로젝트를 설정 후, 다운로드 받을 수 있다.</p>
 <ul>
+  <li>혹은 <code class="language-plaintext highlighter-rouge">spring tool suite</code> 같은 프로그램에서 지원하거나 회사 커스텀 <code class="language-plaintext highlighter-rouge">Initializer</code>를 쓸 수 있다.<br>
+이곳에서 프로젝트명, 의존 관리 툴, 언어, 버전, 프로젝트명, 시작시 포함할 의존 등을 추가할 수 있다.<br>
+생성을 누르면, zip 파일이 다운로드되며 내부에는 다음과 같은 파일들이 존재한다.</li>
   <li><code class="language-plaintext highlighter-rouge">pom.xml</code></li>
   <li><code class="language-plaintext highlighter-rouge">src/main/java: sp5/sp5chapb/Sp5ChapbApplication.java</code></li>
-  <li><code class="language-plaintext highlighter-rouge">src/main.resources: application.properties</code></li>
+  <li><code class="language-plaintext highlighter-rouge">src/main/resources: application.properties</code></li>
+  <li><code class="language-plaintext highlighter-rouge">src/test/java</code>: <code class="language-plaintext highlighter-rouge">Sp5ChapbApplicationTests.java</code></li>
 </ul>
 
 <h3 id="스프링-부트-파일-살펴보기">스프링 부트 파일 살펴보기</h3>
+<h4 id="pom-xml"><code class="language-plaintext highlighter-rouge">pom.xml</code></h4>
 <p><code class="language-plaintext highlighter-rouge">pom.xml</code>을 살펴보면 다음과 같은 의존 모듈이 존재함을 알 수 있다.</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">spring-boot-starter-parent</code> : 필요 의존의 기본 버전 값, 필수 모듈 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">spring-boot-starter-parent</code> : 필요 의존 모듈의 기본 버전 값, 필수 모듈 지정</li>
   <li><code class="language-plaintext highlighter-rouge">spring-boot-starter-web</code> : <code class="language-plaintext highlighter-rouge">spring-webmvc</code>, <code class="language-plaintext highlighter-rouge">jackson</code> 등 관련 모듈 등록, 기본 구성 설정</li>
-  <li><code class="language-plaintext highlighter-rouge">spring-boot-maven-plugin</code>: 메이븐 플러그인 추가, 어플리케이션 생성 및 실행</li>
+  <li><code class="language-plaintext highlighter-rouge">spring-boot-maven-plugin</code>: 메이븐 플러그인 추가, 어플리케이션 생성 및 실행
+    <ul>
+      <li>의존성에 지정된 라이브러리가 실행 가능 JAR 파일에 존재하는지 확인</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">spring-boot-devtools</code> : 코드 변경시 서버, 브라우저 자동 재시작, 템플릿 캐시 자동 비활성, <code class="language-plaintext highlighter-rouge">H2</code> 콘솔 활성화, 배포 시 자동 제외</li>
 </ul>
 
+<div class="callout callout-note" id="callout-f685e259-207a-45b4-b049-f21c7c94530b">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>자동 재시작 의 원리
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>JVM 내부에 두개의 클래스로더로 어플을 실행시킴</p>
+<ul>
+  <li>하나는 자주 변경되는 코드, 속성 파일,(<code class="language-plaintext highlighter-rouge">src/main</code> 내부 파일)을 로드</li>
+  <li>나머지 하나는 무겁지만 자주 변경되지 않는 의존성 라이브러리 로드</li>
+</ul>
+
+<p>변경이 감지되면 첫번째 클래스 로더만 다시 로드하여 어플 컨텍스트 재시작하여 시간을 단축시킴</p>
+
+<p>대신, 의존성 모듈이 바뀌는 것은 재시작 되지않으므로 직접 느리게 재시작해야한다.</p>
+
+</div>
+    </div>
+    </div>
+<p>이후 스프링 부트 내장 톰캣을 사용해 <code class="language-plaintext highlighter-rouge">mvnw spring-boot:run</code>으로 시작할 수 있다.</p>
+<h4 id="부트스트랩-클래스">부트스트랩 클래스</h4>
 <p><code class="language-plaintext highlighter-rouge">프로젝트명Application.java</code> 파일을 살펴보면 다음과 같다.</p>
 
-<div class="callout callout-example" id="callout-494290f4-9499-4b30-8fed-a3d8fbc5018a">
+<div class="callout callout-example" id="callout-8a681e11-075c-48d4-b6fd-0202cd6ea960">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>스프링 부트 메인 파일
@@ -601,6 +655,7 @@
       <div class="card" name="card">
     
     <div class="content" name="content">
+<p>부트스트랩 클래스라고도 하며, JAR 파일이 실행되면 <code class="language-plaintext highlighter-rouge">@SpringBootApplication</code>을 붙인 클래스의  <code class="language-plaintext highlighter-rouge">SpringApplication.run()</code> 메서드를 실행하게 된다.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">sp5.sp5chapcboot</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>
@@ -618,17 +673,45 @@
 </div>
     </div>
     </div>
-<p><code class="language-plaintext highlighter-rouge">@SpringBootApplication</code>을 붙인 클래스를  <code class="language-plaintext highlighter-rouge">SpringApplication.run()</code> 메서드로 실행하면 여러 설정을 자동으로 처리한다.</p>
-
-<p>예를 들어 <code class="language-plaintext highlighter-rouge">@Component</code>, <code class="language-plaintext highlighter-rouge">@Service</code>, <code class="language-plaintext highlighter-rouge">@Controller</code> 등을 컴포넌트 스캔으로 자동 빈 등록한다.</p>
+<p><code class="language-plaintext highlighter-rouge">@SpringBootApplication</code>은 다음 세개의 어노테이션을 합친 것이다.</p>
 <ul>
-  <li>즉 설정클래스를 만들어 추가하지 않아도 된다.</li>
+  <li><code class="language-plaintext highlighter-rouge">@SpringBootConfiguration</code> : 부트스트랩 클래스를 구성 클래스로 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">@EnableAutoConfiguration</code> : 스프링 부트 자동 구성 기능 할당</li>
+  <li><code class="language-plaintext highlighter-rouge">@ComponentScan</code>:  <code class="language-plaintext highlighter-rouge">@Component</code>, <code class="language-plaintext highlighter-rouge">@Service</code>, <code class="language-plaintext highlighter-rouge">@Controller</code> 등을 컴포넌트 검색으로 자동 빈 등록한다.
+    <ul>
+      <li>즉 구성 클래스를 만들어 추가하지 않아도 된다.
+        <h4 id="설정-프로퍼티">설정 프로퍼티</h4>
+        <p><code class="language-plaintext highlighter-rouge">application.properties</code> 파일에 설정 정보를 담는다.<br>
+DB의 연동 정보나 일부 모듈의 설정 등에 사용된다.</p>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<p><code class="language-plaintext highlighter-rouge">application.properties</code> 파일에 설정 정보를 담는다.</p>
+<div class="callout callout-example" id="callout-7f97bd07-41a6-47af-af0a-983092d1204a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">thymeleaf</code> 템플릿 캐싱 비활성화
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>아래와 같이 설정하면 파싱 결과를 캐싱하는 템플릿 엔진의 속성을 꺼 개발시 수정 결과를 바로볼 수 있게 해준다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spring.thymeleaf.cache=false
+// 배포시에는 true로 바꿀 것!
+</code></pre></div></div>
 
-<p>이후 스프링 부트 내장 톰캣을 사용해 <code class="language-plaintext highlighter-rouge">mvnw spring-boot:run</code>으로 시작할 수 있다.</p>
-
+</div>
+    </div>
+    </div>
+<h4 id="테스트-파일">테스트 파일</h4>
+<p>자세한 것은 <span class="preview-wrapper">
+      <a href="/articles/web/backend/Spring/Spring5-%ED%85%8C%EC%8A%A4%ED%8A%B8.html" class="wikilink">Spring5-테스트</a>
+      <iframe class="preview" src='' data-href="/articles/web/backend/Spring/Spring5-%ED%85%8C%EC%8A%A4%ED%8A%B8.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 참조</p>
 <h2 id="DB-연동-설정">DB 연동 설정</h2>
 
 <p>DB 연동을 쉽게 하고 싶다면 의존 모듈로 다음 두가지를 추가하면 된다.</p>
@@ -638,7 +721,7 @@
 이후, DB 연결에 필요한 프로퍼티를 다음과 같이 설정하면 된다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-c98c6427-03a5-4450-8407-e3aa0c52a915">
+<div class="callout callout-example" id="callout-55d1bc04-c342-439e-a4f7-c7d2b5a8be1c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/resources/application.properties</code>
@@ -669,6 +752,8 @@ spring.datasource.password=spring5
 
 </code></pre></div></div>
 <p>이제 내장 톰켓을 이용해 웹 어플리케이션이 구동된다.</p>
+
+<h2 id="스프링-부트-CLI">스프링 부트 CLI</h2>
 
 </body></html>
 </div>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JAVA 기본-인터페이스와 커스텀 패키지 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="JAVA 기본-인터페이스와 커스텀 패키지" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-01T15:48:48+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JAVA 기본-인터페이스와 커스텀 패키지" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-01T15:48:48+09:00","datePublished":"2023-02-01T15:48:48+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"JAVA 기본-인터페이스와 커스텀 패키지","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A8%ED%82%A4%EC%A7%80.html"},"url":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A8%ED%82%A4%EC%A7%80.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">JAVA 기본-인터페이스와 커스텀 패키지</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-02-01T15:48:48+09:00" itemprop="datePublished">Feb 1, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#인터페이스와-패키지">인터페이스와 패키지</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#인터페이스와-다형성">인터페이스와 다형성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#자바-패키지">자바 패키지</a><ul></ul></li></ul></li></ol>
+<h1 id="인터페이스와-커스텀-패키지">인터페이스와 커스텀 패키지</h1>
+
+<h2 id="인터페이스와-패키지">인터페이스와 패키지</h2>
+<h3 id="인터페이스와-다형성">인터페이스와 다형성</h3>
+<h4 id="인터페이스">인터페이스</h4>
+<ul>
+  <li>추상 클래스보다 추상성이 더욱 심화 개념, 멤버 변수는 모두 상수형, 메서드는 모두 추상 메서드</li>
+  <li>추상 메서드 이외에는 다른 멤버를 갖지 못하게 함으로써 추상 클래스 보다 더욱 완벽한 추상화</li>
+  <li>상속은 단일 상속만 허용하며, 논리적으로 is a 관계가 성립하지 않는 경우 인터페이스 사용함</li>
+  <li>사용자 정의 인터페이스나 빌트인 인터페이스 사용 가능
+    <blockquote>
+      <p>인터페이스의 정의 예시<br>
+```Java<br>
+public interface 인터페이스명 [extends 부모인터페이스명, …]{<br>
+  // 상수, final 예약어를 이용해서 멤버 변수를 선언해야함<br>
+  // 추상 메서드, 인터페이스는 객체를 생성할 수 없으므로 상수는 static 예약어를 붙여 선언해야 직접 해당 상수를 사용할 수 있음<br>
+  // 추상메서드로 선언되므로 메서드의 블록을 가지지 못함<br>
+}<br>
+public interface Drawable{<br>
+  public static final int PLAIN_PEN = 1<br>
+  public static final int BOLD_PEN = 2<br>
+  public static final int ITLIC_PEN = 3<br>
+  public abstract void draw(); // 추상메서드 {}를 가지지 못함<br>
+  public abstract void move(int x, int y);<br>
+  //인터페이스의 변수 선언에 사용된 static final이나 메서드 선언에 사용된 abstract는 생략 가능<br>
+}</p>
+    </blockquote>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#### 인터페이스의 활용
+
+- 인터페이스는 추상 클래스와 유사하기 대문에 직접 객체화 되지 못하고 추상 객체처럼 상속으로 사용함
+- extends 예약어 대신 implements 예약어를 사용하고, 원하는 갯수의 인터페이스를 차례대로 나열
+- 자식 클래스는 블록을 추가하여 추상 메서드의 기능을 구현해야함,
+&gt; 인터페이스와 상속 예시
+```Java
+public interface Drawable&amp;#123;
+	public int PLAIN_PEN = 1
+	public int BOLD_PEN = 2
+	public int ITLIC_PEN = 3
+	public void draw(); // 추상메서드 &amp;#123;&amp;#125;를 가지지 못함
+	public void move(int x, int y);
+&amp;#125;
+class Shape &amp;#123;
+	int x = 0;
+	int y = 0;
+	
+	Shape(int x, int y) &amp;#123;
+		this.x = x;
+		this.y = y;
+	&amp;#125;
+&amp;#125;
+
+class Circle extends Shape implements Drawable&amp;#123; // s
+	int radius;
+	
+	Circle(int x, int y, int radius)&amp;#123;
+		super(x, y);
+		this.radius = radius;
+	&amp;#125;
+	
+	public void draw() &amp;#123; //인터페이스의 draw, move 구현
+		System.out.println(&amp;#34;(&amp;#34; + x + &amp;#34;, &amp;#34; + y + &amp;#34;) radius = &amp;#34; + radius);
+	&amp;#125;
+	
+	public void move(int x, int y)&amp;#123;
+		System.out.println(&amp;#34;(&amp;#34; + (this.x + x) + &amp;#34;, &amp;#34; + (this.y + y)+&amp;#34;) radius = &amp;#34; + radius);
+	&amp;#125;
+&amp;#125;
+Shape s = new Circle();// 부모 클래스 타입으로 묵시적 형변환
+Drawable d = new Circle();// 인터페이스 타입으로 묵시적 형변환
+// d는 Drawable 인터페이스가 가지고 있는 상수와 메서드만 접근 가능함
+
+</code></pre></div></div>
+<ul>
+  <li>인터페이스 사용시 클래스와 동일하게 묵시적 형변환과 명시적 형변환이 가능함</li>
+  <li>
+    <p>인터페이스는 부모 클래스와 동일한 지위를 가지며, 인터페이스 유형의 객체 참조 변수는 인터페이스에 선언된 요소에만 접근 가능</p>
+  </li>
+  <li>인터페이스 선언 시 다른 인터페이스를 상속하여 정의할 수 있음<br>
+예시 구문 : public interfae 인터페이스명 [extends 부모인터페이스1, 부모인터페이스2…]{<br>
+//…<br>
+}</li>
+  <li>인터페이스를 상속하는 경우에도 extends 예약어를 사용하며, 상속관계에 따라 계층 구조 가짐
+    <h3 id="자바-패키지">자바 패키지</h3>
+    <h4 id="패키지-개요">패키지 개요</h4>
+  </li>
+  <li>
+    <p>패키지란, 자바의 클래스들을 분류하고 관련된 클래스와 인터페이스를 하나의 폴더에 적절하게 배치하여 묶여있는 폴더,</p>
+  </li>
+  <li>
+    <p>다른 기능을 구현한 같은 이름의 클래스를 사용할 때 이름의 충돌을 피하고 관리가 용이하다.</p>
+  </li>
+  <li>
+    <p>여러 빌트인 패키지와, 사용자 정의 패키지도 생성 가능</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>패키지</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>java.applet</td>
+          <td>애플릿 작성에 필요한 기능을 모아놓은 패키지</td>
+        </tr>
+        <tr>
+          <td>java.awt</td>
+          <td>GUI 작성과 관련된 패키지, javax.swing 패키지와 함께 자바 GUI 애플리케이션 작성 시 필수적으로 사용함, 버튼, 텍스트 필드, 메뉴 등 관련 컴포넌트와 이벤트 기능을 제공함</td>
+        </tr>
+        <tr>
+          <td>java.io</td>
+          <td>자바 입출력 기능과 관련된 패키지, 파일이나 버퍼등의 입출력 기능을 제공함</td>
+        </tr>
+        <tr>
+          <td>java.lang</td>
+          <td>자바 언어의 기초적인 사항을 정의한 클래스와 관련된 패키지, Object 클래스, 문자열 관련, 시스템 관련, 멀티 Thread 관련 등 기본적인 기능을 포함함</td>
+        </tr>
+        <tr>
+          <td>java.net</td>
+          <td>자바의 네트워크에 관련된 패키지, 네트워크와 관련된 패키지는 이 밖에도 여러 가지가 있지만, 이 패키지 내에는 소켓과 관련된 기능을 제공함</td>
+        </tr>
+        <tr>
+          <td>javax.swing</td>
+          <td>java.awt 패키지와 더불어 자바 GUI 애플리케이션 기능과 관련된 패키지, Java.awt 포함 내용보다 다양하고, 융통성 있는 컴포넌트를 제공함</td>
+        </tr>
+        <tr>
+          <td>java.util</td>
+          <td>유틸리티성 기능과 관련도니 패키지, 날짜 표현이나 여러 자료형을 하나로 취급하는 컬렉션과 관련된 기능을 제공함</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>API에 제공되는 패키지화된 클래스들을 사용하기 위해 import 예약어 사용</li>
+  <li>별도 패키지를 지정하지 않으면 디폴트 패키지가 됨, java.lang 패키지와 함께 import 문 사용안함</li>
+  <li>import문 사용하면 JVM(자바 가상 머신) 실행 시 클래스를 찾게됨</li>
+  <li>import 선언하지 않고 패키지 경로를 모두 적어서 사용할 수 도 있음</li>
+  <li>패키지 내의 한 클래스만 사용하면 클래스 이름까지 정함</li>
+  <li>패키지 이름만을 사용하면 한 패키지 내에 여러 클래스가 사용될 때 패키지 이름만을 사용함</li>
+  <li>이를 통해 컴파일 시간을 줄일 수 있음, import java.util.*; 내부 모든 클래스 사용</li>
+  <li>여러 패키지에 동일한 이름의 클래스를 import 하면 에러 발생,</li>
+  <li>사용빈도가 높은 클래스는 import,  사용빈도가 낮은 클래스는 패키지 경로를 포함하여 사용
+    <h4 id="사용자-정의-패키지">사용자 정의 패키지</h4>
+  </li>
+  <li>윈도우 탐색기에서 폴더 또는 디렉토리 개념과 같음, 동일한 파일이  같은 폴더에 있으면 오류가 나므로 파일 이름이 동일하다면 다른 폴더에 나누어서 저장, 또는 두 클래스의 이름을 다르게 지정</li>
+  <li>하지만 그 방법은 한계가 있음, 다른 폴더로 나누는 게 나음</li>
+  <li>개발자가 작성한 클래스를 특정 패키지로 묶을 수 있으므로, 개발할때 관련된 클래스들을 그룹으로 묶어서 폴더 단위로 관리할 수 있음<br>
+구문 :<br>
+package 상위패키지명.패키지명; // 패키지 선언 문장은 반드시 첫번째 문장으로 기술<br>
+또는<br>
+package 패키지명; // 현재 파일 내의 모든 클래스는 이 패키지에 포함되어 저장됨<br>
+// 저장후 해당 패키지에 클래스 파일들이 생성됨<br>
+//  .을 통하여 여러 하위 폴더가 생성되며 복잡한 구조 패키지 생성가능</li>
+  <li>사용자가 작성한 클래스를 패키지로 묶으려면 package 예약어를 사용, 불러올때는 import 사용
+    <h4 id="커스텀-라이브러리-사용">커스텀 라이브러리 사용</h4>
+  </li>
+  <li>자바는 프로그램 구현에 필요한 중요 클래스들을 API 형태로 JVM에 포함</li>
+  <li>API에서 제공하지 않거나, API를 응용해서 개발자가 만든 클래스들, == 커스텀 라이브러리</li>
+  <li>IDE 에서 프로젝트를 Export 해서 만듬, jar 파일(java archive의 준말)로 압축</li>
+  <li>반대로 jar파일을 가져와서 커스텀 라이브러리를 임포트하여 사용할 수도 있음</li>
+</ul>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/PL/JAVA/JAVA 기본/자바 문법/JAVA 기본-인터페이스와 커스텀 패키지.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

@@ -127,7 +127,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 6
+      📂: 7
     </span>
     <ul class="child-category-list">
       
@@ -204,10 +204,24 @@
       <li>
         <strong style="font-size: larger;">
           ┃  
-          ┗ 
+          ┣ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
         </h4>
           <span style="font-size: xx-small;">
              
@@ -542,10 +556,10 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#의존-모듈-추가-및-DB-설정">의존 모듈 추가 및 DB 설정</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#DataSource-설정">DataSource 설정</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#Tomcat-JDBC-Datasource-클래스">Tomcat JDBC Datasource 클래스</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#JdbcTemplate">JdbcTemplate</a><ul><li lvl="3"><a id="markdown-toc-0-4" href="#JdbcTemplate-생성">JdbcTemplate 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#JdbcTemplate-조회-쿼리-생성-실행">JdbcTemplate 조회 쿼리 생성 실행</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#JdbcTemplate-변경-쿼리-생성-실행">JdbcTemplate 변경 쿼리 생성 실행</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-7" href="#스프링-익셉션-변환-처리">스프링 익셉션 변환 처리</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-8" href="#트랜잭션-처리-Transactional">트랜잭션 처리 : @Transactional</a><ul><li lvl="3"><a id="markdown-toc-0-9" href="#Transactional와-스프링-설정법">@Transactional와 스프링 설정법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#프록시를-이용한-커밋-롤백-처리">프록시를 이용한 커밋, 롤백 처리</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#Transactional의-주요-속성과-전파">@Transactional의 주요 속성과 전파</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-12" href="#로깅-처리">로깅 처리</a><ul></ul></li></ol>
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#의존-모듈-추가-및-DB-설정">의존 모듈 추가 및 DB 설정</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#DataSource-설정">DataSource 설정</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#Tomcat-JDBC-Datasource-클래스">Tomcat JDBC Datasource 클래스</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#JdbcTemplate">JdbcTemplate</a><ul><li lvl="3"><a id="markdown-toc-0-4" href="#JdbcTemplate-생성">JdbcTemplate 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#JdbcTemplate-조회-쿼리-생성-실행">JdbcTemplate 조회 쿼리 생성 실행</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#JdbcTemplate-변경-쿼리-생성-실행">JdbcTemplate 변경 쿼리 생성 실행</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#SimpleJdbcInsert-객체를-이용한-더-쉬운-삽입">SimpleJdbcInsert 객체를 이용한 더 쉬운 삽입</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-8" href="#스프링-익셉션-변환-처리">스프링 익셉션 변환 처리</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-9" href="#트랜잭션-처리-Transactional">트랜잭션 처리 : @Transactional</a><ul><li lvl="3"><a id="markdown-toc-0-10" href="#Transactional와-스프링-설정법">@Transactional와 스프링 설정법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#프록시를-이용한-커밋-롤백-처리">프록시를 이용한 커밋, 롤백 처리</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-12" href="#Transactional의-주요-속성과-전파">@Transactional의 주요 속성과 전파</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-13" href="#로깅-처리">로깅 처리</a><ul></ul></li></ol>
 <h1 id="DB-연동">DB 연동</h1>
 
-<div class="callout callout-quote" id="callout-20f65079-5746-4e3f-9c1a-16c236eb1325">
+<div class="callout callout-quote" id="callout-8318bb23-b3a3-4c08-8156-135ddab482e3">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -556,13 +570,20 @@
     
     <div class="content" name="content">
 <p>_<span class='link-warning'>
-      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
       <a class="link-title" href="#" stlye="display: none;"></a>
       <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
       "https://www.kame.co.kr/nkm/det..."</em>로
         <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
       </span>
-    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
 
 </div>
     </div>
@@ -572,7 +593,11 @@
 <ol>
   <li>Mysql를 기준으로 진행되며 Maven이나 Gradle을 이용해 다음과 같은 의존 모듈을 추가하자.
     <ul>
-      <li><strong>spring-jdbc</strong> : JdbcTemplate, 스프링 트랜잭션 기능 등의 기능을 제공</li>
+      <li><strong>spring-jdbc</strong> : JdbcTemplate, 스프링 트랜잭션 기능 등의 기능을 제공
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">spring boot</code>의 경우: <strong>spring-boot-starter-jdbc</strong></li>
+        </ul>
+      </li>
       <li><strong>tomcat-jdbc</strong> : DB 커넥션 풀 기능을 제공</li>
       <li><strong>mysql-connector-java</strong> : MySQL 연결에 필요한 JDBC 드라이버를 제공</li>
     </ul>
@@ -581,7 +606,7 @@
   <li>이후 DB 서버에 접속해 직접 SQL 구문을 이용해 DB, 사용자, 테이블 생성 및 권한 설정을 한다.</li>
 </ol>
 
-<div class="callout callout-example" id="callout-9f2e6ab1-9819-4ff0-ad8e-07b86b59244b">
+<div class="callout callout-example" id="callout-f1e82d30-8568-4bce-9c08-5ef55b755855">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>sql문 예시
@@ -591,6 +616,7 @@
       <div class="card" name="card">
     
     <div class="content" name="content">
+<p>만약 스프링 부트를 사용한다면, <code class="language-plaintext highlighter-rouge">src/main/resources/schema.sql, data.sql</code> 파일의 SQL 구문을 애플리케이션 실행시 자동으로 실행한다.</p>
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">user</span> <span class="s1">'spring5'</span><span class="o">@</span><span class="s1">'localhost'</span> <span class="n">identified</span> <span class="k">by</span> <span class="s1">'spring5'</span><span class="p">;</span>
 <span class="k">create</span> <span class="k">database</span> <span class="n">spring5fs</span> <span class="nb">character</span> <span class="k">set</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
 <span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="n">spring5fs</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="s1">'spring5'</span><span class="o">@</span><span class="s1">'localhost'</span><span class="p">;</span>
@@ -611,7 +637,7 @@
   <li>DB와 통신할 때 사용하는 메서드를 모아놓은 객체인 DAO(Data Access Object) 또한 정의해줘야 한다.</li>
 </ol>
 
-<div class="callout callout-example" id="callout-452570c2-73b7-48fa-be60-394c7db243d0">
+<div class="callout callout-example" id="callout-431e4dfd-f98b-4b51-b0d4-d79a03617ca9">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>/src/main/java/spring/MemberDao.java
@@ -621,7 +647,7 @@
       <div class="card" name="card">
     
     <div class="content" name="content">
-<p>추가로 설정 클래스로 하단의 <code class="language-plaintext highlighter-rouge">memberDao</code>를 빈으로 추가하자.</p>
+<p>추가로 구성 클래스로 하단의 <code class="language-plaintext highlighter-rouge">memberDao</code>를 빈으로 추가하자.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">spring</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemberDao</span> <span class="o">{</span>
@@ -646,7 +672,7 @@
 
 <p>JDBC API는 <code class="language-plaintext highlighter-rouge">DriverManager</code> 객체 혹은 <code class="language-plaintext highlighter-rouge">DataSource</code> 객체를 통해 커넥션 풀에서 연결을 가져올 수 있다.</p>
 
-<div class="callout callout-info" id="callout-e788024f-b336-48f3-b4c7-ea2e2ff5d852">
+<div class="callout callout-info" id="callout-f05317f7-60c8-48c8-ada5-9e91840a18eb">
       <div class="header">
         <span class="emoji">ℹ️</span>
         <span class="title"><strong>커넥션 풀(Connection pool)이란?
@@ -667,7 +693,7 @@
 
 <p>모든 Datasource 클래스는 <code class="language-plaintext highlighter-rouge">javax.sql.Datasource</code>를 구현해야 하며,  우리는 Tomcat JDBC 모듈의 Datasource 클래스 이용할 것이다.</p>
 
-<div class="callout callout-example" id="callout-262f72c8-e4ae-4851-a2ae-6425b255654a">
+<div class="callout callout-example" id="callout-2eb0b268-96cc-44c7-bbf6-dd2b93edfb8a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">/src/main/java/config/AppCtx.java</code>
@@ -716,7 +742,7 @@
     </div>
 <p>위와 같이 설정하면 아래와 같이 연결을 가져와 사용할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-9b8dd37d-d969-4844-a146-d623eddba6b2">
+<div class="callout callout-example" id="callout-c825b1c0-d909-4db5-a858-d893b0a45022">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">/src/main/java/dbquery/DbQuery.java</code>
@@ -770,7 +796,7 @@
 
 <p>예시는 다음과 같다.</p>
 
-<div class="callout callout-example" id="callout-29486bf6-a515-4e2f-8870-ff6f00e0f5e6">
+<div class="callout callout-example" id="callout-928a9921-326b-459d-9353-20aa50259c1c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>JDBC API 연동 코드
@@ -817,7 +843,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-e526cc8a-041b-4530-ae2d-0342abb94514">
+<div class="callout callout-example" id="callout-c96eb5cb-d5ff-43e9-9c42-d5d3c209a40a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Jdbc Template 코드
@@ -855,7 +881,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">jdbc.core.JdbcTemplate</code> 객체를 생성하고 <code class="language-plaintext highlighter-rouge">dataSource</code> 객체를 할당해 준 뒤, 해당 DAO를 빈 객체로 등록해주자.</p>
 
-<div class="callout callout-example" id="callout-ee084d32-8db5-4c54-bd4b-a7f7ceb5f899">
+<div class="callout callout-example" id="callout-8f37eec2-f891-4c54-a792-d2324599dd9f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">MemberDao</code> 전문
@@ -885,7 +911,7 @@
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">JdbcTemplate</span> <span class="n">jdbcTemplate</span><span class="o">;</span>
 
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nf">MemberDao</span><span class="o">(</span><span class="nc">DataSource</span> <span class="n">dataSource</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 생성자로 JdbcTemplate와 데이터베이스 설정</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">jdbcTemplate</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JdbcTemplate</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span> <span class="c1">// 설정 클래스 추가 시 datasource를 건네줘야 함</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">jdbcTemplate</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JdbcTemplate</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span> <span class="c1">// 구성 클래스 추가 시 datasource를 건네줘야 함</span>
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
 
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">Member</span> <span class="nf">selectByEmail</span><span class="o">(</span><span class="nc">String</span> <span class="n">email</span><span class="o">)</span> <span class="o">{</span>
@@ -976,11 +1002,46 @@
 </div>
     </div>
     </div>
+<div class="callout callout-seealso" id="callout-591d9b1c-313a-4029-b289-6ab479a47a95">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">DAO</code> vs<code class="language-plaintext highlighter-rouge">@Repository</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>만약, 스프링 MVC를 이용한다면, <code class="language-plaintext highlighter-rouge">DAO</code> 대신 <code class="language-plaintext highlighter-rouge">@Repository</code> 어노테이션을 이용할 수 있거나 섞어서 사용할 수 있다.</p>
+
+<p><strong>DAO(Data Access Object)</strong></p>
+<ul>
+  <li>비즈니스 로직(service?)과 퍼시스턴스 로직(DB 접근 로직)을 명확히 분리하기 위한 객체</li>
+  <li>인터페이스로 먼저 추상화하고, <code class="language-plaintext highlighter-rouge">DAOImpl</code> 객체로 이를 구현하는 방식이 있지만 위 예시처럼 간단하다면 곧바로 구현해도 된다.</li>
+  <li>DB 테이블, 쿼리와 밀접히 연관 됨</li>
+</ul>
+
+<p><strong>Repository 패턴</strong></p>
+<ul>
+  <li>만약, 도메인이 복잡해진다면, 여러 <code class="language-plaintext highlighter-rouge">DAO</code>나 다른 API 등의 기능을 사용해야 한다.</li>
+  <li>이때 <code class="language-plaintext highlighter-rouge">Repository</code> 객체를 상위로 추가해 서로 다른 여러 <code class="language-plaintext highlighter-rouge">DAO</code>나 다른 API로 DB와 간접 통신한다.</li>
+  <li>즉 <code class="language-plaintext highlighter-rouge">DAO</code>를 사용하는 상위 계층 객체이다.</li>
+  <li>DB보다는 비즈니스 로직에 더욱 가까운 일을 한다.</li>
+  <li>마찬가지로 Repository 인터페이스로 먼저 추상화하고 <code class="language-plaintext highlighter-rouge">RepositoryImpl</code>로 구현해도 된다.</li>
+</ul>
+
+<p>즉, 복잡한 도메인 구조라면 <code class="language-plaintext highlighter-rouge">Repository</code> 패턴을 쓰면 좋다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">@Repository</code>를 이용하면 <code class="language-plaintext highlighter-rouge">@Autowwired</code> 같은 어노테이션을 이용해 자동으로 <code class="language-plaintext highlighter-rouge">jdbc</code>나 <code class="language-plaintext highlighter-rouge">datasource</code> 빈 객체를 할당받을 수 있다.</p>
+
+</div>
+    </div>
+    </div>
 <h3 id="JdbcTemplate-조회-쿼리-생성-실행">JdbcTemplate 조회 쿼리 생성 실행</h3>
 <h4 id="RowMapper-인터페이스">RowMapper 인터페이스</h4>
 <p>쿼리 실행 결과를 자바 객체로 변환할 때 사용하는 인터페이스로, 이용 시 <code class="language-plaintext highlighter-rouge">mapRow()</code> 메서드를 직접 구현해야 한다.</p>
 
-<div class="callout callout-example" id="callout-d2cf7c4d-0a87-4128-85ed-0383ec525d56">
+<div class="callout callout-example" id="callout-cd6008be-233f-4de8-a629-5ce52cce5ef2">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">RowMapper</code> 인터페이스
@@ -1002,7 +1063,7 @@
     </div>
 <p>SQL 실행 결과 <code class="language-plaintext highlighter-rouge">ResultSet</code>에서 한 행 씩, 데이터를 읽어와 자바 객체로 변환한다. (즉, 나오는 결과가 배열 형태여야 한다.)</p>
 
-<div class="callout callout-example" id="callout-2b42016a-7bf0-43ff-b6db-72d17c2af7c3">
+<div class="callout callout-example" id="callout-1d39533e-bb27-481c-b644-59f4f1ff8546">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">select</code> sql을 위한 <code class="language-plaintext highlighter-rouge">RowMapper 구현 예시</code>
@@ -1027,7 +1088,8 @@
 		<span class="o">}</span>
 	<span class="o">},</span> <span class="n">email</span><span class="o">);</span>
 </code></pre></div></div>
-<p>람다식으로 더욱 짧게 구현할 수도 있다.</p>
+
+<p>굳이 <code class="language-plaintext highlighter-rouge">RowMapper</code>인터페이스의 <code class="language-plaintext highlighter-rouge">mapRow</code> 메서드를 직접 구현하지 않고 함수 시그니처가 일치하게 람다식으로 더욱 짧게 구현할 수도 있다.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Member</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">jdbcTemplate</span><span class="o">.</span><span class="na">query</span><span class="o">(</span>
 	<span class="s">"select * from MEMBER where EMAIL = ?"</span><span class="o">,</span> 
 	<span class="o">(</span><span class="nc">ResultSet</span> <span class="n">rs</span><span class="o">,</span> <span class="kt">int</span> <span class="n">rowNum</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
@@ -1044,12 +1106,35 @@
 </div>
     </div>
     </div>
-<p>만약 같은 <code class="language-plaintext highlighter-rouge">mapRow</code> 로직을 가진다면, 구현한 RowMapper를 재활용할 수도 있다.</p>
+<div class="callout callout-example" id="callout-eab304ea-ca0f-4cdb-9da6-4d09a5191b2e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">RowMapper</code> 함수
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>만약 같은 <code class="language-plaintext highlighter-rouge">mapRow</code> 로직을 가진다면, 구현한 <code class="language-plaintext highlighter-rouge">RowMapper</code>를 아래 같이 함수화한 뒤 재활용할 수도 있다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nc">Member</span> <span class="nf">mapRowToMember</span><span class="o">(</span><span class="nc">ResultSet</span> <span class="n">rs</span><span class="o">,</span> <span class="kt">int</span> <span class="n">rowNum</span><span class="o">)</span> <span class="o">{</span>
+	<span class="nc">Member</span> <span class="n">member</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Member</span><span class="o">(</span> 
+		<span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"EMAIL"</span><span class="o">),</span> 
+		<span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"PASSWORD"</span><span class="o">),</span>
+		<span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"NAME"</span><span class="o">),</span> 
+		<span class="n">rs</span><span class="o">.</span><span class="na">getTimestamp</span><span class="o">(</span><span class="s">"REGDATE"</span><span class="o">).</span><span class="na">toLocalDateTime</span><span class="o">());</span>
+	<span class="n">member</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="s">"ID"</span><span class="o">));</span>
+	<span class="k">return</span> <span class="n">member</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
+</div>
+    </div>
+    </div>
 <h4 id="query-메서드">query() 메서드</h4>
 <p><code class="language-plaintext highlighter-rouge">query()</code> 메서드는 sql 파라미터로 전달받은 쿼리를 실행하고 앞서 배운 <code class="language-plaintext highlighter-rouge">RowMapper</code>를 이용해 <code class="language-plaintext highlighter-rouge">ResultSet</code>의 결과를 자바 객체로 변환한다.</p>
 
-<div class="callout callout-note" id="callout-f6b43b70-a137-42c1-b13b-9583eb20c883">
+<div class="callout callout-note" id="callout-1e824401-7a5f-4f5d-9cb0-0a67df6f108c">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">query</code> 메서드의 시그니처
@@ -1071,7 +1156,7 @@
     </div>
 <p>뒤의 인자 <code class="language-plaintext highlighter-rouge">args</code>의 갯수는 <code class="language-plaintext highlighter-rouge">String sql</code>의 인덱스 파라미터(<code class="language-plaintext highlighter-rouge">?</code>)의 갯수에 달려있으며,  순서대로 <code class="language-plaintext highlighter-rouge">args</code>의 값과 <code class="language-plaintext highlighter-rouge">sql</code> 내부의 <code class="language-plaintext highlighter-rouge">?</code> 위치에 포맷팅된다.</p>
 
-<div class="callout callout-example" id="callout-eee6cbce-c4f8-4541-9d9a-ad1131a74238">
+<div class="callout callout-example" id="callout-821705db-f7b1-4807-be50-49d16f0f592e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">query</code> 메서드와 인덱스 파라미터의 이용 예시
@@ -1100,7 +1185,7 @@
 
 <h4 id="queryForObject-메서드">queryForObject() 메서드</h4>
 
-<div class="callout callout-example" id="callout-ca6e26e1-39a6-4fb5-89b2-f8c5bddea0fb">
+<div class="callout callout-example" id="callout-32f18860-aa19-4459-8a76-77f6b41292d2">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">queryForObject()</code> 메서드 예시
@@ -1124,7 +1209,7 @@
 
 <p>만약, 쿼리 결과가 2개 이상이거나 0개이면 오류를 일으킨다.</p>
 
-<div class="callout callout-example" id="callout-9e6b7b0f-12e3-41c2-add0-11657bd191e2">
+<div class="callout callout-example" id="callout-5a82bc9b-e0c7-4560-ad84-b780eaa0f820">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">queroyForObject()</code>의 메서드
@@ -1150,7 +1235,7 @@
 
 <p>SQL의 <code class="language-plaintext highlighter-rouge">INSERT, UPDATE, DELETE</code> 쿼리 등은 <code class="language-plaintext highlighter-rouge">update()</code> 메서드를 이용하여 구현한다.</p>
 
-<div class="callout callout-example" id="callout-6517e951-6f13-46ce-8c12-3bd9cf501c42">
+<div class="callout callout-example" id="callout-23aabc58-f43e-40e3-bf71-680a239c9d7c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">update()</code> 메서드 사용
@@ -1177,7 +1262,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-dc09fdba-2d0f-49e3-96f2-53f92faa7a3e">
+<div class="callout callout-example" id="callout-fbc91fcf-2067-46ae-83bb-82a603864a1a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">update()</code> 메서드 예시
@@ -1201,7 +1286,7 @@
 
 <p>마찬가지로 <code class="language-plaintext highlighter-rouge">PrepareStatementCreator</code> 인터페이스의 <code class="language-plaintext highlighter-rouge">createPreparedSatement</code>를 오버라이딩하여 구현하며, 다음이 예시이다.</p>
 
-<div class="callout callout-example" id="callout-96d4d7a0-621c-40a3-b514-527b2ea78a54">
+<div class="callout callout-example" id="callout-ddb2f938-c07e-486a-afeb-a292de9de2f4">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>임의 클래스를 이용한 <code class="language-plaintext highlighter-rouge">PreparedStatement</code> 이용 예시
@@ -1244,7 +1329,7 @@
 
 <p>따라서 쿼리 후 생성된 값에 대한 키 값을 구하는 방법으로 <code class="language-plaintext highlighter-rouge">keyHolder</code>를 이용할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-28e074d5-c8fc-4033-a50c-7228bf69cffa">
+<div class="callout callout-example" id="callout-1026baee-e48b-4fe8-b61b-c5e748684f03">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">Keyholder</code> 구현 예시
@@ -1286,6 +1371,92 @@
 </div>
     </div>
     </div>
+<h3 id="SimpleJdbcInsert-객체를-이용한-더-쉬운-삽입"><code class="language-plaintext highlighter-rouge">SimpleJdbcInsert</code> 객체를 이용한 더 쉬운 삽입</h3>
+<p><code class="language-plaintext highlighter-rouge">JdbcTemplate</code> 객체의 <code class="language-plaintext highlighter-rouge">wrapper</code> 객체인 <code class="language-plaintext highlighter-rouge">SimpleJdbcInsert</code> 객체를 이용하면 더 간단함</p>
+
+<div class="callout callout-example" id="callout-7b5ac1f0-4a55-43da-9e65-42232d9666e6">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">SimpleJdbcInsert</code> 사용례
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">jdbcTemplate</code> 객체를 그대로 사용하지 않고 <code class="language-plaintext highlighter-rouge">SimpleJdbcInsert</code> 객체로 감싸 사용한다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.data</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.jdbc.core.JdbcTemplate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.jdbc.core.simple.SimpleJdbcInsert</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Repository</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fasterxml.jackson.databind.ObjectMapper</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">tacos.Taco</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">tacos.Order</span><span class="o">;</span>
+
+<span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JdbcOrderRepository</span> <span class="kd">implements</span> <span class="nc">OrderRepository</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">SimpleJdbcInsert</span> <span class="n">orderInserter</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">SimpleJdbcInsert</span> <span class="n">orderTacoInserter</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">ObjectMapper</span> <span class="n">objectMapper</span><span class="o">;</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Autowired</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nf">JdbcOrderRepository</span><span class="o">(</span><span class="nc">JdbcTemplate</span> <span class="n">jdbc</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">orderInserter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SimpleJdbcInsert</span><span class="o">(</span><span class="n">jdbc</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">withTableName</span><span class="o">(</span><span class="s">"Taco_Order"</span><span class="o">)</span> <span class="c1">// 대상 테이블 명</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">usingGeneratedKeyColumns</span><span class="o">(</span><span class="s">"id"</span><span class="o">);</span> <span class="c1">// DB 자동생성 키 사용</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">orderTacoInserter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SimpleJdbcInsert</span><span class="o">(</span><span class="n">jdbc</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">withTableName</span><span class="o">(</span><span class="s">"Taco_Order_Tacos"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">objectMapper</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ObjectMapper</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// 나중에 커맨드 객체를 Map 객체로 바꾸는데 사용</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">Order</span> <span class="nf">save</span><span class="o">(</span><span class="nc">Order</span> <span class="n">order</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">order</span><span class="o">.</span><span class="na">setPlacedAt</span><span class="o">(</span><span class="k">new</span> <span class="nc">Date</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">long</span> <span class="n">orderId</span> <span class="o">=</span> <span class="n">saveOrderDetails</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">order</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">orderId</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Taco</span><span class="o">&gt;</span> <span class="n">tacos</span> <span class="o">=</span> <span class="n">order</span><span class="o">.</span><span class="na">getTacos</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">for</span> <span class="o">(</span><span class="nc">Taco</span> <span class="n">taco</span> <span class="o">:</span> <span class="n">tacos</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">saveTacoToOrder</span><span class="o">(</span><span class="n">taco</span><span class="o">,</span> <span class="n">orderId</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">order</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kt">long</span> <span class="nf">saveOrderDetails</span><span class="o">(</span><span class="nc">Order</span> <span class="n">order</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"unchecked"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">objectMapper</span><span class="o">.</span><span class="na">convertValue</span><span class="o">(</span><span class="n">order</span><span class="o">,</span> <span class="nc">Map</span><span class="o">.</span><span class="na">class</span><span class="o">);</span> <span class="c1">// Map 객체로 바꾸기 </span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">values</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"placedAt"</span><span class="o">,</span> <span class="n">order</span><span class="o">.</span><span class="na">getPlacedAt</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">long</span> <span class="n">orderId</span> <span class="o">=</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">orderInserter</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">executeAndReturnKey</span><span class="o">(</span><span class="n">values</span><span class="o">)</span> <span class="c1">// 실행 뒤 id 돌려받기</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">longValue</span><span class="o">();</span> <span class="c1">// long으로 변형</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">orderId</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kt">void</span> <span class="nf">saveTacoToOrder</span><span class="o">(</span><span class="nc">Taco</span> <span class="n">taco</span><span class="o">,</span> <span class="kt">long</span> <span class="n">orderId</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span> <span class="c1">// execute는 Map&lt;String, Object&gt; 타입을 인자로 받는다.</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">values</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"tacoOrder"</span><span class="o">,</span> <span class="n">orderId</span><span class="o">);</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">values</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"taco"</span><span class="o">,</span> <span class="n">taco</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span> <span class="c1">// column 설정</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">orderTacoInserter</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">values</span><span class="o">);</span> <span class="c1">// 삽입 실행</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>단순히 메서드를 이용하면 되므로 더욱 빠르다.</p>
 <h2 id="스프링-익셉션-변환-처리">스프링 익셉션 변환 처리</h2>
 
 <p>DB를 다루는 것은 민감하고 중요하며 복잡한 사안이므로 상당히 많은 오류를 보게될 것이다.</p>
@@ -1322,7 +1493,7 @@
   <li>코드 누락, 반복, 관리 힘듬 등의 문제가 있음</li>
 </ul>
 
-<div class="callout callout-example" id="callout-bb089dc3-3233-4f77-976c-ffc25996ac12">
+<div class="callout callout-example" id="callout-38a90a25-40b4-4d15-bb3a-c17627ff6c37">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>기존의 JDBC 트랜잭션 구현
@@ -1353,7 +1524,7 @@
     </div>
 <p>스프링의 <code class="language-plaintext highlighter-rouge">@Transactional</code> 어노테이션을 이용하면 손쉽게 위와 같은 코드를 아래처럼 줄일 수 있다.</p>
 
-<div class="callout callout-example" id="callout-6c7cacd2-7018-454b-8e96-7b1436448462">
+<div class="callout callout-example" id="callout-2414d1b4-1c01-4dd7-b465-5e6d3b60cc3f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>스프링의 <code class="language-plaintext highlighter-rouge">@Transactional</code>을 이용한 트랜잭션 처리
@@ -1385,17 +1556,17 @@
 
 <p><code class="language-plaintext highlighter-rouge">@Transactional</code> 기능을 사용하라면 다음과 같이 두 개의 설정이 필요하다.</p>
 <ol>
-  <li><strong>설정 클래스에 플랫폼 트랜잭션 매니저(PlatformTransactionManager) 빈 설정</strong></li>
+  <li><strong>구성 클래스에 플랫폼 트랜잭션 매니저(PlatformTransactionManager) 빈 설정</strong></li>
   <li><strong><code class="language-plaintext highlighter-rouge">@Transactional</code> 어노테이션 활성화 설정</strong></li>
 </ol>
 
 <p><strong>플랫폼 트랜잭션 매니저(PlatformTransactionManager) 빈 설정</strong><br>
-스프링 설정 클래스에 다음과 같은 내용을 추가해야 한다.</p>
+스프링 구성 클래스에 다음과 같은 내용을 추가해야 한다.</p>
 
-<div class="callout callout-example" id="callout-84db4b7e-2914-47bc-ac9c-00f4e11d549b">
+<div class="callout callout-example" id="callout-9535b653-f0bd-48a1-a5da-0d7a1d2b7097">
       <div class="header">
         <span class="emoji">🧾️</span>
-        <span class="title"><strong>스프링 설정 클래스 예시(AppCtx)
+        <span class="title"><strong>스프링 구성 클래스 예시(AppCtx)
 </strong></span>
         <button class="collapse">🔼</button>
       </div>
@@ -1440,7 +1611,7 @@
     </div>
 <p><strong><code class="language-plaintext highlighter-rouge">@Transactional</code> 어노테이션 활성화 설정</strong></p>
 
-<div class="callout callout-example" id="callout-a1d6bbed-7193-4856-8ea5-5aa31bc61630">
+<div class="callout callout-example" id="callout-b14c682c-e3d1-46b0-87fc-7b5af50ba13c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">ChangePasswordService</code> 객체 예시
@@ -1483,12 +1654,12 @@
       </iframe>
     </span>를 이용해 트랜잭션을 처리한다. 즉 프록시를 이용한다.</p>
 <ol>
-  <li>스프링이 설정 클래스에서 <code class="language-plaintext highlighter-rouge">@EnableTransactionManagement</code> 태그를 감지</li>
+  <li>스프링이 구성 클래스에서 <code class="language-plaintext highlighter-rouge">@EnableTransactionManagement</code> 태그를 감지</li>
   <li><code class="language-plaintext highlighter-rouge">@Transactional</code> 어노테이션이 적용된 빈 객체를 찾음</li>
   <li>적절한 프록시 객체 생성 뒤 메서드 이용 시 아래와 같이 프록시를 통해 트랜잭션 적용</li>
 </ol>
 
-<div class="callout callout-example" id="callout-d61efac8-5db7-44ef-a174-e4a819c8ae42">
+<div class="callout callout-example" id="callout-ff3c6b6b-03ad-4723-b6c8-287c50b8c48d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>프록시 트랜잭션 예시
@@ -1514,7 +1685,7 @@
     </div>
 <p>롤백은 <code class="language-plaintext highlighter-rouge">RuntimeException</code>이 일어날때만 생성되므로 <code class="language-plaintext highlighter-rouge">SQLException</code> 같이 다른 타입의 에러를 처리하려면 다음과 같이 설정하면 된다.</p>
 
-<div class="callout callout-example" id="callout-5b3c46e7-c8ac-4e26-b566-2c7153dfae40">
+<div class="callout callout-example" id="callout-af2c80cc-0057-43d5-b597-885700a2aa17">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Transactional</code>의 에러 처리 추가 예시
@@ -1550,7 +1721,7 @@
   </li>
 </ul>
 
-<div class="callout callout-seealso" id="callout-2fc9e775-0e67-4d98-840c-631d41465129">
+<div class="callout callout-seealso" id="callout-0e48f454-1d04-4789-b969-5448a4c80bdb">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>트랜잭션 전파란?
@@ -1572,14 +1743,14 @@
     </div>
 <h2 id="로깅-처리">로깅 처리</h2>
 
-<p>트랜잭션 처리, 오류, 관련 로그 메시지를 보기 위해서 일일이 print하기 보다는 <code class="language-plaintext highlighter-rouge">Log4j2</code>나 <code class="language-plaintext highlighter-rouge">Logback</code> 등의 외부 패키지를 이용할 수 있다.</p>
+<p>트랜잭션 처리, 오류, 관련 로그 메시지를 보기 위해서 일일이 프린트하기 보단 <code class="language-plaintext highlighter-rouge">Log4j2</code>나 <code class="language-plaintext highlighter-rouge">Logback</code> 등의 외부 패키지를 이용할 수 있다.</p>
 <ul>
   <li>엄밀히 말하면 스프링 자체 로깅 모듈인 <code class="language-plaintext highlighter-rouge">spring-jcl</code>이 위의 로깅 모듈을 인식하여 사용한다.</li>
 </ul>
 
 <p>메이븐이나 그래들을 이용해 Logback을 의존 모듈로 추가하고, 클래스 패스에 설정파일을 위치시키기 위해 <code class="language-plaintext highlighter-rouge">src/main/resources</code> 폴더를 만들어 설정 <code class="language-plaintext highlighter-rouge">xml</code>을 추가하고, 메이븐, 그래들로 프로젝트를 업데이트하면 된다.</p>
 
-<div class="callout callout-example" id="callout-fbecea88-8bd9-4881-a0c8-64349f013616">
+<div class="callout callout-example" id="callout-ed0d2407-480e-4c55-a205-3fcfbb478516">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Logback 설정 xml 예시 (main/resources/logback.xml)
@@ -1608,7 +1779,7 @@
     </div>
 <p>이후 터미널에서 다음 예시 같은 핵심 로그를 확인할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-4098ff38-d62e-4f1b-9e02-ab90b64cbe5d">
+<div class="callout callout-example" id="callout-3eb7c813-d1e2-4a95-97d6-20f0a7f0149a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Logback 로그 예시

@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>어떻게 코딩할 것인가-함수 설계 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="어떻게 코딩할 것인가-함수 설계" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%ED%95%A8%EC%88%98%20%EC%84%A4%EA%B3%84.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%ED%95%A8%EC%88%98%20%EC%84%A4%EA%B3%84.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-04T10:15:35+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="어떻게 코딩할 것인가-함수 설계" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-04T10:15:35+09:00","datePublished":"2023-01-04T10:15:35+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"어떻게 코딩할 것인가-함수 설계","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%ED%95%A8%EC%88%98%20%EC%84%A4%EA%B3%84.html"},"url":"http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%ED%95%A8%EC%88%98%20%EC%84%A4%EA%B3%84.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">어떻게 코딩할 것인가-함수 설계</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-01-04T10:15:35+09:00" itemprop="datePublished">Jan 4, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#함수-설계-과정">함수 설계 과정</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-시그니처-목적-스텁-생성">1. 시그니처, 목적, 스텁, 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-테스트-커버리지와-입력-값들을-고려한-테스트-실행-코드-작성">2. 테스트 커버리지와 입력 값들을 고려한 테스트 실행 코드 작성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-템플릿-만들기">3. 템플릿 만들기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#4-함수-구현하기">4. 함수 구현하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#5-테스트와-디버깅하기">5. 테스트와 디버깅하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#함수-완성-이후">함수 완성 이후</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-7" href="#특수-함수-설계">특수 함수 설계</a><ul><li lvl="3"><a id="markdown-toc-0-8" href="#재귀-함수-설계">재귀 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#보조-함수-설계">보조 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#상호-참조-함수-설계">상호 참조 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#여러-경우의-수를-가진-데이터를-다수-포함한-복합-데이터-함수-설계">여러 경우의 수를 가진 데이터를 다수 포함한 복합 데이터 함수 설계</a><ul></ul></li></ul></li></ol>
+<h1 id="함수-설계">함수 설계</h1>
+
+<div class="callout callout-quote" id="callout-e0c02b25-1d8e-48de-81a8-ba9bf837cf47">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>quote</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>Edx 강의 <span class='link-warning'>
+      <a href="https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home" class="wikilink externallink"><em>How to Code</em></a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://learning.edx.org/cours..."</em>로
+        <button onclick="window.open('https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home','_blank'); return false;">이동</button>?
+      </span>
+    </span> 시리즈를 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<p>함수 설계 과정을 숙달하고 이해하면 어렵고 고차원의 함수를 구현할 때 큰 도움이 된다.</p>
+
+<p>함수 설계는 폭포수 모델로 구현되지 않았으며 <strong>애매모호하거나 틀릴 경우 이전 단계로 돌아가서 수정</strong>해도 된다.</p>
+<ul>
+  <li>물론 그렇다고 <strong>과정을 대충 생략하면 안된다.</strong> 각 단계는 다음 단계를 설계하는데 도움이 되게끔 설계되었다.</li>
+</ul>
+
+<p><strong>가끔 단계의 순번을 바꾸는 방식이 유용</strong>할 때도 있지만 4번의 구현 단계는 절대로 처음으로 오면 안된다.</p>
+<ul>
+  <li>4번 함수 구현 자체가 이 설계의 목적이기 때문</li>
+</ul>
+
+<p><strong>자주, 그리고 빨리 함수를 실행시켜 조기에 잘못을 찾아 고치는게 좋다.</strong> 여러 잘못이 쌓인다면 무엇이 잘못인지 모르게 되기 때문이다.</p>
+
+<div class="callout callout-seealso" id="callout-e4f83bbb-765b-470b-b778-057d7c0e27bc">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>사소한 가독성 팁
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>강의에서 강사님이 나는 별로 세세하게 따지지 않았었던 인덴트와 순서가 상관없는 데이터의 순서 통일 등을 통해 가독성을 올릴 수 있었다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># data 순서가 다음과 같다면
+</span><span class="p">{:</span> <span class="c1">#data-순서가-다음과-같다면}
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># 테스트 순서도 굳이 다음과 같이 맞춰주기
+</span><span class="p">{:</span> <span class="c1">#테스트-순서도-굳이-다음과-같이-맞춰주기}
+</span><span class="k">print</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id="함수-설계-과정">함수 설계 과정</h2>
+
+<p>함수 디자인에 앞서 그림이나 시나리오 등을 작성하며 테스트용, 그리고 함수 내에 사용할 목적의 상수 등을 미리 정의할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-aa5ddf84-7e7f-416b-8616-49a5734e8164">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>함수 디자인 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 문자열의 길이가 5보다 작은지 알아보는 함수를 만들자!
+</span><span class="p">{:</span> <span class="c1">#문자열의-길이가-5보다-작은지-알아보는-함수를-만들자}
+</span>
+<span class="c1"># 1. signature, purpose, stub 설계
+</span><span class="p">{:</span> <span class="c1">#1-signature-purpose-stub-설계}
+</span>
+<span class="c1"># signature: (string =&gt; boolean)
+</span><span class="p">{:</span> <span class="c1">#signature-string-boolean}
+# purpose: 문자열을 입력받아 해당 문자열의 길이를 비교해 5보다 작은지(X) =&gt; 5 미만인지(O) 여부를 참, 거짓으로 알려주는 함수
+</span><span class="p">{:</span> <span class="c1">#purpose-문자열을-입력받아-해당-문자열의-길이를-비교해-5보다-작은지-x-5-미만인지-o-여부를-참-거짓으로-알려주는-함수}
+</span>
+<span class="c1"># stub : 테스트를 위한 임시 함수
+</span><span class="p">{:</span> <span class="c1">#stub-테스트를-위한-임시-함수}
+</span><span class="k">def</span> <span class="nf">isLessThan5_stub</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+	<span class="k">return</span> <span class="bp">True</span>
+	
+<span class="c1"># 2. 테스트 설계
+</span><span class="p">{:</span> <span class="c1">#2-테스트-설계}
+</span><span class="k">print</span><span class="p">(</span><span class="n">isLessThan5_stub</span><span class="p">(</span><span class="s">""</span><span class="p">)</span> <span class="o">==</span> <span class="bp">True</span><span class="p">)</span> <span class="c1"># 경계값 확인
+</span><span class="k">print</span><span class="p">(</span><span class="n">isLessThan5_stub</span><span class="p">(</span><span class="s">"stub"</span><span class="p">)</span> <span class="o">==</span> <span class="bp">True</span><span class="p">)</span> <span class="c1"># True 반환 커버리지
+</span><span class="k">print</span><span class="p">(</span><span class="n">isLessThan5_stub</span><span class="p">(</span><span class="s">"apple"</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">)</span> <span class="c1"># 경계 조건
+</span><span class="k">print</span><span class="p">(</span><span class="n">isLessThan5_stub</span><span class="p">(</span><span class="s">"computer"</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">)</span> <span class="c1"># False 반환 커버리지
+</span>
+
+<span class="c1"># 3. 함수 템플릿 설계
+</span><span class="p">{:</span> <span class="c1">#3-함수-템플릿-설계}
+# def isLessThan5(string):
+</span><span class="p">{:</span> <span class="c1">#def-islessthan5-string}
+# ...string 
+</span><span class="p">{:</span> <span class="c1">#string}# ...= 무언가를 할거다는 의미
+</span>
+<span class="c1"># 4. 함수 설계
+</span><span class="p">{:</span> <span class="c1">#4-함수-설계}
+</span><span class="k">def</span> <span class="nf">isLessThan5</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span>
+
+<span class="c1"># 5. 테스트 결과 확인
+</span><span class="p">{:</span> <span class="c1">#5-테스트-결과-확인}
+</span><span class="k">print</span><span class="p">(</span><span class="n">isLessThan5</span><span class="p">(</span><span class="s">""</span><span class="p">)</span> <span class="o">==</span> <span class="bp">True</span><span class="p">)</span> <span class="c1"># 통과
+</span><span class="k">print</span><span class="p">(</span><span class="n">isLessThan5</span><span class="p">(</span><span class="s">"stub"</span><span class="p">)</span> <span class="o">==</span> <span class="bp">True</span><span class="p">)</span> <span class="c1"># 통과
+</span><span class="k">print</span><span class="p">(</span><span class="n">isLessThan5</span><span class="p">(</span><span class="s">"apple"</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">)</span> <span class="c1"># 통과
+</span><span class="k">print</span><span class="p">(</span><span class="n">isLessThan5</span><span class="p">(</span><span class="s">"computer"</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">)</span> <span class="c1"># 통과
+</span>
+<span class="c1"># 만약 틀렸을 경우, 위 1~4 과정 중 애매모호하거나 잘못된 부분 확인하기
+</span><span class="p">{:</span> <span class="c1">#만약-틀렸을-경우-위-1~4-과정-중-애매모호하거나-잘못된-부분-확인하기}
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="1-시그니처-목적-스텁-생성">1. 시그니처, 목적, 스텁, 생성</h3>
+<ul>
+  <li><strong>시그니처</strong> : 인풋과 아웃풋에 대한 정보, 특히 데이터 타입,
+    <ul>
+      <li>자세해야 한다. ex) Number (X) Float (O)</li>
+      <li>ex) 두 수 더하기 함수의 시그니처 (Integer Integer -&gt; Integer)
+        <ul>
+          <li>일부 프로그래밍 언어의 일부 함수의 경우, 리턴값이 두개 이거나 종류가 두개인 경우도 있다.
+            <ul>
+              <li>(Integer -&gt; Integer or Boolean), (Integer -&gt; Integer, name)</li>
+              <li>보통 추천되지 않는다.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>시그니처는 설계할 함수의 모델을 결정한다.
+        <ul>
+          <li>시그니처에 따라 정해진 법칙대로 함수의 템플릿과 테스트가 설계된다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>목적</strong>은 해당 함수의 사용하는 목적과 입력값과 결과값의 의미
+    <ul>
+      <li>단순 입력과 출력이 아니라 각각 데이터의 의미가 들어가면 좋다. 애매모호한 기준과 단어를 쓰면 안됨.</li>
+      <li>다른 함수와 비교해 비슷한 일을 하는지 비교해보고, 비슷하다면 다른 함수를 이용할 수 없는지 알아보자.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-10ad3956-6d48-482f-9beb-077b626813e9">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>목적의 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>ex) 두 수가 주어지고 두 수를 더한 값이 출력 (X)</p>
+
+<p>ex) 두 사람의 사과 갯수가 들어가 두 사람이 가진 사과들의 총합을 출력 (O) =&gt; 데이터의 의미</p>
+
+<p>ex) 해당 수가 큰 값인지 여부를 출력 (X)</p>
+
+<p>ex) 해당 수가 100보다 큰 수인지 여부를 출력 (O) =&gt; 기준이 확실</p>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><strong>스텁</strong> : 앞으로 작성할 테스트들을 오류없이 돌려보기 위해 임시로 적당한 결과를 내놓는 함수
+    <ul>
+      <li>입력값과 출력값의 데이터 타입만 맞추고 실제 값은 아무값이나 주어지면 된다.</li>
+      <li>시그니처와 맞는 타입, 네이밍 컨벤션 지키기, 좋은 함수명 중요</li>
+      <li>ex) <code class="language-plaintext highlighter-rouge">def add(a, b): return 0</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-테스트-커버리지와-입력-값들을-고려한-테스트-실행-코드-작성">2. 테스트 커버리지와 입력 값들을 고려한 테스트 실행 코드 작성</h3>
+<ul>
+  <li>테스트의 수는 테스트 커버리지와 각기 다른 입력값들의 구간 대표값과 경계값을 모두 고려할 수 있을 만큼 해야한다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-ae833e93-3518-4b59-98d5-aaa46b5b1679">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>테스트 커버리지 고려 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><strong>첫번째 이미지가 두번째 이미지보다 길이와 너비 둘다 큰가? 함수의 경우</strong></p>
+
+<p>(너비 : 더 작은 경우, 같은 경우, 큰 경우) $\times$ (높이 : 더 작은 경우, 같은 경우, 큰 경우)가 필요하므로 경계값과 대표값을 포함해 최소 9개의 테스트가 있어야 한다.</p>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><strong>코드 커버리지: 테스트가 함수 내부의 코드의 일부를 확인하는 정도</strong>
+    <ul>
+      <li>주로 분기문처럼 조건에 따라 동작하지 않을 수 있는 코드가 있는 경우, 테스트의 수를 고려해야 한다.</li>
+      <li>ex)  <code class="language-plaintext highlighter-rouge">(a &gt; 3) if (a &gt; 0) else (a &lt; -2)</code>의 경우, <code class="language-plaintext highlighter-rouge">-3, -1 , 1, 4</code>의 a값을 넣을 경우 모든 부분을 커버한다.</li>
+      <li>이때 <strong><code class="language-plaintext highlighter-rouge">a</code>가 가질 수 있는 각 구간의 값들 <code class="language-plaintext highlighter-rouge">-3, -1, 1, 4</code>를 구간 대표값</strong>이라고 한다.</li>
+    </ul>
+  </li>
+  <li><strong>경계 값 또는 경계 조건 (boundary condition): 각 구간 사이 기준에 해당하거나 특수한 값(0, -1, 1) 등 성질이 바뀌는 값들을 의미</strong>
+    <ul>
+      <li>주어진 두 사각형 중, 넓은 사각형을 돌려주는 함수, 그렇다면 두 넓이가 같다면?</li>
+      <li>실수로 고려하지 못하는 경우가 많으며 새로 발견되면, 1번 과정도 수정해야 되는 경우가 많음</li>
+    </ul>
+  </li>
+  <li>테스트를 통해 함수의 목적, 필요한 상수와 데이터, 함수에 필요한 인자 등을 미리 깨달을 수 있게 하며, 이를 통해 함수 설계를 쉽게 한다.</li>
+  <li>자세한 것은 <span class="preview-wrapper">
+      <a href="#테스트-설계" class="wikilink">테스트 설계</a>
+      <iframe class="preview" src='' data-href="#테스트-설계" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 확인</li>
+</ul>
+
+<h3 id="3-템플릿-만들기">3. 템플릿 만들기</h3>
+<ul>
+  <li>네이밍 컨벤션과 주어진 파라미터 지키기, 보통 <code class="language-plaintext highlighter-rouge">...</code>(파라미터들의 나열로 표현)</li>
+  <li>함수들을 구현할 때 템플릿을 복사하여 구현한다.</li>
+  <li>템플릿을 완성하면 1번의  stub은 주석 처리해야 한다.
+    <ul>
+      <li>ex) <code class="language-plaintext highlighter-rouge">def add(a, b): ...a ...b</code></li>
+    </ul>
+  </li>
+  <li>함수의 템플릿은 데이터 설계의 정보를 기반으로 만들면 쉽다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-1883c249-9a65-4025-96dd-201f58217278">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>데이터 설계와 함수 템플릿의 상관 관계
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><img src="/assets/img/어떻게 코딩할 것인가-함수 설계/image-20230110112528684.png" alt="500"></p>
+<ul>
+  <li>보다시피 데이터 정의 과정의 참조과정을 통해 함수의 구조, 도움 함수(helper function) 등의 필요성과 위치 등을 짐작할 수 있으며, 이를 통해 함수를 쉽게 구현할 수 있다.</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<p>만약, 여러 타입의 인자가 주어진다면, 데이터 타입에 따라 템플릿을 변형해야 한다.</p>
+
+<p>예를 들어, 두 개의 compound type이 인자로 주어지면 2개의 중첩된 조건문의 템플릿이 나타날 수 있다.</p>
+
+<p>또한, 간단한 설명과 불변성(invariants) 테스트를 써줘야 한다.</p>
+
+<p>아래 예시는 compound type의 템플릿 조건 안에 atomic distinct type의 템플릿이 추가로 결합되었다.</p>
+
+<div class="callout callout-example" id="callout-29f8f1a9-7ea8-46a6-a649-1b4ace4c20c3">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>재귀구조와 empty를 가진 compound type <code class="language-plaintext highlighter-rouge">t</code>와 atomic distinct type <code class="language-plaintext highlighter-rouge">k</code>를 인자로 받는 함수 템플릿
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">lookupKey</span><span class="p">(</span><span class="n">t</span> <span class="n">k</span><span class="p">):</span>
+	<span class="c1"># k: key value to find, Integer more than 0. (invariants + interp)
+</span>	<span class="c1"># Tests: 
+</span>	<span class="c1"># lookupKey([], 1) == False
+</span>	<span class="c1"># lookupKey([0, 2, 3], 1) == False
+</span>	<span class="c1"># lookupKey([1, 2, 3], 1) == 0
+</span>	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="c1"># ...k
+</span>		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>
+        <span class="c1"># (...k (node-key t)    ;Integer
+</span>        <span class="c1">#     (node-val t)    ;String
+</span>	    <span class="c1"># lookup-key ((node-l t) (... k))
+</span>        <span class="c1"># lookup-key ((node-r t) (... k))
+</span>        <span class="k">pass</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="4-함수-구현하기">4. 함수 구현하기</h3>
+<ul>
+  <li>군더더기 없이 오류없이 잘 구현하였는가?
+    <ul>
+      <li>군더더기는 주로 사용하지 않는 변수, 쓸모 없는 코드, 쓸모 없는 주석을 의미</li>
+    </ul>
+  </li>
+  <li><strong>보조 함수(helper function)</strong> : 함수 내부의 복잡한 로직을 추가로 구현하는 함수, 보통 데이터 정의 과정에서 들어난다.
+    <ul>
+      <li>위의 <em>데이터 설계와 함수 템플릿의 상관 관계</em> 그림의 <code class="language-plaintext highlighter-rouge">fn-for-school</code> 함수 같은 함수를 의미</li>
+    </ul>
+  </li>
+  <li><span class="preview-wrapper">
+      <a href="/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%B6%94%EC%83%81%ED%99%94.html" class="wikilink">어떻게 코딩할 것인가-추상화</a>
+      <iframe class="preview" src='' data-href="/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%B6%94%EC%83%81%ED%99%94.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>와 아래 <span class="preview-wrapper">
+      <a href="#특수-함수-설계" class="wikilink">특수 함수 설계</a>
+      <iframe class="preview" src='' data-href="#특수-함수-설계" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 등을 잘 참고할 것!</li>
+</ul>
+
+<h3 id="5-테스트와-디버깅하기">5. 테스트와 디버깅하기</h3>
+<ul>
+  <li>고려할 사항들
+    <ul>
+      <li>모든 테스트가 예상 결과값을 통과했는가?</li>
+      <li>함수 내 모든 코드들을 테스트하는가?</li>
+      <li>목적에 맞는 결과를 내놓는가?</li>
+    </ul>
+  </li>
+  <li>만약, 오류가 생기면, 테스트가 잘못됬는지, 함수 구현이 잘못되었는지 꼭 확인하자!</li>
+  <li>빠르게, 자주 테스트하여 잘못을 조기에 발견하자!</li>
+</ul>
+
+<h3 id="함수-완성-이후">함수 완성 이후</h3>
+<ul>
+  <li>함수의 설명 부분을 다시 작성해보자. 여러 로직이 겹치는 경우 보조함수로 바꿔야 한다.</li>
+  <li>시그니처와 스텁은 더이상 의미없으므로 지우거나 옮기자.</li>
+  <li>테스트는 경우에 따라 재활용하거나 후에 디버깅 원인 분선시 필요할 수 있으므로 옮기거나 잘 정리하자</li>
+  <li><span class="preview-wrapper">
+      <a href="/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%BA%A1%EC%8A%90%ED%99%94.html" class="wikilink">리팩토링 및 캡슐화</a>
+      <iframe class="preview" src='' data-href="/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%BA%A1%EC%8A%90%ED%99%94.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 고려</li>
+</ul>
+
+<h2 id="특수-함수-설계">특수 함수 설계</h2>
+<p>함수 내부에 또 다른 함수를 포함한 함수를 설계하기 위한 방법 소개</p>
+
+<h3 id="재귀-함수-설계">재귀 함수 설계</h3>
+
+<p><strong>자기 자신 함수를 함수 로직 내에 이용하는 함수</strong></p>
+
+<div class="callout callout-note" id="callout-6eb1b328-6f50-4071-89dc-4fc50615e1c4">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>재귀 함수 구현 시 유의점
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li><strong>데이터 설계 시 재귀 구조가 나타난다면, 함수 구현 시에도 재귀 구조</strong>가 나타난다.</li>
+  <li><strong>기필코 기저 사례(Base Case)가 존재해야 하며, 도달 가능해야 한다.</strong>
+    <ul>
+      <li>그렇지 않으면 무한 루프가 일어난다.</li>
+    </ul>
+  </li>
+  <li><strong>로직 구현시, 테스트 생성 및 구현 시 기저 사례를 맨 처음 처리할 것.</strong>
+    <ul>
+      <li>구현이 간단한 경우가 많고, 재귀 함수 구현을 위해 꼭 필요하므로 빠르게 디버깅 하기 위함</li>
+    </ul>
+  </li>
+  <li>재귀 사례는 결국 기저 사례로 향하는지 알기 위해, <strong>내부 재귀함수의 인자가 기저 사례로 수렴하도록 변경되는지 확인</strong>해야 함.</li>
+  <li><strong>재귀 함수의 결과값이 항상 특정 조건을 만족한다는 가정을 충족</strong>해야 한다.(Invariant) 아래 예시 참조</li>
+  <li><strong>보조 함수와 다르게 새로 테스트를 작성할 필요가 없다.</strong></li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-749161fb-c6c7-4adb-a978-7966e5cff63d">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>재귀 함수와 재귀 데이터 설계 예시 : 짝수 필터링
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>사실, 많은 경우 재귀로 처리하는 것보다 반복문으로 처리하는 경우가 성능 상으로 좋은 경우가 많다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Data definition:
+</span><span class="p">{:</span> <span class="c1">#data-definition}
+</span>
+<span class="c1"># ListOfNumber is one of the
+</span><span class="p">{:</span> <span class="c1">#listofnumber-is-one-of-the}
+# - empty
+</span><span class="p">{:</span> <span class="c1">#empty}
+# - [Integer] + ListOfNumber 
+</span><span class="p">{:</span> <span class="c1">#integer-listofnumber}# 데이터 설계 중 재귀 구조 발견
+# interp. an arbitrary number of Numbers
+</span><span class="p">{:</span> <span class="c1">#interp-an-arbitrary-number-of-numbers}
+</span>
+<span class="k">def</span> <span class="nf">fnForLon</span><span class="p">(</span><span class="n">lon</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+		<span class="c1">#...
+</span>		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1">#...lon[0]
+</span>		<span class="c1">#...fnForLon(lon[1:])
+</span>		<span class="k">pass</span>
+
+<span class="c1"># Function:
+</span><span class="p">{:</span> <span class="c1">#function}
+# ListOfNumber -&gt; ListOfNumber
+</span><span class="p">{:</span> <span class="c1">#listofnumber-listofnumber}
+# filter even Number from ListOfNumber.
+</span><span class="p">{:</span> <span class="c1">#filter-even-number-from-listofnumber}
+# Invariants : All the results of evenFilter should contain only odd number.
+</span><span class="p">{:</span> <span class="c1">#invariants-all-the-results-of-evenfilter-should-contain-only-odd-number}
+# Stub
+</span><span class="p">{:</span> <span class="c1">#stub}
+# def evenFilter(lon):
+</span><span class="p">{:</span> <span class="c1">#def-evenfilter-lon}
+#	return []
+</span>	
+<span class="k">print</span><span class="p">(</span><span class="n">evenFilter</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span><span class="o">==</span><span class="p">[])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">evenFilter</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">==</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># &lt;Template From fnForLon&gt;
+</span><span class="p">{:</span> <span class="c1">#template-from-fnforlon}
+</span>
+<span class="k">def</span> <span class="nf">evenFilter</span><span class="p">(</span><span class="n">lon</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">[]</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">([</span><span class="n">lon</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="k">if</span> <span class="n">lon</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span> <span class="k">else</span> <span class="p">[])</span> <span class="o">+</span> <span class="n">evenFilter</span><span class="p">(</span><span class="n">lon</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="c1"># 이후 evenFilter는 모두 홀수만 포함된다는 가정을 충족해야 한다. (Invariant)
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id="불변성-Invariants">불변성(Invariants)</h4>
+<p>복합 함수의 경우 어떤 함수의 결과물이 항상 특정 조건을 만족한다는 가정이 충족해야 할 필요가 있다.<br>
+이를 불변성이라고 하며, 이를 엄격히 지키는지 확인하기 위해 로직을 수학적으로 증명하고, 테스트를 세세하게 짜내어야 한다.<br>
+불변성이 깨지면 가정이 깨지므로 원하는 결과가 나오지 않는다.<br>
+불변성은 재귀나 복합 함수 뿐만 아니라 반복문의 반복 과정에서도 사용된다.</p>
+
+<p>예시로 동적 계획법의 점화식이나 이중 탐색 트리의 좌측 자식은 언제나 현재 노드의 값보다 작고, 우측 자식은 언제나 현재 노드의 값보다 큼 등이 있다.</p>
+
+<h4 id="생성적-재귀-Generative-Recursion">생성적 재귀(Generative Recursion)</h4>
+<p>앞서 소개했던 함수들은 <strong>구조적 재귀(Structural Recursion)로, 이미 주어진 특정 데이터(배열, 링크드 리스트 등)을 순회하며 진행하는 재귀로, 이미 구조가 정해져있고, 데이터를 전부 순회하는 순간으로 재귀의 종료가 명확히 정해져있다.</strong></p>
+
+<p><strong>생성적 재귀는 재귀 함수 중에 데이터를 추가로 생성하는 구조로, 구조 예측이 힘들고, 재귀의 종료가 보장되지 않는다.</strong></p>
+
+<p>또한, 데이터 설계 과정에 재귀 구조임을 암시하는 부분이 나오지 않는다.</p>
+
+<div class="callout callout-example" id="callout-c0ef21fb-ab8f-44fb-8f22-768c95a5b087">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>생성적 재귀 구조 함수 설계 예시 : 프랙탈
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<pre><code class="language-BSL">(define CUTOFF 2)
+
+;; Number -&gt; Image
+;; produce a Sierpinski Triangle of the given size
+(check-expect (stri CUTOFF) (triangle CUTOFF "outline" "red"))
+(check-expect (stri (* CUTOFF 2))
+              (overlay (triangle (* CUTOFF 2) "outline" "red")
+                       (local [(define sub (triangle CUTOFF "outline" "red"))]
+                         (above sub
+                                (beside sub sub))
+                       )))
+
+; (define (stri s) (square 0 "solid" "white")) ; stub
+
+#;
+(define (genrec-fn d)
+  (if (trival? d)
+      (trival-answer d)
+      (... d
+           (genrec-fn (next-problem d)))))
+
+(define (stri s)
+  (if (&lt;= s CUTOFF)
+      (triangle s "outline" "red")
+      (overlay (traingle s "outline" "red")
+               (local [(define sub (stri (/ s 2)))]
+                 (above sub
+                        (beside sub sub))))))
+
+
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<p>따라서 생성적 재귀는 정교한 기반사례(Base case) 설계와 기반 사례로 수렴한다는 증명이 필요하며, 이는 아래와 같은 종료 논의를 통해 고민해볼 수 있다.</p>
+
+<div class="callout callout-note" id="callout-0dd38000-556a-4288-8c6d-f989d84b14c4">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>종료 논의(termination argument) 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>예를 들어 다음과 같은 재귀 함수의 종료 논의는 다음과 같다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">recur</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+		<span class="k">return</span>
+	<span class="n">recur</span><span class="p">(</span><span class="n">s</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>기반 사례(Base Case):</strong> 언제 재귀를 멈추는가?</p>
+
+<p>주로, 조건식, 예시의 <code class="language-plaintext highlighter-rouge">s &lt; 1</code></p>
+
+<p><strong>감소 단계(Reduction step):</strong> 다음 재귀에 넘겨지는 인자의 변화</p>
+
+<p>주로 재귀 함수에 주어지는 인자, 예시의 <code class="language-plaintext highlighter-rouge">s/2</code></p>
+
+<p><strong>감소 단계의 인자의 변화가 기반 사례에 결국 언젠가 기반 사례에 다다른다는 증명(Argument that repeated application of reduction step will eventually reach the base case):</strong> 감소 단계의 연속이 결국 기반 사례로 향하는가?</p>
+
+<p>예시에서는 값 <code class="language-plaintext highlighter-rouge">s</code>는 감소 단계 <code class="language-plaintext highlighter-rouge">s/2</code>로 값이 절반이 되다보면 결국엔 기반사례 조건 <code class="language-plaintext highlighter-rouge">s&lt;1</code>에 도달하게 됨.</p>
+
+</div>
+    </div>
+    </div>
+<h4 id="축적자-Accumulator">축적자(Accumulator)</h4>
+
+<p>재귀 함수 중에 재귀 과정 자체에 대한 정보를 가지고 있는 변수이다.</p>
+
+<p>재귀 함수는 같은 함수여도 재귀로 불러오게 되면, 인자로 넘겨받은 변수 이외에는 초기화되므로, 이를 이용해 재귀가 진행되면서 정보를 유지할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-cac74eec-46f0-40a6-8cd9-0c8f79c0b826">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>축적자 예시와 추가 단계
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>축적자 추가는 아래 예시에 적힌 총 7 단계로 진행된다.</p>
+
+<p>함수 템플릿 변형을 응용해 축적자를 추가하고, 불변성과 설명에 맞게 템플릿을 변형 및 구현하는 것이다.</p>
+<div class="language-bsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">;</span> <span class="nv">PROBLEM</span><span class="p">:</span>
+<span class="p">;</span> 
+<span class="p">;</span> <span class="nv">Design</span> <span class="nv">a</span> <span class="k">function</span> <span class="nv">that</span> <span class="nv">consumes</span> <span class="nv">a</span> <span class="nv">list</span> <span class="nv">of</span> <span class="nv">elements</span> <span class="k">and</span> <span class="nv">produces</span> <span class="nv">the</span> <span class="nv">list</span>
+<span class="p">;</span> <span class="nv">consisting</span> <span class="nv">of</span> <span class="nv">only</span> <span class="nv">the</span> <span class="nv">1st</span><span class="p">,</span> <span class="nv">3rd</span><span class="p">,</span> <span class="nv">5th</span> <span class="k">and</span> <span class="nv">so</span> <span class="nv">on</span> <span class="nv">elements</span> <span class="nv">of</span> <span class="nv">its</span> <span class="nv">input</span><span class="o">.</span> 
+<span class="p">;</span> 
+<span class="p">;</span>    <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">list</span> <span class="s1">"a"</span> <span class="s1">"b"</span> <span class="s1">"c"</span> <span class="s1">"d"</span><span class="p">))</span> <span class="nv">should</span> <span class="nv">produce</span> <span class="p">(</span><span class="nv">list</span> <span class="s1">"a"</span> <span class="s1">"c"</span><span class="p">)</span>
+<span class="p">;</span> 
+<span class="p">;;</span> <span class="p">(</span><span class="nv">listof</span> <span class="nv">X</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">listof</span> <span class="nv">X</span><span class="p">)</span>
+<span class="p">;;</span> <span class="nv">produce</span> <span class="nv">list</span> <span class="nv">consisting</span> <span class="nv">on</span> <span class="nv">only</span> <span class="nv">the</span> <span class="nv">1st</span><span class="p">,</span> <span class="nv">3rd</span><span class="p">,</span> <span class="nv">5th</span><span class="o">...</span> <span class="nv">elements</span> <span class="nv">of</span> <span class="nv">lox</span>
+<span class="p">(</span><span class="nv">check</span><span class="o">-</span><span class="nv">expect</span> <span class="p">(</span><span class="nv">skip1</span> <span class="nv">empty</span><span class="p">)</span> <span class="nv">empty</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">check</span><span class="o">-</span><span class="nv">expect</span> <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">list</span> <span class="s1">"a"</span> <span class="s1">"b"</span> <span class="s1">"c"</span> <span class="s1">"d"</span><span class="p">))</span> <span class="p">(</span><span class="nv">list</span> <span class="s1">"a"</span> <span class="s1">"c"</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">check</span><span class="o">-</span><span class="nv">expect</span> <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">list</span> <span class="nv">1</span> <span class="nv">2</span> <span class="nv">3</span> <span class="nv">4</span> <span class="nv">5</span> <span class="nv">6</span><span class="p">))</span> <span class="p">(</span><span class="nv">list</span> <span class="nv">1</span> <span class="nv">3</span> <span class="nv">5</span><span class="p">))</span> 
+
+<span class="p">;(</span><span class="nv">define</span> <span class="p">(</span><span class="nv">skip1</span> <span class="nv">lox</span><span class="p">)</span> <span class="nv">empty</span><span class="p">);</span><span class="nv">stub</span>
+<span class="kd">#;</span>
+<span class="p">(</span><span class="nv">define</span> <span class="p">(</span><span class="nv">skip1</span> <span class="nv">lox</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">cond</span> <span class="p">[(</span><span class="nv">empty</span><span class="o">?</span> <span class="nv">lox</span><span class="p">)</span> <span class="nv">empty</span><span class="p">]</span>
+        <span class="p">[</span><span class="k">else</span>
+         <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">odd</span><span class="o">?</span> <span class="nv">POSITION</span><span class="o">-</span><span class="nv">OF</span><span class="o">-</span><span class="nv">FIRST</span><span class="o">-</span><span class="nv">LOX</span><span class="p">)</span> 
+         <span class="kd"># 단계1: 축적자가 필요함을 인식하고 해당 부분을 표시해둔다 (대문자 POSITION-OF-FIRST-LOX)</span>
+             <span class="p">(</span><span class="nv">cons</span> <span class="p">(</span><span class="nv">first</span> <span class="nv">lox</span><span class="p">)</span>
+                   <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">rest</span> <span class="nv">lox</span><span class="p">)))</span>
+             <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">rest</span> <span class="nv">lox</span><span class="p">)))]))</span> 
+
+<span class="kd"># 단계 2: 함수 시그니처에 축적자를 추가한다.</span>
+<span class="err">{</span><span class="p">:</span> <span class="kd">#단계-2-함수-시그니처에-축적자를-추가한다}</span>
+<span class="p">(</span><span class="nv">define</span> <span class="p">(</span><span class="nv">skip1</span> <span class="nv">lox</span> <span class="nv">acc</span><span class="p">)</span>  
+	<span class="kd"># 단계 3: 함수 시그니처에 대한 설명과 불변성(invariants)를 설명하고 재귀 함수 진행시 변화를 명시한다.</span>
+	<span class="p">;;</span> <span class="nv">acc</span><span class="p">:</span> <span class="nv">Natural</span><span class="p">;</span> <span class="nv">1</span><span class="o">-</span><span class="nv">based</span> <span class="nv">position</span> <span class="nv">of</span> <span class="p">(</span><span class="nv">first</span> <span class="nv">lox</span><span class="p">)</span> <span class="k">in</span> <span class="nv">lox0</span>
+	<span class="p">;;</span> <span class="nv">first</span><span class="p">:</span> <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">list</span> <span class="s1">"a"</span> <span class="s1">"b"</span> <span class="s1">"c"</span><span class="p">)</span> <span class="nv">1</span><span class="p">)</span>
+	<span class="p">;;</span> <span class="nv">next</span><span class="p">:</span>  <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">list</span>      <span class="s1">"b"</span> <span class="s1">"c"</span><span class="p">)</span> <span class="nv">2</span><span class="p">)</span>
+	<span class="p">;;</span> <span class="nv">next</span><span class="p">:</span>  <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">list</span>          <span class="s1">"c"</span><span class="p">)</span> <span class="nv">3</span><span class="p">)</span>
+
+  <span class="p">(</span><span class="nv">local</span> <span class="p">[(</span><span class="nv">define</span> <span class="p">(</span><span class="nv">skip1</span> <span class="nv">lox</span> <span class="nv">acc</span><span class="p">))</span> 
+  <span class="kd"># 단계 3: 축적자가 포함되어있는 내부 함수로 템플릿을 감싼다.</span>
+          <span class="p">(</span><span class="nv">cond</span> <span class="p">[(</span><span class="nv">empty</span><span class="o">?</span> <span class="nv">lox</span><span class="p">)</span> <span class="nv">empty</span><span class="p">]</span> 
+          <span class="kd"># 단계 4: 함수 템플릿을 추가 인자로 변형 한다. 여기서는, (...acc)를 각 분기마다 추가.</span>
+                <span class="p">[</span><span class="k">else</span>
+                 <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">odd</span><span class="o">?</span> <span class="nv">acc</span><span class="p">)</span> 
+                 <span class="kd"># 단계 5 : 기존에 축적자 표시한 부분과 재귀 함수 호출 부분에 축적자를 추가한다.</span>
+                     <span class="p">(</span><span class="nv">cons</span> <span class="p">(</span><span class="nv">first</span> <span class="nv">lox</span><span class="p">)</span>
+                           <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">rest</span> <span class="nv">lox</span><span class="p">)</span> <span class="p">(</span><span class="nv">add1</span> <span class="nv">acc</span><span class="p">)))</span>
+                     <span class="p">(</span><span class="nv">skip1</span> <span class="p">(</span><span class="nv">rest</span> <span class="nv">lox</span><span class="p">)</span> <span class="p">(</span><span class="nv">add1</span> <span class="nv">acc</span><span class="p">)))])]</span>
+    <span class="p">(</span><span class="nv">skip1</span> <span class="nv">lox0</span> <span class="nv">1</span><span class="p">)))</span>  
+    <span class="kd"># 단계 6: 축적자의 초기값을 설정한다.</span>
+<span class="kd"># 단계 7: 결과를 테스트 해본다.</span>
+<span class="err">{</span><span class="p">:</span> <span class="kd">#단계-7-결과를-테스트-해본다}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>축적자를 만들기 위한 함수 템플릿은 모두 동일하지 않지만, 축적자를 추가하며, 함수의 템플릿을 변경하는 부분에 신경쓰자</p>
+
+<p>용도에 따라 크게 세가지 축적자가 존재한다.</p>
+<ul>
+  <li><strong>문맥보존 축적자(Context-preserving Accumulator)</strong><br>
+  재귀함수 간에 보존되어야 할 정보를 담는 축적자<br>
+  ex) 트리 내부에서 특정 값을 찾는 재귀 함수에서 “특정값” 축적자</li>
+  <li><strong>현재결과 축적자(result-so-far Accumulator)</strong><br>
+  재귀함수가 진행되며 변화된 값을 담은 축적자<br>
+  ex) 트리 내부 값들의 총 합을 구하는 재귀 함수에서 지금까지 더한 값 축적자</li>
+  <li><strong>작업명단 축적자(worklist Accumulator)</strong><br>
+  남은 재귀함수를 진행하기 위한 리스트를 담은 축적자<br>
+  ex) BFS 탐색 재귀함수에서 큐에 들어간 노드 리스트 축적자</li>
+</ul>
+
+<p>이중에 <strong>두번째와 세번째, 현재결과 축적자와 작업명단 축적자는 꼬리 재귀함수(Tail recursive function)을 구현하는데 사용</strong>할 수 있다.<br>
+ 예를 들어, 재귀함수의 결과에 덧셈 연산을 하지 않고 현재결과 축적자 인자에 대신 덧셈을 하거나, 여러 재귀 함수를 결과값에 부르지 않고, 작업명단 축적자에 추가하여 차례대로 처리하게 하는 것이다.</p>
+
+<h3 id="보조-함수-설계">보조 함수 설계</h3>
+<p>보조 함수(helper function)는 <strong>자기 자신이 아닌 다른 함수로, 복잡한 함수의 일부 로직을 담당하는 함수</strong>이다.</p>
+
+<p>다음과 같은 경우에 보조 함수를 설계해야 한다.</p>
+<ul>
+  <li>함수 설계 중 설계 내용이 새로운 지식 도메인으로 바뀜(즉, 두가지 이상의 일을 함)</li>
+  <li>데이터 설계 중 참조가 발견됨</li>
+  <li>함수 해석 부분 구현 시, 내용이 길고 복잡함</li>
+</ul>
+
+<div class="callout callout-warning" id="callout-c1d695c8-0557-4964-b981-cb55e3082658">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>의미없는 보조함수의 추가는 오히려 구현을 복잡하게 만들 수 있다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<p>보조 함수 설계시, 각 보조 함수의 기능과 데이터를 따로 설계하고, 테스트 해야 함.</p>
+<ul>
+  <li>이때, 복잡한 구조일 수록 내부의 보조 함수를 염두에 두고 최대한의 커버지리가 가능한 테스트를 설계해야 한다.</li>
+  <li>하지만, 반대로 보조 함수는 자신을 참조하는 부모 함수를 염두에 두지 않고 자신의 기능만 신경쓰면 된다.</li>
+</ul>
+
+<p>보조 함수는 자신을 위한 또 다른 보조 함수를 가질 수 있다.</p>
+
+<div class="callout callout-example" id="callout-7ec8ad5d-7a6e-4be9-bc78-0d59daadb3fc">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>보조 함수 의존 관계
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>아래 그림처럼 특정 함수의 테스트와 설계의 끝은 해당 함수 내부에서 의존하는 보조 함수들의 설계와 테스트가 전부 끝나야 가능하다.</p>
+
+<p><img src="/assets/img/어떻게 코딩할 것인가-함수 설계/image-20230113215653165.png" alt="500"></p>
+
+</div>
+    </div>
+    </div>
+<p>따라서, 각 보조 함수를 일단 <strong>위시리스트 항목</strong>으로 만들어 두고 상위 함수를 먼저 구현할 수 있다.</p>
+
+<div class="callout callout-seealso" id="callout-fe416510-6fb9-4acd-93da-4c00bf71b25a">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>위시리스트 항목(wish-list entry)?
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><strong>시그니처, 목적, <code class="language-plaintext highlighter-rouge">!!!</code>와 스텁으로 이루어진 완성되지 못한 함수</strong></p>
+
+<p>스텁과 다른 점은 처음에는 스텁처럼 생겼지만 언젠가는 추가로 테스트와 내부 로직을 제대로 구현한다는 점이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">!!!</code>, <code class="language-plaintext highlighter-rouge">TODO:</code>등을 통해 나중에 꼭 구현하도록 표시해둔다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Number -&gt; Number
+</span><span class="p">{:</span> <span class="c1">#number-number}
+# 고양이를 우측으로 1 픽셀 옮긴 좌표를 출력
+</span><span class="p">{:</span> <span class="c1">#고양이를-우측으로-1-픽셀-옮긴-좌표를-출력}
+# !!! or TODO:
+</span><span class="p">{:</span> <span class="c1">#or-todo}
+</span><span class="k">def</span> <span class="nf">advanceCat</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">return</span> <span class="mi">0</span>	
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-1a6604be-a08d-4cdf-a675-312d5ce1e4aa">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>구현 완료된 위시 리스트 항목
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 구현 완료된 위시 리스트 항목
+</span><span class="p">{:</span> <span class="c1">#구현-완료된-위시-리스트-항목}
+# CAT -&gt; CAT
+</span><span class="p">{:</span> <span class="c1">#cat-cat}
+# produce the next cat, by advancing it 1 pixel to right
+</span><span class="p">{:</span> <span class="c1">#produce-the-next-cat-by-advancing-it-1-pixel-to-right}
+# Tests:
+</span><span class="p">{:</span> <span class="c1">#tests}
+</span><span class="k">print</span><span class="p">(</span><span class="n">advanceCat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># def advanceCat(c): return 1 
+</span><span class="p">{:</span> <span class="c1">#def-advancecat-c-return-1}# stub
+</span>
+<span class="c1"># &lt;use template from Cat&gt;
+</span><span class="p">{:</span> <span class="c1">#use-template-from-cat}
+</span><span class="k">def</span> <span class="nf">advanceCat</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="c1"># CAT -&gt; Image
+</span><span class="p">{:</span> <span class="c1">#cat-image}
+# render the cat image at appropriate place on MTS
+</span><span class="p">{:</span> <span class="c1">#render-the-cat-image-at-appropriate-place-on-mts}
+</span><span class="k">print</span><span class="p">(</span><span class="n">render</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">==</span><span class="n">Image</span><span class="p">(</span><span class="s">"cat"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">CTR_Y</span><span class="p">,</span> <span class="n">MTS</span><span class="p">))</span>
+
+<span class="c1"># def render(c): return MTS 
+</span><span class="p">{:</span> <span class="c1">#def-render-c-return-mts}# stub
+# &lt;use template from Cat&gt;
+</span><span class="p">{:</span> <span class="c1">#use-template-from-cat}
+</span><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="s">"cat"</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">CTR_Y</span><span class="p">,</span> <span class="n">MTS</span><span class="p">)</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="상호-참조-함수-설계">상호 참조 함수 설계</h3>
+
+<p>상호 참조 함수는 보조 함수와 비슷하게 특정 기능을 다른 함수의 참조로 해결한다.</p>
+
+<p>보조 함수와 다른 점은, 다른 함수 또한 자신의 함수를 포함하는 상호 참조 관계를 가진 함수라는 점이다.</p>
+<ul>
+  <li>정확히는 둘 이상의 함수가 사이클을 이룰 수도 있다.</li>
+</ul>
+
+<p>상호 참조 데이터 설계 시와 비슷하게, 함수 설계시 서로의 로직이 서로 영향 받으므로, 상호 참조 함수들을 모두 동시에 함께 설계를 진행한다.</p>
+
+<div class="callout callout-example" id="callout-6a998cdd-5b64-4d6b-a7e7-17942d1d70bf">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>상호 참조 함수 설계 예시 : 트리 내 이름 검색
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Data definitions:
+</span><span class="p">{:</span> <span class="c1">#data-definitions}
+# Element is (make-elt String Integer ListOfElement)
+</span><span class="p">{:</span> <span class="c1">#element-is-make-elt-string-integer-listofelement}
+# interp. An element in the file system, with name, and EITHER data or subs.
+</span><span class="p">{:</span> <span class="c1">#interp-an-element-in-the-file-system-with-name-and-either-data-or-subs}
+#         If data is 0, then subs is considered to be list of sub elements.
+</span><span class="p">{:</span> <span class="c1">#if-data-is-0-then-subs-is-considered-to-be-list-of-sub-elements}
+#         If data is not 0, then subs is ignored.
+</span><span class="p">{:</span> <span class="c1">#if-data-is-not-0-then-subs-is-ignored}
+</span>
+<span class="c1"># ListOfElement is one of:
+</span><span class="p">{:</span> <span class="c1">#listofelement-is-one-of}
+#  - empty
+</span><span class="p">{:</span> <span class="c1">#empty}
+#  - [Element] ListOfElement
+</span><span class="p">{:</span> <span class="c1">#element-listofelement}
+# interp. A list of file system Elements
+</span><span class="p">{:</span> <span class="c1">#interp-a-list-of-file-system-elements}
+</span>
+<span class="k">def</span> <span class="nf">fnForElt</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">loe</span><span class="p">):</span> <span class="c1"># Compound data
+</span>	<span class="c1"># ... (name) :String
+</span>	<span class="c1"># (data) : Integer
+</span>	<span class="c1"># fnForLoe(loe) : Reference
+</span>	<span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">fnForLoe</span><span class="p">(</span><span class="n">loe</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">loe</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+		<span class="c1">#...
+</span>		<span class="k">pass</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1">#...loe[0]
+</span>		<span class="c1">#...fnForLoe(loe[1:])
+</span>		<span class="k">pass</span>
+
+<span class="n">F1</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"F1"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="n">F2</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"F2"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="n">F3</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"F3"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="n">D4</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"D4"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[</span><span class="n">F1</span><span class="p">,</span> <span class="n">F2</span><span class="p">]}</span>
+<span class="n">D5</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"D5"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[</span><span class="n">F3</span><span class="p">]}</span>
+<span class="n">D6</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">"D6"</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">subs</span><span class="p">:</span> <span class="p">[</span><span class="n">D4</span><span class="p">,</span> <span class="n">D5</span><span class="p">]}</span>
+
+
+<span class="c1"># Search the given tree for an element with the given name, produce data if found; false otherwise
+</span><span class="p">{:</span> <span class="c1">#search-the-given-tree-for-an-element-with-the-given-name-produce-data-if-found-false-otherwise}
+# String Element -&gt; Integer or false
+</span><span class="p">{:</span> <span class="c1">#string-element-integer-or-false}
+# String ListOfElement -&gt; Integer or false
+</span><span class="p">{:</span> <span class="c1">#string-listofelement-integer-or-false}
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findLoe</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[])</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">F1</span><span class="p">])</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">F3</span><span class="p">])</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"D4"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"D4"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findLoe</span><span class="p">(</span><span class="s">"F2"</span><span class="p">,</span> <span class="p">[</span><span class="n">F1</span><span class="p">,</span> <span class="n">F2</span><span class="p">])</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findLoe</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">F1</span><span class="p">,</span> <span class="n">F2</span><span class="p">])</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F1"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F2"</span><span class="p">,</span> <span class="p">[</span><span class="n">D4</span><span class="p">])</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">findElement</span><span class="p">(</span><span class="s">"F3"</span><span class="p">,</span> <span class="p">[</span><span class="n">D6</span><span class="p">])</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># def findElement(n, e): 
+</span><span class="p">{:</span> <span class="c1">#def-findelement-n-e}
+#     return False 
+</span><span class="p">{:</span> <span class="c1">#return-false}#stubs
+</span>
+<span class="c1"># def findLoe(n, loe):
+</span><span class="p">{:</span> <span class="c1">#def-findloe-n-loe}
+#     return False 
+</span><span class="p">{:</span> <span class="c1">#return-false}#stubs
+</span>
+<span class="c1"># &lt;Template from Element&gt;
+</span><span class="p">{:</span> <span class="c1">#template-from-element}
+</span><span class="k">def</span> <span class="nf">findElement</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">e</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">e</span><span class="p">.</span><span class="n">data</span>
+    <span class="k">return</span> <span class="n">findLoe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">subs</span><span class="p">)</span>
+    
+<span class="c1"># &lt;Template from ListOfElement&gt;
+</span><span class="p">{:</span> <span class="c1">#template-from-listofelement}
+</span><span class="k">def</span> <span class="nf">findLoe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">loe</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">loe</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="bp">False</span>
+	<span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">findElement</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">loe</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="bp">False</span><span class="p">:</span>
+             <span class="k">return</span> <span class="n">findElement</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">loe</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+	    <span class="k">return</span> <span class="n">findLoe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">loe</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="여러-경우의-수를-가진-데이터를-다수-포함한-복합-데이터-함수-설계">여러 경우의 수를 가진 데이터를 다수 포함한 복합 데이터 함수 설계</h3>
+
+<h4 id="데이터-설계-단계">데이터 설계 단계</h4>
+<p>관건은 데이터 설계 단계에서 각 데이터의 경우의 수(one-of)를 잘 찾아 설계해야 한다.</p>
+
+<h4 id="테스트-단계">테스트 단계</h4>
+<p>간혹, 함수 중에 입력 받는 두개의 데이터들이 여러 개의 경우의 수를 갖는 경우가 있다.<br>
+이럴 경우 각 경우의 수를 가진 표를 그리면 쉽게 함수를 설계할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-474080af-9b9b-4e8d-b0fc-a974c3cfbb98">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>표를 이용한 함수 설계
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>예시 : 두 개의 배열을 입력받는 복합 데이터 함수<br>
+두 개의 문자열 A, B를 받아 A가 B의 접두어인지의 여부를 알려주는 함수</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>문자열 A 길이 0</th>
+      <th>문자열 A 길이 1 이상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>문자열 B 길이 0</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>문자열 B 길이 1 이상</td>
+      <td>true</td>
+      <td>접두어 비교 필요</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>각 문자열 A, B의 경우의 수는 2개이며, 표를 그려본 결과, 따라서 최소 $2\times2=4$개의 테스트가 필요하다는 것을 알 수 있다.</p>
+
+</div>
+    </div>
+    </div>
+<p>만약, 데이터의 수가 늘어난다면 표의 차원의 수가 늘어나며, 각 경우의 수가 늘어난면, 각 차원의 크기가 늘어나야 한다.</p>
+
+<h4 id="함수-설계-단계">함수 설계 단계</h4>
+
+<p>함수 설계 시, 주로 <code class="language-plaintext highlighter-rouge">SWITCH</code> 문이나 <code class="language-plaintext highlighter-rouge">If-Else</code> 문을 통해 구현하게 되는데, 이때 함수의 <span class='link-warning'>
+      <a href="https://en.wikipedia.org/wiki/ABC_Software_Metric" class="wikilink externallink">ABC Size</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://en.wikipedia.org/wiki/..."</em>로
+        <button onclick="window.open('https://en.wikipedia.org/wiki/ABC_Software_Metric','_blank'); return false;">이동</button>?
+      </span>
+    </span>를 줄이기 위해 표(=모델)을 잘 살펴보고 간략화 해야한다.</p>
+
+<div class="callout callout-example" id="callout-394ec23a-7603-4aa1-bfe0-85d50d0fc86a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>표를 이용한 함수 설계-모델 간략화
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>예시 : 두 개의 배열을 입력받는 복합 데이터 함수<br>
+두 개의 문자열 A, B를 받아 A가 B의 접두어인지의 여부를 알려주는 함수</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>문자열 A 길이 0</th>
+      <th>문자열 A 길이 1 이상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>문자열 B 길이 0</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>문자열 B 길이 1 이상</td>
+      <td>true</td>
+      <td>접두어 비교 필요</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>앞서 표에서 4개의 테스트를 작성했지만, 실제 필요한 경우의 수는 다음 사진과 같이 3개이다.<br>
+<img src="/assets/img/어떻게 코딩할 것인가-함수 설계/image-20230130130936994.png" alt=""><br>
+문자열 A는 길이가 0일 경우 언제나 참을 반환하므로, 문자열 B가 비어있던 말던 하나의 경우의 수로 볼 수 있다.</p>
+
+<p>따라서 경우의 수 두개를 하나로 합칠 수 있다.</p>
+
+<ul>
+  <li>이런 식으로 합쳐진 커다란 크기의 경우의 수 먼저 처리하며 함수를 설계하면 수월하다.</li>
+</ul>
+
+<p>이러한 방법을 모델 단계에서 함수를 간략화한다고 하여 <strong>모델 간략화</strong>라고 한다.</p>
+
+</div>
+    </div>
+    </div>
+<p>간략화를 안한 함수 모델과 간략화한 뒤의 함수 모델을 비교해보자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">noSimpleIsPrefix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="bp">True</span>
+	<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="bp">True</span>
+	<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="bp">False</span>
+	<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="c1"># ...A[0],A[1:],B[0],B[1:]
+</span>		<span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">SimpleIsPrefix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 2개의 경우의 수 하나로 합친 것 먼저 처리
+</span>		<span class="k">return</span> <span class="bp">True</span>
+	<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># len(A) != 0 임이 보장되므로 확인할 필요 없음.
+</span>		<span class="k">return</span> <span class="bp">False</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1"># ...A[0],A[1:],B[0],B[1:] 
+</span>		<span class="c1"># 엄밀히 말하면 배열을 위한 함수 템플릿(재귀 템플릿)
+</span>		<span class="k">pass</span>
+
+
+</code></pre></div></div>
+<p>모델 간략화쪽이 더 가독성이 좋고, 코드가 짧으며 경우의 수가 적음을 알 수 있다.</p>
+
+<div class="callout callout-example" id="callout-46eed701-8b42-49b9-aa66-e81af2951c2c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>더 어려운 모델 간략화 코드(BSL)
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<pre><code class="language-BSL">;; ==========
+;; Functions:
+
+;; Pattern ListOf1String -&gt; Boolean
+;; produces true if ListOf1String matches the given pattern
+
+; CROSS PRODUCT OF TYPE COMMENTS TABLE  
+; 
+;                                      LO1s
+;                             empty        (cons 1String ListOf1String) 
+; 
+; P   empty                   true          true                       
+; a
+; t  (cons "A" Pattern)       false        (and (alpha? (first los))
+; t                                             (match-head? &lt;rests&gt;)) 
+; e
+; r  (cons "N" Pattern)       false        (and (numer? (first los)) 
+; n                                             (match-head? &lt;rests&gt;))
+; 
+
+
+(check-expect (pattern-match? empty empty) true)
+(check-expect (pattern-match? empty (list "a")) true)
+(check-expect (pattern-match? (list "A") empty) false)
+(check-expect (pattern-match? (list "N") empty) false)
+(check-expect (pattern-match? (list "A" "N" "A") (list "x" "3" "y")) true)
+(check-expect (pattern-match? (list "A" "N" "A") (list "1" "3" "y")) false)
+(check-expect (pattern-match? (list "N" "A" "N") (list "1" "a" "4")) true)
+(check-expect (pattern-match? (list "N" "A" "N") (list "1" "b" "c")) false)
+(check-expect (pattern-match? (list "A" "N" "A" "N" "A" "N")
+                              (list "V" "6" "T" "1" "Z" "4")) true)
+
+; template taken from cross product table
+; 6 cases simplifed to 4
+
+(define (pattern-match? pat lo1s)
+  (cond [(empty? pat) true]                            
+        [(empty? lo1s) false]                          
+        [(string=? (first pat) "A")                    
+         (and (alphabetic? (first lo1s))
+              (pattern-match? (rest pat) (rest lo1s)))]
+        [(string=? (first pat) "N")                    
+         (and (numeric? (first lo1s))
+              (pattern-match? (rest pat) (rest lo1s)))]))
+
+;; 1String -&gt; Boolean
+;; produce true if 1s is alphabetic/numeric
+(check-expect (alphabetic? " ") false)
+(check-expect (alphabetic? "1") false)
+(check-expect (alphabetic? "a") true)
+(check-expect (numeric? " ") false)
+(check-expect (numeric? "1") true)
+(check-expect (numeric? "a") false)
+
+(define (alphabetic? 1s) (char-alphabetic? (string-ref 1s 0)))
+(define (numeric?    1s) (char-numeric?    (string-ref 1s 0)))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%ED%95%A8%EC%88%98%20%EC%84%A4%EA%B3%84.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OSSU/PL/HowToCode/어떻게 코딩할 것인가-함수 설계.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

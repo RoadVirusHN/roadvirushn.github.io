@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JAVA 기본-자바 언어 구조와 기본 문법 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="JAVA 기본-자바 언어 구조와 기본 문법" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%EC%96%B8%EC%96%B4%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EA%B8%B0%EB%B3%B8%20%EB%AC%B8%EB%B2%95.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%EC%96%B8%EC%96%B4%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EA%B8%B0%EB%B3%B8%20%EB%AC%B8%EB%B2%95.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-01T15:19:49+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JAVA 기본-자바 언어 구조와 기본 문법" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-01T15:19:49+09:00","datePublished":"2023-02-01T15:19:49+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"JAVA 기본-자바 언어 구조와 기본 문법","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%EC%96%B8%EC%96%B4%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EA%B8%B0%EB%B3%B8%20%EB%AC%B8%EB%B2%95.html"},"url":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%EC%96%B8%EC%96%B4%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EA%B8%B0%EB%B3%B8%20%EB%AC%B8%EB%B2%95.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">JAVA 기본-자바 언어 구조와 기본 문법</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-02-01T15:19:49+09:00" itemprop="datePublished">Feb 1, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#자바-프로그램-구조">자바 프로그램 구조</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#클래스">클래스</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#main-함수">main() 함수</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#패키지">패키지</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#자바-변수와-데이터-타입">자바 변수와 데이터 타입</a><ul><li lvl="3"><a id="markdown-toc-0-5" href="#변수">변수</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#데이터-타입">데이터 타입</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#형-변환-Type-Casting">형 변환(Type Casting)</a><ul></ul></li></ul></li></ol>
+<h1 id="자바-언어-구조와-기본-문법">자바 언어 구조와 기본 문법</h1>
+<h2 id="자바-프로그램-구조">자바 프로그램 구조</h2>
+<p>자바 언어는 <code class="language-plaintext highlighter-rouge">{}</code>로 범위(scope)를 구분하고, <code class="language-plaintext highlighter-rouge">;</code>으로 명령어를 끝마쳐야 한다.</p>
+<h3 id="클래스">클래스</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.java</code> 파일 하나당 하나의 변수와 메서드를 포함한 클래스 정의</li>
+  <li>클래스는 자바 프로그램의 최소 구성 단위</li>
+</ul>
+
+<div class="callout callout-example" id="callout-8c5dfd3f-6d46-48bf-8bbc-43b9d96ce8dd">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>자바 클래스 파일 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstClass</span> <span class="o">{</span> 
+<span class="c1">// public 한정자: class를 외부 공개,</span>
+<span class="c1">//명령 작성 자바 주석문</span>
+<span class="c1">// 잡담 목적 에러 코드 지우기 등</span>
+<span class="c1">// 다중 주석은 /** */으로 가능</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>파일 명은 보통 <span class="preview-wrapper">
+      <a href="/articles/etc/etcs/%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EA%B8%80%EC%93%B0%EA%B8%B0%20%EC%A0%95%EB%A6%AC.html#표기법" class="wikilink">파스칼케이스</a>
+      <iframe class="preview" src='' data-href="/articles/etc/etcs/%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EA%B8%80%EC%93%B0%EA%B8%B0%20%EC%A0%95%EB%A6%AC.html#표기법" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span>임.</p>
+<h3 id="main-함수"><code class="language-plaintext highlighter-rouge">main()</code> 함수</h3>
+<ul>
+  <li>자바 프로그램은 바이트 코드로 번역 후 바로 실행 가능하다.</li>
+  <li>이때 무조건 <code class="language-plaintext highlighter-rouge">main()</code>이란 메서드를 가지고 있어야하며, 이것을 시작함으로 프로그램이 실행됨</li>
+</ul>
+
+<div class="callout callout-example" id="callout-13cd220f-b136-495b-9df3-962d8b677756">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">main()</code> 함수 예시(<code class="language-plaintext highlighter-rouge">JavaApp.java</code> 파일)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">String args[]</code>: 명령행 매개변수, 문자열의 배열을 순서대로 매개변수로 받아 프로그램 실행시 필요한 정보를 문자열로 전달</li>
+  <li><code class="language-plaintext highlighter-rouge">System.out.println();</code>: <code class="language-plaintext highlighter-rouge">java.io</code> 패키지에 포함된 입출력 작업용 함수. 터미널에 전달받은 문자열 출력.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JavaApp</span><span class="o">{</span>
+		<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">[]){</span> <span class="c1">// 프로그램 시작해 특정작업 수행</span>
+		<span class="c1">// 실행될 프로그램 코드</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"첫번째로 작성한 자바 프로그램"</span><span class="o">);</span>
+		<span class="c1">// print: 첫번째로 작성한 자바 프로그램		</span>
+	<span class="o">}</span> 
+<span class="o">}</span>	
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li>프로그램 실행 방법
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">javac 파일명.java</code>  컴파일</li>
+      <li><code class="language-plaintext highlighter-rouge">java 클래스이름 arg1 arg2 ...</code> 공백으로 매개변수 구분
+        <h3 id="패키지">패키지</h3>
+        <p>자바의 각 폴더는 하나의 패키지로 간주하여 접근할 수 있다.<br>
+<span class="preview-wrapper">
+      <a href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" class="wikilink">JAVA 기본-인터페이스와 커스텀 패키지</a>
+      <iframe class="preview" src='' data-href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 참조</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="자바-변수와-데이터-타입">자바 변수와 데이터 타입</h2>
+<ul>
+  <li><strong>변수는 프로그램에서 메모리 상의 데이터에 접근하기 위한 방법</strong>
+    <ul>
+      <li>변수는 한 가지 유형의 데이터 만을 저장</li>
+    </ul>
+  </li>
+  <li><strong>데이터 타입은 각 변수가 저장 가능한 데이터 유형</strong>.
+    <h3 id="변수">변수</h3>
+  </li>
+  <li>변수 선언은 <strong>데이터를 저장할 메모리 할당 요청 및 데이터 타입을 지정</strong>하는 것.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-2cce20da-25ae-4b0b-a347-2f61c0fd4256">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>변수 할당과 초기화 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li>변수 초기화 : 변수의 초기값을 지정
+    <ul>
+      <li>안하면 0 또는 false(boolean의 경우), null(character의 경우) 등의 기본값으로  자동 초기화</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// [데이터타입명] [변수명]; 형식으로 변수 선언</span>
+<span class="kt">int</span> <span class="kt">var</span><span class="o">;</span> <span class="c1">//변수 선언 선언된 변수에 값을 대입</span>
+<span class="kt">var</span> <span class="o">=</span> <span class="mi">25</span><span class="o">;</span> <span class="c1">// 변수 초기화</span>
+<span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="o">;</span> <span class="c1">// 선언과 초기화를 동시에</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><strong>변수의 값에 따른 변수 종류 구분</strong>
+    <ul>
+      <li><strong>기본형 변수</strong>: 변수가 가르키는 메모리 주소에 값이 존재</li>
+      <li><strong>참조형 변수</strong>: 변수가 가르키는 메모리 주소에 또 다른 메모리 주소가 존재
+        <ul>
+          <li>즉, 값이 아닌 값의 위치를 가르키는 변수</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>변수의 범위에 따른 변수 종류 구분</strong>
+    <ul>
+      <li>변수의 범위는 자신이 속한 범위(블록)을 벗어나면 사용 불가</li>
+      <li><strong>전역 변수(global variable)</strong>
+        <ul>
+          <li>클래스 선언부 밑에 선언된 변수, 여러 메서드에서 공통적으로 사용 가능</li>
+        </ul>
+      </li>
+      <li><strong>지역 변수(local variable)</strong>
+        <ul>
+          <li>메서드 선언부 밑에 선언된 변수, 메서드 매개변수로 선언된 변수, 해당 변수가 선언된 메서드 내에서만 사용 가능</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-816aaf16-7176-45d0-81fd-0201c66f9741">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>자바 식별자와 예약어
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>자바의 변수명, 함수명, 클래스명 등은 자바의 다음과 같은 식별자 규칙에 따라서만 지을 수 있다.</p>
+<ul>
+  <li>알파벳, _(언더스코어), $, 유니코드 문자로만 시작가능</li>
+  <li>특수 문자 사용 불가</li>
+  <li>대소문자를 구별하고 길이에 제한이 없음</li>
+  <li>예약어 포함은 가능하나 단독으로는 불가
+    <ul>
+      <li><strong>예약어</strong> : 데이터 타입이나 프로그램 정의를 위해 선점된 단어(if, class, for etc…)</li>
+    </ul>
+  </li>
+  <li>숫자는 사용가능 하나 첫문자나 단독으로는 사용 불가</li>
+  <li>관례상 클래스 명은 파스칼 케이스, 메서드, 변수 명은 카멜 케이스, 상수는 모두 대문자</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<h3 id="데이터-타입">데이터 타입</h3>
+<p>변수의 데이터 의미를 정확하게 해석하기 위해 사용</p>
+
+<div class="callout callout-example" id="callout-cca04459-1db7-4920-bd5b-67b5e26449c8">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>데이터 타입에 적절한 사용과 오류 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">age</span><span class="o">;</span>  <span class="c1">// 기본형인 int 형의 age 변수 선언 다른 형태 들어가면 오류</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="o">;</span>	<span class="c1">//(O) age 변수에 값 할당, 초기화, 정상 사용</span>
+<span class="n">age</span> <span class="o">=</span> <span class="s">"hello"</span><span class="o">;</span> <span class="c1">//(X) int형이 아닌 값이 들어가므로 오류 발생</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-note" id="callout-e823d0e3-ebb7-471d-95a6-ecab62a1e8cb">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>기본 데이터 타입의 종류
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">bit</code> : 데이터 표현의 가장 기본 단위, 0과 1만 표현 가능</li>
+  <li><code class="language-plaintext highlighter-rouge">byte</code>: 보통 8개 비트 단위</li>
+</ul>
+
+<p>| 표현 형태   | 데이터 타입 | 정의                                                         |<br>
+| ———– | ———– | ———————————————————— |<br>
+| 논리값      | <code class="language-plaintext highlighter-rouge">boolean</code>     | 참(true), 거짓(false)을 나타내는 값, 1bit, <strong>int형 형변환 불가</strong> |<br>
+| 단일 문자   | <code class="language-plaintext highlighter-rouge">char</code>        | 16bit의 유니코드 문자 데이터 2byte unsigned 형, 16비트 유니코드 |<br>
+| 1 <code class="language-plaintext highlighter-rouge">byte</code> 정수  | <code class="language-plaintext highlighter-rouge">byte</code>        | 부호 있는 8bit의 정수, 가장 범위가 좁음                |<br>
+| 2 <code class="language-plaintext highlighter-rouge">byte</code> 정수  | <code class="language-plaintext highlighter-rouge">short</code>       | 부호 있는 16bit의 정수, O : 8진수 표기 Ox: 16진수 표기 접두사 |<br>
+| 4 <code class="language-plaintext highlighter-rouge">byte</code> 정수  | <code class="language-plaintext highlighter-rouge">int</code>         | 부호 있는 32bit의 정수, 기본 default 형,                |<br>
+| 8 <code class="language-plaintext highlighter-rouge">byte</code> 정수  | <code class="language-plaintext highlighter-rouge">long</code>        | 부호 있는 64bit의 정수, 가장 범위가 넓음, 접미사 L, l로 사용 가능 |<br>
+| 실수        | <code class="language-plaintext highlighter-rouge">float</code>       | 부호 있는 32bit의 부동소수점 실수, 4byte , 접미사 f, 또는 F,  e로 지수 표현 |<br>
+| 접미사 <code class="language-plaintext highlighter-rouge">D</code>, <code class="language-plaintext highlighter-rouge">d</code> | <code class="language-plaintext highlighter-rouge">double</code>      | 부호 있는 64bit의 부동소수점 실수, 8byte 기본형 10.0 == double 형 |</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">String</code> 형은 class 형으로 존재함</li>
+  <li>모든 정수형들(<code class="language-plaintext highlighter-rouge">byte</code>, <code class="language-plaintext highlighter-rouge">short</code>, <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">long</code>)은 첫번째 비트가 부호 비트이다. (2의 보수법)</li>
+  <li>데이터 타입의 범위 초과시 컴파일시 오류 발생, 또는 연산 결과값이 이상해짐</li>
+</ul>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-note" id="callout-4dce16a8-7b46-43b4-b236-08648c9dd48b">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>자바의 특수문자
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>자바 문자열에 특별한 특수문자를 쓰고 싶으면 아래 문자를 사용하면 된다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>특수문자</th>
+      <th>의미</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\n</code></td>
+      <td>새 줄</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\t</code></td>
+      <td>탭</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\b</code></td>
+      <td>backspace</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\r</code></td>
+      <td>carriage return (줄 덮어쓰기)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\f</code></td>
+      <td>form feed</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\\</code></td>
+      <td>backslach itself</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\'</code></td>
+      <td>single quote 따옴표</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\''</code></td>
+      <td>큰따옴표</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+    </div>
+    </div>
+<h3 id="형-변환-Type-Casting">형 변환(Type Casting)</h3>
+<ul>
+  <li>
+    <p>변수의 타입을 다른 타입으로 변경하는 것</p>
+  </li>
+  <li>
+    <p>형변환 연산자의 사용 여부로 구분 가능한 두가지 방법으로 나뉜다.</p>
+    <ul>
+      <li><strong>형변환 연산자</strong>: 형 변환시 변환하려는 데이터 타입을 묶는 괄호</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>묵시적 형변환(promotion)</strong></p>
+<ul>
+  <li>변환 시 데이터 손실 없는 경우 형변환 연사자 없이 자동 캐스팅</li>
+  <li>작은 데이터 타입에서 큰 타입으로, 자식 타입이 부모 타입으로 등</li>
+</ul>
+
+<div class="callout callout-example" id="callout-7f5f3f46-657c-436b-a675-fc56c052fbd9">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>묵시적 형변환 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>데이터 타입의 크기와 관계를 잘알아야 한다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="o">;</span> <span class="c1">// char 형을 묵시적 형변환 하면 유니코드 값이 나옴</span>
+<span class="kt">double</span> <span class="n">avgAge</span><span class="o">=</span> <span class="n">age</span><span class="o">;</span> <span class="c1">// double avagAGe = (double) age 와 같음</span>
+<span class="c1">// 4 byte -&gt; 8 byte 임으로 가능</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p><strong>명시적 형변환(demotion)</strong></p>
+<ul>
+  <li>데이터 손실 우려가 있을 경우, 형변환 연산자로 타입을 명시하여 선언</li>
+  <li>더 작은 크기의 데이터 타입으로 변환되는 경우</li>
+</ul>
+
+<div class="callout callout-example" id="callout-6a8074d8-e0c8-4ee1-a121-3a53b6c7961f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>명시적 형변환 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="n">avgAge</span> <span class="o">=</span> <span class="mf">24.56</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">avgAge</span><span class="o">;</span> <span class="c1">// 데이터 타입이 축소되도 변환된 후에도 해당 값을 표현할 수 있어야 함 안그러면 다른 값이 나옴</span>
+<span class="c1">//age 값은 24</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%EC%96%B8%EC%96%B4%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EA%B8%B0%EB%B3%B8%20%EB%AC%B8%EB%B2%95.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/PL/JAVA/JAVA 기본/자바 문법/JAVA 기본-자바 언어 구조와 기본 문법.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

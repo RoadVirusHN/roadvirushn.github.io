@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>스페이스 인베이더-세계 설계 예시 프로젝트 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="스페이스 인베이더-세계 설계 예시 프로젝트" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%20%EC%9D%B8%EB%B2%A0%EC%9D%B4%EB%8D%94-%EC%84%B8%EA%B3%84%20%EC%84%A4%EA%B3%84%20%EC%98%88%EC%8B%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%20%EC%9D%B8%EB%B2%A0%EC%9D%B4%EB%8D%94-%EC%84%B8%EA%B3%84%20%EC%84%A4%EA%B3%84%20%EC%98%88%EC%8B%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-19T18:44:27+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="스페이스 인베이더-세계 설계 예시 프로젝트" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-19T18:44:27+09:00","datePublished":"2023-01-19T18:44:27+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"스페이스 인베이더-세계 설계 예시 프로젝트","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%20%EC%9D%B8%EB%B2%A0%EC%9D%B4%EB%8D%94-%EC%84%B8%EA%B3%84%20%EC%84%A4%EA%B3%84%20%EC%98%88%EC%8B%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html"},"url":"http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%20%EC%9D%B8%EB%B2%A0%EC%9D%B4%EB%8D%94-%EC%84%B8%EA%B3%84%20%EC%84%A4%EA%B3%84%20%EC%98%88%EC%8B%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">스페이스 인베이더-세계 설계 예시 프로젝트</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-01-19T18:44:27+09:00" itemprop="datePublished">Jan 19, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#시연">시연</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#목표">목표</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#코드-김-주의">코드(김 주의)</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#소감">소감</a><ul></ul></li></ol>
+<h1 id="어떻게-코딩할-것인가-세계-설계-예시-프로젝트">어떻게 코딩할 것인가-세계 설계 예시 프로젝트</h1>
+
+<div class="callout callout-quote" id="callout-8308e9b3-60c0-4a0c-a0c8-c3ec41e50767">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>quote</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>Edx 강의 <span class='link-warning'>
+      <a href="https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home" class="wikilink externallink"><em>How to Code</em></a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://learning.edx.org/cours..."</em>로
+        <button onclick="window.open('https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home','_blank'); return false;">이동</button>?
+      </span>
+    </span> 시리즈를 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<h2 id="시연">시연</h2>
+
+<p><img src="/assets/img/스페이스 인베이더-세계 설계 예시 프로젝트/spaceinvader.gif" alt=""></p>
+
+<h2 id="목표">목표</h2>
+<p>간단한 <span class='link-warning'>
+      <a href="https://www.pacxon4u.com/space-invaders/" class="wikilink externallink">스페이스 인베이터 형식</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.pacxon4u.com/space..."</em>로
+        <button onclick="window.open('https://www.pacxon4u.com/space-invaders/','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 게임을 만드는 프로젝트였다.<br>
+완벽한 게임을 만드는 것은 아니며 기초적인 기능만 몇개 구현하도록 되어있다.<br>
+자세한 명세는 해당 <span class='link-warning'>
+      <a href="https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home" class="wikilink externallink"><em>How to Code</em></a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://learning.edx.org/cours..."</em>로
+        <button onclick="window.open('https://learning.edx.org/course/course-v1:UBCx+HtC1x+2T2017/home','_blank'); return false;">이동</button>?
+      </span>
+    </span>에서 확인할 수 있다.</p>
+
+<h2 id="코드-김-주의">코드(김 주의)</h2>
+<ul>
+  <li>혼자서 BSL로 Dr.Racket 에디터에서 작성됨(2023.01.19)</li>
+  <li>대략 600줄, 상수부터 데이터, 함수, 세계 설계까지 전부 포함</li>
+  <li>104 개의 테스트 코드 작성</li>
+  <li>28 개의 함수 작성</li>
+</ul>
+
+<div class="callout callout-example" id="callout-b5fccbc9-48c1-49c0-bc69-d26cd4083acb">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>간단한 SPACE INVADER
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<pre><code class="language-BSL">(require 2htdp/universe)
+(require 2htdp/image)
+
+;; Space Invaders
+
+;; Constants:
+
+(define WIDTH  300)
+(define HEIGHT 500)
+
+(define INVADER-X-SPEED 1.5)  ;speeds (not velocities) in pixels per tick
+(define INVADER-Y-SPEED 1.5)
+(define TANK-SPEED 2)
+(define MISSILE-SPEED 10)
+
+(define HIT-RANGE 10)
+
+(define INVADE-RATE 100)
+
+(define BACKGROUND (place-image (above (text "ROADVIRUSHN'S" 24 "lightgreen") (text "HTC 1 Final PJT" 24 "lightgreen") (text "space = shot" 20 "gray") (text " left, right = move" 20 "gray")) (/ WIDTH 2) 100 (empty-scene WIDTH HEIGHT)))
+
+(define INVADER
+  (overlay/xy (ellipse 10 15 "outline" "blue")              ;cockpit cover
+              -5 6
+              (ellipse 20 10 "solid"   "blue")))            ;saucer
+
+(define TANK
+  (overlay/xy (overlay (ellipse 28 8 "solid" "black")       ;tread center
+                       (ellipse 30 10 "solid" "green"))     ;tread outline
+              5 -14
+              (above (rectangle 5 10 "solid" "black")       ;gun
+                     (rectangle 20 10 "solid" "black"))))   ;main body
+
+(define TANK-HEIGHT/2 (/ (image-height TANK) 2))
+
+(define MISSILE (ellipse 5 15 "solid" "red"))
+
+(define TICK-PER-SEC 28)
+
+;; Data Definitions:
+
+(define-struct game (invaders missiles tank time))
+;; Game is (make-game  (listof Invader) (listof Missile) Tank Number)
+;; interp. the current state of a space invaders game
+;;         with the current invaders, missiles, tank position, and current time.
+
+;; Game constants defined below Missile data definition
+
+#;
+(define (fn-for-game s)
+  (... (game-time s)
+       (fn-for-loinvader (game-invaders s))
+       (fn-for-lom (game-missiles s))
+       (fn-for-tank (game-tank s))))
+
+;; Template rules used:
+;;  - compound :4 field
+;;    - atomic non-distinct: time(Natural)
+;;    - reference: invaders field is listof Invader
+;;    - reference: missiles field is listof Missile
+;;    - reference: tank field is Tank
+
+(define-struct tank (x dir))
+;; Tank is (make-tank Number Integer[-1, 1])
+;; interp. the tank location is x, HEIGHT - TANK-HEIGHT/2 in screen coordinates
+;;         the tank moves TANK-SPEED pixels per clock tick left if dir -1, right if dir 1
+
+(define T0 (make-tank (/ WIDTH 2) 1))   ;center going right
+(define T1 (make-tank 50 1))            ;going right
+(define T2 (make-tank 50 -1))           ;going left
+(define T4 (make-tank (/ WIDTH 2) 0))   ;idle
+
+#;
+(define (fn-for-tank t)
+  (... (tank-x t) (tank-dir t)))
+
+;; Template rules used:
+;;  - compound :2 field
+;;    - atomic non-distinct: x(Natural)
+;;    - atomic non-distinct: dir(Natural)
+
+(define-struct invader (x y dir))
+;; Invader is (make-invader Number Number Number[-1,1]))
+;; interp. the invader is at (x, y) in screen coordinates
+;;         the invader along x by (dir * INVADER-X-SPEED) pixels per clock tick
+
+(define I1 (make-invader 150 100 1))           ;not landed, moving right
+(define I2 (make-invader 150 HEIGHT -1))       ;exactly landed, moving left
+(define I3 (make-invader 150 (+ HEIGHT 10) 1)) ;&gt; landed, moving right
+(define I4 (make-invader (/ WIDTH 2) 0 1))
+
+#;
+(define (fn-for-invader invader)
+  (... (invader-x invader) (invader-y invader) (invader-dx invader)))
+
+(define-struct missile (x y))
+;; Missile is (make-missile Number Number)
+;; interp. the missile's location is x y in screen coordinates
+
+(define M1 (make-missile 150 300))                       ;not hit I1
+(define M2 (make-missile (invader-x I1) (+ (invader-y I1) 10)))  ;exactly hit I1
+(define M3 (make-missile (invader-x I1) (+ (invader-y I1)  5)))  ;&gt; hit I1
+
+#;
+(define (fn-for-missile m)
+  (... (missile-x m) (missile-y m)))
+
+(define G0 (make-game empty empty T0 0))
+(define G1 (make-game empty empty T1 0))
+(define G2 (make-game (list I1) (list M1) T1 0))
+(define G3 (make-game (list I1 I2) (list M1 M2) T1 0))
+(define G4 (make-game empty empty T4 0))
+
+; ==================================
+; World:
+
+;; game -&gt; game
+;; start the world with (main G4)
+;; 
+(define (main game)
+  (big-bang game                   ; game
+    (on-tick   tock-game)     ; game -&gt; game
+    (to-draw   render-game)   ; game -&gt; Image
+    (on-key    key-game)))    ; game KeyEvent -&gt; game
+
+;; tock-game
+;; game -&gt; game
+;; produce the next game status.
+;; Add single Invader every 5 secs = 140 tick.
+;; Add two Invaders every  15 secs = 420 tick.
+
+; (define (tock-game game) (make-game empty empty (make-tank (/ WIDTH 2) 0) 0)) ; stub
+
+(check-expect (tock-game (make-game empty empty (make-tank (/ WIDTH 2) 0) 0)) (make-game empty empty (make-tank (/ WIDTH 2) 0) 1))
+(check-expect (tock-game (make-game empty empty (make-tank (/ WIDTH 2) 0) 140))  (make-game (cons (make-invader (/ WIDTH 2) 0 1) empty) empty (make-tank (/ WIDTH 2) 0) 141))
+(check-expect (tock-game (make-game (cons (make-invader (/ WIDTH 2) 0 1) empty) empty (make-tank (/ WIDTH 2) 0) 141))  (make-game (cons (make-invader (+ (/ WIDTH 2) INVADER-X-SPEED) INVADER-Y-SPEED 1) empty) empty (make-tank (/ WIDTH 2) 0) 142))
+
+;; &lt;Template from game&gt;
+(define (tock-game s)
+  (make-game 
+   (next-invader s)
+   (next-missile s)
+   (next-tank (game-tank s))
+   (next-game-time (game-time s))))
+
+;; next-game-time
+;; number -&gt; number
+;; get next game time
+(define (next-game-time s) (+ s 1))
+(check-expect (next-game-time 0) 1)
+
+;; next-tank
+;; Tank -&gt; Tank
+;; get next Tank status
+; (define (next-tank t) (make-tank (/ WIDTH 2) 0)) ;stub
+;; Tests:
+(check-expect (next-tank (make-tank (/ WIDTH 2) 0)) (make-tank (/ WIDTH 2) 0)) ; no move
+(check-expect (next-tank (make-tank (/ WIDTH 2) 1)) (make-tank (+ (/ WIDTH 2) (* TANK-SPEED 1)) 1)) ; right
+(check-expect (next-tank (make-tank (/ WIDTH 2) -1)) (make-tank (+ (/ WIDTH 2) (* TANK-SPEED -1)) -1)) ; left
+(check-expect (next-tank (make-tank 0 -1)) (make-tank 0 0)) ; left when left edge
+(check-expect (next-tank (make-tank WIDTH 1)) (make-tank WIDTH 0)) ; right when right edge
+(check-expect (next-tank (make-tank 0 1)) (make-tank (+ 0 (* TANK-SPEED 1)) 1)) ; right when left edge
+(check-expect (next-tank (make-tank WIDTH -1)) (make-tank (+ WIDTH (* TANK-SPEED -1)) -1)) ; left when right edge
+
+;; &lt;Template from Tank&gt;
+(define (next-tank t)
+  (cond [(over-x-edge? (next-tank-pos (tank-x t) (tank-dir t))) (make-tank (tank-x t) 0)]
+        [else (make-tank (next-tank-pos (tank-x t) (tank-dir t)) (tank-dir t))]))
+
+;; next-tank-pos
+;; number number -&gt; number
+;; get next tank position
+; (define (next-tank-pos x t) x) ;stub
+;; Tests:
+(check-expect (next-tank-pos (/ WIDTH 2) 0) (/ WIDTH 2))
+(check-expect (next-tank-pos (/ WIDTH 2) 1) (+ TANK-SPEED (/ WIDTH 2)))
+(check-expect (next-tank-pos (/ WIDTH 2) -1) (+ (* TANK-SPEED -1) (/ WIDTH 2)))
+
+(define (next-tank-pos x t)
+  (+ (* TANK-SPEED t) x))
+;; Template rules used:
+;; - compound: 2 fields
+;;  - atomic nondistinct : x
+;;  - atomic nondistinct : d
+
+;; over-x-edge?
+;; number -&gt; boolean
+;; check if x position is over the edge.
+; (define (over-x-edge? x) false) ; stub
+
+;;Tests:
+(check-expect (over-x-edge? (+ WIDTH 1)) true)
+(check-expect (over-x-edge? (- WIDTH 1)) false)
+(check-expect (over-x-edge? -1) true)
+(check-expect (over-x-edge? 1) false)
+(check-expect (over-x-edge? 0) false)
+(check-expect (over-x-edge? WIDTH) false)
+
+(define (over-x-edge? x) (or (&gt; x WIDTH) (&lt; x 0)))
+;; Template rules used:
+;;  - atomic nondistinct : x
+
+;; next-invader
+;; game -&gt; ListOfInvader
+;; get next invader status from game status.
+;(define (next-invader s) empty); stub
+
+;;Tests:
+(check-expect (next-invader (make-game empty empty (make-tank (/ WIDTH 2) 0) 0)) empty) ;; default
+(check-expect (next-invader (make-game empty empty (make-tank (/ WIDTH 2) 0) 140)) (cons I4 empty)) ;; create first invader
+(check-expect (next-invader (make-game empty empty (make-tank (/ WIDTH 2) 0) 420)) (cons (make-invader (- (/ WIDTH 2) 20) 0 1) (cons (make-invader (+ (/ WIDTH 2) 20) 0 1) empty))) ;; create two invader
+(check-expect (next-invader
+               (make-game (cons I4 empty) empty (make-tank (/ WIDTH 2) 0) 160))
+              (cons (make-invader (+ (/ WIDTH 2) (* INVADER-X-SPEED 1)) (+ 0 INVADER-Y-SPEED) 1) empty)) ;; move invader
+(check-expect (next-invader
+               (make-game (cons (make-invader (+ (/ WIDTH 2) 30) 20 -1) (cons I4 empty)) empty (make-tank (/ WIDTH 2) 0) 160))
+              (cons (make-invader (+ (+ (/ WIDTH 2) 30) (* INVADER-X-SPEED -1) ) (+ 20 INVADER-Y-SPEED) -1) (cons (make-invader (+ (/ WIDTH 2) (* INVADER-X-SPEED 1) ) (+ 0 INVADER-Y-SPEED) 1) empty))) ;; move invaders
+(check-expect (next-invader
+               (make-game (cons (make-invader 0 0 -1) empty) empty (make-tank (/ WIDTH 2) 0) 160))
+              (cons (make-invader (+ 0 (* INVADER-X-SPEED 1)) (+ 0 INVADER-Y-SPEED) 1) empty)) ;; bounce invader to right
+(check-expect (next-invader
+               (make-game (cons (make-invader WIDTH 0 1) empty) empty (make-tank (/ WIDTH 2) 0) 160))
+              (cons (make-invader (+ WIDTH (* INVADER-X-SPEED -1)) (+ 0 INVADER-Y-SPEED) -1) empty)) ;; bounce invader to left
+(check-expect (next-invader
+               (make-game (cons (make-invader (/ WIDTH 2) 50 1) empty) (cons (make-missile (/ WIDTH 2) 50) empty) (make-tank (/ WIDTH 2) 0) 160))
+              empty);; hit invader exactly
+(check-expect (next-invader
+               (make-game (cons (make-invader (/ WIDTH 2) 50 1) empty) (cons (make-missile (/ WIDTH 2) (- 50 HIT-RANGE)) empty) (make-tank (/ WIDTH 2) 0) 160))
+              empty);; hit invader slightly-y
+(check-expect (next-invader
+               (make-game (cons (make-invader (/ WIDTH 2) 50 1) empty) (cons (make-missile (+ (/ WIDTH 2) HIT-RANGE) 50) empty) (make-tank (/ WIDTH 2) 0) 160))
+              empty);; hit invader slightly-x
+
+;; &lt;Template from game&gt;
+(define (next-invader s)
+  (generate-invader
+   (move-invader
+    (destroy-invader
+     (game-invaders s) (game-missiles s)))
+   (game-time s)))
+
+;; destroy-invader
+;; ListOfInvader ListOfMissile -&gt; ListOfInvader
+;; destroy hitted invaders
+; (define (destroy-invader loi lom) empty) ;stub
+;; Tests
+(check-expect (destroy-invader empty empty) empty) ; default
+(check-expect (destroy-invader (cons I4 empty) (cons (make-missile (/ WIDTH 2) 250) empty)) (cons I4 empty)) ; nothing
+(check-expect (destroy-invader (cons I4 empty) (cons (make-missile (/ WIDTH 2) 0) empty)) empty) ; hitted
+(check-expect (destroy-invader (cons I4 empty) (cons (make-missile (/ WIDTH 2) HIT-RANGE) empty)) empty) ; hitted2
+(check-expect (destroy-invader (cons I4 empty) (cons (make-missile (- (/ WIDTH 2) HIT-RANGE) 0) empty)) empty) ; hitted x direction
+
+(define (destroy-invader loi lom)
+  (cond [(or (empty? loi) (empty? lom)) loi]
+        [else (if (check-missile-list-collision lom (first loi))
+                  (destroy-invader (rest loi) lom)
+                  (cons (first loi) (destroy-invader (rest loi) lom)))]))
+;; Template rules used:
+;; - one of: 2 cases
+;;   - empty
+;;   - (cons invader loi)
+;; - reference: check-missile-list-collision
+
+;; check-missile-list-collision
+;; ListOfMissile invader -&gt; boolean
+;; check list of missile hit given invader.
+; (define (check-missile-list-collision lom i) false) ; stub
+;; Tests:
+(check-expect (check-missile-list-collision empty I4) false) ; no missiles
+(check-expect (check-missile-list-collision (cons (make-missile 200 200) empty) I4) false) ; no hit
+(check-expect (check-missile-list-collision (cons (make-missile (/ WIDTH 2) 0) empty) I4) true) ; hit
+
+(define (check-missile-list-collision lom i)
+  (cond [(empty? lom) false]
+        [else (if (check-collision
+                   (missile-x (first lom)) (missile-y (first lom)) (invader-x i) (invader-y i) HIT-RANGE)
+                  true
+                  (check-missile-list-collision (rest lom) i))]))
+;; Template rules used:
+;; - compound: 2 fields
+;;   - one of: 2 cases
+;;     - atomic-distinct: empty
+;;     - (cons missile listOfMissile)
+;;   - invader: 2fields
+;; - self-reference: lom has type ListOfMissile
+
+;; check-collision
+;; number number number number number -&gt; boolean
+;; Check given position x1, y1, x2, y2 are collided within hit range.
+;; (define (check-collision x1 y1 x2 y2 r) false) ; stub
+
+(check-expect (check-collision 0 0 10 10 10) false); out of hit range
+(check-expect (check-collision 0 0 5 5 10) true); collided
+(check-expect (check-collision 0 0 10 0 10) true); edge case
+(check-expect (check-collision 0 0 3 4 5) true); edge case 2
+(check-expect (check-collision 0 0 0 0 1) true)
+
+(define (check-collision x1 y1 x2 y2 r)
+  (if (&gt;= (* r r) (+(*(- x2 x1)(- x2 x1)) (*(- y2 y1)(- y2 y1))))
+      true
+      false))
+
+;; generate-invader
+;; ListOfInvader number -&gt; ListOfInvader
+;; generate invader by time.
+; (define (generate-invader loi t) empty) ;stub
+;;Tests
+(check-expect (generate-invader empty 140) (cons I4 empty)) ;; create first ufo
+(check-expect (generate-invader empty 420) (cons (make-invader (- (/ WIDTH 2) 20) 0 1) (cons (make-invader (+ (/ WIDTH 2) 20) 0 1) empty))) ;; create two ufos
+(check-expect (generate-invader (cons (make-invader (/ WIDTH 2) 100 1) empty) 280) (cons I4 (cons (make-invader (/ WIDTH 2) 100 1) empty))) ;; create duplicate ufo
+(define (generate-invader loi t)
+  (cond [(and (&gt; t 0) (= (modulo t 420) 0)) (cons (make-invader (- (/ WIDTH 2) 20) 0 1) (cons (make-invader (+ (/ WIDTH 2) 20) 0 1) loi))]
+        [(and (&gt; t 0) (= (modulo t 140) 0)) (cons I4 loi)]
+        [else loi]))
+;; Template rules used:
+;; - interval t
+;; - compound: 2cases
+;;   - atomic distinct: empty
+;;   - (cons invader loi)
+;; - self-reference: loi
+
+;; move-invader
+;; ListOfInvader -&gt; ListOfInvader
+;; move all the invader in the invader list.
+;; (define (move-invader loi) empty);stub
+;;Tests:
+(check-expect (move-invader empty) empty)
+(check-expect (move-invader (cons (make-invader (/ WIDTH 2) 50 1) empty)) (cons (make-invader (+ (/ WIDTH 2) (* INVADER-X-SPEED 1)) (+ 50 INVADER-Y-SPEED) 1) empty))  ;; move invader
+(check-expect (move-invader (cons (make-invader (+ 20 (/ WIDTH 2)) 100 -1) (cons (make-invader (/ WIDTH 2) 50 1) empty))) (cons (make-invader (+ (+ 20 (/ WIDTH 2)) (* INVADER-X-SPEED -1)) (+ 100 INVADER-Y-SPEED)-1) (cons (make-invader (+ (/ WIDTH 2) (* INVADER-X-SPEED 1)) (+ 50 INVADER-Y-SPEED) 1) empty)))  ;; move invaders
+(check-expect (move-invader (cons (make-invader 0 50 -1) empty)) (cons (make-invader (+ 0 (* INVADER-X-SPEED 1)) (+ 50 INVADER-Y-SPEED) 1) empty)) ; bounce to right
+(check-expect (move-invader (cons (make-invader WIDTH 50 1) empty)) (cons (make-invader (+ WIDTH (* INVADER-X-SPEED -1)) (+ 50 INVADER-Y-SPEED) -1) empty)) ; bounce to left
+
+;; &lt;Template from move-missile&gt;
+(define (move-invader i)
+  (cond [(empty? i) empty]
+        [(over-x-edge? (next-invader-x-pos (invader-x (first i)) (invader-dir (first i))))
+         (cons (bounce (first i)) (move-invader (rest i)))]
+        [else (cons (make-invader (next-invader-x-pos (invader-x (first i)) (invader-dir (first i))) (+ (invader-y (first i)) INVADER-Y-SPEED) (invader-dir (first i)))
+                    (move-invader (rest i)))]))
+
+;; bounce
+;; invader -&gt; invader
+;; make invader bounce
+; (define (bounce i) i) ;stub
+;; Tests:
+(check-expect (bounce (make-invader 0 0 -1)) (make-invader (+ 0 (* INVADER-X-SPEED 1)) (+ 0 INVADER-Y-SPEED) 1))
+(check-expect (bounce (make-invader WIDTH 0 1)) (make-invader (+ WIDTH (* INVADER-X-SPEED -1)) (+ 0 INVADER-Y-SPEED) -1))
+(check-expect (bounce (make-invader (/ INVADER-X-SPEED 2) 0 -1)) (make-invader (- (* INVADER-X-SPEED 1) (/ INVADER-X-SPEED 2)) (+ 0 INVADER-Y-SPEED) 1))
+(check-expect (bounce (make-invader (- WIDTH (/ INVADER-X-SPEED 2)) 0 1)) (make-invader (- WIDTH (- INVADER-X-SPEED (/ INVADER-X-SPEED 2))) (+ 0 INVADER-Y-SPEED) -1))
+
+(define (bounce i) (make-invader (get-bounced-x (invader-x i)) (+ (invader-y i) INVADER-Y-SPEED) (* (invader-dir i) -1)))
+
+;; get-bounced-x
+;; number -&gt; number
+;; get x position after bounced.
+; (define (get-bounced-x n) n);stub
+;; ASSUME: position number x or WIDTH - x should be less than INVADER-X-SPEED
+;; Tests:
+(check-expect (get-bounced-x 0) INVADER-X-SPEED)
+(check-expect (get-bounced-x WIDTH) (- WIDTH INVADER-X-SPEED))
+(check-expect (get-bounced-x (/ INVADER-X-SPEED 2)) (/ INVADER-X-SPEED 2))
+(check-expect (get-bounced-x (- WIDTH (/ INVADER-X-SPEED 2))) (- WIDTH (/ INVADER-X-SPEED 2)))
+
+(define (get-bounced-x n) (if (&gt; INVADER-X-SPEED n)
+                              (- INVADER-X-SPEED n)
+                              (- WIDTH (- INVADER-X-SPEED (- WIDTH n)))))
+
+;; next-invader-x-pos
+;; number number -&gt; number
+;; get next invader x postion to given direction.
+; (define (next-invader-x-pos x d) x) ;stub
+(define (next-invader-x-pos x d) (+ x (* INVADER-X-SPEED d)))
+;; skip verbose jobs with short func.
+
+;; next-missile
+;; game -&gt; ListOfInvader
+;; get next missile status from game status.
+; (define (next-missile s) empty);stub
+
+;;Tests:
+(check-expect (next-missile (make-game empty empty (make-tank (/ WIDTH 2) 0) 0)) empty) ;; default
+(check-expect (next-missile
+               (make-game empty (cons (make-missile (/ WIDTH 2) 50) empty) (make-tank (/ WIDTH 2) 0) 160))
+              (cons (make-missile (/ WIDTH 2) (- 50 MISSILE-SPEED)) empty));; move missile
+(check-expect (next-missile
+               (make-game empty (cons (make-missile (+ (/ WIDTH 2) 20) 100) (cons (make-missile (/ WIDTH 2) 50) empty)) (make-tank (/ WIDTH 2) 0) 160))
+              (cons (make-missile (+ (/ WIDTH 2) 20) (- 100 MISSILE-SPEED)) (cons (make-missile (/ WIDTH 2) (- 50 MISSILE-SPEED)) empty))) ;; move missles
+(check-expect (next-missile
+               (make-game (cons (make-invader (/ WIDTH 2) 50 1) empty) (cons (make-missile (/ WIDTH 2) 50) empty) (make-tank (/ WIDTH 2) 0) 160))
+              empty);; hit invader exactly
+(check-expect (next-missile
+               (make-game (cons (make-invader (/ WIDTH 2) 50 1) empty) (cons (make-missile (/ WIDTH 2) (- 50 HIT-RANGE)) empty) (make-tank (/ WIDTH 2) 0) 160))
+              empty);; hit invader slightly-y
+(check-expect (next-missile
+               (make-game (cons (make-invader (/ WIDTH 2) 50 1) empty) (cons (make-missile (+ (/ WIDTH 2) HIT-RANGE) 50) empty) (make-tank (/ WIDTH 2) 0) 160))
+              empty);; hit invader slightly-x
+
+;; &lt;Template from next-invader&gt;
+(define (next-missile s)
+  (move-missile
+   (destroy-missile
+    (game-missiles s) (game-invaders s))))
+
+;; destroy-missile
+;; ListOfMissile ListOfInvader -&gt; ListOfMissile
+;; destroy hitted missile
+; (define (destroy-missile loi lom) empty) ;stub
+;; &lt;Tests From destroy-invader&gt;
+(check-expect (destroy-missile empty empty) empty) ; default
+(check-expect (destroy-missile (cons (make-missile (/ WIDTH 2) 250) empty) (cons I4 empty)) (cons (make-missile (/ WIDTH 2) 250) empty)) ; nothing
+(check-expect (destroy-missile (cons (make-missile (/ WIDTH 2) 0) empty) (cons I4 empty)) empty) ; hitted
+(check-expect (destroy-missile (cons (make-missile (/ WIDTH 2) HIT-RANGE) empty) (cons I4 empty)) empty) ; hitted2
+(check-expect (destroy-missile (cons (make-missile (- (/ WIDTH 2) HIT-RANGE) 0) empty) (cons I4 empty)) empty) ; hitted x direction
+
+;; &lt;Template from destroy-missile&gt;
+(define (destroy-missile lom loi)
+  (cond [(or (empty? lom) (empty? loi)) lom]
+        [else (if (check-invader-list-collision loi (first lom))
+                  (destroy-missile (rest lom) loi)
+                  (cons (first lom) (destroy-missile (rest lom) loi)))]))
+
+;; check-invader-list-collision
+;; ListOfInvader Missile -&gt; boolean
+;; check list of Invader hit given Missile.
+; (define (check-invader-list-collision lom i) false) ; stub
+
+;; &lt;Tests From check-missile-list-collision&gt;
+(check-expect (check-invader-list-collision empty (make-missile 200 200)) false) ; no invader
+(check-expect (check-invader-list-collision (cons I4 empty) (make-missile 200 200)) false) ; no hit
+(check-expect (check-invader-list-collision (cons (make-invader 200 190 1) empty) (make-missile 200 200)) true) ; hit
+
+;; &lt;Template from check-missile-list-collision&gt;
+(define (check-invader-list-collision loi m)
+  (cond [(empty? loi) false]
+        [else (if (check-collision (invader-x (first loi)) (invader-y (first loi)) (missile-x m) (missile-y m) HIT-RANGE)
+                  true
+                  (check-invader-list-collision (rest loi) m))]))
+
+;; move-missile
+;; ListOfMissile -&gt; ListOfMissle
+;; move all the missiles in the Missile list.
+; (define (next-missile m) m) ; stub
+;;Tests:
+(check-expect (move-missile empty) empty)
+(check-expect (move-missile (cons (make-missile 0 HEIGHT) empty)) (cons (make-missile 0 (- HEIGHT MISSILE-SPEED)) empty)) 
+(check-expect (move-missile (cons (make-missile 0 0) empty)) empty)
+
+(define (move-missile m)
+  (cond [(empty? m) empty]
+        [(over-y-edge? (next-missile-y-pos (missile-y (first m)))) (move-missile (rest m))] ;; contain help function logic for convinience.
+        [else (cons (make-missile (missile-x (first m)) (next-missile-y-pos (missile-y (first m)))) (move-missile (rest m)))]))
+
+;; over-y-edge?
+;; number -&gt; boolean
+;; check if y position is over the edge.
+; (define (over-y-edge? x) false) ; stub
+
+;;Tests:
+(check-expect (over-y-edge? (+ HEIGHT 1)) true)
+(check-expect (over-y-edge? (- HEIGHT 1)) false)
+(check-expect (over-y-edge? -1) true)
+(check-expect (over-y-edge? 1) false)
+(check-expect (over-y-edge? 0) false)
+(check-expect (over-y-edge? HEIGHT) false)
+
+(define (over-y-edge? y) (or (&gt; y HEIGHT) (&lt; y 0)))
+;; Template rules used:
+;;  - atomic nondistinct : y
+
+;; next-missile-y-pos
+;; number -&gt; number
+;; check if y position is over the edge.
+; (define (over-y-edge? x) false) ; stub
+
+;;Tests:
+(check-expect (next-missile-y-pos 0) (- 0 MISSILE-SPEED))
+(check-expect (next-missile-y-pos HEIGHT) (- HEIGHT MISSILE-SPEED))
+(check-expect (next-missile-y-pos (/ HEIGHT 2)) (- (/ HEIGHT 2) MISSILE-SPEED))
+
+(define (next-missile-y-pos y) (- y MISSILE-SPEED))
+;; Template rules used:
+;;  - atomic nondistinct : y
+
+(define TANK-Y (- HEIGHT 15))
+;; game -&gt; Image
+;; render screen by game status
+; (define (render-game game) BACKGROUND) ; stub
+;; TESTS:
+(check-expect (render-game G0) (place-image TANK (/ WIDTH 2) TANK-Y BACKGROUND)) ;; default
+(check-expect (render-game G1) (place-image TANK 50 TANK-Y BACKGROUND)) ;; moved TANK
+(check-expect (render-game G2) (place-image MISSILE (missile-x M1) (missile-y M1) (place-image INVADER (invader-x I1) (invader-y I1)(place-image TANK 50 TANK-Y BACKGROUND)))) ;; bullet and single invader with tank.
+(check-expect (render-game G3) (place-image MISSILE (missile-x M2) (missile-y M2) (place-image INVADER (invader-x I2) (invader-y I2) (place-image MISSILE (missile-x M1) (missile-y M1)(place-image INVADER (invader-x I1) (invader-y I1)(place-image TANK 50 TANK-Y BACKGROUND)))))) ;; two bullets and two invaders with tank.
+;; &lt;Template from game&gt;
+(define (render-game s)
+  (place-missile
+   (game-missiles s) (place-invader
+                      (game-invaders s) (place-tank
+                                         (game-tank s) BACKGROUND))))
+;; place-invader
+;; ListOfInvader IMG -&gt; IMG
+;; draw invaders in the screen.
+; (define (place-invader loi img) BACKGROUND) ;stub
+;; Tests:
+(check-expect (place-invader empty BACKGROUND) BACKGROUND) ;; nothing
+(check-expect (place-invader (cons I1 empty) BACKGROUND) (place-image INVADER (invader-x I1) (invader-y I1) BACKGROUND)) ;; a invader
+(check-expect (place-invader (cons I2 (cons I1 empty)) BACKGROUND) (place-image INVADER (invader-x I2) (invader-y I2) (place-image INVADER (invader-x I1) (invader-y I1) BACKGROUND))) ;; two invaders
+
+;; Template:
+(define (place-invader loi img)
+  (cond [(empty? loi) img]
+        [else (place-invader (rest loi) (place-image INVADER (invader-x (first loi)) (invader-y (first loi)) img))]))
+;; Template rules used:
+;; - compound:
+;;   - one of two cases:
+;;     - empty
+;;     - (cons invader loi)
+;;   - Image
+
+;; place-missile
+;; ListOfMissile IMG -&gt; IMG
+;; draw missiles in the screen.
+; (define (place-missile loi img) BACKGROUND) ;stub
+;; Tests:
+(check-expect (place-missile empty BACKGROUND) BACKGROUND) ;; nothing
+(check-expect (place-missile (cons M1 empty) BACKGROUND) (place-image MISSILE (missile-x M1) (missile-y M1) BACKGROUND)) ;; a missile
+(check-expect (place-missile (cons M2 (cons M1 empty)) BACKGROUND) (place-image MISSILE (missile-x M2) (missile-y M2) (place-image MISSILE (missile-x M1) (missile-y M1) BACKGROUND))) ;; two missiles
+;; &lt;Template FROM place-invader&gt;
+(define (place-missile lom img)
+  (cond [(empty? lom) img]
+        [else (place-missile (rest lom) (place-image MISSILE (missile-x (first lom)) (missile-y (first lom)) img))]))
+
+;; place-tank
+;; Tank IMG -&gt; IMG
+;; draw tank in the screen.
+;(define (place-tank tank img) BACKGROUND) ;stub
+;; Tests:
+(check-expect (place-tank T0 BACKGROUND) (place-image TANK (tank-x T0) TANK-Y BACKGROUND)) ;; a tank
+(check-expect (place-tank T1 BACKGROUND) (place-image TANK (tank-x T1) TANK-Y BACKGROUND)) ;; tank moved
+;; &lt;Template FROM place-invader&gt;
+(define (place-tank tank img)
+  (place-image TANK (tank-x tank) TANK-Y img))
+
+;; game e -&gt; game
+;; produce the new game status when key inputted. 
+; (define (key-game game e) G0) ; stub
+;; Tests:
+(check-expect (key-game G0 "e") (make-game empty empty (game-tank G0) 0)) ; nothing changed
+(check-expect (key-game G0 " ") (make-game empty (cons (make-missile (tank-x (game-tank G0)) TANK-Y) empty) (game-tank G0) 0)) ; shoot once
+(check-expect (key-game G0 "left") (make-game empty empty (make-tank (tank-x (game-tank G0)) -1) 0)) ; go left
+(check-expect (key-game G0 "right") (make-game empty empty (make-tank (tank-x (game-tank G0)) 1) 0)) ; go right
+;; &lt;Template from handle-key&gt;
+(define (key-game g e)
+  (cond [(key=? e " ") (shot g)]
+        [(key=? e "left") (go-left g)]
+        [(key=? e "right") (go-right g)]
+        [else g]))
+
+;; shot
+;; game -&gt; game
+;; Create missile at the tank position.
+;(define (shot g) g) ;stub
+;; Tests :
+(check-expect (shot G0) (make-game empty (cons (make-missile (tank-x (game-tank G0)) TANK-Y) empty) (game-tank G0) 0))
+
+;;&lt;Template from game&gt;
+(define (shot g)
+  (make-game (game-invaders g) (cons (make-missile (tank-x (game-tank g)) TANK-Y) (game-missiles g)) (game-tank g) (game-time g)))
+
+;; go-left
+;; game -&gt; game
+;; make tank go left, change direction to left.
+;(define (go-left g) g) ;stub
+;; Tests : 
+(check-expect (go-left G0) (make-game empty empty (make-tank (tank-x (game-tank G0)) -1) 0)) ; go left
+
+;;&lt;Template from game&gt;
+(define (go-left g)
+  (make-game (game-invaders g) (game-missiles g) (make-tank (tank-x (game-tank g)) -1) (game-time g)))
+
+;; go-right
+;; game -&gt; game
+;; make tank go right, change direction to right.
+;(define (go-right g) g) ;stub
+;; Tests : 
+(check-expect (go-right G0) (make-game empty empty (make-tank (tank-x (game-tank G0)) 1) 0)) ; go right
+;;&lt;Template from game&gt;
+(define (go-right g)
+  (make-game (game-invaders g) (game-missiles g) (make-tank (tank-x (game-tank g)) 1) (game-time g)))
+
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<h2 id="소감">소감</h2>
+<ul>
+  <li><strong>강의에서 배운 설계법을 엄격히 지키면서 진행</strong>했다. 처음에는 어색했지만 이윽고 함수 설계와 테스트 설계에 아주 익숙해졌다.</li>
+  <li><strong>설계와 TDD의 위력을 알 수 있었다.</strong> 버그가 극도로 적고, 문서화가 동시에 진행됬으며, 프로그램에 대한 설계가 눈에 쉽게 들어왔다.
+    <ul>
+      <li>모든 함수의 테스트를 완전히 지키며 코딩하였더니, 마지막으로 이들을 조립하여 완벽한 프로그램을 완성한 뒤의 디버깅은 단 하나의 버그, 30초만에 해결됬다.</li>
+      <li>원래 였다면 수많은 버그들의 시너지로 우왕좌왕했을 것이다.</li>
+    </ul>
+  </li>
+  <li><strong>현세대의 프로그래밍 언어와 IDE가 너무나도 그리웠다.</strong>
+    <ul>
+      <li>비직관적이고 생소한 BSL
+        <ul>
+          <li>덧셈 조차 전위 방식으로 짜야 했다. (ex) 1 + 2 (X), (+ 1 2) (O))</li>
+          <li>함수 내에 변수 할당 및 재활용 없음</li>
+          <li>랜덤한 요소가 있는 함수는 어떻게 테스팅해야하는가?</li>
+        </ul>
+      </li>
+      <li>별 기능을 지원하지 않는 Dr.Racket
+        <ul>
+          <li>AutoComplete 기능 없음</li>
+          <li>함수 참조 확인 기능 없음</li>
+          <li>패키지 분할은 적어도, 이번 프로젝트에서 사용하지 않게 막아놔서 한 파일에 전부 작성</li>
+          <li>버그 표시 및 오타 지정, 사용하지 않는 상수 등의 표시 없음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>기존의 <strong>게임 엔진들의 기초적인 기능</strong>들이 얼마나 좋은 기능인지 알 수 있었다.
+    <ul>
+      <li>랜더링부터 스프라이트 충돌 설정까지 제로부터 전부 직접 구현해야 했다.</li>
+      <li>물론, 덕분에 아주 뿌듯했다.</li>
+    </ul>
+  </li>
+  <li>넉넉하게 10~12시간 정도 걸린것 같은데, 좀더 숙달되고, 좋은 IDE와 현세대 프로그래밍 언어로 구현하면 절반 이하로도 구현할 수 있을 것 같다.
+    <ul>
+      <li>하지만 만약, 내가 이 정도의 프로그램을 기존처럼 설계없이 코드했다면 두배의 시간이 들었을 것 같다.</li>
+    </ul>
+  </li>
+  <li>앞으로 알고리즘 문제나 다른 경우에도 이 설계법을 도입하고 싶고, 다음 강의가 너무 기대된다.</li>
+</ul>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/OSSU/PL/HowToCode/%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%20%EC%9D%B8%EB%B2%A0%EC%9D%B4%EB%8D%94-%EC%84%B8%EA%B3%84%20%EC%84%A4%EA%B3%84%20%EC%98%88%EC%8B%9C%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OSSU/PL/HowToCode/스페이스 인베이더-세계 설계 예시 프로젝트.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

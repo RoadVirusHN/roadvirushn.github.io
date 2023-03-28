@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>JAVA 기본-java util 패키지 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="JAVA 기본-java util 패키지" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20util%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20util%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-01T15:52:06+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JAVA 기본-java util 패키지" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-01T15:52:06+09:00","datePublished":"2023-02-01T15:52:06+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"JAVA 기본-java util 패키지","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20util%20%ED%8C%A8%ED%82%A4%EC%A7%80.html"},"url":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20util%20%ED%8C%A8%ED%82%A4%EC%A7%80.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">JAVA 기본-java util 패키지</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-02-01T15:52:06+09:00" itemprop="datePublished">Feb 1, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#java-util">java.util</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#java-util-개요-및-Utility-클래스">java.util 개요 및 Utility 클래스</a><ul></ul></li></ul></li></ol>
+<h1 id="java-util-패키지">java.util 패키지</h1>
+
+<h2 id="java-util">java.util</h2>
+<h3 id="java-util-개요-및-Utility-클래스">java.util 개요 및 Utility 클래스</h3>
+<h4 id="java-util-패키지-개요">java.util 패키지 개요</h4>
+<ul>
+  <li>자바프로그램을 개발할 대 유용한 기능들을 모아놓은 패키지</li>
+  <li>Date, Calendar : 날짜와 시간 표현 및 조작, Vector, HashMap : 배열, Formatter, -다양한 형태의 출력 포맷, Enumeration 인터페이스</li>
+  <li>반복적으로 작성해야하는 복잡한 코드를 간단하게 구현 가능 (java.util.Arrays : 정렬 하는데 사용)
+    <blockquote>
+      <p>java.util.Arrays 클래스 예시<br>
+```Java<br>
+import java.util.Arrays; // import하여 java.util.Arrays 패키지를 가져옴</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>public class ArraysTest{<br>
+	public static void main(String[] args){<br>
+		int[] scoreList = {87, 56, 79, 98, 34, 55, 76};<br>
+		Arrays.sort(scoreList); // 알고리즘 사용하지 않고 데이터 정렬<br>
+		for (int i = 0; i &amp;#60; scoreList.length; i++){<br>
+			system.out.print(scoreList[i] + ", ");<br>
+		}<br>
+		System.out.println("");<br>
+		System.out.println("최저점 : " + scoreList[0]);<br>
+		System.out.println("최고점 : " + scoreList[6]);<br>
+	}<br>
+}<br>
+/* 실행 결과 : <br>
+34, 55, 56, 76, 79, 87, 98,<br>
+최저점 : 34<br>
+최고점 : 98<br>
+*/</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#### 날짜 관련 클래스
+1) Date 클래스
+- 형식이 있는 날짜와 시간을 출력하는 클래스임
+- JDK의 버전이 향상되면서 Deprecate 메서듣들도 많아짐,
+
+| Date(Long msec)      | 1970년 1월 1일 0시 0분 0초부터 msec를 1/1000초 단위로 하여 경과한 날짜와 시간을 저장한 객체를 생성함 |
+
+&gt; Date 클래스의 주요 메소드
+
+| Date 클래스의 메소드            | 설명                                                         |
+| ------------------------------- | ------------------------------------------------------------ |
+| boolean after(Date when)        | when의 날짜가 현재 날짜 이후면 true, 아니면 false를 반환함   |
+| boolean before(Date when)       | when의 날짜가 현재 날짜 이전이면 true, 아니면 false를 반환함 |
+| int compareTo(Date anotherDate) | 다른 날짜 객체와 비교하여 음수, 양수, 0의 결과를 반환함      |
+| int compareTo(Object o)         | 다른 객체와 비교하여 음수, 양수, 0의 결과를 반환함           |
+| boolean equals(Object obj)      | 날짜의 값을 비교하여 그 결과를 반환함                        |
+| long getTime()                  | 1970년 1월 1일 0시 0분 0초로부터의 시간을 1/1000초 단위로 반환함(두개를 구하고 빼면 걸린시간을 구할 수 있음) |
+| id setTime(long time)           | time의 시간을 1970년 1월 1일 0시 0분 0초로부터의 시간을 1/1000초 단위로 설정함 |
+| String toLocaleString()         | 현재의 날짜와 시간을 해당 국가에 맞는 문자열로 변환하여 리턴함 |
+
+&gt; Date 객체를 이용한 프로그램의 실행 시간 체크 (DateTest.java)
+
+```Java
+import java.util.Date;
+
+public class DateTest &amp;#123;
+	public static void main(String[] args)&amp;#123;
+		Date currentDate = new Date(); // 현재 시스템이 설정된 날짜와 시간 정보를 객체로 생성함
+		long start = currentDate.getTime();
+// Date 객체로부터 1970년 1월 1일 0시 0분 0초로부터의 시간으로 환산되어 리턴됨
+		System.out.println(currentDate.toString());// 출력
+		System.out.println(currentDate.toLocaleString());//locale에 맞게 변환하여 출력		
+		currentDate = new Date();
+		long end = currentDate.getTime();
+		System.out.println(&amp;#34;프로그램 수행에 걸린 시간 : &amp;#34; + (end - start) + &amp;#34;(ms)초&amp;#34;) // 현재 시스템에 설정된 날짜와 시간 정보를 객체로 생성함
+	&amp;#125;
+&amp;#125;
+
+</code></pre></div></div>
+<p>2) Calendar 클래스</p>
+<ul>
+  <li>Date 클래스처럼 날짜와 시간에 관한 정보를 출력할 때 사용</li>
+  <li>추상클래스이므로 직접 객체를 만들수 없고 getInstance() 메서드를 이용해 객체 생성 가능
+    <blockquote>
+      <p>구문<br>
+```Java<br>
+Calendar cal2 = Calendar.getInstance(); //Calendar 클래스를 상속한 클래스의 객체 생성</p>
+    </blockquote>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 캘린터 객체는 날짜와 시간표현을 위해 다양한 상수를 제공
+- ex) int 데이터 타입 : static int AM, static int MONTH, static int HOUR_OF_DAY, 등
+&gt; Calendar 클래스의 메소드들
+
+| Calendar 클래스의 메서드                                     | 설명                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| boolean after(Object when)                                   | when과 비교하여 현재 날짜 이후이면 true, 아니면 false를 반환함 |
+| Date getTime()                                               | 현재의 객체를 Date 객체로 변환함                             |
+| long getTimeInMillis()                                       | 객체를 시간을 1/1000초 단위로 변경하여 반환함                |
+| void set(int year, int month, int date, int hour, int minute) | 현재 객체의 년, 월, 일, 시, 분, 값을 다른 값으로 설정        |
+| 기타 등등 이 있다                                            |                                                              |
+
+&gt;  Calendar 클래스의 객체 생성 (CalendarTest.java)
+
+```Java
+import java.util.Calendar;
+
+public class CalendarTest &amp;#123;
+	public static void main(String[] args)&amp;#123;
+		Calendar cal = Calendar.getInstance(); // 현재 시스템의 날짜와 시간 정보를 객체로 생성함
+		int year = cal.get(Calendar.YEAR);
+		int mon = cal.get(Calendar.MONTH) + 1;
+		int day = cal.get(Calendar.DAY_OF_MONTH);
+		int hour = cal.get(Calendar.HOUR_OF_DAY);
+		int min = cal.get(Calendar.MINUTE);
+		int sec = cal.get(Calendar.SECOND);//날짜와 시간 포맷을 나타내는 상수 값들을 이용하여 시간과 날짜 정보를 분리
+		System.out.println(&amp;#34;현재 시간&amp;#34;);
+		System.out.println(year + &amp;#34;년 &amp;#34; + mon + &amp;#34;월 &amp;#34; + day + &amp;#34;일&amp;#34;);
+		System.out.println(hour + &amp;#34;시 &amp;#34; + min + &amp;#34;분 &amp;#34; + sec + &amp;#34;초&amp;#34;);	
+	&amp;#125;
+&amp;#125;
+
+</code></pre></div></div>
+<h4 id="Formatter-클래스">Formatter 클래스</h4>
+<ul>
+  <li>C 언어의 printf()와 같은 기능의 Formatter 클래스를 제공함</li>
+  <li>Formatter 클래스는 형식 문자열을 제공하고, 이 문자열에서 지정한대로 데이터가 형식화되어 출력됨
+    <blockquote>
+      <p>Formatter 클래스 객체 생성 과정<br>
+```JAVA<br>
+Formatter formatter = new Formatter(Appendable a);<br>
+// Formatter에서 형식화된 문자열을 만들었을 때, 결과가 저장되는 곳임<br>
+// Appendable 인터페이스를 구현한 대표적인 클래스인 StringBuffer<br>
+StringBuffer sb = new StringBuffer();<br>
+Formatter formatter = new Formatter(sb);<br>
+// StringBuffer 클래스의 객체에 대해 Formatter를 지정하는 문장<br>
+// Formatter 객체에서 적용한 출력 포맷 결과가 StringBuffer 객체에 저장됨</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>formatter format(String format, Object… obj) // 포멧 메서드 형태<br>
+// 몇 개의 데이터를 형식화된 출력으로 지정할 것인지 사전에 확정할 수 없기 때문에 가변적 매개변수를 사용함<br>
+// String 타입의 format 문자열은 출력하고자 하는 문자열 형태로 지정하고, 중간에 %로 시작하는 format을 지정함<br>
+// format 문자열 Object 타입의 가변형 매개변수 개수와 동일해야 함</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Formatter에 사용하는 format들(%d, %s...) 에는 다양한 형식과 타입을 지원함
+- Date나 Calendar 클래스를 매개변수로 받아 날짜를 출력하는 %t format에는 부가적인 옵션이 붙음
+&gt; 데이터 타입별 format
+
+| format | 설명                                                         |
+| ------ | ------------------------------------------------------------ |
+| %B, %b | 논리형 데이터에 사용, %b는 소문자로, %B는 대문자로 true, false 출력 |
+| %C, %c | 문자형 데이터에 사용, 사용 가능한 데이터는 Byte, Short, Character, Integer 등 문자표현 가능, Wrapper 클래스 |
+| %d     | 10진수 정수형 데이터에 사용, 사용가능한 데이터는 Byte, Short, Integer, Long. BigInteger 등 정수표현 가능, Wrapper 클래스 |
+| %e     | 10진수 지수형 데이터에 사용, 사용 가능한 데이터는 Float, Double, BigDecimal 등 지수 표현 가능 Wrapper 클래스 |
+| %f     | 일반적인 실수형 데이터에 사용, 사용 가능한 데이터는 Float, Double, BigDecimal 등 실수 표현 가능 Wrapper 클래스 |
+| %x     | 16진수 정수형 데이터에 사용, 사용 가능한 데이터는 Byte, Short, Integer, Long, BigInteger 등 정수 표현 가능 Wrapper 클래스 |
+| %o     | 8진수 정수형 데이터에 사용, 사용 가능한 데이터는 Byte, Short, Integer, Long, BigInteger 등 정수 표현 가능 Wrapper 클래스 |
+| %s     | 객체의 문자열 데이터에 사용, 해당 객체의 toString() 메서드의 결과가 출력 |
+| %t     | 날짜형 데이터에 사용, 별도의 표를 통해 소개하는 부가적인 옵션이 필요하고, Date, Calendar 클래스에 사용 밑의 표 참조 |
+| %n     | 개행 처리에 사용, 대응되는 매개변수 값이 없어도 사용 가능    |
+| %%     | % 문자 출력에 사용, 대응되는 매개변수 값이 없어도 사용 가능  |
+
+
+
+&gt; %t 날짜 foramt
+
+| 날짜 타입 | format                                       |
+| --------- | -------------------------------------------- |
+| %tA       | 요일 출력                                    |
+| %tY       | 4자리 년도 출력                              |
+| %tB       | 월의 이름(영어의 경우 January February) 출력 |
+| %tm       | 01 ~ 12 로 표현하는 월 출력                  |
+| %te       | 1 ~ 31로 표현하는 해당 월의 날짜 출력        |
+| %tk       | 0 ~ 23로 표현하는 시 출력                    |
+| %tl       | 1 ~ 12로 표현하는 시 출력                    |
+| %tM       | 00 ~ 59로 표현하는 분                        |
+| %tS       | 00 ~ 59로 표현하는 초                        |
+| %tZ       | 타임존 출력                                  |
+
+&gt; Formatter 클래스 사용예
+
+```java
+StringBuffer sb = new StringBuffer();
+Formatter formatter = new Formatter(sb);
+Calendar c = Calendar.getInstance();
+
+int i = 10;
+int j = 20;
+int k = i + j;
+// 세 개의 형식화 인자 지정, i, j, k 의 데이터 세 개 필요
+formatter.format(&amp;#34;&amp;#37;d 과 &amp;#37;d 을 더하면 &amp;#37;d 가 됩니다&amp;#34;, i, j, k);
+//시간을 표현한 예제
+// 세 개의 format 지정.
+// 세 개의 데이터 모두 날짜형인 Calendar 타입의 c 대응.
+// 개행 처리 format 값은 필요없으므로 데이터 세 개 필요
+formatter.format(&amp;#34;현재 시간은 &amp;#37;tk : &amp;#37;tM : &amp;#37;tS &amp;#37;n &amp;#34;, c, c, c);
+
+System.out.println(formatter.toString());
+/* 결과 값:
+10과 20을 더하면 30이 됩니다.
+현재 시간은 11시 26분 31초입니다.
+*/
+
+</code></pre></div></div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20util%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/PL/JAVA/JAVA 기본/자바 패키지/JAVA 기본-java util 패키지.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

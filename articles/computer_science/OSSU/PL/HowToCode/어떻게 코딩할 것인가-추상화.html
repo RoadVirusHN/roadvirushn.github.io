@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>어떻게 코딩할 것인가-추상화 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="어떻게 코딩할 것인가-추상화" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%B6%94%EC%83%81%ED%99%94.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%B6%94%EC%83%81%ED%99%94.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-01T18:41:35+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="어떻게 코딩할 것인가-추상화" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-01T18:41:35+09:00","datePublished":"2023-02-01T18:41:35+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"어떻게 코딩할 것인가-추상화","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%B6%94%EC%83%81%ED%99%94.html"},"url":"http://localhost:4000/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%B6%94%EC%83%81%ED%99%94.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">어떻게 코딩할 것인가-추상화</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-02-01T18:41:35+09:00" itemprop="datePublished">Feb 1, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#추상화-설계">추상화 설계</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-추상-함수-정의">1. 추상 함수 정의</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-추상-함수-테스팅-및-해석-작성">2. 추상 함수 테스팅 및 해석 작성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-추상-함수-시그니처-작성">3. 추상 함수 시그니처 작성</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#추상-함수-이용">추상 함수 이용</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-5" href="#함수-템플릿과-고차원-함수를-이용한-틀-함수">함수 템플릿과 고차원 함수를 이용한 틀 함수</a><ul></ul></li></ol>
+<h1 id="어떻게-코딩할-것인가-추상화">어떻게 코딩할 것인가-추상화</h1>
+<p>추상화(Abstraction)은 <strong>반복적인 코드를 리팩토링을 통해 추출하여 간단하고 재사용 가능한 일반적으로 표현된 추상 함수로 바꾸는 기술</strong>이다.</p>
+
+<p>프로그램의 복잡도를 관리하고 기능과 함수의 목적을 더욱 세세하게 나눌 수 있게 해준다.</p>
+
+<h2 id="추상화-설계">추상화 설계</h2>
+
+<p>추상화는 <strong>기존의 함수 설계의 역순으로 따라가는 것이 특징</strong>이다.<br>
+즉, 함수를 먼저 정의하고, 테스트한 뒤, 설명하고, 마지막에 시그니처를 얻어낸다.<br>
+다음은 추상 함수 설계 과정이다.</p>
+
+<h3 id="1-추상-함수-정의">1. 추상 함수 정의</h3>
+
+<div class="callout callout-example" id="callout-bc2cac01-3106-4782-b899-73b2e89db542">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>추상화 1단계 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ol>
+  <li><strong>구조와 기능이 상당히 유사한 두 함수를 찾는다.</strong>
+    <ul>
+      <li>두 함수의 구조와 기능이 상당히 유사하다.</li>
+      <li>테스트, 스텁, 시그니처 등은 생략</li>
+    </ul>
+  </li>
+</ol>
+
+<pre><code class="language-BSL">(define (contains-ubc? los)
+  (cond [(empty? los) false]
+        [else
+         (if (string=? (first los) "UBC")
+             true
+             (contains-ubc? (rest los)))]))
+
+(define (contains-mcgill? los)
+  (cond [(empty? los) false]
+        [else
+         (if (string=? (first los) "McGill")
+             true
+             (contains-mcgill? (rest los)))]))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-13ec59fb-23c0-429f-82a4-1ec9b144b42f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>추상화 2,3단계 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ol>
+  <li><strong>하나의 함수를 복사하여 추상 함수로 삼는다.</strong></li>
+  <li><strong>추상 함수를 더 일반적인 이름으로 바꾼다.</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">contains-ubc?</code>를 복사해 추상함수로 삼는다.</li>
+      <li><code class="language-plaintext highlighter-rouge">contains?</code>로 이름을 바꿈(재귀 부분도 바꿈)</li>
+    </ul>
+  </li>
+</ol>
+
+<pre><code class="language-BSL">(define (contains? los)
+  (cond [(empty? los) false]
+        [else
+         (if (string=? (first los) "UBC")
+             true
+             (contains? (rest los)))]))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-e86f7f84-ef3a-493b-91a3-c8701e44d552">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>추상화 4, 5단계 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ol>
+  <li><strong>함수 간 서로 다른 부분을 추상 함수의 인자로 추가한다.</strong></li>
+  <li><strong>추상 함수의 서로 다른 부분을 함수의 인자로 치환한다.</strong>
+    <ul>
+      <li>두 함수는 “UBC”, “Mcgill” 부분이 다르므로, 이 부분을 인자 s로 치환한다.</li>
+    </ul>
+  </li>
+</ol>
+
+<pre><code class="language-BSL"> (define (contains? s los)
+  (cond [(empty? los) false]
+        [else
+         (if (string=? (first los) s)
+             true
+             (contains? (rest los)))]))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<!-- #@#callout-example#@#추상화 완성 예시#@# -->
+<p>title: 추상화 완성 예시</p>
+
+<ol>
+  <li><strong>완성된 추상 함수로 기존의 두 함수를 교체한다.</strong><br>
+~~~BSL<br>
+(define (contains-ubc? los) (contains? “UBC” los))</li>
+</ol>
+
+<p>(define (contains-mcgill? los) (contains? “McGill” los))</p>
+
+<p>(define (contains? s los)<br>
+  (cond [(empty? los) false]<br>
+        [else<br>
+         (if (string=? (first los) s)<br>
+             true<br>
+             (contains? s (rest los)))]))</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+&lt;!-- @#@-example@#@추상화 완성 예시@#@ --&gt;
+
+#### 고차 함수를 이용한 추상화
+만약 서로 다른 부분이 함수라면 고차 함수를 지원하는 프로그래밍 언어라면 다음과 같이 고차함수로 추상 함수를 만들 수 있다.
+
+&lt;!-- #@#callout-example#@#고차 함수를 이용한 추상화 이전#@# --&gt;
+title: 고차 함수를 이용한 추상화 이전
+
+두 함수는 각각 `sqr`, `sqrt`로 이용하는 함수 부분이 다르다.
+
+고차 함수는 함수를 인자로 받을 수 있으므로 아래처럼 추상화할 수 있음
+~~~BSL
+(define (squares lon)
+  (cond [(empty? lon) empty]
+        [else
+         (cons (sqr (first lon))
+               (squares (rest lon)))]))
+(define (square-roots lon)
+  (cond [(empty? lon) empty]
+        [else
+         (cons (sqrt (first lon))
+               (square-roots (rest lon)))]))
+;;==========================
+;;...After Abstraction.
+;;==========================
+(define (squares lon) (map2 sqr lon))
+
+(define (square-roots lon) (map2 sqrt lon))
+
+(define (map2 fn lon)
+  (cond [(empty? lon) empty]
+        [else
+         (cons (fn (first lon))
+               (map2 fn (rest lon)))]))
+</code></pre></div></div>
+
+<!-- @#@-example@#@고차 함수를 이용한 추상화 이전@#@ -->
+
+<h3 id="2-추상-함수-테스팅-및-해석-작성">2. 추상 함수 테스팅 및 해석 작성</h3>
+
+<p>이 단계는 기존의 테스트와 해석을 재활용하여 아주 쉽게 진행할 수 있다.</p>
+
+<!-- #@#callout-example#@#1단계 예시#@# -->
+<p>title: 1단계 예시</p>
+
+<ol>
+  <li><strong>교체된 두 함수의 테스트들을 가져온다.</strong><br>
+~~~BSL<br>
+;; Tests from squares.<br>
+(check-expect (squares empty) empty)<br>
+(check-expect (squares (list 3 4)) (list 9 16))</li>
+</ol>
+
+<p>;; Tests from square-roots.<br>
+(check-expect (square-roots empty) empty) <br>
+(check-expect (square-roots (list 9 16)) (list 3 4))</p>
+
+<p>(define (map2 fn lon)<br>
+  (cond [(empty? lon) empty]<br>
+        [else<br>
+         (cons (fn (first lon))<br>
+               (map2 fn (rest lon)))]))</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+&lt;!-- @#@-example@#@1단계 예시@#@ --&gt;
+
+
+&lt;!-- #@#callout-example#@#2단계 예시#@# --&gt;
+title: 2단계 예시
+
+2. **테스트 대상 함수를 추상함수로 교체하고, 인자를 추가한다.**
+~~~BSL
+(check-expect (map2 sqr empty) empty)
+(check-expect (map2 sqr (list 3 4)) (list 9 16))
+(check-expect (map2 sqrt empty) empty) 
+(check-expect (map2 sqrt (list 9 16)) (list 3 4))
+</code></pre></div></div>
+
+<!-- @#@-example@#@2단계 예시@#@ -->
+
+<div class="callout callout-example" id="callout-43ac4256-98ae-433f-b83c-6df96507060b">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>3단계 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ol>
+  <li><strong>중복된 테스트, 쓸모없는 테스트는 지우고, 필요한 테스트를 추가한다.</strong>
+    <pre><code class="language-BSL">(check-expect (map2 sqr empty) empty)
+(check-expect (map2 sqr (list 3 4)) (list 9 16))
+; (check-expect (map2 sqrt empty) empty) ; duplicated empty test.
+(check-expect (map2 sqrt (list 9 16)) (list 3 4))
+(check-expect (map2 abs (list 2 -3 4)) (list 2 3 4)) ; add a test for function parameter.
+</code></pre>
+  </li>
+</ol>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-68555c82-e4be-4662-ba45-4615ff4dbc49">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>4단계 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ol>
+  <li><strong>교체된 두 함수의 함수 해석을 가져온다.</strong>
+    <pre><code class="language-BSL">;; produce list of sqr of every number in lon
+;; produce list of sqrt of every number in lon
+</code></pre>
+  </li>
+</ol>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-2e6d8c52-013b-48cf-b9d8-cb1deff226c5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>5단계 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<ol>
+  <li><strong>이를 이용해 추상 함수의 해석을 유도한다.</strong>
+    <pre><code class="language-BSL">;; produce list of sqr of every number in lon
+;; produce list of sqrt of every number in lon
+;; produce (list (fn n0) (fn n1) ...) with given fn and (list n0 n1 ...). 
+</code></pre>
+  </li>
+</ol>
+
+</div>
+    </div>
+    </div>
+<p>기존 함수들의 테스트와 해석으로 부터 힌트를 얻을 수 있지만 속박될 필요없이 더 나은 방법이 있다면 바꾸어도 좋다.</p>
+
+<h3 id="3-추상-함수-시그니처-작성">3. 추상 함수 시그니처 작성</h3>
+
+<p>추상 함수의 시그니처를 작성하는 것은 어려운일일 수 있다.<br>
+완성된 추상 함수를 통해 시그니처를 유추해야 하며, 더 많은 인자, 타입 인자 등이 사용될 수 있기 때문이다.</p>
+
+<div class="callout callout-example" id="callout-37cd1ccf-4bc6-4e0f-958c-26889ef7807e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>1 시그니처 템플릿 유추
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">contains?</code> 함수의 필요인자를 보고 시그니처 템플릿을 유추</p>
+<pre><code class="language-BSL">;; ____ ____ -&gt; ____
+(define (contains? s los) ; Two parameter, output is always one.
+  (cond [(empty? los) false]
+        [else
+         (if (string=? (first los) s)
+             true
+             (contains? s (rest los)))]))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-fda7d4a1-dcf9-4838-af49-c85255e86aba">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>example</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>title:2 결과값 타입 유추<br>
+<code class="language-plaintext highlighter-rouge">contains?</code> 함수의 결과값들이 전부 <code class="language-plaintext highlighter-rouge">true</code> 아니면 <code class="language-plaintext highlighter-rouge">false</code>이므로 <code class="language-plaintext highlighter-rouge">Boolean</code>임을 유추</p>
+<pre><code class="language-BSL">;; ____ ____ -&gt; Boolean
+(define (contains? s los)
+  (cond [(empty? los) false] ; output is false
+        [else
+         (if (string=? (first los) s)
+             true ; output is true
+             (contains? s (rest los)))])) ; output is true or false
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-0734a581-c49c-4597-8499-afcf7a10fbfd">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>3 2번째 인자 유추
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">los</code> 인자에 <code class="language-plaintext highlighter-rouge">first</code>와 <code class="language-plaintext highlighter-rouge">rest</code> 함수가 사용되는 것으로 보아 무언가의 배열임을 유추할 수 있다. 이 무언가를 미지의 타입인자 X로 놓자.</p>
+<pre><code class="language-BSL">;; _____ (listofX) -&gt; Boolean
+(define (contains? s los)
+  (cond [(empty? los) false] 
+        [else
+         (if (string=? (first los) s) ; (first ) -&gt; fn for list
+             true
+             (contains? s (rest los)))]))  ; (rest )-&gt; fn for list
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-c28f26c7-df21-467c-844d-522478a06418">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>4 1번째 인자 유추 및 타입인자 X 유추
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">string=?</code> 함수는 두 인자로 <code class="language-plaintext highlighter-rouge">String</code> 두개를 받으므로 첫번째 인자 <code class="language-plaintext highlighter-rouge">s</code>와 미지의 타입인자 <code class="language-plaintext highlighter-rouge">X</code>는 <code class="language-plaintext highlighter-rouge">String</code>임을 유추할 수 있고, 시그니처가 완성되었다.</p>
+<pre><code class="language-BSL">;; String (listofString) -&gt; Boolean ; Signature Completed!
+(define (contains? s los)
+  (cond [(empty? los) false] 
+        [else
+         (if (string=? (first los) s) ; (string=? String String)
+             true 
+             (contains? s (rest los)))]))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-385f006e-43d5-4cad-83b4-3d7690153a80">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>사실, 이렇게 함수로만 유추하지않고 작성된 테스트들, 기존 함수들의 시그니처와 설명 등을 보고 직감적으로 시그니처를 작성할 수 있겠지만, 복잡하고 중요한 함수의 경우 이러한 과정이 필요할 것이다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<h4 id="타입인자가-사용되는-경우의-시그니처-설계">타입인자가 사용되는 경우의 시그니처 설계</h4>
+<p>추상 함수는 다양한 함수의 공통된 로직을 처리하기 위해 만드므로 아래 예시와 같이 타입과 관계없는 인자가 존재할 수 있다.</p>
+
+<div class="callout callout-note" id="callout-dc9773f6-4773-48e4-aeee-b87b4328dad9">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong>타입 인자?(Type parameter)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>간혹, 함수의 한 인자의 타입이 다양하게 들어올 수 있다.</p>
+
+<p>예를 들어 예시와 같은 함수의 경우, 인자의 타입과 관계없이 처리가 가능한데, 이때 시그니처를 작성하기 위해 미지의 타입을 의미하는 타입 인자를 사용할 수 있다.(X, Y, Z, T… 등의 대문자로 표현)</p>
+<pre><code class="language-BSL">;; given fn and (list n0 n1 ...) produce (list (fn n0) (fn n1) ...)
+(check-expect (map2 sqr empty) empty) 
+(check-expect (map2 sqr (list 2 4)) (list 4 16))
+(check-expect (map2 sqrt (list 16 9)) (list 4 3))
+(check-expect (map2 abs (list 2 -3 4)) (list 2 3 4)) 
+
+;; (X -&gt; Y) (listof X) -&gt; (listof Y) ; Using Type parameter
+(define (map2 fn lon)
+  (cond [(empty? lon) empty]
+        [else
+         (cons (fn (first lon))
+               (map2 fn (rest lon)))]))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<p>다음은 타입인자가 사용된 경우의 시그니처 설계 예시이다.</p>
+
+<div class="callout callout-example" id="callout-57322292-0ccb-48cc-a594-44bee98c9a1e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>1 시그니처 템플릿 유추
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>추상 함수의 인자가 2개이며, 리턴값은 언제나 하나이므로 위와 같이 시그니처 템플릿을 생성한다.</p>
+<pre><code class="language-BSL">;; ____ ____ -&gt; ____
+(define (map2 fn lon) ; Two parameter, output is always one.
+  (cond [(empty? lon) empty]
+        [else
+         (cons (fn (first lon)) 
+               (map2 fn (rest lon)))]))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-89170f61-f5b6-46d6-b5c7-ae5f9af8b234">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>2 결과값 타입 유추
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>결과값이 <code class="language-plaintext highlighter-rouge">empty</code>와 <code class="language-plaintext highlighter-rouge">cons</code>에 사용되므로 무언가의 배열임을 유추한다.이 무언가를 미지의 타입인자 Y로 놓자.</p>
+<pre><code class="language-BSL">;; ____ ____ -&gt; (listof Y)
+(define (map2 fn lon)
+  (cond [(empty? lon) empty] ; output is empty
+        [else
+         (cons (fn (first lon)) ; cons -&gt; fn for list.
+               (map2 fn (rest lon)))]))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-70042dc5-45b4-4f6f-97e2-839eb2d1e41e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>3 2번째 인자 유추
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>2번째 인자 <code class="language-plaintext highlighter-rouge">lon</code>에 <code class="language-plaintext highlighter-rouge">empty?</code>, <code class="language-plaintext highlighter-rouge">first</code>, <code class="language-plaintext highlighter-rouge">rest</code> 등에 사용되므로 무언가의 배열임을 유추한다. 이 무언가를 미지의 타입인자 X로 놓자.</p>
+<pre><code class="language-BSL">;; ____ (listof X) -&gt; (listof Y)
+(define (map2 fn lon)
+  (cond [(empty? lon) empty] -&gt; empty? -&gt; fn for list.
+        [else
+         (cons (fn (first lon)) ;; fisrt -&gt; fn for list.
+               (map2 fn (rest lon)))])) ;; rest -&gt; fn for list.
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-4f424bc3-5f99-475a-8d63-376433b47a02">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>4 1번째 인자 함수 유추
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>첫번째 인자 <code class="language-plaintext highlighter-rouge">fn</code>이 <code class="language-plaintext highlighter-rouge">(first lon)</code>의 결과값, 즉 <code class="language-plaintext highlighter-rouge">X</code> 타입을 인자로 받고 있다. 즉 <code class="language-plaintext highlighter-rouge">fn</code>은 <code class="language-plaintext highlighter-rouge">X</code> 타입 인자를 하나 받는 함수로 유추한다.</p>
+<pre><code class="language-BSL">;; (X -&gt; ___) (listof X) -&gt; (listof Y)
+(define (map2 fn lon)
+  (cond [(empty? lon) empty]
+        [else
+         (cons (fn (first lon)) ; fn takes X as parameter. 
+               (map2 fn (rest lon)))]))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-8f2e2a3f-42df-4a46-a735-c08bbf5dbe7d">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>5 유추 완성
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">fn</code> 함수의 결과가 <code class="language-plaintext highlighter-rouge">map2</code> 함수의 결과값의 타입 <code class="language-plaintext highlighter-rouge">Listof Y</code>의 원소이므로 <code class="language-plaintext highlighter-rouge">fn</code> 함수의 결과값의 타입은 <code class="language-plaintext highlighter-rouge">Y</code>임을 알 수 있고, 시그니처가 완성되었다.</p>
+<pre><code class="language-BSL">;; (X -&gt; Y) (listof X) -&gt; (listof Y) ;; Signature Comepleted!
+(define (map2 fn lon)
+  (cond [(empty? lon) empty]
+        [else
+         (cons (fn (first lon)) 
+               (map2 fn (rest lon)))])) ;; Result's Type is ListOfY.
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<p>확실히, 타입인자가 필요한 추상 함수인지 확인하기 위해 시그니처에 맞는 테스트를 새로 작성해 테스트해봐도 좋다.</p>
+
+<h2 id="추상-함수-이용">추상 함수 이용</h2>
+
+<p>여러 프로그래밍 언어에서 <code class="language-plaintext highlighter-rouge">map</code>, <code class="language-plaintext highlighter-rouge">filter</code> 같은 추상 함수들을 지원하기도 한다.</p>
+
+<p>빌트인 추상함수들을 이용하면 설계와 테스트가 간단해지고, 성능과 정확도 또한 보장할 수 있다.</p>
+
+<p>추상 함수를 이용해 함수를 설계하려면 다음과 같다.</p>
+<ul>
+  <li>두개 이상의 추상함수가 필요할 수도 있다.</li>
+</ul>
+
+<ol>
+  <li>설계하려는 함수의 시그니처와 유사한 추상함수를 찾는다.<br>
+ 1-1. 이때, 보통 추상 함수의 함수 입력 파라미터를 제외하면 얼추 찾을 수 있다.</li>
+  <li>설계 함수 내부에 추상함수를 집어넣고, 추상 함수를 원하는 로직으로 동작하기 위한 인자를 넣어준다.
+    <ul>
+      <li>추상 함수의 입력 파라미터의 타입 또한 시그니처와 비교하여 알 수 있다.</li>
+      <li>이때 고차원 추상 함수의 함수 파라미터를 위해 추가적인 함수를 구현해야할 수 있으며, 이때 클로저 함수를 이용할 수 있다.</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="callout callout-example" id="callout-31c8e6ab-70d0-4d57-8caf-414bad1ae620">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>클로저와 고차원 추상 함수를 이용한 새로운 함수 설계
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">map</code> 추상 함수는 <code class="language-plaintext highlighter-rouge">((X -&gt; Y)&nbsp;(listof X))&nbsp;→&nbsp;(listof&nbsp;Y)</code>이므로 클로저 함수와 함께 사용한다면 시그니처가 일치한다.</p>
+
+<pre><code class="language-BSL">;; String (listof String) -&gt; (listof String)
+;; produce list of all elements of los prefixed by p
+(check-expect (prefix-all "accio " (list "portkey" "broom"))
+              (list "accio portkey" "accio broom"))
+
+; (define (prefix-all p los) empty) ;stub
+
+(define (prefix-all p los)
+  (map (local
+         [(define (prefix-p s) (string-append p s))]
+         prefix-p) los))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-seealso" id="callout-06da7ac6-415b-48e9-9a7e-c6d28bc585cf">
+      <div class="header">
+        <span class="emoji">➕</span>
+        <span class="title"><strong>클로저(closure)?
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>함수 생성 시의 자신의 코드 블록(lexical scope)의 정보를 기억하는 함수</p>
+
+<p>이를 이용해 함수 설계시 이용하면,</p>
+<ul>
+  <li>전역변수 이용이 없어 외부에 주는 영향이 적고</li>
+  <li>재사용성 높으며,</li>
+  <li>가독성 좋게<br>
+구현할 수 있다.</li>
+</ul>
+
+<p>아래 파이썬 예시를 보면, <code class="language-plaintext highlighter-rouge">addNFunc</code> 함수의 x인자 값은 <code class="language-plaintext highlighter-rouge">addNFunc</code>함수가 종료되어도 <code class="language-plaintext highlighter-rouge">add3</code>, <code class="language-plaintext highlighter-rouge">add2</code> 함수 내에서 남아있다.</p>
+
+<p>코드 블록(lexical scope)이 종료되도 정보를 기억하는 것이다.</p>
+
+<p>클로저 함수(아래의 람다 함수)를 이용하는 것이 그 아래의 전역변수를 이용하는 것보다 더 가독성과 재사용성, 부작용 면에서 낫다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">addNFunc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+	<span class="k">return</span> <span class="k">lambda</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="n">add3</span> <span class="o">=</span> <span class="n">addNFunc</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">add2</span> <span class="o">=</span> <span class="n">addNFunc</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">add3</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 4
+</span><span class="k">print</span><span class="p">(</span><span class="n">add2</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 3
+</span>
+<span class="c1"># 전역변수 버전
+</span><span class="p">{:</span> <span class="c1">#전역변수-버전}
+</span><span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">def</span> <span class="nf">addNFunc2</span><span class="p">():</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="k">lambda</span> <span class="n">y</span> <span class="p">:</span> <span class="n">N</span> <span class="o">+</span> <span class="n">y</span>
+<span class="n">add</span> <span class="o">=</span> <span class="n">addNFunc2</span><span class="p">()</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 4
+</span><span class="n">N</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 3
+</span></code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id="함수-템플릿과-고차원-함수를-이용한-틀-함수">함수 템플릿과 고차원 함수를 이용한 틀 함수</h2>
+
+<p>함수 템플릿과 고차원 함수를 이용하면, 특정 데이터를 알맞게 처리하는 함수의 기본적인 틀 역할을 하는 함수를 만들 수 있다.</p>
+
+<div class="callout callout-example" id="callout-25589d8a-4c27-467b-bd52-99f5888fa728">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>데이터 정의 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<pre><code class="language-BSL">;; =================
+;; Data definitions:
+
+(define-struct dir (name sub-dirs images))
+;; Dir is (make-dir String ListOfDir ListOfImage)
+;; interp. An directory in the organizer, with a name, a list of sub-dirs and a list of images.
+
+;; ListOfDir is one of:
+;;  - empty
+;;  - (cons Dir ListOfDir)
+;; interp. A list of directories, this represents the sub-directories of a directory.
+
+;; ListOfImage is one of:
+;;  - empty
+;;  - (cons Image ListOfImage)
+;; interp. a list of images, this represents the sub-images of a directory.
+;; NOTE: Image is a primitive type, but ListOfImage is not.
+
+(define I1 (square 10 "solid" "red"))
+(define I2 (square 12 "solid" "green"))
+(define I3 (rectangle 13 14 "solid" "blue"))
+(define D4 (make-dir "D4" empty (list I1 I2)))
+(define D5 (make-dir "D5" empty (list I3)))
+(define D6 (make-dir "D6" (list D4 D5) empty))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-6d632833-def4-4466-a2d8-e9a46b6fedf4">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>틀 함수 만들기
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>각 데이터의 템플릿을 가져오고 <code class="language-plaintext highlighter-rouge">(...)</code> 부분을 틀 함수의 인자로 집어넣자.</p>
+
+<p>완성 후, 틀 함수의 시그니처를 유추한다.</p>
+<pre><code class="language-BSL">;; =================
+;; Functions:
+
+;; fold-dir function
+;; (String Y Z -&gt; X) (X Y -&gt; Y) (Image Z -&gt; Z) Y Z Dir -&gt; X
+;; the abstract fold function for Dir
+(check-expect (fold-dir make-dir cons cons empty empty D6) D6)
+(check-expect  (local [(define (c1 n rlod rloi) (+ rlod rloi))
+                       (define (c2 rdir rlod)   (+ 1 rdir))
+                       (define (c3 img rloi)    (+ 1 rloi))]          
+                 (fold-dir c1 c2 c3 0 0 D6))
+               3)
+
+; &lt;template from Dir&gt;
+(define (fold-dir c1 c2 c3 b1 b2 d)
+  (local [(define (fn-for-dir d)         ; Dir -&gt; X
+            (c1 (dir-name d)
+                (fn-for-lod (dir-sub-dirs d))
+                (fn-for-loi (dir-images d))))
+          
+          (define (fn-for-lod lod)       ; (listof Dir) -&gt; Y
+            (cond [(empty? lod) b1]
+                  [else
+                   (c2 (fn-for-dir (first lod))
+                       (fn-for-lod (rest lod)))]))
+          
+          (define (fn-for-loi loi)       ; (listof Image) -&gt; Z
+            (cond [(empty? loi) b2]
+                  [else
+                   (c3 (first loi)
+                       (fn-for-loi (rest loi)))]))]
+    (fn-for-dir d)))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-f74a24b1-84f8-436a-83c9-7faf7cba850c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>틀 함수를 이용한 함수 설계
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>지역 범위와 틀 함수를 이용해 처리함수를 넘겨주어 원하는 역할을 하는 함수를 만들 수 있다.</p>
+<pre><code class="language-BSL">;; Dir -&gt; Natural
+;; count total number of Images in dir and all its subdirs
+(check-expect (count-images D4) 2)
+(check-expect (count-images D6) 3)
+
+; &lt;template as call to fold-dir&gt;
+(define (count-images d)
+  (local [(define (c1 n rlod rloi) (+ rlod rloi))
+          (define (c2 rdir rlod)   (+ rdir rlod))
+          (define (c3 img rloi)    (+ 1 rloi))]          
+    (fold-dir c1 c2 c3 0 0 d)))
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<p>다만, 상당히 성능상 비효율적인 경우가 많으므로, 대략적인 템플릿을 잡는데만 쓰고 추가로 리팩토링하는게 좋다.</p>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%B6%94%EC%83%81%ED%99%94.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/OSSU/PL/HowToCode/어떻게 코딩할 것인가-추상화.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

@@ -127,7 +127,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 6
+      📂: 7
     </span>
     <ul class="child-category-list">
       
@@ -204,10 +204,24 @@
       <li>
         <strong style="font-size: larger;">
           ┃  
-          ┗ 
+          ┣ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
         </h4>
           <span style="font-size: xx-small;">
              
@@ -545,7 +559,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#커맨드-객체의-값-검증과-에러-메시지-처리">커맨드 객체의 값 검증과 에러 메시지 처리</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#커맨드객체-별-객체-검증-지정">커맨드객체 별 객체 검증 지정</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#글로벌-범위-Validator와-컨트롤러-범위-Validator-설정">글로벌 범위 Validator와 컨트롤러 범위 Validator 설정</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#Bean-Validation을-이용한-값-검증-처리">Bean Validation을 이용한 값 검증 처리</a><ul></ul></li></ul></li></ol>
 <h1 id="객체-검증">객체 검증</h1>
 
-<div class="callout callout-quote" id="callout-50b48ca2-6c87-4fb9-a31a-5bef683b45b4">
+<div class="callout callout-quote" id="callout-3473dbd4-155a-4f83-8484-ea521f147f6c">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -556,18 +570,25 @@
     
     <div class="content" name="content">
 <p>_<span class='link-warning'>
-      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
       <a class="link-title" href="#" stlye="display: none;"></a>
       <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
       "https://www.kame.co.kr/nkm/det..."</em>로
         <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
       </span>
-    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
 
 </div>
     </div>
     </div>
-<div class="callout callout-faq" id="callout-584fa550-03cd-489b-bb2b-bc0f1a4e9745">
+<div class="callout callout-faq" id="callout-d178cb85-bbdd-487a-860c-6a46b0f4a81c">
       <div class="header">
         <span class="emoji">✨</span>
         <span class="title"><strong>메시지를 이용한 로케일 부분은 나중에 프론트엔드에서 처리할 것이므로 생략했다. 백엔드에서 로케일에 따라 달리 처리할 일이 있을까?
@@ -592,7 +613,7 @@
   <li><code class="language-plaintext highlighter-rouge">Errors</code> 인터페이스는 에러를 담아 메시지를 만들어 보여주는 역할을 한다.</li>
 </ul>
 
-<div class="callout callout-seealso" id="callout-fd3d5f0e-5d15-4e59-a4cc-d7d2e379559a">
+<div class="callout callout-seealso" id="callout-03507752-d548-44d8-9693-4ab4adba02f2">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">Errors</code>를 상속받는 <code class="language-plaintext highlighter-rouge">org.springframework.validation.BindingResult</code> 인터페이스를 대신 이용 가능하다.
@@ -601,7 +622,7 @@
       </div>
       
     </div>
-<div class="callout callout-example" id="callout-09d97d28-8a4c-4ae9-ad71-480e7bc872e1">
+<div class="callout callout-example" id="callout-4a80ed06-fb66-4fe4-b60a-e051ee39db6b">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>로그인 이메일 검증 예시(<code class="language-plaintext highlighter-rouge">/src/main/java/controller/RegisterRequestValidator.java</code>)
@@ -678,7 +699,7 @@
 
 <p>앞선 <code class="language-plaintext highlighter-rouge">Validator</code>를 구현한 후, 컨트롤러에서 아래와 같이 사용 및 추가 에러 확인이 가능하다.</p>
 
-<div class="callout callout-example" id="callout-6e9e9c49-f846-456d-9064-412409b5355d">
+<div class="callout callout-example" id="callout-37c5109f-5fcb-4819-9162-874d0ee3adb0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>컨트롤러에서의 커맨드 객체 검증 및 추가 검증
@@ -726,7 +747,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-warning" id="callout-bd32c427-126d-4fd8-93ef-31f1cab05318">
+<div class="callout callout-warning" id="callout-c2805538-063b-460a-9881-bd9c88dae07c">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong><strong>주의!</strong> 무조건 커맨드 객체 파라미터가 에러 객체 보다 앞에 위치해야함.
@@ -771,7 +792,11 @@
   <li><code class="language-plaintext highlighter-rouge">rejectIfEmptyOrWhitespace(Errors errors, String field, String errorCode, Object[] errorArgs)</code></li>
 </ul>
 
-<!-- vue에서 error 메시지 받는법 추가하기-->
+<p>Vue, React 등 프론트엔드 서버 요청에 에러 메시지를 포함하는 방법은 <span class="preview-wrapper">
+      <a href="/articles/web/backend/Spring/Spring5-JSON%20%EC%9D%91%EB%8B%B5%EA%B3%BC%20%EC%9A%94%EC%B2%AD%20%EC%B2%98%EB%A6%AC.html" class="wikilink">Spring5-JSON 응답과 요청 처리</a>
+      <iframe class="preview" src='' data-href="/articles/web/backend/Spring/Spring5-JSON%20%EC%9D%91%EB%8B%B5%EA%B3%BC%20%EC%9A%94%EC%B2%AD%20%EC%B2%98%EB%A6%AC.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 참조</p>
 
 <h3 id="글로벌-범위-Validator와-컨트롤러-범위-Validator-설정">글로벌 범위 Validator와 컨트롤러 범위 Validator 설정</h3>
 
@@ -783,7 +808,7 @@
   <li><strong><code class="language-plaintext highlighter-rouge">javax.validation.validation-api</code> 의존 모듈 추가</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-d6f793ba-48ab-4399-b32f-3353283be1f0">
+<div class="callout callout-example" id="callout-e2321ccc-96c7-494c-97b1-91ad6171a1f0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">pom.xml</code>
@@ -793,6 +818,7 @@
       <div class="card" name="card">
     
     <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">MVC</code>, <code class="language-plaintext highlighter-rouge">Spring boot</code>, 버전에 따라 사용해야되는 의존 모듈이 다르다는 점을 주의</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
 	<span class="nt">&lt;groupId&gt;</span>javax.validation<span class="nt">&lt;/groupId&gt;</span>
 	<span class="nt">&lt;artifactId&gt;</span>validation-api<span class="nt">&lt;/artifactId&gt;</span>
@@ -804,10 +830,10 @@
     </div>
     </div>
 <ol>
-  <li><strong>설정 클래스에 <code class="language-plaintext highlighter-rouge">getValidator()</code> 메서드 재정의</strong></li>
+  <li><strong>구성 클래스에 <code class="language-plaintext highlighter-rouge">getValidator()</code> 메서드 재정의</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-123f6c68-7351-4217-b01c-679551016e7c">
+<div class="callout callout-example" id="callout-c9eeb636-0759-4190-a665-f6b72e88851d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">MvcConfig.java</code>
@@ -844,7 +870,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-6d4ada26-6e3f-4d55-87da-758f5d4e6d78">
+<div class="callout callout-example" id="callout-7597d679-4807-45c4-aaf4-3b47ea1eaaa9">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">RegisterController.java</code>
@@ -882,7 +908,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-warning" id="callout-40ba4e4c-9127-4194-935e-d595aecbe67b">
+<div class="callout callout-warning" id="callout-be8c6cfb-598f-47e3-b8c8-b9cca11595fb">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong><strong>주의!</strong> 무조건 파라미터로 에러 객체가 주어져야 함.
@@ -907,7 +933,7 @@
 
 <p>특정 컨트롤러에서만 공통적으로 적용가능한 컨트롤러 범위 Validator를 적용하려면 다음과 같은 과정이 필요하다.</p>
 
-<div class="callout callout-example" id="callout-8298e18f-1a0d-4816-8ee2-18300ba6593a">
+<div class="callout callout-example" id="callout-04156296-190e-4572-a724-8fc59dd6ad56">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>컨트롤러 범위 Validator 설정(<code class="language-plaintext highlighter-rouge">RegisterController.java</code>)
@@ -967,7 +993,7 @@
   <li><strong>Bean Validation 관련 의존 모듈 추가</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-8dc9c7ff-56c9-46ed-b0b7-1e801013e502">
+<div class="callout callout-example" id="callout-4243548c-833d-4299-b286-5b0d9481a299">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">Bean Validation</code> 관련 의존
@@ -997,7 +1023,7 @@
   <li><strong>커맨드 객체 필드에 검증 규칙 어노테이션 설정</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-a9dd40cb-f00f-4e39-ae6b-d11b6fde638c">
+<div class="callout callout-example" id="callout-ca5b09d8-1120-41f6-b2ee-09fe8d0d28d1">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>커맨드 객체 예시
@@ -1007,14 +1033,16 @@
       <div class="card" name="card">
     
     <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">hibernate validator</code>에는<code class="language-plaintext highlighter-rouge">CreditCardNumber</code> 같은 다양한 유효성 검사 형식이 있다.<br>
+공통으로 <code class="language-plaintext highlighter-rouge">message</code>라는 속성으로 충족하지 않았을때 보여줄 메시지를 지정할 수 있다.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">javax.validation.constraints.Size</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.hibernate.validator.constraints.Email</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.hibernate.validator.constraints.NotBlank</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.hibernate.validator.constraints.NotBlank</span><span class="o">;</span> <span class="c1">// javax에도 존재</span>
 <span class="kn">import</span> <span class="nn">org.hibernate.validator.constraints.NotEmpty</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">RegisterRequest</span> <span class="o">{</span>
-	<span class="nd">@NotBlank</span>
+	<span class="nd">@NotBlank</span><span class="o">(</span><span class="n">message</span><span class="o">=</span><span class="s">"this is comment when invalid."</span><span class="o">)</span>
 	<span class="nd">@Email</span>
 	<span class="kd">private</span> <span class="nc">String</span> <span class="n">email</span><span class="o">;</span>
 	<span class="nd">@Size</span><span class="o">(</span><span class="n">min</span> <span class="o">=</span> <span class="mi">6</span><span class="o">)</span>
@@ -1030,7 +1058,7 @@
     </div>
     </div>
 <ol>
-  <li><strong>설정 클래스에 <code class="language-plaintext highlighter-rouge">OptionalValidatorFactoryBean</code> 클래스를 빈으로 등록</strong>
+  <li><strong>구성 클래스에 <code class="language-plaintext highlighter-rouge">OptionalValidatorFactoryBean</code> 클래스를 빈으로 등록</strong>
     <ul>
       <li>기존에 사용하던 <code class="language-plaintext highlighter-rouge">@EnableWebMvc</code>를 사용하면 기본으로 설정되 있음</li>
       <li>단, 기존에 적용되있는 전역 Validator은 삭제되어야 Bean Validation을 사용가능하다.</li>
@@ -1039,7 +1067,7 @@
   <li><strong><code class="language-plaintext highlighter-rouge">@Valid</code> 어노테이션 적용</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-dba88292-7f48-4ebd-a30a-b5cf4c24052f">
+<div class="callout callout-example" id="callout-f700719d-b473-47aa-afdb-04fefbaaeab1">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>컨트롤러 예시
@@ -1087,6 +1115,7 @@
   <li><code class="language-plaintext highlighter-rouge">@Pattern</code> : 정규표현식 매칭 여부로 오류 판단</li>
   <li><code class="language-plaintext highlighter-rouge">@Email</code> : 이메일 형식의 주소인지 판단</li>
 </ul>
+
 </body></html>
 </div>
 

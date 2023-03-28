@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spring5-통합 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Spring5-통합" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/Spring/Spring5-%ED%86%B5%ED%95%A9.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/Spring/Spring5-%ED%86%B5%ED%95%A9.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-25T11:50:54+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spring5-통합" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-25T11:50:54+09:00","datePublished":"2023-02-25T11:50:54+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"Spring5-통합","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/Spring/Spring5-%ED%86%B5%ED%95%A9.html"},"url":"http://localhost:4000/articles/web/backend/Spring/Spring5-%ED%86%B5%ED%95%A9.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Spring5-통합</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-02-25T11:50:54+09:00" itemprop="datePublished">Feb 25, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#스프링-통합-Spring-Integration">스프링 통합(Spring Integration)</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#여러-통합-플로우-구성-방법">여러 통합 플로우 구성 방법</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#통합-플로우-컴포넌트와-예시">통합 플로우 컴포넌트와 예시</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#채널-Channel">채널(Channel)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#필터-Filter">필터(Filter)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#변환기-Transformer">변환기(Transformer)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#라우터-Router">라우터(Router)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#분배기-Splitter">분배기(Splitter)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#집적기-Aggregator">집적기(Aggregator)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#서비스-액티베이터-Service-activator">서비스 액티베이터(Service activator)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#채널-어댑터-Channel-adapter">채널 어댑터(Channel adapter)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#게이트웨이-Gateway">게이트웨이(Gateway)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-12" href="#엔드포인트-모듈-Endpoint-module">엔드포인트 모듈(Endpoint module)</a><ul></ul></li></ul></li></ol>
+<h1 id="Spring5-통합">Spring5-통합</h1>
+
+<div class="callout callout-quote" id="callout-ef161d77-a7bf-4d5b-b8e8-b24d757d2fba">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>_<span class='link-warning'>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.kame.co.kr/nkm/det..."</em>로
+        <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
+      </span>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-warning" id="callout-dedbd5c8-a391-4a90-a782-cbf72d3744a0">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>스프링 부트를 사용한다는 가정 하에 진행됩니다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<h2 id="스프링-통합-Spring-Integration">스프링 통합(Spring Integration)</h2>
+
+<p>어플리케이션이 이메일, 파일 시스템, RSS, Twitter 등의 외부 서비스와 상호작용 시, 데이터를 읽고 쓰고, 형태를 변경할 때 사용하는 패턴이다.</p>
+
+<p>각 통합 패턴은 하나의 컴포넌트로 정의되며, 통합 패턴의 파이프라인을 따르는 메시지를 통해 데이터를 운반하며 가공한다.</p>
+
+<p>스프링 부트로 통합 플로우를 선언하기 위해 다음과 같은 의존성이 필요하다.<br>
+<strong>org.springframework.boot.spring-boot-starter-integration</strong> : 통합에 필요한 필수 모듈<br>
+<strong>org.springframework.integration.spring-integration-{원하는 엔드포인트 모듈}</strong> : 구현하려는 시스템을 위한 모듈</p>
+
+<h2 id="여러-통합-플로우-구성-방법">여러 통합 플로우 구성 방법</h2>
+<p>통합 플로우는 여러 방법으로 구성할 수 있으며, 예시를 알아보자.<br>
+먼저, 통합 플로우로 데이터를 전송하는 파일 쓰기 게이트웨이를 작성한다.</p>
+
+<div class="callout callout-example" id="callout-f45ac36e-44a7-4fac-b33a-60adc9f88ee9">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">FileWriteGateway.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>이제 통합 플로우 구성을 선언하면 아래 게이트웨이를 사용할 수 있다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">sia5</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.annotation.MessagingGateway</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.file.FileHeaders</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.messaging.handler.annotation.Header</span><span class="o">;</span>
+
+<span class="nd">@MessagingGateway</span><span class="o">(</span><span class="n">defaultRequestChannel</span><span class="o">=</span><span class="s">"textInChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">FileWriterGateway</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="kt">void</span> <span class="nf">writeToFile</span><span class="o">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Header</span><span class="o">(</span><span class="nc">FileHeaders</span><span class="o">.</span><span class="na">FILENAME</span><span class="o">)</span> <span class="nc">String</span> <span class="n">filename</span><span class="o">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">String</span> <span class="n">data</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>자세한 설명은 나중에 DSL로 알아 볼 것이다.</p>
+<ul>
+  <li><strong>XML 구성</strong></li>
+</ul>
+
+<div class="callout callout-example" id="callout-9eefa88e-1636-4b55-adde-009c9c4324dc">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">filewriter.xml</code>
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>사실, XML 구성은 과거에 비해 잘 사용되지 않는다.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+<span class="err">&nbsp;</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="err">&nbsp;</span> <span class="na">xmlns:int=</span><span class="s">"http://www.springframework.org/schema/integration"</span>
+<span class="err">&nbsp;</span> <span class="na">xmlns:int-file=</span><span class="s">"http://www.springframework.org/schema/integration/file"</span>
+<span class="err">&nbsp;</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://www.springframework.org/schema/beans
+&nbsp; &nbsp; http://www.springframework.org/schema/beans/spring-beans.xsd
+&nbsp; &nbsp; http://www.springframework.org/schema/integration
+&nbsp; &nbsp; http://www.springframework.org/schema/integration/spring-integration.xsd
+&nbsp; &nbsp; http://www.springframework.org/schema/integration/file
+&nbsp; &nbsp; http://www.springframework.org/schema/integration/file/spring-integration-file.xsd"</span><span class="nt">&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;int:channel</span> <span class="na">id=</span><span class="s">"textInChannel"</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;int:transformer</span> <span class="na">id=</span><span class="s">"upperCase"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">input-channel=</span><span class="s">"textInChannel"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">output-channel=</span><span class="s">"fileWriterChannel"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">expression=</span><span class="s">"payload.toUpperCase()"</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;int:channel</span> <span class="na">id=</span><span class="s">"fileWriterChannel"</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;int-file:outbound-channel-adapter</span> <span class="na">id=</span><span class="s">"writer"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">channel=</span><span class="s">"fileWriterChannel"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">directory=</span><span class="s">"/tmp/sia5/files"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">mode=</span><span class="s">"APPEND"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">append-new-line=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이후, 아무 구성 클래스에 <code class="language-plaintext highlighter-rouge">@ImportResource</code> 어노테이션으로 불러오기 설정을 하자.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
+<span class="nd">@ImportResource</span><span class="o">(&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;</span><span class="nl">classpath:</span><span class="o">/</span><span class="n">filewriter</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="na">xml</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileWriterIntegrationConfig</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">123</span><span class="o">;...&amp;</span><span class="err">#</span><span class="mi">125</span><span class="o">;</span>
+
+</code></pre></div></div>
+<ul>
+  <li><strong>자바 파일 구성</strong></li>
+</ul>
+
+<div class="callout callout-example" id="callout-85103cb0-2685-418c-a238-3da7e5aa01a5">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">FileWriterIntegrationConfig.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>자세한 설명은 컴포넌트에서 설명</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">sia5</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.annotation.ServiceActivator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.annotation.Transformer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.dsl.IntegrationFlow</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.dsl.IntegrationFlows</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.dsl.channel.MessageChannels</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.file.FileWritingMessageHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.file.dsl.Files</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.file.support.FileExistsMode</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.transformer.GenericTransformer</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileWriterIntegrationConfig</span> <span class="o">{</span>  
+  <span class="cm">/*
+  // 앞선 xml 구성용 구성파일
+&nbsp; @Profile("xmlconfig")
+&nbsp; @Configuration
+&nbsp; @ImportResource("classpath:/filewriter-config.xml")
+&nbsp; public static class XmlConfiguration {}
+  */</span>
+<span class="err">&nbsp;</span> <span class="c1">// 채널 이동간에 변환</span>
+<span class="err">&nbsp;</span> <span class="nd">@Profile</span><span class="o">(</span><span class="s">"javaconfig"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="nd">@Bean</span>
+<span class="err">&nbsp;</span> <span class="nd">@Transformer</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"textInChannel"</span><span class="o">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span><span class="n">outputChannel</span><span class="o">=</span><span class="s">"fileWriterChannel"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">GenericTransformer</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="nf">upperCaseTransformer</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">text</span> <span class="o">-&gt;</span> <span class="n">text</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> 
+  <span class="c1">// fileWriterChannel로 부터 메시지를 받은 뒤의 서비스</span>
+<span class="err">&nbsp;</span> <span class="nd">@Profile</span><span class="o">(</span><span class="s">"javaconfig"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="nd">@Bean</span>
+<span class="err">&nbsp;</span> <span class="nd">@ServiceActivator</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"fileWriterChannel"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">FileWritingMessageHandler</span> <span class="nf">fileWriter</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">FileWritingMessageHandler</span> <span class="n">handler</span> <span class="o">=</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">new</span> <span class="nc">FileWritingMessageHandler</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">"/tmp/sia5/files"</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">handler</span><span class="o">.</span><span class="na">setExpectReply</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span> <span class="c1">//단반향 게이트웨이로 설정</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">handler</span><span class="o">.</span><span class="na">setFileExistsMode</span><span class="o">(</span><span class="nc">FileExistsMode</span><span class="o">.</span><span class="na">APPEND</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">handler</span><span class="o">.</span><span class="na">setAppendNewLine</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">handler</span><span class="o">;</span> 
+<span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="cm">/*
+&nbsp; // 특정 채널이름이 존재하지 않으면 자동으로 구성하지만, 직접 생성하고 설정하고 싶다면 아래와 같이 가능
+&nbsp; @Bean
+&nbsp; public MessageChannel textInChannel() {
+    return new DirectChannel();
+  }
+  
+&nbsp; @Bean
+&nbsp; public MessageChannel fileWriterChannel() {
+    return new DirectChannel();
+  }&nbsp; 
+&nbsp; */</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><strong>DSL(Domain Specific Language)</strong></li>
+</ul>
+
+<div class="callout callout-example" id="callout-21deba30-01b6-4b60-b469-72d282e3923d">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>앞선 자바 구성 파일에 추가
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>모두 같은 기능, 더 간소화 되고 알아보기 쉽다. 전체 플로우가 하나의 빈으로 구성됨</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>  
+
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.dsl.IntegrationFlow</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.dsl.IntegrationFlows</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.dsl.channel.MessageChannels</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.file.dsl.Files</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.integration.file.support.FileExistsMode</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileWriterIntegrationConfig</span> <span class="o">{</span>
+
+<span class="err">&nbsp;</span> <span class="nd">@Profile</span><span class="o">(</span><span class="s">"javadsl"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="nd">@Bean</span>
+<span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">IntegrationFlow</span> <span class="nf">fileWriterFlow</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="nc">IntegrationFlows</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="nc">MessageChannels</span><span class="o">.</span><span class="na">direct</span><span class="o">(</span><span class="s">"textInChannel"</span><span class="o">))</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span><span class="n">transform</span><span class="o">(</span><span class="n">t</span> <span class="o">-&gt;</span> <span class="n">t</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">())</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">//.channel(MessageChannels.direct("fileWriterChannel")) // 채널 수동 구성</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">handle</span><span class="o">(</span><span class="nc">Files</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">outboundAdapter</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">"/tmp/sia5/files"</span><span class="o">))</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">fileExistsMode</span><span class="o">(</span><span class="nc">FileExistsMode</span><span class="o">.</span><span class="na">APPEND</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">appendNewLine</span><span class="o">(</span><span class="kc">true</span><span class="o">))</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h2 id="통합-플로우-컴포넌트와-예시">통합 플로우 컴포넌트와 예시</h2>
+<p>보통, <strong>게이트웨이-채널-변환기-채널-어댑터</strong> 순으로 연결한다.</p>
+<h3 id="채널-Channel">채널(Channel)</h3>
+<p>한 요소로부터 다른 요소로 메시지 전달<br>
+기능에 따라 다음과 같이 여러 채널이 사용 가능</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">PublishSubscribeChannel</code> : 하나 이상의 컨슈머 모두에게 전달</li>
+  <li><code class="language-plaintext highlighter-rouge">QueueChannel</code> : FIFO 방식으로 컨슈머가 하나씩 가져감</li>
+  <li><code class="language-plaintext highlighter-rouge">PriorityChannel</code> : <code class="language-plaintext highlighter-rouge">priority</code> 헤더 기반으로 컨슈머가 가져감</li>
+  <li><code class="language-plaintext highlighter-rouge">RendezvousChannel</code>: 컨슈머가 메시지 수신시까지 전송자가 채널 사용 불가(동기화)</li>
+  <li><code class="language-plaintext highlighter-rouge">DirectChannel</code>: 단일 사용자만 사용가능한 <code class="language-plaintext highlighter-rouge">PublishSubscribeChannel</code>, 트랜잭션 지원</li>
+  <li><code class="language-plaintext highlighter-rouge">ExecutorChannel</code>: <code class="language-plaintext highlighter-rouge">TaskExecutor</code>로 메시지 전송, 트랜잭션 지원 안함</li>
+  <li><code class="language-plaintext highlighter-rouge">FluxMessageChannel</code>: 리액터 플럭스 기반 채널</li>
+</ul>
+
+<p>기본적으로 특정 이름의 채널이 존재하지 않으면 <code class="language-plaintext highlighter-rouge">DirectChannel</code>로 생성되며, 다른 채널을 구현하고 싶다면 직접 채널을 구현해야 한다.</p>
+
+<div class="callout callout-example" id="callout-0b9f03d1-b98f-4742-9606-d47a8311a8d7">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">QueueChannel</code> 선언과 사용
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="nc">MessageChannel</span> <span class="nf">orderChannel</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">QueueChannel</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="nd">@ServiceActivator</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"orderChannel"</span> <span class="n">poller</span><span class="o">=</span><span class="nd">@Poller</span><span class="o">(</span><span class="n">fixedRate</span><span class="o">=</span><span class="s">"1000"</span><span class="o">))</span>
+<span class="c1">// 채널명 지명 + queue에서 가져오는 주기 설정</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="필터-Filter">필터(Filter)</h3>
+<p>조건에 맞는 메시지만 플로우를 통과하게 함<br>
+통합 파이프라인 채널 사이 중간에만 위치 가능</p>
+
+<div class="callout callout-example" id="callout-74b427d7-ab0c-44ad-809a-fceff97ec000">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>필터의 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Filter</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"numberChannel"</span><span class="o">,</span>
+	   <span class="n">outputChannel</span><span class="o">=</span><span class="s">"evenNumberChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">evenNumberFilter</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">number</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">//DSL 버전</span>
+<span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="nc">IntegrationFlow</span> <span class="nf">evenNumberFlow</span><span class="o">(</span><span class="nc">AtomicInteger</span> <span class="n">integerSource</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="nc">IntegrationFlows</span>
+	<span class="c1">//...</span>
+	<span class="o">.&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span><span class="n">filter</span><span class="o">((</span><span class="n">p</span><span class="o">)-&gt;</span><span class="n">p</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="c1">// GenericSelector 혹은 람다로 필터 구현</span>
+	<span class="c1">//...</span>
+	<span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="변환기-Transformer">변환기(Transformer)</h3>
+<p>메시지 값을 변경하거나 메시지 페이로드의 타입을 다른 타입으로 변경</p>
+
+<div class="callout callout-example" id="callout-643e8310-7ba1-4fe6-a1f5-2a55469027ab">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">GenericTransformer</code> 구현 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Bean</span>
+<span class="nd">@Transformer</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"numberChannel"</span><span class="o">,</span> <span class="n">outputChannel</span><span class="o">=</span><span class="s">"romanNumberChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">GenericTransformer</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="nf">romanNumTransformer</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="nl">RomanNumbers:</span><span class="o">:</span><span class="n">toRoman</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="nc">IntegrationFlow</span> <span class="nf">transformerFlow</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="nc">IntegrationFlows</span>
+	<span class="c1">//...</span>
+	<span class="o">.</span><span class="na">transform</span><span class="o">(</span><span class="nl">RomanNumbers:</span><span class="o">:</span><span class="n">toRoman</span><span class="o">)</span>
+	<span class="c1">//...</span>
+	<span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="라우터-Router">라우터(Router)</h3>
+<p>여러 채널 중 하나로 메시지를 전달하며, 대게 메시지 헤더를 기반으로 함</p>
+
+<p>이때 전달 조건을 직접 구현해주어야 한다.</p>
+
+<div class="callout callout-example" id="callout-3b6a755d-78b0-41c8-b0c6-4528f5b5ac50">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>라우터 구현 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Bean</span>
+<span class="nd">@Router</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"numberChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">AbstractMessageRouter</span> <span class="nf">evenOddRouter</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">AbstractMessageRouter</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nd">@Override</span>
+		<span class="kd">protected</span> <span class="nc">Collection</span><span class="o">&lt;</span><span class="nc">MessageChannel</span><span class="o">&gt;</span> <span class="nf">determineTargetChannels</span><span class="o">(</span><span class="nc">Message</span><span class="o">&lt;?&gt;</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+			<span class="nc">Integer</span> <span class="n">number</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Integer</span><span class="o">)</span> <span class="n">message</span><span class="o">.</span><span class="na">getPayload</span><span class="o">();</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+				<span class="c1">// channel을 수동 설정해줘야 함</span>
+				<span class="k">return</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">singleton</span><span class="o">(</span><span class="n">evenChannel</span><span class="o">());</span>
+			<span class="o">}</span>
+			<span class="k">return</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">singleton</span><span class="o">(</span><span class="n">oddChannel</span><span class="o">());</span>
+		<span class="o">}</span>
+	<span class="o">};</span>
+<span class="o">}</span>
+<span class="c1">// DSL 구성</span>
+<span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="nc">IntegrationFlow</span> <span class="nf">numberRoutingFlow</span><span class="o">(</span><span class="nc">AtomicInteger</span> <span class="n">source</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="nc">IntegrationFlows</span>
+		<span class="c1">//...</span>
+		<span class="o">.&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span><span class="n">route</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span> <span class="o">?</span> <span class="s">"EVEN"</span><span class="o">:</span><span class="s">"ODD"</span><span class="o">,</span> <span class="n">mapping</span> <span class="o">-&gt;</span> <span class="n">mapping</span><span class="o">)</span>
+		<span class="o">.</span><span class="na">subFlowMapping</span><span class="o">(</span><span class="s">"Even"</span><span class="o">,</span> <span class="n">sf</span> <span class="o">-&gt;</span> <span class="n">sf</span><span class="o">.&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span><span class="n">transform</span><span class="o">(</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">10</span><span class="o">).</span><span class="na">handle</span><span class="o">((</span><span class="n">i</span><span class="o">,</span> <span class="n">h</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{...}))</span>
+		<span class="o">.</span><span class="na">subFlowMapping</span><span class="o">(</span><span class="s">"ODD"</span><span class="o">,</span> <span class="n">sf</span> <span class="o">-&gt;</span> <span class="n">sf</span><span class="o">.</span><span class="na">transform</span><span class="o">(</span><span class="nl">RomanNumbers:</span><span class="o">:</span><span class="n">toRoman</span><span class="o">).</span><span class="na">handle</span><span class="o">((</span><span class="n">i</span><span class="o">,</span><span class="n">h</span><span class="o">)-&gt;</span> <span class="o">{...}))</span>
+		<span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="분배기-Splitter">분배기(Splitter)</h3>
+<p>들어오는 메시지를 두 개 이상의 메시지로 분할하며, 분할된 각 메시지는 다른 채널로 전송된다.</p>
+
+<p>크게 두가지 방법으로 분할한다.</p>
+<ul>
+  <li><strong>같은 타입의 컬렉션 항목들을 여러 메시지 페이로드로 나눔</strong></li>
+  <li><strong>하나의 메시지 페이로드를 서로 다른 타입 두개 이상 메시지로 나눔</strong></li>
+</ul>
+
+<div class="callout callout-example" id="callout-29340b2e-21e3-4f34-99bd-d27961c8a243">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>분배기 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderSplitter</span> <span class="o">{</span>
+	<span class="c1">// splitOrderIntoParts 메서드 구현</span>
+	<span class="kd">public</span> <span class="nc">Collection</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="nf">splitOrderIntoParts</span><span class="o">(</span><span class="nc">PurchaseOrder</span> <span class="n">po</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">parts</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+		<span class="n">parts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">po</span><span class="o">.</span><span class="na">getBillingInfo</span><span class="o">());</span>
+		<span class="n">parts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">po</span><span class="o">.</span><span class="na">getLineItems</span><span class="o">());</span>
+		<span class="k">return</span> <span class="n">parts</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@Bean</span>
+<span class="nd">@Splitter</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"poChannel"</span><span class="o">,</span> <span class="n">outputChannel</span><span class="o">=</span><span class="s">"splitOrderChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">OrderSplitter</span> <span class="nf">orderSplitter</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="k">new</span> <span class="nf">OrderSpliter</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">//아래와 같은 라우터로 따로 보내줘야 한다.</span>
+<span class="nd">@Bean</span>
+<span class="nd">@Router</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"splitOrderChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">MessageRouter</span> <span class="nf">splitOrderRouter</span><span class="o">()</span> <span class="o">{</span>
+	<span class="nc">PayloadTypeRouter</span> <span class="n">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PayloadTypeRouter</span><span class="o">();</span>
+	<span class="n">router</span><span class="o">.</span><span class="na">setChannelMapping</span><span class="o">(</span>
+		<span class="nc">BillingInfo</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="s">"billingInfoChannel"</span><span class="o">);</span>
+	<span class="n">router</span><span class="o">.</span><span class="na">setChannelMapping</span><span class="o">(</span>
+		<span class="nc">List</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="s">"lineItemsChannel"</span><span class="o">);</span>
+	<span class="k">return</span> <span class="n">router</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// 만약 Splitter를 연속으로 적용하고 싶다면 다음과 같이 빈 객체가 아닌 스플리터를 연속으로 지정하면 된다.</span>
+<span class="nd">@Splitter</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"lineItemsChannel"</span><span class="o">,</span> <span class="n">outputChannel</span><span class="o">=</span><span class="s">"lineItemChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">LineItem</span><span class="o">&gt;</span> <span class="nf">lineItemSplitter</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">LineItem</span><span class="o">&gt;</span> <span class="n">lineItems</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="n">lineItems</span><span class="o">;</span> <span class="c1">// 각 아이템들이 나뉘어 한 채널에 여러개로 들어간다.</span>
+<span class="o">}</span>
+
+<span class="c1">// DSL 버전</span>
+<span class="k">return</span> <span class="nc">IntegrationFlows</span>
+	<span class="c1">//...</span>
+	<span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="n">orderSpliter</span><span class="o">())</span>
+	<span class="o">.&lt;</span><span class="nc">Object</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="nf">route</span><span class="o">(</span>
+		<span class="n">p</span> <span class="o">-&gt;</span> <span class="o">{</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">isAssignableFrom</span><span class="o">(</span><span class="nc">BillingInfo</span><span class="o">.</span><span class="na">class</span><span class="o">)){</span>
+				<span class="k">return</span> <span class="s">"BILLING_INFO"</span><span class="o">;</span>
+			<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+				<span class="k">return</span> <span class="s">"LINE_ITEMS"</span><span class="o">;</span>
+			<span class="o">}</span>
+		<span class="o">},</span> <span class="n">mapping</span> <span class="o">-&gt;</span> <span class="n">mapping</span>
+			<span class="o">.</span><span class="na">subFlowMapping</span><span class="o">(</span><span class="s">"BILLING_INFO"</span><span class="o">,</span> <span class="n">sf</span> <span class="o">-&gt;</span> <span class="n">sf</span><span class="o">.&lt;</span><span class="nc">BilingInfo</span><span class="o">&gt;</span> <span class="nf">handle</span><span class="o">((</span><span class="n">billingInfo</span><span class="o">,</span> <span class="n">h</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+				<span class="c1">//...</span>
+			<span class="o">}))</span>
+			<span class="o">.</span><span class="na">subFlowMapping</span><span class="o">(</span><span class="s">"LINE_ITEMS"</span><span class="o">,</span>
+				<span class="n">sf</span> <span class="o">-&gt;</span> <span class="n">sf</span><span class="o">.</span><span class="na">split</span><span class="o">()</span>
+					<span class="o">.&lt;</span><span class="nc">LineItem</span><span class="o">&gt;</span> <span class="nf">handle</span><span class="o">((</span><span class="n">lineItem</span><span class="o">,</span> <span class="n">h</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+						<span class="c1">//...</span>
+					<span class="o">}))</span>
+			<span class="o">)</span>
+		<span class="o">.</span><span class="na">get</span><span class="o">();</span>
+
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="집적기-Aggregator">집적기(Aggregator)</h3>
+<p>분배기와 상반된 것으로 별개의 채널로부터 전달되는 다수의 메시지를 하나의 메시지로 결합한다.</p>
+
+<h3 id="서비스-액티베이터-Service-activator">서비스 액티베이터(Service activator)</h3>
+<p>메시지를 처리하도록 <code class="language-plaintext highlighter-rouge">Handler</code> 구현 메서드에 메시지를 넘겨준 후 메서드의 반환값을 출력 채널로 전송한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">MessageHandler</code>나 <code class="language-plaintext highlighter-rouge">GenericHandler</code> 인터페이스를 구현한 메서드를 이용할 수 있다.</p>
+<ul>
+  <li>만약, 메서드 반환값이 존재하지 않다면 <code class="language-plaintext highlighter-rouge">MessageHandler</code></li>
+  <li>메서드 반환값으로 새로운 메시지가 존재한다면 <code class="language-plaintext highlighter-rouge">GenericHandler</code>를 이용해야 한다.
+    <ul>
+      <li>단, 플로우의 끝에 두면 해당 메시지를 받을 채널이 없어 에러 발생</li>
+      <li>굳이 끝에 둬야 한다면 return 값을 <code class="language-plaintext highlighter-rouge">null</code>로 해야 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-6cb17df6-ff8d-46a9-aab4-d437f1e76339">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>서비스 엑티베이터와 핸들러 메서드 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Bean</span>
+<span class="nd">@ServiceActivator</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"someChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">MessageHandler</span> <span class="nf">sysoutHandler</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="n">message</span> <span class="o">-&gt;</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Message payload: "</span> <span class="o">+</span> <span class="n">message</span><span class="o">.</span><span class="na">getPayload</span><span class="o">());</span>
+	<span class="o">};</span>
+<span class="o">}</span>
+
+<span class="nd">@Bean</span>
+<span class="nd">@ServiceActivator</span><span class="o">(</span><span class="n">inputChannel</span><span class="o">=</span><span class="s">"orderChannel"</span><span class="o">,</span> <span class="n">outputChannel</span><span class="o">=</span><span class="s">"completeChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">GenericHandler</span><span class="o">&lt;</span><span class="nc">Order</span><span class="o">&gt;</span> <span class="nf">orderHandler</span><span class="o">(</span><span class="nc">OrderRepository</span> <span class="n">orderRepo</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="o">(</span><span class="n">payload</span><span class="o">,</span> <span class="n">headers</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">orderRepo</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">payload</span><span class="o">);</span>	
+	<span class="o">};</span>
+<span class="o">}</span>
+
+<span class="c1">//DSL 버전</span>
+<span class="kd">public</span> <span class="nc">IntegrationFlow</span> <span class="nf">someFlow</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="nc">IntegrationFlows</span>
+		<span class="c1">//...</span>
+			<span class="o">.</span><span class="na">handle</span><span class="o">(</span><span class="n">msg</span> <span class="o">-&gt;</span> <span class="o">{</span>
+				<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Message payload: "</span> <span class="o">+</span> <span class="n">msg</span><span class="o">.</span><span class="na">getPayload</span><span class="o">());</span>
+			<span class="o">})</span>
+			<span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span>
+
+
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>주로 아웃바운드 채널 어댑터로 이용된다.</p>
+
+<h3 id="채널-어댑터-Channel-adapter">채널 어댑터(Channel adapter)</h3>
+<p>외부 시스템에 채널을 연결하여 입출력 가능케 함, 플로우의 입구와 출구</p>
+<ul>
+  <li><strong>입구 역할을 하는 인바운드 채널 어댑터</strong></li>
+</ul>
+
+<div class="callout callout-example" id="callout-98d18da8-2d41-4d21-9352-e1677f6d9bae">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>인바운드 어댑터 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">AtomicInteger</code>로 부터의 값을 1초마다 플로우로 전달하는 어댑터</p>
+<pre><code class="language-Java">@Bean
+@InboundChannelAdapter(poller=@Poller(fixedRate="1000"), channel="numberChannel")
+public MessageSource&lt;Integer&gt; numberSource(AtomicInteger source) {
+	return () -&gt; {
+		return new GenericMessage&lt;&gt;(source.getAndIncrement());
+	};
+}
+
+@Bean
+public IntegrationFlow someFlow(AtomicInteger integerSource) {
+	return IntegrationFlows
+		.from(integerSource, "getAndIncrement",
+			c -&gt; c.poller(Pollers.fixedRate(1000)))
+		//...
+		.get();
+}
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<ul>
+  <li><strong>출구 역할을 하는 아웃바운드 채널 어댑터</strong> : 결과를 반환하는 서비스 액티베이터로 자주 구현한다.</li>
+</ul>
+
+<p>채널 어댑터는 엔드 모듈에서 직접 제공하기도 한다.</p>
+
+<h3 id="게이트웨이-Gateway">게이트웨이(Gateway)</h3>
+<p>인터페이스를 통해 통합 플로우로 데이터 전달, 선택적으로 응답도 받음(양방향 게이트웨이)</p>
+
+<p>즉, 어플리케이션이 통합 플로우로 메시지를 전송하고 받아낼 수 있는 메서드이며, 인터페이스로 구현되어 있다.</p>
+
+<div class="callout callout-example" id="callout-3e68acb4-6862-4470-a005-360d00ffb2a6">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>게이트웨이 구현 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.example.demo</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.integration.annotation.MessagingGateway</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Component</span><span class="o">;</span>
+
+<span class="c1">//인터페이스만 만들면 스프링이 자동으로 구현하므로 uppercase 메서드를 사용하면 됨.</span>
+<span class="nd">@Component</span>
+<span class="nd">@MessagingGateway</span><span class="o">(</span><span class="n">defaultRequestChannel</span><span class="o">=</span><span class="s">"inChannel"</span><span class="o">,</span> <span class="n">defaultReplyChannel</span><span class="o">=</span><span class="s">"outChannel"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UpperCaseGateway</span> <span class="o">{</span>
+	<span class="nc">String</span> <span class="nf">uppercase</span><span class="o">(</span><span class="nc">String</span> <span class="n">in</span><span class="o">);</span> <span class="c1">// in 문자열이 플로우로 전달됨, </span>
+	<span class="c1">// 아웃 채널로 도착하면 같은 문자열이 반환됨</span>
+	<span class="c1">// uppercase 하는 메서드는 변환기로 구현</span>
+<span class="o">}</span>
+
+<span class="c1">//dsl 버전</span>
+<span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="nc">IntegrationFlow</span> <span class="nf">uppercaseFlow</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="nc">IntegrationFlows</span>
+		<span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="s">"inChannel"</span><span class="o">)</span>
+		<span class="o">.&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="nf">transform</span><span class="o">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">())</span>
+		<span class="o">.</span><span class="na">channel</span><span class="o">(</span><span class="s">"outChannel"</span><span class="o">)</span>
+		<span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="엔드포인트-모듈-Endpoint-module">엔드포인트 모듈(Endpoint module)</h3>
+
+<p>다양한 외부 시스템과 통합을 위해 다음과 같은 예시 엔드포인트 모듈이 존재한다.</p>
+<ul>
+  <li>AMQP(<strong>spring-integration-amqp</strong>)</li>
+  <li>RSS(<strong>spring-integration-feed</strong>)</li>
+  <li>파일 시스템(<strong>spring-integration-file</strong>)</li>
+  <li>FTP(<strong>spring-integration-ftp</strong>)</li>
+  <li>이메일(<strong>spring-integration-mail</strong>)</li>
+  <li>스트림(<strong>spring-integration-stream</strong>)</li>
+  <li>트위터(<strong>spring-integration-twitter</strong>)</li>
+  <li>WebSocket(<strong>spring-integration-websocket</strong>)</li>
+  <li>기타 등등</li>
+</ul>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/Spring/Spring5-%ED%86%B5%ED%95%A9.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/Spring/Spring5-통합.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

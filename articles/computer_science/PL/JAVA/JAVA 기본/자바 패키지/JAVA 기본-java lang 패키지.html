@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AVA 기본-java lang 패키지 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="AVA 기본-java lang 패키지" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20lang%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" />
+<meta property="og:url" content="http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20lang%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-01T15:51:23+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AVA 기본-java lang 패키지" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-01T15:51:23+09:00","datePublished":"2023-02-01T15:51:23+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"AVA 기본-java lang 패키지","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20lang%20%ED%8C%A8%ED%82%A4%EC%A7%80.html"},"url":"http://localhost:4000/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20lang%20%ED%8C%A8%ED%82%A4%EC%A7%80.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">AVA 기본-java lang 패키지</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-02-01T15:51:23+09:00" itemprop="datePublished">Feb 1, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#java-lang-패키지">java.lang 패키지</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#java-lang-패키지">java.lang 패키지</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#자바의-문자열">자바의 문자열</a><ul></ul></li></ul></li></ol>
+<h1 id="java-lang-패키지">java lang 패키지</h1>
+
+<h2 id="java-lang-패키지">java.lang 패키지</h2>
+<h3 id="java-lang-패키지">java.lang 패키지</h3>
+<h4 id="java-lang-패키지">java.lang 패키지</h4>
+<ul>
+  <li>가장 기본이 되는 필수 클래스들과 인터페이스들이 포함된 패키지</li>
+  <li>import 구문을 이용하지 않아도 기본적으로 탑재되어 있음</li>
+  <li>java.lang 패키지는 Object 클래스(최상위 부모 클래스), String 클래스, Boolean 클래스 Number 클래스(숫자형 자료형 클래스들의 부모) 등을 제공
+    <h4 id="Object-클래스">Object 클래스</h4>
+  </li>
+  <li>자바 API의 모든 클래스와 사용자가 정의한 모든 클래스의 최상위 클래스,</li>
+  <li>모든 자바 클래스들은 Object 클래스로부터 상속 받았으며, 소스상에 명시하지않아도 자동으로 됨</li>
+  <li>도스 창으로 javap 명령어로 실행해보면 extends 로 object 클래스가 부모로 있음
+    <blockquote>
+      <p>Object 클래스의 주요 메소드</p>
+    </blockquote>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object 클래스의 메서드</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>boolean equals(Object obj)</td>
+      <td>두개의 객체가 같은지 비교하여 true, false 반환 (자주 사용)</td>
+    </tr>
+    <tr>
+      <td>String toString()</td>
+      <td>현재 객체의 문자열을 반환함 (자주 사용)</td>
+    </tr>
+    <tr>
+      <td>protected Object clone()</td>
+      <td>객체를 복사함</td>
+    </tr>
+    <tr>
+      <td>protected void finalize()</td>
+      <td>가비지 컬렉션 직전에 객체의 리소스를 정리할 때 호출</td>
+    </tr>
+    <tr>
+      <td>Class getClass()</td>
+      <td>객체의 클래스형을 반환함</td>
+    </tr>
+    <tr>
+      <td>int hashCode()</td>
+      <td>객체의 코드 값을 반환함</td>
+    </tr>
+    <tr>
+      <td>void notifiy()</td>
+      <td>wait된 Thread 실행을 재개할 때 호출함</td>
+    </tr>
+    <tr>
+      <td>void notifiyAll()</td>
+      <td>wait된 모든 Thread 실행을 재개할 때 호출함</td>
+    </tr>
+    <tr>
+      <td>void wait()</td>
+      <td>Thread를 일시적으로 중지할 때 호출함</td>
+    </tr>
+    <tr>
+      <td>void wait(long timeout)</td>
+      <td>주어진 시간만큼 Thread를 일시적으로 중지할 때 호출함</td>
+    </tr>
+    <tr>
+      <td>void wait(long timeout, int naos)</td>
+      <td>주어진 시간만큼 Thread를 일시적으로 중지할 때 호출함</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>== 연산자는 자바에서 값을 비교하기 위해서 사용하는 연산자
+    <ul>
+      <li>기본형의 경우 같은 값을 가지고 있는 확인, 참조형은 같은 주소를 가르키고 있는지 확인</li>
+    </ul>
+  </li>
+  <li>객체의 경우, 주소값을 비교하는 것이 아니라, 내용을 비교해야되는 경우가 생기는데, 참조형이므로 == 연산자로는 알 수 없다.</li>
+  <li>이럴 때는 Object 클래스가 제공하는 equals() 메서드를 사용하여 객체의 내용을 비교할 수 있다.</li>
+  <li>단 equals() 메서드를 오버라이딩해서 사용하지 않으면 == 연산자와 역할이 같다.</li>
+  <li>
+    <p>그러므로 class 내부에서 equals()메서드를 오버라이딩 해야함, 예를들어 각 변수가 같은 같은 타입의 객체이면 True를 반환</p>
+  </li>
+  <li>toString() 메서드는 객체의 변수 값들을 화면에 간단하게 출력하고 할 때 사용함</li>
+  <li>기본 정의는 클래스 타입과 이 객체의 코드 값을 16진수 문자열로 리턴하도록 구현했다.</li>
+  <li>그러므로 제대로 사용하려면 toString() 메서드를 오버라이딩 해야함.</li>
+  <li>System.out.println() 메서드 호출 시 자동으로 호출되기 때문에 생략도 가능</li>
+  <li>
+    <p>예를 들어 객체 내부 멤버 변수의 값을 리턴하도록 만들면 유용하게 쓸 수 있음</p>
+  </li>
+  <li>equals() 메서드와, toString() 메서드는 IDE에서 보통 자동으로 생성하는 기능을 제공함
+    <h4 id="Wrapper-클래스">Wrapper 클래스</h4>
+  </li>
+  <li>자바에서는 8가지 기본 데이터 타입을 객체로 사용할 수 있도록 지원,</li>
+  <li>기본 데이터 타입에 따른 객체를 지원하기 위해 각각의 데이터 타입과 관련된 클래스를 제공함</li>
+  <li>이를 wrapper 클래스라고함
+    <blockquote>
+      <p>8가지의 wrapper 클래스와 기본 데이터 타입의 연관관계</p>
+    </blockquote>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Wrapper 클래스</th>
+      <th>기본 데이터 타입</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Boolean</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td>Character</td>
+      <td>char</td>
+    </tr>
+    <tr>
+      <td>Byte</td>
+      <td>byte</td>
+    </tr>
+    <tr>
+      <td>Short</td>
+      <td>short</td>
+    </tr>
+    <tr>
+      <td>Integer</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>Long</td>
+      <td>long</td>
+    </tr>
+    <tr>
+      <td>Float</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td>Double</td>
+      <td>double</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>사용자의 문자열 입력을 다양한 기본 데이터타입으로 변환하는 편리한 메서드들을 제공함</li>
+  <li>
+    <p>Wrapper 클래스 객체는 한 번 생성되면 그 값이 변할 수 없음</p>
+  </li>
+  <li>Integer 클래스는 상당히 자주 사용하며 다음과 같은 생성자를 가지고 있다.</li>
+  <li>Integer(int value) : value 값의 정수를 저장한 객체를 생성함</li>
+  <li>Integer(String s) : S 값의 문자열을 정수로 저장한 객체를 생성함
+    <blockquote>
+      <p>Integer 클래스의 주요 메서드</p>
+    </blockquote>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Integer 클래스의 메서드</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>byte byteValue()</td>
+      <td>현재 객체의 값을 byte 값으로 변환함</td>
+    </tr>
+    <tr>
+      <td>int compareTo(Integer anotherInteger)</td>
+      <td>현재 객체의 정수값을 다른 Integer 객체의 정수 값과 비교하여 그 결과를 음수, 양수, 0으로 변환함</td>
+    </tr>
+    <tr>
+      <td>int compareTo(Object o)</td>
+      <td>o 객체와 같은 값을 가진 객체인지 비교하여 그 결과를 음수, 양수, 0으로 변환함</td>
+    </tr>
+    <tr>
+      <td>static Integer decode(String nm)</td>
+      <td>nm 값을 정수 값으로 변환하여 저장한 객체를 변환함</td>
+    </tr>
+    <tr>
+      <td>double doubleValue()</td>
+      <td>현재 객체의 값을 double 값으로 변환함</td>
+    </tr>
+    <tr>
+      <td>boolean equals(Object obj)</td>
+      <td>obj 객체와 같은 값을 가져는지의 여부를 true, false로 변환함</td>
+    </tr>
+    <tr>
+      <td>float floatValue()</td>
+      <td>현재 객체의 값을 float 값으로 변환함</td>
+    </tr>
+    <tr>
+      <td>int hashCode()</td>
+      <td>현재 객체의 코드 값으로 변환함</td>
+    </tr>
+    <tr>
+      <td>int intValue()</td>
+      <td>현재 객체를 int 형으로 변환함</td>
+    </tr>
+    <tr>
+      <td>long longValue()</td>
+      <td>현재 객체를 long형으로 변환함</td>
+    </tr>
+    <tr>
+      <td>static int parseInt(String s)</td>
+      <td>문자열을 10진수의 int 형으로 변환함</td>
+    </tr>
+    <tr>
+      <td>static int parseInt(String s, int radix)</td>
+      <td>문자열을 주어진 radix의 int형을 변환함 (자주 씀)</td>
+    </tr>
+    <tr>
+      <td>short shortValue()</td>
+      <td>현재 객체를 short 형으로 변환함</td>
+    </tr>
+    <tr>
+      <td>static String toBinaryString(int i)</td>
+      <td>현재 객체의 2진수 값을 문자열로 변환함</td>
+    </tr>
+    <tr>
+      <td>static String toHexString(int i)</td>
+      <td>현재 객체의 16진수 값을 문자열로 변환함</td>
+    </tr>
+    <tr>
+      <td>static String toOctalString(int i)</td>
+      <td>현재 객체의 8진수 값을 문자열로 변환함</td>
+    </tr>
+    <tr>
+      <td>String toString()</td>
+      <td>현재 객체를 String으로 변환함</td>
+    </tr>
+    <tr>
+      <td>static String toString(int i)</td>
+      <td>i 값을 String으로 변환함</td>
+    </tr>
+    <tr>
+      <td>static String toString(int i, int radix)</td>
+      <td>i 값을 주어진 radix의 String으로 변환함</td>
+    </tr>
+    <tr>
+      <td>static Integer valueOf(String s)</td>
+      <td>s의 정수값을 가진 객체로 변환함</td>
+    </tr>
+    <tr>
+      <td>static Integer valueOf(String s, int radix)</td>
+      <td>s의 정수값을 주어진 radix 형을 가진 객체로 변환함</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>이외에도 static 변수로 최대 숫자 범위를 나타내는 MAX_VaLUe와 MIN_VALUE 등을 가지고 있다.</li>
+  <li>Booelan()은 true 이외의 모든 값을 false로 간주함
+    <h3 id="자바의-문자열">자바의 문자열</h3>
+    <h4 id="String-클래스">String 클래스</h4>
+  </li>
+  <li>String 객체는 여러 개의 문자들로 이루어진 문자 배열 형태로 생성되고, 인덱스는 0부터 시작함</li>
+  <li>문자열 객체를 생성하고 처리하기 위해서는 String 클래스를 사용해야 함
+    <blockquote>
+      <p>String 클래스의 주요 생성자</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>| String 클래스의 생성자                                       | 설명                                                         |<br>
+| ———————————————————— | ———————————————————— |<br>
+| String()                                                     | 빈 문자열인 객체를 생성함 (자주 씀)                          |<br>
+| String(byte[] bytes)                                         | byte 배열의 내용을 String 객체로 생성함 (자주 씀)            |<br>
+| string(byte[] bytes, int offset, int length, String charsetName) | byte 배열의 offset 위치부터 count 개만큼의 내용을 지정한 문자 세트로 String 객체를 생성함 |<br>
+| String(StringBuffer buffer)                                  | StringBuffer 문자열을 가진 객체를 생성함                     |<br>
+| … 이외에도 여러 생성자가 있다.                             |                                                              |</p>
+<blockquote>
+  <p>String 클래스의 주요 메소드</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>String 클래스의 메소드</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>char charAt(int index)</td>
+      <td>index 번째 문자를 반환함</td>
+    </tr>
+    <tr>
+      <td>String concat(String str)</td>
+      <td>’+’ 연산자처럼 문자열을 결합함</td>
+    </tr>
+    <tr>
+      <td>boolean endsWith(String suffix)</td>
+      <td>특정 문자열로 끝나는지 확인하여 true, false를 반환함</td>
+    </tr>
+    <tr>
+      <td>boolean equals(Object anObject)</td>
+      <td>2개의 문자열 값을 비교하여 true, false를 반환함</td>
+    </tr>
+    <tr>
+      <td>boolean equalsIgnoreCase(String anotherString)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>byte[] getbytes()</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>int indexOf(int ch)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>int indexOf(int ch, int fromIndex)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>int indexOf(String str)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>int indexOf(int ch, int String str)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>int lastIndexOf(int ch)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>…이외에도 여러 메서드가 있다.</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>String 객체는 한번 생성되면 문자열 내용이 변경되지 않음</li>
+  <li>단 String 메서드 실행 결과를 또 다른 문자열 객체로 리턴함, 변하지 않는 문자열 표현시 사용</li>
+  <li>두 가지 형태의 객체 생성 방법을 제공함, 그 방법이 마치 배열과 같아, new 연산자 없이 사용가능<br>
+String name1 = new String(“자바더헛”);<br>
+String name2 = “자바더헛”;</li>
+  <li>new 연산자 사용하지 않고 생성하면 컴파일 시점에 메모리를 할당 받음,</li>
+  <li>만약 동일한 문자열을 가진 String 이라면 같은 문자열이 저장된 주소 값을 재사용함</li>
+  <li>
+    <p>자바의 기본 데이터 타입들도 변수에 값을 할당하는 방법으로 객체 생성이 가능함</p>
+  </li>
+  <li>문자열과 + 연산자를 결합하면 문자열 결합의 의미로 사용함</li>
+  <li>앞뒤 상관없이 한쪽이 문자열이면 나머지 한쪽을 자동으로 문자열로 변환되어 결합됨</li>
+  <li>변하지 않으므로, 문자열이 사용될때마다 문자의 길이를 다시 계산할 필요가 없어 편리함
+    <h4 id="StringBuffer-클래스">StringBuffer 클래스</h4>
+  </li>
+  <li>프로그램 내에서 변하는 문자열을 다룰 때 사용함,</li>
+  <li>객체의 크기가 동적이며 크기를 지정하지 않아도 기본적으로 16개의 문자를 저장할 수 있는 버퍼 공간을 가짐</li>
+  <li>내용이 변하지 않는 String 클래스와 달리 StringBuffer 클래스는 문자열의 내용을 변경할 수 있음</li>
+  <li>즉 StringBuffer 클래스의 메서드는 문자열 처리 후의 결과를 원래의 StringBuffer 객체에 반영, 메서드 리턴타입은 void</li>
+  <li>String과 비슷한 생성자와 메서드를 가지고 있다.</li>
+  <li>(append(): 문자열 끝에 데이터 추가, int capacity(): 현재 문자열의 총용량, char charAt(int index): index 위치의 문자를 반환함, int length(): 길이를 반환함)</li>
+  <li>
+    <ul>
+      <li>연산자를 사용하여 문자열을 결합하거나  new연산자를 사용하지 않고 객체생성하지 못함</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>문자열 클래스의 장단점</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>String 클래스</th>
+      <th>StringBuffer 클래스</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>용도</td>
+      <td>문자열 객체를 처리</td>
+      <td>문자열 객체를 처리함</td>
+    </tr>
+    <tr>
+      <td>변경 가능</td>
+      <td>변경 불가</td>
+      <td>변경 가능</td>
+    </tr>
+    <tr>
+      <td>문자열 결합</td>
+      <td>+ 연산자로 문자열 결합, concat() 메서드 사용</td>
+      <td>append() 메서드를 이용하여 문자열을 결합함</td>
+    </tr>
+    <tr>
+      <td>메모리 처리</td>
+      <td>내부적으로 StringBuffer 객체를 생성한 후에 문자열을 결합 후 toString() 메서드를 호출하여 새로운 String 객체를 리턴</td>
+      <td>StringBuffer 객체에 문자열을 직접 추가하므로, 하나의 StringBuffer 객체만 유지할 수 있음</td>
+    </tr>
+    <tr>
+      <td>속도</td>
+      <td>StringBuffer로 변환되는 과정이 필요하므로 느림</td>
+      <td>중간 변환과정 생략으로 빠름</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>StringBuffer 클래스가 메모리 사용, 속도 면에서 효율적임,</li>
+  <li>하지만 String이 편하므로 잘 안바뀌는 것은 String 나머지는 StringBuffer를 선호하자</li>
+</ul>
+
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%ED%8C%A8%ED%82%A4%EC%A7%80/JAVA%20%EA%B8%B0%EB%B3%B8-java%20lang%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" hidden></a>
+  <p class="u-path" hidden>_articles/computer_science/PL/JAVA/JAVA 기본/자바 패키지/JAVA 기본-java lang 패키지.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

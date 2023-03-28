@@ -127,7 +127,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 6
+      📂: 7
     </span>
     <ul class="child-category-list">
       
@@ -204,10 +204,24 @@
       <li>
         <strong style="font-size: larger;">
           ┃  
-          ┗ 
+          ┣ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
         </h4>
           <span style="font-size: xx-small;">
              
@@ -545,7 +559,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#간단한-웹-어플리케이션-구성-요소">간단한 웹 어플리케이션 구성 요소</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#서비스의-구현">서비스의 구현</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#프로젝트-패키지-구성">프로젝트 패키지 구성</a><ul></ul></li></ol>
 <h1 id="스프링-웹-어플-구조">스프링 웹 어플 구조</h1>
 
-<div class="callout callout-quote" id="callout-a943d3aa-28a7-4307-b7c1-29294eae3b71">
+<div class="callout callout-quote" id="callout-92c8680a-87f6-4193-a171-10c205291cfb">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -556,13 +570,20 @@
     
     <div class="content" name="content">
 <p>_<span class='link-warning'>
-      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문(최범균 저, 가메 출판사)</a>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
       <a class="link-title" href="#" stlye="display: none;"></a>
       <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
       "https://www.kame.co.kr/nkm/det..."</em>로
         <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
       </span>
-    </span>_의 내용을 바탕으로 정리한 내용입니다.</p>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
 
 </div>
     </div>
@@ -600,7 +621,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-532de184-7715-409f-b625-bc2d35bd2365">
+<div class="callout callout-example" id="callout-ebc6e014-e0cb-4670-ab30-7fef7e689343">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>DAO를 직접 사용하는 컨트롤러 메서드 예시
@@ -635,7 +656,7 @@
 <h2 id="서비스의-구현">서비스의 구현</h2>
 <p>서비스는 실제로 보통 여러 단계로 이루어지며, 이를 한꺼번에 적용 혹은 취소해야 되므로 <code class="language-plaintext highlighter-rouge">@Transactional</code>을 이용해서 트랜잭션 범위 내에 실행되곤 한다.</p>
 
-<div class="callout callout-example" id="callout-498bb196-69d4-4c56-bc7c-21134b500b9b">
+<div class="callout callout-example" id="callout-987b3156-bc95-45f5-b16b-2c5becc91e2b">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>비밀번호 변경 트랜잭션 과정
@@ -663,7 +684,7 @@
 
 <p>서비스 클래스 내의 메서드의 파라미터는 하나의 커맨드 객체로 만들어 전달하면 컨트롤러 클래스에서 MVC의 바인딩, 검증, 연동 등의 기능을 쉽게 활용할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-ca9aedf4-a81f-4e66-bdc6-0c72531c4f2d">
+<div class="callout callout-example" id="callout-58d5888c-220d-4419-a9c0-7ae34f322bae">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>커맨드 객체로 파라미터 변경

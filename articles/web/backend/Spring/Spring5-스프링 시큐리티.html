@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="kr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spring5-스프링 시큐리티 | 🧠SUBBRAIN</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Spring5-스프링 시큐리티" />
+<meta property="og:locale" content="kr" />
+<meta name="description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<meta property="og:description" content="style: number min_depth: 2 max_depth: 3 varied_style: true" />
+<link rel="canonical" href="http://localhost:4000/articles/web/backend/Spring/Spring5-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0.html" />
+<meta property="og:url" content="http://localhost:4000/articles/web/backend/Spring/Spring5-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0.html" />
+<meta property="og:site_name" content="🧠SUBBRAIN" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-10T13:25:06+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spring5-스프링 시큐리티" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-10T13:25:06+09:00","datePublished":"2023-02-10T13:25:06+09:00","description":"style: number min_depth: 2 max_depth: 3 varied_style: true","headline":"Spring5-스프링 시큐리티","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/web/backend/Spring/Spring5-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0.html"},"url":"http://localhost:4000/articles/web/backend/Spring/Spring5-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="🧠SUBBRAIN" /><link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico">
+</head>
+<div class="scrollWrapper">
+  <div class="scrollbar"></div>
+  <div class="progressbar"></div>
+  <div class="scrollbarButton"></div>
+</div>
+
+<link rel="stylesheet" href="/assets/css/obsidian/obs-scrollbar.css" />
+
+<!--<div class="redirection">
+  <h1 class="name">Redirection for full experience.</h1>
+  <br>
+  Move to <br /> <a class="to" href="#">netlify url</a><br />
+  <div>after <span class="counter">10</span>secs.</div>
+  press <button class="cancle">here</button> to cancle.
+</div>
+<div class="overlay"></div>
+<script type="module" src="/assets/scripts/common/components/init_redirection.js"></script>
+
+<link rel="stylesheet" href="/assets/css/common/redirection.css" />-->
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper" style="display: flex; justify-content: space-between;"><div id="header-wrapper">
+    <a class="site-title" rel="author" href="/blog">🧠SUBBRAIN</a>
+
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="/assets/css/common/searchbar.css" />
+
+<form id="search-form" method="get">
+  <span id="search-wrapper">
+    <span id="tag-holder" ></span>
+    <input type="text" id="search-box" placeholder='Prefix "#" to add Tag.' autocomplete="off">
+    <span class="inner-search" >🔍</span>
+  </span>
+</form><a class="page-link" href="/">ABOUT ME</a><a class="page-link" href="/blog">ALL ARTICLES</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+    <link rel="stylesheet" href="/assets/css/common/drawer.css" />
+<button class="drawer-button open">▶️</button>
+<div id="drawer" class="close">
+  <button class="drawer-button close">
+    ◀️
+  </button>
+  <div class="drawer-content">
+    <div class="my-description">
+      <div class="avatar-section" style="display: flex; flex-direction: row;">
+
+        <img src="/assets/img/common/avatar.png" alt="avatar" class="avatar">
+        <div style="display: flex; flex-direction: column; margin-left: 5px;">
+          <a href="/about/">
+            <h3 class="name">ROADVIRUSHN</h3>
+          </a>
+          <div class="stack-list" style="margin: 5px 0 0 5px;">
+            <a title="My github page" href="https://github.com/RoadVirusHN">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+  </svg>
+</a>
+<a title="My G-mail" href="mailto:roadvirushn@gmail.com">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#gmail"></use>
+  </svg>
+</a>
+<a title="My Blog" href="https://luminous-bubblegum-8e9be4.netlify.app">
+  <svg class="svg-icon" width="16" height="16" viewBox="0 0 16 16">
+    <use xlink:href="/assets/svg/social-icons.svg#blog"></use>
+  </svg>
+</a>
+          </div>
+        </div>
+        <!-- <h4 class="name">(JUNSEOK YUN)</h4> -->
+      </div>
+      <p style="margin: 5px 0 0 0;">
+        풀스택 웹🌐 개발자 지망생 🧑🏽‍💻
+        <br>
+        ➕ 인공지능 관심 🤖
+      </p>
+    </div>
+      <hr>
+      <div class="categories">
+        <h3 style="margin: 0;"><a href="/">Categories</a></h3>
+        <ul class="category-list">
+  
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/COMPUTER_SCIENCE/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">COMPUTER_SCIENCE</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 7
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/DATABASE/">DATABASE</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ALGORITHM/">ALGORITHM</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 16 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OS/">OS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/NETWORK/">NETWORK</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/ETC/">ETC</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/WEB/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">WEB</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 3
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/FRONTEND/">FRONTEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/BACKEND/">BACKEND</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/WEB/CI,CD/">CI,CD</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            📂: 2
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┣ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/ETC/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">ETC</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 2
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 8 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+  
+  <li>
+    <strong style="font-size: larger;">┗ </strong>
+    <h3 style="display: inline;">
+      
+      <a href="/categories/AI/" class="category-drop-down">▶</a>
+      
+      <span class="category-link">AI</span>
+    </h3>
+    <span style="font-size: xx-small;">
+       
+      📂: 9
+    </span>
+    <ul class="child-category-list">
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/AITOOLS/">AITOOLS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/CV/">CV</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DEEP_LEARNING/">DEEP_LEARNING</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/DATA_VIS/">DATA_VIS</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/GRAPH/">GRAPH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/LIGHTWEIGHT/">LIGHTWEIGHT</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/MATH/">MATH</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 1 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/NLP/">NLP</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 3 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          &nbsp;&nbsp;&nbsp;
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/AI/STRUCTURED_DATA/">STRUCTURED_DATA</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 2 
+            
+          </span>
+      </li>
+      
+    </ul>
+  </li>
+  
+</ul>
+      </div>
+      <hr>
+      <div class="recent-view">
+        <h3 style="margin: 0;">Recent views</h3>
+        <ul style="margin: 0;">
+          <li>
+            <strong style="color:rgb(219, 219, 12);">1 <a id="recent-1"></a></strong>
+          </li>
+          <li>
+            2 <a id="recent-2"></a>
+          </li>
+          <li>
+            3 <a id="recent-3"></a>
+          </li>
+          <li>
+            4 <a id="recent-4"></a>
+          </li>
+          <li>
+            5 <a id="recent-5" style="overflow: hidden;"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  <div style="height: 7vh;"></div>
+</div>
+    <div class="wrapper">
+      <article class="article h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="article-header">
+    <h1 class="article-title a-name" itemprop="name headline">Spring5-스프링 시큐리티</h1>
+    <p class="article-meta">
+      <time class="dt-published" datetime="2023-02-10T13:25:06+09:00" itemprop="datePublished">Feb 10, 2023
+      </time></p>
+  </header>
+
+  <div class="article-content e-content" itemprop="articleBody">
+     
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+    },
+    svg: {
+      fontCache: "global",  
+     // scale: 1.5,
+    },
+    chtml: {
+     // scale: 1.5,
+    },
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+ 
+ 
+
+
+<script src="/assets/scripts/bundle/obsidian.bundle.js"></script>
+<link rel="stylesheet" href="/assets/css/obsidian/callout.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/image.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/link-warning.css" />
+<link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
+
+<div class="content-section">
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#스프링-시큐리티-개념-및-활성화">스프링 시큐리티 개념 및 활성화</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#스프링-시큐리티-구성">스프링 시큐리티 구성</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#다양한-사용자-스토어-구성-방법">다양한 사용자 스토어 구성 방법</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#인메모리-사용자-스토어">인메모리 사용자 스토어</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#JDBC-사용자-스토어">JDBC 사용자 스토어</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#LDAP-사용자-스토어">LDAP 사용자 스토어</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#커스텀-사용자-스토어-JPA">커스텀 사용자 스토어(JPA)</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-7" href="#웹-요청-보안-처리">웹 요청 보안 처리</a><ul><li lvl="3"><a id="markdown-toc-0-8" href="#웹-요청-보안-처리">웹 요청 보안 처리</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#커스텀-로그인-페이지-생성">커스텀 로그인 페이지 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#로그아웃하기">로그아웃하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#CSRF-공격-방어">CSRF 공격 방어</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-12" href="#사용자-인가-및-정보-얻기">사용자 인가 및 정보 얻기</a><ul><li lvl="3"><a id="markdown-toc-0-13" href="#Principal-객체를-컨트롤러-메서드에-주입">Principal 객체를 컨트롤러 메서드에 주입</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-14" href="#Authentication-객체를-컨트롤러-메서드에-주입">Authentication 객체를 컨트롤러 메서드에 주입</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-15" href="#AuthenticationPrincipal-어노테이션을-메서드에-지정">@AuthenticationPrincipal 어노테이션을 메서드에 지정</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-16" href="#SecurityContextHolder를-사용해서-보안-컨텍스트를-얻기">SecurityContextHolder를 사용해서 보안 컨텍스트를 얻기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-17" href="#관련-컨트롤러-구현-예시">관련 컨트롤러 구현 예시</a><ul></ul></li></ul></li></ol>
+<h1 id="Spring5-스프링-시큐리티">Spring5-스프링 시큐리티</h1>
+
+<div class="callout callout-quote" id="callout-a992e4f5-0f18-41fb-9bdc-8bd9f03f25aa">
+      <div class="header">
+        <span class="emoji">🗣️</span>
+        <span class="title"><strong>출처
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>_<span class='link-warning'>
+      <a href="https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3" class="wikilink externallink">초보 웹 개발자를 위한 스프링 5 프로그래밍 입문</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://www.kame.co.kr/nkm/det..."</em>로
+        <button onclick="window.open('https://www.kame.co.kr/nkm/detail.php?tcode=306&amp;tbook_jong=3','_blank'); return false;">이동</button>?
+      </span>
+    </span>_와 <span class='link-warning'>
+      <a href="https://jpub.tistory.com/1040" class="wikilink externallink">스프링 인 액션</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://jpub.tistory.com/1040"</em>로
+        <button onclick="window.open('https://jpub.tistory.com/1040','_blank'); return false;">이동</button>?
+      </span>
+    </span>의 내용을 바탕으로 정리한 내용입니다.</p>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-warning" id="callout-9a46327d-07be-4b0b-9aac-539d5da090bb">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>스프링 부트를 이용한다는 가정 하에 진행됩니다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<h2 id="스프링-시큐리티-개념-및-활성화">스프링 시큐리티 개념 및 활성화</h2>
+
+<p>스프링에서 인증, 인가와 관련된 기능을 쉽게 구현할 수 있다.</p>
+
+<p>다음과 같은 의존 모듈을 추가해야 한다.</p>
+<ul>
+  <li><strong>org.springframework.boot.spring-boot-starter-security</strong></li>
+  <li><strong>org.springframework.security.spring-security-test</strong></li>
+</ul>
+
+<p>이를 통해 기본적으로 다음과 같은 기본 보안이 제공 된다.</p>
+<ul>
+  <li>모든 HTTP 요청 경로 인증</li>
+  <li>역할과 권한(단 초기에는 아무 권한도 역할도 없음)</li>
+  <li>스프링 시큐리티 기본 로그인 페이지(나중에 변경 가능)</li>
+  <li>사용자 <strong>user</strong>와 어플리케이션 로그 파일의 초기 랜덤 암호</li>
+</ul>
+
+<h2 id="스프링-시큐리티-구성">스프링 시큐리티 구성</h2>
+
+<p>스프링 시큐리티는 다음과 같은 조건을 만족하는 구성 클래스를 이용해 설정한다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">WebSecurityConfigurerAdapter</code> 인터페이스를 구현</li>
+  <li><code class="language-plaintext highlighter-rouge">@EnableWebSecurity</code> 어노테이션 사용</li>
+  <li>다양한 인자의 <code class="language-plaintext highlighter-rouge">configure</code> 메서드들을 재정의</li>
+</ul>
+
+<div class="callout callout-example" id="callout-40205134-5e1c-461b-8b1a-29bc435870d9">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>example</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>title:<code class="language-plaintext highlighter-rouge">SecurityConfig</code> 클래스 예시<br>
+collapse: true</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">configure</code><br>
+~~~java<br>
+package tacos.security;<br>
+import org.springframework.beans.factory.annotation.Autowired;<br>
+import org.springframework.context.annotation.Configuration;<br>
+import org.springframework.security.config.annotation<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .authentication.builders.AuthenticationManagerBuilder;<br>
+import org.springframework.security.config.annotation<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .web.builders.HttpSecurity;<br>
+import org.springframework.security.config.annotation.web<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .configuration.EnableWebSecurity;<br>
+import org.springframework.security.config.annotation.web<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .configuration.WebSecurityConfigurerAdapter;</li>
+</ul>
+
+<p>@Configuration<br>
+@EnableWebSecurity<br>
+public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// HTTP 보안 설정용 메서드 &nbsp; &nbsp; @Override &nbsp; &nbsp; protected void configure(HttpSecurity http) throws Exception { &nbsp; &nbsp; &nbsp; &nbsp; http &nbsp; &nbsp; &nbsp; &nbsp; .authorizeRequests() &nbsp; &nbsp; &nbsp; &nbsp; .antMatchers("/design", "/orders") &nbsp; &nbsp; &nbsp; &nbsp; .access("hasRole('ROLE_USER')") &nbsp; &nbsp; &nbsp; &nbsp; .antMatchers("/", "/**").access("permitAll"); &nbsp; &nbsp; } &nbsp; &nbsp;
+// 사용자 인증 정보 구성용 메서드 &nbsp; &nbsp; @Override &nbsp; &nbsp; public void configure(AuthenticationManagerBuilder auth) throws Exception {
+	auth.inMemoryAuthentication()
+		.withUser("user1")
+		.password("{noop}password1")
+		.authorities("ROLE_USER")
+		.and()
+		.withUser("user2")
+		.password("{noop}password2")
+		.authorities("ROLE_USER"); &nbsp; &nbsp; } } ~~~
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>자세한 메서드 설정은 아래에서 배울 것이다.</p>
+
+<div class="callout callout-tip" id="callout-fe545db2-c3ae-4f10-8264-3e1e3e3851b6">
+      <div class="header">
+        <span class="emoji">💡</span>
+        <span class="title"><strong>개발 시 웹 브라우저를 <code class="language-plaintext highlighter-rouge">private</code> 모드로 설정하거나 관련 개발 모드를 사용하면 쿠키, 세션 등이 저장되지 않아 변화를 확인하기 좋다.
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<h2 id="다양한-사용자-스토어-구성-방법">다양한 사용자 스토어 구성 방법</h2>
+<p>인증 및 인가를 구현하기 위해 사용자 정보를 저장할 필요가 있으며, 이는 <code class="language-plaintext highlighter-rouge">AuthenticationManagerBuilder</code> 인자를 가진 <code class="language-plaintext highlighter-rouge">configure</code> 메서드를 다양한 방법으로 오버라이딩하여 가능하다.</p>
+
+<ul>
+  <li><strong>인메모리</strong></li>
+  <li><strong>JDBC</strong></li>
+  <li><strong>LDAP</strong></li>
+  <li><strong>커스텀(여기서는 JPA)</strong></li>
+</ul>
+
+<h3 id="인메모리-사용자-스토어">인메모리 사용자 스토어</h3>
+<p>소규모, 변경이 필요 없는 사용자만 이용한다면, 아예 코드 내부에 사용자를 정의할 수 있다. 앞선 예시를 다시 보자.</p>
+
+<div class="callout callout-example" id="callout-420aae82-e583-4df3-8f7e-675a5019549f">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>인메모리 사용자 스토어 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="c1">// 사용자 인증 정보 구성용 메서드</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">AuthenticationManagerBuilder</span> <span class="n">auth</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="n">auth</span><span class="o">.</span><span class="na">inMemoryAuthentication</span><span class="o">()</span>
+			<span class="o">.</span><span class="na">withUser</span><span class="o">(</span><span class="s">"user1"</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="s">"{noop}password1"</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">authorities</span><span class="o">(</span><span class="s">"ROLE_USER"</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">and</span><span class="o">()</span>
+			<span class="o">.</span><span class="na">withUser</span><span class="o">(</span><span class="s">"user2"</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="s">"{noop}password2"</span><span class="o">)</span> <span class="c1">// {noop}는 암호화하지 않음을 의미</span>
+			<span class="o">.</span><span class="na">authorities</span><span class="o">(</span><span class="s">"ROLE_USER"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>위 결과로 <code class="language-plaintext highlighter-rouge">user1</code>과 <code class="language-plaintext highlighter-rouge">user2</code> 사용자가 생긴다. <br>
+엄밀히 말하면 암호화하지 않은 암호이므로 접근 거부(403)이나 서버 에러(500)이 나타난다.<br>
+암호화 하는 방법은 다음 방법들에서 참고하자.</p>
+
+<p>이 방법은 사용자에 변경사항이 있다면 코드를 바꾸고 재 빌드, 배포 설치해야 한다는 문제가 있으므로 왠만하면 테스트 용도 이외로는 사용되지 않는다.</p>
+
+<h3 id="JDBC-사용자-스토어">JDBC 사용자 스토어</h3>
+
+<p>사용자 정보를 관계형 데이터베이스로 유지관리 하기 위해 JDBC를 이용할 수 있다.</p>
+<h4 id="사용자-스토어-설정">사용자 스토어 설정</h4>
+
+<div class="callout callout-example" id="callout-f55ed759-17fa-4b49-a9ca-b9d1faea6eaa">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>JDBC 기반 사용자 스토어 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
+<span class="c1">//...</span>
+
+<span class="nd">@Autowired</span>
+<span class="nc">DataSource</span> <span class="n">dataSource</span><span class="o">;</span> <span class="c1">//dataSource 주입</span>
+
+<span class="c1">// 사용자 인증 정보 구성용 메서드</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">AuthenticationManagerBuilder</span> <span class="n">auth</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="n">auth</span><span class="o">.</span><span class="na">jdbcAuthentication</span><span class="o">()</span>
+		<span class="o">.</span><span class="na">dataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id="스프링-시큐리티-기본-사용자-쿼리">스프링 시큐리티 기본 사용자 쿼리</h4>
+
+<p>앞선 설정 만으로 다음과 같은 쿼리들을 기본 수행한다.</p>
+
+<div class="callout callout-example" id="callout-0fd19033-31fd-4066-867f-d0a8734d468e">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>기본 사용자 쿼리
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//유저 활성화 여부 -&gt; 사용자 인증</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">DEF_USERS_BY_USERNAME_QUERY</span> <span class="o">=</span>
+	<span class="s">"select username,password,enabled"</span> <span class="o">+</span>
+	<span class="s">"from users "</span> <span class="o">+</span>
+	<span class="s">"where username = ?"</span><span class="o">;</span> 
+
+<span class="c1">// 유저의 권한 조회</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">DEF_AUTHORITIES_BY_USERNAME_QUERY</span> <span class="o">=</span> 
+	<span class="s">"select username,authority "</span> <span class="o">+</span>
+	<span class="s">"from authorities "</span> <span class="o">+</span>
+	<span class="s">"where username = ?"</span><span class="o">;</span>
+
+<span class="c1">// 유저의 그룹과 그룹 권한 조회</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">DEF_GROUP_AUTHORITIES_BY_USERNAME_QUERY</span> <span class="o">=</span>
+	<span class="s">"select g.id, g.group_name, ga.authority "</span> <span class="o">+</span>
+	<span class="s">"from authorities g, group_members gm, group_authorities ga "</span> <span class="o">+</span>
+	<span class="s">"where gm.username = ? "</span> <span class="o">+</span>
+	<span class="s">"and g.id = ga.group_id "</span> <span class="o">+</span>
+	<span class="s">"and g.id = gm.group_id"</span><span class="o">;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>따라서 jdbc로 연결된 데이터베이스 내부에 <code class="language-plaintext highlighter-rouge">users</code>, <code class="language-plaintext highlighter-rouge">authorities</code>, <code class="language-plaintext highlighter-rouge">group_members</code>, <code class="language-plaintext highlighter-rouge">group_authorities</code> 테이블들이 미리 정의되어있어야 한다.</p>
+
+<p>이를 위해 <code class="language-plaintext highlighter-rouge">src/main/resources/schema.sql</code>(스키마 정의)와 <code class="language-plaintext highlighter-rouge">src/main/resources/data.sql</code>(데이터 추가)를 이용하면 된다.</p>
+<ul>
+  <li>앞서 말햇듯이 해당 두 sql은 어플리케이션 실행 시 자동 실행된다.</li>
+</ul>
+
+<div class="callout callout-example" id="callout-9c7fc808-4153-4b8e-a006-97effb6088d8">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/resources/schema.sql</code> 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">drop</span> <span class="k">table</span> <span class="n">if</span> <span class="k">exists</span> <span class="n">users</span><span class="p">;</span>
+<span class="k">drop</span> <span class="k">table</span> <span class="n">if</span> <span class="k">exists</span> <span class="n">authorities</span><span class="p">;</span>
+<span class="k">drop</span> <span class="k">index</span> <span class="n">if</span> <span class="k">exists</span> <span class="n">ix_auth_username</span><span class="p">;</span>
+
+<span class="k">create</span> <span class="k">table</span> <span class="n">if</span> <span class="k">not</span> <span class="k">exists</span> <span class="n">users</span><span class="p">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">username</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">password</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">enabled</span> <span class="nb">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">default</span> <span class="s1">'1'</span><span class="p">);</span>
+
+<span class="k">create</span> <span class="k">table</span> <span class="n">if</span> <span class="k">not</span> <span class="k">exists</span> <span class="n">authorities</span> <span class="p">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">username</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">authority</span> <span class="n">varchar2</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">constraint</span> <span class="n">fk_authorities_users</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span><span class="k">foreign</span> <span class="k">key</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="k">references</span> <span class="n">users</span><span class="p">(</span><span class="n">username</span><span class="p">));</span>
+
+<span class="k">create</span> <span class="k">unique</span> <span class="k">index</span> <span class="n">ix_auth_username</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">on</span> <span class="n">authorities</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">authority</span><span class="p">);</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-54662a19-421a-4aff-a945-3641361abbdd">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/resources/data.sql</code> 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">insert</span> <span class="k">into</span> <span class="n">users</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="s1">'user1'</span><span class="p">,</span> <span class="s1">'password1'</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">users</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="s1">'user2'</span><span class="p">,</span> <span class="s1">'password2'</span><span class="p">);</span>
+
+<span class="k">insert</span> <span class="k">into</span> <span class="n">authorities</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">authority</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">values</span> <span class="p">(</span><span class="s1">'user1'</span><span class="p">,</span> <span class="s1">'ROLE_USER'</span><span class="p">);</span>
+
+<span class="k">insert</span> <span class="k">into</span> <span class="n">authorities</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">authority</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">values</span> <span class="p">(</span><span class="s1">'user2'</span><span class="p">,</span> <span class="s1">'ROLE_USER'</span><span class="p">);</span>
+<span class="k">commit</span><span class="p">;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>만약, 사용자 정보 쿼리를 원하는 다른 SQL로 대체하고 싶다면 다음과 같이 설정을 바꾸면 가능하다.</p>
+
+<div class="callout callout-example" id="callout-b759eabb-f5b0-4458-ae94-2e436bfdfc32">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>사용자 정보 쿼리 커스터마이징
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><code class="language-plaintext highlighter-rouge">usersByUsernameQuery</code> 커스터마이징 시 지켜야할 룰</p>
+<ul>
+  <li>매개변수(=<code class="language-plaintext highlighter-rouge">?</code>의 갯수)는 <code class="language-plaintext highlighter-rouge">username</code> 하나</li>
+  <li><code class="language-plaintext highlighter-rouge">username, password, enabled</code> 열의 값 반환</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">authoritiesByUsernameQuery</code> 커스터마이징 시 지켜야할 룰</p>
+<ul>
+  <li>해당 사용자 이름과 부여된 권한을 0 이상의 행을 반환</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">groupAuthoritiesByUsername</code> 커스터마이징 시 지켜야할 룰</p>
+<ul>
+  <li>그룹 id, 그룹 이름, 권한을 0 이상의 행을 반환</li>
+</ul>
+
+<p>이를 통해 테이블명 등을 바꿀 수 있다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">AuthenticationManagerBuilder</span> <span class="n">auth</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="n">auth</span><span class="o">.</span><span class="na">jdbcAuthentication</span><span class="o">()</span>
+		<span class="o">.</span><span class="na">dataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">usersByUsernameQuery</span><span class="o">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">"select username, password, enabled from users "</span> <span class="o">+</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">"where username=?"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">authoritiesByUsernameQuery</span><span class="o">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">"select username, authority from authorities "</span> <span class="o">+</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">"where username=?"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">//이외에도 `groupAuthoritiesByUsername` 메서드 등도 존재</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id="비밀번호-암호화-설정">비밀번호 암호화 설정</h4>
+<p>스프링은 데이터베이스 유출에 방지해 비밀번호를 암호화하지 않으면 오류를 내게 되어있다.</p>
+
+<p>다음과 같이 암호화 알고리즘을 추가할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-c2db0318-94e1-4b80-be4c-be45c2dbe440">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>암호화 설정하기
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder</span><span class="o">;</span>
+<span class="c1">//...</span>
+	<span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">AuthenticationManagerBuilder</span> <span class="n">auth</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+		<span class="n">auth</span><span class="o">.</span><span class="na">jdbcAuthentication</span><span class="o">()</span>
+		<span class="o">.</span><span class="na">dataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">usersByUsernameQuery</span><span class="o">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">"select username, password, enabled from users "</span> <span class="o">+</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">"where username=?"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">authoritiesByUsernameQuery</span><span class="o">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">"select username, authority from authorities "</span> <span class="o">+</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">"where username=?"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">passwordEncoder</span><span class="o">(</span><span class="k">new</span> <span class="nc">BCryptPasswordEncoder</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이때 <code class="language-plaintext highlighter-rouge">passwordEncoder</code> 메서드에 들어갈 수 있는 클래스는 다음과 같다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">BCryptPasswordEncoder</code>: bcrypt로 해싱 암호화</li>
+  <li><code class="language-plaintext highlighter-rouge">NoOpPasswordEncoder</code>: 암호화하지 않음</li>
+  <li><code class="language-plaintext highlighter-rouge">Pbkdf2PasswordEncoder</code>: PBKDF2로 암호화</li>
+  <li><code class="language-plaintext highlighter-rouge">SCryptPasswordEncoder</code>: scrypt로 해싱 암호화</li>
+  <li><code class="language-plaintext highlighter-rouge">StandardPasswordEncoder</code>: SHA-256로 해싱 암호화</li>
+  <li><code class="language-plaintext highlighter-rouge">PasswordEncoder</code> 인터페이스를 구현한 클래스</li>
+</ul>
+
+<div class="callout callout-note" id="callout-12968164-b7ee-4866-bfed-1d7625f13666">
+      <div class="header">
+        <span class="emoji">✍</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">PasswordEncoder</code> 클래스
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PasswordEncoder</span> <span class="o">{</span>
+	<span class="nc">String</span> <span class="nf">encode</span><span class="o">(</span><span class="nc">CharSequence</span> <span class="n">rawPassword</span><span class="o">);</span> <span class="c1">// 암호화시 실행</span>
+	<span class="kt">boolean</span> <span class="nf">matches</span><span class="o">(</span><span class="nc">CharSequence</span> <span class="n">rawPassword</span><span class="o">,</span> <span class="nc">String</span> <span class="n">encodedPassword</span><span class="o">);</span> <span class="c1">// 입력 값과 암호를 비교시 실행</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이제, 유저 추가 시, 유저의 비밀번호는 암호화되어 저장되며, 로그인 시, 입력한 비밀번호를 암호화 한뒤, DB의 암호화된 비밀번호와 비교하여 로그인한다.</p>
+
+<p>다음은 암호화 하지않는 <code class="language-plaintext highlighter-rouge">NoEncodingPasswordEncoder</code> 예시이다.</p>
+
+<div class="callout callout-example" id="callout-1b19c25d-6e70-45b8-b958-ee85a53c4d31">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">NoEncodingPasswordEncoder</code> 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.security</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.crypto.password.PasswordEncoder</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NoEncodingPasswordEncoder</span> <span class="kd">implements</span> <span class="nc">PasswordEncoder</span> <span class="o">{</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">String</span> <span class="nf">encode</span><span class="o">(</span><span class="nc">CharSequence</span> <span class="n">rawPwd</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">rawPwd</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">matches</span><span class="o">(</span><span class="nc">CharSequence</span> <span class="n">rawPwd</span><span class="o">,</span> <span class="nc">String</span> <span class="n">encodedPwd</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">rawPwd</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">encodedPwd</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="LDAP-사용자-스토어">LDAP 사용자 스토어</h3>
+
+<p>LDAP(Lightweight Directory Access Protocol)는 네트워크 상에 조직, 개인의 파일, 디바이스 등을 찾아볼 수 있게 하는 TCP/IP 기반 프로토콜로, 30년 이상 되었지만 여전히 여러 조직에서 데이터 공유를 위해 사용하고 있다.</p>
+
+<p>스프링에서도 간단히 다음과 같이 LDAP 인증을 구성할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-d1cb4f33-9f0d-4b0a-9274-df75d0118e33">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>LDAP 인증 구성
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">AuthenticationManagerBuilder</span> <span class="n">auth</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Excpetion</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="cm">/*
+&nbsp; &nbsp; &nbsp; &nbsp; auth
+&nbsp; &nbsp; &nbsp; &nbsp; .ldapAuthentication() // 루트에서부터 탐색
+&nbsp; &nbsp; &nbsp; &nbsp; .userSearchFilter("(uid={0})")
+&nbsp; &nbsp; &nbsp; &nbsp; .groupSearchFilter("member={0}");
+		*/</span>
+		<span class="n">auth</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">ldapAuthentication</span><span class="o">()</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">userSearchBase</span><span class="o">(</span><span class="s">"ou=people"</span><span class="o">)</span> <span class="c1">// 탐색 기준점 조직 단위 설정</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">userSearchFilter</span><span class="o">(</span><span class="s">"(uid={0})"</span><span class="o">)</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">groupSearchBase</span><span class="o">(</span><span class="s">"ou=groups"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">groupSearchFilter</span><span class="o">(</span><span class="s">"member={0}"</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id="비밀번호-비교-구성">비밀번호 비교 구성</h4>
+
+<p>사용자가 직접 LDAP 서버에서 인증 받도록 하는 것이 기본이나, 사용자의 비밀번호를 LDAP 서버에서 비교하게 하여 권한을 부여받는 방법도 가능하다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">auth</span> 
+<span class="o">.</span><span class="na">ldapAuthentication</span><span class="o">()</span> 
+<span class="o">.</span><span class="na">userSearchBase</span><span class="o">(&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;</span><span class="n">ou</span><span class="o">=</span><span class="n">people</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;)</span> 
+<span class="o">.</span><span class="na">userSearchFilter</span><span class="o">(&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;(</span><span class="n">uid</span><span class="o">=&amp;</span><span class="err">#</span><span class="mi">123</span><span class="o">;</span><span class="mi">0</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="o">;)&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;)</span> 
+<span class="o">.</span><span class="na">groupSearchBase</span><span class="o">(&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;</span><span class="n">ou</span><span class="o">=</span><span class="n">groups</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;)</span> 
+<span class="o">.</span><span class="na">groupSearchFilter</span><span class="o">(&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;</span><span class="n">member</span><span class="o">=&amp;</span><span class="err">#</span><span class="mi">123</span><span class="o">;</span><span class="mi">0</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">125</span><span class="o">;&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;)</span>
+<span class="o">.</span><span class="na">passwordCompare</span><span class="o">();</span> <span class="c1">// 비밀번호 비교 인증 설정</span>
+<span class="o">.</span><span class="na">passwordEncoder</span><span class="o">(</span><span class="k">new</span> <span class="nc">BCryptPasswordEncoder</span><span class="o">())</span> <span class="c1">// LDAP 서버에 저장될 암호화 설정</span>
+<span class="o">.</span><span class="na">passwordAttribute</span><span class="o">(&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;</span><span class="n">userPasscode</span><span class="o">&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;);</span><span class="c1">// 비밀번호 속성 이름 설정(기본값: userPassocde)</span>
+
+</code></pre></div></div>
+<h4 id="원격-LDAP-서버-참조">원격 LDAP 서버 참조</h4>
+<p>기본적으로 LDAP 서버의 위치를 <code class="language-plaintext highlighter-rouge">localhost:33389</code> 포트로 간주하므로, <code class="language-plaintext highlighter-rouge">contextSource()</code> 메서드로 서버 위치를 재구성할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-0d69314c-15de-48eb-8115-f43e247eb7da">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>원격 LDAP 서버 참조
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">auth</span> 
+<span class="o">.</span><span class="na">ldapAuthentication</span><span class="o">()</span> 
+<span class="o">.</span><span class="na">userSearchBase</span><span class="o">(</span><span class="s">"ou=people"</span><span class="o">)</span> 
+<span class="o">.</span><span class="na">userSearchFilter</span><span class="o">(</span><span class="s">"(uid={0})"</span><span class="o">)</span> 
+<span class="o">.</span><span class="na">groupSearchBase</span><span class="o">(</span><span class="s">"ou=groups"</span><span class="o">)</span> 
+<span class="o">.</span><span class="na">groupSearchFilter</span><span class="o">(</span><span class="s">"member={0}"</span><span class="o">)</span>
+<span class="o">.</span><span class="na">passwordCompare</span><span class="o">();</span>
+<span class="o">.</span><span class="na">passwordEncoder</span><span class="o">(</span><span class="k">new</span> <span class="nc">BCryptPasswordEncoder</span><span class="o">())</span> 
+<span class="o">.</span><span class="na">passwordAttribute</span><span class="o">(</span><span class="s">"userPasscode"</span><span class="o">)</span>
+<span class="o">.</span><span class="na">contextSource</span><span class="o">().</span><span class="na">url</span><span class="o">(</span><span class="s">"ldap://tacocloud.com:389/dc=tacocloud,dc=com"</span><span class="o">);</span> <span class="c1">// 서버 위치 설정</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h4 id="내장된-LDAP-서버-구성">내장된 LDAP 서버 구성</h4>
+
+<p>스프링 시큐리티 내장 LDAP 서버를 이용하고 싶다면 다음 의존 모듈을 추가하자.</p>
+<ul>
+  <li><strong>org.springframework.boot.spring-boot-starter-data-ldap</strong></li>
+  <li><strong>org.springframework.ldap.spring-ldap-core</strong></li>
+  <li><strong>org.springframework.security.spring-security-ldap</strong></li>
+</ul>
+
+<div class="callout callout-example" id="callout-2ff35ce6-eb94-4de8-9c86-18903103b3af">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>내장 LDAP 인증 구성
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">auth</span>
+	<span class="o">.</span><span class="na">ldapAuthentication</span><span class="o">()</span>
+	<span class="o">.</span><span class="na">userSearchBase</span><span class="o">(</span><span class="s">"ou=people"</span><span class="o">)</span>
+	<span class="o">.</span><span class="na">userSearchFilter</span><span class="o">(</span><span class="s">"(uid={0})"</span><span class="o">)</span>
+	<span class="o">.</span><span class="na">groupSearchBase</span><span class="o">(</span><span class="s">"ou=groups"</span><span class="o">)</span>
+	<span class="o">.</span><span class="na">groupSearchFilter</span><span class="o">(</span><span class="s">"member={0}"</span><span class="o">)</span>
+	<span class="o">.</span><span class="na">contextSource</span><span class="o">()</span>
+	<span class="o">.</span><span class="na">root</span><span class="o">(</span><span class="s">"dc=tacocloud,dc=com"</span><span class="o">)</span> <span class="c1">//내장 LDAP 서버 설정</span>
+	<span class="o">.</span><span class="na">ldif</span><span class="o">(</span><span class="s">"classpath:users.ldif"</span><span class="o">)</span> <span class="c1">// LDIF 파일 로드</span>
+	<span class="o">.</span><span class="na">and</span><span class="o">()</span>
+	<span class="o">.</span><span class="na">passwordCompare</span><span class="o">()</span>
+	<span class="o">.</span><span class="na">passwordEncoder</span><span class="o">(</span><span class="k">new</span> <span class="nc">BCryptPasswordEncoder</span><span class="o">())</span>
+	<span class="o">.</span><span class="na">passwordAttribute</span><span class="o">(</span><span class="s">"userPasscode"</span><span class="o">);</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이때 LDIF(LDAP Data Interchange Format) 파일로부터 데이터를 로드할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-bbe90582-a76b-4a2a-938e-2c83c4f6fe8d">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">users.ldif</code> 예시
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<pre><code class="language-ldif">dn: ou=groups,dc=tacocloud,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=tacocloud,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=tacocloud,ou=people,dc=tacocloud,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: GD Hong
+sn: Hong
+uid: user1
+userPasscode: password1
+
+dn: uid=tacocloud,ou=people,dc=tacocloud,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: MS Park
+sn: Park
+uid: user2
+userPasscode: password2
+
+dn: cn=USER,ou=groups,dc=tacocloud,dc=com
+objectclass: top
+objectclass: groupOfNames
+cn: USER
+member: uid=user1,ou=people,dc=tacocloud,dc=com
+member: uid=user2,ou=people,dc=tacocloud,dc=com
+</code></pre>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-info" id="callout-f5f5cc99-b879-446f-8a78-5eb8046d1f15">
+      <div class="header">
+        <span class="emoji">ℹ️</span>
+        <span class="title"><strong>LDIF?
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>LDAP 데이터를 나타내는 표준 표기, 각 레코드는 하나 이상의 줄로 구성되며, 각 줄은 한 쌍으로 된 <code class="language-plaintext highlighter-rouge">name:value</code>를 포함, 각 레코드는 빈 줄로 구분</p>
+
+</div>
+    </div>
+    </div>
+<h3 id="커스텀-사용자-스토어-JPA">커스텀 사용자 스토어(JPA)</h3>
+
+<p>사용자 정보에 사용자명과 유저명 이외에도 이름, 이메일, 가입날짜 등 다양한 추가 데이터를 넣고, JPA 기반의 처리를 해보자.</p>
+
+<h4 id="사용자-도메인-객체와-퍼시스턴트-정의하기">사용자 도메인 객체와 퍼시스턴트 정의하기</h4>
+<p>스프링 시큐리티의 <code class="language-plaintext highlighter-rouge">UserDetails</code> 인터페이스를 구현하면 사용자 클래스로 사용할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-cd7f5668-f556-47f5-aabe-945f2fae6444">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">User</code> 클래스
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GenerationType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.security.core.GrantedAuthority</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.core</span>
+<span class="o">.</span><span class="na">authority</span><span class="o">.</span><span class="na">SimpleGrantedAuthority</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.core</span>
+<span class="o">.</span><span class="na">userdetails</span><span class="o">.</span><span class="na">UserDetails</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.AccessLevel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.Data</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.NoArgsConstructor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.RequiredArgsConstructor</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Data</span>
+<span class="nd">@NoArgsConstructor</span><span class="o">(</span><span class="n">access</span><span class="o">=</span><span class="nc">AccessLevel</span><span class="o">.</span><span class="na">PRIVATE</span><span class="o">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">true</span><span class="o">)</span>
+<span class="nd">@RequiredArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="kd">implements</span> <span class="nc">UserDetails</span> <span class="o">{</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Id</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span><span class="o">=</span><span class="nc">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">username</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">fullname</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">street</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">city</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">state</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">zip</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">phoneNumber</span><span class="o">;</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">Collection</span><span class="o">&lt;?</span> <span class="kd">extends</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">GrantedAuthority</span><span class="o">&gt;</span> <span class="nf">getAuthorities</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">SimpleGrantedAuthority</span><span class="o">(</span><span class="s">"ROLE_USER"</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAccountNonExpired</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAccountNonLocked</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isCredentialsNonExpired</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEnabled</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이후 <code class="language-plaintext highlighter-rouge">CrudRepository</code>를 통해 자동으로 레포지토리를 생성한다.</p>
+<ul>
+  <li>자세한 것은 <span class="preview-wrapper">
+      <a href="/articles/web/backend/Spring/Spring5-JPA.html" class="wikilink">Spring5-JPA</a>
+      <iframe class="preview" src='' data-href="/articles/web/backend/Spring/Spring5-JPA.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 참조</li>
+</ul>
+
+<div class="callout callout-example" id="callout-abf4d275-f461-43df-9b74-1dd5053d0088">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">tacos/data/UserRepository.java</code>
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.data</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.data.repository.CrudRepository</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">tacos.User</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="kd">extends</span> <span class="nc">CrudRepository</span><span class="o">&lt;</span><span class="nc">User</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">User</span> <span class="nf">findByUsername</span><span class="o">(</span><span class="nc">String</span> <span class="n">username</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p><code class="language-plaintext highlighter-rouge">findByUsername</code> 메서드를 추가로 정의하여 앞으로 사용자 명세 서비스에 생성한다.</p>
+
+<h4 id="사용자-명세-서비스-생성">사용자 명세 서비스 생성</h4>
+
+<p>스프링 시큐리티의 <code class="language-plaintext highlighter-rouge">UserDetailsService</code>는 사용자 이름으로 <code class="language-plaintext highlighter-rouge">UserDetails</code> 객체를 반환하거나 <code class="language-plaintext highlighter-rouge">UsernameNotFoundException</code>을 발생시키는 인터페이스이다.</p>
+
+<div class="callout callout-example" id="callout-68dfe835-660d-485d-afa2-c289bb9a8b2d">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">UserDetailsService</code> 인터페이스
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>절대로 <code class="language-plaintext highlighter-rouge">null</code>을 반호나하면 안된다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetailsService</span> <span class="o">{</span>
+	<span class="nc">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="nc">String</span> <span class="n">username</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">UsernameNotFoundException</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이를 구현한 서비스를 다음과 같이 구현할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-eb85bbcc-d326-48a5-babe-3824bbb0df1a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">UserRepositoryUserDetailsService</code> 서비스 구현
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.security</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.core</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">userdetails</span><span class="o">.</span><span class="na">UserDetails</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.core</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">userdetails</span><span class="o">.</span><span class="na">UserDetailsService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.core</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">userdetails</span><span class="o">.</span><span class="na">UsernameNotFoundException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">tacos.User</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">tacos.data.UserRepository</span><span class="o">;</span>
+
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserRepositoryUserDetailsService</span> <span class="kd">implements</span> <span class="nc">UserDetailsService</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> 
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">UserRepository</span> <span class="n">userRepo</span><span class="o">;</span>
+
+	<span class="nd">@Autowired</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nf">UserRepositoryUserDetailsService</span><span class="o">(</span><span class="nc">UserRepository</span> <span class="n">userRepo</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">userRepo</span> <span class="o">=</span> <span class="n">userRepo</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="nc">String</span> <span class="n">username</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">UsernameNotFoundException</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">userRepo</span><span class="o">.</span><span class="na">findByUsername</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">throw</span> <span class="k">new</span> <span class="nc">UsernameNotFoundException</span><span class="o">(</span><span class="s">"User '"</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s">"' not found"</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이후 <code class="language-plaintext highlighter-rouge">SecurityConfig</code>에 해당 서비스를 추가하고, 이를 이용해 유저 인증을 호출한다.</p>
+
+<div class="callout callout-example" id="callout-296c20c5-1f55-47f2-87be-88a8ddb2000a">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">SecuritConfig</code>에 <code class="language-plaintext highlighter-rouge">UserDetailsService</code>와 인증 메서드 변경
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>또한, <code class="language-plaintext highlighter-rouge">@Bean</code>으로 관리되는 암호화 과정을 추가한다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.core.userdetails.UserDetailsService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.crypto.password.PasswordEncoder</span><span class="o">;</span>
+<span class="c1">//...</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SecurityConfig</span> <span class="kd">extends</span> <span class="nc">WebSecurityConfigurerAdapter</span> <span class="o">{</span>
+	<span class="c1">//...</span>
+	<span class="nd">@Autowired</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">UserDetailsService</span> <span class="n">userDetailsService</span><span class="o">;</span>
+	
+	<span class="nd">@Bean</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">PasswordEncoder</span> <span class="nf">encoder</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="k">new</span> <span class="nc">BCryptPasswordEncoder</span><span class="o">();</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+	<span class="nd">@Override</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">AuthenticationManagerBuilder</span> <span class="n">auth</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span><span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">auth</span><span class="o">.</span><span class="na">userDetailsService</span><span class="o">(</span><span class="n">userDetailsService</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">.</span><span class="na">passwordEncoder</span><span class="o">(</span><span class="n">encoder</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이제 JPA를 이용한 사용자 인증을 마쳤다.</p>
+
+<h4 id="사용자-등록하기">사용자 등록하기</h4>
+<p>이제 사용자 등록 컨트롤러와 뷰를 구현해 사용자 등록을 해보자.</p>
+
+<div class="callout callout-example" id="callout-4c2c8f0d-47b1-4a86-b3bd-4859d570bebf">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>사용자 등록 컨트롤러(src/main/java/tacos/security/RegistrationController.java)
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.security</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.crypto.password.PasswordEncoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.PostMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">tacos.data.UserRepository</span><span class="o">;</span>
+
+<span class="nd">@Controller</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/register"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RegistrationController</span> <span class="o">{</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">UserRepository</span> <span class="n">userRepo</span><span class="o">;</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="nc">PasswordEncoder</span> <span class="n">passwordEncoder</span><span class="o">;</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nf">RegistrationController</span><span class="o">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nc">UserRepository</span> <span class="n">userRepo</span><span class="o">,</span> <span class="nc">PasswordEncoder</span> <span class="n">passwordEncoder</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">userRepo</span> <span class="o">=</span> <span class="n">userRepo</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">this</span><span class="o">.</span><span class="na">passwordEncoder</span> <span class="o">=</span> <span class="n">passwordEncoder</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@GetMapping</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">String</span> <span class="nf">registerForm</span><span class="o">()</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="s">"registration"</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@PostMapping</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">String</span> <span class="nf">processRegistration</span><span class="o">(</span><span class="nc">RegistrationForm</span> <span class="n">form</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">userRepo</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">form</span><span class="o">.</span><span class="na">toUser</span><span class="o">(</span><span class="n">passwordEncoder</span><span class="o">));</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="s">"redirect:/login"</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-7725e13e-7ebb-42c5-84d9-4b7bfcea3349">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>example</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>title:<code class="language-plaintext highlighter-rouge">RegistrationForm.java</code><br>
+collapse: true</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">tacos.security</span><span class="o">;</span> 
+
+<span class="kn">import</span> <span class="nn">org.springframework.security.crypto.password.PasswordEncoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.Data</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">tacos.User</span><span class="o">;</span>
+
+<span class="nd">@Data</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RegistrationForm</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">username</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">fullname</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">street</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">city</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">state</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">zip</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">phone</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="nc">User</span> <span class="nf">toUser</span><span class="o">(</span><span class="nc">PasswordEncoder</span> <span class="n">passwordEncoder</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">User</span><span class="o">(</span><span class="n">username</span><span class="o">,</span> <span class="n">passwordEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="n">password</span><span class="o">),</span> <span class="n">fullname</span><span class="o">,</span> <span class="n">street</span><span class="o">,</span> <span class="n">city</span><span class="o">,</span> <span class="n">state</span><span class="o">,</span> <span class="n">zip</span><span class="o">,</span> <span class="n">phone</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<div class="callout callout-example" id="callout-57e9583b-27ec-4912-8d07-24633a5bdffd">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">registration.html</code> Thymeleaf 등록 폼 뷰
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1999/xhtml"</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="na">xmlns:th=</span><span class="s">"http://www.thymeleaf.org"</span><span class="nt">&gt;</span>
+&nbsp; <span class="nt">&lt;head&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"EUC-KR"</span><span class="nt">&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;title&gt;</span>Taco Cloud<span class="nt">&lt;/title&gt;</span>
+&nbsp; <span class="nt">&lt;/head&gt;</span>
+&nbsp; <span class="nt">&lt;body&gt;</span>
+&nbsp; <span class="nt">&lt;h1&gt;</span>Register<span class="nt">&lt;/h1&gt;</span>
+&nbsp; <span class="nt">&lt;img</span> <span class="na">th:src=</span><span class="s">"@{/images/TacoCloud.png}"</span> <span class="nt">/&gt;</span>
+&nbsp; <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">th:action=</span><span class="s">"@{/register}"</span> <span class="na">id=</span><span class="s">"registerForm"</span><span class="nt">&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"username"</span><span class="nt">&gt;</span>Username: <span class="nt">&lt;/label&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"password"</span><span class="nt">&gt;</span>Password: <span class="nt">&lt;/label&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"password"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"confirm"</span><span class="nt">&gt;</span>Confirm password: <span class="nt">&lt;/label&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">name=</span><span class="s">"confirm"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"fullname"</span><span class="nt">&gt;</span>Full name: <span class="nt">&lt;/label&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"fullname"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"street"</span><span class="nt">&gt;</span>Street: <span class="nt">&lt;/label&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"street"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"city"</span><span class="nt">&gt;</span>City: <span class="nt">&lt;/label&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"city"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"state"</span><span class="nt">&gt;</span>State: <span class="nt">&lt;/label&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"state"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"zip"</span><span class="nt">&gt;</span>Zip: <span class="nt">&lt;/label&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"zip"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"phone"</span><span class="nt">&gt;</span>Phone: <span class="nt">&lt;/label&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"phone"</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+&nbsp; &nbsp; <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Register"</span> <span class="nt">/&gt;</span>
+&nbsp; <span class="nt">&lt;/form&gt;</span>
+&nbsp; <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>하지만 현재 모든 페이지에 인증이 필요하도록 설정되어 있으므로, 비회원이 등록페이지를 볼 수 없다. 이를 해결할 것이다.</p>
+
+<h2 id="웹-요청-보안-처리">웹 요청 보안 처리</h2>
+<p><code class="language-plaintext highlighter-rouge">protected void configure(HttpSecurity http) throws Exception</code>을 재정의하면 다음 기능을 구현할 수 있다.</p>
+<ul>
+  <li>HTTP 요청 처리를 허용하기 전에 충족되어야 할 특정 보안 조건을 구성(인가)</li>
+  <li>커스텀 로그인 페이지를 구성</li>
+  <li>사용자가 애플리케이션의 로그아웃을 할 수 있도록 한다.</li>
+  <li>CSRF 공격으로부터 보호하도록 구성</li>
+</ul>
+
+<h3 id="웹-요청-보안-처리">웹 요청 보안 처리</h3>
+
+<p>다음 코드는 인가를 구현하게 해준다.</p>
+
+<div class="callout callout-example" id="callout-0c945d59-3e06-4fb3-9a61-f9effcbffc4c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">SecurityConfig</code> 클래스 두번째 메서드
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p><strong>보안 규칙의 순서는 아주 중요하다!</strong> 예를 들어 <code class="language-plaintext highlighter-rouge">antMatchers("/", "/**").permitAll();</code>가 맨 앞에 온다면, 그 뒤의 패턴과 관계없이 모두 접근 가능하게 된다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">HttpSecurity</span> <span class="n">http</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+	<span class="n">http</span>
+		<span class="o">.</span><span class="na">authorizeRequests</span><span class="o">()</span>
+		<span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/design"</span><span class="o">,</span> <span class="s">"/orders"</span><span class="o">)</span> <span class="c1">// design, orders 페이지는 </span>
+		<span class="o">.</span><span class="na">hasRole</span><span class="o">(</span><span class="s">"ROLE_USER"</span><span class="o">)</span> <span class="c1">// ROLE_USER 권한이 있어야 접근 가능</span>
+		<span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="s">"/**"</span><span class="o">).</span><span class="na">permitAll</span><span class="o">();</span> <span class="c1">// 나머지는 전부 접근 가능</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p><code class="language-plaintext highlighter-rouge">anthorizeRequests()</code>는 <code class="language-plaintext highlighter-rouge">ExpressionInterceptUrlRegistry</code> 객체를 반환한다. <br>
+<code class="language-plaintext highlighter-rouge">ExpressionInterceptUrlRegistry</code> 객체는 <code class="language-plaintext highlighter-rouge">antMatchers()</code> 메서드를 통해 경로 및 패턴을 지정해 요구사항을 구성한다.</p>
+
+<div class="callout callout-example" id="callout-97d7e4a8-5fd5-4357-bab2-d3ca80122dda">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>example</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content"><p>title:요청 경로가 보안 처리되는 방법을 정의 하는 구성 메서드<br>
+이외에도 다음과 같은 메서드들로 규칙을 구성할 수 있다.</p>
+
+<p>|메서드|하는일|<br>
+|—|—|<br>
+|<code class="language-plaintext highlighter-rouge">access(String)</code>|SpEL 표현식이 true면 접근 허용|<br>
+|<code class="language-plaintext highlighter-rouge">denyAll()</code>|모든 접근 거부|<br>
+|<code class="language-plaintext highlighter-rouge">authenticated()</code>|익명이 아닌 사용자로 인증되면 접근 허용|<br>
+|<code class="language-plaintext highlighter-rouge">not()</code>|다른 접근 메서드 효력 무효|<br>
+|<code class="language-plaintext highlighter-rouge">rememberMe()</code>|쿠키나 DB로 저장된 자동 고르인을 통해 인증된 경우 접근 허용|<br>
+더 자세한 것은 <span class='link-warning'>
+      <a href="https://docs.spring.io/spring-security/reference/servlet/authorization/expression-based.html" class="wikilink externallink">공식 문서</a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://docs.spring.io/spring-..."</em>로
+        <button onclick="window.open('https://docs.spring.io/spring-security/reference/servlet/authorization/expression-based.html','_blank'); return false;">이동</button>?
+      </span>
+    </span> 참조</p>
+
+</div>
+    </div>
+    </div>
+<p>더욱 풍부하고 자세한 보안 규칙을 선언하기 위해 <span class='link-warning'>
+      <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/expressions.html" class="wikilink externallink"><strong>SpEL(Spring Expression Language, 스프링 표현식 언어)</strong></a>
+      <a class="link-title" href="#" stlye="display: none;"></a>
+      <span class='link-warning-text' style="display: none;" >보안 확인 : <em>외부링크</em><br/><em>
+      "https://docs.spring.io/spring-..."</em>로
+        <button onclick="window.open('https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/expressions.html','_blank'); return false;">이동</button>?
+      </span>
+    </span> 사용하면 다음과 같은 표현이 가능하다.</p>
+
+<div class="callout callout-example" id="callout-96bd3bfa-d395-4e41-b75b-c7fdd27ba0ff">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>SpEL 예시
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>화요일의 <code class="language-plaintext highlighter-rouge">/design, /orders</code> 접근은 <code class="language-plaintext highlighter-rouge">ROLE_USER</code> 권한이 있어야 함.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">HttpSecurity</span> <span class="n">http</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+	<span class="n">http</span>
+		<span class="o">.</span><span class="na">authorizeRequests</span><span class="o">()</span>
+		<span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/design"</span><span class="o">,</span> <span class="s">"/orders"</span><span class="o">)</span>
+		<span class="o">.</span><span class="na">access</span><span class="o">(</span><span class="s">"hasRole('ROLE_USER') &amp;&amp;"</span> <span class="o">+</span>
+		<span class="s">"T(java.util.Calendar).getInstance().get()"</span> <span class="o">+</span>
+		<span class="s">"T(java.util.Calendar).DAY_OF_WEEK) == "</span> <span class="o">+</span>
+		<span class="s">"T(java.util.Calendar).TUESDAY"</span><span class="o">)</span>
+		<span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="s">"/**"</span><span class="o">).</span><span class="na">access</span><span class="o">(</span><span class="s">"permitall"</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="커스텀-로그인-페이지-생성">커스텀 로그인 페이지 생성</h3>
+
+<p>다음과 같은 설정으로 커스텀 로그인 페이지 경로를 지정할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-4065030c-c6fb-42ee-9798-8e5ad50fb1ef">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>커스텀 로그인 페이지 경로 지정하기
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">HttpSecurity</span> <span class="n">http</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+	<span class="n">http</span>
+		<span class="o">.</span><span class="na">authorizeRequests</span><span class="o">()</span>
+		<span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/design"</span><span class="o">,</span> <span class="s">"/orders"</span><span class="o">)</span> 
+		<span class="o">.</span><span class="na">hasRole</span><span class="o">(</span><span class="s">"ROLE_USER"</span><span class="o">)</span>
+		<span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="s">"/**"</span><span class="o">).</span><span class="na">permitAll</span><span class="o">()</span>
+		<span class="o">.</span><span class="na">and</span><span class="o">()</span> <span class="c1">// 새로운 구성 시작</span>
+		<span class="o">.</span><span class="na">formLogin</span><span class="o">()</span> <span class="c1">// 로그인 페이지 구성 시작</span>
+		<span class="o">.</span><span class="na">loginPage</span><span class="o">(</span><span class="s">"/login"</span><span class="o">);</span> <span class="c1">// 로그인 페이지 경로: 이곳에서 로그인 시도</span>
+		<span class="o">.</span><span class="na">loginProcessingUrl</span><span class="o">(</span><span class="s">"/authenticate"</span><span class="o">)</span> <span class="c1">// 로그인 처리 경로 : 로그인 시도 시 옮겨지는 페이지</span>
+		<span class="o">.</span><span class="na">usernameParameter</span><span class="o">(</span><span class="s">"user"</span><span class="o">)</span> <span class="c1">// 로그인 post 요청 유저명 필드 이름 변경</span>
+		<span class="o">.</span><span class="na">passwordParameter</span><span class="o">(</span><span class="s">"pwd"</span><span class="o">)</span> <span class="c1">// 로그인 post 요청 비밀번호 필드 이름 변경</span>
+		<span class="o">.</span><span class="na">defaultSuccessUrl</span><span class="o">(</span><span class="s">"/desigin"</span><span class="o">,</span> <span class="kc">true</span><span class="o">)</span> <span class="c1">// 로그인 성공시 무조건 "/design" 페이지로 이동</span>
+		<span class="c1">// 두번째 true가 안주어지면 기본 false로, 로그인 이전에 있던 페이지가 있다면 "/design" 대신 그곳으로 이동됨.</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이제 해당 로그인 페이지 경로를 처리하는 컨트롤러를 제공해야 한다.</p>
+
+<div class="callout callout-example" id="callout-798ee167-9aa6-4831-a76a-8050b0c6ea33">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">WebConfig</code>에 뷰 컨트롤러 선언
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addViewControllers</span><span class="o">(</span><span class="nc">ViewControllerRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">registry</span><span class="o">.</span><span class="na">addViewController</span><span class="o">(</span><span class="s">"/"</span><span class="o">).</span><span class="na">setViewName</span><span class="o">(</span><span class="s">"home"</span><span class="o">);</span>
+	<span class="n">registry</span><span class="o">.</span><span class="na">addViewController</span><span class="o">(</span><span class="s">"/login"</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<h3 id="로그아웃하기">로그아웃하기</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="na">and</span><span class="o">()</span>
+<span class="o">.</span><span class="na">logout</span><span class="o">()</span> <span class="c1">// &amp;#34;/logout&amp;#34; 페이지로 post 요청시 로세션 및 사용자 정보 제거</span>
+<span class="o">.</span><span class="na">logoutSuccessUrl</span><span class="o">(&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;/&amp;</span><span class="err">#</span><span class="mi">34</span><span class="o">;)</span> <span class="c1">// logout 이후 이동할 페이지</span>
+
+</code></pre></div></div>
+<p>위와 같은 보안 구성을 추가하고, <code class="language-plaintext highlighter-rouge">/logout</code> 페이지로 <code class="language-plaintext highlighter-rouge">post</code> 요청을 보내는 버튼을 추가하면 된다.</p>
+
+<h3 id="CSRF-공격-방어">CSRF 공격 방어</h3>
+
+<p><strong>CSRF(Cross-Site Request Forgery, 크로스 사이트 요청 위조)</strong>는 사용자가 웹사이트에 로그인 해있을 때, 악의적인 코드가 삽입된 페이지를 열게하여 악의적인 폼 제출, 위조된 명령을 하게 하는 공격이다.</p>
+<ul>
+  <li>예를 들어 로그인한 사람에게 공격자에게 송금하도록 하는 코드를 실행하게 한다던가…</li>
+</ul>
+
+<p>이를 막기 위해 폼의 숨김(hidden) 필드에 CSRF 토큰을 삽입해, 폼 제출 시 이 토큰을 같이 보내도록 하여 서버에서 비교하여 정상적인 요청인지 확인하게 한다. 다르거나, 토큰이 없다면 악의적인 제출로 판단하고 거부한다.</p>
+
+<p>스프링 시큐리티에서는 기본적으로 CSRF 방어 기능이 활성화 되어 있으며, 요청하는 뷰에서 <code class="language-plaintext highlighter-rouge">_csrf</code> 필드를 제출하는 폼에 포함시키면 된다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;input type="hidden" name="_csrf" th:value="${_csrf.token}"/&gt;</code> 처럼…</li>
+  <li>만약 스프링 시큐리티 dialect를 사용중이고, JSP나 Thymeleaf라면 위 조차도 필요 없음</li>
+</ul>
+
+<p>비활성화 할 수 있지만, 성능상 큰 차이가 없고, 치명적인 결과를 초래한다.<br>
+따라서, REST API 서버를 만드는 경우가 아니라면, 그리하지 말자.</p>
+
+<p>명시적으로 구현하려면 <code class="language-plaintext highlighter-rouge">.and().csrf()</code>를 구성에 추가하자.</p>
+
+<h2 id="사용자-인가-및-정보-얻기">사용자 인가 및 정보 얻기</h2>
+
+<p>사용자가 적법한 사용자인지 이외에도, 현재 사용자에 대한 정보를 얻는 것 또한 유저 경험을 위해 중요하다.</p>
+
+<p>이는 다음과 같이 4가지 방법으로 가능하다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Principal</code> 객체를 컨트롤러 메서드에 주입</li>
+  <li><code class="language-plaintext highlighter-rouge">Authentication</code> 객체를 컨트롤러 메서드에 주입</li>
+  <li><code class="language-plaintext highlighter-rouge">@AuthenticationPrincipal</code> 어노테이션을 메서드에 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">SecurityContextHolder</code>를 사용해서 보안 컨텍스트를 얻기
+    <h3 id="Principal-객체를-컨트롤러-메서드에-주입"><code class="language-plaintext highlighter-rouge">Principal</code> 객체를 컨트롤러 메서드에 주입</h3>
+  </li>
+</ul>
+
+<div class="callout callout-example" id="callout-fdd87bf3-8610-4b07-92fd-26ffd83a8c37">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">Principal</code> 객체를 컨트롤러 메서드에 주입
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">processOrder</span><span class="o">(</span><span class="nd">@Valid</span> <span class="nc">Order</span> <span class="n">order</span><span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span><span class="o">,</span> <span class="nc">SessionStatus</span> <span class="n">sessionStatus</span><span class="o">,</span> <span class="nc">Principal</span> <span class="n">principal</span><span class="o">)</span> <span class="o">{</span>
+	<span class="c1">//...</span>
+	<span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findByUsername</span><span class="o">(</span><span class="n">principal</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+
+	<span class="n">order</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>보안과 관련없는 코드가 혼재하여 코드가 읽기 힘듦</p>
+
+<h3 id="Authentication-객체를-컨트롤러-메서드에-주입"><code class="language-plaintext highlighter-rouge">Authentication</code> 객체를 컨트롤러 메서드에 주입</h3>
+
+<div class="callout callout-example" id="callout-6c83f849-ce17-447c-98e1-5df522ed8918">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">Authentication</code> 객체를 컨트롤러 메서드에 주입
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">processOrder</span><span class="o">(</span><span class="nd">@Valid</span> <span class="nc">Order</span> <span class="n">order</span><span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span><span class="o">,</span> <span class="nc">SessionStatus</span> <span class="n">sessionStatus</span><span class="o">,</span> <span class="nc">Authentication</span> <span class="n">authentication</span><span class="o">)</span> <span class="o">{</span>
+	<span class="c1">//...</span>
+	<span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="o">(</span><span class="nc">User</span><span class="o">)</span> <span class="n">authentication</span><span class="o">.</span><span class="na">getPrincipal</span><span class="o">();</span>
+
+	<span class="n">order</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>보안과 관련없는 코드가 없지만 타입변환이 필요함</p>
+
+<h3 id="AuthenticationPrincipal-어노테이션을-메서드에-지정"><code class="language-plaintext highlighter-rouge">@AuthenticationPrincipal</code> 어노테이션을 메서드에 지정</h3>
+
+<div class="callout callout-example" id="callout-2510b23e-5f3d-41e4-a146-da5ca525d145">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">@AuthenticationPrincipal</code> 어노테이션을 메서드에 지정
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">org.springframework.security.core.annotation.AuthenticationPrincipal</span><span class="o">;</span>
+<span class="c1">//...</span>
+<span class="kn">import</span> <span class="nn">tacos.User</span><span class="o">;</span>
+<span class="c1">//...</span>
+<span class="nd">@PostMapping</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">processOrder</span><span class="o">(</span><span class="nd">@Valid</span> <span class="nc">Order</span> <span class="n">order</span><span class="o">,</span> <span class="nc">Errors</span> <span class="n">errors</span><span class="o">,</span> <span class="nc">SessionStatus</span> <span class="n">sessionStatus</span><span class="o">,</span> <span class="nd">@AuthenticationPrincipal</span> <span class="nc">User</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">errors</span><span class="o">.</span><span class="na">hasErrors</span><span class="o">())</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="s">"orderForm"</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="n">order</span><span class="o">.</span><span class="na">setUser</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+
+	<span class="n">orderRepo</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
+	<span class="n">sessionStatus</span><span class="o">.</span><span class="na">setComplete</span><span class="o">();</span>
+
+	<span class="k">return</span> <span class="s">"redirect:/"</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>타입 변환이 필요 없고, 위 방법과 동일하게 보안 특정 코드만 가짐. 자주 사용하는 방법.</p>
+
+<h3 id="SecurityContextHolder를-사용해서-보안-컨텍스트를-얻기"><code class="language-plaintext highlighter-rouge">SecurityContextHolder</code>를 사용해서 보안 컨텍스트를 얻기</h3>
+
+<div class="callout callout-example" id="callout-97f37ab1-73a9-48eb-859e-5bfb0e190290">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">SecurityContextHolder</code>를 사용해서 보안 컨텍스트를 얻기
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Authentication</span> <span class="n">authentication</span> <span class="o">=</span> <span class="nc">SecurityContextHolder</span><span class="o">.</span><span class="na">getContext</span><span class="o">().</span><span class="na">getAuthentication</span><span class="o">();</span>
+<span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="o">(</span><span class="nc">User</span><span class="o">)</span> <span class="n">authentication</span><span class="o">.</span><span class="na">getPrincipal</span><span class="o">();</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+<p>이 방법은 <code class="language-plaintext highlighter-rouge">Authentication</code> 방법보다 더욱 길지만, 어플리케이션 어디에서든 사용할 수 있다는 장점이 있다.</p>
+
+<h3 id="관련-컨트롤러-구현-예시">관련 컨트롤러 구현 예시</h3>
+<p>위 방법들을 이용해 다음과 같이 컨트롤러를 구현할 수 있다.</p>
+
+<div class="callout callout-example" id="callout-84fb57ca-284e-4c02-9164-952d77154e4c">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">OrderController</code>의 <code class="language-plaintext highlighter-rouge">orderForm()</code> 변경하기
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>주문 페이지의 폼에 로그인 사용자의 정보를 미리 채워두는 메서드</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.ModelAttribute</span><span class="o">;</span>
+<span class="c1">//...</span>
+
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/orders"</span><span class="o">)</span>
+<span class="nd">@SessionAttributes</span><span class="o">(</span><span class="s">"order"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderController</span> <span class="o">{</span>
+	<span class="c1">//...</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/current"</span><span class="o">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nc">String</span> <span class="nf">orderForm</span><span class="o">(</span><span class="nd">@AuthenticationPrincipal</span> <span class="nc">User</span> <span class="n">user</span><span class="o">,</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="nd">@ModelAttribute</span> <span class="nc">Order</span> <span class="n">order</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">order</span><span class="o">.</span><span class="na">getDeliveryName</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">order</span><span class="o">.</span><span class="na">setDeliveryName</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getFullname</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">order</span><span class="o">.</span><span class="na">getDeliveryStreet</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">order</span><span class="o">.</span><span class="na">setDeliveryStreet</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getStreet</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">order</span><span class="o">.</span><span class="na">getDeliveryCity</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">order</span><span class="o">.</span><span class="na">setDeliveryCity</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getCity</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">order</span><span class="o">.</span><span class="na">getDeliveryState</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">order</span><span class="o">.</span><span class="na">setDeliveryState</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getState</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">order</span><span class="o">.</span><span class="na">getDeliveryZip</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">order</span><span class="o">.</span><span class="na">setDeliveryZip</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getZip</span><span class="o">());</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="s">"orderForm"</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
+</body></html>
+</div>
+
+  </div><a class="u-url" href="/articles/web/backend/Spring/Spring5-%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0.html" hidden></a>
+  <p class="u-path" hidden>_articles/web/backend/Spring/Spring5-스프링 시큐리티.md</p>
+  <script type="module" src="/assets/scripts/utils/update_recents.js"></script>
+</article>
+
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">🧠SUBBRAIN</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="a-name">🧠SUBBRAIN</li><li><a class="u-email" href="mailto:roadvirushn@gmail.com">roadvirushn@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li>
+    <a href="https://github.com/RoadVirusHN"><svg class="svg-icon">
+        <use xlink:href="/assets/svg/social-icons.svg#github"></use>
+      </svg>
+      <span class="username">RoadVirusHN</span></a>
+  </li><!---->
+</ul></div>
+
+      <div class="footer-col footer-col-3">
+        <p>이것이 디지털 동물의 숲이다!! 파멸편 (This is the Digital Animal Crossing!! Bad Ending.01)</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+<script src="/assets/scripts/bundle/common.bundle.js"></script>
+
+</html>

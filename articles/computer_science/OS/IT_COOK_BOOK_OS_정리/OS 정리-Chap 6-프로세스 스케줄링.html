@@ -127,7 +127,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 6
+      📂: 7
     </span>
     <ul class="child-category-list">
       
@@ -204,10 +204,24 @@
       <li>
         <strong style="font-size: larger;">
           ┃  
-          ┗ 
+          ┣ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
           <a class="category-link" href="/categories/COMPUTER_SCIENCE/OSSU/">OSSU</a>
+        </h4>
+          <span style="font-size: xx-small;">
+             
+            📂: 1
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┗ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/COMPUTER_SCIENCE/PL/">PL</a>
         </h4>
           <span style="font-size: xx-small;">
              
@@ -545,7 +559,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#스케줄링의-이해">스케줄링의 이해</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-스케줄링의-개념">1 스케줄링의 개념</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-스케줄링의-목적">2 스케줄링의 목적</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-스케줄링의-기준-요소">3 스케줄링의 기준 요소</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#4-스케줄링의-단계">4 스케줄링의 단계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#5-스케줄링-큐">5 스케줄링 큐</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#6-스케줄링과-스케줄러">6 스케줄링과 스케줄러</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#7-선점-스케줄링과-비선점-스케줄링">7 선점 스케줄링과 비선점 스케줄링</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#8-스케줄링-알고리즘의-선택-기준">8 스케줄링 알고리즘의 선택 기준</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-9" href="#스케줄링-알고리즘">스케줄링 알고리즘</a><ul><li lvl="3"><a id="markdown-toc-0-10" href="#1-선입선처리-FIFO-First-In-First-Out-스케줄링">1 선입선처리(FIFO, First In First Out) 스케줄링</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#2-최소작업-우선-스케줄링">2 최소작업 우선 스케줄링</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-12" href="#3-우선순위-스케줄링">3 우선순위 스케줄링</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-13" href="#4-라운드-로빈-스케줄링">4 라운드 로빈 스케줄링</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-14" href="#5-다단계-큐-스케줄링">5 다단계 큐 스케줄링</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-15" href="#6-다단계-피드백-큐-스케줄링">6 다단계 피드백 큐 스케줄링</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-16" href="#7-HRN-스케줄링">7 HRN 스케줄링</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-17" href="#8-다중-프로세서-스케줄링">8 다중 프로세서 스케줄링</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-18" href="#9-스레드-스케줄링">9 스레드 스케줄링</a><ul></ul></li></ul></li></ol>
 <h1 id="6-프로세스-스케줄링">6. 프로세스 스케줄링</h1>
 
-<div class="callout callout-quote" id="callout-f8da05a2-1907-4a32-a48b-355a6b597a6d">
+<div class="callout callout-quote" id="callout-9195f738-1ee9-4d8a-adc0-3b6b742a2c8b">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -908,7 +922,7 @@
 
 <p>또한, <strong>호위 효과</strong>라는 현상이 생기는데, 처리 속도가 빠른 프로세스들이 처리 속도가 느린 프로세스를 끝나기를 기다리며 몰려다니는 현상이다.(그림 6-12)</p>
 
-<div class="callout callout-note" id="callout-3dbceddc-e98e-4899-beff-4451d0d30869">
+<div class="callout callout-note" id="callout-a05d9da2-090b-4a6d-8001-88018b62bc43">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>호위 효과 예시
@@ -993,7 +1007,7 @@
 
 <p>최소 작업 우선 스케줄링은 <strong>선점과 비선점 방식 두 가지 방식으로 구현</strong> 가능하다.(그림 6-13)</p>
 
-<div class="callout callout-note" id="callout-75200fcc-071c-40a3-83d7-451f362654b1">
+<div class="callout callout-note" id="callout-94feab54-2b64-41e7-9f1e-c1888484cf76">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>프로세스 도착 시간 예시 그래프
@@ -1043,7 +1057,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-note" id="callout-21ec602b-49bc-4aa6-809e-10fd4fbe8ca2">
+<div class="callout callout-note" id="callout-6aa88139-f5b1-4407-9339-ba62ee4908a8">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>비선점 최소 작업 우선 스케줄링 VS 선점 최소 작업 우선 스케줄링
@@ -1195,7 +1209,7 @@
   </tbody>
 </table>
 
-<div class="callout callout-note" id="callout-66860e89-3bd6-4a0a-bbd8-1ebdb34b064e">
+<div class="callout callout-note" id="callout-c3fd4541-998b-4235-bd3c-ec703cc62a6d">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>라운드 로빈 스케줄링 예시
@@ -1317,7 +1331,7 @@
   </tbody>
 </table>
 
-<div class="callout callout-note" id="callout-e788e6a1-8ba3-4acb-a6fd-9ca964c0f4d0">
+<div class="callout callout-note" id="callout-e3de7940-44dd-41c3-830c-5e9702eae9e7">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>다단계 피드백 큐 예시
