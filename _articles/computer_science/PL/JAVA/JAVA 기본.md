@@ -1,10 +1,10 @@
 ---
 title: JAVA 기본
 date: 2023-02-01 13:08:20 +0900
-tags: HIDE CRUDE 
+tags: CRUDE JAVA PL 
 layout: obsidian
 is_Finished: false
-last_Reviewed: 2023-02-01 13:08:20 +0900
+last_Reviewed: 2023-04-24 12:17:20 +0900
 use_Mathjax: true
 ---
 

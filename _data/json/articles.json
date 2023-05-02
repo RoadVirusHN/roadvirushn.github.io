@@ -1527,8 +1527,9 @@
     "date": "2023-02-01 13:08:20 +0900",
     "path": "/_articles/computer_science/PL/JAVA/JAVA 기본.md",
     "tags": [
-      "HIDE",
-      "CRUDE"
+      "CRUDE",
+      "JAVA",
+      "PL"
     ]
   },
   "/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EA%B0%9C%EC%9A%94/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%EA%B0%9C%EC%9A%94%20%EB%B0%8F%20%ED%99%98%EA%B2%BD%20%EA%B5%AC%EC%B6%95.html": {
@@ -1860,6 +1861,165 @@
     "tags": [
       "HIDE",
       "CRUDE"
+    ]
+  },
+  "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL%20%EA%B0%84%EB%8B%A8%20%EC%A0%95%EB%A6%AC.html": {
+    "title": "OSSU PL 간단 정리",
+    "date": "2023-03-10 11:16:55 +0900",
+    "path": "/_articles/computer_science/OSSU/PL/PLs/OSSU PL 간단 정리.md",
+    "tags": [
+      "SML",
+      "ETC",
+      "OSSU",
+      "PL",
+      "CS"
+    ]
+  },
+  "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-A/OSSU%20PL-A%20Section%201.html": {
+    "title": "OSSU PL-A Section 1",
+    "date": "2023-03-18 14:16:32 +0900",
+    "path": "/_articles/computer_science/OSSU/PL/PLs/OSSU PL-A/OSSU PL-A Section 1.md",
+    "tags": [
+      "CS",
+      "PL",
+      "SML",
+      "OSSU"
+    ]
+  },
+  "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-A/OSSU%20PL-A%20Section%202.html": {
+    "title": "OSSU PL-A Section 2",
+    "date": "2023-03-19 12:06:39 +0900",
+    "path": "/_articles/computer_science/OSSU/PL/PLs/OSSU PL-A/OSSU PL-A Section 2.md",
+    "tags": [
+      "CS",
+      "PL",
+      "SML",
+      "OSSU"
+    ]
+  },
+  "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-A/OSSU%20PL-A%20Section%203.html": {
+    "title": "OSSU PL-A Section 3",
+    "date": "2023-03-22 15:17:49 +0900",
+    "path": "/_articles/computer_science/OSSU/PL/PLs/OSSU PL-A/OSSU PL-A Section 3.md",
+    "tags": [
+      "CS",
+      "PL",
+      "SML",
+      "OSSU"
+    ]
+  },
+  "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-A/OSSU%20PL-A%20Section%204.html": {
+    "title": "OSSU PL-A Section 4",
+    "date": "2023-03-22 15:17:49 +0900",
+    "path": "/_articles/computer_science/OSSU/PL/PLs/OSSU PL-A/OSSU PL-A Section 4.md",
+    "tags": [
+      "CS",
+      "PL",
+      "SML",
+      "OSSU"
+    ]
+  },
+  "/articles/etc/etcs/%EB%A9%B4%EC%A0%91%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC.html": {
+    "title": "면접 질문 정리",
+    "date": "2023-03-29 17:19:19 +0900",
+    "path": "/_articles/etc/etcs/면접 질문 정리.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/etc/etcs/%EB%A9%B4%EC%A0%91,%20%EC%9E%90%EC%86%8C%EC%84%9C%20%EC%95%84%EC%B9%B4%EC%9D%B4%EB%B8%8C.html": {
+    "title": "면접, 자소서 아카이브",
+    "date": "2023-03-29 17:23:17 +0900",
+    "path": "/_articles/etc/etcs/면접, 자소서 아카이브.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-B/OSSU%20PL-B%20Section%201.html": {
+    "title": "OSSU PL-B Section 1",
+    "date": "2023-04-10 09:54:50 +0900",
+    "path": "/_articles/computer_science/OSSU/PL/PLs/OSSU PL-B/OSSU PL-B Section 1.md",
+    "tags": [
+      "CS",
+      "PL",
+      "SML",
+      "OSSU"
+    ]
+  },
+  "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-B/OSSU%20PL-B%20Section%202.html": {
+    "title": "OSSU PL-B Section 2",
+    "date": "2023-04-15 02:21:44 +0900",
+    "path": "/_articles/computer_science/OSSU/PL/PLs/OSSU PL-B/OSSU PL-B Section 2.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-B/OSSU%20PL-B%20Section%203.html": {
+    "title": "OSSU PL-B Section 3",
+    "date": "2023-04-22 18:16:39 +0900",
+    "path": "/_articles/computer_science/OSSU/PL/PLs/OSSU PL-B/OSSU PL-B Section 3.md",
+    "tags": [
+      "HIDE",
+      "CRUDE"
+    ]
+  },
+  "/articles/etc/YOS%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/YOS%20Dev%20Doc.html": {
+    "title": "YOS Dev Doc",
+    "date": "2023-04-28 17:53:28 +0900",
+    "path": "/_articles/etc/YOS 개발기/YOS Dev Doc.md",
+    "tags": [
+      "PJT",
+      "ETC"
+    ]
+  },
+  "/articles/etc/YOS%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/YOS%20Roadmap.html": {
+    "title": "Yos roadmap",
+    "date": "",
+    "path": "/_articles/etc/YOS 개발기/YOS Roadmap.md",
+    "tags": [
+      "EXCALIDRAW"
+    ]
+  },
+  "/articles/web/frontend/react/React.html": {
+    "title": "React",
+    "date": "2023-04-11 13:53:48 +0900",
+    "path": "/_articles/web/frontend/react/React.md",
+    "tags": [
+      "HIDE",
+      "REACT",
+      "FE",
+      "WEB"
+    ]
+  },
+  "/articles/web/frontend/react/React%20TDD.html": {
+    "title": "React TDD",
+    "date": "2023-04-11 13:54:12 +0900",
+    "path": "/_articles/web/frontend/react/React TDD.md",
+    "tags": [
+      "HIDE",
+      "REACT",
+      "FE",
+      "WEB",
+      "TDD"
+    ]
+  },
+  "/articles/etc/etcs/Edu-Research.html": {
+    "title": "Edu-Research",
+    "date": "2023-05-02 18:47:58 +0900",
+    "path": "/_articles/etc/etcs/Edu-Research.md",
+    "tags": [
+      "ETC"
+    ]
+  },
+  "/articles/etc/YOS%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/YOS%20Roadmap": {
+    "title": "Yos roadmap",
+    "date": "",
+    "path": "/_articles/etc/YOS 개발기/YOS Roadmap",
+    "tags": [
+      "EXCALIDRAW"
     ]
   }
 }

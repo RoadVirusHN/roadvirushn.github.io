@@ -87,3 +87,25 @@ fun eval e =
 		| Add(e1,e2) => (eval e1) + (eval e2) 
 		| Multiply(e1,e2) => (eval e1) * (eval e2)
 ```
+
+### 다형 타입(Polymorphic type) 혹은 일반 타입(Generic)
+
+다음과 같이 다양한 결과값의 자료형이 나올 수 있는  경우에는 다형 타입,(일반형 타입)이 이용된다.
+
+이들을 통해 재사용성 높은 함수를 만들 수 있다.
+
+```sml
+fun justfun x =
+	if true then x else x
+```
+`x`는 어떠한 값이 들어갈 수 있고 어떠한 값이 나올 수 있다.
+이를 `sml`에서는 `a'->a'`로 표현한다.
+
+같은 다형 타입인데 서로 자료형이 같거나 달라도 되는 경우, 예를 경우 다음의 경우는 `(a'*b'*b') -> b'`로 표기된다.
+```sml
+fun justfun2 (x, y, z) =
+	if x then y else z
+```
+말그대로 `a'`, `b'`는 `int`, `string`, `list` 등 여러 값이 들어 갈 수 있으며, 사용자 정의 자료형도 가능하다.
+
+

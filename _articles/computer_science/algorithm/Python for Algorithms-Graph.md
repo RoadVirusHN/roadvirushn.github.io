@@ -280,3 +280,91 @@ def topol_sort(indegree, outdegree):
 ~~~
 ```
 스택 대신 큐를 사용할 수 있으며, 이 경우 정답인 다른 결과가 나온다.
+
+## 네트워크 플로우(Network flow)
+Source 노드부터 Sink 노드까지의 보낼 수 있는 최대 유량과 경로를 구하는데 사용하는 알고리즘
+### 에드몬드-카프 (Edmonds-Karp Algorithm, bfs)
+```ad-example
+title: 에드몬드-카프 알고리즘 예시
+collapse: true
+
+큐를 이용한 BFS 대신 스택을 이용한 DFS를 이용하면 포드-풀커슨 알고리즘이 되지만, 보통 에드몬드-카프 알고리즘 보다 비효율적이다.
+~~~python
+from collections import deque
+
+nodeCount, pipeCount = map(int, input().split())
+
+edges = [[] for i in range(nodeCount)]
+capacities = [[0 for i in range(nodeCount)] for j in range(nodeCount)]
+flows = [[0 for i in range(nodeCount)] for j in range(nodeCount)]
+for i in range(pipeCount):
+    fr, to, cap = map(int, input().split())
+    edges[fr-1].append(to-1)
+    edges[to-1].append(fr-1)
+    capacities[fr-1][to-1] += cap
+
+source = 0
+sink = 1
+totalFlow = 0
+while True:
+    p = [-1 for i in range(nodeCount)]
+    q = deque([source]) # 큐 대신 스택 사용하면 포드-풀커슨
+    p[source] = source
+    while q and p[sink] == -1:
+        now = q.popleft()
+        for to in range(nodeCount):
+            if capacities[now][to]-flows[now][to]>0 and p[to] == -1:
+                p[to] = now
+                q.append(to) 
+	if (p[sink] == -1): break
+	now = sink
+	minCap = 987654321
+	while now != source:
+		minCap = min(capacities[p[now]][now], minCap)
+		now = p[now]
+
+    now = sink
+    while now != source:
+        flows[p[now]][now] += minCap
+        flows[now][p[now]] -= minCap # 유량의 상쇄에 주의
+        now = p[now]        
+    totalFlow += 1
+print(totalFlow)
+~~~
+```
+유량의 상쇄
+최소 컷 최대 용량
+
+### 이분 매칭(Bipartite Matching)
+
+두 그룹의 노드를 일대일 매칭 시키는 방법에 사용되는 알고리즘
+
+```ad-example
+title: 이분 매칭 알고리즘
+collapse: true
+
+한 노드를 짝지음 -> 다음 노드를 짝지을 시, 이전 노드에 겹칠 경우 이전 노드를 다른 쌍과 짝지음-> 그로 인해 또 다른 노드와 겹칠 시, 그 이전의 이전 노드를 다른 상과 짝지음...
+
+~~~python
+ACount, BCount = map(int, input().split())
+edges = [list(map(int, input().split()))[1:] for _ in range(ACount)]
+visited = [False for _ in range(ACount)]
+A2B = [-1 for _ in range(ACount)]
+B2A =  [-1 for _ in range(BCount)] # prevent 0 == False
+
+def dfs(a):
+    visited[a] = True
+    for b in edges[a]:
+        if B2A[b]==-1 or (not visited[B2A[b]] and dfs(B2A[b])):
+            A2B[a], B2A[b] = b, a
+            return True
+    return False
+
+result = 0
+for i in range(ACount):
+    if A2B[i]==-1:
+        visited = [False for _ in range(ACount)]
+        if dfs(i): result+=1
+print(result) # A2B, B2A : Mapping
+~~~
+```

@@ -128,39 +128,30 @@
                     "/articles/computer_science/OSSU/PL/HowToCode/%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%BD%94%EB%94%A9%ED%95%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80-%EC%B6%94%EC%83%81%ED%99%94.html"
                   ]
                 },
-                "PL-A": {
+                "PLS": {
                   "categories": {
                     "OSSU PL-A": {
                       "categories": {
-                        "SECT1": {
-                          "categories": {
-                          },
-                          "articles": [
-                            "/articles/computer_science/OSSU/PL/PL-A/OSSU%20PL-A/Sect1/OSSU%20PL-A%20Section%201.html"
-                          ]
-                        },
-                        "SECT2": {
-                          "categories": {
-                          },
-                          "articles": [
-                            "/articles/computer_science/OSSU/PL/PL-A/OSSU%20PL-A/Sect2/OSSU%20PL-A%20Section%202.html"
-                          ]
-                        },
-                        "SECT3": {
-                          "categories": {
-                          },
-                          "articles": [
-                            "/articles/computer_science/OSSU/PL/PL-A/OSSU%20PL-A/Sect3/OSSU%20PL-A%20Section%203.html"
-                          ]
-                        }
                       },
                       "articles": [
-                        "/articles/computer_science/OSSU/PL/PL-A/OSSU%20PL-A/OSSU%20PL%20%EA%B0%84%EB%8B%A8%20%EC%A0%95%EB%A6%AC.html"
+                        "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-A/OSSU%20PL-A%20Section%201.html",
+                        "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-A/OSSU%20PL-A%20Section%202.html",
+                        "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-A/OSSU%20PL-A%20Section%203.html",
+                        "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-A/OSSU%20PL-A%20Section%204.html"
+                      ]
+                    },
+                    "OSSU PL-B": {
+                      "categories": {
+                      },
+                      "articles": [
+                        "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-B/OSSU%20PL-B%20Section%201.html",
+                        "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-B/OSSU%20PL-B%20Section%202.html",
+                        "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL-B/OSSU%20PL-B%20Section%203.html"
                       ]
                     }
                   },
                   "articles": [
-
+                    "/articles/computer_science/OSSU/PL/PLs/OSSU%20PL%20%EA%B0%84%EB%8B%A8%20%EC%A0%95%EB%A6%AC.html"
                   ]
                 }
               },
@@ -270,7 +261,6 @@
                 "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-AOP.html",
                 "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-DB%20%EC%97%B0%EB%8F%99.html",
                 "/articles/web/backend/Spring/Spring5-MVC%20%EA%B0%9C%EB%85%90%EA%B3%BC%20%EC%84%A4%EC%A0%95.html",
-                "/articles/web/backend/Spring/Spring5-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC%EC%99%80%20%EB%B7%B0%20%EA%B5%AC%ED%98%84.html",
                 "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EA%B0%9D%EC%B2%B4%20%EA%B2%80%EC%A6%9D.html",
                 "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EC%84%B8%EC%85%98,%20%EC%9D%B8%ED%84%B0%EC%85%89%ED%84%B0,%20%EC%BF%A0%ED%82%A4.html",
                 "/articles/web/backend/Spring/Spring5%20%EC%9E%85%EB%AC%B8-%EB%82%A0%EC%A7%9C%20%EA%B0%92%20%EB%B3%80%ED%99%98,%20%20%EA%B2%BD%EB%A1%9C%20%EB%B3%80%EC%88%98,%20%EC%9D%B5%EC%85%89%EC%85%98%20%EA%B3%B5%EB%8F%99%20%EC%B2%98%EB%A6%AC,%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%B3%80%ED%99%98%EA%B8%B0.html",
@@ -337,7 +327,9 @@
             "/articles/etc/etcs/English%20Determiner.html",
             "/articles/etc/etcs/Git%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B0%EB%A1%9D%20%EC%A7%80%EC%9A%B0%EA%B8%B0.html",
             "/articles/etc/etcs/%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EA%B8%80%EC%93%B0%EA%B8%B0%20%EC%A0%95%EB%A6%AC.html",
-            "/articles/etc/etcs/Obsidian.html"
+            "/articles/etc/etcs/Obsidian.html",
+            "/articles/etc/etcs/%EB%A9%B4%EC%A0%91%20%EC%A7%88%EB%AC%B8%20%EC%A0%95%EB%A6%AC.html",
+            "/articles/etc/etcs/%EB%A9%B4%EC%A0%91,%20%EC%9E%90%EC%86%8C%EC%84%9C%20%EC%95%84%EC%B9%B4%EC%9D%B4%EB%B8%8C.html"
           ]
         },
         "SUBBRAIN 개발기": {
@@ -349,6 +341,13 @@
             "/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20webpack,%20eslint,%20etc.html",
             "/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0%20-%20Typescript.html",
             "/articles/etc/Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/%EA%B0%9C%EC%9D%B8%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20Subbrain%20%EA%B0%9C%EB%B0%9C%EA%B8%B0.html"
+          ]
+        },
+        "YOS 개발기": {
+          "categories": {
+          },
+          "articles": [
+            "/articles/etc/YOS%20%EA%B0%9C%EB%B0%9C%EA%B8%B0/YOS%20Dev%20Doc.html"
           ]
         }
       },
