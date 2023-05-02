@@ -199,10 +199,10 @@ collapse: true
 # 반복문을 이용한 세그먼트 트리 생성
 def create_tree(num_list):
     # 부모 노드들이 들어갈 공간 + 원본 값 공간
-    tree = [0 for _ in range(len(num_list))] + num_list
+    tree = [0 for _ in range(len(num_list))] + num_list # 항등원 채우기
     # 부모 노드 생성 
     for i in range(len(num_list) - 1, 0, -1): # 거꾸로 시작하여 말단 노드에 가까운 부모부터 생성
-        tree[i] = tree[i << 1]+tree[i << 1 | 1]
+        tree[i] = tree[i << 1]+tree[i << 1 | 1] # 연산 넣기
     return tree  
 
 # 반복문을 이용한 구간합 구하기
@@ -210,16 +210,16 @@ def interval_total(num_count, tree, left, right):
     # 실제 범위는 부모 공간에 의해 밀려났으므로 그만큼 더해줌
     left += num_count
     right += num_count
-    result = 0
+    result = 0 # 항등원
     while (left <= right):
         # 인덱스의 홀수 짝수 여부에 따라 두가지로 나뉜다.
         # 1. 이 노드의 값을 포함한 부모 노드가 있음(=더하지 않음)
         # 2. 이 노드의 값을 포함한 노드가 없음 (=더해줘야 함)
         if (left & 1):  # 왼쪽 인덱스가 홀수이면
-            result += tree[left]  # 해당 값을 더해 주고
+            result += tree[left]  # 해당 값을 연산
             left += 1  # 인덱스 증가
         if not (right & 1):  # 오른쪽 인덱스가 짝수이면
-            result += tree[right]  # 해당 값을 더해주고
+            result += tree[right]  # 해당 값을 연산
             right -= 1  # 인덱스 감
         # 인덱스를 절반으로 줄임 == 해당 값의 부모 노드로
         left >>= 1
@@ -232,7 +232,7 @@ def update(tree, index, val, num_count):
     tree[index] = val
     # 부모 노드 업데이트
     while index > 1:
-        tree[index >> 1] = tree[index] + tree[index ^ 1]  
+        tree[index >> 1] = tree[index] + tree[index ^ 1] # 연산 
         index >>= 1
     return tree
     
@@ -295,32 +295,42 @@ collapse: true
 ~~~python
 import sys
 import math
-input = sys.stdin.readline  
+input = sys.stdin.readline 
 
-def create_seg_tree_lazy(start, end, index=1):
-    '''
-    기존 방식과 동일한 방법으로 트리 생성
-    '''
-    if start == end:
-        tree[index]["value"] = number_list[start]
-    else:
-        mid = (start + end) // 2
-        create_seg_tree_lazy(start, mid, index * 2)
-        create_seg_tree_lazy(mid + 1, end, index * 2 + 1)
-        tree[index]["value"] = tree[index*2]["value"] + tree[index*2 + 1]["value"]
+def createSegTreeLazy(nums):
+    # 필요한 노드 수 == 잎새 노드(N) + 부모 노드(N-1) == 2N - 1
+    # 따라서 높이를 H라고 놓을 때 ∑^{H}_{n=0}2^n >= 2N -1을 만족해야 한다.
+    # tree의 크기는 2의 (예상 트리의 높이 + 1)승이면 절대 부족하지 않다.
+    # 0: 항등원, 1: lazy, 기본 0
+    tree = [[0,0] for _ in range(1 << (math.ceil(math.log2(len(nums)))+1))]  
+    
+    def createWithRecur(start, end, index=1):
+        nonlocal tree
+        if start == end:
+            tree[index][0] = nums[start]
+        else:
+            mid = (start + end) // 2
+            createWithRecur(start, mid, index * 2)
+            createWithRecur(mid + 1, end, index * 2 + 1)
+            tree[index][0] = tree[index*2][0] + tree[index*2 + 1][0]
+    createWithRecur(0, len(nums)-1)
+    return tree
 
-def propagation(where, start, end):
+  
+
+def propagation(tree, where, start, end):
     '''
     lazy값이 존재하는 경우 값을 추가하고 자식 노드로 lazy 값을 전파하는 함수
     '''
     if start != end:
-        tree[where * 2]["lazy"] += tree[where]["lazy"]
-        tree[where * 2 + 1]["lazy"] += tree[where]["lazy"]
-    tree[where]["value"] += tree[where]["lazy"] * (end - start + 1)
- 
-    tree[where]["lazy"] = 0 
+        tree[where * 2][1] += tree[where][1]
+        tree[where * 2 + 1][1] += tree[where][1]
+    tree[where][0] += tree[where][1] * (end - start + 1) 
 
-def interval_update_lazy(left, right, start, end, diff, index=1):
+    tree[where][1] = 0
+    return tree 
+
+def intervalUpdateLazy(tree, numCount, left, right, diff):
     '''
     lazy 구간 업데이트 구하기
     left, right : 수정하고자 하는 범위
@@ -328,59 +338,58 @@ def interval_update_lazy(left, right, start, end, diff, index=1):
     index : 현재 update하는 노드
     diff : 변화되는 값
     '''
-    if tree[index]["lazy"]: # 이전에 쌓은 lazy값이 존재하는 경우 수정 뒤 lazy 전파
-        propagation(index, start, end)
-    if end < left or right < start: # 구하는 구간이 관계 없는 경우
-        return
-    if left <= start and end <= right: # 해당 노드가 커버하는 구간이 완전히 포함될 경우
-        tree[index]["value"] += (end - start + 1) * diff
+    def updateWithRecur(start, end, index=1):
+        nonlocal tree, left, right, diff
+        if tree[index][1]:  # 이전에 쌓은 lazy값이 존재하는 경우 수정 뒤 lazy 전파
+            tree = propagation(tree, index, start, end)
+        if end < left or right < start:  # 구하는 구간이 관계 없는 경우
+            return
+        if left <= start and end <= right:  # 해당 노드가 커버하는 구간이 완전히 포함될 경우
+            tree[index][0] += (end - start + 1) * diff
+            if start != end:  # 말단 노드가 아닐 경우,
+                tree[index * 2][1] += diff
+                tree[index * 2 + 1][1] += diff
+            return
+        else:
+            mid = (start + end) // 2
+            updateWithRecur(start, mid, index*2)
+            updateWithRecur(mid + 1, end, index*2 + 1)
+            tree[index][0] = tree[index*2][0] + tree[index*2+1][0]
+    updateWithRecur(0, numCount-1)
+    return tree
 
-        if start != end: # 말단 노드가 아닐 경우,
-            tree[index * 2]["lazy"] += diff
-            tree[index * 2 + 1]["lazy"] += diff
-        return
-    else:
-        mid = (start + end) // 2
-        interval_update_lazy(left, right, start, mid, diff, index*2)
-        interval_update_lazy(left, right, mid + 1, end, diff, index*2 + 1)
-        tree[index]["value"] = tree[index*2]["value"] + tree[index*2+1]["value"]
+def intervalSumLazy(tree, numCount, left, right):
+    def getWithRecur(start, end, index=1):
+        '''
+        lazy 구간 합 구하기
+        index : 현재 처리 중인 노드의 인덱스
+        start, end : 현재 처리 중인 인덱스 노드가 값을 포함하고 있는 범위
+        left, right : 값을 구할 범위
+        '''
+        nonlocal tree, left, right
+        if tree[index][1]:
+            tree = propagation(tree, index, start, end) 
+        if end < left or right < start:
+            return 0
+        if left <= start and end <= right:
+            return tree[index][0]
+        else:
+            mid = (start+end)//2
+            return getWithRecur(start, mid, index*2) + getWithRecur(mid + 1, end, index * 2 + 1)
+    return getWithRecur(0, numCount-1)  
 
-def interval_sum_lazy(left, right, start, end, index=1):
-    '''
-    lazy 구간 합 구하기
-    index : 현재 처리 중인 노드의 인덱스
-    start, end : 현재 처리 중인 인덱스 노드가 값을 포함하고 있는 범위
-    left, right : 값을 구할 범위
-    '''
-    if tree[index]["lazy"]:
-        propagation(index, start, end)
+numCount, chngCount, sumCount = map(int, input().split())
+number_list = [int(input()) for _ in range(numCount)]
+tree = createSegTreeLazy(number_list) 
 
-      if end < left or right < start:
-        return 0
-    if left <= start and end <= right:
-        return tree[index]["value"]
-    else:
-        mid = (start+end)//2
-        return interval_sum_lazy(left, right, start, mid, index*2) + interval_sum_lazy(left, right, mid + 1, end, index * 2 + 1)
-
-number_count, change_count, sum_count = map(int, input().split())
-number_list = [int(input()) for _ in range(number_count)]
-
-tree = [{"value": 0, "lazy": 0} for _ in range(1 << (math.ceil(math.log2(number_count))+1))]
-# 필요한 노드 수 == 잎새 노드(N) + 부모 노드(N-1) == 2N - 1
-# 따라서 높이를 H라고 놓을 때 ∑^{H}_{n=0}2^n >= 2N -1을 만족해야 한다.
-# tree의 크기는 2의 (예상 트리의 높이 + 1)승이면 절대 부족하지 않다.  
-
-create_seg_tree_lazy(0, number_count-1) 
-
-for i in range(change_count + sum_count):
+for i in range(chngCount + sumCount):
     cmds = list(map(int, input().split()))
     if cmds[0] == 1:
         _, fr, to, chng = cmds
-        interval_update_lazy( fr-1, to-1, 0, number_count-1, chng)
-    else:
+        intervalUpdateLazy(tree, numCount, fr-1, to-1, chng)
+    elif cmds[1] == 2:
         _, fr, to = cmds
-        print(interval_sum_lazy( fr-1, to-1, 0, number_count-1))
+        print(intervalSumLazy(tree, numCount, fr-1, to-1))
 ~~~
 ```
 

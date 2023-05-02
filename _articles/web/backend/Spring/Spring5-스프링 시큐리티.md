@@ -560,7 +560,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
 ```ad-example
 title: `UserDetailsService` 인터페이스
-절대로 `null`을 반호나하면 안된다.
+절대로 `null`을 반환하면 안된다.
 ~~~java
 public interface UserDetailsService {
 	UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
@@ -639,8 +639,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ~~~
 ```
-
 이제 JPA를 이용한 사용자 인증을 마쳤다.
+
+```ad-danger
+title: `WebSecurityConfigurerAdapter` Deprecated!
+change above code to down below
+~~~java
+@Configuration
+public class SecurityConfig {
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{	
+		http		
+		.authorizeHttpRequests()
+		//...
+		return http.build();	
+	}
+}
+~~~
+```
 
 #### 사용자 등록하기
 이제 사용자 등록 컨트롤러와 뷰를 구현해 사용자 등록을 해보자.
@@ -763,6 +778,9 @@ collapse: true
 ### 웹 요청 보안 처리
 
 다음 코드는 인가를 구현하게 해준다.
+```ad-warning
+title: 최신 버전에서는 `authorizeRequests()`를 `authorizeHttpRequests()`로 바꿀것
+```
 ```ad-example
 title: `SecurityConfig` 클래스 두번째 메서드
 **보안 규칙의 순서는 아주 중요하다!** 예를 들어 `antMatchers("/", "/**").permitAll();`가 맨 앞에 온다면, 그 뒤의 패턴과 관계없이 모두 접근 가능하게 된다.
@@ -830,7 +848,7 @@ protected void configure(HttpSecurity http) throws Exception {
 		.antMatchers("/", "/**").permitAll()
 		.and() // 새로운 구성 시작
 		.formLogin() // 로그인 페이지 구성 시작
-		.loginPage("/login"); // 로그인 페이지 경로: 이곳에서 로그인 시도
+		.loginPage("/login") // 로그인 페이지 경로: 이곳에서 로그인 시도
 		.loginProcessingUrl("/authenticate") // 로그인 처리 경로 : 로그인 시도 시 옮겨지는 페이지
 		.usernameParameter("user") // 로그인 post 요청 유저명 필드 이름 변경
 		.passwordParameter("pwd") // 로그인 post 요청 비밀번호 필드 이름 변경
@@ -839,6 +857,22 @@ protected void configure(HttpSecurity http) throws Exception {
 }
 ~~~
 ```
+만약, JSP를 사용하지 않는다면, 다음과 같은 커스텀 응답 메시지를 만들어 보낼 수 있다.
+```ad-example
+title: 커스텀 응답 메시지 생성
+~~~java
+.failureHandler((req, res, err) -> {
+	res.setStatus(HttpStatus.UNAUTHORIZED.value());
+	res.setContentType(MediaType.APPLICATION_JSON_VALUE);
+	res.getWriter().write("{\"error\": \"" + err.getMessage() + "\"}");
+})
+.successHandler((req, res, err) -> {
+	res.setStatus(HttpStatus.OK.value());
+	res.setContentType(MediaType.APPLICATION_JSON_VALUE);
+})
+~~~
+```
+
 이제 해당 로그인 페이지 경로를 처리하는 컨트롤러를 제공해야 한다.
 ```ad-example
 title: `WebConfig`에 뷰 컨트롤러 선언

@@ -9,13 +9,41 @@
         "children": [
           {
             "id": "d406abecef184e54",
+            "id": "02a2ecae2e9726a2",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d406abecef184e54",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
             }
+          },
+          {
+            "id": "a490f9135f289065",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -82,6 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -120,6 +150,9 @@
             "state": {
               "type": "outline",
               "state": {}
+              "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md"
+              }
             }
           },
           {
@@ -153,19 +186,11 @@
     }
   },
   "active": "d406abecef184e54",
+  "active": "a490f9135f289065",
   "lastOpenFiles": [
-    "etc/YOS 개발기/YOS Dev Doc.md",
-    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3/OSSU PL-A Section 3.md",
-    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2/OSSU PL-A Section 2.md",
-    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect1/OSSU PL-A Section 1.md",
-    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3",
-    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2",
-    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect1",
-    "computer_science/OSSU/PL/PL-A/OSSU PL-A/OSSU PL 간단 정리.md",
-    "computer_science/OSSU/PL/PL-A/OSSU PL-A",
-    "computer_science/OSSU/PL/PL-A",
     "etc/YOS 개발기/YOS Roadmap.md",
     "etc/YOS 개발기/YOS Roadmap.png",
+    "etc/YOS 개발기/YOS Dev Doc.md",
     "etc/YOS 개발기/YOS Roadmap",
     "web/backend/Spring/Spring5 입문-스프링 부트.md",
     "web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md",
@@ -191,7 +216,15 @@
     "Excalidraw/Drawing 2023-04-28 17.35.05.excalidraw.md",
     "computer_science/OSSU/PL/PLs/OSSU PL-B/OSSU PL-B Section 1.md",
     "Excalidraw",
+    "web/backend/Spring/Spring5-컨트롤러와 뷰 구현.md",
+    "web/backend/Spring/Spring5-HATEOAS.md",
+    "web/backend/Spring/Spring5-MVC 개념과 설정.md",
     "web/frontend/react",
-    "무제 폴더"
+    "무제 폴더",
+    "computer_science/OSSU/PL/PLs/OSSU PL-B",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect1",
+    "computer_science/OSSU/PL/PLs/OSSU PL-A"
   ]
 }

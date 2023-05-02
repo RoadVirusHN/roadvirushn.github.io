@@ -16,6 +16,8 @@ varied_style: true
 # Python for Algorithms-etc
 
 ## 스위핑
+공간의 한쪽 끝부터 나머지 끝까지 훑으면서 마주치는 부분을 처리하는 방식
+정렬, 기준잡기, 상태 변화를 저장하는 것이 중요하다.
 ```ad-example
 title: 스위핑 예시
 collapse: true
@@ -97,20 +99,18 @@ def solution(board, sums):
     for props in sums:
         # x1 ~ x2까지 degree 값만큼 변화시킨다.
         x1, x2, degree = props
-
-		# 누적합은 첫 인데스와 마지막 인덱스 + 1 부분을 각각 변화되야할 값과 그 값의 항등원을 더해야 한다. 
+		# 누적합은 첫 인덱스와 마지막 인덱스 + 1 부분을 각각 변화되야할 값과 그 값의 항등원을 더해야 한다. 
 		# 예를 들어 인덱스 0 ~ 2까지 값을 X 만큼 변화시킨다면 다음과 같이 설정한다.
 		#     0  1  2  3 
 		#   [+X, 0, 0, -X]
 		new_board[x1] += degree
 		new_board[x2] -= degree
             
-	# 이후 각 가로 줄 먼저 가로 방향 누적합을 구한다. 인덱스 0를 제외하고 이전 인덱스 값을 순차적으로 더해주면 된다.
+	# 이후 각 원소에 적용될 누적합을 구한다. 인덱스 0를 제외하고 이전 인덱스 값을 순차적으로 더해주면 된다.
     for i in range(len(new_board)):
         new_board[i] += new_board[i-1]
         
-
-	# 해당 누적합을 원래 2차원 배열에 적용시키기
+	# 해당 누적합을 원래 배열에 적용시키기
     for i in range(len(board)):
         board[i] += new_board[i]
             

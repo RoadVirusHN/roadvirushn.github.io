@@ -218,5 +218,13 @@
   "SML": {
     "background-color": "rgb(16, 72, 72)",
     "color": "rgb(239, 183, 214)"
+  },
+  "JAVA": {
+    "background-color": "rgb(62, 37, 37)",
+    "color": "rgb(193, 218, 57)"
+  },
+  "EXCALIDRAW": {
+    "background-color": "rgb(20, 133, 133)",
+    "color": "rgb(235, 122, 7)"
   }
 }
