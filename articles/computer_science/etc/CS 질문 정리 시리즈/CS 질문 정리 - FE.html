@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -556,7 +570,7 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#Common">Common</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#React">React</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#Vue">Vue</a><ul></ul></li></ol>
+  <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#Common">Common</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#state란-#card">state란?  #card</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#Vue">Vue</a><ul></ul></li></ol>
 <h1 id="CS-질문-정리-FE">CS 질문 정리 - FE</h1>
 
 <h2 id="Common">Common</h2>
@@ -565,7 +579,17 @@ Virtual DOM?<br>
 Browser?<br>
 Rendering 과정?</p>
 
-<h2 id="React">React</h2>
+<h1 id="React">React</h1>
+
+<h2 id="state란-#card">state란?  #card</h2>
+<p><strong>State는 변하는 컴포넌트의 표현에 대한 데이터이다.</strong></p>
+<ul>
+  <li>각 컴포넌트가 독립적으로 가질 수 있다.</li>
+  <li>지역 변수와 달리 값이 변경될 시, 컴포넌트의 <code class="language-plaintext highlighter-rouge">render</code> 함수를 부른다.</li>
+  <li><code class="language-plaintext highlighter-rouge">render</code> 함수가 여러 번 불러져도, 값이 초기화 되지 않는다.</li>
+  <li>버그 방지를 위해 직접 변경하지 않고 <code class="language-plaintext highlighter-rouge">useState</code> 훅을 이용해 변화시킨다.<br>
+^1682336109788</li>
+</ul>
 
 <h2 id="Vue">Vue</h2>
 

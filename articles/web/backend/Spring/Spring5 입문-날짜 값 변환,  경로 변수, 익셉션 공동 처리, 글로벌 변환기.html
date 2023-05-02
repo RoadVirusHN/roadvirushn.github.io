@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#날짜-값-변환">날짜 값 변환</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#날짜-기간-검색-기능">날짜 기간 검색 기능</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#변환의-원리">변환의 원리</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#Converter">Converter</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#PathVariable을-이용한-경로-변수-처리">@PathVariable을 이용한 경로 변수 처리</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-5" href="#컨트롤러-익셉션-처리">컨트롤러 익셉션 처리</a><ul><li lvl="3"><a id="markdown-toc-0-6" href="#ExceptionHandler">@ExceptionHandler</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#ControllerAdvice">@ControllerAdvice</a><ul></ul></li></ul></li></ol>
 <h1 id="날짜-값-변환-경로-변수-익셉션-공동-처리-글로벌-변환기">날짜 값 변환, 경로 변수, 익셉션 공동 처리, 글로벌 변환기</h1>
 
-<div class="callout callout-quote" id="callout-ae04ba18-b4c8-452b-8df8-6a85d01a4a7b">
+<div class="callout callout-quote" id="callout-8691ade8-e913-4155-aba1-f6dfa380c079">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -594,7 +608,7 @@
 
 <p>다음과 같이 <code class="language-plaintext highlighter-rouge">MemberDao</code>에 사용자를 가입 날짜를 제한해 검색하는 기능이 있다고 가정하자.</p>
 
-<div class="callout callout-example" id="callout-378df292-3f3f-416d-8447-b053821c4e33">
+<div class="callout callout-example" id="callout-7f422071-c8ad-4190-9014-63f8a049ce02">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">selectByRegdate</code> 함수
@@ -629,7 +643,7 @@
 
 <p>이를 위해 다음과 같이 커맨드 객체 위에 <code class="language-plaintext highlighter-rouge">@DateTimeFormat(pattern="")</code>을 이용할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-0c5bd41f-2df5-4e35-a0d2-bc89b8636e17">
+<div class="callout callout-example" id="callout-01e00471-8998-42c9-b1f7-473085fef7a8">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/controller/ListCommand.java</code>
@@ -659,7 +673,7 @@
     </div>
 <p>이후 아래와 같이 커맨드 객체를 사용하는 컨트롤러를 추가하자.</p>
 
-<div class="callout callout-example" id="callout-4ea0a58a-cda1-4833-9df1-bbbd92a92ef3">
+<div class="callout callout-example" id="callout-dc51f731-7bee-4e65-84ce-1669b37cd5fb">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/controller/MemberListController.java</code>
@@ -692,7 +706,7 @@
     </div>
 <p>별다른 설정 없이 <code class="language-plaintext highlighter-rouge">@DateTimeFormat(pattern="yyyyMMddHH")</code>를 구현한 객체 커맨드를 사용해 주면 된다.</p>
 
-<div class="callout callout-example" id="callout-4eca6ab7-6ff7-4cd9-8920-6c241d1bf9da">
+<div class="callout callout-example" id="callout-e6988fcd-0b67-4f5a-bc5e-bf9aa6981db2">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>빈 설정 추가
@@ -726,7 +740,7 @@
     </div>
 <p>이제 뷰에서 “2018030115”가 입력된다면, 2018-03-01-3PM 값의 <code class="language-plaintext highlighter-rouge">LocalDateTime</code>으로 자동 변환된다.</p>
 
-<div class="callout callout-seealso" id="callout-3a74b381-67e5-406f-8829-f86b859f6ff1">
+<div class="callout callout-seealso" id="callout-73a90dec-5140-46a0-80c3-15a95e7a219f">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>지원하는 타입
@@ -762,7 +776,7 @@
     </span>를 사용한다.</li>
 </ol>
 
-<div class="callout callout-example" id="callout-220e5f9a-dc5c-4a77-b5dd-8014539ddf4a">
+<div class="callout callout-example" id="callout-defe1954-c41d-4210-b46e-2fb5360fb0ca">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">WebDataBinder</code>의 타입 변환 그림
@@ -789,7 +803,7 @@
 <h2 id="Converter"><code class="language-plaintext highlighter-rouge">Converter</code></h2>
 <p><code class="language-plaintext highlighter-rouge">ConversionService</code>이외에 아래 처럼 직접 <code class="language-plaintext highlighter-rouge">Converter</code>를 구현해서 직접 등록할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-4b581785-11c8-4821-ad38-7621d98c41e9">
+<div class="callout callout-example" id="callout-247db2f3-99fe-4a55-af96-f7f4ec51200a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">Converter</code>의 사용례
@@ -832,7 +846,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">@PathVariable</code>을 이용하면 <code class="language-plaintext highlighter-rouge">http://localhost:8080/sp5-chap14/members/10</code>의 10처럼 경로 일부가 고정되지 않고 변수 처럼 사용하게 할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-f60cf4b0-4376-4f27-9da8-cce5229b21cc">
+<div class="callout callout-example" id="callout-23774b4f-74a0-4a97-afd6-6121edeca8ca">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@PathVariable</code> 이용한 경로 변수 처리
@@ -876,7 +890,7 @@
 
 <h3 id="ExceptionHandler"><code class="language-plaintext highlighter-rouge">@ExceptionHandler</code></h3>
 
-<div class="callout callout-example" id="callout-28b6c244-66ee-44f5-9f20-bd3e6c9816d3">
+<div class="callout callout-example" id="callout-c5281a5d-a435-4165-b635-0430fc1d979e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@ExceptionHandler</code>가 추가된 컨트롤러
@@ -932,7 +946,7 @@
 
 <p>만약 다수의 컨트롤러에서 동일 타입 익셉션을 처리하고 싶다면 <code class="language-plaintext highlighter-rouge">@ControllerAdvice</code>을 이용할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-355b8a1e-bc5e-4989-8464-c34f9237cbe4">
+<div class="callout callout-example" id="callout-60ea1fca-723d-4288-a557-994c3337e6a7">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@ControllerAdvice</code>을 사용한 <code class="language-plaintext highlighter-rouge">CommonExceptionHandler.java</code>

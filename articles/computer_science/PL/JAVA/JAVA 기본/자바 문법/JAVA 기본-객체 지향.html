@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -584,10 +598,12 @@ ex) 차가 가지고 있는 공통적인 요소들의 정리, 자동차 공장�
 <p><strong>인스턴스</strong></p>
 <ul>
   <li>컴퓨터 메모리에 존재하는 객체, 객체와 거의 동일하다고 봐도 됨<br>
-ex) 자동차 한대 한대를 따로 정보로 표현
-    <h2 id="객체지향-언어의-주요-개념">객체지향 언어의 주요 개념</h2>
-    <h3 id="상속-Inheritance">상속(Inheritance)</h3>
-  </li>
+ex) 자동차 한대 한대를 따로 정보로 표현</li>
+</ul>
+
+<h2 id="객체지향-언어의-주요-개념">객체지향 언어의 주요 개념</h2>
+<h3 id="상속-Inheritance">상속(Inheritance)</h3>
+<ul>
   <li>클래스와 속성과 메서드가 비슷한 여러 객체를 만드는 대신 기존의 클래스(부모클래스)를 이용해서 새로운 클래스(자식 클래스)를 작성할 수 있다.</li>
   <li>자세한 것은 <span class="preview-wrapper">
       <a href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%EC%83%81%EC%86%8D.html" class="wikilink">JAVA 기본-자바 상속</a>
@@ -602,7 +618,7 @@ ex) 자동차 한대 한대를 따로 정보로 표현
   <li>객체들 사이에 계층 구조를 이룰 수 있음. 부모 자식 관계</li>
 </ul>
 
-<div class="callout callout-example" id="callout-5c343462-7ee0-4846-a761-e47e127ad941">
+<div class="callout callout-example" id="callout-2e1ab7cb-3edc-4fd0-ba6d-649865b2fd6e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>자바 상속 관계 예시
@@ -652,7 +668,8 @@ public class CarTest {
 <ul>
   <li>상속의 관계과 일반화, 특별화 관계(is a~)에 있어야함</li>
   <li>예를 들어 프린터의 자식으로 카메라 같이 관계없으면 안됨.</li>
-  <li>자바는 단일 상속만 지원함, 다중 상속 지원시 겹치는 요소 처리가 힘듦
+  <li>자바는 단일 상속만 지원함, 다중 상속 지원시 겹치는 요소 처리가 힘듦</li>
+  <li>
     <h3 id="다형성-polymorphism">다형성 (polymorphism)</h3>
   </li>
   <li>하나의 인터페이스를 이용해 서로 다른 구현을 제공함</li>
@@ -670,11 +687,13 @@ public class CarTest {
   <li><strong>메서드 오버라이딩(overriding)</strong>
     <ul>
       <li>상속 관계에 있는 하위 클래스가 상위 클래스가 가지고 있는 메서드를 재정의하는 것</li>
-      <li>재정의된 메서드가 선언된 형태는 상위 클래스에서 선언된 것과 같음
-        <h3 id="추상화-Abstraction">추상화(Abstraction)</h3>
-      </li>
+      <li>재정의된 메서드가 선언된 형태는 상위 클래스에서 선언된 것과 같음</li>
     </ul>
   </li>
+</ul>
+
+<h3 id="추상화-Abstraction">추상화(Abstraction)</h3>
+<ul>
   <li>구체적인 사실들을 일반화시켜 기술하는 것</li>
   <li>현실세계에 존재하는 다양한 객체들의 공통된 특성을 모아 일반화해 놓은 것</li>
   <li>클래스를 정의하는 데 중요한 역할을 함</li>
@@ -686,18 +705,24 @@ public class CarTest {
       <a href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" class="wikilink">JAVA 기본-인터페이스와 커스텀 패키지</a>
       <iframe class="preview" src='' data-href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%99%80%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%8C%A8%ED%82%A4%EC%A7%80.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
       </iframe>
-    </span> 참조
-    <h3 id="캡슐화-Encapsulation">캡슐화(Encapsulation)</h3>
-  </li>
+    </span> 참조</li>
+</ul>
+
+<h3 id="캡슐화-Encapsulation">캡슐화(Encapsulation)</h3>
+<ul>
   <li>변수와 메서드를 하나의 추상화된 클래스로 묶어 독립적으로 동작하지 않게 함.</li>
   <li>캡슐 속 객체는 데이터와 메서드를 포함하고 있어서, 따로 분리 불가.</li>
-  <li>객체가 제공하는 메서드를 통해 객체를 이용하고, 데이터가 실제로 어떻게 처리되는지는 알 필요 없음.
-    <h3 id="정보-은닉-Information-hiding">정보 은닉(Information hiding)</h3>
-  </li>
+  <li>객체가 제공하는 메서드를 통해 객체를 이용하고, 데이터가 실제로 어떻게 처리되는지는 알 필요 없음.</li>
+</ul>
+
+<h3 id="정보-은닉-Information-hiding">정보 은닉(Information hiding)</h3>
+<ul>
   <li>객체지향 언어에서는 캡슐화된 변수나 메서드를 선택적으로 공개하거나 숨길 수 있음</li>
-  <li>예시로 <code class="language-plaintext highlighter-rouge">public</code> 예약어로 정보를 공개하고, <code class="language-plaintext highlighter-rouge">private</code> 예약어로 숨길수 있다.
-    <h3 id="메시지-Message">메시지(Message)</h3>
-  </li>
+  <li>예시로 <code class="language-plaintext highlighter-rouge">public</code> 예약어로 정보를 공개하고, <code class="language-plaintext highlighter-rouge">private</code> 예약어로 숨길수 있다.</li>
+</ul>
+
+<h3 id="메시지-Message">메시지(Message)</h3>
+<ul>
   <li>객체 간에 서로 통신하는 방법, 여러 객체는 동일한 프로세스를 가질 필요 없음</li>
   <li>서로 메시지를 주고받는데 객체가 존재하는 위치는 제약이 되지 않음</li>
 </ul>

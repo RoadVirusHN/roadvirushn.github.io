@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "0d7db81f27cdeed5",
+    "type": "split",
+    "children": [
+      {
+        "id": "77625bdffa64901c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d406abecef184e54",
+            "id": "02a2ecae2e9726a2",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d406abecef184e54",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "a490f9135f289065",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ead0a52ae61fe335",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b26f3a545691f34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "daab8ce8700881fe",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "976fdc90bc2077b8",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "776f6a004221dfcc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 333.5
+  },
+  "right": {
+    "id": "2f957799fb48536f",
+    "type": "split",
+    "children": [
+      {
+        "id": "b772d4f5d7319cde",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e52cd4640b913dc8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "760655ecb5f8c9c7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "23eece7229731e57",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "193b6c4338d301bd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+              "state": {
+                "file": "etc/YOS 개발기/YOS Dev Doc.md"
+              }
+            }
+          },
+          {
+            "id": "ed23add1c277cbaf",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 339,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:새 캔버스 만들기": false,
+      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
+      "templater-obsidian:Templater": false,
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "audio-recorder:녹음 시작/중지": false,
+      "flashcards-obsidian:Generate flashcards": false
+    }
+  },
+  "active": "d406abecef184e54",
+  "active": "a490f9135f289065",
+  "lastOpenFiles": [
+    "etc/YOS 개발기/YOS Roadmap.md",
+    "etc/YOS 개발기/YOS Roadmap.png",
+    "etc/YOS 개발기/YOS Dev Doc.md",
+    "etc/YOS 개발기/YOS Roadmap",
+    "web/backend/Spring/Spring5 입문-스프링 부트.md",
+    "web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md",
+    "web/backend/Spring/Spring5 입문-의존 자동 주입.md",
+    "web/backend/Spring/Spring5 입문-컴포넌트 검색(Component Scan).md",
+    "web/backend/Spring/Spring5 정리.md",
+    "web/backend/Spring/Spring5-비동기 메시지 전송.md",
+    "web/backend/Spring/Spring5-JSON 응답과 요청 처리.md",
+    "web/backend/Spring/Spring5-JPA.md",
+    "web/backend/Spring/Spring5-통합.md",
+    "web/backend/Spring/Spring5-테스트.md",
+    "web/backend/Spring/Spring5-스프링 시큐리티.md",
+    "web/backend/Spring/Spring5-리액티브 스프링.md",
+    "etc/YOS 개발기",
+    "무제 파일.canvas",
+    "무제 파일 1.canvas"
+  ]
+}

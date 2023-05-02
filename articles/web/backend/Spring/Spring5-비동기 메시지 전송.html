@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#JMS-Java-Message-Service">JMS(Java Message Service)</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#메시지-전송">메시지 전송</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#메시지-수신">메시지 수신</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#RabbitMQ">RabbitMQ</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#아파체-카프카">아파체 카프카</a><ul></ul></li></ol>
 <h1 id="Spring5-비동기-메시지-전송">Spring5-비동기 메시지 전송</h1>
 
-<div class="callout callout-quote" id="callout-b0ad799d-bfb7-4d72-9493-5baa30944028">
+<div class="callout callout-quote" id="callout-c486949a-3b99-47dd-bbcb-5b016d6d42fb">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -588,7 +602,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-warning" id="callout-8e58bd5c-a1f5-4034-a8ed-47f448fe5864">
+<div class="callout callout-warning" id="callout-196db23f-7f6c-491a-b71c-867b8528f92c">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong>스프링 부트를 사용한다는 가정 하에 진행됩니다.
@@ -621,7 +635,7 @@
 <strong>org.springframework.boot.spring-boot-starter-activemq</strong><br>
 <strong>org.springframework.boot.spring-boot-starter-artemis</strong> : 최신 차세대 브로커 이용</p>
 
-<div class="callout callout-example" id="callout-f138768f-face-4ae8-bf6e-a18504382079">
+<div class="callout callout-example" id="callout-51004247-6f26-4c4e-83c0-596a83d28910">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">application.yml</code>
@@ -654,7 +668,7 @@
 
 <p>다음과 같이 <code class="language-plaintext highlighter-rouge">send()</code>와 <code class="language-plaintext highlighter-rouge">convertAndSend()</code> 두 개 메서드를 오버로딩하여 구현한다.</p>
 
-<div class="callout callout-example" id="callout-ad8485e1-f766-4fcd-bfb5-64234660355f">
+<div class="callout callout-example" id="callout-fd926a8f-1a6a-445c-8489-dfcb31ba05db">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">JmsTemplate</code> 메시지 전송 메서드
@@ -719,7 +733,7 @@ public void sendOrder(Order order) {<br>
 <p>```<br>
 아래처럼 서비스를 이용하여 구현하면 된다.</p>
 
-<div class="callout callout-example" id="callout-329194aa-c868-4b0e-bddb-854d35047f30">
+<div class="callout callout-example" id="callout-8dab0bfc-ea95-4700-9e60-aedba3cbfcdd">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">send()</code> 주문 예시
@@ -783,7 +797,7 @@ public void sendOrder(Order order) {<br>
 
 <p>다음 인터페이스를 직접 구현하거나 미리 구현된 변환기를 직접 이용하면 된다.</p>
 
-<div class="callout callout-example" id="callout-776ebd4f-a7f9-48e2-98f4-20f7f800dc65">
+<div class="callout callout-example" id="callout-21fa2622-fcd5-49fc-aac4-bdd7b9fa4da9">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>스프링의 <code class="language-plaintext highlighter-rouge">MessageConverter</code> 인터페이스
@@ -805,7 +819,7 @@ public void sendOrder(Order order) {<br>
     </div>
 <p>보통 <code class="language-plaintext highlighter-rouge">SimpleMessageConverter</code>를 자주 사용하며 변환기 인스턴스를 빈으로 선언하여 사용한다.</p>
 
-<div class="callout callout-example" id="callout-80ef5eee-5952-431a-ab8c-358f637860c7">
+<div class="callout callout-example" id="callout-4061ba24-ea53-4e99-a51c-be2fc3f106e0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">org.springframeowrk.jms.support.converter</code>의 미리 정의된 스프링 메시지 변환기
@@ -841,7 +855,7 @@ public void sendOrder(Order order) {<br>
 
 <p>메시지 내부의 속성을 추가하려면 <code class="language-plaintext highlighter-rouge">send()</code> 메서드의 경우 다음과 같이 가능하다.</p>
 
-<div class="callout callout-example" id="callout-54eacc73-de89-46fa-bc73-1e6606e1d8c2">
+<div class="callout callout-example" id="callout-eea87f06-d473-495f-b625-ec4df5a08259">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">send()</code> 메서드 후처리
@@ -863,7 +877,7 @@ public void sendOrder(Order order) {<br>
     </div>
 <p><code class="language-plaintext highlighter-rouge">convertAndSend()</code> 사용 시 자동으로 메세지를 생성해주므로 변화를 주려면 메시지 변환기를 사용해야 함.</p>
 
-<div class="callout callout-example" id="callout-4ec3b7de-b1cd-47b1-86a5-a848b8b8ccc5">
+<div class="callout callout-example" id="callout-90a48993-45eb-480a-b373-eb93cc16ae85">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>후처리 구현
@@ -931,7 +945,7 @@ public void sendOrder(Order order) {<br>
 
 <h4 id="풀모델-메시지-수신">풀모델 메시지 수신</h4>
 
-<div class="callout callout-example" id="callout-7fad5f25-a3cf-4896-ae05-75f615c136e1">
+<div class="callout callout-example" id="callout-8ac92eaf-3518-4e15-b3de-12d6a1c7ebb8">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>메시지 수신 메서드
@@ -954,7 +968,7 @@ public void sendOrder(Order order) {<br>
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-09282aa7-271f-4677-a7dc-a680db4fba44">
+<div class="callout callout-example" id="callout-b4afe587-5b59-4740-bbb7-6ad766e65323">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>example</strong></span>
@@ -1001,7 +1015,7 @@ public void sendOrder(Order order) {<br>
 <p>메시지가 도착할 때까지 대기하는 수동적 컴포넌트<br>
 POJO 방식으로 다른 메시지 의존 모듈로도 비슷한 방법으로 메시지 리스너를 선언 가능</p>
 
-<div class="callout callout-example" id="callout-c875ddea-4bd9-47a5-87bd-35c1c359ba48">
+<div class="callout callout-example" id="callout-e6224a9c-bd79-4892-a25c-f54ddf2520e8">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">OrderListener</code> 컴포넌트
@@ -1109,7 +1123,7 @@ public class OrderListener {
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-44b1f6cc-63fc-419c-82e5-fdd80f999a6e">
+<div class="callout callout-example" id="callout-96bb68be-998d-4873-9f4b-f2f793a4e80c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>kafka listener 구현

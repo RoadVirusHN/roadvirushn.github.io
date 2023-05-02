@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -560,8 +574,10 @@
 <h1 id="Python-for-Algorithms-etc">Python for Algorithms-etc</h1>
 
 <h2 id="스위핑">스위핑</h2>
+<p>공간의 한쪽 끝부터 나머지 끝까지 훑으면서 마주치는 부분을 처리하는 방식<br>
+정렬, 기준잡기, 상태 변화를 저장하는 것이 중요하다.</p>
 
-<div class="callout callout-example" id="callout-5026f8f4-66d8-4ee3-b873-b5c63191ebff">
+<div class="callout callout-example" id="callout-f51d6c39-6514-40ca-9435-23886579482e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>스위핑 예시
@@ -581,7 +597,7 @@
 <h3 id="CCW-Counter-Clock-Wise">CCW(Counter Clock Wise)</h3>
 <p>벡터의 외적(Cross Product)를 이용해 점의 쌍을 기준으로 다른 점의 상대적 위치를 알아냄</p>
 
-<div class="callout callout-example" id="callout-9b3d7c12-7e22-4527-a991-6b4d0a551c36">
+<div class="callout callout-example" id="callout-6f13d55f-b748-433b-8a6e-25dd5b09adc2">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>CCW 예시
@@ -610,7 +626,7 @@
     </div>
 <h3 id="그라함-스캔">그라함 스캔</h3>
 
-<div class="callout callout-example" id="callout-dc408aeb-6b41-468f-bdb2-a91bffebdfa4">
+<div class="callout callout-example" id="callout-9ac33b35-1d89-41c6-a809-5585a2ab79b6">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>그라함 스캔 $O(n\log n)$ 예시
@@ -657,7 +673,7 @@
 <p>배열의 크기를 $N$, 구간 합의 갯수를 $M$이라고 할때, 기존의 시간 복잡도 $O(M\times N)$에서 $O(M+N)$으로 바꿀 수 있다.</p>
 <h3 id="일반-누적합">일반 누적합</h3>
 
-<div class="callout callout-example" id="callout-213293dd-6dc3-4550-976b-cec00a51df08">
+<div class="callout callout-example" id="callout-41b59935-cc19-4067-8735-5d9f106cade4">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>누적합 예시
@@ -674,20 +690,18 @@
     <span class="k">for</span> <span class="n">props</span> <span class="ow">in</span> <span class="n">sums</span><span class="p">:</span>
         <span class="c1"># x1 ~ x2까지 degree 값만큼 변화시킨다.
 </span>        <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="n">props</span>
-
-		<span class="c1"># 누적합은 첫 인데스와 마지막 인덱스 + 1 부분을 각각 변화되야할 값과 그 값의 항등원을 더해야 한다. 
+		<span class="c1"># 누적합은 첫 인덱스와 마지막 인덱스 + 1 부분을 각각 변화되야할 값과 그 값의 항등원을 더해야 한다. 
 </span>		<span class="c1"># 예를 들어 인덱스 0 ~ 2까지 값을 X 만큼 변화시킨다면 다음과 같이 설정한다.
 </span>		<span class="c1">#     0  1  2  3 
 </span>		<span class="c1">#   [+X, 0, 0, -X]
 </span>		<span class="n">new_board</span><span class="p">[</span><span class="n">x1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">degree</span>
 		<span class="n">new_board</span><span class="p">[</span><span class="n">x2</span><span class="p">]</span> <span class="o">-=</span> <span class="n">degree</span>
             
-	<span class="c1"># 이후 각 가로 줄 먼저 가로 방향 누적합을 구한다. 인덱스 0를 제외하고 이전 인덱스 값을 순차적으로 더해주면 된다.
+	<span class="c1"># 이후 각 원소에 적용될 누적합을 구한다. 인덱스 0를 제외하고 이전 인덱스 값을 순차적으로 더해주면 된다.
 </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_board</span><span class="p">)):</span>
         <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         
-
-	<span class="c1"># 해당 누적합을 원래 2차원 배열에 적용시키기
+	<span class="c1"># 해당 누적합을 원래 배열에 적용시키기
 </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">)):</span>
         <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             
@@ -699,7 +713,7 @@
     </div>
 <h3 id="2차원-누적합">2차원 누적합</h3>
 
-<div class="callout callout-example" id="callout-6511575d-bfce-48f0-be9a-de20ae350890">
+<div class="callout callout-example" id="callout-6c6706a9-5a52-4688-987e-6b61faeead2e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>2차원 누적합 예시

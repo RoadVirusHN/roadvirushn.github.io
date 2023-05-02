@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -562,7 +576,7 @@
 <h2 id="클래스의-구조와-객체-생성">클래스의 구조와 객체 생성</h2>
 <h3 id="클래스의-구조">클래스의 구조</h3>
 
-<div class="callout callout-example" id="callout-0e9e357f-c11c-4035-a13d-6f370851fa53">
+<div class="callout callout-example" id="callout-377f606a-072d-44fa-b78c-87929e9a5ac5">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>클래스의 선언 형식과 예시
@@ -611,12 +625,15 @@
 </div>
     </div>
     </div>
-<p>1) 클래스 Modifier</p>
 <ul>
-  <li>접근 권한 예약어와 활용방법 예약어로 나뉨</li>
+  <li><strong>클래스 Modifier</strong>
+    <ul>
+      <li>접근 권한 예약어와 활용방법 예약어로 나뉨</li>
+    </ul>
+  </li>
 </ul>
 
-<div class="callout callout-note" id="callout-193fc65b-8230-43a5-a40f-40ef4f40f398">
+<div class="callout callout-note" id="callout-262ae2f2-5d47-4344-a42e-e6707d17797e">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>접근 권한 예약어
@@ -656,7 +673,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-note" id="callout-695eccf6-fd48-42a4-8c19-a265e0a53641">
+<div class="callout callout-note" id="callout-80829344-4a48-4617-92f8-2fd2e03a6590">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>활용 방법 예약어
@@ -666,6 +683,12 @@
       <div class="card" name="card">
     
     <div class="content" name="content">
+<p>일부 자세한 내용은 <span class="preview-wrapper">
+      <a href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%ED%95%9C%EC%A0%95%EC%9E%90%EC%99%80%20%EC%83%9D%EC%84%B1%EC%9E%90.html" class="wikilink">JAVA 기본-자바 한정자와 생성자</a>
+      <iframe class="preview" src='' data-href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%ED%95%9C%EC%A0%95%EC%9E%90%EC%99%80%20%EC%83%9D%EC%84%B1%EC%9E%90.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      </iframe>
+    </span> 참조</p>
+
 <table>
   <thead>
     <tr>
@@ -675,31 +698,31 @@
   </thead>
   <tbody>
     <tr>
-      <td>final</td>
+      <td><code class="language-plaintext highlighter-rouge">final</code></td>
       <td>자식 클래스를 가질 수 없는 클래스임을 의미</td>
     </tr>
     <tr>
-      <td>abstract</td>
+      <td><code class="language-plaintext highlighter-rouge">abstract</code></td>
       <td>객체 생성이 불가능한 추상클래스를 의미, 하위클래스에 의해 구현 됨</td>
     </tr>
     <tr>
-      <td>static</td>
+      <td><code class="language-plaintext highlighter-rouge">static</code></td>
       <td>클래스에 소속된 클래스 메서드를 의미하며, 클래스 생성 시 만들어짐</td>
     </tr>
     <tr>
-      <td>transient</td>
+      <td><code class="language-plaintext highlighter-rouge">transient</code></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>volatile</td>
+      <td><code class="language-plaintext highlighter-rouge">volatile</code></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>synchronized</td>
+      <td><code class="language-plaintext highlighter-rouge">synchronized</code></td>
       <td>Thread의 동기화를 위한 메서드임</td>
     </tr>
     <tr>
-      <td>native</td>
+      <td><code class="language-plaintext highlighter-rouge">native</code></td>
       <td>&nbsp;</td>
     </tr>
   </tbody>
@@ -722,7 +745,7 @@
   </li>
 </ul>
 
-<div class="callout callout-seealso" id="callout-71840ed9-3631-47c9-b295-9f94ec7da143">
+<div class="callout callout-seealso" id="callout-355527b8-e1c6-47df-91ce-109af38515bd">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>Class 접근 제한자는 <strong>Public과 Default</strong>만 있으며, <strong>Public</strong>의 경우, 다른 패지키에서 해당 클래스를 사용 가능하다. 지역변수는 언제나 <strong>Default</strong> 상태이다.
@@ -740,8 +763,8 @@
 </ul>
 
 <p>주로 Java로 설명하므로 자세한 건, <span class="preview-wrapper">
-      <a href="#java" class="wikilink">Java</a>
-      <iframe class="preview" src='' data-href="#java" style="display:none;" sandbox="allow-same-origin allow-scripts">
+      <a href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%ED%95%9C%EC%A0%95%EC%9E%90%EC%99%80%20%EC%83%9D%EC%84%B1%EC%9E%90.html" class="wikilink">JAVA 기본-자바 한정자와 생성자</a>
+      <iframe class="preview" src='' data-href="/articles/computer_science/PL/JAVA/JAVA%20%EA%B8%B0%EB%B3%B8/%EC%9E%90%EB%B0%94%20%EB%AC%B8%EB%B2%95/JAVA%20%EA%B8%B0%EB%B3%B8-%EC%9E%90%EB%B0%94%20%ED%95%9C%EC%A0%95%EC%9E%90%EC%99%80%20%EC%83%9D%EC%84%B1%EC%9E%90.html" style="display:none;" sandbox="allow-same-origin allow-scripts">
       </iframe>
     </span>을 참조</p>
 
@@ -785,7 +808,7 @@
 클래스이름 객체참조변수이름 = new 클래스이름(); ex) <code class="language-plaintext highlighter-rouge">Car Yellow = new Car();</code></li>
 </ul>
 
-<div class="callout callout-example" id="callout-af1cdf7f-cc19-4df9-b02c-ce2e5165bbc3">
+<div class="callout callout-example" id="callout-a05eac3d-0bae-489a-9ba6-46ffa93e7d56">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>클래스의 선언과 객체 생성 점검 예제 (<code class="language-plaintext highlighter-rouge">CarTest.java</code>)
@@ -826,7 +849,7 @@
   <li>해당 변수가 선언된 메서드 내에서만 사용 가능</li>
 </ul>
 
-<div class="callout callout-note" id="callout-168c5200-34f5-4ad6-93db-73a0ad96e54d">
+<div class="callout callout-note" id="callout-e0d218dc-543c-4978-940b-310b6afec493">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>멤버 변수에 사용되는 modifier
@@ -881,7 +904,7 @@
   <li>일종의 함수로서, 클래스가 제공할 로직들을 정의함</li>
 </ul>
 
-<div class="callout callout-example" id="callout-1d595458-0442-43ac-bf37-208ff24eb6c0">
+<div class="callout callout-example" id="callout-e6d8dcd5-d512-4c60-8065-7bd1e62383ec">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>메서드의 정의와 반환

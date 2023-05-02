@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#컨테이너">컨테이너</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#빈-Bean">빈(Bean)</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#빈-등록-방법">빈 등록 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#빈-생성-및-검색-방법">빈 생성 및 검색 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#빈-객체의-라이프-사이클">빈 객체의 라이프 사이클</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-5" href="#의존-자동-주입을-통한-의존-설정">의존 자동 주입을 통한 의존 설정</a><ul></ul></li></ol>
 <h1 id="빈-Bean-과-컨테이너">빈(Bean)과 컨테이너</h1>
 
-<div class="callout callout-quote" id="callout-da385795-6777-4f43-8afa-2d6d7857856d">
+<div class="callout callout-quote" id="callout-afcb2f4b-64d3-4297-b2ff-e97f53ac683e">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -592,7 +606,7 @@
 
 <p><strong>컨테이너</strong> : 스프링에서 빈(Bean) 객체의 생성, 초기화, 보관, 제거 등을 관리하는 <code class="language-plaintext highlighter-rouge">ApplicationContext</code> 인터페이스를 구현한 객체.</p>
 
-<div class="callout callout-info" id="callout-9b24a583-2770-449d-a7bc-7b1fef861bb7">
+<div class="callout callout-info" id="callout-29caf08d-6fe8-4e65-a211-b2fa56150b8f">
       <div class="header">
         <span class="emoji">ℹ️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">ApplicationContext</code> 인터페이스 클래스 그래프
@@ -614,7 +628,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-062b21c4-6ca0-4607-b779-5e4ffb7e9e9f">
+<div class="callout callout-example" id="callout-de06cbb1-90ea-493f-8f92-180913e8be58">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>스프링 컨테이너 선언
@@ -651,7 +665,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-b143a4ff-4925-4d4e-9365-7979f18a35a8">
+<div class="callout callout-example" id="callout-810fb95a-1078-4638-b231-dd9a137333e4">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>구성 클래스 내부에서 빈 객체를 생성하는 메서드 선언
@@ -698,7 +712,7 @@
     </span> 참조</li>
 </ul>
 
-<div class="callout callout-example" id="callout-163f952c-ae40-4eb0-9e85-6394cbcedeff">
+<div class="callout callout-example" id="callout-4c50c8c5-c920-4eb3-be42-13053dbb50f4">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">.getBean()</code> 메서드
@@ -734,7 +748,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-a478e997-ee39-4297-95d1-2a8bb1bd147e">
+<div class="callout callout-example" id="callout-95b9bad7-8aa3-4a27-9a88-230f87835605">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>빈 객체의 Scope 설정
@@ -780,7 +794,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-174ff480-02a5-4647-88fa-630a5b3c6b05">
+<div class="callout callout-example" id="callout-f6848830-0eff-4e34-887b-802f5c7bf45c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>초기화 메서드 구현 예제
@@ -811,7 +825,7 @@
     </div>
 <p>만약, 변경 불가능한 외부 모듈 클래스, 아니면 모종의 이유로 인터페이스를 사용하고 싶지 않으면 다음과 같이 <code class="language-plaintext highlighter-rouge">@Bean</code> 어노테이션의 속성을 사용하면 된다.</p>
 
-<div class="callout callout-example" id="callout-18225382-b0a6-4294-9990-8e26533dc626">
+<div class="callout callout-example" id="callout-cc763e4f-ee90-4186-ac5f-90125da3c3f3">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Bean</code> 속성을 이용한 초기화 메서드 구현
@@ -841,7 +855,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-afad3fa2-e714-4104-98e3-3ee049d2d16b">
+<div class="callout callout-example" id="callout-c1b1c1da-89af-47d9-a6ce-9c2f0ba83775">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>소멸 메서드 구현 예제
@@ -870,7 +884,7 @@
     </div>
 <p>마찬가지로, 변경 불가능한 외부 모듈 클래스, 모종의 이유로 인터페이스를 사용하고 싶지 않으면 다음과 같이 <code class="language-plaintext highlighter-rouge">@Bean</code> 어노테이션의 속성을 사용하면 된다.</p>
 
-<div class="callout callout-example" id="callout-fdc71eba-8995-4345-b058-f311232eea3a">
+<div class="callout callout-example" id="callout-ef88e66f-a11a-41f3-96a8-a162c2c0ebff">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Bean</code> 속성을 이용한 소멸 메서드 구현

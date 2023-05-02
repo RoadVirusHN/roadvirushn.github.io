@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#RestTemplate-이용">RestTemplate 이용</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#RestTemplate">RestTemplate</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#사용-예시">사용 예시</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#Traverson">Traverson</a><ul><li lvl="3"><a id="markdown-toc-0-4" href="#사용예">사용예</a><ul></ul></li></ul></li></ol>
 <h1 id="Spring5-다른-REST-API와-통신">Spring5-다른 REST API와 통신</h1>
 
-<div class="callout callout-quote" id="callout-26ff6ed7-8cf3-49c5-affc-8b4a576c845a">
+<div class="callout callout-quote" id="callout-a32f46a3-bbfd-4002-b8b2-543def95046a">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -602,7 +616,7 @@
 <h3 id="RestTemplate">RestTemplate</h3>
 <p>여러 장황한 REST API 코드를 제공해준다.</p>
 
-<div class="callout callout-example" id="callout-9b713b5e-29ea-4636-8066-715d4c4aae1c">
+<div class="callout callout-example" id="callout-a4146792-1229-4228-84cc-cc8283a048e0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><strong>RestTemplate</strong>의 주요 메서드 12개
@@ -680,7 +694,7 @@
   <li><code class="language-plaintext highlighter-rouge">java.net.URI</code>를 URL에 대한 인자로 받기</li>
 </ul>
 
-<div class="callout callout-example" id="callout-c4c5fed4-6f7f-4fb5-ac25-c49a19dae8ff">
+<div class="callout callout-example" id="callout-20f0143e-6e6b-487a-911d-c61bdaa9fb1a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">RestTemaplte</code>의 사용 방법
@@ -710,7 +724,7 @@
 
 <h4 id="GET-요청">GET 요청</h4>
 
-<div class="callout callout-example" id="callout-4995c16c-1940-46e0-9be7-0fe3bddd6cb5">
+<div class="callout callout-example" id="callout-005cd1c1-55b6-442c-bc12-76faab123f99">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>주요 오버로딩 세가지 방법
@@ -756,7 +770,7 @@
     </div>
 <h4 id="PUT-요청">PUT 요청</h4>
 
-<div class="callout callout-example" id="callout-07bf9274-5597-4d07-8fa1-993fe3c62631">
+<div class="callout callout-example" id="callout-60ae9c78-4abb-4e7a-b09a-6fd1f093e27a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>리소스 쓰기
@@ -777,7 +791,7 @@
     </div>
 <h4 id="DELETE-요청">DELETE 요청</h4>
 
-<div class="callout callout-example" id="callout-4ecc8750-8d16-4749-90e2-31d6c952e1df">
+<div class="callout callout-example" id="callout-b75dd392-9dd9-4936-9fe5-f5a0af420491">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>리소스 삭제
@@ -798,7 +812,7 @@
     </div>
 <h4 id="POST-요청">POST 요청</h4>
 
-<div class="callout callout-example" id="callout-8b034c5b-dec4-4748-baf7-d82a60c0eb54">
+<div class="callout callout-example" id="callout-89b13402-e71f-480a-97a1-db39b8de6988">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>리소스 변경
@@ -828,7 +842,7 @@
 
 <p>기존의 RestTemplate 또한 <code class="language-plaintext highlighter-rouge">ResponseEntity</code>를 이용하면 하이퍼링크를 사용할 수 있지만, Traverson이 훨씬 쉽게 사용 가능하다.</p>
 
-<div class="callout callout-example" id="callout-51c62901-19fa-4101-a29d-d0f45ce8d65b">
+<div class="callout callout-example" id="callout-2eb21acd-0b2b-4e34-96ea-c504fe229868">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Traverson 설정
@@ -852,7 +866,7 @@
     </div>
 <h3 id="사용예">사용예</h3>
 
-<div class="callout callout-example" id="callout-359c51b0-2a70-4c4a-a8ce-341543ed5211">
+<div class="callout callout-example" id="callout-346c9a1d-67a0-417a-baa3-a73bdc356b70">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Traverson 데이터 조회 예시
@@ -882,7 +896,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-f8a5a5ab-ff8b-4fcc-a6ae-6eb99059f997">
+<div class="callout callout-example" id="callout-11112216-7458-4bb2-bf3b-c3add1790d9d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Traverson + RestTemplate 사용 예시

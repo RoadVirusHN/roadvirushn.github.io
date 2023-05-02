@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#부트-프로젝트-생성">부트 프로젝트 생성</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#스프링-부트-파일-살펴보기">스프링 부트 파일 살펴보기</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#DB-연동-설정">DB 연동 설정</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#실행-가능한-패키지-생성">실행 가능한 패키지 생성</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#스프링-부트-CLI">스프링 부트 CLI</a><ul></ul></li></ol>
 <h1 id="스프링-부트">스프링 부트</h1>
 
-<div class="callout callout-quote" id="callout-70039ebc-d36c-4685-895b-40e4fc698214">
+<div class="callout callout-quote" id="callout-73362c29-3452-4b3b-bd04-7b9676697056">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -618,7 +632,7 @@
   <li><code class="language-plaintext highlighter-rouge">spring-boot-devtools</code> : 코드 변경시 서버, 브라우저 자동 재시작, 템플릿 캐시 자동 비활성, <code class="language-plaintext highlighter-rouge">H2</code> 콘솔 활성화, 배포 시 자동 제외</li>
 </ul>
 
-<div class="callout callout-note" id="callout-f685e259-207a-45b4-b049-f21c7c94530b">
+<div class="callout callout-note" id="callout-fa6f23a9-9e68-441e-8532-c028ce370fa3">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>자동 재시작 의 원리
@@ -645,7 +659,7 @@
 <h4 id="부트스트랩-클래스">부트스트랩 클래스</h4>
 <p><code class="language-plaintext highlighter-rouge">프로젝트명Application.java</code> 파일을 살펴보면 다음과 같다.</p>
 
-<div class="callout callout-example" id="callout-8a681e11-075c-48d4-b6fd-0202cd6ea960">
+<div class="callout callout-example" id="callout-9cc59061-0d2f-4c5c-af92-31d24609d7f9">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>스프링 부트 메인 파일
@@ -688,7 +702,7 @@ DB의 연동 정보나 일부 모듈의 설정 등에 사용된다.</p>
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-7f97bd07-41a6-47af-af0a-983092d1204a">
+<div class="callout callout-example" id="callout-590b0fba-8c6f-4038-9afe-335383d7a100">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">thymeleaf</code> 템플릿 캐싱 비활성화
@@ -721,7 +735,7 @@ DB의 연동 정보나 일부 모듈의 설정 등에 사용된다.</p>
 이후, DB 연결에 필요한 프로퍼티를 다음과 같이 설정하면 된다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-55d1bc04-c342-439e-a4f7-c7d2b5a8be1c">
+<div class="callout callout-example" id="callout-c4f96f5a-7aac-4d6f-ba2a-ef4415629b82">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/resources/application.properties</code>

@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#스프링-시큐리티-개념-및-활성화">스프링 시큐리티 개념 및 활성화</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#스프링-시큐리티-구성">스프링 시큐리티 구성</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#다양한-사용자-스토어-구성-방법">다양한 사용자 스토어 구성 방법</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#인메모리-사용자-스토어">인메모리 사용자 스토어</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#JDBC-사용자-스토어">JDBC 사용자 스토어</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#LDAP-사용자-스토어">LDAP 사용자 스토어</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#커스텀-사용자-스토어-JPA">커스텀 사용자 스토어(JPA)</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-7" href="#웹-요청-보안-처리">웹 요청 보안 처리</a><ul><li lvl="3"><a id="markdown-toc-0-8" href="#웹-요청-보안-처리">웹 요청 보안 처리</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#커스텀-로그인-페이지-생성">커스텀 로그인 페이지 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#로그아웃하기">로그아웃하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#CSRF-공격-방어">CSRF 공격 방어</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-12" href="#사용자-인가-및-정보-얻기">사용자 인가 및 정보 얻기</a><ul><li lvl="3"><a id="markdown-toc-0-13" href="#Principal-객체를-컨트롤러-메서드에-주입">Principal 객체를 컨트롤러 메서드에 주입</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-14" href="#Authentication-객체를-컨트롤러-메서드에-주입">Authentication 객체를 컨트롤러 메서드에 주입</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-15" href="#AuthenticationPrincipal-어노테이션을-메서드에-지정">@AuthenticationPrincipal 어노테이션을 메서드에 지정</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-16" href="#SecurityContextHolder를-사용해서-보안-컨텍스트를-얻기">SecurityContextHolder를 사용해서 보안 컨텍스트를 얻기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-17" href="#관련-컨트롤러-구현-예시">관련 컨트롤러 구현 예시</a><ul></ul></li></ul></li></ol>
 <h1 id="Spring5-스프링-시큐리티">Spring5-스프링 시큐리티</h1>
 
-<div class="callout callout-quote" id="callout-a992e4f5-0f18-41fb-9bdc-8bd9f03f25aa">
+<div class="callout callout-quote" id="callout-152b26ba-87d7-4bc9-ae07-3dbbe97fce0c">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -588,7 +602,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-warning" id="callout-9a46327d-07be-4b0b-9aac-539d5da090bb">
+<div class="callout callout-warning" id="callout-4459eef9-0211-49d6-acdd-c9dfc612e4e7">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong>스프링 부트를 이용한다는 가정 하에 진행됩니다.
@@ -624,7 +638,7 @@
   <li>다양한 인자의 <code class="language-plaintext highlighter-rouge">configure</code> 메서드들을 재정의</li>
 </ul>
 
-<div class="callout callout-example" id="callout-40205134-5e1c-461b-8b1a-29bc435870d9">
+<div class="callout callout-example" id="callout-905744ee-8e64-4285-b479-667e85c6588a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>example</strong></span>
@@ -671,7 +685,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
     </div>
 <p>자세한 메서드 설정은 아래에서 배울 것이다.</p>
 
-<div class="callout callout-tip" id="callout-fe545db2-c3ae-4f10-8264-3e1e3e3851b6">
+<div class="callout callout-tip" id="callout-c01b07a8-f556-4435-8c37-8245102468bb">
       <div class="header">
         <span class="emoji">💡</span>
         <span class="title"><strong>개발 시 웹 브라우저를 <code class="language-plaintext highlighter-rouge">private</code> 모드로 설정하거나 관련 개발 모드를 사용하면 쿠키, 세션 등이 저장되지 않아 변화를 확인하기 좋다.
@@ -693,7 +707,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
 <h3 id="인메모리-사용자-스토어">인메모리 사용자 스토어</h3>
 <p>소규모, 변경이 필요 없는 사용자만 이용한다면, 아예 코드 내부에 사용자를 정의할 수 있다. 앞선 예시를 다시 보자.</p>
 
-<div class="callout callout-example" id="callout-420aae82-e583-4df3-8f7e-675a5019549f">
+<div class="callout callout-example" id="callout-fb4fba67-a423-4fd4-8938-bf78349fb3fd">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>인메모리 사용자 스토어 예시
@@ -731,7 +745,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
 <p>사용자 정보를 관계형 데이터베이스로 유지관리 하기 위해 JDBC를 이용할 수 있다.</p>
 <h4 id="사용자-스토어-설정">사용자 스토어 설정</h4>
 
-<div class="callout callout-example" id="callout-f55ed759-17fa-4b49-a9ca-b9d1faea6eaa">
+<div class="callout callout-example" id="callout-3ad38c75-07e5-45ae-a4da-b2d1b4a794bf">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>JDBC 기반 사용자 스토어 예시
@@ -763,7 +777,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
 
 <p>앞선 설정 만으로 다음과 같은 쿼리들을 기본 수행한다.</p>
 
-<div class="callout callout-example" id="callout-0fd19033-31fd-4066-867f-d0a8734d468e">
+<div class="callout callout-example" id="callout-693da8f5-a19e-471f-af37-354cee416be2">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>기본 사용자 쿼리
@@ -804,7 +818,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
   <li>앞서 말햇듯이 해당 두 sql은 어플리케이션 실행 시 자동 실행된다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-9c7fc808-4153-4b8e-a006-97effb6088d8">
+<div class="callout callout-example" id="callout-4ee4a616-4843-454b-bd46-0ad42e3e76c7">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/resources/schema.sql</code> 예시
@@ -836,7 +850,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-54662a19-421a-4aff-a945-3641361abbdd">
+<div class="callout callout-example" id="callout-0684def9-7734-4ab3-9edd-d5c746900521">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/resources/data.sql</code> 예시
@@ -862,7 +876,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
     </div>
 <p>만약, 사용자 정보 쿼리를 원하는 다른 SQL로 대체하고 싶다면 다음과 같이 설정을 바꾸면 가능하다.</p>
 
-<div class="callout callout-example" id="callout-b759eabb-f5b0-4458-ae94-2e436bfdfc32">
+<div class="callout callout-example" id="callout-1ef2d57d-9f6d-4cb8-9578-0f4c0d97c6b2">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>사용자 정보 쿼리 커스터마이징
@@ -911,7 +925,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
 
 <p>다음과 같이 암호화 알고리즘을 추가할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-c2db0318-94e1-4b80-be4c-be45c2dbe440">
+<div class="callout callout-example" id="callout-aaa2a368-2008-431f-8182-0096825fa6a5">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>암호화 설정하기
@@ -951,7 +965,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
   <li><code class="language-plaintext highlighter-rouge">PasswordEncoder</code> 인터페이스를 구현한 클래스</li>
 </ul>
 
-<div class="callout callout-note" id="callout-12968164-b7ee-4866-bfed-1d7625f13666">
+<div class="callout callout-note" id="callout-78409fa3-4df3-4df4-b16f-75828a9bcd90">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">PasswordEncoder</code> 클래스
@@ -974,7 +988,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
 
 <p>다음은 암호화 하지않는 <code class="language-plaintext highlighter-rouge">NoEncodingPasswordEncoder</code> 예시이다.</p>
 
-<div class="callout callout-example" id="callout-1b19c25d-6e70-45b8-b958-ee85a53c4d31">
+<div class="callout callout-example" id="callout-5ab70b1a-56ef-4e27-a63e-fb3a4bfdd529">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">NoEncodingPasswordEncoder</code> 예시
@@ -1010,7 +1024,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
 
 <p>스프링에서도 간단히 다음과 같이 LDAP 인증을 구성할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-d1cb4f33-9f0d-4b0a-9274-df75d0118e33">
+<div class="callout callout-example" id="callout-03d15b36-c2e0-481c-8d68-e09c14e60fc0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>LDAP 인증 구성
@@ -1059,7 +1073,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
 <h4 id="원격-LDAP-서버-참조">원격 LDAP 서버 참조</h4>
 <p>기본적으로 LDAP 서버의 위치를 <code class="language-plaintext highlighter-rouge">localhost:33389</code> 포트로 간주하므로, <code class="language-plaintext highlighter-rouge">contextSource()</code> 메서드로 서버 위치를 재구성할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-0d69314c-15de-48eb-8115-f43e247eb7da">
+<div class="callout callout-example" id="callout-49675c90-80d3-44a7-8762-a919b3d7065a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>원격 LDAP 서버 참조
@@ -1093,7 +1107,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
   <li><strong>org.springframework.security.spring-security-ldap</strong></li>
 </ul>
 
-<div class="callout callout-example" id="callout-2ff35ce6-eb94-4de8-9c86-18903103b3af">
+<div class="callout callout-example" id="callout-b700df68-a34c-4053-9d07-0c149a7c741a">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>내장 LDAP 인증 구성
@@ -1123,7 +1137,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {</p>
     </div>
 <p>이때 LDIF(LDAP Data Interchange Format) 파일로부터 데이터를 로드할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-bbe90582-a76b-4a2a-938e-2c83c4f6fe8d">
+<div class="callout callout-example" id="callout-a1d04cb6-1c34-431e-94ed-45c7f03b6792">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">users.ldif</code> 예시
@@ -1174,7 +1188,7 @@ member: uid=user2,ou=people,dc=tacocloud,dc=com
 </div>
     </div>
     </div>
-<div class="callout callout-info" id="callout-f5f5cc99-b879-446f-8a78-5eb8046d1f15">
+<div class="callout callout-info" id="callout-c131b53d-867e-4307-9f47-673ca9e3798e">
       <div class="header">
         <span class="emoji">ℹ️</span>
         <span class="title"><strong>LDIF?
@@ -1196,7 +1210,7 @@ member: uid=user2,ou=people,dc=tacocloud,dc=com
 <h4 id="사용자-도메인-객체와-퍼시스턴트-정의하기">사용자 도메인 객체와 퍼시스턴트 정의하기</h4>
 <p>스프링 시큐리티의 <code class="language-plaintext highlighter-rouge">UserDetails</code> 인터페이스를 구현하면 사용자 클래스로 사용할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-cd7f5668-f556-47f5-aabe-945f2fae6444">
+<div class="callout callout-example" id="callout-25be337c-b9e2-478b-b83c-4b413181df7d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">User</code> 클래스
@@ -1286,7 +1300,7 @@ member: uid=user2,ou=people,dc=tacocloud,dc=com
     </span> 참조</li>
 </ul>
 
-<div class="callout callout-example" id="callout-abf4d275-f461-43df-9b74-1dd5053d0088">
+<div class="callout callout-example" id="callout-d0ec49aa-cd06-4d3b-a40e-930ba4856c63">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">tacos/data/UserRepository.java</code>
@@ -1315,7 +1329,7 @@ member: uid=user2,ou=people,dc=tacocloud,dc=com
 
 <p>스프링 시큐리티의 <code class="language-plaintext highlighter-rouge">UserDetailsService</code>는 사용자 이름으로 <code class="language-plaintext highlighter-rouge">UserDetails</code> 객체를 반환하거나 <code class="language-plaintext highlighter-rouge">UsernameNotFoundException</code>을 발생시키는 인터페이스이다.</p>
 
-<div class="callout callout-example" id="callout-68dfe835-660d-485d-afa2-c289bb9a8b2d">
+<div class="callout callout-example" id="callout-a9cda43e-70f1-412a-84b0-7ff18e4bb9d6">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">UserDetailsService</code> 인터페이스
@@ -1325,7 +1339,7 @@ member: uid=user2,ou=people,dc=tacocloud,dc=com
       <div class="card" name="card">
     
     <div class="content" name="content">
-<p>절대로 <code class="language-plaintext highlighter-rouge">null</code>을 반호나하면 안된다.</p>
+<p>절대로 <code class="language-plaintext highlighter-rouge">null</code>을 반환하면 안된다.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserDetailsService</span> <span class="o">{</span>
 	<span class="nc">UserDetails</span> <span class="nf">loadUserByUsername</span><span class="o">(</span><span class="nc">String</span> <span class="n">username</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">UsernameNotFoundException</span><span class="o">;</span>
 <span class="o">}</span>
@@ -1336,7 +1350,7 @@ member: uid=user2,ou=people,dc=tacocloud,dc=com
     </div>
 <p>이를 구현한 서비스를 다음과 같이 구현할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-eb85bbcc-d326-48a5-babe-3824bbb0df1a">
+<div class="callout callout-example" id="callout-42179fbf-ad43-4cd1-8bd6-22ba28b2e50e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">UserRepositoryUserDetailsService</code> 서비스 구현
@@ -1386,7 +1400,7 @@ member: uid=user2,ou=people,dc=tacocloud,dc=com
     </div>
 <p>이후 <code class="language-plaintext highlighter-rouge">SecurityConfig</code>에 해당 서비스를 추가하고, 이를 이용해 유저 인증을 호출한다.</p>
 
-<div class="callout callout-example" id="callout-296c20c5-1f55-47f2-87be-88a8ddb2000a">
+<div class="callout callout-example" id="callout-f245dd23-753e-4baa-836a-00f4c4ba795b">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">SecuritConfig</code>에 <code class="language-plaintext highlighter-rouge">UserDetailsService</code>와 인증 메서드 변경
@@ -1427,10 +1441,35 @@ member: uid=user2,ou=people,dc=tacocloud,dc=com
     </div>
 <p>이제 JPA를 이용한 사용자 인증을 마쳤다.</p>
 
+<div class="callout callout-danger" id="callout-5c7fbaf9-5811-4ba6-ac6d-dccb94e49dfa">
+      <div class="header">
+        <span class="emoji">☠️</span>
+        <span class="title"><strong><code class="language-plaintext highlighter-rouge">WebSecurityConfigurerAdapter</code> Deprecated!
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<p>change above code to down below</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SecurityConfig</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="nc">SecurityFilterChain</span> <span class="nf">filterChain</span><span class="o">(</span><span class="nc">HttpSecurity</span> <span class="n">http</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span><span class="o">{</span>	
+		<span class="n">http</span>		
+		<span class="o">.</span><span class="na">authorizeHttpRequests</span><span class="o">()</span>
+		<span class="c1">//...</span>
+		<span class="k">return</span> <span class="n">http</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>	
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
 <h4 id="사용자-등록하기">사용자 등록하기</h4>
 <p>이제 사용자 등록 컨트롤러와 뷰를 구현해 사용자 등록을 해보자.</p>
 
-<div class="callout callout-example" id="callout-4c2c8f0d-47b1-4a86-b3bd-4859d570bebf">
+<div class="callout callout-example" id="callout-5692a03e-68be-4654-b230-462af66c01e5">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>사용자 등록 컨트롤러(src/main/java/tacos/security/RegistrationController.java)
@@ -1478,7 +1517,7 @@ member: uid=user2,ou=people,dc=tacocloud,dc=com
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-7725e13e-7ebb-42c5-84d9-4b7bfcea3349">
+<div class="callout callout-example" id="callout-8caa8961-731a-4ab1-8cb3-52fb92739722">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>example</strong></span>
@@ -1514,7 +1553,7 @@ collapse: true</p>
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-57e9583b-27ec-4912-8d07-24633a5bdffd">
+<div class="callout callout-example" id="callout-87709233-acd2-413f-a4a6-3a16e8023193">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">registration.html</code> Thymeleaf 등록 폼 뷰
@@ -1577,7 +1616,16 @@ collapse: true</p>
 
 <p>다음 코드는 인가를 구현하게 해준다.</p>
 
-<div class="callout callout-example" id="callout-0c945d59-3e06-4fb3-9a61-f9effcbffc4c">
+<div class="callout callout-warning" id="callout-0b867d42-cda3-401a-9692-5717f42e651e">
+      <div class="header">
+        <span class="emoji">⚠️</span>
+        <span class="title"><strong>최신 버전에서는 <code class="language-plaintext highlighter-rouge">authorizeRequests()</code>를 <code class="language-plaintext highlighter-rouge">authorizeHttpRequests()</code>로 바꿀것
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      
+    </div>
+<div class="callout callout-example" id="callout-f085e794-4a92-48a4-9b22-a766fa4dc8c7">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">SecurityConfig</code> 클래스 두번째 메서드
@@ -1605,7 +1653,7 @@ collapse: true</p>
 <p><code class="language-plaintext highlighter-rouge">anthorizeRequests()</code>는 <code class="language-plaintext highlighter-rouge">ExpressionInterceptUrlRegistry</code> 객체를 반환한다. <br>
 <code class="language-plaintext highlighter-rouge">ExpressionInterceptUrlRegistry</code> 객체는 <code class="language-plaintext highlighter-rouge">antMatchers()</code> 메서드를 통해 경로 및 패턴을 지정해 요구사항을 구성한다.</p>
 
-<div class="callout callout-example" id="callout-97d7e4a8-5fd5-4357-bab2-d3ca80122dda">
+<div class="callout callout-example" id="callout-7cc920d3-d324-44ee-b718-436cd1bcf635">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>example</strong></span>
@@ -1644,7 +1692,7 @@ collapse: true</p>
       </span>
     </span> 사용하면 다음과 같은 표현이 가능하다.</p>
 
-<div class="callout callout-example" id="callout-96bd3bfa-d395-4e41-b75b-c7fdd27ba0ff">
+<div class="callout callout-example" id="callout-d70029d4-51bc-4d5f-8226-9408ce9d4d8d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>SpEL 예시
@@ -1675,7 +1723,7 @@ collapse: true</p>
 
 <p>다음과 같은 설정으로 커스텀 로그인 페이지 경로를 지정할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-4065030c-c6fb-42ee-9798-8e5ad50fb1ef">
+<div class="callout callout-example" id="callout-9ed9f52d-d353-4baf-908f-cff7ba078f8f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>커스텀 로그인 페이지 경로 지정하기
@@ -1695,7 +1743,7 @@ collapse: true</p>
 		<span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="s">"/**"</span><span class="o">).</span><span class="na">permitAll</span><span class="o">()</span>
 		<span class="o">.</span><span class="na">and</span><span class="o">()</span> <span class="c1">// 새로운 구성 시작</span>
 		<span class="o">.</span><span class="na">formLogin</span><span class="o">()</span> <span class="c1">// 로그인 페이지 구성 시작</span>
-		<span class="o">.</span><span class="na">loginPage</span><span class="o">(</span><span class="s">"/login"</span><span class="o">);</span> <span class="c1">// 로그인 페이지 경로: 이곳에서 로그인 시도</span>
+		<span class="o">.</span><span class="na">loginPage</span><span class="o">(</span><span class="s">"/login"</span><span class="o">)</span> <span class="c1">// 로그인 페이지 경로: 이곳에서 로그인 시도</span>
 		<span class="o">.</span><span class="na">loginProcessingUrl</span><span class="o">(</span><span class="s">"/authenticate"</span><span class="o">)</span> <span class="c1">// 로그인 처리 경로 : 로그인 시도 시 옮겨지는 페이지</span>
 		<span class="o">.</span><span class="na">usernameParameter</span><span class="o">(</span><span class="s">"user"</span><span class="o">)</span> <span class="c1">// 로그인 post 요청 유저명 필드 이름 변경</span>
 		<span class="o">.</span><span class="na">passwordParameter</span><span class="o">(</span><span class="s">"pwd"</span><span class="o">)</span> <span class="c1">// 로그인 post 요청 비밀번호 필드 이름 변경</span>
@@ -1707,9 +1755,35 @@ collapse: true</p>
 </div>
     </div>
     </div>
+<p>만약, JSP를 사용하지 않는다면, 다음과 같은 커스텀 응답 메시지를 만들어 보낼 수 있다.</p>
+
+<div class="callout callout-example" id="callout-596f848a-8998-4bc6-adb3-91afb265ed12">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>커스텀 응답 메시지 생성
+</strong></span>
+        <button class="collapse">🔼</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="na">failureHandler</span><span class="o">((</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">,</span> <span class="n">err</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+	<span class="n">res</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">UNAUTHORIZED</span><span class="o">.</span><span class="na">value</span><span class="o">());</span>
+	<span class="n">res</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">);</span>
+	<span class="n">res</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="s">"{\"error\": \""</span> <span class="o">+</span> <span class="n">err</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\"}"</span><span class="o">);</span>
+<span class="o">})</span>
+<span class="o">.</span><span class="na">successHandler</span><span class="o">((</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">,</span> <span class="n">err</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+	<span class="n">res</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="nc">HttpStatus</span><span class="o">.</span><span class="na">OK</span><span class="o">.</span><span class="na">value</span><span class="o">());</span>
+	<span class="n">res</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">);</span>
+<span class="o">})</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
 <p>이제 해당 로그인 페이지 경로를 처리하는 컨트롤러를 제공해야 한다.</p>
 
-<div class="callout callout-example" id="callout-798ee167-9aa6-4831-a76a-8050b0c6ea33">
+<div class="callout callout-example" id="callout-15f43595-8adc-4fd9-a2ff-358563a1aacd">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">WebConfig</code>에 뷰 컨트롤러 선언
@@ -1773,7 +1847,7 @@ collapse: true</p>
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-fdd87bf3-8610-4b07-92fd-26ffd83a8c37">
+<div class="callout callout-example" id="callout-b988b9b3-26f2-4c26-89a5-4cd415a90849">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">Principal</code> 객체를 컨트롤러 메서드에 주입
@@ -1799,7 +1873,7 @@ collapse: true</p>
 
 <h3 id="Authentication-객체를-컨트롤러-메서드에-주입"><code class="language-plaintext highlighter-rouge">Authentication</code> 객체를 컨트롤러 메서드에 주입</h3>
 
-<div class="callout callout-example" id="callout-6c83f849-ce17-447c-98e1-5df522ed8918">
+<div class="callout callout-example" id="callout-d16ae507-977c-43d5-a3e4-23dc55e245e1">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">Authentication</code> 객체를 컨트롤러 메서드에 주입
@@ -1825,7 +1899,7 @@ collapse: true</p>
 
 <h3 id="AuthenticationPrincipal-어노테이션을-메서드에-지정"><code class="language-plaintext highlighter-rouge">@AuthenticationPrincipal</code> 어노테이션을 메서드에 지정</h3>
 
-<div class="callout callout-example" id="callout-2510b23e-5f3d-41e4-a146-da5ca525d145">
+<div class="callout callout-example" id="callout-adad0194-103e-45c6-b1b8-1377fbf0a6b5">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@AuthenticationPrincipal</code> 어노테이션을 메서드에 지정
@@ -1862,7 +1936,7 @@ collapse: true</p>
 
 <h3 id="SecurityContextHolder를-사용해서-보안-컨텍스트를-얻기"><code class="language-plaintext highlighter-rouge">SecurityContextHolder</code>를 사용해서 보안 컨텍스트를 얻기</h3>
 
-<div class="callout callout-example" id="callout-97f37ab1-73a9-48eb-859e-5bfb0e190290">
+<div class="callout callout-example" id="callout-422a8656-6718-44ac-9bef-b75677e158bf">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">SecurityContextHolder</code>를 사용해서 보안 컨텍스트를 얻기
@@ -1884,7 +1958,7 @@ collapse: true</p>
 <h3 id="관련-컨트롤러-구현-예시">관련 컨트롤러 구현 예시</h3>
 <p>위 방법들을 이용해 다음과 같이 컨트롤러를 구현할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-84fb57ca-284e-4c02-9164-952d77154e4c">
+<div class="callout callout-example" id="callout-598e4b7b-ccfb-4583-80e6-0e6ceeb342e9">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">OrderController</code>의 <code class="language-plaintext highlighter-rouge">orderForm()</code> 변경하기

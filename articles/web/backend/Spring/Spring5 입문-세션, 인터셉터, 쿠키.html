@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#세션">세션</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#HttpSession을-이용한-인증-구현">HttpSession을 이용한 인증 구현</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#인터셉터">인터셉터</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#HandlerInterceptor-인터페이스">HandlerInterceptor 인터페이스</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#비밀번호-변경-기능">비밀번호 변경 기능</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-5" href="#쿠키">쿠키</a><ul><li lvl="3"><a id="markdown-toc-0-6" href="#이메일-기억하기-기능-구현">이메일 기억하기 기능 구현</a><ul></ul></li></ul></li></ol>
 <h1 id="세션-인터셉터-쿠키">세션, 인터셉터, 쿠키</h1>
 
-<div class="callout callout-quote" id="callout-99651e5d-d637-47aa-b007-823460df0faf">
+<div class="callout callout-quote" id="callout-ea417615-3f8b-4b61-b2e6-fd56a8ac4c70">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -603,7 +617,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">HttpSession</code>을 이용하는 방법은 다음 두 가지가 있다.</p>
 
-<div class="callout callout-example" id="callout-74e454ec-3ddd-4184-abcb-37f0e81487de">
+<div class="callout callout-example" id="callout-089cd6eb-459a-4a3e-80de-e6478875f275">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>요청 매핑 애노테이션 적용 메서드에 <code class="language-plaintext highlighter-rouge">HttpSession</code> 파라미터 넘기기
@@ -627,7 +641,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-ff7c540a-5537-40b9-9416-24179ba3f9af">
+<div class="callout callout-example" id="callout-cbb87fe6-1415-428c-9ad6-1d9095a535e0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>요청 매핑 애노테이션 적용 메서드에 <code class="language-plaintext highlighter-rouge">HttpServletRequest</code> 파라미터를 추가하고 <code class="language-plaintext highlighter-rouge">HttpServletRequest</code> 객체에서 세션 얻어내기
@@ -654,7 +668,7 @@
     </div>
 <p>이를 이용해 다음과 같이 로그인 컨트롤러를 구현할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-a80b3e94-8acc-4ee9-b2ff-d86161710c03">
+<div class="callout callout-example" id="callout-22f3778f-5640-442d-8b88-04bdd7e3a523">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/controller/LoginController.java</code>
@@ -718,7 +732,7 @@
 
 <p>이중 <code class="language-plaintext highlighter-rouge">preHandle</code>을 이용해 인가를 구현할 수 있다.</p>
 
-<div class="callout callout-question" id="callout-aeb26d28-8d90-43fd-ac58-baf3e749ac0a">
+<div class="callout callout-question" id="callout-a57c8f19-7736-49de-9b67-1d6d17685786">
       <div class="header">
         <span class="emoji">✨</span>
         <span class="title"><strong>앞서 배웠던 <code class="language-plaintext highlighter-rouge">AOP</code>와의 차이점은?
@@ -740,7 +754,7 @@
 <h3 id="비밀번호-변경-기능">비밀번호 변경 기능</h3>
 <p>이제 인가 기능이 포함된 비밀번호 변경 기능을 구현할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-601cc228-d0cb-4ee3-a872-506fb99613ae">
+<div class="callout callout-example" id="callout-19dac303-4b9a-4348-8da4-600855ef3ea5">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/interceptor/AuthCheckInterceptor.java</code>
@@ -790,7 +804,7 @@
 
 <p>이후, 생성한 <code class="language-plaintext highlighter-rouge">HandlerInterceptor</code>를 구성 클래스에 등록한다. 단, 빈 객체 등록이 아닌 기존 기능을 재정의해 새로 추가하는 것임을 유의하자.</p>
 
-<div class="callout callout-example" id="callout-288aa682-bed8-4531-98fe-d93b644e2533">
+<div class="callout callout-example" id="callout-8d1eda1d-ff94-4f4c-842f-dbe229803910">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>example</strong></span>
@@ -838,7 +852,7 @@
     </span>을 따른다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-43529e54-8719-4c8f-9bfe-679449753da2">
+<div class="callout callout-example" id="callout-db84c69f-43dc-4569-880a-831945941dd6">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/controller/ChangePwdController.java</code>
@@ -879,7 +893,7 @@
 <p>쿠키를 통해 이메일 기억하기 기능 같은 유저 특화 편의성 기능을 구현할 수 있다.<br>
 쿠키 구현을 위해 <code class="language-plaintext highlighter-rouge">@CookieValue</code> 어노테이션을 사용할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-7b74af69-c19e-4881-96eb-686cec1fc1d7">
+<div class="callout callout-example" id="callout-89849b4f-d8fe-4eb2-9f09-9a6ddc690203">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@CookieValue</code> 어노테이션
@@ -903,7 +917,7 @@
     </div>
 <h3 id="이메일-기억하기-기능-구현">이메일 기억하기 기능 구현</h3>
 
-<div class="callout callout-example" id="callout-fb41b2f3-7b93-48f6-802c-4f92ad5dd82e">
+<div class="callout callout-example" id="callout-54c3ab4a-b745-436d-b5c2-fad4ed4e7ca4">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/controller/LoginController.java</code>
@@ -969,7 +983,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-warning" id="callout-b34e0c3f-8493-414d-95d2-81c4ccce80f1">
+<div class="callout callout-warning" id="callout-cf0388b3-4984-4b20-914c-5a926cac2d63">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong>실제 쿠키 사용시 예제와 달리 암호와 및 보안을 고려해야 한다.

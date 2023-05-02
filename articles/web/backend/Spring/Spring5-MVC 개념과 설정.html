@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#MVC-프로젝트-생성">MVC 프로젝트 생성</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#MVC-패턴">MVC 패턴</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#요청-과정-예시">요청 과정 예시</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-3" href="#기본-핸들러와-HandlerMapping-우선-순위">기본 핸들러와 HandlerMapping 우선 순위</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-4" href="#MVC-구성-클래스">MVC 구성 클래스</a><ul></ul></li></ol>
 <h1 id="MVC-개념과-설정">MVC 개념과 설정</h1>
 
-<div class="callout callout-quote" id="callout-99d87e04-f61c-4bd7-be40-0ae519a1b306">
+<div class="callout callout-quote" id="callout-e1d6830d-54bd-434b-88cc-6e9d799885cc">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -601,7 +615,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-e5795f9d-6296-4e19-b42d-d87661b9230b">
+<div class="callout callout-example" id="callout-b3dd4689-61d9-4d21-bb1c-f99ef59d0887">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">web.xml</code> 예시
@@ -685,7 +699,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-711d9b6f-7ceb-482c-8c81-38ef8960a7a7">
+<div class="callout callout-example" id="callout-516853b7-1a48-45ff-801b-9832b2872509">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">pom.xml</code> 예시
@@ -749,7 +763,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-b97e8d55-98bc-4b47-9bc1-8e40b70bfec7">
+<div class="callout callout-example" id="callout-1c3440aa-b4ff-4343-9673-61fbde7d92d2">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">build.gradle</code> 예시
@@ -807,7 +821,7 @@
 
 <p>스프링의 MVC 패턴은 아래 그림과 구성 요소로 이루어진다.</p>
 
-<div class="callout callout-note" id="callout-4cd9a97d-4f8b-4208-971b-f05cb08b331a">
+<div class="callout callout-note" id="callout-316723f0-58f6-4510-ab08-0d1767a18542">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>스프링의 MVC 패턴
@@ -831,7 +845,7 @@
 클라이언트 브라우저 측에서 서버 측에 <code class="language-plaintext highlighter-rouge">/프로젝트명/hello?name=rv</code> URL로 <code class="language-plaintext highlighter-rouge">Get</code> 요청을 보내는 것을 가정하겠다.<br>
 이를 앞선 <code class="language-plaintext highlighter-rouge">web.xml</code> 설정에 따라 생성된 <code class="language-plaintext highlighter-rouge">DispatcherServlet</code>가 받아들인다.</p>
 
-<div class="callout callout-note" id="callout-552f5646-60fd-485e-b501-4865ea0f34dd">
+<div class="callout callout-note" id="callout-dc35a8e1-0599-4631-9094-704cf3c9c476">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">DispatcherServlet</code>
@@ -863,7 +877,7 @@
     </span> 참조</li>
 </ul>
 
-<div class="callout callout-example" id="callout-bdb050f6-cf15-4a88-80ab-9c19fa2fe079">
+<div class="callout callout-example" id="callout-7a19e7a2-b92d-4995-8ee5-5c677808fd40">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>컨트롤러 구현 예시(<code class="language-plaintext highlighter-rouge">main/java/chap09/HelloController.java</code>)
@@ -898,7 +912,7 @@
   <li><code class="language-plaintext highlighter-rouge">@GetMapping</code>에 적힌 내용에 따라 <code class="language-plaintext highlighter-rouge">HandlerMapping</code>이 검색 가능하다.</li>
 </ul>
 
-<div class="callout callout-note" id="callout-f0929407-e68c-4fa3-aad5-fbef72c87927">
+<div class="callout callout-note" id="callout-e3bf3cba-58aa-4be6-b710-c881acfe04ba">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>스프링 MVC HTTP 요청 처리 어노테이션들
@@ -918,7 +932,7 @@
   <li>위 컨트롤러를 <code class="language-plaintext highlighter-rouge">ModelAndView</code>로 변환하는 것은 <code class="language-plaintext highlighter-rouge">HandlerAdapter</code>가 처리해야 한다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-50f112bb-e21a-4b2a-8276-1235cc1b3e27">
+<div class="callout callout-example" id="callout-238133a8-3f89-44e2-ad4c-33d6c318f273">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>컨트롤러 등록(<code class="language-plaintext highlighter-rouge">main/java/config/ControllerConfig.java</code>)
@@ -948,7 +962,7 @@
 <code class="language-plaintext highlighter-rouge">DispatcherServlet</code>는 받은 컨트롤러를 직접 실행하지 않고, <code class="language-plaintext highlighter-rouge">HandlerAdapter</code> 이라는 빈 객체에게 요청 처리를 위임한다.<br>
 <code class="language-plaintext highlighter-rouge">HandlerAdapter</code>는 컨트롤러에 맞는 메서드를 요청에 처리하고, <code class="language-plaintext highlighter-rouge">ModelAndView</code> 객체로 변환해 돌려준다.</p>
 
-<div class="callout callout-seealso" id="callout-d3850914-efb0-4a53-b009-cf7ff3bcbd92">
+<div class="callout callout-seealso" id="callout-697aec6b-cd0f-4599-a9d7-99767e375a07">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">DispatcherServlet</code>가 직접 컨트롤러를 검색하고, 직접 컨트롤러를 실행하지 않는 이유
@@ -971,7 +985,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-seealso" id="callout-3ae14ec9-8fc8-4626-b297-9c67656a64ff">
+<div class="callout callout-seealso" id="callout-8e0ab006-2c69-4d2b-9a90-14d2d94f34c9">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>각기 다른 클래스 컨트롤러의 예시
@@ -991,7 +1005,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">ModelAndView</code> 내에는 처리에 필요한 <code class="language-plaintext highlighter-rouge">View</code> 객체 이름이 담겨져 있고, 이를 이용해 <code class="language-plaintext highlighter-rouge">ViewResolver</code>는 해당 <code class="language-plaintext highlighter-rouge">View</code> 객체를 찾거나 생성한 뒤 <code class="language-plaintext highlighter-rouge">DispatcherServlet</code>에게 돌려준다. (JSP의 경우는 언제나 새로운 <code class="language-plaintext highlighter-rouge">View</code> 객체를 생성 !빈 객체 아님)</p>
 
-<div class="callout callout-example" id="callout-11eef5b2-2f15-4672-b494-5f2b920e0db5">
+<div class="callout callout-example" id="callout-7ed71f66-a496-4f3c-bc50-c8eb6512fed5">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>ViewResolver 설정 예시 (<code class="language-plaintext highlighter-rouge">main/java/config/MvcConfig.java</code>)
@@ -1029,7 +1043,7 @@
 <p><strong>8. <code class="language-plaintext highlighter-rouge">View</code> 객체에게 응답 생성 요청</strong><br>
 <code class="language-plaintext highlighter-rouge">DispatcherServlet</code>가 <code class="language-plaintext highlighter-rouge">View</code> 객체에게 응답 결과 생성을 요청하면 <code class="language-plaintext highlighter-rouge">View</code>가 JSP를 실행하여 응답 결과를 생성한다.</p>
 
-<div class="callout callout-example" id="callout-313f8b01-ebbf-4595-85bc-c6461aa8adf2">
+<div class="callout callout-example" id="callout-10623d2b-0240-4d45-9d3b-11a6c80fc5d4">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>view.jsp 예시 (<code class="language-plaintext highlighter-rouge">main/webapp/WEB-INF/view/hello.jsp</code>)
@@ -1068,7 +1082,7 @@
   <li>이를 지정해주지 않으면 404 에러 페이지가 뜬다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-fcb02e0b-7ac7-43bf-b720-d104e35c5d0f">
+<div class="callout callout-example" id="callout-018ec702-271e-4df2-9a00-fe9a082affb0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>ViewResolver 설정 예시 (<code class="language-plaintext highlighter-rouge">main/java/config/MvcConfig.java</code>)
@@ -1120,7 +1134,7 @@
 <h2 id="MVC-구성-클래스">MVC 구성 클래스</h2>
 <p>MVC 패턴을 위한 구성 클래스는 <code class="language-plaintext highlighter-rouge">WebMvcConfigurer</code> 인터페이스를 상속받아야 한다.</p>
 
-<div class="callout callout-seealso" id="callout-5923bd40-e4c7-482a-ba33-d99096448f3e">
+<div class="callout callout-seealso" id="callout-eedf1f4b-0b08-4d67-af0b-a1e2e216c1c2">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>참고로 스프링 4.x 버전 이하는 자바가 인터페이스의 디폴트 메서드 기능이 없었으므로, 대신 <code class="language-plaintext highlighter-rouge">WebMvcConfigurerAdpater</code> 클래스를 상속해서 필요한 메서드만 재정의했다.
@@ -1134,7 +1148,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">@EnableWebMvc</code>를 사용하지않고 모두 직접 설정한다면 아래와 같이 구현할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-508cc271-2268-4389-a68d-dc3b02474046">
+<div class="callout callout-example" id="callout-9a83fd62-e239-4c9f-a6a4-0864a33196cb">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@EnableWebMvc</code>를 사용하지 않은 config 클래스

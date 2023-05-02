@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#함수-설계-과정">함수 설계 과정</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#1-시그니처-목적-스텁-생성">1. 시그니처, 목적, 스텁, 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#2-테스트-커버리지와-입력-값들을-고려한-테스트-실행-코드-작성">2. 테스트 커버리지와 입력 값들을 고려한 테스트 실행 코드 작성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#3-템플릿-만들기">3. 템플릿 만들기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#4-함수-구현하기">4. 함수 구현하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#5-테스트와-디버깅하기">5. 테스트와 디버깅하기</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#함수-완성-이후">함수 완성 이후</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-7" href="#특수-함수-설계">특수 함수 설계</a><ul><li lvl="3"><a id="markdown-toc-0-8" href="#재귀-함수-설계">재귀 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#보조-함수-설계">보조 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#상호-참조-함수-설계">상호 참조 함수 설계</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#여러-경우의-수를-가진-데이터를-다수-포함한-복합-데이터-함수-설계">여러 경우의 수를 가진 데이터를 다수 포함한 복합 데이터 함수 설계</a><ul></ul></li></ul></li></ol>
 <h1 id="함수-설계">함수 설계</h1>
 
-<div class="callout callout-quote" id="callout-e0c02b25-1d8e-48de-81a8-ba9bf837cf47">
+<div class="callout callout-quote" id="callout-863db65f-71b3-4ea1-a078-9d7090f20be7">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>quote</strong></span>
@@ -593,7 +607,7 @@
 
 <p><strong>자주, 그리고 빨리 함수를 실행시켜 조기에 잘못을 찾아 고치는게 좋다.</strong> 여러 잘못이 쌓인다면 무엇이 잘못인지 모르게 되기 때문이다.</p>
 
-<div class="callout callout-seealso" id="callout-e4f83bbb-765b-470b-b778-057d7c0e27bc">
+<div class="callout callout-seealso" id="callout-03946c67-755e-48e5-bdc5-9609081ae38e">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>사소한 가독성 팁
@@ -623,7 +637,7 @@
 
 <p>함수 디자인에 앞서 그림이나 시나리오 등을 작성하며 테스트용, 그리고 함수 내에 사용할 목적의 상수 등을 미리 정의할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-aa5ddf84-7e7f-416b-8616-49a5734e8164">
+<div class="callout callout-example" id="callout-e13aa696-624b-4a2e-b606-d413545ab0f2">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>함수 디자인 예시
@@ -713,7 +727,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-10ad3956-6d48-482f-9beb-077b626813e9">
+<div class="callout callout-example" id="callout-7db87999-c19d-4262-a572-b5ad9f2c6b54">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>목적의 예시
@@ -749,7 +763,7 @@
   <li>테스트의 수는 테스트 커버리지와 각기 다른 입력값들의 구간 대표값과 경계값을 모두 고려할 수 있을 만큼 해야한다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-ae833e93-3518-4b59-98d5-aaa46b5b1679">
+<div class="callout callout-example" id="callout-4a8e33bc-ec4c-447f-a6f0-4d2b2ba9efd5">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>테스트 커버리지 고려 예시
@@ -800,7 +814,7 @@
   <li>함수의 템플릿은 데이터 설계의 정보를 기반으로 만들면 쉽다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-1883c249-9a65-4025-96dd-201f58217278">
+<div class="callout callout-example" id="callout-a84000b2-8235-4956-9893-a8486fd3e21f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>데이터 설계와 함수 템플릿의 상관 관계
@@ -826,7 +840,7 @@
 
 <p>아래 예시는 compound type의 템플릿 조건 안에 atomic distinct type의 템플릿이 추가로 결합되었다.</p>
 
-<div class="callout callout-example" id="callout-29f8f1a9-7ea8-46a6-a649-1b4ace4c20c3">
+<div class="callout callout-example" id="callout-3d9d1645-9148-4d3c-860e-ee618d6cc6c8">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>재귀구조와 empty를 가진 compound type <code class="language-plaintext highlighter-rouge">t</code>와 atomic distinct type <code class="language-plaintext highlighter-rouge">k</code>를 인자로 받는 함수 템플릿
@@ -911,7 +925,7 @@
 
 <p><strong>자기 자신 함수를 함수 로직 내에 이용하는 함수</strong></p>
 
-<div class="callout callout-note" id="callout-6eb1b328-6f50-4071-89dc-4fc50615e1c4">
+<div class="callout callout-note" id="callout-d740d4b7-0516-48bc-a0f2-0b3131a042a1">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>재귀 함수 구현 시 유의점
@@ -941,7 +955,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-749161fb-c6c7-4adb-a978-7966e5cff63d">
+<div class="callout callout-example" id="callout-542c8765-127f-465e-b644-33d0da20c554">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>재귀 함수와 재귀 데이터 설계 예시 : 짝수 필터링
@@ -1019,7 +1033,7 @@
 
 <p>또한, 데이터 설계 과정에 재귀 구조임을 암시하는 부분이 나오지 않는다.</p>
 
-<div class="callout callout-example" id="callout-c0ef21fb-ab8f-44fb-8f22-768c95a5b087">
+<div class="callout callout-example" id="callout-2bbdedff-18ae-4042-8e4c-f3eda51d906b">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>생성적 재귀 구조 함수 설계 예시 : 프랙탈
@@ -1066,7 +1080,7 @@
     </div>
 <p>따라서 생성적 재귀는 정교한 기반사례(Base case) 설계와 기반 사례로 수렴한다는 증명이 필요하며, 이는 아래와 같은 종료 논의를 통해 고민해볼 수 있다.</p>
 
-<div class="callout callout-note" id="callout-0dd38000-556a-4288-8c6d-f989d84b14c4">
+<div class="callout callout-note" id="callout-75aa7c8e-c6f0-42d8-bd3a-f62520cc6173">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>종료 논의(termination argument) 예시
@@ -1105,7 +1119,7 @@
 
 <p>재귀 함수는 같은 함수여도 재귀로 불러오게 되면, 인자로 넘겨받은 변수 이외에는 초기화되므로, 이를 이용해 재귀가 진행되면서 정보를 유지할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-cac74eec-46f0-40a6-8cd9-0c8f79c0b826">
+<div class="callout callout-example" id="callout-67677894-7b73-4a82-81ae-1b9cfa857b7b">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>축적자 예시와 추가 단계
@@ -1198,7 +1212,7 @@
   <li>함수 해석 부분 구현 시, 내용이 길고 복잡함</li>
 </ul>
 
-<div class="callout callout-warning" id="callout-c1d695c8-0557-4964-b981-cb55e3082658">
+<div class="callout callout-warning" id="callout-bc4f371f-fa06-43f2-8f85-68363270c06d">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong>의미없는 보조함수의 추가는 오히려 구현을 복잡하게 만들 수 있다.
@@ -1215,7 +1229,7 @@
 
 <p>보조 함수는 자신을 위한 또 다른 보조 함수를 가질 수 있다.</p>
 
-<div class="callout callout-example" id="callout-7ec8ad5d-7a6e-4be9-bc78-0d59daadb3fc">
+<div class="callout callout-example" id="callout-a5d7e518-88b1-4bb7-8af6-68d28f0055a8">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>보조 함수 의존 관계
@@ -1234,7 +1248,7 @@
     </div>
 <p>따라서, 각 보조 함수를 일단 <strong>위시리스트 항목</strong>으로 만들어 두고 상위 함수를 먼저 구현할 수 있다.</p>
 
-<div class="callout callout-seealso" id="callout-fe416510-6fb9-4acd-93da-4c00bf71b25a">
+<div class="callout callout-seealso" id="callout-4ef06578-0249-4d16-a8b3-237c68d6645e">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>위시리스트 항목(wish-list entry)?
@@ -1262,7 +1276,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-1a6604be-a08d-4cdf-a675-312d5ce1e4aa">
+<div class="callout callout-example" id="callout-37b3d657-ff7d-4a1b-b730-cc6dbb2d6fc7">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>구현 완료된 위시 리스트 항목
@@ -1318,7 +1332,7 @@
 
 <p>상호 참조 데이터 설계 시와 비슷하게, 함수 설계시 서로의 로직이 서로 영향 받으므로, 상호 참조 함수들을 모두 동시에 함께 설계를 진행한다.</p>
 
-<div class="callout callout-example" id="callout-6a998cdd-5b64-4d6b-a7e7-17942d1d70bf">
+<div class="callout callout-example" id="callout-1d964a26-0c90-45a0-ae05-dda62bec4930">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>상호 참조 함수 설계 예시 : 트리 내 이름 검색
@@ -1431,7 +1445,7 @@
 <p>간혹, 함수 중에 입력 받는 두개의 데이터들이 여러 개의 경우의 수를 갖는 경우가 있다.<br>
 이럴 경우 각 경우의 수를 가진 표를 그리면 쉽게 함수를 설계할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-474080af-9b9b-4e8d-b0fc-a974c3cfbb98">
+<div class="callout callout-example" id="callout-1e2e9974-3e5c-4c89-8b70-ea1c8c2b3d35">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>표를 이용한 함수 설계
@@ -1484,7 +1498,7 @@
       </span>
     </span>를 줄이기 위해 표(=모델)을 잘 살펴보고 간략화 해야한다.</p>
 
-<div class="callout callout-example" id="callout-394ec23a-7603-4aa1-bfe0-85d50d0fc86a">
+<div class="callout callout-example" id="callout-96d58d60-bbd1-48d6-8434-ba736a7aace1">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>표를 이용한 함수 설계-모델 간략화
@@ -1561,7 +1575,7 @@
 </code></pre></div></div>
 <p>모델 간략화쪽이 더 가독성이 좋고, 코드가 짧으며 경우의 수가 적음을 알 수 있다.</p>
 
-<div class="callout callout-example" id="callout-46eed701-8b42-49b9-aa66-e81af2951c2c">
+<div class="callout callout-example" id="callout-34c9d3da-d6d5-4324-a459-4db757b14903">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>더 어려운 모델 간략화 코드(BSL)

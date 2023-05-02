@@ -303,7 +303,7 @@
     </h3>
     <span style="font-size: xx-small;">
        
-      📂: 2
+      📂: 3
     </span>
     <ul class="child-category-list">
       
@@ -316,7 +316,21 @@
           <a class="category-link" href="/categories/ETC/ETCS/">ETCS</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 8 
+            📄: 10 
+            
+          </span>
+      </li>
+      
+      <li>
+        <strong style="font-size: larger;">
+          ┃  
+          ┣ 
+        </strong>
+        <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
+          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+        </h4>
+          <span style="font-size: xx-small;">
+            📄: 5 
             
           </span>
       </li>
@@ -327,10 +341,10 @@
           ┗ 
         </strong>
         <h4 style="display: inline; background-color: lightgray; padding: 0px 1px; border-radius: 2px;">
-          <a class="category-link" href="/categories/ETC/SUBBRAIN 개발기/">SUBBRAIN 개발기</a>
+          <a class="category-link" href="/categories/ETC/YOS 개발기/">YOS 개발기</a>
         </h4>
           <span style="font-size: xx-small;">
-            📄: 5 
+            📄: 1 
             
           </span>
       </li>
@@ -559,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#HATEOAS란">HATEOAS란?</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#직접-하이퍼링크-추가하기">직접 하이퍼링크 추가하기</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#리소스-어셈블러를-통한-하이퍼링크-추가">리소스 어셈블러를 통한 하이퍼링크 추가</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#리소스-객체-생성">리소스 객체 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#리소스-어셈블러-구성">리소스 어셈블러 구성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#중첩-리소스-객체-구현">중첩 리소스 객체 구현</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#embedded-관계-이름-짓기">embedded 관계 이름 짓기</a><ul></ul></li></ul></li></ol>
 <h1 id="Spring5-HATEOAS">Spring5-HATEOAS</h1>
 
-<div class="callout callout-quote" id="callout-3bcc6093-da64-4a43-bb40-53a3e26fdba9">
+<div class="callout callout-quote" id="callout-3d79522e-bccf-447c-b986-716ce2d1e623">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -594,7 +608,7 @@
 
 <p>HATEOAS(Hypermedia As The Engine Of Application)는 API에서 응답 시, 반환되는 리소스와 관련된 하이퍼링크를 정보에 포함하여 클라이언트 측에서 이를 통해 다음 요청을 처리하도록 한다.</p>
 
-<div class="callout callout-example" id="callout-575e9a30-df8a-4d7d-a1d7-201364a9b5bf">
+<div class="callout callout-example" id="callout-ec1e974d-f40f-4399-af92-0ac60e9bb1ee">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>보통의 REST API VS HATEOAS API
@@ -671,7 +685,7 @@
 
 <p>이들을 통해 응답에 하이퍼링크를 추가할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-a6152dec-9b35-481a-914c-a6309c621854">
+<div class="callout callout-example" id="callout-dcf2e24b-6886-40e3-be17-066c671f9ea5">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>리소스에 하이퍼링크 추가하기
@@ -719,7 +733,7 @@
 
 <p>하지만 아래처럼 더 짧고 매핑 경로까지 직접 추가하지 않아도 되는 코드가 좋다.</p>
 
-<div class="callout callout-example" id="callout-f6f4c9ac-94a7-4a52-a41a-de9de85ed5e3">
+<div class="callout callout-example" id="callout-df6061ab-2f09-41b9-83bd-2a5cd5aeb239">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>더 나은 버전의 하이퍼링크 추가 코드
@@ -751,7 +765,7 @@
 <h3 id="리소스-객체-생성">리소스 객체 생성</h3>
 <p><code class="language-plaintext highlighter-rouge">ResourceSupoort</code> 클래스는 리소스와 관련된 <code class="language-plaintext highlighter-rouge">Link</code> 객체들과 이것들을 관리하는 메서드를 가지고 있다.</p>
 
-<div class="callout callout-example" id="callout-a1c13827-f585-424b-b4ad-7e88abedfff1">
+<div class="callout callout-example" id="callout-7e91446e-3771-4c82-93e9-c30b5a81c4bf">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>도메인 데이터와 하이퍼 링크를 갖는 타코 리소스
@@ -803,7 +817,7 @@
 <h3 id="리소스-어셈블러-구성">리소스 어셈블러 구성</h3>
 <p><code class="language-plaintext highlighter-rouge">ResourceAssemblerSupport</code>를 상속받은 리소스 어셈블러는 컨트롤러와 리소스 객체를 받아 하이퍼링크를 만들어낸다.</p>
 
-<div class="callout callout-example" id="callout-9d38f18f-717a-46c7-b8ad-d3d64c91366b">
+<div class="callout callout-example" id="callout-0bd60fe4-f3f4-4e89-b14e-46be3dffee1f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>타코 리소스를 구성하는 리소스 어셈블러
@@ -845,7 +859,7 @@
     </div>
 <p>이를 이용해 다음과 같이 메서드를 변경하자.</p>
 
-<div class="callout callout-example" id="callout-ab30db59-ff57-48d5-9b61-e76beb957ad6">
+<div class="callout callout-example" id="callout-8264e694-ec07-4715-9459-6ce60908c5e0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>리소스 리스트 하이퍼링크 추가
@@ -890,7 +904,7 @@
   <li><strong>식자재를 위한 리소스 객체, 리소스 어셈블러 생성</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-fa491084-4807-4c46-a2b4-43407c420acf">
+<div class="callout callout-example" id="callout-abcf0ce5-3519-4df7-bbd6-9951b339ca0c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">IngredientResource.java</code>
@@ -924,7 +938,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-be5b5f6f-44df-4d8b-a9bd-cf25de7680bc">
+<div class="callout callout-example" id="callout-c837dbdc-19f2-4e3a-8251-bd3be907100c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">IngredientResourceAssembler.java</code>
@@ -964,7 +978,7 @@
   <li><strong>해당 리소스 객체를 포함하는 상위 리소스 객체 변경</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-f83fc5de-8a98-49f8-b083-8d9fda59fa46">
+<div class="callout callout-example" id="callout-aefb06d2-7b30-4922-a8d7-75fa6e88c3f0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">TacoResource.java</code>
@@ -1012,7 +1026,7 @@
 
 <p>우리가 만든 API는 다음과 같이 자동으로 <code class="language-plaintext highlighter-rouge">tacoRsourceList</code>라는 속성을 만들어준다.</p>
 
-<div class="callout callout-example" id="callout-71d4d2db-6478-4db3-9cad-ce03c467a60a">
+<div class="callout callout-example" id="callout-4e10fa89-6690-44a5-b771-1dcacbd314ee">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>정해진 Json 필드명
@@ -1039,7 +1053,7 @@
 
 <p>이를 방지하기 위해 다음과 같이 <code class="language-plaintext highlighter-rouge">@Relation</code> 어노테이션을 통해 속성명을 바꿔줄 수 있다.</p>
 
-<div class="callout callout-example" id="callout-1cff8a20-e6a2-4d7e-871c-ac94a4b22444">
+<div class="callout callout-example" id="callout-0efcfea5-bb7c-4332-8431-18d003e0cb78">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>리소스 객체
