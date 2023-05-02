@@ -8,27 +8,11 @@
         "type": "tabs",
         "children": [
           {
-            "id": "aa22f1967542cf60",
+            "id": "d406abecef184e54",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "web/CI,CD/K8S/K8S 실습-1-Kubernetes 소개 및 설치.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2b0595a574f609ed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2/OSSU PL-A Section 2.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -68,31 +52,7 @@
             }
           },
           {
-            "id": "1dea5db9cb820251",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2/OSSU PL-A Section 2.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "79927a8e40543442",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3/OSSU PL-A Section 3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "60ff30bacf96aafe",
+            "id": "776f6a004221dfcc",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -102,11 +62,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 428.5
+    "width": 333.5
   },
   "right": {
     "id": "2f957799fb48536f",
@@ -122,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "web/CI,CD/K8S/K8S 실습-1-Kubernetes 소개 및 설치.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +98,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "web/CI,CD/K8S/K8S 실습-1-Kubernetes 소개 및 설치.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,9 +119,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "web/CI,CD/K8S/K8S 실습-1-Kubernetes 소개 및 설치.md"
-              }
+              "state": {}
             }
           },
           {
@@ -192,44 +148,50 @@
       "daily-notes:오늘의 데일리 노트 열기": false,
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
-      "audio-recorder:녹음 시작/중지": false
+      "audio-recorder:녹음 시작/중지": false,
+      "flashcards-obsidian:Generate flashcards": false
     }
   },
-  "active": "aa22f1967542cf60",
+  "active": "d406abecef184e54",
   "lastOpenFiles": [
-    "web/backend/Spring/Spring5-MVC 개념과 설정.md",
-    "web/backend/Spring/Spring5-WebFlux.md",
-    "web/backend/Spring/Spring5-JSON 응답과 요청 처리.md",
-    "web/backend/Spring/Spring5-JPA.md",
-    "web/backend/Spring/Spring5-HATEOAS.md",
-    "web/backend/Spring/Spring5-통합.md",
-    "web/backend/Spring/Spring5-테스트.md",
-    "web/backend/Spring/Spring5-컨트롤러와 뷰 구현.md",
-    "web/backend/Spring/Spring5-스프링 시큐리티.md",
-    "web/backend/Spring/Spring5-비동기 메시지 전송.md",
-    "web/backend/Spring/Spring5-리액티브 스프링.md",
-    "web/backend/Spring/Spring5-다른 REST API와 통신.md",
-    "web/backend/Spring/Spring5-구성 속성.md",
-    "web/backend/Spring/Spring5 정리.md",
-    "web/backend/Spring/Spring5 입문-DB 연동.md",
-    "web/backend/Spring/Spring5 입문-컴포넌트 검색(Component Scan).md",
-    "web/backend/Spring/Spring5 입문-AOP.md",
-    "web/backend/Spring/Spring5 입문-객체 검증.md",
-    "web/backend/Spring/Spring5 입문-날짜 값 변환,  경로 변수, 익셉션 공동 처리, 글로벌 변환기.md",
-    "web/backend/Spring/Spring5 입문-빈(Bean)과 컨테이너.md",
-    "web/backend/Spring/Spring5 입문-세션, 인터셉터, 쿠키.md",
-    "web/backend/Spring/Spring5 입문-스프링 부트.md",
-    "web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md",
-    "web/backend/Spring/Spring5 입문-스프링 웹 어플 구조.md",
-    "web/backend/Spring/Spring5 입문-의존 자동 주입.md",
-    "web/backend/Spring/Spring5 입문-의존성 주입(DI).md",
+    "etc/YOS 개발기/YOS Dev Doc.md",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3/OSSU PL-A Section 3.md",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2/OSSU PL-A Section 2.md",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect1/OSSU PL-A Section 1.md",
     "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3",
     "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2",
     "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect1",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/OSSU PL 간단 정리.md",
     "computer_science/OSSU/PL/PL-A/OSSU PL-A",
-    "무제 파일.canvas",
-    "무제 파일 1.canvas",
     "computer_science/OSSU/PL/PL-A",
-    "computer_science/OSSU/PL"
+    "etc/YOS 개발기/YOS Roadmap.md",
+    "etc/YOS 개발기/YOS Roadmap.png",
+    "etc/YOS 개발기/YOS Roadmap",
+    "web/backend/Spring/Spring5 입문-스프링 부트.md",
+    "web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md",
+    "web/backend/Spring/Spring5 입문-의존 자동 주입.md",
+    "web/backend/Spring/Spring5 입문-컴포넌트 검색(Component Scan).md",
+    "web/backend/Spring/Spring5 정리.md",
+    "web/backend/Spring/Spring5-비동기 메시지 전송.md",
+    "web/backend/Spring/Spring5-JSON 응답과 요청 처리.md",
+    "web/backend/Spring/Spring5-JPA.md",
+    "web/backend/Spring/Spring5-통합.md",
+    "web/backend/Spring/Spring5-테스트.md",
+    "web/backend/Spring/Spring5-스프링 시큐리티.md",
+    "web/backend/Spring/Spring5-리액티브 스프링.md",
+    "etc/etcs/Edu-Research.md",
+    "무제 파일.md",
+    "etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md",
+    "etc/YOS 개발기/무제 파일.md",
+    "etc/YOS 개발기",
+    "무제 파일.canvas",
+    "Excalidraw/Drawing 2023-04-28 17.35.38.excalidraw.md",
+    "무제 파일 1.canvas",
+    "web/backend/Spring/Spring5 입문-세션, 인터셉터, 쿠키.md",
+    "Excalidraw/Drawing 2023-04-28 17.35.05.excalidraw.md",
+    "computer_science/OSSU/PL/PLs/OSSU PL-B/OSSU PL-B Section 1.md",
+    "Excalidraw",
+    "web/frontend/react",
+    "무제 폴더"
   ]
 }
