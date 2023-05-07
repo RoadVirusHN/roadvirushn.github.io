@@ -86,10 +86,32 @@ print(len(st))
 
 
 ## 누적합
-배열의 크기를 $N$, 구간 합의 갯수를 $M$이라고 할때, 기존의 시간 복잡도 $O(M\times N)$에서 $O(M+N)$으로 바꿀 수 있다. 
-### 일반 누적합
+
+갱신이 없는 경우에 적합하며, 갱신이 잦을 경우 누적합을 계속 다시 구해야하므로 차라리 세그먼트 트리를 이용하자.
+
+### 누적합
+
+미리 $(0\sim n)$ 수의 배열($n$)을 통해 누적합 배열($p$)을 저장해놓는다. 
+이때 $p[i] = p[i-1] + n[i]$ 이며, 즉, $p[i]$는 $(0,i)$까지의 합이다.
+이를 $O(n)$의 시간안에 만들 수 있다.
+이후 원하는 구간 $(i, j)$의 구간합만 구하고 싶다면 $p[j]-p[i]$로 $O(1)$으로 빠르게 구할 수 있다.
+
+### 2차원 누적합
+행 방향의 누적합을 먼저 각 행마다 구한 뒤, 기록 후,
+열 방향의 누적합을 구하면 2차원 누적합을 $O(n^2)$의 속도로 구할 수 있다.
+
+2차원 구간 합은 $(x_1, y_1) \sim (x_2, y_2)$의 합을 구하고 싶다면
+$$
+p(x_2,y_2)-p(x_1, y_2)-p(x_2, y_1) + p(x_1, y_1)
+$$
+으로 $O(1)$으로 빠르게 구할 수 있다.
+
+### imos
+imos는 누적합의 확장으로,  갱신 시작과 끝 구간만을 기록하여 갱신이 잦은 구간 값을 빠르게 갱신할 수 있다.
+배열의 크기를 $N$, 구간 합의 갯수를 $M$이라고 할때, 기존의 시간 복잡도 $O(M\times N)$에서 $O(M+N)$으로 바꿀 수 있다.
+
 ```ad-example
-title: 누적합 예시
+title: imos 예시
 collapse: true
 ~~~python
 def solution(board, sums):
@@ -106,8 +128,8 @@ def solution(board, sums):
 		new_board[x1] += degree
 		new_board[x2] -= degree
             
-	# 이후 각 원소에 적용될 누적합을 구한다. 인덱스 0를 제외하고 이전 인덱스 값을 순차적으로 더해주면 된다.
-    for i in range(len(new_board)):
+	# 이후 각 원소에 적용될 누적합을 구한다. 이전 인덱스 값을 순차적으로 더해주면 된다.
+    for i in range(1, len(new_board)):
         new_board[i] += new_board[i-1]
         
 	# 해당 누적합을 원래 배열에 적용시키기
@@ -118,10 +140,10 @@ def solution(board, sums):
 ~~~
 ```
 
-### 2차원 누적합
+### 2차원 imos
 
 ```ad-example
-title: 2차원 누적합 예시
+title: 2차원 imos 예시
 collapse: true
 ~~~python
 def solution(board, sums):
