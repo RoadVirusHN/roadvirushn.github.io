@@ -142,6 +142,68 @@ for i in range(1, len(distance)):
     print(distance[i] if distance[i]!=INF else "INF")
 ~~~
 ```
+```ad-example
+title: 자바 버전
+collapse: true
+~~~java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue; 
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = bf.readLine().split(" ");
+        int V = Integer.parseInt(input[0]), E = Integer.parseInt(input[1]);
+        int start = Integer.parseInt(bf.readLine())-1;
+        ArrayList<int[]>[] edges = new ArrayList[V];
+        for (int i = 0; i < edges.length; i++) {
+            edges[i] = new ArrayList<int[]>();
+        }
+        for (int i = 0; i < E; i++) {
+            int[] inputs = Arrays.stream(bf.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+            int fr = inputs[0]-1, to = inputs[1]-1, w = inputs[2];
+            edges[fr].add(new int[]{to, w});
+        }
+        int[] distance = new int[V];
+        Arrays.fill(distance, Integer.MAX_VALUE);
+
+        boolean[] visited = new boolean[V];
+        Arrays.fill(visited, false);  
+
+        distance[start] = 0;
+        PriorityQueue<int[]> hq = new PriorityQueue<>(new Comparator<int[]>() {
+            public int compare(int[] s1, int[] s2) {
+                if (s1[1] > s2[1]){
+                    return 1;
+                }
+                return -1;
+            }
+        });
+
+        hq.add(new int[]{start, 0});
+        while(hq.size() > 0){
+            int[] now = hq.remove();
+            visited[now[0]] = true;
+            for (int[] node : edges[now[0]]) {
+                if (!visited[node[0]] && distance[node[0]] > distance[now[0]] + node[1]){
+                    distance[node[0]] = distance[now[0]] + node[1];
+                    hq.add(new int[]{node[0],distance[node[0]]});
+                }
+            }
+        }
+        for (int dist : distance) {
+            System.out.println(dist != Integer.MAX_VALUE ? dist : "INF");
+        }
+        bf.close();
+    }
+}
+~~~
+```
+
 
 ### 벨만 포드 알고리즘
 음의 가중치가 존재하는 경우에도 사용할 수 있는 최단 경로 알고리즘
@@ -299,9 +361,9 @@ capacities = [[0 for i in range(nodeCount)] for j in range(nodeCount)]
 flows = [[0 for i in range(nodeCount)] for j in range(nodeCount)]
 for i in range(pipeCount):
     fr, to, cap = map(int, input().split())
-    edges[fr-1].append(to-1)
-    edges[to-1].append(fr-1)
-    capacities[fr-1][to-1] += cap
+    edges[fr].append(to)
+    edges[to].append(fr)
+    capacities[fr][to] += cap
 
 source = 0
 sink = 1
@@ -313,38 +375,121 @@ while True:
     while q and p[sink] == -1:
         now = q.popleft()
         for to in range(nodeCount):
-            if capacities[now][to]-flows[now][to]>0 and p[to] == -1:
+	        # 연결되지 않았거나, 이미 가득 사용중이거나 이미 방문했거나, 처음으로 돌아가는 경우에는 제외
+            if capacities[now][to] > 0 and capacities[now][to] > flows[now][to] and p[to] == -1 and to != source:
                 p[to] = now
                 q.append(to) 
-	if (p[sink] == -1): break
-	now = sink
-	minCap = 987654321
-	while now != source:
-		minCap = min(capacities[p[now]][now], minCap)
-		now = p[now]
-
-    now = sink
-    while now != source:
-        flows[p[now]][now] += minCap
-        flows[now][p[now]] -= minCap # 유량의 상쇄에 주의
-        now = p[now]        
-    totalFlow += 1
+	if (p[sink] != -1):
+		now = sink
+		minCap = 987654321
+		while now != source:
+			minCap = min(capacities[p[now]][now], minCap)
+			now = p[now]
+	
+	    now = sink
+	    while now != source:
+	        flows[p[now]][now] += minCap
+	        flows[now][p[now]] -= minCap # 유량의 상쇄에 주의
+	        now = p[now]        
+	    totalFlow += minCap
 print(totalFlow)
 ~~~
 ```
-유량의 상쇄
-최소 컷 최대 용량
+```ad-example
+title: 에드몬드-카프 알고리즘 자바 구현
+collapse: true
+~~~java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;  
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(bf.readLine());
+        int pipeCount = Integer.parseInt(st.nextToken());
+        int nodeCount = Integer.parseInt(st.nextToken());
+        int source = Integer.parseInt(st.nextToken());
+        int sink = Integer.parseInt(st.nextToken());
+        int[][][] edges = new int[nodeCount][nodeCount][2]; //[from][to][cap,flow]
+        for (int i = 0; i < edges.length; i++) {
+            for (int j = 0; j < edges.length; j++) {
+                edges[i][j][0] = 0;
+                edges[i][j][1] = 0;
+            }
+        }
+        for (int i = 0; i < pipeCount; i++) {
+            StringTokenizer st2 = new StringTokenizer(bf.readLine());
+            int fr = Integer.parseInt(st2.nextToken());
+            int to = Integer.parseInt(st2.nextToken());
+            int w = Integer.parseInt(st2.nextToken());
+            edges[fr][to][0] += w; // 같은 노드 간에 여러 간선이 있는 경우를 위해 덧셈
+            // edges[to][fr][0] += w; 
+            // 만약, 양방향 그래프이면 반대 방향으로도 추가
+        }  
+
+        int max_flow = 0;
+        int[] pred = new int[nodeCount];
+        do {
+            for (int i = 0; i < pred.length; i++) {
+                pred[i] = -1;
+            }
+            pred = bfs(source, edges, pred);
+            if (pred[sink] != -1) {
+                int df = Integer.MAX_VALUE;
+                for (int i = sink; i != source; i = pred[i]) {
+                    int cap = edges[pred[i]][i][0];
+                    int flow = edges[pred[i]][i][1];
+                    df = Math.min(df, cap - flow);
+                }
+
+                for (int i = sink; i != source; i = pred[i]) {
+                    edges[pred[i]][i][1] += df;
+                    edges[i][pred[i]][1] -= df;
+                }
+                max_flow += df;
+            }
+
+        } while (pred[sink] != -1);  
+
+        System.out.println(max_flow);
+        bf.close();
+    }  
+
+    private static int[] bfs(int source, int[][][] edges, int[] pred) {
+        Queue<Integer> q = new LinkedList<Integer>();
+        q.add(source);
+        while (q.size() > 0) {
+            int now = q.remove();
+            for (int i = 0; i < edges.length; i++) {
+                int to = i;
+                int cap = edges[now][i][0];
+                int flow = edges[now][i][1];
+                if (pred[to] == -1 && cap > 0 && cap > flow && to != source) {
+                    pred[to] = now;
+                    q.add(to);
+                }
+            }
+        }
+        return pred;
+    }
+}
+~~~
+```
 
 ### 이분 매칭(Bipartite Matching)
 
 두 그룹의 노드를 일대일 매칭 시키는 방법에 사용되는 알고리즘
-
+먼저 포드-풀커슨을 이용한 dfs 알고리즘을 이용할 수 있다.
 ```ad-example
 title: 이분 매칭 알고리즘
 collapse: true
 
 한 노드를 짝지음 -> 다음 노드를 짝지을 시, 이전 노드에 겹칠 경우 이전 노드를 다른 쌍과 짝지음-> 그로 인해 또 다른 노드와 겹칠 시, 그 이전의 이전 노드를 다른 상과 짝지음...
-
+- 만약 이미 새로 짝지은 노드에 도착하면 해당 노드는 짝지을 수 없음
+- 새로운 쌍을 만들어주는데 성공하면 해당 노드는 짝지을 수 있음
 ~~~python
 ACount, BCount = map(int, input().split())
 edges = [list(map(int, input().split()))[1:] for _ in range(ACount)]
@@ -353,18 +498,103 @@ A2B = [-1 for _ in range(ACount)]
 B2A =  [-1 for _ in range(BCount)] # prevent 0 == False
 
 def dfs(a):
-    visited[a] = True
+    visited[a] = True # 일단 임의로 짝을 지어준다.
     for b in edges[a]:
-        if B2A[b]==-1 or (not visited[B2A[b]] and dfs(B2A[b])):
-            A2B[a], B2A[b] = b, a
+        if B2A[b]==-1 or (not visited[B2A[b]] and dfs(B2A[b])): # 짝이 지어지지 않았거나, 짝 밀어내기에 성공할 경우
+            A2B[a], B2A[b] = b, a # 서로 짝지어주기
             return True
-    return False
+    return False# 모든 반대 노드에 대해 짝밀어내기에 실패하면 짝 불가
 
 result = 0
-for i in range(ACount):
-    if A2B[i]==-1:
+for i in range(ACount): # 각 노드에 대하여
+    if A2B[i]==-1: # 아직 해당 노드가 짝지어지지 않았으면
         visited = [False for _ in range(ACount)]
-        if dfs(i): result+=1
+        if dfs(i): result+=1 # 성공시 짝 증가
 print(result) # A2B, B2A : Mapping
+~~~
+```
+
+혹은 앞선 에드몬드-카프 알고리즘을 이용할 수 있다.
+
+```ad-example
+title: 에드몬드-카프 알고리즘을 이용한 해결($O(|V||E|)$)
+collapse: true
+~~~java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+  
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        String[] inputs = bf.readLine().split(" ");
+        int cowCount = Integer.parseInt(inputs[0]);
+        int roomCount = Integer.parseInt(inputs[1]);
+        int source = 0;
+        int sink = cowCount+roomCount+1;
+        int[][][] edges = new int[cowCount+roomCount+2][cowCount+roomCount+2][2];
+        for (int[][] cow : edges) {
+            for (int[] edge : cow) {
+                edge[0] = 0;
+                edge[1] = 0;               
+            }            
+        }
+// 인위적인 소스와 싱크 노드 만들어주기
+        for (int i = 1; i <= cowCount; i++) {
+            edges[source][i][0] = 1;
+        }
+        for (int i = cowCount + 1; i < cowCount+roomCount+1; i++} {
+            edges[i][sink][0] = 1;
+        }  
+
+        for (int cow = 1; cow <= cowCount; cow++) {
+            int[] cowInfo = Arrays.stream((bf.readLine().split(" "))).mapToInt(Integer::parseInt).toArray();
+            int rooms = cowInfo[0];
+            for (int j = 1; j <= rooms; j++) {
+                int room = cowInfo[j] + cowCount;
+                edges[cow][room][0] = 1;
+                edges[cow][room][1] = 0;
+            }
+        }
+
+        int max_flow = 0;
+        int[] pred = new int[cowCount+roomCount+2];  
+
+        do {
+            for (int i = 0; i < pred.length; i++) {
+                pred[i] = -1;
+            }
+            pred = bfs(pred,edges);
+
+            if (pred[sink] != -1){
+                for (int i = sink; pred[i] != -1; i = pred[i]) {
+                    edges[pred[i]][i][1] += 1;
+                    edges[i][pred[i]][1] -= 1;
+                }
+                max_flow += 1;
+            }
+        } while (pred[sink] != -1);
+        System.out.println(max_flow);
+        bf.close();
+    }
+    private static int[] bfs(int[] pred, int[][][] edges) {
+        Queue<Integer> q = new LinkedList<Integer>();
+        q.add(0);
+        while(q.size() > 0){
+            int now = q.remove();
+            for (int i = 0; i < edges[now].length; i++) {
+                int cap = edges[now][i][0];
+                int flow = edges[now][i][1];
+                if (pred[i] == -1 && i != 0 && cap-flow > 0){
+                    pred[i] = now;
+                    q.add(i);
+                }
+            }
+        }
+        return pred;
+    }
+}
 ~~~
 ```

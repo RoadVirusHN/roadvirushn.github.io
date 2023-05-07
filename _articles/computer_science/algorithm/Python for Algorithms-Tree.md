@@ -95,87 +95,96 @@ collapse: true
 ~~~python
 import math
 
-def create_seg_tree(start, end, index=1):
-    '''
-    재귀를 통한 세그먼트 트리 생성
-    index: 처리 중인 노드, index *2, index * 2 + 1 : 노드의 자식 노드들
-      - 세그먼트 트리의 최고 부모인 1부터 시작, 자식을 가르키는 방향으로 진행함
-    start - mid :왼쪽 자식이 저장하는 값, mid+1 - end : 오른쪽 자식이 저장하는 값
-    '''
-    global num_list
-    global tree
-
-    # tree의 leap에 도달했으면 num_list 값 그대로 삽입
-    if start == end:
-        tree[index] = num_list[start]
-        return tree[index]
-    mid = (start + end) // 2
-    
-    # 좌측 노드와 우측 노드 값을 구해 부모 노드의 값을 합쳐 만든다. (이때 합이 아니라 구간곱이면 바꿔주자)
-    tree[index] = create_seg_tree(
-        start, mid, index * 2) + create_seg_tree(mid + 1, end, index * 2 + 1)
-    return tree[index]  
-
-def interval_sum(start, end, left, right, index=1):
-    '''
-    재귀를 통한 구간합 계산 함수
-    index: 현재 처리 중인 인덱스
-    start - end : 현재 index 노드가 값을 저장한 구간
-    left, right : 구간 합을 구하고자 하는 범위
-    '''
-
-    # 원하는 구간이 tree 밖인 경우
-    if left > end or right < start:
-        return 0  # 곱일 경우 1!
-
-    # 현재 인덱스가 포함하는 구간이 전부 내가 원하는 구간 안에 있는 경우 더한다.
-    if left <= start and right >= end:
-        return tree[index]
-
-    # 일부만 겹친 경우는 두 자식으로 나누어 구간내에 있는 자식만 더함
-    mid = (start + end) // 2
-    return interval_sum(start, mid, left, right, index * 2) + interval_sum(mid + 1, end, left, right, index * 2 + 1)
-
-def update(start, end, where, diff, index=1):
-    '''
-    특정 원소의 값을 수정하는 함수
-    index : 현재 수정 필요 여부를 판단하고 있는 함수
-    start - end: index 노드가 포함하고 있는 범위
-    where : 구간 합을 수정하고자 하는 노드
-    value : 수정할 값
-    '''
-    # 범위 밖에 있는 경우는 아무것도 안하고 재귀 중단
-    if where < start or where > end:
-        return  
-
-    # 범위 안에 있으면 내려가면서 다른 원소도 갱신
-    tree[index] += diff
-    if start != end:
+def create_seg_tree(num_list):
+    tree = [0] * (1 << (math.ceil(math.log2(len(num_list)))+1))
+    # 필요한 노드 수 == 잎새 노드(N) + 부모 노드(N-1) == 2N - 1
+    # 따라서 높이를 H라고 놓을 때 ∑^{H}_{n=0}2^n >= 2N -1을 만족해야 한다.
+    # tree의 크기는 2의 (예상 트리의 높이 + 1)승이면 절대 부족하지 않다.
+    def create_recursive(start, end, index=1):
+        '''
+        재귀를 통한 세그먼트 트리 생성
+        index: 처리 중인 노드
+        - index *2, index * 2 + 1 : 노드의 자식 노드들
+        - 세그먼트 트리의 최고 부모인 1부터 시작, 자식을 가르키는 방향으로 진행함
+        start - mid : 왼쪽 자식이 저장하는 값
+        mid+1 - end : 오른쪽 자식이 저장하는 값
+        '''
+        nonlocal tree
+        # tree의 leap에 도달했으면 num_list 값 그대로 삽입
+        if start == end:
+            tree[index] = num_list[start]
+            return tree[index]
         mid = (start + end) // 2
-        update(start, mid, where, diff, index*2)
-        update(mid + 1, end, where, diff, index*2+1)
+        # 좌측 노드와 우측 노드 값을 구해 부모 노드의 값을 합쳐 만든다. (이때 합이 아니라 구간곱이면 바꿔주자)
+        tree[index] = create_recursive(
+            start, mid, index * 2) + create_recursive(mid + 1, end, index * 2 + 1)
+        return tree[index]
+    create_recursive(0, len(num_list)-1)
+    return tree
+
+def interval_sum(tree, left, right, numCount):
+    def sum_recursive(start, end, index=1):
+        '''
+        재귀를 통한 구간합 계산 함수
+        index: 현재 처리 중인 인덱스
+        start - end : 현재 index 노드가 값을 저장한 구간
+        left, right : 구간 합을 구하고자 하는 범위
+        '''
+        nonlocal tree, left, right  
+
+        # 원하는 구간이 tree 밖인 경우
+        if left > end or right < start:
+            return 0  # 곱일 경우 항등원인 1 
+
+        # 현재 인덱스가 포함하는 구간이 전부 내가 원하는 구간 안에 있는 경우 더한다.
+        if left <= start and right >= end:
+            return tree[index]  
+
+        # 일부만 겹친 경우는 두 자식으로 나누어 구간 내에 있는 자식만 더함
+        mid = (start + end) // 2
+        return sum_recursive(start, mid, index * 2) + sum_recursive(mid + 1, end, index * 2 + 1)
+    return sum_recursive(0, numCount-1)  
+
+def update(tree, where, diff, numCount):
+    def update_recursive(start, end, index=1):
+        '''
+        특정 원소의 값을 수정하는 함수
+        index : 현재 수정 필요 여부를 판단하고 있는 함수
+        start - end: index 노드가 포함하고 있는 범위
+        where : 구간 합을 수정하고자 하는 노드
+        value : 수정할 값
+        '''
+        nonlocal tree, where, diff
+        # 범위 밖에 있는 경우는 아무것도 안하고 재귀 중단
+        if where < start or where > end:
+            return  
+
+        # 범위 안에 있으면 내려가면서 다른 원소도 갱신
+        tree[index] += diff
+        if start != end:
+            mid = (start + end) // 2
+            update_recursive(start, mid, index*2)
+            update_recursive(mid + 1, end, index*2+1)
+    update_recursive(0, numCount-1)
+    return tree  
 
 # segment tree
 numCount, changeCount, caseCount = map(int, input().split())
-
 num_list = [0 for _ in range(numCount)]
+
 for i in range(numCount):
     num_list[i] = int(input())
-tree = [0] * (1 << (math.ceil(math.log2(numCount))+1))
-# 필요한 노드 수 == 잎새 노드(N) + 부모 노드(N-1) == 2N - 1
-# 따라서 높이를 H라고 놓을 때 ∑^{H}_{n=0}2^n >= 2N -1을 만족해야 한다.
-# tree의 크기는 2의 (예상 트리의 높이 + 1)승이면 절대 부족하지 않다.
-
-seg = create_seg_tree(num_list)
+  
+seg = create_seg_tree(num_list) 
 
 for j in range(changeCount + caseCount):
     cmd, par1, par2 = map(int, input().split())
     if cmd == 1:
         loc, val = par1-1, par2
-        update(seg, loc, val, numCount)
+        seg = update(seg, loc, val - num_list[loc], numCount)
     elif cmd == 2:
         fr, to = par1-1, par2-1
-        print(interval_sum(numCount, seg, fr, to))
+        print(interval_sum(seg, fr, to, numCount))
 ~~~
 ```
 아래는 다른 버전의 세그먼트 트리이다.
@@ -189,8 +198,7 @@ for j in range(changeCount + caseCount):
     - 코드를 이해하기 힘들다. 특히, left 인덱스와 right 인덱스의 활용 부분
     - 자료형에 배치된 원소들이 실제 원리의 노드와 조금 다르다.
         - 예를 들어, 원소의 갯수가 홀수 일 경우, 서로 다른 층 값의 합을 가지고 있는 부모 노드가 생김.
-        - 따라서 lazy propagation 같은 추가적인 알고리즘 적용 힘듬.
-~~잠깐, 이거 혹시 BIT 트리인가? 나중에 확인 바람~~
+        - 따라서 lazy propagation 구현이 힘들고 구현하지 않을 시, 구간 업데이트에 성능이 떨어진다.
 ```ad-example
 title: 세그먼트 트리 $O(\log n)$ 예시 - 반복 버전
 collapse: true
@@ -254,6 +262,80 @@ for j in range(changeCount + caseCount):
     elif cmd == 2:
         fr, to = par1-1, par2-1
         print(interval_total(numCount, seg, fr, to))
+~~~
+```
+```ad-example
+title: 세그먼트 트리 자바 버전
+collapse: true
+~~~java
+class SegmentTree {
+    private long[] tree;
+    private int n;  
+
+    public SegmentTree(long[] nums) {
+        n = nums.length;
+        tree = new long[4 * n]; // use 4 * n for a balanced tree
+
+        buildTree(nums, 1, 0, n - 1);
+    }
+    // builds the segment tree recursively
+    private void buildTree(long[] nums, int node, int start, int end) {
+        if (start == end) {
+            tree[node] = nums[start];
+        } else {
+            int mid = (start + end) / 2;
+            int leftChild = 2 * node, rightChild = 2 * node + 1;
+
+            buildTree(nums, leftChild, start, mid);
+            buildTree(nums, rightChild, mid + 1, end); 
+
+            // combine the results of the left and right subtrees
+            tree[node] = tree[leftChild] + tree[rightChild];
+        }
+    }
+
+    // updates the value at index i to val
+    public void update(int i, long val) {
+        updateTree(1, 0, n - 1, i, val);
+    } 
+
+    // updates the segment tree recursively
+    private void updateTree(int node, int start, int end, int i, long val) {
+        if (start == end) {
+            tree[node] = val;
+        } else {
+            int mid = (start + end) / 2;
+            int leftChild = 2 * node, rightChild = 2 * node + 1;  
+
+            if (i <= mid) {
+                updateTree(leftChild, start, mid, i, val);
+            } else {
+                updateTree(rightChild, mid + 1, end, i, val);
+            }  
+
+            // combine the results of the left and right subtrees
+            tree[node] = tree[leftChild] + tree[rightChild];
+        }
+    }
+
+    // returns the sum of the values in the range [i, j]
+    public long sumRange(int i, int j) {
+        return queryTree(1, 0, n - 1, i, j);
+    }
+
+    // queries the segment tree recursively
+    private long queryTree(int node, int start, int end, int i, int j) {
+        if (j < start || i > end) {
+            return 0;
+        } else if (i <= start && j >= end) {
+            return tree[node];
+        } else {
+            int mid = (start + end) / 2;
+            int leftChild = 2 * node, rightChild = 2 * node + 1;
+            return queryTree(leftChild, start, mid, i, j) + queryTree(rightChild, mid + 1, end, i, j);
+        }
+    }
+}
 ~~~
 ```
 

@@ -33,7 +33,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "etc/YOS 개발기/YOS Dev Doc.md",
+                "file": "computer_science/algorithm/Python for Algorithms-Graph.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ee33960466eea876",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "computer_science/algorithm/Python for Algorithms-libraries.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,13 +97,21 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "d6f5083814a42e7f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ],
         "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 333.5
+    "width": 278
   },
   "right": {
     "id": "2f957799fb48536f",
@@ -107,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "etc/YOS 개발기/YOS Dev Doc.md",
+                "file": "computer_science/algorithm/Python for Algorithms-Graph.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "etc/YOS 개발기/YOS Dev Doc.md",
+                "file": "computer_science/algorithm/Python for Algorithms-Graph.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +157,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
@@ -147,7 +167,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "etc/YOS 개발기/YOS Dev Doc.md"
+                "file": "computer_science/algorithm/Python for Algorithms-Graph.md"
               }
             }
           },
@@ -164,8 +184,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 339,
-    "collapsed": true
+    "width": 339
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,9 +202,14 @@
   },
   "active": "a490f9135f289065",
   "lastOpenFiles": [
+    "computer_science/algorithm/Python for Algorithms-libraries.md",
+    "computer_science/algorithm/Python for Algorithms-Tree.md",
+    "computer_science/algorithm/Python for Algorithms-Graph.md",
+    "computer_science/algorithm/Python for Algorithms-etc.md",
+    "computer_science/algorithm/Python for Algorithms-DP&Merge.md",
+    "etc/YOS 개발기/YOS Dev Doc.md",
     "etc/YOS 개발기/YOS Roadmap.md",
     "etc/YOS 개발기/YOS Roadmap.png",
-    "etc/YOS 개발기/YOS Dev Doc.md",
     "etc/YOS 개발기/YOS Roadmap",
     "web/backend/Spring/Spring5 입문-스프링 부트.md",
     "web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md",
@@ -209,11 +233,7 @@
     "무제 파일 1.canvas",
     "web/backend/Spring/Spring5 입문-세션, 인터셉터, 쿠키.md",
     "Excalidraw/Drawing 2023-04-28 17.35.05.excalidraw.md",
-    "computer_science/OSSU/PL/PLs/OSSU PL-B/OSSU PL-B Section 1.md",
     "Excalidraw",
-    "web/backend/Spring/Spring5-컨트롤러와 뷰 구현.md",
-    "web/backend/Spring/Spring5-HATEOAS.md",
-    "web/backend/Spring/Spring5-MVC 개념과 설정.md",
     "web/frontend/react",
     "무제 폴더",
     "computer_science/OSSU/PL/PLs/OSSU PL-B",

@@ -755,3 +755,182 @@ print(heap)
 ## 재귀함수
 
 [재귀함수 문제](https://www.acmicpc.net/problem/1929)
+
+
+## JAVA
+
+### 조합과 순열
+```ad-example
+collapse: true
+~~~java
+import java.util.ArrayList;
+import java.util.List; 
+
+public class CombinationPermutationGenerator {
+    /**
+     * Generates all combinations of size k from an array of n elements.
+     * @param arr the input array
+     * @param k the size of the combinations to generate
+     * @return a list of int arrays representing all combinations
+     */
+
+    public static List<int[]> combinations(int[] arr, int k) {
+        List<int[]> result = new ArrayList<>();
+        combinationsHelper(arr, k, 0, new int[k], 0, result);
+        return result;
+    }
+
+    private static void combinationsHelper(int[] arr, int k, int start, int[] combination, int index, List<int[]> result) {
+        if (index == k) {
+            result.add(combination.clone());
+            return;
+        }
+        for (int i = start; i <= arr.length - k + index; i++) {
+            combination[index] = arr[i];
+            combinationsHelper(arr, k, i + 1, combination, index + 1, result);
+        }
+    }
+
+    /**
+     * Generates all permutations of an array of n elements.
+     * @param arr the input array
+     * @return a list of int arrays representing all permutations
+     */
+    public static List<int[]> permutations(int[] arr) {
+        List<int[]> result = new ArrayList<>();
+        permutationsHelper(arr, new boolean[arr.length], new int[arr.length], 0, result);
+        return result;
+    }
+
+    private static void permutationsHelper(int[] arr, boolean[] used, int[] permutation, int index, List<int[]> result) {
+        if (index == arr.length) {
+            result.add(permutation.clone());
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (!used[i]) {
+                used[i] = true;
+                permutation[index] = arr[i];
+                permutationsHelper(arr, used, permutation, index + 1, result);
+                used[i] = false;
+            }
+        }
+    }
+
+    /**
+     * Generates all permutations with replacement of an array of n elements.
+     * @param arr the input array
+     * @param k the number of selections for each position
+     * @return a list of int arrays representing all permutations with replacement
+     */
+    public static List<int[]> permutationsWithReplacement(int[] arr, int k) {
+        List<int[]> result = new ArrayList<>();
+        permutationsWithReplacementHelper(arr, k, new int[k], 0, result);
+        return result;
+    }
+
+    private static void pesssrmutationsWithReplacementHelper(int[] arr, int k, int[] permutation, int index, List<int[]> result) {
+        if (index == k) {
+            result.add(permutation.clone());
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            permutation[index] = arr[i];
+            permutationsWithReplacementHelper(arr, k, permutation, index + 1, result);
+        }
+    }
+}
+~~~
+```
+
+### higher order functions
+```ad-example
+collapse: true
+~~~java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+List<Integer> squares = numbers.stream().map(x -> x * x).collect(Collectors.toList());
+
+
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+List<Integer> evenNumbers = numbers.stream()
+                                    .filter(n -> n % 2 == 0)
+                                    .collect(Collectors.toList());
+System.out.println(evenNumbers); // Output: [2, 4, 6]
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+int sum = numbers.stream().reduce(0, (a, b) -> a + b);
+
+~~~
+```
+
+### bisect
+
+```ad-example
+collapse: true
+~~~java
+import java.util.Arrays;
+
+public class Bisect {
+    public static int bisectLeft(int[] arr, int x) {
+        int index = Arrays.binarySearch(arr, x);
+        return index >= 0 ? index : -index - 1;
+    }
+    
+    public static int bisectRight(int[] arr, int x) {
+        int index = Arrays.binarySearch(arr, x);
+        return index >= 0 ? index + 1 : -index - 1;
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 3, 3, 4, 5};
+        int x = 3;
+        int leftIndex = bisectLeft(arr, x);
+        int rightIndex = bisectRight(arr, x);
+        System.out.println(leftIndex);  // Output: 3
+        System.out.println(rightIndex);  // Output: 6
+    }
+}
+
+~~~
+```
+
+
+### 정렬
+
+```ad-example
+title: stream을 통한 정렬
+collapse: true
+~~~java
+String[] arr = { "apple", "banana", "cherry", "date" };
+Arrays.sort(arr, new Comparator<String>() {
+    public int compare(String s1, String s2) {
+        return s2.compareTo(s1);
+    }
+});
+
+List<String> list = Arrays.asList("apple", "banana", "cherry", "date");
+List<String> sortedList = list.stream()
+    .sorted()
+    .collect(Collectors.toList());
+~~~
+```
+
+### heap
+
+```ad-example
+title: PriorityQueue, 기본 최소힙이다.
+collapse: true
+~~~java
+PriorityQueue<int[]> hq = new PriorityQueue<>(new Comparator<int[]>() {
+    public int compare(int[] s1, int[] s2) {
+        if (s1[1] < s2[1]){
+            return 1;
+        }
+        return -1;
+   }
+});
+hq.add(new int[]{start, 0});
+~~~
+```
+
