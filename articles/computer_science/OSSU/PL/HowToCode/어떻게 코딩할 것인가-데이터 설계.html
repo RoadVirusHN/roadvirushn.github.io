@@ -573,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#데이터-정의-Data-Definition-란">데이터 정의(Data Definition)란?</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#데이터-종류-별-설계-과정">데이터 종류 별 설계 과정</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#원자-데이터-Atomic">원자 데이터(Atomic)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#범위-데이터-Interval">범위 데이터(Interval)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#열거형-데이터-Enumeration">열거형 데이터(Enumeration)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#항목형-데이터-Itemization">항목형 데이터(Itemization)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#복합-데이터-Compound-data">복합 데이터(Compound data)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#List-데이터-List-data">List 데이터(List data)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#참조-관계-데이터">참조 관계 데이터</a><ul></ul></li></ul></li></ol>
 <h1 id="데이터-설계">데이터 설계</h1>
 
-<div class="callout callout-quote" id="callout-db2ab2fb-7283-454a-b61f-b2eb6fed170a">
+<div class="callout callout-quote" id="callout-e6690c55-a5d8-4b78-b148-643cf5d0f52d">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>quote</strong></span>
@@ -616,7 +616,7 @@
   <li>데이터를 다루기 위한 템플릿</li>
 </ul>
 
-<div class="callout callout-example" id="callout-4e3e2df9-8320-4a55-91cf-26bf9ee53acb">
+<div class="callout callout-example" id="callout-e86eb719-4978-49bd-9583-66f03648eeca">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>데이터 정의 예시
@@ -657,7 +657,7 @@
   <li>템플릿을 만드는데 도움을 줄 수 있음</li>
 </ul>
 
-<div class="callout callout-example" id="callout-12b95c11-c638-4b2a-85db-afb4d10674e2">
+<div class="callout callout-example" id="callout-cff4952f-0d07-4a67-9a46-77962291f020">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>데이터 정의에 도움을 받은 함수 디자인
@@ -744,7 +744,7 @@
   </li>
 </ol>
 
-<div class="callout callout-note" id="callout-c849699e-15e3-4a4c-bd88-80ac4e4d3a99">
+<div class="callout callout-note" id="callout-8804a4c7-e3a5-455f-88f0-be57d9cf1bf6">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>Data Driven Template(DDT)
@@ -928,7 +928,7 @@
   <li>예를 들어 <code class="language-plaintext highlighter-rouge">Vancouver, Boston, Homead</code>는 각기의 의미를 가지고 있으며 추가로 나누는 것이 불가능하며 원시 타입인 <code class="language-plaintext highlighter-rouge">String</code>을 이용해 만들었다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-7c96129f-b2da-4f9e-984e-65afdc355c3b">
+<div class="callout callout-example" id="callout-ef3e87e6-9717-420f-be96-16063b643496">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>원자 데이터 정의 예시
@@ -970,7 +970,7 @@
   <li>함수 템플릿 내의 <code class="language-plaintext highlighter-rouge">...</code>은 만약 데이터가 구분형(distinct)이라면 <code class="language-plaintext highlighter-rouge">...</code>으로 충분하고, 비구분형(non-distinct)라면 <code class="language-plaintext highlighter-rouge">...n</code> 같이 명시해줘야 한다.  구분형에서는 해당하는 조건문 블락에 들어가면 해당 데이터를 더이상 안쓰기 때문이다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-af03e20a-66ff-4297-b8c7-95ea0f27b1e1">
+<div class="callout callout-example" id="callout-f09e93e5-659e-4ef8-b4bb-17fe454ac591">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>원자 데이터 정의를 사용한 함수 정의 예시
@@ -1019,7 +1019,7 @@
 <h3 id="범위-데이터-Interval">범위 데이터(Interval)</h3>
 <p><strong>특정한 범위가 존재하는 데이터를 명시</strong>하는데 사용, 나중에 등장할 [[#항목형 데이터(Itemization)|항목형 데이터]]에 부분 데이터로 등장하는 경우가 많다.</p>
 
-<div class="callout callout-example" id="callout-6966ff1a-70dd-4130-894a-809490ceef33">
+<div class="callout callout-example" id="callout-c4f072e9-9489-4282-99c9-2eb1e79166e7">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>범위 데이터 정의 예시: 1~32번까지 존재하는 영화 좌석 번호를 표시할 데이터
@@ -1060,7 +1060,7 @@
   <li>”[” : 해당 값 포함(이상, 이하), “(” : 해당 값 미포함(미만, 초과) ex) [1, 32) = 1~31</li>
 </ul>
 
-<div class="callout callout-example" id="callout-500bb649-0f5b-42ae-8778-f295c3b4d96f">
+<div class="callout callout-example" id="callout-c5453059-5983-4fb4-9a8c-a270ffe83a25">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>범위 데이터 함수 예시: 끝단에 있는 영화 좌석 여부를 알려주는 함수
@@ -1106,7 +1106,7 @@
   <li>ex) 요일, 성별 등, 원자 데이터와 달리 들어올 데이터가 예상 가능한 표현 내에 있다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-764f1adf-2b29-4025-887b-3f8e1c55f4e8">
+<div class="callout callout-example" id="callout-03d3e417-1cd7-4a4e-a5b6-e6d4d6a1c1ab">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>열거형 데이터 정의 예시: 학생의 시험 점수 표시 데이터(A, B, C)
@@ -1169,7 +1169,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-e80bd2e0-cbc9-4bcc-b931-3564f4b088d1">
+<div class="callout callout-example" id="callout-898d0ae9-63c9-4954-b41e-30de54e74b05">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>열거형 데이터 함수 예시: 학생의 시험 점수 한 단계 올려주기 함수
@@ -1220,7 +1220,7 @@
 <h3 id="항목형-데이터-Itemization">항목형 데이터(Itemization)</h3>
 <p><strong>일부 데이터가 구분되는 데이터가 아닌 다른 부차적 데이터로 이루어진 데이터</strong></p>
 
-<div class="callout callout-example" id="callout-ccbb85a8-7f96-41d6-ba7e-755054607c9f">
+<div class="callout callout-example" id="callout-ea7ca67f-4843-429e-9a49-1c2977416e63">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>항목형 데이터 정의 예시: 새해 카운트다운 데이터
@@ -1281,7 +1281,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-be27ea8a-9ac8-4d26-a467-7b8f708769e1">
+<div class="callout callout-example" id="callout-ebd27567-0a2b-48ef-befa-92ed3a25f5be">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>항목형 데이터 함수 예시: 새해 카운트 다운 함수
@@ -1327,7 +1327,7 @@
 <h3 id="복합-데이터-Compound-data">복합 데이터(Compound data)</h3>
 <p><strong>하나 이상의 같거나 다른 형태의 데이터들과 짝을 이루는 데이터 구조</strong></p>
 
-<div class="callout callout-example" id="callout-218af476-d9b5-48af-acfd-a316facd1c0a">
+<div class="callout callout-example" id="callout-0562c0c5-72e5-4c2d-bc4c-c449e7665338">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>복합 데이터 정의 예시: 하키 선수 명단
@@ -1371,7 +1371,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-1e9a61ed-27fa-481d-b89f-1cb08fa7f8de">
+<div class="callout callout-example" id="callout-a0e7b0df-c686-4733-99ef-96c456810fe0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>복합 데이터 함수 예시: 사전순 하키선수 이름 함수
@@ -1415,7 +1415,7 @@
 <p><strong>하나 이상의 타입의 데이터들을 동적인 수만큼 할당 가능한 데이터 구조</strong><br>
 강의에서는 재귀를 이용해 동적할당을 처리하지만, 대부분의 프로그래밍 언어에서는 그러하지 않으므로 변경했다.</p>
 
-<div class="callout callout-example" id="callout-1e446569-e793-42da-b9d9-7f69b7082faf">
+<div class="callout callout-example" id="callout-5528d906-f007-4002-aeae-08ff8e1d6cdc">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>리스트 데이터 정의 예시: 퀴디치 팀 명단
@@ -1469,7 +1469,7 @@
   <li><strong>상호 참조형(Mutual Reference) 재귀</strong></li>
 </ul>
 
-<div class="callout callout-note" id="callout-1fe61bcb-2310-4047-92d2-196e9ea8cf64">
+<div class="callout callout-note" id="callout-d19ff49a-e307-4f16-9bfb-1e393d4852bc">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>참조형 데이터의 참조 관계는 템플릿과 함수에도 동일한 구조를 나타나게 한다.
@@ -1488,7 +1488,7 @@
 
 <p><strong>데이터 내부에 다른 데이터 구조가 포함되어 있는 구조</strong></p>
 
-<div class="callout callout-example" id="callout-d0ec5a26-cd78-42aa-aa37-c856011faa36">
+<div class="callout callout-example" id="callout-584bcf33-c74d-491d-b0aa-42396e893fea">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>참조 관계의 두 데이터 정의 예시와 템플릿 : 학교별 등록금 정보
@@ -1563,7 +1563,7 @@
 
 <p><strong>데이터 내부에 자신과 같은 구조가 마찬가지로 포함된 데이터 구조</strong></p>
 
-<div class="callout callout-example" id="callout-6da3e918-c54c-4be4-bb62-73930bbf37d6">
+<div class="callout callout-example" id="callout-9f406420-cffc-4ac9-ae54-72867f238150">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>재귀형 데이터 정의 예시와 템플릿: 재귀 구조 숫자 리스트
@@ -1606,7 +1606,7 @@
   <li>2차원 배열 등을 입력으로 받을 때 많이 사용됨(arbitrary-arity-tree)</li>
 </ul>
 
-<div class="callout callout-example" id="callout-b35804a6-aba3-415a-86f5-ad391675d81a">
+<div class="callout callout-example" id="callout-4465f6af-5936-40d3-91a7-98832e864f00">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>상호참조형 데이터 정의 예시와 템플릿
@@ -1663,7 +1663,7 @@
   <li>가지치기 방식이라고도 불리우는 Backtracking 탐색 등에 사용된다.-&gt; 어떤 자식 노드가 정답이 아니면 자신의 부모 노드로 돌아가 다음 자식 노드를 찾는 방식</li>
 </ul>
 
-<div class="callout callout-example" id="callout-73f66ee6-b53c-4d73-a163-5f85f6259600">
+<div class="callout callout-example" id="callout-8d845bd2-9d87-4b1d-96f0-4d835309fadf">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Backtracking search 템플릿
@@ -1695,7 +1695,7 @@
   <li>즉, 오직 같은 인자의 갯수, 인자들의 타입, 결과값의 타입들이 일치하는 함수만 집어넣을 수 있다.</li>
 </ul>
 
-<div class="callout callout-seealso" id="callout-12b8cb3a-3cec-4289-9185-f5d81887ae6d">
+<div class="callout callout-seealso" id="callout-a9bd5061-6300-4a99-ac5a-ccfc43a6bd99">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong>고차함수(high-order function)?
@@ -1710,7 +1710,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-48761823-9e78-43b0-99cf-d2c9fca5e264">
+<div class="callout callout-example" id="callout-d97796ff-754e-473b-b239-ff9390023674">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>고차 함수의 예시

@@ -573,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#컨테이너">컨테이너</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#빈-Bean">빈(Bean)</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#빈-등록-방법">빈 등록 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#빈-생성-및-검색-방법">빈 생성 및 검색 방법</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#빈-객체의-라이프-사이클">빈 객체의 라이프 사이클</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-5" href="#의존-자동-주입을-통한-의존-설정">의존 자동 주입을 통한 의존 설정</a><ul></ul></li></ol>
 <h1 id="빈-Bean-과-컨테이너">빈(Bean)과 컨테이너</h1>
 
-<div class="callout callout-quote" id="callout-afcb2f4b-64d3-4297-b2ff-e97f53ac683e">
+<div class="callout callout-quote" id="callout-612af60a-eb6f-4559-8191-fe946ab2da21">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -606,7 +606,7 @@
 
 <p><strong>컨테이너</strong> : 스프링에서 빈(Bean) 객체의 생성, 초기화, 보관, 제거 등을 관리하는 <code class="language-plaintext highlighter-rouge">ApplicationContext</code> 인터페이스를 구현한 객체.</p>
 
-<div class="callout callout-info" id="callout-29caf08d-6fe8-4e65-a211-b2fa56150b8f">
+<div class="callout callout-info" id="callout-56d58eb7-c9eb-4ef4-94f5-2b933ad97880">
       <div class="header">
         <span class="emoji">ℹ️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">ApplicationContext</code> 인터페이스 클래스 그래프
@@ -628,7 +628,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-example" id="callout-de06cbb1-90ea-493f-8f92-180913e8be58">
+<div class="callout callout-example" id="callout-6f621b7e-d605-476e-9b49-2385e477d498">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>스프링 컨테이너 선언
@@ -665,7 +665,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-810fb95a-1078-4638-b231-dd9a137333e4">
+<div class="callout callout-example" id="callout-3edf03db-0519-4ee5-b787-157dfc717491">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>구성 클래스 내부에서 빈 객체를 생성하는 메서드 선언
@@ -712,7 +712,7 @@
     </span> 참조</li>
 </ul>
 
-<div class="callout callout-example" id="callout-4c50c8c5-c920-4eb3-be42-13053dbb50f4">
+<div class="callout callout-example" id="callout-cce583cf-9c63-4421-9a67-7c878d158b5e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">.getBean()</code> 메서드
@@ -748,7 +748,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-95b9bad7-8aa3-4a27-9a88-230f87835605">
+<div class="callout callout-example" id="callout-8f46fee0-36df-40e1-b9a6-c9bc47d05bfa">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>빈 객체의 Scope 설정
@@ -794,7 +794,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-f6848830-0eff-4e34-887b-802f5c7bf45c">
+<div class="callout callout-example" id="callout-8715ee43-f128-4acd-a100-ee25573af76f">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>초기화 메서드 구현 예제
@@ -825,7 +825,7 @@
     </div>
 <p>만약, 변경 불가능한 외부 모듈 클래스, 아니면 모종의 이유로 인터페이스를 사용하고 싶지 않으면 다음과 같이 <code class="language-plaintext highlighter-rouge">@Bean</code> 어노테이션의 속성을 사용하면 된다.</p>
 
-<div class="callout callout-example" id="callout-cc763e4f-ee90-4186-ac5f-90125da3c3f3">
+<div class="callout callout-example" id="callout-e257939c-c47c-4c4f-9b46-8fd589ca98cd">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Bean</code> 속성을 이용한 초기화 메서드 구현
@@ -855,7 +855,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-c1b1c1da-89af-47d9-a6ce-9c2f0ba83775">
+<div class="callout callout-example" id="callout-bceaa8ec-c93b-41dc-a62b-c1347bbdde6c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>소멸 메서드 구현 예제
@@ -884,7 +884,7 @@
     </div>
 <p>마찬가지로, 변경 불가능한 외부 모듈 클래스, 모종의 이유로 인터페이스를 사용하고 싶지 않으면 다음과 같이 <code class="language-plaintext highlighter-rouge">@Bean</code> 어노테이션의 속성을 사용하면 된다.</p>
 
-<div class="callout callout-example" id="callout-ef88e66f-a11a-41f3-96a8-a162c2c0ebff">
+<div class="callout callout-example" id="callout-024a4e50-2391-436f-8d3a-bdd9382f8bd6">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Bean</code> 속성을 이용한 소멸 메서드 구현

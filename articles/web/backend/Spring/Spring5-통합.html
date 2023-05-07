@@ -573,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#스프링-통합-Spring-Integration">스프링 통합(Spring Integration)</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#여러-통합-플로우-구성-방법">여러 통합 플로우 구성 방법</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-2" href="#통합-플로우-컴포넌트와-예시">통합 플로우 컴포넌트와 예시</a><ul><li lvl="3"><a id="markdown-toc-0-3" href="#채널-Channel">채널(Channel)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#필터-Filter">필터(Filter)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#변환기-Transformer">변환기(Transformer)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-6" href="#라우터-Router">라우터(Router)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-7" href="#분배기-Splitter">분배기(Splitter)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#집적기-Aggregator">집적기(Aggregator)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#서비스-액티베이터-Service-activator">서비스 액티베이터(Service activator)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-10" href="#채널-어댑터-Channel-adapter">채널 어댑터(Channel adapter)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-11" href="#게이트웨이-Gateway">게이트웨이(Gateway)</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-12" href="#엔드포인트-모듈-Endpoint-module">엔드포인트 모듈(Endpoint module)</a><ul></ul></li></ul></li></ol>
 <h1 id="Spring5-통합">Spring5-통합</h1>
 
-<div class="callout callout-quote" id="callout-5425f39e-41f7-4493-8156-8b06a930c985">
+<div class="callout callout-quote" id="callout-c5150aca-11d0-43d5-bc81-d0e2545daf0b">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -602,7 +602,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-warning" id="callout-e145c62b-5bcf-410a-bd22-533c300cf7ba">
+<div class="callout callout-warning" id="callout-817e0cd7-26dd-41b3-81d7-b5185e4e413e">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong>스프링 부트를 사용한다는 가정 하에 진행됩니다.
@@ -625,7 +625,7 @@
 <p>통합 플로우는 여러 방법으로 구성할 수 있으며, 예시를 알아보자.<br>
 먼저, 통합 플로우로 데이터를 전송하는 파일 쓰기 게이트웨이를 작성한다.</p>
 
-<div class="callout callout-example" id="callout-09c640cc-2bb6-40b8-aa8d-99fc9a3e2f95">
+<div class="callout callout-example" id="callout-bd224a20-221d-4d95-823b-4298327a11af">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">FileWriteGateway.java</code>
@@ -657,7 +657,7 @@
   <li><strong>XML 구성</strong></li>
 </ul>
 
-<div class="callout callout-example" id="callout-060818af-6b28-42f3-a2d9-036db4ed5eef">
+<div class="callout callout-example" id="callout-cd322b7f-c9f5-415e-bcf3-c15cca243ce1">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">filewriter.xml</code>
@@ -706,7 +706,7 @@
   <li><strong>자바 파일 구성</strong></li>
 </ul>
 
-<div class="callout callout-example" id="callout-90822889-87b2-4fa3-ab12-abe247b2d914">
+<div class="callout callout-example" id="callout-39753308-eeea-494a-9390-ff0e5d476f30">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">FileWriterIntegrationConfig.java</code>
@@ -782,7 +782,7 @@
   <li><strong>DSL(Domain Specific Language)</strong></li>
 </ul>
 
-<div class="callout callout-example" id="callout-ab0f82d2-6090-49f5-b294-f138b1a49870">
+<div class="callout callout-example" id="callout-ac1f8399-99ea-4e39-ab3f-a6f4a534d18c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>앞선 자바 구성 파일에 추가
@@ -842,7 +842,7 @@
 
 <p>기본적으로 특정 이름의 채널이 존재하지 않으면 <code class="language-plaintext highlighter-rouge">DirectChannel</code>로 생성되며, 다른 채널을 구현하고 싶다면 직접 채널을 구현해야 한다.</p>
 
-<div class="callout callout-example" id="callout-b0c7cc62-5730-483e-88f4-8a00942a4f40">
+<div class="callout callout-example" id="callout-6541fc50-59a6-4ad0-a52a-2c4342f3bdec">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">QueueChannel</code> 선언과 사용
@@ -868,7 +868,7 @@
 <p>조건에 맞는 메시지만 플로우를 통과하게 함<br>
 통합 파이프라인 채널 사이 중간에만 위치 가능</p>
 
-<div class="callout callout-example" id="callout-4f514d7b-7916-45cc-87c3-b5e57f4d6f92">
+<div class="callout callout-example" id="callout-27bac8b6-27d6-4bae-a7db-7c613a8153db">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>필터의 예시
@@ -901,7 +901,7 @@
 <h3 id="변환기-Transformer">변환기(Transformer)</h3>
 <p>메시지 값을 변경하거나 메시지 페이로드의 타입을 다른 타입으로 변경</p>
 
-<div class="callout callout-example" id="callout-100301f8-727d-446e-bdbc-0dd986e80142">
+<div class="callout callout-example" id="callout-1a69b891-7be1-4019-99ab-f60d2923f333">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">GenericTransformer</code> 구현 예시
@@ -935,7 +935,7 @@
 
 <p>이때 전달 조건을 직접 구현해주어야 한다.</p>
 
-<div class="callout callout-example" id="callout-a980d5d4-f035-487b-b5ce-9de8139091d9">
+<div class="callout callout-example" id="callout-caddcfd4-a732-46af-87f5-233bf5489929">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>라우터 구현 예시
@@ -984,7 +984,7 @@
   <li><strong>하나의 메시지 페이로드를 서로 다른 타입 두개 이상 메시지로 나눔</strong></li>
 </ul>
 
-<div class="callout callout-example" id="callout-296724f0-b390-4ea1-bcca-1b09b04faaeb">
+<div class="callout callout-example" id="callout-b5486a0c-16ce-4ee9-90b2-6d33f18572b4">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>분배기 예시
@@ -1073,7 +1073,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-1f30908b-9df0-4284-91f0-d7c3a075981e">
+<div class="callout callout-example" id="callout-d65b5782-e1e0-45a5-9715-158f974af8a6">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>서비스 엑티베이터와 핸들러 메서드 예시
@@ -1123,7 +1123,7 @@
   <li><strong>입구 역할을 하는 인바운드 채널 어댑터</strong></li>
 </ul>
 
-<div class="callout callout-example" id="callout-59fd97b0-5294-476f-a17c-1fd6cdfd8958">
+<div class="callout callout-example" id="callout-17d22d99-5d64-4c05-832c-f62fb8c44000">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>인바운드 어댑터 예시
@@ -1166,7 +1166,7 @@ public IntegrationFlow someFlow(AtomicInteger integerSource) {
 
 <p>즉, 어플리케이션이 통합 플로우로 메시지를 전송하고 받아낼 수 있는 메서드이며, 인터페이스로 구현되어 있다.</p>
 
-<div class="callout callout-example" id="callout-cf7b935d-a8a7-4ec4-95ba-59d215caadc7">
+<div class="callout callout-example" id="callout-10f4e176-01e1-4e84-8034-595c076ae246">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>게이트웨이 구현 예시

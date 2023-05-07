@@ -573,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#커맨드-객체의-값-검증과-에러-메시지-처리">커맨드 객체의 값 검증과 에러 메시지 처리</a><ul><li lvl="3"><a id="markdown-toc-0-1" href="#커맨드객체-별-객체-검증-지정">커맨드객체 별 객체 검증 지정</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-2" href="#글로벌-범위-Validator와-컨트롤러-범위-Validator-설정">글로벌 범위 Validator와 컨트롤러 범위 Validator 설정</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#Bean-Validation을-이용한-값-검증-처리">Bean Validation을 이용한 값 검증 처리</a><ul></ul></li></ul></li></ol>
 <h1 id="객체-검증">객체 검증</h1>
 
-<div class="callout callout-quote" id="callout-3f44af64-fdc1-414e-8d56-25351fefe04c">
+<div class="callout callout-quote" id="callout-73ef2355-6e42-4657-b173-b53a6a1d0032">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -602,7 +602,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-faq" id="callout-f1917f42-1798-4201-b44d-55ed237e9f0c">
+<div class="callout callout-faq" id="callout-977b52d4-ad97-4240-a5b5-30b1c8863331">
       <div class="header">
         <span class="emoji">✨</span>
         <span class="title"><strong>메시지를 이용한 로케일 부분은 나중에 프론트엔드에서 처리할 것이므로 생략했다. 백엔드에서 로케일에 따라 달리 처리할 일이 있을까?
@@ -627,7 +627,7 @@
   <li><code class="language-plaintext highlighter-rouge">Errors</code> 인터페이스는 에러를 담아 메시지를 만들어 보여주는 역할을 한다.</li>
 </ul>
 
-<div class="callout callout-seealso" id="callout-1b34007f-a303-4c76-9543-8f356f4f8b8b">
+<div class="callout callout-seealso" id="callout-db4fa694-da88-4641-9501-9ea7046e1aae">
       <div class="header">
         <span class="emoji">➕</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">Errors</code>를 상속받는 <code class="language-plaintext highlighter-rouge">org.springframework.validation.BindingResult</code> 인터페이스를 대신 이용 가능하다.
@@ -636,7 +636,7 @@
       </div>
       
     </div>
-<div class="callout callout-example" id="callout-8f837aa1-3985-49cc-8b99-8d268fa7033c">
+<div class="callout callout-example" id="callout-af1bba0e-c4cd-480b-8c10-21b2f28c8262">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>로그인 이메일 검증 예시(<code class="language-plaintext highlighter-rouge">/src/main/java/controller/RegisterRequestValidator.java</code>)
@@ -713,7 +713,7 @@
 
 <p>앞선 <code class="language-plaintext highlighter-rouge">Validator</code>를 구현한 후, 컨트롤러에서 아래와 같이 사용 및 추가 에러 확인이 가능하다.</p>
 
-<div class="callout callout-example" id="callout-02ebb0fd-f591-4d1d-9b18-162eb40cca20">
+<div class="callout callout-example" id="callout-c0c1e33e-a09d-45a7-b4d9-a692c3103f5c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>컨트롤러에서의 커맨드 객체 검증 및 추가 검증
@@ -761,7 +761,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-warning" id="callout-655fedbf-9625-4541-8e85-99275058218f">
+<div class="callout callout-warning" id="callout-808d9114-76c2-451d-b790-716562f8ae11">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong><strong>주의!</strong> 무조건 커맨드 객체 파라미터가 에러 객체 보다 앞에 위치해야함.
@@ -822,7 +822,7 @@
   <li><strong><code class="language-plaintext highlighter-rouge">javax.validation.validation-api</code> 의존 모듈 추가</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-852cb407-923b-42a9-9d1b-f80336fcc7ee">
+<div class="callout callout-example" id="callout-de753629-73d0-41fe-9067-d9647af55e4e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">pom.xml</code>
@@ -847,7 +847,7 @@
   <li><strong>구성 클래스에 <code class="language-plaintext highlighter-rouge">getValidator()</code> 메서드 재정의</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-7bbc5a25-61b2-4cf8-8fea-6a7e300a1a3b">
+<div class="callout callout-example" id="callout-845a1521-4155-4af5-be7f-d29f36b809fd">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">MvcConfig.java</code>
@@ -884,7 +884,7 @@
   </li>
 </ul>
 
-<div class="callout callout-example" id="callout-dabbdce3-eb7d-4b86-97dd-3c67522e6b72">
+<div class="callout callout-example" id="callout-c342821e-ac94-43b6-964b-dc80696e3a99">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">RegisterController.java</code>
@@ -922,7 +922,7 @@
 </div>
     </div>
     </div>
-<div class="callout callout-warning" id="callout-3bc35742-a0ea-4e23-bdb0-db7b3ebeecb7">
+<div class="callout callout-warning" id="callout-1510089a-4d75-489a-b4d5-b79ba24ca70f">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong><strong>주의!</strong> 무조건 파라미터로 에러 객체가 주어져야 함.
@@ -947,7 +947,7 @@
 
 <p>특정 컨트롤러에서만 공통적으로 적용가능한 컨트롤러 범위 Validator를 적용하려면 다음과 같은 과정이 필요하다.</p>
 
-<div class="callout callout-example" id="callout-16147fb1-b391-4128-93bf-a0e35b8731aa">
+<div class="callout callout-example" id="callout-0f652f1f-0a8d-4b6b-bb41-bfca925b861d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>컨트롤러 범위 Validator 설정(<code class="language-plaintext highlighter-rouge">RegisterController.java</code>)
@@ -1007,7 +1007,7 @@
   <li><strong>Bean Validation 관련 의존 모듈 추가</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-54b6bc48-bc58-47de-bb39-8a19eb4f8099">
+<div class="callout callout-example" id="callout-74ea4f26-5816-40cd-8961-843eddafced0">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">Bean Validation</code> 관련 의존
@@ -1037,7 +1037,7 @@
   <li><strong>커맨드 객체 필드에 검증 규칙 어노테이션 설정</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-4172873e-5f6f-4377-af6a-873af83cdaa1">
+<div class="callout callout-example" id="callout-18875c26-1f90-400d-83f7-a855da82275e">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>커맨드 객체 예시
@@ -1081,7 +1081,7 @@
   <li><strong><code class="language-plaintext highlighter-rouge">@Valid</code> 어노테이션 적용</strong></li>
 </ol>
 
-<div class="callout callout-example" id="callout-4b4ef2be-7060-4c91-bb1c-89d51d9ed7b6">
+<div class="callout callout-example" id="callout-7a68a657-ea12-4a15-a8a3-1b7a7cf87b98">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>컨트롤러 예시

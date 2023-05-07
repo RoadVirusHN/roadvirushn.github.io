@@ -9,41 +9,13 @@
         "children": [
           {
             "id": "d406abecef184e54",
-            "id": "02a2ecae2e9726a2",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
-              "type": "markdown",
-              "state": {
-                "file": "etc/YOS 개발기/YOS Dev Doc.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d406abecef184e54",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "a490f9135f289065",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "etc/YOS 개발기/YOS Dev Doc.md",
-                "mode": "source",
-                "source": false
-              }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -88,13 +60,21 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "d6f5083814a42e7f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ],
         "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 333.5
+    "width": 278
   },
   "right": {
     "id": "2f957799fb48536f",
@@ -110,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "etc/YOS 개발기/YOS Dev Doc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +106,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "etc/YOS 개발기/YOS Dev Doc.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +118,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
@@ -150,9 +128,6 @@
             "state": {
               "type": "outline",
               "state": {}
-              "state": {
-                "file": "etc/YOS 개발기/YOS Dev Doc.md"
-              }
             }
           },
           {
@@ -168,8 +143,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 339,
-    "collapsed": true
+    "width": 339
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -186,11 +160,15 @@
     }
   },
   "active": "d406abecef184e54",
-  "active": "a490f9135f289065",
   "lastOpenFiles": [
+    "computer_science/algorithm/Python for Algorithms-Graph.md",
+    "computer_science/algorithm/Python for Algorithms-libraries.md",
+    "computer_science/algorithm/Python for Algorithms-Tree.md",
+    "computer_science/algorithm/Python for Algorithms-etc.md",
+    "computer_science/algorithm/Python for Algorithms-DP&Merge.md",
+    "etc/YOS 개발기/YOS Dev Doc.md",
     "etc/YOS 개발기/YOS Roadmap.md",
     "etc/YOS 개발기/YOS Roadmap.png",
-    "etc/YOS 개발기/YOS Dev Doc.md",
     "etc/YOS 개발기/YOS Roadmap",
     "web/backend/Spring/Spring5 입문-스프링 부트.md",
     "web/backend/Spring/Spring5 입문-스프링 설정과 의존 관리 툴.md",
@@ -204,8 +182,23 @@
     "web/backend/Spring/Spring5-테스트.md",
     "web/backend/Spring/Spring5-스프링 시큐리티.md",
     "web/backend/Spring/Spring5-리액티브 스프링.md",
+    "etc/etcs/Edu-Research.md",
+    "무제 파일.md",
+    "etc/Subbrain 개발기/개인 블로그 Subbrain 개발기.md",
+    "etc/YOS 개발기/무제 파일.md",
     "etc/YOS 개발기",
     "무제 파일.canvas",
-    "무제 파일 1.canvas"
+    "Excalidraw/Drawing 2023-04-28 17.35.38.excalidraw.md",
+    "무제 파일 1.canvas",
+    "web/backend/Spring/Spring5 입문-세션, 인터셉터, 쿠키.md",
+    "Excalidraw/Drawing 2023-04-28 17.35.05.excalidraw.md",
+    "Excalidraw",
+    "web/frontend/react",
+    "무제 폴더",
+    "computer_science/OSSU/PL/PLs/OSSU PL-B",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect3",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect2",
+    "computer_science/OSSU/PL/PL-A/OSSU PL-A/Sect1",
+    "computer_science/OSSU/PL/PLs/OSSU PL-A"
   ]
 }

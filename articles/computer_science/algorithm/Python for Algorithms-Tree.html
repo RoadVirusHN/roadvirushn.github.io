@@ -581,7 +581,7 @@
 
 <p>집합의 대표자(루트)로 각 집합을 구분한다.</p>
 
-<div class="callout callout-example" id="callout-2a5cf900-a5e3-4963-9333-540ec79b3ffe">
+<div class="callout callout-example" id="callout-ee6258be-2cac-4f84-940d-98b70ab2b619">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>상호 배타 집합 (배열 구현, $O(N)$) 함수
@@ -634,7 +634,7 @@
   <li>트리를 중위 순회 시 오름차 순 정렬을 얻을 수 있다.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-c0d22e20-b636-479d-a377-35b121e741a9">
+<div class="callout callout-example" id="callout-d8952be8-facd-4262-9f91-ed4718207c36">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>이진 탐색 트리 예시
@@ -654,7 +654,7 @@
     </div>
 <h3 id="AVL-트리">AVL 트리</h3>
 
-<div class="callout callout-example" id="callout-abfc0915-856f-4b95-9389-956890135ddb">
+<div class="callout callout-example" id="callout-e35b01fa-6e23-451d-9b82-371afd89353c">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>이진 탐색 트리 예시
@@ -675,7 +675,7 @@
 <h2 id="세그먼트-트리-segment-tree">세그먼트 트리 (segment tree)</h2>
 <p>수열의 총 합, 총 곱, 최댓값, 최솟값 등을 $O(\log N)$의 시간에 해결할 수 있는 자료구조</p>
 
-<div class="callout callout-example" id="callout-2c1cdb11-ea55-41a3-aaa3-0744473f6e03">
+<div class="callout callout-example" id="callout-98accca9-ad18-49ad-8dd7-cb53acaf9734">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>세그먼트 트리 $O(\log n)$ 예시 - 재귀 버전
@@ -687,91 +687,97 @@
     <div class="content" name="content">
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">math</span>
 
-<span class="k">def</span> <span class="nf">create_seg_tree</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">'''
-&nbsp; &nbsp; 재귀를 통한 세그먼트 트리 생성
-&nbsp; &nbsp; index: 처리 중인 노드, index *2, index * 2 + 1 : 노드의 자식 노드들
-&nbsp; &nbsp; &nbsp; - 세그먼트 트리의 최고 부모인 1부터 시작, 자식을 가르키는 방향으로 진행함
-&nbsp; &nbsp; start - mid :왼쪽 자식이 저장하는 값, mid+1 - end : 오른쪽 자식이 저장하는 값
-&nbsp; &nbsp; '''</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">global</span> <span class="n">num_list</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">global</span> <span class="n">tree</span>
-
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># tree의 leap에 도달했으면 num_list 값 그대로 삽입
-</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_list</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> 
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 좌측 노드와 우측 노드 값을 구해 부모 노드의 값을 합쳐 만든다. (이때 합이 아니라 구간곱이면 바꿔주자)
-</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_seg_tree</span><span class="p">(</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">create_seg_tree</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>  
-
-<span class="k">def</span> <span class="nf">interval_sum</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">'''
-&nbsp; &nbsp; 재귀를 통한 구간합 계산 함수
-&nbsp; &nbsp; index: 현재 처리 중인 인덱스
-&nbsp; &nbsp; start - end : 현재 index 노드가 값을 저장한 구간
-&nbsp; &nbsp; left, right : 구간 합을 구하고자 하는 범위
-&nbsp; &nbsp; '''</span>
-
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 원하는 구간이 tree 밖인 경우
-</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">left</span> <span class="o">&gt;</span> <span class="n">end</span> <span class="ow">or</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">:</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="mi">0</span> <span class="err">&nbsp;</span><span class="c1"># 곱일 경우 1!
-</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 현재 인덱스가 포함하는 구간이 전부 내가 원하는 구간 안에 있는 경우 더한다.
-</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">right</span> <span class="o">&gt;=</span> <span class="n">end</span><span class="p">:</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 일부만 겹친 경우는 두 자식으로 나누어 구간내에 있는 자식만 더함
-</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">interval_sum</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">interval_sum</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">'''
-&nbsp; &nbsp; 특정 원소의 값을 수정하는 함수
-&nbsp; &nbsp; index : 현재 수정 필요 여부를 판단하고 있는 함수
-&nbsp; &nbsp; start - end: index 노드가 포함하고 있는 범위
-&nbsp; &nbsp; where : 구간 합을 수정하고자 하는 노드
-&nbsp; &nbsp; value : 수정할 값
-&nbsp; &nbsp; '''</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 범위 밖에 있는 경우는 아무것도 안하고 재귀 중단
-</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">where</span> <span class="o">&lt;</span> <span class="n">start</span> <span class="ow">or</span> <span class="n">where</span> <span class="o">&gt;</span> <span class="n">end</span><span class="p">:</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span>  
-
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 범위 안에 있으면 내려가면서 다른 원소도 갱신
-</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+=</span> <span class="n">diff</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">create_seg_tree</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">log2</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">)))</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 필요한 노드 수 == 잎새 노드(N) + 부모 노드(N-1) == 2N - 1
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 따라서 높이를 H라고 놓을 때 ∑^{H}_{n=0}2^n &gt;= 2N -1을 만족해야 한다.
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># tree의 크기는 2의 (예상 트리의 높이 + 1)승이면 절대 부족하지 않다.
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">def</span> <span class="nf">create_recursive</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">'''
+&nbsp; &nbsp; &nbsp; &nbsp; 재귀를 통한 세그먼트 트리 생성
+&nbsp; &nbsp; &nbsp; &nbsp; index: 처리 중인 노드
+&nbsp; &nbsp; &nbsp; &nbsp; - index *2, index * 2 + 1 : 노드의 자식 노드들
+&nbsp; &nbsp; &nbsp; &nbsp; - 세그먼트 트리의 최고 부모인 1부터 시작, 자식을 가르키는 방향으로 진행함
+&nbsp; &nbsp; &nbsp; &nbsp; start - mid : 왼쪽 자식이 저장하는 값
+&nbsp; &nbsp; &nbsp; &nbsp; mid+1 - end : 오른쪽 자식이 저장하는 값
+&nbsp; &nbsp; &nbsp; &nbsp; '''</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">nonlocal</span> <span class="n">tree</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># tree의 leap에 도달했으면 num_list 값 그대로 삽입
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_list</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">update</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">update</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 좌측 노드와 우측 노드 값을 구해 부모 노드의 값을 합쳐 만든다. (이때 합이 아니라 구간곱이면 바꿔주자)
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_recursive</span><span class="p">(</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">create_recursive</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">create_recursive</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">tree</span>
+
+<span class="k">def</span> <span class="nf">interval_sum</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">numCount</span><span class="p">):</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">def</span> <span class="nf">sum_recursive</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">'''
+&nbsp; &nbsp; &nbsp; &nbsp; 재귀를 통한 구간합 계산 함수
+&nbsp; &nbsp; &nbsp; &nbsp; index: 현재 처리 중인 인덱스
+&nbsp; &nbsp; &nbsp; &nbsp; start - end : 현재 index 노드가 값을 저장한 구간
+&nbsp; &nbsp; &nbsp; &nbsp; left, right : 구간 합을 구하고자 하는 범위
+&nbsp; &nbsp; &nbsp; &nbsp; '''</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">nonlocal</span> <span class="n">tree</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span>  
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 원하는 구간이 tree 밖인 경우
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">left</span> <span class="o">&gt;</span> <span class="n">end</span> <span class="ow">or</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">:</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="mi">0</span> <span class="err">&nbsp;</span><span class="c1"># 곱일 경우 항등원인 1 
+</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 현재 인덱스가 포함하는 구간이 전부 내가 원하는 구간 안에 있는 경우 더한다.
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="ow">and</span> <span class="n">right</span> <span class="o">&gt;=</span> <span class="n">end</span><span class="p">:</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>  
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 일부만 겹친 경우는 두 자식으로 나누어 구간 내에 있는 자식만 더함
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">sum_recursive</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_recursive</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">sum_recursive</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numCount</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">numCount</span><span class="p">):</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">def</span> <span class="nf">update_recursive</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="s">'''
+&nbsp; &nbsp; &nbsp; &nbsp; 특정 원소의 값을 수정하는 함수
+&nbsp; &nbsp; &nbsp; &nbsp; index : 현재 수정 필요 여부를 판단하고 있는 함수
+&nbsp; &nbsp; &nbsp; &nbsp; start - end: index 노드가 포함하고 있는 범위
+&nbsp; &nbsp; &nbsp; &nbsp; where : 구간 합을 수정하고자 하는 노드
+&nbsp; &nbsp; &nbsp; &nbsp; value : 수정할 값
+&nbsp; &nbsp; &nbsp; &nbsp; '''</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">nonlocal</span> <span class="n">tree</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">diff</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 범위 밖에 있는 경우는 아무것도 안하고 재귀 중단
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">where</span> <span class="o">&lt;</span> <span class="n">start</span> <span class="ow">or</span> <span class="n">where</span> <span class="o">&gt;</span> <span class="n">end</span><span class="p">:</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span>  
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1"># 범위 안에 있으면 내려가면서 다른 원소도 갱신
+</span><span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+=</span> <span class="n">diff</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">:</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">update_recursive</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">update_recursive</span><span class="p">(</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">index</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">update_recursive</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numCount</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">tree</span>  
 
 <span class="c1"># segment tree
 </span><span class="p">{:</span> <span class="c1">#segment-tree}
 </span><span class="n">numCount</span><span class="p">,</span> <span class="n">changeCount</span><span class="p">,</span> <span class="n">caseCount</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
-
 <span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numCount</span><span class="p">)]</span>
+
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numCount</span><span class="p">):</span>
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">num_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-<span class="n">tree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">log2</span><span class="p">(</span><span class="n">numCount</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-<span class="c1"># 필요한 노드 수 == 잎새 노드(N) + 부모 노드(N-1) == 2N - 1
-</span><span class="p">{:</span> <span class="c1">#필요한-노드-수-잎새-노드-n-부모-노드-n-1-2n-1}
-# 따라서 높이를 H라고 놓을 때 ∑^{H}_{n=0}2^n &gt;= 2N -1을 만족해야 한다.
-</span><span class="p">{:</span> <span class="c1">#따라서-높이를-h라고-놓을-때-∑-h-n-0-2-n-2n-1을-만족해야-한다}
-# tree의 크기는 2의 (예상 트리의 높이 + 1)승이면 절대 부족하지 않다.
-</span><span class="p">{:</span> <span class="c1">#tree의-크기는-2의-예상-트리의-높이-1-승이면-절대-부족하지-않다}
-</span>
-<span class="n">seg</span> <span class="o">=</span> <span class="n">create_seg_tree</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span>
+  
+<span class="n">seg</span> <span class="o">=</span> <span class="n">create_seg_tree</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span> 
 
 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">changeCount</span> <span class="o">+</span> <span class="n">caseCount</span><span class="p">):</span>
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">par1</span><span class="p">,</span> <span class="n">par2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">loc</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">par1</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">par2</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">update</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">numCount</span><span class="p">)</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">seg</span> <span class="o">=</span> <span class="n">update</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">val</span> <span class="o">-</span> <span class="n">num_list</span><span class="p">[</span><span class="n">loc</span><span class="p">],</span> <span class="n">numCount</span><span class="p">)</span>
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
 <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">par1</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">par2</span><span class="o">-</span><span class="mi">1</span>
-<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">print</span><span class="p">(</span><span class="n">interval_sum</span><span class="p">(</span><span class="n">numCount</span><span class="p">,</span> <span class="n">seg</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span><span class="p">))</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">print</span><span class="p">(</span><span class="n">interval_sum</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">numCount</span><span class="p">))</span>
 </code></pre></div></div>
 
 </div>
@@ -788,10 +794,9 @@
     - 코드를 이해하기 힘들다. 특히, left 인덱스와 right 인덱스의 활용 부분<br>
     - 자료형에 배치된 원소들이 실제 원리의 노드와 조금 다르다.<br>
         - 예를 들어, 원소의 갯수가 홀수 일 경우, 서로 다른 층 값의 합을 가지고 있는 부모 노드가 생김.<br>
-        - 따라서 lazy propagation 같은 추가적인 알고리즘 적용 힘듬.<br>
-<del>잠깐, 이거 혹시 BIT 트리인가? 나중에 확인 바람</del></p>
+        - 따라서 lazy propagation 구현이 힘들고 구현하지 않을 시, 구간 업데이트에 성능이 떨어진다.</p>
 
-<div class="callout callout-example" id="callout-baa86b96-4191-49c1-9dfa-b069dcefb9e2">
+<div class="callout callout-example" id="callout-2a96174d-58cf-4980-8156-1ed32f3c8749">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>세그먼트 트리 $O(\log n)$ 예시 - 반복 버전
@@ -869,9 +874,92 @@
 </div>
     </div>
     </div>
+<div class="callout callout-example" id="callout-ae5b8b9c-d3a3-4a52-bff8-09a36dbc81cc">
+      <div class="header">
+        <span class="emoji">🧾️</span>
+        <span class="title"><strong>세그먼트 트리 자바 버전
+</strong></span>
+        <button class="collapse">🔽</button>
+      </div>
+      <div class="card" name="card">
+    
+    <div class="content" name="content">
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">SegmentTree</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kt">long</span><span class="o">[]</span> <span class="n">tree</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kt">int</span> <span class="n">n</span><span class="o">;</span>  
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="nf">SegmentTree</span><span class="o">(</span><span class="kt">long</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n</span><span class="o">];</span> <span class="c1">// use 4 * n for a balanced tree</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">buildTree</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// builds the segment tree recursively</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kt">void</span> <span class="nf">buildTree</span><span class="o">(</span><span class="kt">long</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">node</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="o">[</span><span class="n">node</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">start</span><span class="o">];</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="o">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">int</span> <span class="n">leftChild</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="o">,</span> <span class="n">rightChild</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+
+  <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">buildTree</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">leftChild</span><span class="o">,</span> <span class="n">start</span><span class="o">,</span> <span class="n">mid</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">buildTree</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">rightChild</span><span class="o">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">end</span><span class="o">);</span> 
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// combine the results of the left and right subtrees</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="o">[</span><span class="n">node</span><span class="o">]</span> <span class="o">=</span> <span class="n">tree</span><span class="o">[</span><span class="n">leftChild</span><span class="o">]</span> <span class="o">+</span> <span class="n">tree</span><span class="o">[</span><span class="n">rightChild</span><span class="o">];</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// updates the value at index i to val</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">long</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">updateTree</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">val</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span> 
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// updates the segment tree recursively</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kt">void</span> <span class="nf">updateTree</span><span class="o">(</span><span class="kt">int</span> <span class="n">node</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">long</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="o">[</span><span class="n">node</span><span class="o">]</span> <span class="o">=</span> <span class="n">val</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="o">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">int</span> <span class="n">leftChild</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="o">,</span> <span class="n">rightChild</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>  
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">updateTree</span><span class="o">(</span><span class="n">leftChild</span><span class="o">,</span> <span class="n">start</span><span class="o">,</span> <span class="n">mid</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">val</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">updateTree</span><span class="o">(</span><span class="n">rightChild</span><span class="o">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">end</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">val</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>  
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// combine the results of the left and right subtrees</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="n">tree</span><span class="o">[</span><span class="n">node</span><span class="o">]</span> <span class="o">=</span> <span class="n">tree</span><span class="o">[</span><span class="n">leftChild</span><span class="o">]</span> <span class="o">+</span> <span class="n">tree</span><span class="o">[</span><span class="n">rightChild</span><span class="o">];</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// returns the sum of the values in the range [i, j]</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">public</span> <span class="kt">long</span> <span class="nf">sumRange</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">queryTree</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="c1">// queries the segment tree recursively</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kd">private</span> <span class="kt">long</span> <span class="nf">queryTree</span><span class="o">(</span><span class="kt">int</span> <span class="n">node</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">if</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">start</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">tree</span><span class="o">[</span><span class="n">node</span><span class="o">];</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="o">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="kt">int</span> <span class="n">leftChild</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="o">,</span> <span class="n">rightChild</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="k">return</span> <span class="n">queryTree</span><span class="o">(</span><span class="n">leftChild</span><span class="o">,</span> <span class="n">start</span><span class="o">,</span> <span class="n">mid</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">)</span> <span class="o">+</span> <span class="n">queryTree</span><span class="o">(</span><span class="n">rightChild</span><span class="o">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">end</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">);</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="err">&nbsp;</span> <span class="err">&nbsp;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+    </div>
+    </div>
 <h3 id="동적-세그먼트-트리-Dynamic-segment-tree">동적 세그먼트 트리(Dynamic segment tree)</h3>
 
-<div class="callout callout-example" id="callout-06157e3a-c0dc-404b-b4b7-8585a5f7a1c0">
+<div class="callout callout-example" id="callout-66962488-04b7-4dec-9adb-0c28318e2856">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>동적 세그먼트 트리 예시
@@ -888,7 +976,7 @@
     </div>
 <h3 id="지속-세그먼트-트리-Persistent-segment-tree">지속 세그먼트 트리(Persistent segment tree)</h3>
 
-<div class="callout callout-example" id="callout-3f6afed9-1aa9-4cb3-949f-6f136de95d88">
+<div class="callout callout-example" id="callout-cb781276-bd61-462d-8c1f-d379cfc938df">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>지속 세그먼트 트리 예시
@@ -906,7 +994,7 @@
     </div>
 <h3 id="다차원-세그먼트-트리-multi-dimensional-segment-tree">다차원 세그먼트 트리 (multi dimensional segment tree)</h3>
 
-<div class="callout callout-example" id="callout-2112022e-bbdb-466c-944a-fa109550e2ae">
+<div class="callout callout-example" id="callout-e71dbfab-5416-4d96-9901-7461b420a712">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>다차원 세그먼트 트리 예시
@@ -927,7 +1015,7 @@
   <li>하단 코드는 이해를 돕기 위해 <code class="language-plaintext highlighter-rouge">dictionary</code>를 활용했으며, 실제로 아래 코드는 필요한 메모리가 어마어마하므로, 다차원 배열이나 <code class="language-plaintext highlighter-rouge">lazy</code>와 <code class="language-plaintext highlighter-rouge">value</code>를 다른 배열로 나누자.</li>
 </ul>
 
-<div class="callout callout-example" id="callout-47d68082-83f2-4431-9f4b-97aeb4e5b493">
+<div class="callout callout-example" id="callout-1129a158-4f7a-41d2-aa40-03205f383b56">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>게으른 전파 세그먼트 트리 예시
@@ -1041,7 +1129,7 @@
     </div>
 <h3 id="BIT-Binary-Indexed-Tree-펜윅-트리-fenwick-tree">BIT (Binary Indexed Tree, 펜윅 트리, fenwick tree)</h3>
 
-<div class="callout callout-example" id="callout-6fcb2460-6fbb-49de-b981-ca37ae59e285">
+<div class="callout callout-example" id="callout-b007e313-05ff-4bad-9439-a2b562543bc3">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>BIT 예시
@@ -1063,7 +1151,7 @@
 
 <p>n진 트리 구조를 이용해 찾고자 하는 검색할 문자열의 길이를 $M$이라 할 때, $O(M)$이 된다.</p>
 
-<div class="callout callout-example" id="callout-4d780374-0591-4e44-830b-c309a84d4a4d">
+<div class="callout callout-example" id="callout-8e8db96b-6a87-4d0c-aee2-b1d08ef62a40">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>Trie 예시

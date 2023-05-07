@@ -573,7 +573,7 @@
   <html><head></head><body><ol id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#속성">속성</a><ul></ul></li><li lvl="2"><a id="markdown-toc-0-1" href="#프로퍼티-파일">프로퍼티 파일</a><ul><li lvl="3"><a id="markdown-toc-0-2" href="#프로퍼티-파일-생성-및-위치">프로퍼티 파일 생성 및 위치</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-3" href="#프로퍼티-값-전달">프로퍼티 값 전달</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-4" href="#프로퍼티-구성-예시">프로퍼티 구성 예시</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-5" href="#구성-속성-메타데이터-선언">구성 속성 메타데이터 선언</a><ul></ul></li></ul></li><li lvl="2"><a id="markdown-toc-0-6" href="#프로필">프로필</a><ul><li lvl="3"><a id="markdown-toc-0-7" href="#프로필에-따른-구성-클래스-생성">프로필에 따른 구성 클래스 생성</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-8" href="#프로필-선택">프로필 선택</a><ul></ul></li><li lvl="3"><a id="markdown-toc-0-9" href="#다수-프로필-설정-및-프로필-집합-클래스">다수 프로필 설정 및 프로필 집합 클래스</a><ul></ul></li></ul></li></ol>
 <h1 id="구성-속성">구성 속성</h1>
 
-<div class="callout callout-quote" id="callout-ece1b778-bf64-4249-aaaa-bb5356d809d2">
+<div class="callout callout-quote" id="callout-21f01542-79b6-43a5-a821-94348c94ca62">
       <div class="header">
         <span class="emoji">🗣️</span>
         <span class="title"><strong>출처
@@ -627,7 +627,7 @@
 <h3 id="프로퍼티-파일-생성-및-위치">프로퍼티 파일 생성 및 위치</h3>
 <p>스프링은  간단한 설정으로 외부의 프로퍼티 파일을 이용해서 스프링 빈을 설정할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-e8d3c61a-d7ce-4bfe-af8c-9753ddab3b0c">
+<div class="callout callout-example" id="callout-4be4b0d2-8a6c-44f1-9521-aadf3db2c822">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">db.properties</code> 파일
@@ -649,7 +649,7 @@
     </div>
 <p>다음은 위 같은 프로퍼티 파일을 이용하게 하는 방법을 설명한다.</p>
 
-<div class="callout callout-note" id="callout-675f8f46-0d7d-4371-afd5-17efe67254fc">
+<div class="callout callout-note" id="callout-1da3b844-b3e4-4ed7-9bd4-1e0bb969e8e8">
       <div class="header">
         <span class="emoji">✍</span>
         <span class="title"><strong>스프링 부트의 경우, 자동 구성을 사용하므로 위 파일을 <code class="language-plaintext highlighter-rouge">src/main/resources</code> 폴더에 위치시키면 끝이다.
@@ -662,7 +662,7 @@
   <li><strong><code class="language-plaintext highlighter-rouge">PropertySourcesPlaceholderConfigurer</code> 정적 빈 클래스 등록</strong></li>
 </ol>
 
-<div class="callout callout-warning" id="callout-d7c207a3-5cdc-4b19-95c6-2565e76292d6">
+<div class="callout callout-warning" id="callout-ebdaeb5f-41f9-4ba3-8fbf-4a9333182d39">
       <div class="header">
         <span class="emoji">⚠️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">PropertySourcesPlaceholderConfigurer</code> 빈은 무조건 <code class="language-plaintext highlighter-rouge">static</code> 클래스여야 한다.
@@ -671,7 +671,7 @@
       </div>
       
     </div>
-<div class="callout callout-example" id="callout-bc1eeaa0-e8d2-479d-904d-fc94c5711471">
+<div class="callout callout-example" id="callout-cf51b978-3efb-4f72-ac59-7ddcbbfafaf3">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">src/main/java/config/PropertyConfig.java</code>
@@ -710,7 +710,7 @@
 <h4 id="Value를-이용한-프로퍼티-값-전달"><code class="language-plaintext highlighter-rouge">@Value</code>를 이용한 프로퍼티 값 전달</h4>
 <p>이후 구성 클래스에서 <code class="language-plaintext highlighter-rouge">@Value("${프로퍼티파일명.값}")</code>으로 값을 지정해준다.</p>
 
-<div class="callout callout-example" id="callout-85c46a5c-ddf0-4e0e-bde1-38c07783e34e">
+<div class="callout callout-example" id="callout-5d2a64e6-b9cf-4c81-b972-647143ab727d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Value</code>를 이용한 프로퍼티 값 전달
@@ -757,7 +757,7 @@
     </div>
 <p>뿐만 아니라 다른 빈 클래스에도 빈 생성시 값을 지정해줄 수 있다.</p>
 
-<div class="callout callout-example" id="callout-f3b343a6-f244-4b91-81e0-7982608b2d29">
+<div class="callout callout-example" id="callout-5ae94a59-ba19-4eb2-ae64-942fd9c00a0d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">@Value</code> 어노테이션 빈 클래스 사용례
@@ -803,7 +803,7 @@
 
 <p>다음과 같이 컨트롤러를 작성하면 된다.</p>
 
-<div class="callout callout-example" id="callout-34df8d80-9c4a-4b93-a333-742bf7142fac">
+<div class="callout callout-example" id="callout-b1f1a1a7-4f22-48f3-8d96-58ca6162a4e6">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>페이지 사이즈 만큼 넘기기
@@ -847,7 +847,7 @@
     </div>
 <p>위의 경우 보다는 주로 구성 데이터 홀더를 의미하는 <code class="language-plaintext highlighter-rouge">Props</code>를 붙인 새로운 컴포넌트 빈으로 생성하여 해당 값을 이용하는 방식으로 사용된다.</p>
 
-<div class="callout callout-example" id="callout-c25f272e-d7d9-47ab-860a-f99d701984cd">
+<div class="callout callout-example" id="callout-48dba047-ae9e-4482-b8b7-28fcb770d446">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>구성 속성 홀더 정의
@@ -883,7 +883,7 @@
     </div>
 <p>이를 아래와 같이 사용할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-98e21edb-e560-4292-928a-5fcf2d03fe26">
+<div class="callout callout-example" id="callout-dfc9b8b1-a7df-4995-84fb-8eed65539de4">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">OrderController</code> 코드 변경
@@ -926,7 +926,7 @@
 <h4 id="데이터-소스-프로퍼티-파일">데이터 소스 프로퍼티 파일</h4>
 <p>데이터소스를 직접 코드하여 구성하는 것보다 스프링 부트를 이용하면 아래 처럼 프로퍼티 파일을 구성할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-75b84f73-5363-4b6c-b54c-09fcf9672d15">
+<div class="callout callout-example" id="callout-1a2c9baa-3345-433a-93fd-72715667dddf">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">application.yml</code> 파일 예시
@@ -1015,7 +1015,7 @@ logging:
   </li>
 </ol>
 
-<div class="callout callout-example" id="callout-a340790c-d803-4555-9479-7f32ffc033d5">
+<div class="callout callout-example" id="callout-ce506053-d49c-4e2f-b3e3-fdf251d21566">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">additional-spring-configuration-metadata.json</code> 파일
@@ -1057,7 +1057,7 @@ ex) <code class="language-plaintext highlighter-rouge">pageSize</code> == <code 
 
 <h4 id="Profile-어노테이션-사용"><code class="language-plaintext highlighter-rouge">@Profile</code> 어노테이션 사용</h4>
 
-<div class="callout callout-example" id="callout-127bb06e-1c20-489e-8a6d-095388b5652e">
+<div class="callout callout-example" id="callout-749dbc6f-f1e8-4b9a-ac88-2272bd72b254">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>프로필의 생성 <code class="language-plaintext highlighter-rouge">src/main/java/confi/DsDevConfig.java</code>
@@ -1099,7 +1099,7 @@ ex) <code class="language-plaintext highlighter-rouge">pageSize</code> == <code 
 
 <p>또는 아래와 같이 프론트매터(<code class="language-plaintext highlighter-rouge">---</code>)로 나누어 공통 속성을 지정하고, <code class="language-plaintext highlighter-rouge">spring.profiles</code> 값을 통해 프로필명을 나눌 수 있다.</p>
 
-<div class="callout callout-example" id="callout-955c4909-11de-4576-9c24-90827c66a848">
+<div class="callout callout-example" id="callout-8be23480-2ca7-42bc-aaee-e7c854bb12fa">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong><code class="language-plaintext highlighter-rouge">application.yml</code> 파일
@@ -1139,7 +1139,7 @@ ex) <code class="language-plaintext highlighter-rouge">pageSize</code> == <code 
 
 <h4 id="내부-코드-방법">내부 코드 방법</h4>
 
-<div class="callout callout-example" id="callout-f622656f-5cbf-477c-a2eb-b76e172595cd">
+<div class="callout callout-example" id="callout-d580db06-afd7-4af8-a94b-9946be537830">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>설정한 프로필의 사용 <code class="language-plaintext highlighter-rouge">src/main/java/main/MainProfile.java</code>
@@ -1221,7 +1221,7 @@ org.springframework.web.context.support.AnnotationConfigWebApplicationContext
 
 <p>또한 아래 예시처럼 하나의 설정에 두 개 이상의 프로필을 주거나 <code class="language-plaintext highlighter-rouge">!</code>를 이용할 수 있다.</p>
 
-<div class="callout callout-example" id="callout-96224760-ba55-401b-958b-26338388bc36">
+<div class="callout callout-example" id="callout-82286e2e-cb36-4005-8178-1518bc1a7562">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>중첩 클래스를 이용한 프로필 구성 클래스

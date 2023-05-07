@@ -570,14 +570,14 @@
 <link rel="stylesheet" href="/assets/css/obsidian/preview.css" />
 
 <div class="content-section">
-  <html><head></head><body><ul id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#스위핑">스위핑</a><ol></ol></li><li lvl="2"><a id="markdown-toc-0-1" href="#컨벡스-헐">컨벡스 헐</a><ol><li lvl="3"><a id="markdown-toc-0-2" href="#CCW-Counter-Clock-Wise">CCW(Counter Clock Wise)</a><ol></ol></li><li lvl="3"><a id="markdown-toc-0-3" href="#그라함-스캔">그라함 스캔</a><ol></ol></li></ol></li><li lvl="2"><a id="markdown-toc-0-4" href="#누적합">누적합</a><ol><li lvl="3"><a id="markdown-toc-0-5" href="#일반-누적합">일반 누적합</a><ol></ol></li><li lvl="3"><a id="markdown-toc-0-6" href="#2차원-누적합">2차원 누적합</a><ol></ol></li></ol></li></ul>
+  <html><head></head><body><ul id="markdown-toc-0"><li lvl="2"><a id="markdown-toc-0-0" href="#스위핑">스위핑</a><ol></ol></li><li lvl="2"><a id="markdown-toc-0-1" href="#컨벡스-헐">컨벡스 헐</a><ol><li lvl="3"><a id="markdown-toc-0-2" href="#CCW-Counter-Clock-Wise">CCW(Counter Clock Wise)</a><ol></ol></li><li lvl="3"><a id="markdown-toc-0-3" href="#그라함-스캔">그라함 스캔</a><ol></ol></li></ol></li><li lvl="2"><a id="markdown-toc-0-4" href="#누적합">누적합</a><ol><li lvl="3"><a id="markdown-toc-0-5" href="#누적합">누적합</a><ol></ol></li><li lvl="3"><a id="markdown-toc-0-6" href="#2차원-누적합">2차원 누적합</a><ol></ol></li><li lvl="3"><a id="markdown-toc-0-7" href="#imos">imos</a><ol></ol></li><li lvl="3"><a id="markdown-toc-0-8" href="#2차원-imos">2차원 imos</a><ol></ol></li></ol></li></ul>
 <h1 id="Python-for-Algorithms-etc">Python for Algorithms-etc</h1>
 
 <h2 id="스위핑">스위핑</h2>
 <p>공간의 한쪽 끝부터 나머지 끝까지 훑으면서 마주치는 부분을 처리하는 방식<br>
 정렬, 기준잡기, 상태 변화를 저장하는 것이 중요하다.</p>
 
-<div class="callout callout-example" id="callout-f51d6c39-6514-40ca-9435-23886579482e">
+<div class="callout callout-example" id="callout-7c8ec157-8f8e-424d-8151-105c62c9374d">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>스위핑 예시
@@ -597,7 +597,7 @@
 <h3 id="CCW-Counter-Clock-Wise">CCW(Counter Clock Wise)</h3>
 <p>벡터의 외적(Cross Product)를 이용해 점의 쌍을 기준으로 다른 점의 상대적 위치를 알아냄</p>
 
-<div class="callout callout-example" id="callout-6f13d55f-b748-433b-8a6e-25dd5b09adc2">
+<div class="callout callout-example" id="callout-276725a5-17b6-4418-a854-34a01c638316">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>CCW 예시
@@ -626,7 +626,7 @@
     </div>
 <h3 id="그라함-스캔">그라함 스캔</h3>
 
-<div class="callout callout-example" id="callout-9ac33b35-1d89-41c6-a809-5585a2ab79b6">
+<div class="callout callout-example" id="callout-a41b3fa2-eb76-4cdc-872c-7e02aad6878b">
       <div class="header">
         <span class="emoji">🧾️</span>
         <span class="title"><strong>그라함 스캔 $O(n\log n)$ 예시
@@ -670,13 +670,32 @@
     </div>
     </div>
 <h2 id="누적합">누적합</h2>
-<p>배열의 크기를 $N$, 구간 합의 갯수를 $M$이라고 할때, 기존의 시간 복잡도 $O(M\times N)$에서 $O(M+N)$으로 바꿀 수 있다.</p>
-<h3 id="일반-누적합">일반 누적합</h3>
 
-<div class="callout callout-example" id="callout-41b59935-cc19-4067-8735-5d9f106cade4">
+<p>갱신이 없는 경우에 적합하며, 갱신이 잦을 경우 누적합을 계속 다시 구해야하므로 차라리 세그먼트 트리를 이용하자.</p>
+
+<h3 id="누적합">누적합</h3>
+
+<p>미리 $(0\sim n)$ 수의 배열($n$)을 통해 누적합 배열($p$)을 저장해놓는다. <br>
+이때 $p[i] = p[i-1] + n[i]$ 이며, 즉, $p[i]$는 $(0,i)$까지의 합이다.<br>
+이를 $O(n)$의 시간안에 만들 수 있다.<br>
+이후 원하는 구간 $(i, j)$의 구간합만 구하고 싶다면 $p[j]-p[i]$로 $O(1)$으로 빠르게 구할 수 있다.</p>
+
+<h3 id="2차원-누적합">2차원 누적합</h3>
+<p>행 방향의 누적합을 먼저 각 행마다 구한 뒤, 기록 후,<br>
+열 방향의 누적합을 구하면 2차원 누적합을 $O(n^2)$의 속도로 구할 수 있다.</p>
+
+<p>2차원 구간 합은 $(x_1, y_1) \sim (x_2, y_2)$의 합을 구하고 싶다면<br>
+\(p(x_2,y_2)-p(x_1, y_2)-p(x_2, y_1) + p(x_1, y_1)\)<br>
+으로 $O(1)$으로 빠르게 구할 수 있다.</p>
+
+<h3 id="imos">imos</h3>
+<p>imos는 누적합의 확장으로,  갱신 시작과 끝 구간만을 기록하여 갱신이 잦은 구간 값을 빠르게 갱신할 수 있다.<br>
+배열의 크기를 $N$, 구간 합의 갯수를 $M$이라고 할때, 기존의 시간 복잡도 $O(M\times N)$에서 $O(M+N)$으로 바꿀 수 있다.</p>
+
+<div class="callout callout-example" id="callout-0e091a61-14d4-431b-a026-24d8059bf06f">
       <div class="header">
         <span class="emoji">🧾️</span>
-        <span class="title"><strong>누적합 예시
+        <span class="title"><strong>imos 예시
 </strong></span>
         <button class="collapse">🔽</button>
       </div>
@@ -697,8 +716,8 @@
 </span>		<span class="n">new_board</span><span class="p">[</span><span class="n">x1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">degree</span>
 		<span class="n">new_board</span><span class="p">[</span><span class="n">x2</span><span class="p">]</span> <span class="o">-=</span> <span class="n">degree</span>
             
-	<span class="c1"># 이후 각 원소에 적용될 누적합을 구한다. 인덱스 0를 제외하고 이전 인덱스 값을 순차적으로 더해주면 된다.
-</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_board</span><span class="p">)):</span>
+	<span class="c1"># 이후 각 원소에 적용될 누적합을 구한다. 이전 인덱스 값을 순차적으로 더해주면 된다.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_board</span><span class="p">)):</span>
         <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">new_board</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         
 	<span class="c1"># 해당 누적합을 원래 배열에 적용시키기
@@ -711,12 +730,12 @@
 </div>
     </div>
     </div>
-<h3 id="2차원-누적합">2차원 누적합</h3>
+<h3 id="2차원-imos">2차원 imos</h3>
 
-<div class="callout callout-example" id="callout-6c6706a9-5a52-4688-987e-6b61faeead2e">
+<div class="callout callout-example" id="callout-da257e78-a8b7-4cb1-af1a-95c6a61d2d13">
       <div class="header">
         <span class="emoji">🧾️</span>
-        <span class="title"><strong>2차원 누적합 예시
+        <span class="title"><strong>2차원 imos 예시
 </strong></span>
         <button class="collapse">🔽</button>
       </div>
